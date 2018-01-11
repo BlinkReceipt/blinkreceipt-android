@@ -26,7 +26,7 @@ To add sdk to your android project please add the following to your dependency s
 
 ```
 dependencies {
-    implementation "com.android.support:appcompat-v7:${versions.googleSupport}"
+    implementation 'com.android.support:appcompat-v7:27.0.2'
     ...
     implementation project(':blink-receipt-1.0.0')
     
