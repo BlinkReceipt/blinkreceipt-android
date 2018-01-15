@@ -16,6 +16,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Recognizer View](#recognizerView)
 * [Direct API](#directAPI)
 * [Adding Barcode Scanning](#scandit)
+* [Adding Product Intelligence](#intelligence)
 * [Processor Configuration Considerations](#processorConfigurations)
 
 ## AAR
@@ -35,6 +36,7 @@ dependencies {
     
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
     
     implementation 'com.squareup.okio:okio:1.13.0'
 }
@@ -246,7 +248,7 @@ The Blink Receipt SDK is capable of scanning images passed in as a bitmap. This 
 ## <a name=scandit></a> Adding Barcode Scanning
 The Blink Receipt SDK utilizes Scandit's sdk for barcode scanning. If you wish to include barcode scanning functionality within your project you will need to follow the instructions on how to add the Scandit sdk to your project from the Scandit documentation. Once the library is added to your project you can integrate with this library by adding the your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
-** When registering for a Scandit Key you must give Scandir YOUR project's package name, not the sdk's. **
+** When registering for a Scandit Key you must give Scandit YOUR project's package name, not the sdk's. **
 
 `AndroidManifest.xml`
 ```
@@ -257,6 +259,16 @@ The Blink Receipt SDK utilizes Scandit's sdk for barcode scanning. If you wish t
         <meta-data
             android:name="com.microblink.ScanditApiKey"
             android:value="SCANDIT_API_KEY" />
+```
+
+## <a name=intelligence></a> Adding Product Intelligence
+If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+
+`AndroidManifest.xml`
+```
+  <meta-data
+            android:name="com.microblink.ProductIntelligence"
+            android:value="PRODUCT INTELLIGENCE KEY" />
 ```
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations
