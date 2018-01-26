@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     ...
-    implementation project(':blink-receipt-1.0.0')
+    implementation project(':blink-receipt-1.0.2')
     
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
