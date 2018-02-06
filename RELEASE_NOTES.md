@@ -12,3 +12,7 @@
 
 - Support for merchant (Google and Yelp integration)
 - Bug fixes
+
+## 1.0.3
+
+- Bug fixes
