@@ -70,7 +70,7 @@ The easiest way to get started scanning your first receipt would be to use the i
 
 ```
 ScanOptions scanOptions = ScanOptions.newBuilder()
-                                          .retailer( Retailer.WALMART )
+                                          .retailer( Retailer.UNKNOWN )
                                           .build();
 
 Intent intent = IntentUtils.cameraScan( this, scanOptions );
