@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     ...
-    implementation project(':blink-receipt-1.0.2')
+    implementation project(':blink-receipt-1.0.4')
     
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
@@ -71,6 +71,13 @@ The easiest way to get started scanning your first receipt would be to use the i
 ```
 ScanOptions scanOptions = ScanOptions.newBuilder()
                                           .retailer( Retailer.UNKNOWN )
+                                          .frameCharacteristics( FrameCharacteristics.newBuilder()
+                                                  .store( true )
+                                                  .compressionQuality( 100 )
+                                                  .externalStorage( false )
+                                                  .build() )
+                                           .edgeDetectionConfiguration( EdgeDetectionConfiguration.defaults() )
+                                          .scanBarcode( true )
                                           .build();
 
 Intent intent = IntentUtils.cameraScan( this, scanOptions );
@@ -157,6 +164,17 @@ public interface RecognizerCallback {
 
     void onCameraException( @NonNull Throwable throwable );
 }
+```
+The RecognizerCallback also provides raw results.
+
+```
+   @Override
+    public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
+
+        if ( result instanceof OcrRawResult ) {
+            OcrRawResult ocrRawResult = (OcrRawResult) result;
+        }
+    }
 ```
 
 `RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
