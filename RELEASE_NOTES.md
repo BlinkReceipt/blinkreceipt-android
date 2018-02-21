@@ -20,3 +20,4 @@
 ## 1.0.4
 
 - Bug fixes
+- JNI Improvements
