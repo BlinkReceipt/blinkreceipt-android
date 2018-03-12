@@ -29,19 +29,20 @@ To add sdk to your android project please add the following to your dependency s
 
 ```
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     ...
-    implementation project(':blink-receipt-1.0.4')
+    implementation project(':blink-receipt-1.0.5')
+    implementation project(':scandit-barcode-scanner-5.6.2')
     
-    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
     
-    implementation 'com.squareup.okio:okio:1.13.0'
+    implementation 'com.squareup.okio:okio:1.14.0'
 }
 ```
 
@@ -72,7 +73,7 @@ The easiest way to get started scanning your first receipt would be to use the i
 ScanOptions scanOptions = ScanOptions.newBuilder()
                                           .retailer( Retailer.UNKNOWN )
                                           .frameCharacteristics( FrameCharacteristics.newBuilder()
-                                                  .store( true )
+                                                  .storeFrames( true )
                                                   .compressionQuality( 100 )
                                                   .externalStorage( false )
                                                   .build() )
@@ -128,7 +129,7 @@ Want to see your captured frames? save scanned results? include barcode recognit
 
 `storeFrames( boolean storeFrames )`: If set to true, this configuration will save the captured and confirmed frames to disk. The paths to those files will be returned within the `Media` object which is returned in the onActivityResults bundle.
 
-`useExternalStorage( boolean useExternalStorage )`: This configuration goes hand in hand with the previous configuration. By default frames will be stored within the applications internal storage. If set to `true` the path will be set to be the external application storagme. Results and access to these files will be returned the same way.
+`useExternalStorage( boolean useExternalStorage )`: This configuration goes hand in hand with the previous configuration. By default frames will be stored within the applications internal storage. If set to `true` the path will be set to be the external application storage. Results and access to these files will be returned the same way.
 
 `edgeDetectionConfiguration( EdgeDetectionConfiguration configuration )`: The sdk's functionality includes edge detection. Here we can determine the edges of the receipt and therefore the content percentage of the receipt. This configurations allow for customized parameters to be set around what is acceptable criteria scanning a receipt. In the case of a low content percentage or below the defined threshold we display a helpful message to the user to let them know to move closer.
 

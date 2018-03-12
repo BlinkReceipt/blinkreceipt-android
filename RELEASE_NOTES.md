@@ -21,3 +21,16 @@
 
 - Bug fixes
 - JNI Improvements
+
+## 1.0.5
+
+- Bug fixes
+    - Summary mapping fix
+    - Camera scan activity tool tip intent fix
+    - Populate total for products
+- Updated third part libraries ( retrofit, scandit, okio )
+- Network optimizations
+- Additional lines added to Scan Results
+- Changed store name to merchant name
+- Map payments from string to a payment object.
+- Camera frame characteristics store() to storeFrames()
