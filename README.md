@@ -79,6 +79,7 @@ ScanOptions scanOptions = ScanOptions.newBuilder()
                                                   .build() )
                                            .edgeDetectionConfiguration( EdgeDetectionConfiguration.defaults() )
                                           .scanBarcode( true )
+                                          .logoDetection( true )
                                           .build();
 
 Intent intent = IntentUtils.cameraScan( this, scanOptions );
@@ -118,7 +119,7 @@ The camera scan activity baked into the sdk contains numerous configurations tha
 
 `IntentUtils.VIDEO_RESOLUTION_EXTRA` : VideoResolutionPreset : Video resolution preset extra for camera.
 
-`IntentUtils.RECOGNIZER_CALLBACK_EXTRA` : RecognizerCallback : Interface passed in as a parcelable extra, that will receive every recognizer's result.
+`IntentUtils.CAMERA_RECOGNIZER_CALLBACK_EXTRA` : CameraRecognizerCallback : Interface passed in as a parcelable extra, that will receive every recognizer's result.
 
 ### <a name=customizeScanSession></a> Customize Scan Configuration
 Want to see your captured frames? save scanned results? include barcode recognition? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.
@@ -156,14 +157,14 @@ public interface RecognizerCallback {
     void onConfirmPicture( @NonNull File file );
 
     // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use.
-    void onCameraPermissionDenied();
+    void onPermissionDenied();
 
     //Notifying the user of any issue while using camera preview as well as when preview is started and ended.
-    void onCameraPreviewStarted();
+    void onPreviewStarted();
 
-    void onCameraPreviewStopped();
+    void onPreviewStopped();
 
-    void onCameraException( @NonNull Throwable throwable );
+    void onException( @NonNull Throwable throwable );
 }
 ```
 The RecognizerCallback also provides raw results.
