@@ -153,6 +153,12 @@ public interface RecognizerCallback {
     // The callback invoked whenever a step within the scanning process is returned.
     void onRecognizerResultsChanged( @NonNull RecognizerResult result );
 
+}
+```
+
+```
+public interface CameraRecognizerCallback {
+
     // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame.
     void onConfirmPicture( @NonNull File file );
 
