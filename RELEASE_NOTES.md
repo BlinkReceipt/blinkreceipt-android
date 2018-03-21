@@ -34,3 +34,8 @@
 - Changed store name to merchant name
 - Map payments from string to a payment object.
 - Camera frame characteristics store() to storeFrames()
+
+## 1.0.6
+
+- Bug fixes
+- Logo Detection
