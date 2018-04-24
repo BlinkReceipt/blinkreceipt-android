@@ -15,7 +15,6 @@ See below for more information about how to integrate Blink Receipt SDK into you
    * [Customize Scan Configuration](#customizeScanSession)
 * [Recognizer View](#recognizerView)
 * [Direct API](#directAPI)
-* [Adding Barcode Scanning](#scandit)
 * [Adding Product Intelligence](#intelligence)
 * [Adding Google Places](#google)
 * [Adding Yelp](#yelp)
@@ -29,18 +28,17 @@ To add sdk to your android project please add the following to your dependency s
 
 ```
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    ...
+    
     implementation project(':blink-receipt-1.0.5')
-    implementation project(':scandit-barcode-scanner-5.6.2')
     
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
     
     implementation 'com.squareup.okio:okio:1.14.0'
 }
@@ -133,8 +131,6 @@ Want to see your captured frames? save scanned results? include barcode recognit
 `useExternalStorage( boolean useExternalStorage )`: This configuration goes hand in hand with the previous configuration. By default frames will be stored within the applications internal storage. If set to `true` the path will be set to be the external application storage. Results and access to these files will be returned the same way.
 
 `edgeDetectionConfiguration( EdgeDetectionConfiguration configuration )`: The sdk's functionality includes edge detection. Here we can determine the edges of the receipt and therefore the content percentage of the receipt. This configurations allow for customized parameters to be set around what is acceptable criteria scanning a receipt. In the case of a low content percentage or below the defined threshold we display a helpful message to the user to let them know to move closer.
-
-`scanBarcode( boolean scanBarcode )`: Look for barcode's within the receipt. In order for this configuration, the project needs to include the dependency from Scandit (https://www.scandit.com/). Please see adding barcode scanning section to learn more.
 
 `scanTimeout( int scanTimeout )`: Max time allotted to scan a frame, value is in milliseconds.
 
@@ -274,23 +270,7 @@ All RecognizerCallback methods are executed on the main thread.
 ## <a name=directAPI></a> Direct API
 The Blink Receipt SDK is capable of scanning images passed in as a bitmap. This utilizes the direct api which can be accessed via the `Recognizer` instance. The Recognizer is a singleton that when calling `recognizeBitmap( @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation, @NonNull final RecognizerCallback callback )` will scan your bitmap image based on the ScanOption configurations and return to you the results via the callback provided.
 
-## <a name=scandit></a> Adding Barcode Scanning
-The Blink Receipt SDK utilizes Scandit's sdk for barcode scanning. If you wish to include barcode scanning functionality within your project you will need to follow the instructions on how to add the Scandit sdk to your project from the Scandit documentation. Once the library is added to your project you can integrate with this library by adding the your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
-
-** When registering for a Scandit Key you must give Scandit YOUR project's package name, not the sdk's. **
-
-`AndroidManifest.xml`
-```
-  <meta-data
-            android:name="com.microblink.LicenseKey"
-            android:value="BLINK_RECEIPT_API_KEY" />
-
-        <meta-data
-            android:name="com.microblink.ScanditApiKey"
-            android:value="SCANDIT_API_KEY" />
-```
-
-## <a name=intelligence></a> Adding Product Intelligence
+## <a name=intelligence></a>Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
 `AndroidManifest.xml`
@@ -300,7 +280,7 @@ If you wish to include product intelligence functionality within your project ad
             android:value="PRODUCT INTELLIGENCE KEY" />
 ```
 
-## <a name=google></a> Adding Google Places
+## <a name=google></a>Google Places
 If you wish to include Google Places functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
 `AndroidManifest.xml`
@@ -310,7 +290,7 @@ If you wish to include Google Places functionality within your project add your 
              android:value="GOOGLE PLACES KEY"/>
 ```
 
-## <a name=yelp></a> Adding Yelp
+## <a name=yelp></a>Yelp
 If you wish to include Yelp functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
 `AndroidManifest.xml`

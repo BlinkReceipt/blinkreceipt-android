@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Blink Receipt Direct Api</string>
+    <string name="btn_recognize">Recognize</string>
+    <string name="scan_results_products">Products Found: %d</string>
+    <string name="scan_results_no_products_found">No products found on receipt!</string>
+    <string name="bitmap_not_found">Bitmap couldn\'t be found in assets!</string>
+    <string name="recognize_results_progress">analyzing…</string>
+    <string name="gallery_picture_title">Gallery Photos</string>
+    <string name="gallery_picture_exception">Unable to to find image from gallery!</string>
+</resources>

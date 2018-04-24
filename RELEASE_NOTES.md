@@ -39,3 +39,7 @@
 
 - Bug fixes
 - Logo Detection
+
+## 1.0.7
+
+- Bug fixes
