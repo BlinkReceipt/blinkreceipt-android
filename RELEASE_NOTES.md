@@ -43,3 +43,7 @@
 ## 1.0.7
 
 - Bug fixes
+
+## 1.0.8
+
+- Bug fixes
