@@ -12,6 +12,11 @@ buildscript {
             'retrofit' : '2.4.0',
             'okio' : '1.14.0',
             'archLifecycle' : '1.1.1',
+            'constraintLayout' : '1.1.0',
+            'junit' : '4.12',
+            'androidTestRunner' : '1.0.2',
+            'espresso' : '3.0.2',
+            'easyPermissions' : '1.2.0',
             'versionMajor': 1,
             'versionMinor': 0,
             'versionPatch': 0

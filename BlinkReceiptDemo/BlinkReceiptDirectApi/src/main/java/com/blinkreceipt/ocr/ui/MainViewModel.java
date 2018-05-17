@@ -1,4 +1,4 @@
-package com.blinkreceipt.ocr;
+package com.blinkreceipt.ocr.ui;
 
 import android.app.Application;
 import android.arch.core.util.Function;
@@ -14,14 +14,21 @@ import android.support.v4.util.Pair;
 import com.blinkreceipt.ocr.repositories.BitmapRepository;
 import com.blinkreceipt.ocr.repositories.RecognizerRepository;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
+import com.microblink.EdgeDetectionConfiguration;
+import com.microblink.FrameCharacteristics;
 import com.microblink.Media;
+import com.microblink.Retailer;
+import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
+import com.microblink.extensions.Utility;
 
 public class MainViewModel extends AndroidViewModel {
 
     private BitmapRepository bitmapRepository;
 
     private RecognizerRepository recognizerRepository;
+
+    private ScanOptions scanOptions;
 
     private MutableLiveData<Uri> uri = new MutableLiveData<>();
 
@@ -57,6 +64,14 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application ) {
         super( application );
+
+        scanOptions = ScanOptions.newBuilder()
+                .retailer( Retailer.UNKNOWN )
+                .frameCharacteristics( FrameCharacteristics.newBuilder()
+                        .externalStorage( false )
+                        .build() )
+                .edgeDetectionConfiguration( EdgeDetectionConfiguration.defaults() )
+                .build();
     }
 
     public LiveData<Bitmap> bitmap() {
@@ -73,6 +88,10 @@ public class MainViewModel extends AndroidViewModel {
 
     public void recognizeItem( @NonNull RecognizeItem data ) {
         item.setValue( data );
+    }
+
+    public ScanOptions scanOptions() {
+        return scanOptions;
     }
 
     @Override

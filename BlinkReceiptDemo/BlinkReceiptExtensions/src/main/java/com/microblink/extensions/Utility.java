@@ -1,11 +1,11 @@
-package com.blinkreceipt.ocr;
+package com.microblink.extensions;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.util.Collection;
 
-public final class Utility {
+public class Utility {
 
     private static final String TAG = "Utility";
 

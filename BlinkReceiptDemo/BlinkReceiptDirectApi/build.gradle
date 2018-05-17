@@ -26,14 +26,15 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation "junit:junit:${versions.junit}"
+
+    androidTestImplementation "com.android.support.test:runner:${versions.androidTestRunner}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${versions.espresso}"
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation "com.android.support:appcompat-v7:${versions.googleSupport}"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
@@ -41,8 +42,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
     implementation "android.arch.lifecycle:extensions:${versions.archLifecycle}"
+    implementation "com.android.support:recyclerview-v7:${versions.googleSupport}"
 
     annotationProcessor "android.arch.lifecycle:compiler:${versions.archLifecycle}"
 
     implementation project(':LibBlinkReceipt')
+    implementation project(':BlinkReceiptExtensions')
 }

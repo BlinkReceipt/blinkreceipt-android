@@ -1,8 +1,9 @@
-package com.blinkreceipt.ocr;
+package com.microblink.extensions;
 
 import android.support.annotation.Nullable;
 
 public interface OnNullableCompleteListener<T> {
 
     void onComplete( @Nullable T response );
+
 }

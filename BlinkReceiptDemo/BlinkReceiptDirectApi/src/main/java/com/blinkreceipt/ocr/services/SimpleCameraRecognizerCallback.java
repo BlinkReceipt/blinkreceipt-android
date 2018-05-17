@@ -1,4 +1,4 @@
-package com.blinkreceipt.ocr;
+package com.blinkreceipt.ocr.services;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -40,7 +40,7 @@ public class SimpleCameraRecognizerCallback implements CameraRecognizerCallback 
     }
 
     @Override
-    public void onRecognizerDone(@NonNull ScanResults scanResults, Media media) {
+    public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
         Log.d( TAG, "onRecognizerDone");
     }
 

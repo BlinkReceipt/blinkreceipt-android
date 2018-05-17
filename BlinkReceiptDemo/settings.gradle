@@ -1,1 +1,1 @@
-include ':BlinkReceiptDirectApi', 'LibBlinkReceipt'
+include ':BlinkReceiptDirectApi', ':BlinkReceiptStaticScan', ':BlinkReceiptExtensions', 'LibBlinkReceipt'

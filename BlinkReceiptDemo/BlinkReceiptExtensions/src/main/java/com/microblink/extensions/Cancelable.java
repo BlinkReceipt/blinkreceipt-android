@@ -1,4 +1,4 @@
-package com.blinkreceipt.ocr;
+package com.microblink.extensions;
 
 public interface Cancelable {
 
