@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.blinkreceipt.ocr.R;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
-import com.blinkreceipt.ocr.transfer.ScanItems;
+import com.blinkreceipt.ocr.transfer.CameraScanItems;
 import com.microblink.IntentUtils;
 import com.microblink.Media;
 import com.microblink.Product;
@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         recyclerView.setAdapter( adapter );
 
-        viewModel.scanItems().observe(this, new Observer<ScanItems>() {
+        viewModel.scanItems().observe(this, new Observer<CameraScanItems>() {
 
             @Override
-            public void onChanged( @Nullable ScanItems scanResult ) {
+            public void onChanged( @Nullable CameraScanItems scanResult ) {
                 if ( scanResult != null ) {
                     List<Product> products = presenter.products( scanResult );
 
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
                         Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
 
-                        viewModel.scanItems( new ScanItems( results, media ) );
+                        viewModel.scanItems( new CameraScanItems( results, media ) );
 
                         break;
                 }

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import com.microblink.Media;
 import com.microblink.ScanResults;
 
-public final class ScanItems {
+public final class CameraScanItems {
 
     @Nullable
     private ScanResults results;
@@ -13,7 +13,7 @@ public final class ScanItems {
     @Nullable
     private Media media;
 
-    public ScanItems(@Nullable ScanResults results, @Nullable Media media ) {
+    public CameraScanItems(@Nullable ScanResults results, @Nullable Media media ) {
         super();
 
         this.results = results;
@@ -33,9 +33,10 @@ public final class ScanItems {
 
     @Override
     public String toString() {
-        return "ScanItems{" +
+        return "CameraScanItems{" +
                 "results=" + results +
                 ", media=" + media +
                 '}';
     }
+
 }

@@ -42,4 +42,12 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
 
         notifyDataSetChanged();
     }
+
+    @Override
+    public String toString() {
+        return "ProductsAdapter{" +
+                "products=" + products +
+                '}';
+    }
+
 }

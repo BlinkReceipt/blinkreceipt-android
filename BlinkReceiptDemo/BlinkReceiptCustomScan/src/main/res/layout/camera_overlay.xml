@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <View
+            android:id="@+id/view_port_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".10"
+            android:background="@color/see_through_black" />
+
+        <LinearLayout
+            android:id="@+id/view_port_height"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".80"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <View
+                android:id="@+id/view_port_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@color/see_through_black" />
+
+            <FrameLayout
+                android:id="@+id/view_port_width"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".90" />
+
+            <RelativeLayout
+                android:id="@+id/view_port_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@color/see_through_black">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_port_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".10"
+            android:background="@color/see_through_black" />
+
+    </LinearLayout>
+
+</RelativeLayout>
