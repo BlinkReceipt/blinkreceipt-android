@@ -28,7 +28,7 @@ public final class RecognizerServiceImpl implements RecognizerService {
     public void recognize( @NonNull ScanOptions options, @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation,
                            final @NonNull OnNullableCompleteListener<Pair<ScanResults,Media>> listener  ) {
         try {
-            Recognizer.getInstance().initialize( application, options );
+            Recognizer.getInstance().initialize( options );
 
             Recognizer.getInstance().recognize( application, bitmap, orientation, new SimpleCameraRecognizerCallback() {
 

@@ -29,7 +29,7 @@ To add sdk to your android project please add the following to your dependency s
 ```
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     
     implementation project(':blink-receipt-1.0.5')
     
@@ -169,6 +169,23 @@ public interface CameraRecognizerCallback {
     void onException( @NonNull Throwable throwable );
 }
 ```
+The RecognizerCallback also provides preliminary results.
+
+```
+  recognizerView.preliminaryResults();
+  
+```
+
+```
+   @Override
+    public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
+
+        if ( result instanceof PreliminaryResult ) {
+            PreliminaryResult results = (PreliminaryResult) result;
+        }
+    }
+```
+
 The RecognizerCallback also provides raw results.
 
 ```
@@ -178,6 +195,19 @@ The RecognizerCallback also provides raw results.
         if ( result instanceof OcrRawResult ) {
             OcrRawResult ocrRawResult = (OcrRawResult) result;
         }
+    }
+```
+
+The RecognizerCallback also provides edge results.
+
+```
+   @Override
+    public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
+
+        if ( result instanceof EdgeDetectionResult ) {
+            EdgeDetectionResult edges = (EdgeDetectionResult) result;
+        }
+        
     }
 ```
 
