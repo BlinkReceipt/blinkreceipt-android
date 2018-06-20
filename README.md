@@ -29,7 +29,7 @@ To add sdk to your android project please add the following to your dependency s
 ```
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
     
-    implementation 'com.squareup.okio:okio:1.14.0'
+    implementation 'com.squareup.okio:okio:1.14.1'
 }
 ```
 
