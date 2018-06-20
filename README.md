@@ -31,7 +31,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     
-    implementation project(':blink-receipt-1.0.5')
+    implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
