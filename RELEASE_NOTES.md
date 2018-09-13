@@ -55,3 +55,8 @@
 ## 1.1.0
 
 - Bug fixes
+
+## 1.1.2
+
+- Memory Optimizations
+- Bug fixes
