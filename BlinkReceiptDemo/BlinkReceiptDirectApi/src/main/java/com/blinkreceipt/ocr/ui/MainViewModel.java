@@ -70,7 +70,7 @@ public class MainViewModel extends AndroidViewModel {
                 .frameCharacteristics( FrameCharacteristics.newBuilder()
                         .externalStorage( false )
                         .build() )
-                .edgeDetectionConfiguration( EdgeDetectionConfiguration.defaults() )
+                .edgeDetectionConfiguration( new EdgeDetectionConfiguration() )
                 .build();
     }
 

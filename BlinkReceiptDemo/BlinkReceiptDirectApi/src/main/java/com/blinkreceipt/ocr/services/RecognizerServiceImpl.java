@@ -30,7 +30,7 @@ public final class RecognizerServiceImpl implements RecognizerService {
         try {
             Recognizer.getInstance().initialize( options );
 
-            Recognizer.getInstance().recognize( application, bitmap, orientation, new SimpleCameraRecognizerCallback() {
+            Recognizer.getInstance().recognize( application, new SimpleCameraRecognizerCallback() {
 
                         @Override
                         public void onRecognizerDone(@NonNull final ScanResults results, @NonNull final Media media ) {
@@ -47,7 +47,7 @@ public final class RecognizerServiceImpl implements RecognizerService {
 
                             listener.onComplete( null );
                         }
-                    }) ;
+                    }, orientation, bitmap ) ;
         } catch ( Throwable e ) {
             Log.e( TAG, e.toString() );
 
