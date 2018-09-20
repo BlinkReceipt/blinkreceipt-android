@@ -75,7 +75,7 @@ ScanOptions scanOptions = ScanOptions.newBuilder()
                                                   .compressionQuality( 100 )
                                                   .externalStorage( false )
                                                   .build() )
-                                           .edgeDetectionConfiguration( EdgeDetectionConfiguration.defaults() )
+                                           .edgeDetectionConfiguration( new EdgeDetectionConfiguration() )
                                           .scanBarcode( true )
                                           .logoDetection( true )
                                           .build();
