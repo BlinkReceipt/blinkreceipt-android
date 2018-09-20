@@ -60,3 +60,7 @@
 
 - Memory Optimizations
 - Bug fixes
+
+## 1.1.3
+
+- Bug fixes

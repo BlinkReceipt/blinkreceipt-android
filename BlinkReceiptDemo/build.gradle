@@ -18,8 +18,8 @@ buildscript {
             'espresso' : '3.0.2',
             'easyPermissions' : '1.2.0',
             'versionMajor': 1,
-            'versionMinor': 0,
-            'versionPatch': 1
+            'versionMinor': 1,
+            'versionPatch': 3
     ]
 
     repositories {
