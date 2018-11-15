@@ -18,7 +18,10 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Adding Product Intelligence](#intelligence)
 * [Adding Google Places](#google)
 * [Adding Yelp](#yelp)
+* [Adding Amazon](#amazon)
+* [Adding Gmail](#gmail)
 * [Processor Configuration Considerations](#processorConfigurations)
+* [Android OS Support](#androidos)
 
 ## AAR
 The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
@@ -327,6 +330,99 @@ If you wish to include Yelp functionality within your project add your license k
             android:name="com.microblink.YelpKey"
             android:value="YELP KEY"/>
 ```
+
+## <a name=gmail></a>Gmail
+If you wish to include Gmail functionality within your project.
+
+`Dependencies`
+```
+dependencies {
+    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation "com.google.apis:google-api-services-gmail:v1-rev96-1.25.0" exclude module: 'httpclient'
+    implementation "com.google.android.gms:play-services-tasks:16.0.1"
+
+    implementation "com.google.api-client:google-api-client-android:1.25.0" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.25.0" exclude module: 'httpclient'
+}
+
+```
+
+`Callback`
+```
+GmailInboxManager.getInstance( this ).callback( object : GmailInboxCallback {
+
+    override fun onComplete( results: MutableList<ScanResults> ) {
+    }
+
+    override fun onSignedOut() {
+        
+    }
+
+    override fun onException( e: GmailInboxException ) {
+        
+    }
+
+    override fun onSignedIn() {
+        
+    }
+
+} )
+```
+
+`Client ID (OAuth 2.0 web application client ID)`
+```
+GmailInboxManager.getInstance( this ).clientId( getString( R.string.client_id ) )
+```
+
+`Lifecycle Management`
+```
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        GmailInboxManager.getInstance( this ).onActivityResult( requestCode, resultCode, data )
+    }
+```
+
+`Sign In`
+```
+  GmailInboxManager.getInstance( this ).signIn( this )
+```
+
+`Sign Out`
+```
+   GmailInboxManager.getInstance( this ).signOut()
+```
+
+`Read Inbox`
+```
+ GmailInboxManager.getInstance( this ).readInbox( this )
+```
+
+## <a name=amazon></a>Amazon
+If you wish to include Amazon functionality within your project. Note: Amazon functionality targets KitKat and above.
+
+`Credentials`
+```
+AmazonManager.getInstance( this ).credentials( AmazonCredentials( "AMAZON_EMAIL", "AMAZON_PASSWORD" ) )
+
+```
+
+`Orders`
+```
+AmazonManager.getInstance( this ).orders( object: AmazonCallback {
+
+        override fun onComplete(orders: List<ScanResults>?) {
+        }
+
+        override fun onException( e: AmazonException) {
+        }
+
+    } )
+```
+
+## <a name=androidos></a> Android OS Support
+
+BlinkReceipt is distributed with support for Android minSdk version 16
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations
 

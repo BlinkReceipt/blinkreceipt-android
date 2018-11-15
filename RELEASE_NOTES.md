@@ -64,3 +64,9 @@
 ## 1.1.3
 
 - Bug fixes
+
+## 1.1.4
+
+- Voided Products
+- Duplicate Detection
+- Bug fixes
