@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.blinkreceipt.ocr.R;
+import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.CameraScanItems;
@@ -25,11 +26,9 @@ import com.microblink.IntentUtils;
 import com.microblink.Media;
 import com.microblink.Product;
 import com.microblink.ScanResults;
-import com.microblink.extensions.Utility;
 
 import java.util.List;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -103,7 +102,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public boolean onOptionsItemSelected (MenuItem item ) {
         switch( item.getItemId() ) {
             case R.id.camera:
-                askForPermissions();
+                if ( EasyPermissions.hasPermissions( this, requestPermissions ) ) {
+                    startCameraScanForResult();
+                } else {
+                    EasyPermissions.requestPermissions(this, getString( R.string.permissions_rationale ),
+                            PERMISSIONS_REQUEST_CODE, requestPermissions );
+                }
 
                 return true;
             default:
@@ -155,18 +159,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         }
     }
 
-    @AfterPermissionGranted( PERMISSIONS_REQUEST_CODE )
-    private void askForPermissions() {
-        if ( EasyPermissions.hasPermissions( this, requestPermissions ) ) {
-            startCameraScanForResult();
-        } else {
-            EasyPermissions.requestPermissions(this, getString( R.string.permissions_rationale ),
-                    PERMISSIONS_REQUEST_CODE, requestPermissions );
-        }
-    }
-
     private void startCameraScanForResult() {
-        startActivityForResult( IntentUtils.cameraScan( this, viewModel.scanOptions() ), CAMERA_SCAN_REQUEST_CODE );
+       try {
+           startActivityForResult( IntentUtils.cameraScan( this, viewModel.scanOptions() ), CAMERA_SCAN_REQUEST_CODE );
+       } catch ( Exception e ) {
+           Toast.makeText( this, e.toString(), Toast.LENGTH_LONG ).show();
+       }
     }
 
 }

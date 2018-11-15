@@ -119,7 +119,13 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
                 regionOfInterest
         }, true );
 
-        recognizerView.initialize(( ScanOptions) getIntent().getParcelableExtra( MainActivity.SCAN_OPTIONS_EXTRA ) );
+        try {
+            recognizerView.initialize(( ScanOptions) getIntent().getParcelableExtra( MainActivity.SCAN_OPTIONS_EXTRA ) );
+        } catch ( Exception e ) {
+            Toast.makeText( this, e.toString(), Toast.LENGTH_LONG ).show();
+
+            finish();
+        }
 
         recognizerView.create();
     }
@@ -165,7 +171,11 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         super.onDestroy();
 
         if ( recognizerView != null ) {
-            recognizerView.destroy();
+           try {
+               recognizerView.destroy();
+           } catch ( Exception e ) {
+               Log.e( TAG, e.toString() );
+           }
         }
     }
 

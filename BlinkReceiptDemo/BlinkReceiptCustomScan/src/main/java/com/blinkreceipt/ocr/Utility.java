@@ -1,4 +1,4 @@
-package com.microblink.extensions;
+package com.blinkreceipt.ocr;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -17,7 +17,7 @@ public class Utility {
         return (c == null) || (c.size() == 0);
     }
 
-    public static void cancel( @NonNull Cancelable ... cancelable ) {
+    public static void cancel( @NonNull Cancelable... cancelable ) {
         try {
             if ( cancelable.length > 0 ) {
                 for ( Cancelable item : cancelable ) {

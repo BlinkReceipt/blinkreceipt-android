@@ -6,12 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
 import android.util.Log;
 
+import com.blinkreceipt.ocr.OnNullableCompleteListener;
 import com.microblink.CameraOrientation;
 import com.microblink.Media;
 import com.microblink.Recognizer;
 import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
-import com.microblink.extensions.OnNullableCompleteListener;
 
 public final class RecognizerServiceImpl implements RecognizerService {
 

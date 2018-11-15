@@ -9,7 +9,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.microblink.extensions.OnNullableCompleteListener;
+import com.blinkreceipt.ocr.OnNullableCompleteListener;
 
 public final class BitmapServiceImpl implements BitmapService {
 

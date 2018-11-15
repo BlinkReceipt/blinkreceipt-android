@@ -8,12 +8,12 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.blinkreceipt.ocr.AndroidRepository;
+import com.blinkreceipt.ocr.Cancelable;
+import com.blinkreceipt.ocr.OnNullableCompleteListener;
+import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.services.BitmapService;
 import com.blinkreceipt.ocr.services.BitmapServiceImpl;
-import com.microblink.extensions.AndroidRepository;
-import com.microblink.extensions.Cancelable;
-import com.microblink.extensions.OnNullableCompleteListener;
-import com.microblink.extensions.Utility;
 
 public final class BitmapRepository extends AndroidRepository implements Cancelable {
 

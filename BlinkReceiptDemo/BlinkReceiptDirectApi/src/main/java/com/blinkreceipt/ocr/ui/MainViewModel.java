@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
 
+import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.repositories.BitmapRepository;
 import com.blinkreceipt.ocr.repositories.RecognizerRepository;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
@@ -20,7 +21,6 @@ import com.microblink.Media;
 import com.microblink.Retailer;
 import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
-import com.microblink.extensions.Utility;
 
 public class MainViewModel extends AndroidViewModel {
 

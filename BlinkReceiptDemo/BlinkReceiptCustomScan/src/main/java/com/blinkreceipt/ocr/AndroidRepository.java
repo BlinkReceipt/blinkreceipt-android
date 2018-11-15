@@ -1,4 +1,4 @@
-package com.microblink.extensions;
+package com.blinkreceipt.ocr;
 
 import android.annotation.SuppressLint;
 import android.app.Application;

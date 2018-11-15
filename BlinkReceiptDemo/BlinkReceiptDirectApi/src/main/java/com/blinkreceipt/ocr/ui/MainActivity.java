@@ -22,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.blinkreceipt.ocr.R;
+import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
@@ -29,7 +30,6 @@ import com.microblink.CameraOrientation;
 import com.microblink.Media;
 import com.microblink.Product;
 import com.microblink.ScanResults;
-import com.microblink.extensions.Utility;
 
 import java.util.List;
 

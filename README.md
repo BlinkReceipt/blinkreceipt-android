@@ -28,7 +28,7 @@ To add sdk to your android project please add the following to your dependency s
 
 ```
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
@@ -75,8 +75,6 @@ ScanOptions scanOptions = ScanOptions.newBuilder()
                                                   .compressionQuality( 100 )
                                                   .externalStorage( false )
                                                   .build() )
-                                           .edgeDetectionConfiguration( new EdgeDetectionConfiguration() )
-                                          .scanBarcode( true )
                                           .logoDetection( true )
                                           .build();
 

@@ -8,15 +8,15 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.util.Pair;
 
+import com.blinkreceipt.ocr.AndroidRepository;
+import com.blinkreceipt.ocr.Cancelable;
+import com.blinkreceipt.ocr.OnNullableCompleteListener;
 import com.blinkreceipt.ocr.services.RecognizerService;
 import com.blinkreceipt.ocr.services.RecognizerServiceImpl;
 import com.microblink.CameraOrientation;
 import com.microblink.Media;
 import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
-import com.microblink.extensions.AndroidRepository;
-import com.microblink.extensions.Cancelable;
-import com.microblink.extensions.OnNullableCompleteListener;
 
 public final class RecognizerRepository extends AndroidRepository implements Cancelable {
 
