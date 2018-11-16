@@ -30,6 +30,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <meta-data
+            android:name="com.microblink.LicenseKey"
+            android:value="ENTER KEY HERE" />
+
     </application>
 
 </manifest>

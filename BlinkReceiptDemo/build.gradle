@@ -19,7 +19,13 @@ buildscript {
             'easyPermissions' : '2.0.0',
             'versionMajor': 1,
             'versionMinor': 1,
-            'versionPatch': 3
+            'versionPatch': 4
+    ]
+
+    ext.keys = [
+            'keyPassword' : 'b11nkREcei9tDem0s@2016',
+            'storePassword' : 'b11nkREceiPtDemos@2016',
+            'keyAlias' : 'blinkReceiptDemos'
     ]
 
     repositories {

@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.microblink.LicenseKey"
+            android:value="ENTER KEY HERE" />
+
     </application>
 
 </manifest>

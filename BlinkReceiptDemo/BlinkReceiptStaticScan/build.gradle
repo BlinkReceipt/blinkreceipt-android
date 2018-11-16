@@ -16,9 +16,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("../blink-receipt-demos.jsk")
+            storePassword "${keys.storePassword}"
+            keyAlias "${keys.keyAlias}"
+            keyPassword "${keys.keyPassword}"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -47,4 +58,5 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:${versions.archLifecycle}"
 
     implementation project(':LibBlinkReceipt')
+
 }
