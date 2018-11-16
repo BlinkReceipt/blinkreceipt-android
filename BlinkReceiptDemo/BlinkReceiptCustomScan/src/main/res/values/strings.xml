@@ -9,5 +9,6 @@
     <string name="finish_scan">Finish</string>
     <string name="captured_photo">Captured Photo!</string>
     <string name="finishing">Finishing!</string>
+    <string name="scan_results_error">Unable to find scan results!</string>
 
 </resources>

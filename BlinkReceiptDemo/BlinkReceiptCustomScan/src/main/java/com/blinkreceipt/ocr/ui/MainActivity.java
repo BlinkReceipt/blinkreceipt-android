@@ -130,11 +130,15 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             case CAMERA_SCAN_REQUEST_CODE:
                 switch ( resultCode ) {
                     case Activity.RESULT_OK:
-                        ScanResults results = data.getParcelableExtra( IntentUtils.DATA_EXTRA );
+                        if ( data != null ) {
+                            ScanResults results = data.getParcelableExtra( IntentUtils.DATA_EXTRA );
 
-                        Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
+                            Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
 
-                        viewModel.scanItems( new CameraScanItems( results, media ) );
+                            viewModel.scanItems( new CameraScanItems( results, media ) );
+                        } else {
+                            Toast.makeText( this, getString( R.string.scan_results_error ), Toast.LENGTH_LONG ).show();
+                        }
 
                         break;
                 }

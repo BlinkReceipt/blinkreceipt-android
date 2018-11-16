@@ -5,5 +5,6 @@
     <string name="permissions_rationale">Camera permission is required to perform scan!</string>
     <string name="no_products_found_on_receipt">No product found on receipt!</string>
     <string name="total_price">$%.2f</string>
+    <string name="scan_results_error">Unable to find scan results!</string>
 
 </resources>
