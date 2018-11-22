@@ -6,7 +6,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
 
-import com.blinkreceipt.ocr.transfer.CameraScanItems;
+import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
 import com.microblink.Retailer;
@@ -16,7 +16,7 @@ public class MainViewModel extends AndroidViewModel {
 
     private ScanOptions scanOptions;
 
-    private MutableLiveData<CameraScanItems> scanItems = new MutableLiveData<>();
+    private MutableLiveData<RecognizerResults> scanItems = new MutableLiveData<>();
 
     public MainViewModel( @NonNull Application application ) {
         super( application );
@@ -30,15 +30,15 @@ public class MainViewModel extends AndroidViewModel {
                 .build();
     }
 
-    public void scanItems( @NonNull CameraScanItems item ) {
+    void scanItems(@NonNull RecognizerResults item) {
         scanItems.setValue( item );
     }
 
-    public LiveData<CameraScanItems> scanItems() {
+    LiveData<RecognizerResults> scanItems() {
         return scanItems;
     }
 
-    public ScanOptions scanOptions() {
+    ScanOptions scanOptions() {
         return scanOptions;
     }
 

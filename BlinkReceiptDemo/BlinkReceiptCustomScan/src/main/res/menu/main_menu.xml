@@ -8,4 +8,10 @@
         android:title="@string/camera_menu_title"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/sdk_version"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/sdk_version_menu_title"
+        app:showAsAction="ifRoom" />
+
 </menu>

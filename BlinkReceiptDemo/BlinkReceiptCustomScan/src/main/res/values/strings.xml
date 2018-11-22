@@ -10,5 +10,7 @@
     <string name="captured_photo">Captured Photo!</string>
     <string name="finishing">Finishing!</string>
     <string name="scan_results_error">Unable to find scan results!</string>
+    <string name="sdk_version_menu_title">SDK Version</string>
+    <string name="sdk_version_dialog_title">SDK Version</string>
 
 </resources>

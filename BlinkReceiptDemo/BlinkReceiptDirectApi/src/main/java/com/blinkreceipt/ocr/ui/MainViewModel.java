@@ -9,18 +9,16 @@ import android.arch.lifecycle.Transformations;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.v4.util.Pair;
 
 import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.repositories.BitmapRepository;
 import com.blinkreceipt.ocr.repositories.RecognizerRepository;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
+import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
-import com.microblink.Media;
 import com.microblink.Retailer;
 import com.microblink.ScanOptions;
-import com.microblink.ScanResults;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -34,11 +32,11 @@ public class MainViewModel extends AndroidViewModel {
 
     private MutableLiveData<RecognizeItem> item = new MutableLiveData<>();
 
-    private LiveData<Pair<ScanResults,Media>> results = Transformations.switchMap( item,
-            new Function<RecognizeItem, LiveData<Pair<ScanResults,Media>>>() {
+    private LiveData<RecognizerResults> results = Transformations.switchMap( item,
+            new Function<RecognizeItem, LiveData<RecognizerResults>>() {
 
                 @Override
-                public LiveData<Pair<ScanResults,Media>> apply( RecognizeItem data ) {
+                public LiveData<RecognizerResults> apply(RecognizeItem data ) {
                     if ( recognizerRepository == null ) {
                         recognizerRepository = new RecognizerRepository( getApplication() );
                     }
@@ -78,19 +76,19 @@ public class MainViewModel extends AndroidViewModel {
         return bitmap;
     }
 
-    public LiveData<Pair<ScanResults, Media>> results() {
+    LiveData<RecognizerResults> results() {
         return results;
     }
 
-    public void uri( @NonNull Uri uri ) {
+    void uri(@NonNull Uri uri) {
         this.uri.setValue( uri );
     }
 
-    public void recognizeItem( @NonNull RecognizeItem data ) {
+    void recognizeItem(@NonNull RecognizeItem data) {
         item.setValue( data );
     }
 
-    public ScanOptions scanOptions() {
+    ScanOptions scanOptions() {
         return scanOptions;
     }
 

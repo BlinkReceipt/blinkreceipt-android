@@ -3,11 +3,12 @@ package com.blinkreceipt.ocr.ui;
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.Nullable;
-import android.support.v4.util.Pair;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -26,9 +27,10 @@ import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
+import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.CameraOrientation;
-import com.microblink.Media;
 import com.microblink.Product;
+import com.microblink.ReceiptSdk;
 import com.microblink.ScanResults;
 
 import java.util.List;
@@ -71,21 +73,39 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter( adapter );
 
-        viewModel.results().observe(this, new Observer<Pair<ScanResults, Media>>() {
+        viewModel.results().observe(this, new Observer<RecognizerResults>() {
 
             @Override
-            public void onChanged( @Nullable Pair<ScanResults, Media> data ) {
+            public void onChanged( @Nullable RecognizerResults data ) {
                 hideProgress();
 
                 if ( data != null ) {
-                    List<Product> products = presenter.products( data.first );
+                    Throwable e = data.e();
+
+                    if ( e != null ) {
+                        Toast.makeText( MainActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
+
+                        return;
+                    }
+
+                    ScanResults results = data.results();
+
+                    if ( results == null ) {
+                        Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+
+                        return;
+                    }
+
+                    List<Product> products = presenter.products( results );
 
                     if ( !Utility.isNullOrEmpty( products ) ) {
                         adapter.addAll( products );
-                    } else {
-                        Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+
+                        return;
                     }
                 }
+
+                Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
             }
 
         } );
@@ -121,6 +141,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected (MenuItem item ) {
         switch( item.getItemId() ) {
+            case R.id.sdk_version:
+                new AlertDialog.Builder( this )
+                        .setTitle( R.string.sdk_version_dialog_title )
+                        .setMessage( ReceiptSdk.versionName() )
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick( DialogInterface dialog, int which ) {
+                                dialog.dismiss();
+                            }
+
+                        } )
+                        .create()
+                        .show();
+
+                return true;
             case R.id.camera:
                 startActivityForResult( Intent.createChooser( new Intent()
                                 .setType( "image/*" )

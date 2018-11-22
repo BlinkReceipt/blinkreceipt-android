@@ -4,9 +4,11 @@ import android.Manifest;
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -21,10 +23,11 @@ import com.blinkreceipt.ocr.R;
 import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
-import com.blinkreceipt.ocr.transfer.CameraScanItems;
+import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.IntentUtils;
 import com.microblink.Media;
 import com.microblink.Product;
+import com.microblink.ReceiptSdk;
 import com.microblink.ScanResults;
 
 import java.util.List;
@@ -70,12 +73,21 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         recyclerView.setAdapter( adapter );
 
-        viewModel.scanItems().observe(this, new Observer<CameraScanItems>() {
+        viewModel.scanItems().observe(this, new Observer<RecognizerResults>() {
 
             @Override
-            public void onChanged( @Nullable CameraScanItems items ) {
-                if ( items != null ) {
-                    List<Product> products = presenter.products( items );
+            public void onChanged( @Nullable RecognizerResults results ) {
+                if ( results != null ) {
+                    if ( presenter.exception( results ) ) {
+                        Throwable e = results.e();
+
+                        Toast.makeText( MainActivity.this, e != null ? e.toString() :
+                                getString( R.string.no_products_found_on_receipt ), Toast.LENGTH_LONG ).show();
+
+                        return;
+                    }
+
+                    List<Product> products = presenter.products( results );
 
                     if ( Utility.isNullOrEmpty( products ) ) {
                         Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
@@ -84,7 +96,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     }
 
                     adapter.addAll( products );
-
+                } else {
+                    Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
                 }
             }
 
@@ -104,6 +117,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     @Override
     public boolean onOptionsItemSelected (MenuItem item ) {
         switch( item.getItemId() ) {
+            case R.id.sdk_version:
+                new AlertDialog.Builder( this )
+                        .setTitle( R.string.sdk_version_dialog_title )
+                        .setMessage( ReceiptSdk.versionName() )
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick( DialogInterface dialog, int which ) {
+                                dialog.dismiss();
+                            }
+
+                        } )
+                        .create()
+                        .show();
+
+                return true;
             case R.id.camera:
                 if ( EasyPermissions.hasPermissions( this, requestPermissions ) ) {
                     startCameraScanForResult();
@@ -135,9 +164,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
                             Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
 
-                            viewModel.scanItems( new CameraScanItems( results, media ) );
+                            viewModel.scanItems( new RecognizerResults( results, media ) );
                         } else {
-                            Toast.makeText( this, getString( R.string.scan_results_error ), Toast.LENGTH_LONG ).show();
+                            viewModel.scanItems( new RecognizerResults( new Exception( getString( R.string.scan_results_error ) ) ) );
                         }
 
                         break;

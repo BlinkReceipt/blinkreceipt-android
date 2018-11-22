@@ -3,10 +3,10 @@ package com.blinkreceipt.ocr.services;
 import android.app.Application;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
-import android.support.v4.util.Pair;
 import android.util.Log;
 
 import com.blinkreceipt.ocr.OnNullableCompleteListener;
+import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.CameraOrientation;
 import com.microblink.Media;
 import com.microblink.Recognizer;
@@ -25,8 +25,8 @@ public final class RecognizerServiceImpl implements RecognizerService {
     }
 
     @Override
-    public void recognize( @NonNull ScanOptions options, @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation,
-                           final @NonNull OnNullableCompleteListener<Pair<ScanResults,Media>> listener  ) {
+    public void recognize(@NonNull ScanOptions options, @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation,
+                          final @NonNull OnNullableCompleteListener<RecognizerResults> listener  ) {
         try {
             Recognizer.getInstance().initialize( options );
 
@@ -36,7 +36,7 @@ public final class RecognizerServiceImpl implements RecognizerService {
                         public void onRecognizerDone(@NonNull final ScanResults results, @NonNull final Media media ) {
                             super.onRecognizerDone( results, media );
 
-                            listener.onComplete(new Pair<>( results, media ) );
+                            listener.onComplete( new RecognizerResults( results, media ) );
                         }
 
                         @Override
@@ -45,13 +45,13 @@ public final class RecognizerServiceImpl implements RecognizerService {
 
                             Log.e( TAG, throwable.toString() );
 
-                            listener.onComplete( null );
+                            listener.onComplete( new RecognizerResults( throwable ) );
                         }
                     }, orientation, bitmap ) ;
         } catch ( Throwable e ) {
             Log.e( TAG, e.toString() );
 
-            listener.onComplete( null );
+            listener.onComplete( new RecognizerResults( e ) );
         }
     }
 
