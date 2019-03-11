@@ -22,6 +22,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Adding Gmail](#gmail)
 * [Processor Configuration Considerations](#processorConfigurations)
 * [Android OS Support](#androidos)
+* [Auto Configuration](#autoConfiguration)
 
 ## AAR
 The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
@@ -32,18 +33,18 @@ To add sdk to your android project please add the following to your dependency s
 ```
 dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.13.1'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     
-    implementation 'com.squareup.okio:okio:1.15.0'
+    implementation 'com.squareup.okio:okio:2.2.2'
 }
 ```
 
@@ -81,7 +82,12 @@ ScanOptions scanOptions = ScanOptions.newBuilder()
                                           .logoDetection( true )
                                           .build();
 
-Intent intent = IntentUtils.cameraScan( this, scanOptions );
+Bundle bundle = new Bundle();
+
+bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
+
+Intent intent = new Intent( this, CameraScanActivity.class )
+                .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );
 
 startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
 ```
@@ -94,9 +100,9 @@ The results are returned through 2 objects, which can be retrieved by getting th
     super.onActivityResult(requestCode, resultCode, data);
 
     if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
-        ScanResults brScanResults = data.getParcelableExtra( IntentUtils.DATA_EXTRA );
+        ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );
 
-        Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
+        Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA );
     }
  }
 ```
@@ -104,21 +110,29 @@ The results are returned through 2 objects, which can be retrieved by getting th
 ### <a name=customizeScanActivity></a> Customize Camera Scan Activity
 The camera scan activity baked into the sdk contains numerous configurations that can be controlled via intent extras.
 
-`IntentUtils.SCAN_OPTIONS_EXTRA` : ScanOptions : (Recommended) Extra recommended to properly scan receipt.
+`CameraScanActivity.SCAN_OPTIONS_EXTRA` : ScanOptions : (Recommended) Extra recommended to properly scan receipt.
 
-`IntentUtils.FULL_SCREEN_EXTRA` : boolean : Extra to have the activity be a full screen activity. `false` by default.
+`CameraScanActivity.FULL_SCREEN_EXTRA` : boolean : Extra to have the activity be a full screen activity. `false` by default.
 
-`IntentUtils.KEEP_SCREEN_ON_EXTRA`: boolean : Extra to keep screen on while scanning session in progress. `false` by default.
+`CameraScanActivity.KEEP_SCREEN_ON_EXTRA`: boolean : Extra to keep screen on while scanning session in progress. `false` by default.
 
-`IntentUtils.ENABLE_ENHANCED_AUTO_FOCUS`: boolean : Enable enhanced autofocus for camera during scan session. `false` by default.
+`CameraScanActivity.ENABLE_ENHANCED_AUTO_FOCUS`: boolean : Enable enhanced autofocus for camera during scan session. `false` by default.
 
-`IntentUtils.LICENSE_KEY_EXTRA`: String : Alternative way to initialize SDK if not done through default method.
+`CameraScanActivity.LICENSE_KEY_EXTRA`: String : Alternative way to initialize SDK if not done through default method.
 
-`IntentUtils.VIEW_PORT_EXTRA`: RectF : Defines the region in which we want to scan on the frame. The properties of the RectF are defined as a percentage of the screen.
+`CameraScanActivity.VIEW_PORT_EXTRA`: RectF : Defines the region in which we want to scan on the frame. The properties of the RectF are defined as a percentage of the screen.
 
-`IntentUtils.VIDEO_RESOLUTION_EXTRA` : VideoResolutionPreset : Video resolution preset extra for camera.
+`CameraScanActivity.VIDEO_RESOLUTION_EXTRA` : VideoResolutionPreset : Video resolution preset extra for camera.
 
-`IntentUtils.CAMERA_RECOGNIZER_CALLBACK_EXTRA` : CameraRecognizerCallback : Interface passed in as a parcelable extra, that will receive every recognizer's result.
+`CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA` : CameraRecognizerCallback : Interface passed in as a parcelable extra, that will receive every recognizer's result.
+
+UI Dimens
+
+`<?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
+     <dimen name="camera_scan_take_picture_size">60dp</dimen>
+ </resources>`
 
 ### <a name=customizeScanSession></a> Customize Scan Configuration
 Want to see your captured frames? save scanned results? include barcode recognition? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.
@@ -338,7 +352,7 @@ If you wish to include Gmail functionality within your project.
 ```
 dependencies {
     implementation "com.google.android.gms:play-services-auth:16.0.1"
-    implementation "com.google.apis:google-api-services-gmail:v1-rev96-1.25.0" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev98-1.25.0" exclude module: 'httpclient'
     implementation "com.google.android.gms:play-services-tasks:16.0.1"
 
     implementation "com.google.api-client:google-api-client-android:1.25.0" exclude module: 'httpclient'
@@ -423,6 +437,17 @@ AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 ## <a name=androidos></a> Android OS Support
 
 BlinkReceipt is distributed with support for Android minSdk version 16
+
+## <a name=autoConfiguration></a> Auto Configuration
+
+Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration to disable auto configuration.
+
+`AndroidManifest.xml`
+```
+ <meta-data
+    android:name="com.microblink.AutoConfiguration"
+    android:value="false" />
+```
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations
 

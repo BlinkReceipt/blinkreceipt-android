@@ -1,19 +1,9 @@
 package com.blinkreceipt.ocr.ui;
 
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,13 +17,19 @@ import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizeItem;
-import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.CameraOrientation;
 import com.microblink.Product;
 import com.microblink.ReceiptSdk;
 import com.microblink.ScanResults;
 
 import java.util.List;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,60 +69,50 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter( adapter );
 
-        viewModel.results().observe(this, new Observer<RecognizerResults>() {
+        viewModel.results().observe(this, data -> {
+            hideProgress();
 
-            @Override
-            public void onChanged( @Nullable RecognizerResults data ) {
-                hideProgress();
+            if ( data != null ) {
+                Throwable e = data.e();
 
-                if ( data != null ) {
-                    Throwable e = data.e();
-
-                    if ( e != null ) {
-                        Toast.makeText( MainActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
-
-                        return;
-                    }
-
-                    ScanResults results = data.results();
-
-                    if ( results == null ) {
-                        Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
-
-                        return;
-                    }
-
-                    List<Product> products = presenter.products( results );
-
-                    if ( !Utility.isNullOrEmpty( products ) ) {
-                        adapter.addAll( products );
-
-                        return;
-                    }
-                }
-
-                Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
-            }
-
-        } );
-
-        viewModel.bitmap().observe(this, new Observer<Bitmap>() {
-
-            @Override
-            public void onChanged( @Nullable Bitmap bitmap ) {
-                if ( bitmap == null ) {
-                    hideProgress();
-
-                    Toast.makeText( MainActivity.this, R.string.bitmap_not_found, Toast.LENGTH_LONG ).show();
+                if ( e != null ) {
+                    Toast.makeText( MainActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
 
                     return;
                 }
 
-                viewModel.recognizeItem( new RecognizeItem( viewModel.scanOptions(),
-                        bitmap, CameraOrientation.ORIENTATION_PORTRAIT ) );
+                ScanResults results = data.results();
+
+                if ( results == null ) {
+                    Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+
+                    return;
+                }
+
+                List<Product> products = presenter.products( results );
+
+                if ( !Utility.isNullOrEmpty( products ) ) {
+                    adapter.addAll( products );
+
+                    return;
+                }
             }
 
-        } );
+            Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+        });
+
+        viewModel.bitmap().observe(this, bitmap -> {
+            if ( bitmap == null ) {
+                hideProgress();
+
+                Toast.makeText( MainActivity.this, R.string.bitmap_not_found, Toast.LENGTH_LONG ).show();
+
+                return;
+            }
+
+            viewModel.recognizeItem( new RecognizeItem( viewModel.scanOptions(),
+                    bitmap, CameraOrientation.ORIENTATION_PORTRAIT ) );
+        });
     }
 
     @Override
@@ -145,14 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 new AlertDialog.Builder( this )
                         .setTitle( R.string.sdk_version_dialog_title )
                         .setMessage( ReceiptSdk.versionName() )
-                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick( DialogInterface dialog, int which ) {
-                                dialog.dismiss();
-                            }
-
-                        } )
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
                         .create()
                         .show();
 

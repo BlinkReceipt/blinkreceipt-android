@@ -70,3 +70,10 @@
 - Voided Products
 - Duplicate Detection
 - Bug fixes
+
+# 1.1.5
+
+- Auto configuration can now be disabled by adding a meta data id to the manifest.
+- Duplicate blink receipt id for duplicate receipts.
+- Merchant guess
+- Payment method returns Payment Method, Card Type, Card Issuer

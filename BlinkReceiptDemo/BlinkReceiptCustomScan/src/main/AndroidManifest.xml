@@ -5,7 +5,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -32,7 +36,7 @@
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="ENTER KEY HERE" />
+            android:value="sRwAAAAUY29tLmJsaW5rcmVjZWlwdC5vY3L7sc45EaElcQC0phbE3JstvhJ8Sbo97l5ls+XQsLKWj1TjPfOAK4RlUb/BI7PmAymVuXRKFxclU8fr5zHOwux4sB2TTclmwUx0x7NmGTz99AnsG9Z4XotUMiPmJCvccRemXq8vVhwEa4FUorDzyA4lDqIty7jORMhKBIto9KacCOrGgG4PQA==" />
 
     </application>
 

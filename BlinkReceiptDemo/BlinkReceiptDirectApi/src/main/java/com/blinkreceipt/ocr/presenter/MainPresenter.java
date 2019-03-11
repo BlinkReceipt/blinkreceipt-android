@@ -1,11 +1,11 @@
 package com.blinkreceipt.ocr.presenter;
 
-import android.support.annotation.Nullable;
-
 import com.microblink.Product;
 import com.microblink.ScanResults;
 
 import java.util.List;
+
+import androidx.annotation.Nullable;
 
 public final class MainPresenter {
 

@@ -2,7 +2,6 @@ package com.blinkreceipt.ocr.services;
 
 import android.app.Application;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.blinkreceipt.ocr.OnNullableCompleteListener;
@@ -12,6 +11,8 @@ import com.microblink.Media;
 import com.microblink.Recognizer;
 import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
+
+import androidx.annotation.NonNull;
 
 public final class RecognizerServiceImpl implements RecognizerService {
 

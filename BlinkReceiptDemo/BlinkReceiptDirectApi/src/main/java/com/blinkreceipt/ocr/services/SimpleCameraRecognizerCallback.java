@@ -1,6 +1,5 @@
 package com.blinkreceipt.ocr.services;
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.microblink.CameraRecognizerCallback;
@@ -9,6 +8,8 @@ import com.microblink.RecognizerResult;
 import com.microblink.ScanResults;
 
 import java.io.File;
+
+import androidx.annotation.NonNull;
 
 public class SimpleCameraRecognizerCallback implements CameraRecognizerCallback  {
 

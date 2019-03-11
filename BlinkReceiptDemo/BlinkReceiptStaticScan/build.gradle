@@ -34,29 +34,35 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     testImplementation "junit:junit:${versions.junit}"
 
-    androidTestImplementation "com.android.support.test:runner:${versions.androidTestRunner}"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation "com.android.support:appcompat-v7:${versions.googleSupport}"
-    implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
+    implementation "androidx.appcompat:appcompat:${versions.appCompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}"
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
-    implementation "android.arch.lifecycle:extensions:${versions.archLifecycle}"
+
     implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
-    implementation "com.android.support:recyclerview-v7:${versions.googleSupport}"
-    annotationProcessor "android.arch.lifecycle:compiler:${versions.archLifecycle}"
+
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 
     implementation project(':LibBlinkReceipt')
-
 }

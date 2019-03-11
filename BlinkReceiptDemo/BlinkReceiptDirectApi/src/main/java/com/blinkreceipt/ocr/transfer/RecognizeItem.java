@@ -1,10 +1,11 @@
 package com.blinkreceipt.ocr.transfer;
 
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
 
 import com.microblink.CameraOrientation;
 import com.microblink.ScanOptions;
+
+import androidx.annotation.NonNull;
 
 public final class RecognizeItem {
 

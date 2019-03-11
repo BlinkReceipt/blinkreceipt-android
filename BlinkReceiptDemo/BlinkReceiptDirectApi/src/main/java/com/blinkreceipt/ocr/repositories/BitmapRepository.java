@@ -1,19 +1,18 @@
 package com.blinkreceipt.ocr.repositories;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import com.blinkreceipt.ocr.AndroidRepository;
 import com.blinkreceipt.ocr.Cancelable;
-import com.blinkreceipt.ocr.OnNullableCompleteListener;
 import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.services.BitmapService;
 import com.blinkreceipt.ocr.services.BitmapServiceImpl;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 public final class BitmapRepository extends AndroidRepository implements Cancelable {
 
@@ -30,17 +29,10 @@ public final class BitmapRepository extends AndroidRepository implements Cancela
         this.service = service;
     }
 
-    public LiveData<Bitmap> findByUri( @NonNull Uri uri ) {
+    public LiveData<Bitmap> findByUri(@NonNull Uri uri ) {
         final MutableLiveData<Bitmap> data = new MutableLiveData<>();
 
-        service.findByUri( uri, new OnNullableCompleteListener<Bitmap>() {
-
-            @Override
-            public void onComplete( @Nullable Bitmap bitmap ) {
-                data.setValue( bitmap );
-            }
-
-        } );
+        service.findByUri( uri, data::setValue );
 
         return data;
     }

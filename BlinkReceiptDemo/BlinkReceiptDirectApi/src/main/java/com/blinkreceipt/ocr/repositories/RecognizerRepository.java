@@ -1,20 +1,19 @@
 package com.blinkreceipt.ocr.repositories;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import com.blinkreceipt.ocr.AndroidRepository;
 import com.blinkreceipt.ocr.Cancelable;
-import com.blinkreceipt.ocr.OnNullableCompleteListener;
 import com.blinkreceipt.ocr.services.RecognizerService;
 import com.blinkreceipt.ocr.services.RecognizerServiceImpl;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.CameraOrientation;
 import com.microblink.ScanOptions;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 public final class RecognizerRepository extends AndroidRepository implements Cancelable {
 
@@ -34,16 +33,8 @@ public final class RecognizerRepository extends AndroidRepository implements Can
     public LiveData<RecognizerResults> recognize(@NonNull ScanOptions options, @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation ) {
         final MutableLiveData<RecognizerResults> data = new MutableLiveData<>();
 
-        service.recognize( options, bitmap, orientation, new OnNullableCompleteListener<RecognizerResults>() {
-
-            @Override
-            public void onComplete( @Nullable RecognizerResults response ) {
-                //This is not on the main thread!
-
-                data.postValue( response );
-            }
-
-        } );
+        //This is not on the main thread!
+        service.recognize( options, bitmap, orientation, data::postValue);
 
         return data;
     }

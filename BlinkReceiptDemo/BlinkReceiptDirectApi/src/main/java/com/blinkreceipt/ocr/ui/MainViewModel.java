@@ -1,14 +1,8 @@
 package com.blinkreceipt.ocr.ui;
 
 import android.app.Application;
-import android.arch.core.util.Function;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Transformations;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 
 import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.repositories.BitmapRepository;
@@ -19,6 +13,13 @@ import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
 import com.microblink.Retailer;
 import com.microblink.ScanOptions;
+
+import androidx.annotation.NonNull;
+import androidx.arch.core.util.Function;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 
 public class MainViewModel extends AndroidViewModel {
 

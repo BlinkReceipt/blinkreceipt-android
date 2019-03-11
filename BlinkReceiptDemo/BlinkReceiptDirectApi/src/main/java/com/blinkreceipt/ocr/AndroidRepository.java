@@ -2,7 +2,8 @@ package com.blinkreceipt.ocr;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public class AndroidRepository {
 

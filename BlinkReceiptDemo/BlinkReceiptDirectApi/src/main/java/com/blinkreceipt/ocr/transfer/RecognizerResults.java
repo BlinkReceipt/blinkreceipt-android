@@ -1,10 +1,10 @@
 package com.blinkreceipt.ocr.transfer;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import com.microblink.Media;
 import com.microblink.ScanResults;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public final class RecognizerResults {
 

@@ -2,18 +2,8 @@ package com.blinkreceipt.ocr.ui;
 
 import android.Manifest;
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,7 +15,7 @@ import com.blinkreceipt.ocr.Utility;
 import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.IntentUtils;
+import com.microblink.CameraScanActivity;
 import com.microblink.Media;
 import com.microblink.Product;
 import com.microblink.ReceiptSdk;
@@ -33,6 +23,13 @@ import com.microblink.ScanResults;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -74,35 +71,30 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         recyclerView.setAdapter( adapter );
 
-        viewModel.scanItems().observe(this, new Observer<RecognizerResults>() {
+        viewModel.scanItems().observe(this, results -> {
+            if ( results != null ) {
+                if ( presenter.exception( results ) ) {
+                    Throwable e = results.e();
 
-            @Override
-            public void onChanged( @Nullable RecognizerResults results ) {
-                if ( results != null ) {
-                    if ( presenter.exception( results ) ) {
-                        Throwable e = results.e();
+                    Toast.makeText( MainActivity.this, e != null ? e.toString() :
+                            getString( R.string.no_products_found_on_receipt ), Toast.LENGTH_LONG ).show();
 
-                        Toast.makeText( MainActivity.this, e != null ? e.toString() :
-                                getString( R.string.no_products_found_on_receipt ), Toast.LENGTH_LONG ).show();
-
-                        return;
-                    }
-
-                    List<Product> products = presenter.products( results );
-
-                    if ( Utility.isNullOrEmpty( products ) ) {
-                        Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
-
-                       return;
-                    }
-
-                    adapter.addAll( products );
-                } else {
-                    Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+                    return;
                 }
-            }
 
-        } );
+                List<Product> products = presenter.products( results );
+
+                if ( Utility.isNullOrEmpty( products ) ) {
+                    Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+
+                   return;
+                }
+
+                adapter.addAll( products );
+            } else {
+                Toast.makeText( MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT ).show();
+            }
+        });
     }
 
     @Override
@@ -121,14 +113,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 new AlertDialog.Builder( this )
                         .setTitle( R.string.sdk_version_dialog_title )
                         .setMessage( ReceiptSdk.versionName() )
-                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick( DialogInterface dialog, int which ) {
-                                dialog.dismiss();
-                            }
-
-                        } )
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
                         .create()
                         .show();
 
@@ -160,9 +145,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 switch ( resultCode ) {
                     case Activity.RESULT_OK:
                         if ( data != null ) {
-                            ScanResults results = data.getParcelableExtra( IntentUtils.DATA_EXTRA );
+                            ScanResults results = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );
 
-                            Media media = data.getParcelableExtra( IntentUtils.MEDIA_EXTRA );
+                            Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA );
 
                             viewModel.scanItems( new RecognizerResults( results, media ) );
                         } else {
@@ -197,7 +182,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     private void startCameraScanForResult() {
        try {
-           startActivityForResult( IntentUtils.cameraScan( this, viewModel.scanOptions() ), CAMERA_SCAN_REQUEST_CODE );
+           final Bundle bundle = new Bundle();
+
+           bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, viewModel.scanOptions() );
+
+           startActivityForResult( new Intent( MainActivity.this, CameraScanActivity.class )
+                   .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle ),
+                   CAMERA_SCAN_REQUEST_CODE );
        } catch ( Exception e ) {
            Log.e( TAG, e.toString() );
        }

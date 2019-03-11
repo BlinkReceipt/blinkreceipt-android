@@ -1,9 +1,9 @@
 package com.blinkreceipt.ocr;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public interface OnNullableCompleteListener<T> {
 
-    void onComplete(@Nullable T response);
+    void onComplete( @Nullable T response );
 
 }

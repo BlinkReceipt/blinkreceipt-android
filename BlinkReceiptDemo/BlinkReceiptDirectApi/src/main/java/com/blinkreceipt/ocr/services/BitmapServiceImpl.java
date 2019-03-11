@@ -6,10 +6,11 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.blinkreceipt.ocr.OnNullableCompleteListener;
+
+import androidx.annotation.NonNull;
 
 public final class BitmapServiceImpl implements BitmapService {
 

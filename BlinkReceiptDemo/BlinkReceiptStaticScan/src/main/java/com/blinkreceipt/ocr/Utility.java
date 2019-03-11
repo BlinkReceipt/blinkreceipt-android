@@ -1,9 +1,10 @@
 package com.blinkreceipt.ocr;
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.util.Collection;
+
+import androidx.annotation.NonNull;
 
 public class Utility {
 

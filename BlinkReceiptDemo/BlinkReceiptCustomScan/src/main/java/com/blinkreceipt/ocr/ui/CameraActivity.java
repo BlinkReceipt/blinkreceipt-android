@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,16 +14,17 @@ import com.blinkreceipt.ocr.R;
 import com.microblink.BitmapResult;
 import com.microblink.CameraCaptureListener;
 import com.microblink.CameraRecognizerCallback;
-import com.microblink.IntentUtils;
+import com.microblink.CameraScanActivity;
 import com.microblink.Media;
 import com.microblink.RecognizerCompatibility;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
-import com.microblink.ScanOptions;
 import com.microblink.ScanResults;
-import com.microblink.camera.hardware.SuccessCallback;
 
 import java.io.File;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback {
 
@@ -49,65 +48,43 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
         finishScan = findViewById( R.id.finish_scan );
 
-        finishScan.setOnClickListener(new View.OnClickListener() {
+        finishScan.setOnClickListener(view -> {
+            try {
+                Toast.makeText( CameraActivity.this, R.string.finishing, Toast.LENGTH_SHORT ).show();
 
-            @Override
-            public void onClick(View view) {
-                try {
-                    Toast.makeText( CameraActivity.this, R.string.finishing, Toast.LENGTH_SHORT ).show();
+                view.setEnabled( false );
 
-                    view.setEnabled( false );
-
-                    recognizerView.finishedScanning();
-                } catch ( Exception e ) {
-                    Toast.makeText( CameraActivity.this, e.toString(), Toast.LENGTH_SHORT ).show();
-                }
-            }
-
-        } );
-
-        torch = findViewById( R.id.torch );
-
-        torch.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                recognizerView.setTorchState( !isTorchOn, new SuccessCallback() {
-
-                    @Override
-                    public void onOperationDone(boolean success) {
-                        if ( success ) {
-                            isTorchOn = !isTorchOn;
-                        }
-                    }
-
-                } );
+                recognizerView.finishedScanning();
+            } catch ( Exception e ) {
+                Toast.makeText( CameraActivity.this, e.toString(), Toast.LENGTH_SHORT ).show();
             }
         });
 
+        torch = findViewById( R.id.torch );
+
+        torch.setOnClickListener(v -> recognizerView.setTorchState( !isTorchOn, success -> {
+            if ( success ) {
+                isTorchOn = !isTorchOn;
+            }
+        }));
+
         final Button captureFrame = findViewById( R.id.capture_photo );
 
-        captureFrame.setOnClickListener(new View.OnClickListener() {
+        captureFrame.setOnClickListener(v -> recognizerView.takePicture(new CameraCaptureListener() {
 
             @Override
-            public void onClick(View v) {
-                recognizerView.takePicture( new CameraCaptureListener() {
+            public void onCaptured( @NonNull BitmapResult results ) {
+                recognizerView.confirmPicture( results );
 
-                    @Override
-                    public void onCaptured( @NonNull BitmapResult results ) {
-                        recognizerView.confirmPicture( results );
-
-                        Toast.makeText( CameraActivity.this, R.string.captured_photo, Toast.LENGTH_SHORT ).show();
-                    }
-
-                    @Override
-                    public void onException(@NonNull Exception e) {
-                        Toast.makeText( CameraActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
-                    }
-
-                } );
+                Toast.makeText( CameraActivity.this, R.string.captured_photo, Toast.LENGTH_SHORT ).show();
             }
-        } );
+
+            @Override
+            public void onException(@NonNull Exception e) {
+                Toast.makeText( CameraActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
+            }
+
+        } ));
 
         RectF regionOfInterest = RecognizerCompatibility.defaultRegionOfInterest();
 
@@ -120,7 +97,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         }, true );
 
         try {
-            recognizerView.initialize(( ScanOptions) getIntent().getParcelableExtra( MainActivity.SCAN_OPTIONS_EXTRA ) );
+            recognizerView.initialize( getIntent().getParcelableExtra( MainActivity.SCAN_OPTIONS_EXTRA ) );
         } catch ( Exception e ) {
             Toast.makeText( this, e.toString(), Toast.LENGTH_LONG ).show();
 
@@ -193,8 +170,8 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         finishScan.setEnabled( true );
 
         setResult( Activity.RESULT_OK, new Intent()
-                .putExtra( IntentUtils.DATA_EXTRA, results )
-                .putExtra( IntentUtils.MEDIA_EXTRA, media ) );
+                .putExtra( CameraScanActivity.DATA_EXTRA, results )
+                .putExtra( CameraScanActivity.MEDIA_EXTRA, media ) );
 
         finish();
     }
