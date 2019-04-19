@@ -62,7 +62,9 @@ dependencies {
 
     implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
 
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation project(':LibBlinkReceipt')
+
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 }

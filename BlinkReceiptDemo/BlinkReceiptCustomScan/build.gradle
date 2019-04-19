@@ -50,17 +50,21 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:${versions.appCompat}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}"
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}"
-    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
-    implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
 
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
+    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
+
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation project(':LibBlinkReceipt')
+
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 }

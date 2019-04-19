@@ -81,3 +81,11 @@
 # 1.1.6
 
 - The OkHttp 3.12.x branch supports Android 2.3+ (API level 9+) and Java 7+. These platforms lack support for TLS 1.2 and should not be used. But because upgrading is difficult we will backport critical fixes to the 3.12.x branch through December 31, 2020.
+
+# 1.1.7
+
+- minSDK 21
+- Target Java 8
+- Migrated to the latest receipt model
+- Improved purchase validation
+- Edge detection rect is now available in the public interface

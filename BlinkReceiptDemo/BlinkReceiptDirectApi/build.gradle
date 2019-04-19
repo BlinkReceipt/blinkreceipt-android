@@ -60,8 +60,11 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
 
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
+    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
+
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation project(':LibBlinkReceipt')
 
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 }

@@ -37,14 +37,16 @@ dependencies {
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.1'
     
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     
     implementation 'com.squareup.okio:okio:2.2.2'
+    
+    implementation "com.google.android.gms:play-services-tasks:16.0.1"
 }
 ```
 
@@ -147,7 +149,9 @@ Want to see your captured frames? save scanned results? include barcode recognit
 
 `edgeDetectionConfiguration( EdgeDetectionConfiguration configuration )`: The sdk's functionality includes edge detection. Here we can determine the edges of the receipt and therefore the content percentage of the receipt. This configurations allow for customized parameters to be set around what is acceptable criteria scanning a receipt. In the case of a low content percentage or below the defined threshold we display a helpful message to the user to let them know to move closer.
 
-`scanTimeout( int scanTimeout )`: Max time allotted to scan a frame, value is in milliseconds.
+`promotionSlugs( Utility.newArrayList( new Slug( "[NAME OF SLUG]" ) ) )`: If set, this configuration will validate promotions based on the configured slugs.
+
+`validatePromotions( true || false )`: If set to true, this configuration will validate promotions..
 
 ## <a name=results></a>Retrieving Results
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
@@ -436,7 +440,7 @@ AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 
 ## <a name=androidos></a> Android OS Support
 
-BlinkReceipt is distributed with support for Android minSdk version 16
+BlinkReceipt is distributed with support for Android minSdk version 21
 
 ## <a name=autoConfiguration></a> Auto Configuration
 
