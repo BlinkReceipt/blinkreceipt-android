@@ -89,3 +89,8 @@
 - Migrated to the latest receipt model
 - Improved purchase validation
 - Edge detection rect is now available in the public interface
+
+# 1.1.8
+
+- Purchase validation improvements
+- Bug Fixes
