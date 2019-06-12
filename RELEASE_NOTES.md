@@ -94,3 +94,9 @@
 
 - Purchase validation improvements
 - Bug Fixes
+
+# 1.1.9
+
+- Amazon account manager bug fix
+- Improved duplicate search engine
+- Bug Fixes

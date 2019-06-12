@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.microblink</groupId>
     <artifactId>blinkreceipt</artifactId>
-    <version>1.1.8</version>
+    <version>1.1.9</version>
     <packaging>aar</packaging>
     <name>BlinkReceipt SDK for Android</name>
     <description>SDK that enables Optical Character Recognition (OCR) based input in your Android
