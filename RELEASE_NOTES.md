@@ -100,3 +100,7 @@
 - Amazon account manager bug fix
 - Improved duplicate search engine
 - Bug Fixes
+
+# 1.2.0
+
+- Promotion Bug Fixes

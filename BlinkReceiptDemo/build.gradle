@@ -20,8 +20,8 @@ buildscript {
             'easyPermissions' : '3.0.0',
             'tasks' : '16.0.1',
             'versionMajor': 1,
-            'versionMinor': 1,
-            'versionPatch': 9
+            'versionMinor': 2,
+            'versionPatch': 0
     ]
 
     ext.keys = [
