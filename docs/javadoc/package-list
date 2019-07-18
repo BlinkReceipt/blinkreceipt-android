@@ -34,6 +34,7 @@ com.microblink.internal.phone
 com.microblink.internal.services
 com.microblink.internal.services.abn
 com.microblink.internal.services.amazon
+com.microblink.internal.services.costco
 com.microblink.internal.services.google
 com.microblink.internal.services.io
 com.microblink.internal.services.ip

@@ -37,12 +37,12 @@ dependencies {
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
-    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
     
     implementation 'com.squareup.okio:okio:2.2.2'
     
@@ -62,12 +62,21 @@ Even though there are different ways to initialize the sdk, the recommended way 
 Within your projects Application class or init provider, please add the following code to initialize the sdk.
 
 ```
+
 @Override
 public void onCreate() {
     super.onCreate();
     
     ReceiptSdk.sdkInitialize( context );
 }
+
+@Override
+public void onTerminate() {
+    ReceiptSdk.terminate();
+
+    super.onTerminate();
+}
+
 ```
 
 ## <a name="quickStart"></a> Scanning Your First Receipt
@@ -356,35 +365,40 @@ If you wish to include Gmail functionality within your project.
 ```
 dependencies {
     implementation "com.google.android.gms:play-services-auth:16.0.1"
-    implementation "com.google.apis:google-api-services-gmail:v1-rev98-1.25.0" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev105-1.25.0" exclude module: 'httpclient'
     implementation "com.google.android.gms:play-services-tasks:16.0.1"
 
-    implementation "com.google.api-client:google-api-client-android:1.25.0" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.25.0" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.29.2" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.30.1" exclude module: 'httpclient'
 }
 
 ```
 
 `Callback`
 ```
-GmailInboxManager.getInstance( this ).callback( object : GmailInboxCallback {
+GmailInboxManager.getInstance( this ).callback( new GmailInboxCallback() {
 
-    override fun onComplete( results: MutableList<ScanResults> ) {
+    @Override
+    public void onSignedOut() {
+
     }
 
-    override fun onSignedOut() {
-        
+    @Override
+    public void onException(@NonNull GmailInboxException e) {
+
     }
 
-    override fun onException( e: GmailInboxException ) {
-        
+    @Override
+    public void onSignedIn() {
+
     }
 
-    override fun onSignedIn() {
-        
-    }
+    @Override
+    public void onComplete(@NonNull List<ScanResults> results) {
 
-} )
+    }
+    
+} );
 ```
 
 `Client ID (OAuth 2.0 web application client ID)`
@@ -394,11 +408,12 @@ GmailInboxManager.getInstance( this ).clientId( getString( R.string.client_id ) 
 
 `Lifecycle Management`
 ```
-override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+@Override
+protected void onActivityResult( int requestCode, int resultCode, @Nullable Intent data ) {
+    super.onActivityResult( requestCode, resultCode, data );
 
-        GmailInboxManager.getInstance( this ).onActivityResult( requestCode, resultCode, data )
-    }
+    GmailInboxManager.getInstance().onActivityResult( requestCode, resultCode, data );
+}
 ```
 
 `Sign In`

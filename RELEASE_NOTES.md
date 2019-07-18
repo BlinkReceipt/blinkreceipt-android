@@ -104,3 +104,20 @@
 # 1.2.0
 
 - Promotion Bug Fixes
+
+# 1.2.1
+
+Product Updates
+    - Improved memory management
+    - Updated OCR models
+    - Costco Date improvements
+    - Overall parser improvements 
+Bug Fixes    
+    - Detect internal banner id
+    - E-Receipts pass description from native context
+Third Party Libraries
+    - Retrofit 2.6.0
+    - OkHttp 3.14.2
+    - Gmail v1-rev105-1.25.0
+    - Google Api Client 1.30.1
+    - Google Api Services 1.29.2
