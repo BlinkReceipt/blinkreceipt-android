@@ -21,7 +21,7 @@ buildscript {
             'tasks' : '16.0.1',
             'versionMajor': 1,
             'versionMinor': 2,
-            'versionPatch': 1
+            'versionPatch': 2
     ]
 
     ext.keys = [

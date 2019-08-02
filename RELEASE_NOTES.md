@@ -121,3 +121,7 @@ Third Party Libraries
     - Gmail v1-rev105-1.25.0
     - Google Api Client 1.30.1
     - Google Api Services 1.29.2
+
+# 1.2.2
+
+- Bug Fixes
