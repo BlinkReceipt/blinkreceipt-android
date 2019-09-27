@@ -125,3 +125,13 @@ Third Party Libraries
 # 1.2.2
 
 - Bug Fixes
+
+# 1.2.3
+
+- Edge detection fixes 
+- Incorporate full price into product intelligence
+- Incorporate fuzzy search into product intelligence 
+- Merchant detection fixes
+- Amazon improvements 
+- Support for purchase type
+- Parser improvements

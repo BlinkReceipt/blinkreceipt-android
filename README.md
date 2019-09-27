@@ -23,6 +23,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Processor Configuration Considerations](#processorConfigurations)
 * [Android OS Support](#androidos)
 * [Auto Configuration](#autoConfiguration)
+* [Client User Id](#clientId)
 
 ## AAR
 The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
@@ -37,14 +38,13 @@ dependencies {
     
     implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
     
-    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.0'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.2'
     
-    implementation 'com.squareup.okio:okio:2.2.2'
+    implementation 'com.squareup.okio:okio:2.4.0'
     
     implementation "com.google.android.gms:play-services-tasks:16.0.1"
 }
@@ -356,6 +356,16 @@ If you wish to include Yelp functionality within your project add your license k
         <meta-data
             android:name="com.microblink.YelpKey"
             android:value="YELP KEY"/>
+```
+
+## <a name=clientId></a>Client User Id
+If you wish to include your client user id within your project add your client user id key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+
+`AndroidManifest.xml`
+```
+        <meta-data
+            android:name="com.microblink.ClientUserId"
+            android:value="CLIENT USER ID"/>
 ```
 
 ## <a name=gmail></a>Gmail

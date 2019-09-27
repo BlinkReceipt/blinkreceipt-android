@@ -66,5 +66,5 @@ dependencies {
 
     implementation project(':LibBlinkReceipt')
 
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${versions.archLifecycle}"
 }
