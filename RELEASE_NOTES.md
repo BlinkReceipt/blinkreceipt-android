@@ -135,3 +135,7 @@ Third Party Libraries
 - Amazon improvements 
 - Support for purchase type
 - Parser improvements
+
+# 1.2.4
+
+- Fix crash in edge detection framework
