@@ -16,7 +16,6 @@ import com.microblink.CameraCaptureListener;
 import com.microblink.CameraRecognizerCallback;
 import com.microblink.CameraScanActivity;
 import com.microblink.Media;
-import com.microblink.RecognizerCompatibility;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
 import com.microblink.ScanResults;
@@ -80,13 +79,13 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
             }
 
             @Override
-            public void onException(@NonNull Exception e) {
+            public void onException( @NonNull Throwable e ) {
                 Toast.makeText( CameraActivity.this, e.toString(), Toast.LENGTH_LONG ).show();
             }
 
         } ));
 
-        RectF regionOfInterest = RecognizerCompatibility.defaultRegionOfInterest();
+        RectF regionOfInterest = new RectF( .05f, .10f, .95f, .90f );
 
         recognizerView.recognizerCallback( this );
 

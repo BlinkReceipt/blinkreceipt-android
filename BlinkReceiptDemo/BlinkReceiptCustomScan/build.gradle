@@ -13,7 +13,7 @@ android {
         versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
         versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -54,7 +54,6 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
 
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
-    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"

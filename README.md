@@ -24,6 +24,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Android OS Support](#androidos)
 * [Auto Configuration](#autoConfiguration)
 * [Client User Id](#clientId)
+* [Requirements](#requirements)
 
 ## AAR
 The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
@@ -33,10 +34,8 @@ To add sdk to your android project please add the following to your dependency s
 
 ```
 dependencies {
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    
-    implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     
     implementation 'com.squareup.okhttp3:okhttp:4.2.0'
     
@@ -46,7 +45,9 @@ dependencies {
     
     implementation 'com.squareup.okio:okio:2.4.0'
     
-    implementation "com.google.android.gms:play-services-tasks:16.0.1"
+    implementation "com.google.android.gms:play-services-tasks:17.0.0"
+    
+    implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
 }
 ```
 
@@ -59,7 +60,7 @@ Even though there are different ways to initialize the sdk, the recommended way 
             android:value="BLINK RECEIPT LICENSE KEY" />
 ```
 
-Within your projects Application class or init provider, please add the following code to initialize the sdk.
+Within your projects Application class or Content Provider, please add the following code to initialize the sdk.
 
 ```
 
@@ -501,3 +502,9 @@ if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEO
 x86_64 processors understand x86 instruction set, but x86 processors do not understand x86_64 instruction set
 if x86_64 processor executes x86 code, it does not take advantage of 64-bit registers and use two instructions instead of one for 64-bit operations
 LibBlinkReceipt.aar archive contains ARMv7, ARM64, x86 and x86_64 builds of native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all processor architectures. Thus, BlinkReceipt will work on ARMv7, ARM64, x86 and x86_64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
+
+## <a name=requirements></a> Requirements
+- AndroidX
+- Min SDK 21+
+- Compile SDK: 29+
+- Java 8+

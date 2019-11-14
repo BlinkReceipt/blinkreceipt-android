@@ -138,4 +138,13 @@ Third Party Libraries
 
 # 1.2.4
 
-- Fix crash in edge detection framework
+- Fix crash in edgee detection 
+
+# 1.2.5
+
+- AndroidX support is now a requirement
+- Edge detection performance improvements
+- Camera management performance and stability improvements
+- Amazon streaming parsing and prime support
+- Security stability improvements
+- Camera capture listener change interface exception to throwable
