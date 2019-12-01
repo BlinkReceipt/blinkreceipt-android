@@ -36,6 +36,7 @@ To add sdk to your android project please add the following to your dependency s
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     
     implementation 'com.squareup.okhttp3:okhttp:4.2.0'
     
