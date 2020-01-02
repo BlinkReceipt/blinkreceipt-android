@@ -148,3 +148,8 @@ Third Party Libraries
 - Amazon streaming parsing and prime support
 - Security stability improvements
 - Camera capture listener change interface exception to throwable
+
+# 1.2.6
+
+- Amazon bug fixes 
+- Fix for certain 2020 dates
