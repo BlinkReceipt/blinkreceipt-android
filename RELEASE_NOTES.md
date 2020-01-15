@@ -153,3 +153,17 @@ Third Party Libraries
 
 - Amazon bug fixes 
 - Fix for certain 2020 dates
+
+# 1.2.7
+
+- Breaking interface changes for CameraDataListener.
+    - Removed onDebugResults callback
+    - Renamed onCameraFrameError to onCameraFrameException
+    - Renamed onEdgeDetectionResult to onEdgeDetectionResults
+- Camera management thread improvements
+- Added blurry & receipt property to TakePictureResult
+- Add channel to scan results 
+- Samsung camera permission issue & aspect ratio fix.
+- Gmail
+    - onSignInCancelled added for when a user cancels sign in requests
+

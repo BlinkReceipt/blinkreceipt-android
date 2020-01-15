@@ -21,9 +21,12 @@ import com.microblink.RecognizerView;
 import com.microblink.ScanResults;
 
 import java.io.File;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.jetbrains.annotations.NotNull;
 
 public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback {
 
@@ -96,7 +99,8 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         }, true );
 
         try {
-            recognizerView.initialize( getIntent().getParcelableExtra( MainActivity.SCAN_OPTIONS_EXTRA ) );
+            recognizerView.initialize(Objects.requireNonNull(getIntent()
+                    .getParcelableExtra(MainActivity.SCAN_OPTIONS_EXTRA)));
         } catch ( Exception e ) {
             Toast.makeText( this, e.toString(), Toast.LENGTH_LONG ).show();
 
@@ -156,7 +160,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
         if ( recognizerView != null ) {
