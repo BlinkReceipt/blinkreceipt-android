@@ -138,7 +138,7 @@ Third Party Libraries
 
 # 1.2.4
 
-- Fix crash in edgee detection 
+- Fix crash in edge detection 
 
 # 1.2.5
 
@@ -166,4 +166,8 @@ Third Party Libraries
 - Samsung camera permission issue & aspect ratio fix.
 - Gmail
     - onSignInCancelled added for when a user cancels sign in requests
+    
+# 1.2.8
+
+- Merchant improvements & bug fixes
 
