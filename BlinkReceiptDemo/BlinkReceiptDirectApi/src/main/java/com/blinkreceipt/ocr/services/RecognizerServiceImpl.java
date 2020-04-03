@@ -2,7 +2,6 @@ package com.blinkreceipt.ocr.services;
 
 import android.app.Application;
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import com.blinkreceipt.ocr.OnNullableCompleteListener;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
@@ -10,13 +9,12 @@ import com.microblink.CameraOrientation;
 import com.microblink.Media;
 import com.microblink.Recognizer;
 import com.microblink.ScanOptions;
-import com.microblink.ScanResults;
+import com.microblink.core.ScanResults;
+import com.microblink.core.internal.Timberland;
 
 import androidx.annotation.NonNull;
 
 public final class RecognizerServiceImpl implements RecognizerService {
-
-    private static final String TAG = "RecognizerServiceImpl";
 
     @NonNull
     private Application application;
@@ -44,13 +42,13 @@ public final class RecognizerServiceImpl implements RecognizerService {
                         public void onRecognizerException( @NonNull final Throwable throwable ) {
                             super.onRecognizerException( throwable );
 
-                            Log.e( TAG, throwable.toString() );
+                            Timberland.e( throwable );
 
                             listener.onComplete( new RecognizerResults( throwable ) );
                         }
                     }, orientation, bitmap ) ;
         } catch ( Throwable e ) {
-            Log.e( TAG, e.toString() );
+            Timberland.e( e );
 
             listener.onComplete( new RecognizerResults( e ) );
         }

@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blinkreceipt.ocr.R;
-import com.microblink.Product;
-import com.microblink.TypeValueUtils;
+import com.microblink.core.Product;
+import com.microblink.core.internal.TypeValueUtils;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

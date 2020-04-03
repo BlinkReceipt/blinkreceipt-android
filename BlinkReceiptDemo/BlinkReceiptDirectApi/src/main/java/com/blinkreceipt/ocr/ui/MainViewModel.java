@@ -11,8 +11,8 @@ import com.blinkreceipt.ocr.transfer.RecognizeItem;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
-import com.microblink.Retailer;
 import com.microblink.ScanOptions;
+import com.microblink.core.Retailer;
 
 import androidx.annotation.NonNull;
 import androidx.arch.core.util.Function;

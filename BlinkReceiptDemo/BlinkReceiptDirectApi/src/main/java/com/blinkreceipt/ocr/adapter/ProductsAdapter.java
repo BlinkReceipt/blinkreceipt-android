@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.blinkreceipt.ocr.R;
-import com.microblink.Product;
+import com.microblink.core.Product;
 
 import java.util.ArrayList;
 import java.util.List;

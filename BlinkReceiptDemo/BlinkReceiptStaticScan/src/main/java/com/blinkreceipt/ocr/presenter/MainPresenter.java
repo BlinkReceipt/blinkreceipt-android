@@ -1,8 +1,8 @@
 package com.blinkreceipt.ocr.presenter;
 
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.Product;
-import com.microblink.ScanResults;
+import com.microblink.core.Product;
+import com.microblink.core.ScanResults;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 public final class MainPresenter {
 
     @Nullable
-    public List<Product> products( @Nullable RecognizerResults items ) {
+    public List<Product> products(@Nullable RecognizerResults items ) {
         if ( items != null ) {
             ScanResults results = items.results();
 

@@ -1,11 +1,10 @@
 package com.blinkreceipt.ocr.services;
 
-import android.util.Log;
-
 import com.microblink.CameraRecognizerCallback;
 import com.microblink.Media;
 import com.microblink.RecognizerResult;
-import com.microblink.ScanResults;
+import com.microblink.core.ScanResults;
+import com.microblink.core.internal.Timberland;
 
 import java.io.File;
 
@@ -13,46 +12,44 @@ import androidx.annotation.NonNull;
 
 public class SimpleCameraRecognizerCallback implements CameraRecognizerCallback  {
 
-    private static final String TAG = "CameraRecognizer";
-
     @Override
     public void onConfirmPicture(@NonNull File file) {
-        Log.d( TAG, "onConfirmPicture: " + file.toString() );
+        Timberland.d( "onConfirmPicture: " + file.toString() );
     }
 
     @Override
     public void onPermissionDenied() {
-        Log.d( TAG, "onPermissionDenied " );
+        Timberland.d( "onPermissionDenied " );
     }
 
     @Override
     public void onPreviewStarted() {
-        Log.d( TAG, "onPreviewStarted" );
+        Timberland.d( "onPreviewStarted" );
     }
 
     @Override
     public void onPreviewStopped() {
-        Log.d( TAG, "onPreviewStopped" );
+        Timberland.d( "onPreviewStopped" );
     }
 
     @Override
     public void onException(@NonNull Throwable throwable) {
-        Log.e( TAG, "onException: " + throwable.toString() );
+        Timberland.e( "onException: " + throwable.toString() );
     }
 
     @Override
     public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
-        Log.d( TAG, "onRecognizerDone");
+        Timberland.d( "onRecognizerDone");
     }
 
     @Override
     public void onRecognizerException(@NonNull Throwable throwable) {
-        Log.e( TAG, "onRecognizerException: " + throwable.toString() );
+        Timberland.e( "onRecognizerException: " + throwable.toString() );
     }
 
     @Override
     public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
-        Log.d( TAG, "onRecognizerResultsChanged" );
+        Timberland.d( "onRecognizerResultsChanged" );
     }
 
 }

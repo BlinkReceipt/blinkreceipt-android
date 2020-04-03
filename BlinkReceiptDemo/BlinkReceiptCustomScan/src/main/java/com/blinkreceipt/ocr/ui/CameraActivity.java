@@ -18,7 +18,7 @@ import com.microblink.CameraScanActivity;
 import com.microblink.Media;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
-import com.microblink.ScanResults;
+import com.microblink.core.ScanResults;
 
 import java.io.File;
 import java.util.Objects;
@@ -169,7 +169,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     }
 
     @Override
-    public void onRecognizerDone( @NonNull ScanResults results, @NonNull Media media ) {
+    public void onRecognizerDone(@NonNull ScanResults results, @NonNull Media media ) {
         finishScan.setEnabled( true );
 
         setResult( Activity.RESULT_OK, new Intent()

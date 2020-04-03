@@ -14,6 +14,10 @@ android {
         versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a'
+        }
     }
 
     signingConfigs {
@@ -52,7 +56,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
     implementation "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}"
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
-    implementation "androidx.localbroadcastmanager:localbroadcastmanager:${versions.localbroadcastmanager}"
 
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
@@ -60,11 +63,17 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
 
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
     implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
-    implementation project(':LibBlinkReceipt')
+    implementation project(':LibBlinkReceiptRecognizer')
+
+    implementation project(':LibBlinkReceiptCore')
+
+    implementation project(':LibBlinkReceiptCamera')
 
     annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${versions.archLifecycle}"
 }
