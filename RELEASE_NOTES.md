@@ -172,3 +172,25 @@ Third Party Libraries
 - Merchant improvements & bug fixes
 
 # 1.2.9
+
+- Remove support for x86_64 (  abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a' )
+- Added Timber Logging Support ( "com.jakewharton.timber:timber" )
+- Modularized Recognizer SDK, which now depends on BlinkReceiptCore & BlinkReceiptCamera
+- Renamed ReceiptSdk to BlinkReceiptSdk
+- Class Repackaging
+    - Product
+        - com.microblink.Product
+        - com.microblink.core.Product
+    - ScanResults
+        - com.microblink.ScanResults
+        - com.microblink.core.ScanResults
+    - Retailer
+        - com.microblink.Retailer
+        - com.microblink.core.Retailer
+- Dependencies 
+    - Build Tools: 29.0.3
+    - Okhttp: 4.4.1
+    - Retrofit : 2.8.1
+    - Okio : 2.4.3
+    - Tasks : 17.0.1
+    - Timber: 4.7.1
