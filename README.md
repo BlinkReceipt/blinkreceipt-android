@@ -49,8 +49,54 @@ dependencies {
     
     implementation 'com.jakewharton.timber:timber:4.7.1'
     
-    implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
+    implementation project( ':blinkreceipt-core' )
+
+    implementation project( ':blinkreceipt-recognizer' )
+
+    implementation project( ':blinkreceipt-camera' )
 }
+```
+
+Blink Receipt Recognizer depends on Blink Receipt Core and Blink Receipt Camera, which can be downloaded here:
+
+<a href="https://github.com/BlinkReceipt/blinkreceipt-android-core" target="_blank">Blink Receipt Core (AAR)</a>
+
+<a href="https://github.com/BlinkReceipt/blinkreceipt-android-camera" target="_blank">Blink Receipt Camera (AAR)</a>
+
+## R8 / PROGUARD
+
+Retrofit
+
+```
+# Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
+# EnclosingMethod is required to use InnerClasses.
+-keepattributes Signature, InnerClasses, EnclosingMethod
+
+# Retrofit does reflection on method and parameter annotations.
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+
+# Retain service method parameters when optimizing.
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+# Ignore annotation used for build tooling.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# Ignore JSR 305 annotations for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
+-dontwarn kotlin.Unit
+
+# Top-level functions that can only be used by Kotlin.
+-dontwarn retrofit2.KotlinExtensions
+-dontwarn retrofit2.KotlinExtensions$*
+
+# With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
+# and replaces all potential values with null. Explicitly keeping the interfaces prevents this.
+-if interface * { @retrofit2.http.* <methods>; }
+-keep,allowobfuscation interface <1>
 ```
 
 Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration.
@@ -70,16 +116,39 @@ Within your projects Application class or Content Provider, please add the follo
 public void onCreate() {
     super.onCreate();
     
-    ReceiptSdk.sdkInitialize( context );
+    BlinkReceiptSdk.sdkInitialize( context );
 }
 
 @Override
 public void onTerminate() {
-    ReceiptSdk.terminate();
+    BlinkReceiptSdk.terminate();
 
     super.onTerminate();
 }
 
+```
+
+okio
+
+```
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+```
+
+okhttp
+
+```
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
 ```
 
 ## <a name="quickStart"></a> Scanning Your First Receipt
