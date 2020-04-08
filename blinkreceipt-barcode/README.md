@@ -37,60 +37,18 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     
-    implementation 'com.squareup.okhttp3:okhttp:4.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.3.0'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.8.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.7.1'
     
-    implementation 'com.squareup.okio:okio:2.4.3'
+    implementation 'com.squareup.okio:okio:2.4.0'
     
-    implementation "com.google.android.gms:play-services-tasks:17.0.1"
+    implementation "com.google.android.gms:play-services-tasks:17.0.0"
     
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-    
-    implementation project( ':blinkreceipt-core' )
-
-    implementation project( ':blinkreceipt-recognizer' )
-
-    implementation project( ':blinkreceipt-camera' )
+    implementation project('REPLACE_WITH_IMPORTED_RECEIPT_SDK_MODULE')
 }
-```
-
-## R8 / PROGUARD
-
-Retrofit
-
-```
-# Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
-# EnclosingMethod is required to use InnerClasses.
--keepattributes Signature, InnerClasses, EnclosingMethod
-
-# Retrofit does reflection on method and parameter annotations.
--keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
-
-# Retain service method parameters when optimizing.
--keepclassmembers,allowshrinking,allowobfuscation interface * {
-    @retrofit2.http.* <methods>;
-}
-
-# Ignore annotation used for build tooling.
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-
-# Ignore JSR 305 annotations for embedding nullability information.
--dontwarn javax.annotation.**
-
-# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
--dontwarn kotlin.Unit
-
-# Top-level functions that can only be used by Kotlin.
--dontwarn retrofit2.KotlinExtensions
--dontwarn retrofit2.KotlinExtensions$*
-
-# With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
-# and replaces all potential values with null. Explicitly keeping the interfaces prevents this.
--if interface * { @retrofit2.http.* <methods>; }
--keep,allowobfuscation interface <1>
 ```
 
 Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration.
@@ -110,39 +68,16 @@ Within your projects Application class or Content Provider, please add the follo
 public void onCreate() {
     super.onCreate();
     
-    BlinkReceiptSdk.sdkInitialize( context );
+    ReceiptSdk.sdkInitialize( context );
 }
 
 @Override
 public void onTerminate() {
-    BlinkReceiptSdk.terminate();
+    ReceiptSdk.terminate();
 
     super.onTerminate();
 }
 
-```
-
-okio
-
-```
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-```
-
-okhttp
-
-```
-# JSR 305 annotations are for embedding nullability information.
--dontwarn javax.annotation.**
-
-# A resource is loaded with a relative path so the package of this class must be preserved.
--keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
-
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-
-# OkHttp platform used only on JVM and when Conscrypt dependency is available.
--dontwarn okhttp3.internal.platform.ConscryptPlatform
 ```
 
 ## <a name="quickStart"></a> Scanning Your First Receipt
@@ -546,13 +481,15 @@ Even though there are different ways to initialize the sdk, the recommended way 
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations
 
-BlinkReceipt is distributed with both ARMv7, ARM64, x86 native library binaries.
+BlinkReceipt is distributed with both ARMv7, ARM64, x86 and x86_64 native library binaries.
 
 ARMv7 architecture gives the ability to take advantage of hardware accelerated floating point operations and SIMD processing with NEON. This gives BlinkReceipt a huge performance boost on devices that have ARMv7 processors. Most new devices (all since 2012.) have ARMv7 processor so it makes little sense not to take advantage of performance boosts that those processors can give. Also note that some devices with ARMv7 processors do not support NEON instruction sets. Most popular are those based on NVIDIA Tegra 2 fall into this category. Since these devices are old by today's standard, BlinkReceipt does not support them.
 
 ARM64 is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with single instruction.
 
 x86 architecture gives the ability to obtain native speed on x86 android devices, like Asus Zenfone 4. Without that, BlinkReceipt will not work on such devices, or it will be run on top of ARM emulator that is shipped with device - this will give a huge performance penalty.
+
+x86_64 architecture gives better performance than x86 on devices that use 64-bit Intel Atom processor.
 
 However, there are some issues to be considered:
 

@@ -57,6 +57,12 @@ dependencies {
 }
 ```
 
+Blink Receipt Recognizer depends on Blink Receipt Core and Blink Receipt Camera, which can be downloaded here:
+
+<a href="https://github.com/BlinkReceipt/blinkreceipt-android-core" target="_blank">Blink Receipt Core (AAR)</a>
+
+<a href="https://github.com/BlinkReceipt/blinkreceipt-android-camera" target="_blank">Blink Receipt Camera (AAR)</a>
+
 ## R8 / PROGUARD
 
 Retrofit
