@@ -18,11 +18,11 @@ buildscript {
             'androidTestRunner'     : '1.2.0',
             'espresso'              : '3.2.0',
             'easyPermissions'       : '3.0.0',
-            'tasks'                 : '17.0.1',
+            'tasks'                 : '17.0.2',
             'timber'                : '4.7.1',
             'versionMajor'          : 1,
-            'versionMinor'          : 2,
-            'versionPatch'          : 9
+            'versionMinor'          : 3,
+            'versionPatch'          : 0
     ]
 
     ext.keys = [
@@ -36,7 +36,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.2'
+        classpath 'com.android.tools.build:gradle:3.6.3'
         
 
         // NOTE: Do not place your application dependencies here; they belong

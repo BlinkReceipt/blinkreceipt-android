@@ -22,10 +22,42 @@ ARM64 processors understand ARMv7 instruction set, but ARMv7 processors does not
 if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
 x86_64 processors understand x86 instruction set, but x86 processors do not understand x86_64 instruction set
 if x86_64 processor executes x86 code, it does not take advantage of 64-bit registers and use two instructions instead of one for 64-bit operations
-LibBlinkReceipt.aar archive contains ARMv7, ARM64, x86 and x86_64 builds of native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all processor architectures. Thus, BlinkReceipt will work on ARMv7, ARM64, x86 and x86_64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
+LibBlinkBarcodeReceipt.aar archive contains ARMv7, ARM64, x86 and x86_64 builds of native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all processor architectures. Thus, BlinkReceipt will work on ARMv7, ARM64, x86 and x86_64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
 
 ## <a name=requirements></a> Requirements
 - AndroidX
 - Min SDK 21+
 - Compile SDK: 29+
 - Java 8+
+
+## <a name=intro></a> Project Integration and Initialization
+To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
+
+```
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    
+    implementation 'com.squareup.okhttp3:okhttp:4.5.0'
+    
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.8.1'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:2.8.1'
+    
+    implementation 'com.squareup.okio:okio:2.4.3'
+    
+    implementation "com.google.android.gms:play-services-tasks:17.0.2"
+    
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+
+    implementation 'com.google.zxing:core:3.3.0'
+    
+    implementation project( ':blinkreceipt-core' )
+
+    implementation project( ':blinkreceipt-camera' )
+}
+```

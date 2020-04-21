@@ -194,3 +194,17 @@ Third Party Libraries
     - Okio : 2.4.3
     - Tasks : 17.0.1
     - Timber: 4.7.1
+
+# 1.3.0
+
+Blink Receipt Recognizer
+    - fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
+    - Update Play Service Auth framework to 18.0.0
+    - Removed internal location look up services.
+
+- Dependencies 
+    - okhttp 4.5.0
+    - Play Service Task 17.0.2
+    - Play Service Auth 18.0.0
+    - Blink Receipt Camera 1.0.1
+    - Blink Receipt Core 1.0.1
