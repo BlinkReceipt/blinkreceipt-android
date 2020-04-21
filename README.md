@@ -45,7 +45,7 @@ dependencies {
     
     implementation 'com.squareup.okio:okio:2.4.3'
     
-    implementation "com.google.android.gms:play-services-tasks:17.0.1"
+    implementation "com.google.android.gms:play-services-tasks:17.0.2"
     
     implementation 'com.jakewharton.timber:timber:4.7.1'
     
