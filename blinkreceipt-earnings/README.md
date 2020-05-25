@@ -18,14 +18,14 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-tasks:17.0.2"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.5.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.0'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.8.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'
     
-    implementation 'com.squareup.okio:okio:2.4.3'
+    implementation 'com.squareup.okio:okio:2.6.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

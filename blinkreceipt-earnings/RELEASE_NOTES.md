@@ -1,4 +1,4 @@
-# Release Notes
+### Release Notes
 
 ## 1.0.0
 
@@ -10,3 +10,11 @@
 - Removed internal location look up services.
 - Add product name & image url to corrections on products.
 - Blink Receipt Core 1.0.1
+
+## 1.0.2
+
+- blink receipt Core 1.0.2
+- blink receipt Camera 1.0.2
+- okhttp 4.7.0
+- okio : 2.6.0
+- retrofit: 2.8.2

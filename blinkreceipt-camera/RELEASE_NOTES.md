@@ -9,3 +9,6 @@
 - Update Play Service Task framework to 17.0.2
 - Removed internal camera permission manager
 - Fixed crash in camera torch
+
+## 1.0.2
+- bug fixes

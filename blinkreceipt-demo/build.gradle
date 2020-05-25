@@ -1,35 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-
-    ext.versions = [
-            'minSdk'                : 21,
-            'compileSdk'            : 29,
-            'targetSdk'             : 29,
-            'buildTools'            : '29.0.3',
-            'appCompat'             : '1.1.0',
-            'recyclerView'          : '1.1.0',
-            'okhttp3'               : '4.4.1',
-            'retrofit'              : '2.8.1',
-            'okio'                  : '2.4.3',
-            'archLifecycle'         : '2.2.0',
-            'constraintLayout'      : '1.1.3',
-            'junit'                 : '4.12',
-            'androidTestRunner'     : '1.2.0',
-            'espresso'              : '3.2.0',
-            'easyPermissions'       : '3.0.0',
-            'tasks'                 : '17.0.2',
-            'timber'                : '4.7.1',
-            'versionMajor'          : 1,
-            'versionMinor'          : 3,
-            'versionPatch'          : 0
-    ]
-
-    ext.keys = [
-            'keyPassword' : 'b11nkREcei9tDem0s@2016',
-            'storePassword' : 'b11nkREceiPtDemos@2016',
-            'keyAlias' : 'blinkReceiptDemos'
-    ]
+    apply from: "versions.gradle"
 
     repositories {
         google()
@@ -37,7 +9,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
-        
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

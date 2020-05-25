@@ -1,4 +1,4 @@
-# Release Notes
+## Release Notes
 
 ## 1.0.0
 
@@ -8,3 +8,8 @@
 
 - Update Play Service Task framework to 17.0.2
 - Removed internal location look up services.
+
+## 1.0.2
+
+- Don't pass empty or null message to internal logger.
+

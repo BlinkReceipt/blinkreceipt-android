@@ -52,10 +52,10 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation "androidx.appcompat:appcompat:${versions.appCompat}"
-    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${versions.archLifecycle}"
-    implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${androidx.lifecycle}"
+    implementation "androidx.recyclerview:recyclerview:${androidx.recyclerview}"
 
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
@@ -75,5 +75,5 @@ dependencies {
 
     implementation project(':LibBlinkReceiptCamera')
 
-    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${versions.archLifecycle}"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

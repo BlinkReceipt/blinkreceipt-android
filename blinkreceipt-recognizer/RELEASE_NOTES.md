@@ -1,4 +1,4 @@
-# Release Notes
+### Release Notes
 
 ## 1.0.0
 
@@ -71,18 +71,18 @@
 - Duplicate Detection
 - Bug fixes
 
-# 1.1.5
+## 1.1.5
 
 - Auto configuration can now be disabled by adding a meta data id to the manifest.
 - Duplicate blink receipt id for duplicate receipts.
 - Merchant guess
 - Payment method returns Payment Method, Card Type, Card Issuer
 
-# 1.1.6
+## 1.1.6
 
 - The OkHttp 3.12.x branch supports Android 2.3+ (API level 9+) and Java 7+. These platforms lack support for TLS 1.2 and should not be used. But because upgrading is difficult we will backport critical fixes to the 3.12.x branch through December 31, 2020.
 
-# 1.1.7
+## 1.1.7
 
 - minSDK 21
 - Target Java 8
@@ -90,22 +90,22 @@
 - Improved purchase validation
 - Edge detection rect is now available in the public interface
 
-# 1.1.8
+## 1.1.8
 
 - Purchase validation improvements
 - Bug Fixes
 
-# 1.1.9
+## 1.1.9
 
 - Amazon account manager bug fix
 - Improved duplicate search engine
 - Bug Fixes
 
-# 1.2.0
+## 1.2.0
 
 - Promotion Bug Fixes
 
-# 1.2.1
+## 1.2.1
 
 Product Updates
     - Improved memory management
@@ -122,11 +122,11 @@ Third Party Libraries
     - Google Api Client 1.30.1
     - Google Api Services 1.29.2
 
-# 1.2.2
+## 1.2.2
 
 - Bug Fixes
 
-# 1.2.3
+## 1.2.3
 
 - Edge detection fixes 
 - Incorporate full price into product intelligence
@@ -136,11 +136,11 @@ Third Party Libraries
 - Support for purchase type
 - Parser improvements
 
-# 1.2.4
+## 1.2.4
 
 - Fix crash in edge detection 
 
-# 1.2.5
+## 1.2.5
 
 - AndroidX support is now a requirement
 - Edge detection performance improvements
@@ -149,12 +149,12 @@ Third Party Libraries
 - Security stability improvements
 - Camera capture listener change interface exception to throwable
 
-# 1.2.6
+## 1.2.6
 
 - Amazon bug fixes 
 - Fix for certain 2020 dates
 
-# 1.2.7
+## 1.2.7
 
 - Breaking interface changes for CameraDataListener.
     - Removed onDebugResults callback
@@ -167,11 +167,11 @@ Third Party Libraries
 - Gmail
     - onSignInCancelled added for when a user cancels sign in requests
     
-# 1.2.8
+## 1.2.8
 
 - Merchant improvements & bug fixes
 
-# 1.2.9
+## 1.2.9
 
 - Remove support for x86_64 (  abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a' )
 - Added Timber Logging Support ( "com.jakewharton.timber:timber" )
@@ -195,7 +195,7 @@ Third Party Libraries
     - Tasks : 17.0.1
     - Timber: 4.7.1
 
-# 1.3.0
+## 1.3.0
 
 Blink Receipt Recognizer
     - fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
@@ -208,3 +208,22 @@ Blink Receipt Recognizer
     - Play Service Auth 18.0.0
     - Blink Receipt Camera 1.0.1
     - Blink Receipt Core 1.0.1
+
+## 1.3.1
+
+- duplicate search bug fix
+- ocr confidence bug fix
+- support for subproducts
+- improved blur & receipt detection
+- process camera frames when in the resume state only.
+- improved native memory model
+- e-receipt
+    - introduced the following new properties:
+        - pos system
+        - sub merchant
+- Dependencies 
+      - blink receipt Core 1.0.2
+      - blink receipt Camera 1.0.2
+      - okhttp 4.7.0
+      - okio : 2.6.0
+      - retrofit: 2.8.2

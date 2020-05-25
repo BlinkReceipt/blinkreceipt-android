@@ -1,0 +1,13 @@
+{
+  "client_id" : "[CLIENT ID]",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://[PACKAGE_NAME]/[HASH]",
+  "account_mode" : "SINGLE",
+  "broker_redirect_uri_registered": true,
+  "authorities" : [
+    {
+      "type": "AAD",
+      "authority_url": "https://login.microsoftonline.com/common"
+    }
+  ]
+}
