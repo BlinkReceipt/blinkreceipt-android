@@ -13,3 +13,8 @@
 
 - Don't pass empty or null message to internal logger.
 
+## 1.0.3
+
+- bug fixes
+- Update Play Service Task framework to 17.1.0
+

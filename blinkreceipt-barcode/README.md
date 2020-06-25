@@ -33,7 +33,7 @@ LibBlinkBarcodeReceipt.aar archive contains ARMv7, ARM64, x86 and x86_64 builds 
 ## <a name=intro></a> Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
-```
+```groovy
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     
@@ -47,7 +47,7 @@ dependencies {
     
     implementation 'com.squareup.okio:okio:2.6.0'
     
-    implementation "com.google.android.gms:play-services-tasks:17.0.2"
+    implementation "com.google.android.gms:play-services-tasks:17.1.0"
     
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

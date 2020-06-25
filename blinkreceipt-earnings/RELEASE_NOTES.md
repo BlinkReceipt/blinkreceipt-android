@@ -18,3 +18,10 @@
 - okhttp 4.7.0
 - okio : 2.6.0
 - retrofit: 2.8.2
+
+## 1.0.3
+
+- bug fixes
+- update Play Service Task framework to 17.1.0
+- fix proguard rules
+- product intelligence required to make corrections.

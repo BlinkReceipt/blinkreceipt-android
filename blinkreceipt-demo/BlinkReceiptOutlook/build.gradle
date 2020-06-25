@@ -43,7 +43,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
 
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
@@ -80,8 +80,7 @@ dependencies {
         exclude group: 'com.microsoft.device.display'
     }
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 }

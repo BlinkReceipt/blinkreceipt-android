@@ -11,7 +11,7 @@ The package contains Android Archive (AAR) that contains everything you need to 
 ##Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
-```
+```groovy
 dependencies {
      api project( ':blinkreceipt-core' )
 
@@ -26,7 +26,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    implementation "com.google.android.gms:play-services-tasks:17.0.2"
+    implementation "com.google.android.gms:play-services-tasks:17.1.0"
 
     //Outlook
     implementation( "com.microsoft.identity.client:msal:${versions.msal}" ) {
@@ -39,10 +39,10 @@ dependencies {
 
 Outlook integration requires 1 additional AAR in your build gradle.
 
-```
+```groovy
 dependencies {
 
-    implementation( "com.microsoft.identity.client:msal:1.5.1" ) {
+    implementation( "com.microsoft.identity.client:msal:1.5.2" ) {
         exclude group: 'com.microsoft.device.display'
     }
 }
@@ -52,23 +52,25 @@ You must also register an application in the [MS Application Registration Portal
 
 ### Android Manifest 
 
-```
+```xml
 <activity android:name="com.microsoft.identity.client.BrowserTabActivity">  
- <intent-filter> <action android:name="android.intent.action.VIEW" />  
-  
- <category android:name="android.intent.category.DEFAULT" />  
- <category android:name="android.intent.category.BROWSABLE" />  
-  
- <data android:host="com.blinkreceipt.development"  
-  android:path="/[Signature Hash]"  
-  android:scheme="msauth" />  
- </intent-filter></activity>
+     <intent-filter> 
+        <action android:name="android.intent.action.VIEW" />  
+      
+        <category android:name="android.intent.category.DEFAULT" />  
+        <category android:name="android.intent.category.BROWSABLE" />  
+      
+         <data android:host="com.blinkreceipt.development"  
+          android:path="/[Signature Hash]"  
+          android:scheme="msauth" />  
+     </intent-filter>
+</activity>
 ```
 ### Authentication Configuration
 Outlook client will reference the authentication configuration file location in resources raw folder. Create **auth_config_single_account.json** under res/raw
 
 **Single Account**
-```
+```json
 {  
   "client_id" : "[CLIENT ID]",  
   "authorization_user_agent" : "DEFAULT",  
@@ -85,7 +87,7 @@ Outlook client will reference the authentication configuration file location in 
 ``` 
 ### Outlook Client
 Outlook client is the main entry point which allows the SDK to connect to outlook accounts. Initializing the client is asynchronous and requires the caller to wait until its complete before accessing the outlook messages or account information. ***Note: if you use lazy this will cause exceptions until the client has been initialized. This is on a per instance basis.*** 
-```
+```kotlin
 OutlookClient(applicationContext, R.raw.auth_config_single_account, object : InitializeCallback {  
   
     override fun onComplete() {  
@@ -99,7 +101,7 @@ OutlookClient(applicationContext, R.raw.auth_config_single_account, object : Ini
 }) 
 ```
 ### Outlook Login
-```
+```kotlin
 client.login(this).addOnSuccessListener(  
         object : OnSuccessListener<Account> {  
   
@@ -116,7 +118,7 @@ client.login(this).addOnSuccessListener(
 })
 ```
 ### Outlook Logout
-```
+```kotlin
 client.logout()  
         .addOnSuccessListener(object : OnSuccessListener<Boolean> {  
   
@@ -135,7 +137,7 @@ client.logout()
 
 ### Outlook Messages
 Messages returns a Task, which allows you to get a list of scan results for messages found in the Outlook mailbox.
-```
+```kotlin
 client.messages().addOnSuccessListener(object : OnSuccessListener<List<ScanResults>> {  
   
     override fun onSuccess(data: List<ScanResults>?) {  
@@ -151,7 +153,7 @@ client.messages().addOnSuccessListener(object : OnSuccessListener<List<ScanResul
 })
 ```
 ### Outlook Client Terminate
-```
+```kotlin
 override fun onDestroy() {  
     super.onDestroy()  
   
@@ -163,3 +165,11 @@ override fun onDestroy() {
 - Min SDK 21+
 - Compile SDK: 29+
 - Java 8+
+
+### Product Intelligence  
+If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
+  
+`AndroidManifest.xml`  
+```xml  
+ <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+``` 

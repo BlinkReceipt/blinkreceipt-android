@@ -32,24 +32,34 @@ The package contains Android Archive (AAR) that contains everything you need to 
 ## <a name=intro></a> Project Integration and Initialization  
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.  
   
-```  
+```groovy
 dependencies {  
- implementation 'androidx.appcompat:appcompat:1.0.0' implementation 'androidx.constraintlayout:constraintlayout:1.1.3'     implementation 'com.squareup.okhttp3:okhttp:4.7.0'  
-     implementation 'com.squareup.retrofit2:retrofit:2.8.2'  
- implementation 'com.squareup.retrofit2:converter-gson:2.8.2' implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'     implementation 'com.squareup.okio:okio:2.6.0'  
-     implementation "com.google.android.gms:play-services-tasks:17.0.2"  
- implementation "com.google.android.gms:play-services-auth:18.0.0"     implementation 'com.jakewharton.timber:timber:4.7.1'  
-     implementation project( ':blinkreceipt-core' )  
-  
+ implementation 'androidx.appcompat:appcompat:1.0.0' 
+
+ implementation 'androidx.constraintlayout:constraintlayout:1.1.3'  
+   
+ implementation 'com.squareup.okhttp3:okhttp:4.7.0'  
+ implementation 'com.squareup.retrofit2:retrofit:2.8.2'  
+ implementation 'com.squareup.retrofit2:converter-gson:2.8.2' 
+ implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'     
+ implementation 'com.squareup.okio:okio:2.6.0'  
+
+ implementation "com.google.android.gms:play-services-tasks:17.1.0"  
+ implementation "com.google.android.gms:play-services-auth:18.0.0"  
+   
+ implementation 'com.jakewharton.timber:timber:4.7.1'  
+
+ implementation project( ':blinkreceipt-core' )  
  implementation project( ':blinkreceipt-recognizer' )  
- implementation project( ':blinkreceipt-camera' )}  
-```  
+ implementation project( ':blinkreceipt-camera' )
+}  
+```
   
 ## R8 / PROGUARD  
   
-Retrofit  
-  
-```  
+Retrofit
+
+```proguard
 # Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and  
 # EnclosingMethod is required to use InnerClasses.  
 -keepattributes Signature, InnerClasses, EnclosingMethod  
@@ -80,43 +90,16 @@ Retrofit
 -keep,allowobfuscation interface <1>  
 ```  
   
-Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration.  
-  
-`AndroidManifest.xml`  
-```  
- <meta-data android:name="com.microblink.LicenseKey" android:value="BLINK RECEIPT LICENSE KEY" />```  
-  
-Within your projects Application class or Content Provider, please add the following code to initialize the sdk.  
-  
-```  
-  
-@Override  
-public void onCreate() {  
- super.onCreate();     BlinkReceiptSdk.sdkInitialize( context );  
-}  
-```
-If you manually initialize the SDK you should disable auto configuration in your manifest.
-
-<meta-data android:name="com.microblink.AutoConfiguration" android:value="false" />
-```
-  
-@Override  
-public void onTerminate() {  
- BlinkReceiptSdk.terminate();  
- super.onTerminate();}  
-  
-```  
-  
 okio  
   
-```  
+```proguard  
 # Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.  
 -dontwarn org.codehaus.mojo.animal_sniffer.*  
 ```  
   
 okhttp  
   
-```  
+```proguard 
 # JSR 305 annotations are for embedding nullability information.  
 -dontwarn javax.annotation.**  
   
@@ -131,50 +114,124 @@ okhttp
 ```  
   
 ## <a name="quickStart"></a> Scanning Your First Receipt  
+Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration.  
+  
+`AndroidManifest.xml`  
+```xml  
+ <meta-data
+    android:name="com.microblink.LicenseKey" 
+    android:value="BLINK RECEIPT LICENSE KEY" />
+```  
+  
+Within your projects Application class please add the following code to initialize the sdk.  
+  
+```java
+@Override  
+public void onCreate() {  
+    super.onCreate();   
+
+    BlinkReceiptSdk.sdkInitialize( context );  
+}
+```
+If you manually initialize the SDK you should disable auto configuration in your manifest.
+
+```xml
+<meta-data 
+    android:name="com.microblink.AutoConfiguration" 
+    android:value="false" />
+```
+
+```java
+@Override  
+public void onTerminate() {  
+    BlinkReceiptSdk.terminate();  
+
+    super.onTerminate();
+}  
+```  
+
 The easiest way to get started scanning your first receipt would be to use the internal Scan Activity within the aar.  
   
-```  
-ScanOptions scanOptions = ScanOptions.newBuilder()  
- .retailer( Retailer.UNKNOWN ) .frameCharacteristics( FrameCharacteristics.newBuilder() .storeFrames( true ) .compressionQuality( 100 ) .externalStorage( false ) .build() ) .logoDetection( true ) .build();  
-Bundle bundle = new Bundle();  
-  
-bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );  
-  
-Intent intent = new Intent( this, CameraScanActivity.class )  
- .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );  
-startActivityForResult( intent, SCAN_RECEIPT_REQUEST );  
+```java 
+    ScanOptions scanOptions = ScanOptions.newBuilder()  
+     .retailer( Retailer.UNKNOWN ) 
+     .frameCharacteristics( FrameCharacteristics.newBuilder() 
+        .storeFrames( true )
+        .compressionQuality( 100 )
+        .externalStorage( false ) .build() ) 
+    .logoDetection( true )
+    .build();  
+
+    Bundle bundle = new Bundle();  
+      
+    bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );  
+      
+    Intent intent = new Intent( this, CameraScanActivity.class )
+        .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );  
+
+    startActivityForResult( intent, SCAN_RECEIPT_REQUEST );  
 ```  
   
 The results are returned through 2 objects, which can be retrieved by getting the parcelable extras `ScanResults` and `Media`. The `ScanResults` object contain the results from the scan session.  
   
+```java
+ @Override 
+ protected void onActivityResult(int requestCode, int resultCode, Intent data) { 
+    super.onActivityResult(requestCode, resultCode, data);  
+
+     if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) { 
+        ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );  
+
+        Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA ); 
+    } 
+}
 ```  
- @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) { super.onActivityResult(requestCode, resultCode, data);  
- if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) { ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );  
- Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA ); } }```  
   
 ### <a name=customizeScanActivity></a> Customize Camera Scan Activity  
 The camera scan activity baked into the sdk contains numerous configurations that can be controlled via intent extras.  
   
-`CameraScanActivity.SCAN_OPTIONS_EXTRA` : ScanOptions : (Recommended) Extra recommended to properly scan receipt.  
-  
-`CameraScanActivity.FULL_SCREEN_EXTRA` : boolean : Extra to have the activity be a full screen activity. `false` by default.  
-  
-`CameraScanActivity.KEEP_SCREEN_ON_EXTRA`: boolean : Extra to keep screen on while scanning session in progress. `false` by default.  
-  
-`CameraScanActivity.ENABLE_ENHANCED_AUTO_FOCUS`: boolean : Enable enhanced autofocus for camera during scan session. `false` by default.  
-  
-`CameraScanActivity.LICENSE_KEY_EXTRA`: String : Alternative way to initialize SDK if not done through default method.  
-  
-`CameraScanActivity.VIEW_PORT_EXTRA`: RectF : Defines the region in which we want to scan on the frame. The properties of the RectF are defined as a percentage of the screen.  
-  
-`CameraScanActivity.VIDEO_RESOLUTION_EXTRA` : VideoResolutionPreset : Video resolution preset extra for camera.  
-  
-`CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA` : CameraRecognizerCallback : Interface passed in as a parcelable extra, that will receive every recognizer's result.  
-  
+ScanOptions (Recommended) Extra recommended to properly scan receipt. 
+```java
+CameraScanActivity.SCAN_OPTIONS_EXTRA;
+```  
+Extra to have the activity be a full screen activity. `false` by default.
+
+```java
+CameraScanActivity.FULL_SCREEN_EXTRA;
+```
+Extra to keep screen on while scanning session in progress. `false` by default.  
+```java
+CameraScanActivity.KEEP_SCREEN_ON_EXTRA;
+```
+Enable enhanced autofocus for camera during scan session. `false` by default.
+```java
+CameraScanActivity.ENABLE_ENHANCED_AUTO_FOCUS;
+```
+Alternative way to initialize SDK if not done through default method.
+```java
+CameraScanActivity.LICENSE_KEY_EXTRA;
+```
+Defines the region in which we want to scan on the frame. The properties of the RectF are defined as a percentage of the screen.
+```java
+CameraScanActivity.VIEW_PORT_EXTRA;
+```
+Video resolution preset extra for camera.
+```java
+CameraScanActivity.VIDEO_RESOLUTION_EXTRA;
+```
+Interface passed in as a parcelable extra, that will receive every recognizer's result.
+```java
+CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA;
+```
+
 UI Dimens  
-  
-`<?xml version="1.0" encoding="utf-8"?>  
- <resources> <dimen name="camera_scan_bottom_frame_height">80dp</dimen> <dimen name="camera_scan_take_picture_size">60dp</dimen> </resources>`  
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+ <resources> 
+    <dimen name="camera_scan_bottom_frame_height">80dp</dimen> 
+    <dimen name="camera_scan_take_picture_size">60dp</dimen> 
+</resources>
+```
 ### <a name=customizeScanSession></a> Customize Scan Configuration  
 Want to see your captured frames? save scanned results? include barcode recognition? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.  
   
@@ -194,45 +251,63 @@ Want to see your captured frames? save scanned results? include barcode recognit
   
 ## <a name=results></a>Retrieving Results  
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.  
-  
-```  
-public interface RecognizerCallback {  
-  
- // Called when scan results are compiled and saved images are processed. void onRecognizerDone( @NonNull ScanResults results, Media media );  
- // Called in the case there is an exception while scanning the captured frame. void onRecognizerException(@NonNull Throwable throwable );  
- // The callback invoked whenever a step within the scanning process is returned. void onRecognizerResultsChanged( @NonNull RecognizerResult result );  
+```java
+public interface RecognizerCallback {
+ // Called when scan results are compiled and saved images are processed.
+void onRecognizerDone( @NonNull ScanResults results, Media media );  
+
+ // Called in the case there is an exception while scanning the captured frame. 
+void onRecognizerException(@NonNull Throwable throwable );  
+ 
+// The callback invoked whenever a step within the scanning process is returned. 
+void onRecognizerResultsChanged( @NonNull RecognizerResult result );  
 }  
 ```  
   
-```  
-public interface CameraRecognizerCallback {  
-  
- // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );  
- // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();  
- //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();  
- void onPreviewStopped();  
- void onException( @NonNull Throwable throwable );}  
-```  
+```java
+public interface CameraRecognizerCallback {
+    // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );  
+    // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();  
+    //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();  
+    void onPreviewStopped();  
+
+    void onException( @NonNull Throwable throwable );
+}  
+```
 The RecognizerCallback also provides preliminary results.  
   
+```java  
+ recognizerView.preliminaryResults();
+```
+```java
+@Override
+public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
+    if ( result instanceof PreliminaryResult ) { 
+        PreliminaryResult results = (PreliminaryResult) result; 
+    } 
+}
 ```  
- recognizerView.preliminaryResults();  ```  
-  
-```  
- @Override public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
- if ( result instanceof PreliminaryResult ) { PreliminaryResult results = (PreliminaryResult) result; } }```  
   
 The RecognizerCallback also provides raw results.  
   
-```  
- @Override public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
- if ( result instanceof OcrRawResult ) { OcrRawResult ocrRawResult = (OcrRawResult) result; } }```  
-  
+```java 
+@Override 
+public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
+    if ( result instanceof OcrRawResult ) { 
+        OcrRawResult ocrRawResult = (OcrRawResult) result; 
+    } 
+}  
+```
+
 The RecognizerCallback also provides edge results.  
   
-```  
- @Override public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
- if ( result instanceof EdgeDetectionResult ) { EdgeDetectionResult edges = (EdgeDetectionResult) result; }     }  
+```java 
+@Override
+public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {  
+    if ( result instanceof EdgeDetectionResult ) { 
+        EdgeDetectionResult edges = (EdgeDetectionResult) result; 
+    }     
+}  
 ```  
   
 `RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.  
@@ -254,21 +329,48 @@ The search target results contain lists of products prescribed in the ScanOption
 ## <a name=recognizerView></a> RecognizerView: Provide your own UI on top of Camera View  
 The sdk does have an easy to use activity that can be used and customized as described above. However, the sdk has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The RecognizerView is a view that provides a camera preview for the user as well as other capabilities for the devloper. The `RecognizerView` handles its own lifecycle, but it is required that in each callback of your activity, you forward that state to the RecognizerView.  
   
-```  
- @Override protected void onCreate(@Nullable Bundle savedInstanceState) { super.onCreate(savedInstanceState);  
- recognizerView.create(); }  
- @Override public void onStart() { super.onStart();  
- recognizerView.start(); }  
- @Override public void onResume() { super.onResume();  
- recognizerView.resume(); }  
- @Override public void onPause() { super.onPause();  
- recognizerView.pause(); }  
- @Override public void onStop() { super.onStop();  
- recognizerView.stop(); }  
- @Override public void onDestroy() { super.onDestroy();  
- recognizerView.destroy(); }```  
-  
-  
+```java
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        recognizerView.create();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        
+        recognizerView.start();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        recognizerView.resume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        
+        recognizerView.pause();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        
+        recognizerView.stop();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        
+        recognizerView.destroy();
+    }
+```
 ### Capabilities and Customizations  
   
 #### Pre Scanning Configuration  
@@ -298,96 +400,115 @@ The Blink Receipt SDK is capable of scanning images passed in as a bitmap. This 
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
   
 `AndroidManifest.xml`  
+```xml  
+ <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```  
- <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />```  
   
 ## <a name=google></a>Google Places  
 If you wish to include Google Places functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
   
 `AndroidManifest.xml`  
+```xml  
+ <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
 ```  
- <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>```  
   
 ## <a name=yelp></a>Yelp  
 If you wish to include Yelp functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
   
 `AndroidManifest.xml`  
+```xml  
+ <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
 ```  
- <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>```  
   
 ## <a name=clientId></a>Client User Id  
 If you wish to include your client user id within your project add your client user id key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
   
 `AndroidManifest.xml`  
+```xml  
+ <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
 ```  
- <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>```  
   
 ## <a name=gmail></a>Gmail  
 If you wish to include Gmail functionality within your project.  
   
 `Dependencies`  
-```  
+```groovy  
 dependencies {  
- implementation "com.google.android.gms:play-services-auth:18.0.0" implementation "com.google.apis:google-api-services-gmail:v1-rev105-1.25.0" exclude module: 'httpclient' implementation "com.google.android.gms:play-services-tasks:17.0.2"  
- implementation "com.google.api-client:google-api-client-android:1.29.2" exclude module: 'httpclient' implementation "com.google.http-client:google-http-client-gson:1.30.1" exclude module: 'httpclient'}  
-  
+    implementation "com.google.android.gms:play-services-auth:18.0.0" 
+    implementation "com.google.apis:google-api-services-gmail:v1-rev105-1.25.0" exclude module: 'httpclient' 
+    implementation "com.google.android.gms:play-services-tasks:17.1.0"  
+    implementation "com.google.api-client:google-api-client-android:1.29.2" exclude module: 'httpclient' 
+    implementation "com.google.http-client:google-http-client-gson:1.30.1" exclude module: 'httpclient'
+}  
 ```  
   
 `Callback`  
-```  
-GmailInboxManager.getInstance( this ).callback( new GmailInboxCallback() {  
-  
- @Override public void onSignedOut() {  
- }  
- @Override public void onException(@NonNull GmailInboxException e) {  
- }  
- @Override public void onSignedIn() {  
- }  
- @Override public void onComplete(@NonNull List<ScanResults> results) {  
- }  } );  
+```java
+GmailInboxManager.getInstance(this).callback( new GmailInboxCallback() {
+    @Override 
+    public void onSignedOut () {
+
+    }
+    @Override 
+    public void onException (@NonNull GmailInboxException e){
+
+    }
+    @Override 
+    public void onSignedIn () {
+
+    }
+    @Override 
+    public void onComplete (@NonNull List < ScanResults > results) {
+
+    }
+} );  
 ```  
   
 `Client ID (OAuth 2.0 web application client ID)`  
-```  
+```java
 GmailInboxManager.getInstance( this ).clientId( getString( R.string.client_id ) )  
 ```  
   
 `Lifecycle Management`  
-```  
-@Override  
-protected void onActivityResult( int requestCode, int resultCode, @Nullable Intent data ) {  
- super.onActivityResult( requestCode, resultCode, data );  
- GmailInboxManager.getInstance().onActivityResult( requestCode, resultCode, data );}  
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    
+    GmailInboxManager.getInstance().onActivityResult(requestCode, resultCode, data);
+}
 ```  
   
 `Sign In`  
+```java  
+ GmailInboxManager.getInstance( this ).signIn( this )
 ```  
- GmailInboxManager.getInstance( this ).signIn( this )```  
-  
 `Sign Out`  
+```java  
+ GmailInboxManager.getInstance( this ).signOut()
 ```  
- GmailInboxManager.getInstance( this ).signOut()```  
-  
 `Read Inbox`  
+```java  
+ GmailInboxManager.getInstance( this ).readInbox( this )
 ```  
- GmailInboxManager.getInstance( this ).readInbox( this )```  
   
 ## <a name=amazon></a>Amazon  
 If you wish to include Amazon functionality within your project. Note: Amazon functionality targets KitKat and above.  
   
 `Credentials`  
-```  
+```java
 AmazonManager.getInstance( this ).credentials( AmazonCredentials( "AMAZON_EMAIL", "AMAZON_PASSWORD" ) )  
-  
 ```  
   
 `Orders`  
-```  
+```java  
 AmazonManager.getInstance( this ).orders( object: AmazonCallback {  
   
  override fun onComplete(orders: List<ScanResults>?) { }  
+
  override fun onException( e: AmazonException) { }  
- } )```  
+ } )
+```  
   
 ## <a name=androidos></a> Android OS Support  
   
@@ -398,8 +519,9 @@ BlinkReceipt is distributed with support for Android minSdk version 21
 Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration to disable auto configuration.  
   
 `AndroidManifest.xml`  
+```xml 
+ <meta-data android:name="com.microblink.AutoConfiguration" android:value="false" />
 ```  
- <meta-data android:name="com.microblink.AutoConfiguration" android:value="false" />```  
   
 ## <a name=processorConfigurations></a> Processor Architecture Considerations  
   

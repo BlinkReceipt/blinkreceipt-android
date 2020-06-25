@@ -227,3 +227,13 @@ Blink Receipt Recognizer
       - okhttp 4.7.0
       - okio : 2.6.0
       - retrofit: 2.8.2
+      
+## 1.3.2
+
+- report proper edge results for bottom and right properties.
+- EdgeDetectionResult edges Rect to RectF types. ***Breaking Change***
+- EdgeDetectionResult returns edges as percentages as the underlying frame dimensions can change depending on the device.
+- Play Service Task 17.1.0
+- Bugfix to determine correct top and bottom edges.
+- e-receipts security enhancements, which now requires clients to have a product intelligence key
+- ***Breaking Change*** Recognizer getInstance() requires a context.

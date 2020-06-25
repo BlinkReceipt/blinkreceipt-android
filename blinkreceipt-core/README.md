@@ -12,7 +12,7 @@ The package contains Android Archive (AAR) that contains everything you need to 
 ## <a name=intro></a> Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
-```
+```groovy
 dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.7.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.0'
@@ -20,6 +20,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.8.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
     implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'
+
+    implementation "com.google.android.gms:play-services-tasks:17.1.0"
     
     implementation 'com.squareup.okio:okio:2.6.0'
 

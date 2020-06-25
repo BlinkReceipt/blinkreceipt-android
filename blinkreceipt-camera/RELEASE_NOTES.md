@@ -11,4 +11,10 @@
 - Fixed crash in camera torch
 
 ## 1.0.2
+
 - bug fixes
+
+## 1.0.3
+
+- bug fixes
+- fix proguard rules

@@ -3,7 +3,6 @@ com.microblink.internal
 com.microblink.internal.amazon
 com.microblink.internal.candidate
 com.microblink.internal.country
-com.microblink.internal.intelligence
 com.microblink.internal.logo
 com.microblink.internal.mailboxes
 com.microblink.internal.mailboxes.gmail
@@ -22,7 +21,6 @@ com.microblink.internal.services.logs
 com.microblink.internal.services.lookup
 com.microblink.internal.services.mailboxes
 com.microblink.internal.services.merchants
-com.microblink.internal.services.product
 com.microblink.internal.services.receipt
 com.microblink.internal.services.store
 com.microblink.internal.services.summary

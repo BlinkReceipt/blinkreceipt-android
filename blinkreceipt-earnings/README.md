@@ -12,11 +12,11 @@ The package contains Android Archive (AAR) that contains everything you need to 
 ## <a name=intro></a> Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
-```
+```groovy
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
 
-    implementation "com.google.android.gms:play-services-tasks:17.0.2"
+    implementation "com.google.android.gms:play-services-tasks:17.1.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.7.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.0'
@@ -38,3 +38,11 @@ dependencies {
 - Min SDK 21+
 - Compile SDK: 29+
 - Java 8+
+
+### Product Intelligence  
+If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
+  
+`AndroidManifest.xml`  
+```xml 
+ <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+``` 
