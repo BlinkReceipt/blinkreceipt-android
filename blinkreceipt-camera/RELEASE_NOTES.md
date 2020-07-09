@@ -18,3 +18,7 @@
 
 - bug fixes
 - fix proguard rules
+
+## 1.0.4
+
+- generate x86_64 slice

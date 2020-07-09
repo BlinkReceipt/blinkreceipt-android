@@ -237,3 +237,7 @@ Blink Receipt Recognizer
 - Bugfix to determine correct top and bottom edges.
 - e-receipts security enhancements, which now requires clients to have a product intelligence key
 - ***Breaking Change*** Recognizer getInstance() requires a context.
+
+## 1.3.3
+
+- generate x86_64 slice

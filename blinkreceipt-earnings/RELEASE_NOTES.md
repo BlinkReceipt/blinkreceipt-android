@@ -25,3 +25,8 @@
 - update Play Service Task framework to 17.1.0
 - fix proguard rules
 - product intelligence required to make corrections.
+
+## 1.0.4
+
+- generate x86_64 slice
+- fix overriding corrections with new product intelligence response data.

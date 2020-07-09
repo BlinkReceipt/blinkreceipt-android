@@ -18,3 +18,6 @@
 - bug fixes
 - Update Play Service Task framework to 17.1.0
 
+## 1.0.4
+
+- generate x86_64 slice

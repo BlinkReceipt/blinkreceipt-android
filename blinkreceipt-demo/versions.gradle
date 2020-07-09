@@ -40,9 +40,9 @@ buildscript {
             'tasks'                 : '17.1.0',
             'timber'                : '4.7.1',
             'msal'                  : '1.5.2',
-            'coroutines'            : '1.3.6',
+            'coroutines'            : '1.3.7',
             'versionMajor'          : 1,
             'versionMinor'          : 3,
-            'versionPatch'          : 2
+            'versionPatch'          : 3
     ]
 }

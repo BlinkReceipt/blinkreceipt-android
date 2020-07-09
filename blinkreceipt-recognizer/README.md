@@ -123,7 +123,7 @@ Even though there are different ways to initialize the sdk, the recommended way 
     android:value="BLINK RECEIPT LICENSE KEY" />
 ```  
   
-Within your projects Application class please add the following code to initialize the sdk.  
+If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.  
   
 ```java
 @Override  
@@ -133,7 +133,6 @@ public void onCreate() {
     BlinkReceiptSdk.sdkInitialize( context );  
 }
 ```
-If you manually initialize the SDK you should disable auto configuration in your manifest.
 
 ```xml
 <meta-data 
