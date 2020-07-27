@@ -30,3 +30,7 @@
 
 - generate x86_64 slice
 - fix overriding corrections with new product intelligence response data.
+
+## 1.0.5
+
+- sensitive product bug fix

@@ -22,3 +22,7 @@
 ## 1.0.4
 
 - generate x86_64 slice
+
+## 1.0.5
+
+- bug fixes & performance improvements

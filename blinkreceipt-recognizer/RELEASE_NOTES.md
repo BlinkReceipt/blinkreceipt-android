@@ -241,3 +241,7 @@ Blink Receipt Recognizer
 ## 1.3.3
 
 - generate x86_64 slice
+
+## 1.3.4
+
+- sensitive product bug fix

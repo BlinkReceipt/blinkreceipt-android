@@ -122,7 +122,8 @@ Even though there are different ways to initialize the sdk, the recommended way 
     android:name="com.microblink.LicenseKey" 
     android:value="BLINK RECEIPT LICENSE KEY" />
 ```  
-If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.  
+  
+Within your projects Application class please add the following code to initialize the sdk.  
   
 ```java
 @Override  
@@ -132,6 +133,7 @@ public void onCreate() {
     BlinkReceiptSdk.sdkInitialize( context );  
 }
 ```
+If you manually initialize the SDK you should disable auto configuration in your manifest.
 
 ```xml
 <meta-data 
@@ -392,7 +394,7 @@ When you wish to finish your scan session call `finishedScanning()`. This will b
 All RecognizerCallback methods are executed on the main thread.  
   
 ## <a name=directAPI></a> Direct API  
-The Blink Receipt SDK is capable of scanning images passed in as a bitmap. This utilizes the direct api which can be accessed via the `Recognizer` instance. The Recognizer is a singleton that when calling `recognizeBitmap( @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation, @NonNull final RecognizerCallback callback )` will scan your bitmap image based on the ScanOption configurations and return to you the results via the callback provided.  
+The Blink Receipt SDK is capable of scanning images passed in as a bitmap. This utilizes the direct api which can be accessed via the `Recognizer` instance. The Recognizer is a singleton that when calling `recognizeBitmap( @NonNull Bitmap bitmap, @NonNull CameraOrientation orientation, @NonNull final RecognizerCallback callback )` will scan your bitmap image based on the ScanOption configurations and return to you the results via the callback provided. This api is not intended for general use.
   
 ## <a name=intelligence></a>Product Intelligence  
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  

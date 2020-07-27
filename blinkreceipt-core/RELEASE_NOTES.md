@@ -21,3 +21,7 @@
 ## 1.0.4
 
 - generate x86_64 slice
+
+## 1.0.5
+
+- sensitive product bug fix
