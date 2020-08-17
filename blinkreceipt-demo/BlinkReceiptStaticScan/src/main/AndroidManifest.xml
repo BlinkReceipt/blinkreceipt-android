@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name=".BlinkReceiptApplication"
+        android:name=".BlinkApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.microblink.ProductIntelligence"
+            android:value="[PRODUCT INTEL KEY]" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"

@@ -15,23 +15,43 @@ To add sdk to your android project please add the following to your dependency s
 dependencies {
      api project( ':blinkreceipt-core' )
 
-    implementation 'com.squareup.okhttp3:okhttp:4.7.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
     
-    implementation 'com.squareup.retrofit2:retrofit:2.8.2'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'
-    
-    implementation 'com.squareup.okio:okio:2.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    implementation "androidx.security:security-crypto:1.1.0-alpha02"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+    implementation "androidx.webkit:webkit:1.3.0-rc02"
+
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    implementation "androidx.core:core:1.3.1"
+
+    implementation 'com.squareup.okio:okio:2.7.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     implementation "com.google.android.gms:play-services-tasks:17.1.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:${versions.msal}" ) {
+    implementation( "com.microsoft.identity.client:msal:1.6.0" ) {
         exclude group: 'com.microsoft.device.display'
     }
+
+    implementation "com.sun.mail:android-mail:1.6.5"
+    implementation "com.sun.mail:android-activation:1.6.5"
+    
+    implementation "androidx.fragment:fragment:1.2.5"
+
+    implementation "com.google.android.material:material:1.2.0"
+
+
 }
 ```
 
@@ -42,7 +62,7 @@ Outlook integration requires 1 additional AAR in your build gradle.
 ```groovy
 dependencies {
 
-    implementation( "com.microsoft.identity.client:msal:1.5.2" ) {
+    implementation( "com.microsoft.identity.client:msal:1.6.0" ) {
         exclude group: 'com.microsoft.device.display'
     }
 }

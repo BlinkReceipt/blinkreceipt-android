@@ -20,6 +20,10 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     signingConfigs {
         release {
             storeFile file("../blink-receipt-demos.jsk")
@@ -62,6 +66,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
+
+    implementation "com.google.android.material:material:${versions.material}"
 
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 

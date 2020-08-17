@@ -241,7 +241,19 @@ Blink Receipt Recognizer
 ## 1.3.3
 
 - generate x86_64 slice
+- Bug fixes
 
 ## 1.3.4
 
 - sensitive product bug fix
+
+## 1.3.5
+
+- okio 2.7.0
+- okhttp 4.8.1
+- retrofit: 2.9.0
+- build tools 30.0.1
+- attach screen detection properties on take picture results
+- Amazon fixed memory leak in manager. AmazonManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
+- Gmail fixed memory leak in manager. GmailManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
+- ocrConfidence NAN bug fix.

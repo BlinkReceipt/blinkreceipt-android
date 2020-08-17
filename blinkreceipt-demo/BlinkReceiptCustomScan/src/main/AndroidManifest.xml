@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name=".BlinkReceiptApplication"
+        android:name=".BlinkApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -33,7 +33,11 @@
             android:name=".ui.CameraActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <meta-data
+            android:name="com.microblink.ProductIntelligence"
+            android:value="[PRODUCT INTEL KEY]" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"

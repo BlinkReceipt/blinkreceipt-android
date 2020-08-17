@@ -21,7 +21,16 @@
 ## 1.0.4
 
 - generate x86_64 slice
+- Bug fixes
 
 ## 1.0.5
 
 - sensitive product bug fix
+
+## 1.0.6
+
+- okio 2.7.0
+- okhttp 4.8.1
+- build tools 30.0.1
+- Androidx crypto library to encrypt local storage( required )
+    -implementation "androidx.security:security-crypto:1.1.0-alpha02"

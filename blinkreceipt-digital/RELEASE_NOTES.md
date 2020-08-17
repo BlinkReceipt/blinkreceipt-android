@@ -14,7 +14,17 @@
 ## 1.0.2
 
 - generate x86_64 slice
+- Bug fixes
 
 ## 1.0.3
 
 - sensitive product bug fix
+
+## 1.0.4
+
+- okio 2.7.0
+- okhttp 4.8.0
+- build tools 30.0.1
+- microsoft 1.6.0 SDK
+- yahoo and aol IMAP integration
+- IMAP requires style parent Theme.MaterialComponents.* for bottom sheet support

@@ -34,15 +34,15 @@ To add sdk to your android project please add the following to your dependency s
   
 ```groovy
 dependencies {  
- implementation 'androidx.appcompat:appcompat:1.0.0' 
+ implementation 'androidx.appcompat:appcompat:1.2.0' 
 
  implementation 'androidx.constraintlayout:constraintlayout:1.1.3'  
    
- implementation 'com.squareup.okhttp3:okhttp:4.7.0'  
- implementation 'com.squareup.retrofit2:retrofit:2.8.2'  
- implementation 'com.squareup.retrofit2:converter-gson:2.8.2' 
- implementation 'com.squareup.retrofit2:converter-scalars:2.8.2'     
- implementation 'com.squareup.okio:okio:2.6.0'  
+ implementation 'com.squareup.okhttp3:okhttp:4.8.1'  
+ implementation 'com.squareup.retrofit2:retrofit:2.9.0'  
+ implementation 'com.squareup.retrofit2:converter-gson:2.9.0' 
+ implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'     
+ implementation 'com.squareup.okio:okio:2.7.0'  
 
  implementation "com.google.android.gms:play-services-tasks:17.1.0"  
  implementation "com.google.android.gms:play-services-auth:18.0.0"  
@@ -123,7 +123,7 @@ Even though there are different ways to initialize the sdk, the recommended way 
     android:value="BLINK RECEIPT LICENSE KEY" />
 ```  
   
-Within your projects Application class please add the following code to initialize the sdk.  
+If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.  
   
 ```java
 @Override  
@@ -133,7 +133,6 @@ public void onCreate() {
     BlinkReceiptSdk.sdkInitialize( context );  
 }
 ```
-If you manually initialize the SDK you should disable auto configuration in your manifest.
 
 ```xml
 <meta-data 
@@ -233,7 +232,7 @@ UI Dimens
 </resources>
 ```
 ### <a name=customizeScanSession></a> Customize Scan Configuration  
-Want to see your captured frames? save scanned results? include barcode recognition? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.  
+Want to see your captured frames? save scanned results? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.  
   
 `retailer( Retailer retailer )`: If the retailer is known the sdk can take advantage of the pre-defined text styles and other known characteristics of that retailer's receipt.  
   

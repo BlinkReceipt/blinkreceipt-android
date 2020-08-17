@@ -30,7 +30,15 @@
 
 - generate x86_64 slice
 - fix overriding corrections with new product intelligence response data.
+- Bug fixes
 
 ## 1.0.5
 
 - sensitive product bug fix
+
+## 1.0.6
+
+- okio 2.7.0
+- okhttp 4.8.1
+- retrofit: 2.9.0
+- build tools 30.0.1

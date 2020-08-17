@@ -26,7 +26,15 @@
 ## 1.0.4
 
 - generate x86_64 slice
+- Bug fixes
 
 ## 1.0.5
 
 - sensitive product bug fix
+
+## 1.0.6
+
+- okio 2.7.0
+- okhttp 4.8.1
+- retrofit: 2.9.0
+- build tools 30.0.1

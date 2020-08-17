@@ -33,11 +33,13 @@ class MainActivity : AppCompatActivity() {
                         throwable.toString(), Toast.LENGTH_SHORT).show()
             }
 
-        }).dayCutoff( 15 )
+        }).apply {
+            dayCutoff( 15 )
+        }
     }
 
     fun onClear(view: View) {
-        client.clear().addOnSuccessListener {
+        client.clearLastCheckedTime().addOnSuccessListener {
             Toast.makeText(this@MainActivity,
                     "Cleared Results", Toast.LENGTH_LONG).show()
         }
@@ -81,6 +83,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-        client.terminate()
+        client.destroy()
     }
 }

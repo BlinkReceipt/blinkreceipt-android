@@ -22,7 +22,13 @@
 ## 1.0.4
 
 - generate x86_64 slice
+- Bug fixes
 
 ## 1.0.5
 
 - bug fixes & performance improvements
+
+## 1.0.6
+
+- bug fixes
+- build tools 30.0.1
