@@ -34,3 +34,7 @@
 - build tools 30.0.1
 - Androidx crypto library to encrypt local storage( required )
     -implementation "androidx.security:security-crypto:1.1.0-alpha02"
+
+## 1.0.7
+  
+- Bug Fix for panera bread

@@ -32,3 +32,7 @@
 
 - bug fixes
 - build tools 30.0.1
+
+## 1.0.7
+
+- Bug Fix for panera bread

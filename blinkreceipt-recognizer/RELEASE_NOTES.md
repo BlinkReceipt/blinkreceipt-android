@@ -257,3 +257,7 @@ Blink Receipt Recognizer
 - Amazon fixed memory leak in manager. AmazonManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
 - Gmail fixed memory leak in manager. GmailManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
 - ocrConfidence NAN bug fix.
+
+## 1.3.6
+
+- Bug Fix for panera bread

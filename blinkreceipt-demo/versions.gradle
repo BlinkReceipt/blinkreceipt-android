@@ -47,6 +47,6 @@ buildscript {
             'material'              : '1.2.0',
             'versionMajor'          : 1,
             'versionMinor'          : 3,
-            'versionPatch'          : 5
+            'versionPatch'          : 6
     ]
 }

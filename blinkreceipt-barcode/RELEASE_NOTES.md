@@ -38,3 +38,7 @@
 - okhttp 4.8.1
 - retrofit: 2.9.0
 - build tools 30.0.1
+
+## 1.0.7
+
+- Bug Fix for panera bread

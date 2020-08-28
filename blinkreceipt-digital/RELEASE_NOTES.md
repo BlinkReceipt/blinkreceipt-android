@@ -28,3 +28,7 @@
 - microsoft 1.6.0 SDK
 - yahoo and aol IMAP integration
 - IMAP requires style parent Theme.MaterialComponents.* for bottom sheet support
+
+## 1.0.5
+
+- Bug Fix for panera bread
