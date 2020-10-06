@@ -42,3 +42,9 @@
 ## 1.0.7
 
 - Bug Fix for panera bread
+
+## 1.0.8
+
+- okhttp 4.9.0
+- okio 2.8.0
+- Update Play Service Task framework to 17.2.0

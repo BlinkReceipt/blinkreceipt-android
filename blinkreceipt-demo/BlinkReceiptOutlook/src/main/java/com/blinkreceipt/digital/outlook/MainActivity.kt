@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.microblink.core.InitializeCallback
-import com.microblink.core.internal.Timberland
+import com.microblink.core.Timberland
 import com.microblink.digital.OutlookClient
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var client: OutlookClient
 
     init {
-        Timberland.cover( true )
+        Timberland.enable( true )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

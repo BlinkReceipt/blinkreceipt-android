@@ -8,7 +8,7 @@ import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
 import com.blinkreceipt.digital.imap.databinding.CredentialsViewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microblink.core.InitializeCallback
-import com.microblink.core.internal.Timberland
+import com.microblink.core.Timberland
 import com.microblink.digital.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     private val options by lazy {
-        ProviderSetupOptions.newBuilder(Provider.YAHOO)
+        ProviderSetupOptions.newBuilder(Provider.GMAIL)
                 .debug(false)
                 .clearCache(false)
                 .build()

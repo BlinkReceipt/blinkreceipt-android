@@ -36,5 +36,12 @@
     -implementation "androidx.security:security-crypto:1.1.0-alpha02"
 
 ## 1.0.7
-  
+
 - Bug Fix for panera bread
+
+## 1.0.8
+
+- okhttp 4.9.0
+- okio 2.8.0
+- override internal logger instance
+- Update Play Service Task framework to 17.2.0

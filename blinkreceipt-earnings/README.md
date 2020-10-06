@@ -16,16 +16,16 @@ To add sdk to your android project please add the following to your dependency s
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
-    implementation "com.google.android.gms:play-services-tasks:17.1.0"
+    implementation "com.google.android.gms:play-services-tasks:17.2.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
-    
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-    
-    implementation 'com.squareup.okio:okio:2.7.0'
+
+    implementation 'com.squareup.okio:okio:2.8.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
@@ -39,10 +39,10 @@ dependencies {
 - Compile SDK: 29+
 - Java 8+
 
-### Product Intelligence  
-If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.  
-  
-`AndroidManifest.xml`  
-```xml 
+### Product Intelligence
+If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+
+`AndroidManifest.xml`
+```xml
  <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
-``` 
+```

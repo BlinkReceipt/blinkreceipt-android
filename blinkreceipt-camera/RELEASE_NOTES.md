@@ -36,3 +36,5 @@
 ## 1.0.7
 
 - Bug Fix for panera bread
+
+## 1.0.8

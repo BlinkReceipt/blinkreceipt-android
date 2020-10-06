@@ -4,8 +4,6 @@ com.microblink.internal.amazon
 com.microblink.internal.candidate
 com.microblink.internal.country
 com.microblink.internal.logo
-com.microblink.internal.mailboxes
-com.microblink.internal.mailboxes.gmail
 com.microblink.internal.merchant
 com.microblink.internal.phone
 com.microblink.internal.services
@@ -19,7 +17,6 @@ com.microblink.internal.services.license
 com.microblink.internal.services.linux
 com.microblink.internal.services.logs
 com.microblink.internal.services.lookup
-com.microblink.internal.services.mailboxes
 com.microblink.internal.services.merchants
 com.microblink.internal.services.receipt
 com.microblink.internal.services.store

@@ -111,8 +111,8 @@ Product Updates
     - Improved memory management
     - Updated OCR models
     - Costco Date improvements
-    - Overall parser improvements 
-Bug Fixes    
+    - Overall parser improvements
+Bug Fixes
     - Detect internal banner id
     - E-Receipts pass description from native context
 Third Party Libraries
@@ -128,17 +128,17 @@ Third Party Libraries
 
 ## 1.2.3
 
-- Edge detection fixes 
+- Edge detection fixes
 - Incorporate full price into product intelligence
-- Incorporate fuzzy search into product intelligence 
+- Incorporate fuzzy search into product intelligence
 - Merchant detection fixes
-- Amazon improvements 
+- Amazon improvements
 - Support for purchase type
 - Parser improvements
 
 ## 1.2.4
 
-- Fix crash in edge detection 
+- Fix crash in edge detection
 
 ## 1.2.5
 
@@ -151,7 +151,7 @@ Third Party Libraries
 
 ## 1.2.6
 
-- Amazon bug fixes 
+- Amazon bug fixes
 - Fix for certain 2020 dates
 
 ## 1.2.7
@@ -162,11 +162,11 @@ Third Party Libraries
     - Renamed onEdgeDetectionResult to onEdgeDetectionResults
 - Camera management thread improvements
 - Added blurry & receipt property to TakePictureResult
-- Add channel to scan results 
+- Add channel to scan results
 - Samsung camera permission issue & aspect ratio fix.
 - Gmail
     - onSignInCancelled added for when a user cancels sign in requests
-    
+
 ## 1.2.8
 
 - Merchant improvements & bug fixes
@@ -187,7 +187,7 @@ Third Party Libraries
     - Retailer
         - com.microblink.Retailer
         - com.microblink.core.Retailer
-- Dependencies 
+- Dependencies
     - Build Tools: 29.0.3
     - Okhttp: 4.4.1
     - Retrofit : 2.8.1
@@ -202,7 +202,7 @@ Blink Receipt Recognizer
     - Update Play Service Auth framework to 18.0.0
     - Removed internal location look up services.
 
-- Dependencies 
+- Dependencies
     - okhttp 4.5.0
     - Play Service Task 17.0.2
     - Play Service Auth 18.0.0
@@ -221,13 +221,13 @@ Blink Receipt Recognizer
     - introduced the following new properties:
         - pos system
         - sub merchant
-- Dependencies 
+- Dependencies
       - blink receipt Core 1.0.2
       - blink receipt Camera 1.0.2
       - okhttp 4.7.0
       - okio : 2.6.0
       - retrofit: 2.8.2
-      
+
 ## 1.3.2
 
 - report proper edge results for bottom and right properties.
@@ -257,7 +257,24 @@ Blink Receipt Recognizer
 - Amazon fixed memory leak in manager. AmazonManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
 - Gmail fixed memory leak in manager. GmailManager.getInstance().destroy() in onDestroy() of activity to release callbacks.
 - ocrConfidence NAN bug fix.
+- Migrated the GmailInboxManager functionality to the blinkreceipt-digital and converted it GmailClient
+- Modified internal recognition processor lifecycle to be tightly coupled to RecognizerView lifecycle.
 
 ## 1.3.6
 
 - Bug Fix for panera bread
+
+## 1.3.7
+
+- ***Breaking Change*** Removed access to the Recognizer class all recognition should go through _RecognizerView_
+- Security: remove credentials interface from amazon manager.
+- Product extended fields from bundle to map.
+- okhttp 4.9.0
+- okio 2.8.0
+- Update Play Service Auth framework to 18.1.0
+- Play Service Task 17.2.0
+- Google Api Services 1.30.10
+- Google Api Client 1.36.0
+- Renamed ReceiptSdkInitProvider to BlinkRecognizerProvider. if you are overriding this entry in the manifest please be aware of this name change.
+- augmented internal bitmap scale detection to improve OCR results.
+- don't return null for totals that are 0.00

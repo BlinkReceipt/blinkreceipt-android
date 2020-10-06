@@ -4,7 +4,7 @@
 
 - Outlook Support
     - Requires Blink Receipt Recognizer to be initialized
-    
+
 ## 1.0.1
 
 - fix proguard rules
@@ -30,5 +30,14 @@
 - IMAP requires style parent Theme.MaterialComponents.* for bottom sheet support
 
 ## 1.0.5
-
 - Bug Fix for panera bread
+
+## 1.0.6
+
+- outlook client rename me to credentials
+- Security: remove credentials interface from outlook and IMAP clients.
+- Gmail SDK Integration
+- Gmail IMAP support
+- Expose receipt email id in scan results
+- okhttp 4.9.0
+- okio 2.8.0

@@ -45,4 +45,11 @@
 
 ## 1.0.7
 
-- Bug Fix for panera bread
+- Bug fix for panera bread
+
+## 1.0.8
+
+- web scan results should use banner id associated with web request and not the retailer.
+- okhttp 4.9.0
+- okio 2.8.0
+- update Play Service Task framework to 17.2.0
