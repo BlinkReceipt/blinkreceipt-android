@@ -48,3 +48,8 @@
 - okhttp 4.9.0
 - okio 2.8.0
 - Update Play Service Task framework to 17.2.0
+
+## 1.0.9
+
+- camera stability fixes
+- okio 2.9.0

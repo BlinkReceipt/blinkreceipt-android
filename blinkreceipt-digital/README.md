@@ -120,9 +120,14 @@ Once the project has been synced the AAR should now be accessible via the code i
 ## Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
+***Note: When declaring dependencies for the digital sdk, you must add the :blinkreceipt-recognizer and :blinkreceipt-camera aars to your project. Even if you do not plan on explicitly using the functionality within those sdks, without these aars the license verification process will fail and the digital sdk will fail to work.***
+
 ```groovy
 dependencies {
      api project( ':blinkreceipt-core' )
+
+     api project( ':blinkreceipt-recognizer' )
+     api project( ':blinkreceipt-camera' )
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'

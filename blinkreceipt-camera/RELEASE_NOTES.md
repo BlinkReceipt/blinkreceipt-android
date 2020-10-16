@@ -38,3 +38,11 @@
 - Bug Fix for panera bread
 
 ## 1.0.8
+
+- Bug fixes
+
+## 1.0.9
+
+- partial fix for blank preview after locking/unlocking screen
+- initial orientation now set to activity orientation by default to avoid NPE if not set
+- force camera1 on Samsung devices with aspect ratio issues

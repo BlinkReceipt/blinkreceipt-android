@@ -34,13 +34,13 @@ To add sdk to your android project please add the following to your dependency s
 dependencies {
  implementation 'androidx.appcompat:appcompat:1.2.0'
 
- implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+ implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
  implementation 'com.squareup.okhttp3:okhttp:4.9.0'
  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
- implementation 'com.squareup.okio:okio:2.8.0'
+ implementation 'com.squareup.okio:okio:2.9.0'
 
  implementation "com.google.android.gms:play-services-tasks:17.2.0"
  implementation "com.google.android.gms:play-services-auth:18.1.0"

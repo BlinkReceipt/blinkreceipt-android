@@ -45,7 +45,7 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:logging-interceptor:2.9.0'
 
-    implementation 'com.squareup.okio:okio:2.8.0'
+    implementation 'com.squareup.okio:okio:2.9.0'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.0"
 

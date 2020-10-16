@@ -15,24 +15,24 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MainViewModel extends AndroidViewModel {
 
-    private ScanOptions scanOptions;
+    private final ScanOptions scanOptions;
 
-    private MutableLiveData<RecognizerResults> scanItems = new MutableLiveData<>();
+    private final MutableLiveData<RecognizerResults> scanItems = new MutableLiveData<>();
 
-    public MainViewModel( @NonNull Application application ) {
-        super( application );
+    public MainViewModel(@NonNull Application application) {
+        super(application);
 
         scanOptions = ScanOptions.newBuilder()
-                .retailer( Retailer.UNKNOWN )
-                .frameCharacteristics( FrameCharacteristics.newBuilder()
-                        .externalStorage( false )
-                        .build() )
-                .edgeDetectionConfiguration( new EdgeDetectionConfiguration() )
+                .retailer(Retailer.UNKNOWN)
+                .frameCharacteristics(FrameCharacteristics.newBuilder()
+                        .externalStorage(false)
+                        .build())
+                .edgeDetectionConfiguration(EdgeDetectionConfiguration.newBuilder().build())
                 .build();
     }
 
-    public void scanItems( @NonNull RecognizerResults item ) {
-        scanItems.setValue( item );
+    public void scanItems(@NonNull RecognizerResults item) {
+        scanItems.setValue(item);
     }
 
     public LiveData<RecognizerResults> scanItems() {

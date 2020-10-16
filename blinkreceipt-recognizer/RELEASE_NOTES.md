@@ -278,3 +278,12 @@ Blink Receipt Recognizer
 - Renamed ReceiptSdkInitProvider to BlinkRecognizerProvider. if you are overriding this entry in the manifest please be aware of this name change.
 - augmented internal bitmap scale detection to improve OCR results.
 - don't return null for totals that are 0.00
+
+## 1.3.8
+
+- constraints 2.0.1
+- http retry bug fixes while scanning receipts
+- okio 2.9.0
+- initialize performance improvements around camera management
+- enable edges from start of scan session. Edge configuration access through builder interface
+- merchant configuration access through builder interface

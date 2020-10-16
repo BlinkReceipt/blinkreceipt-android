@@ -23,7 +23,7 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-tasks:17.2.0"
 
-    implementation 'com.squareup.okio:okio:2.8.0'
+    implementation 'com.squareup.okio:okio:2.9.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

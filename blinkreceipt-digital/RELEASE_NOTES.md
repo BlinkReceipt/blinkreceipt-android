@@ -41,3 +41,11 @@
 - Expose receipt email id in scan results
 - okhttp 4.9.0
 - okio 2.8.0
+
+## 1.0.7
+
+- constraints 2.0.1
+- stability fixes
+- okio 2.9.0
+- webkit 1.3.0
+- material 1.2.1
