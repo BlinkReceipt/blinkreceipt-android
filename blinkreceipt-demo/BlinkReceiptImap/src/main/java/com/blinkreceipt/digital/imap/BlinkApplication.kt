@@ -1,7 +1,6 @@
 package com.blinkreceipt.digital.imap
 
 import android.app.Application
-import com.microblink.BlinkReceiptSdk
 import com.microblink.core.InitializeCallback
 import com.microblink.core.Timberland
 import com.microblink.digital.BlinkReceiptDigitalSdk
@@ -24,12 +23,6 @@ class BlinkApplication : Application() {
             }
 
         })
-    }
-
-    override fun onTerminate() {
-        BlinkReceiptSdk.terminate()
-
-        super.onTerminate()
     }
 
 }

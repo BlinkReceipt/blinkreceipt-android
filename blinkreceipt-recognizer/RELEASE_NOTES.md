@@ -1,4 +1,4 @@
-### Release Notes
+# Release Notes
 
 ## 1.0.0
 
@@ -263,6 +263,11 @@ Blink Receipt Recognizer
 ## 1.3.6
 
 - Bug Fix for panera bread
+- Pass more data from session to duplicate detection endpoint
+- Return channel from all merchant sources that support it
+- Send fraud detection data to duplicate detection endpoint
+- Pass frame result data to frame upload endpoint
+- Implement new merchant detection mechanism via longtail lookup
 
 ## 1.3.7
 
@@ -287,3 +292,11 @@ Blink Receipt Recognizer
 - initialize performance improvements around camera management
 - enable edges from start of scan session. Edge configuration access through builder interface
 - merchant configuration access through builder interface
+
+## 1.3.9
+
+- amazon country code support
+- improved receipt screen detection
+- downgrade target to api 29, but compiled against api 30
+- amazon secure internal stored files. Requires "androidx.security:security-crypto:1.1.0-alpha02"
+- enhanced security for users stored credentials using jetpack security instead of standard encryption algorithms.

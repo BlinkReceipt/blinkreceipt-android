@@ -73,11 +73,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 
-   implementation project(':LibBlinkReceiptRecognizer')
-
     implementation project(':LibBlinkReceiptCore')
-
-    implementation project(':LibBlinkReceiptCamera')
 
     implementation project(':LibBlinkReceiptDigital')
 

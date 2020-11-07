@@ -13,24 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 final class ProductsViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView name;
+    private final TextView name;
 
-    private TextView total;
+    private final TextView total;
 
     ProductsViewHolder(@NonNull View itemView) {
-        super( itemView );
+        super(itemView);
 
-        name = itemView.findViewById( R.id.name );
+        name = itemView.findViewById(R.id.name);
 
-        total = itemView.findViewById( R.id.total );
+        total = itemView.findViewById(R.id.total);
     }
 
     void bind(@NonNull Product product) {
         Context context = itemView.getContext();
 
-        name.setText( TypeValueUtils.value( product.description() ) );
+        name.setText(TypeValueUtils.value(product.description()));
 
-        total.setText( context.getString( R.string.total_price, product.totalPrice() ) );
+        total.setText(context.getString(R.string.total_price, TypeValueUtils.value(product.totalPrice())));
     }
 
 }

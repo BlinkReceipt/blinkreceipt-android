@@ -42,10 +42,14 @@ dependencies {
  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
  implementation 'com.squareup.okio:okio:2.9.0'
 
+ implementation "androidx.security:security-crypto:1.1.0-alpha02"
+
  implementation "com.google.android.gms:play-services-tasks:17.2.0"
  implementation "com.google.android.gms:play-services-auth:18.1.0"
 
  implementation 'com.jakewharton.timber:timber:4.7.1'
+
+ implementation "androidx.webkit:webkit:1.3.0"
 
  implementation project( ':blinkreceipt-core' )
  implementation project( ':blinkreceipt-recognizer' )
@@ -119,32 +123,6 @@ Even though there are different ways to initialize the sdk, the recommended way 
  <meta-data
     android:name="com.microblink.LicenseKey"
     android:value="BLINK RECEIPT LICENSE KEY" />
-```
-
-If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
-
-```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
-    BlinkReceiptSdk.initialize( context );
-}
-```
-
-```xml
-<meta-data
-    android:name="com.microblink.AutoConfiguration"
-    android:value="false" />
-```
-
-```java
-@Override
-public void onTerminate() {
-    BlinkReceiptSdk.terminate();
-
-    super.onTerminate();
-}
 ```
 
 The easiest way to get started scanning your first receipt would be to use the internal Scan Activity within the aar.
@@ -254,7 +232,7 @@ public interface RecognizerCallback {
 void onRecognizerDone( @NonNull ScanResults results, Media media );
 
  // Called in the case there is an exception while scanning the captured frame.
-void onRecognizerException(@NonNull Throwable throwable );
+void onRecognizerException(@NonNull Throwable e );
 
 // The callback invoked whenever a step within the scanning process is returned.
 void onRecognizerResultsChanged( @NonNull RecognizerResult result );
@@ -451,6 +429,31 @@ Even though there are different ways to initialize the sdk, the recommended way 
 `AndroidManifest.xml`
 ```xml
  <meta-data android:name="com.microblink.AutoConfiguration" android:value="false" />
+```
+If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
+
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
+
+    BlinkReceiptSdk.initialize( context );
+}
+```
+
+```xml
+<meta-data
+    android:name="com.microblink.AutoConfiguration"
+    android:value="false" />
+```
+
+```java
+@Override
+public void onTerminate() {
+    BlinkReceiptSdk.terminate();
+
+    super.onTerminate();
+}
 ```
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations

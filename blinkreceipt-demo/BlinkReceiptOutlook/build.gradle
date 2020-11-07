@@ -66,11 +66,7 @@ dependencies {
 
     implementation "com.google.android.material:material:${versions.material}"
 
-    implementation project(':LibBlinkReceiptRecognizer')
-
     implementation project(':LibBlinkReceiptCore')
-
-    implementation project(':LibBlinkReceiptCamera')
 
     implementation project(':LibBlinkReceiptDigital')
 
@@ -93,6 +89,6 @@ dependencies {
     }
 
     testImplementation "junit:junit:${versions.junit}"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

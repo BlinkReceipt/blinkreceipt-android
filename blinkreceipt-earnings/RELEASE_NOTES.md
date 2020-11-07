@@ -1,4 +1,4 @@
-### Release Notes
+# Release Notes
 
 ## 1.0.0
 
@@ -58,3 +58,9 @@
 
 - stability fixes
 - okio 2.9.0
+
+## 1.1.0
+
+- license key is required to initialize the SDK
+- downgrade target to api 29, but compiled against api 30
+- product intel optimizations (fuzzy)

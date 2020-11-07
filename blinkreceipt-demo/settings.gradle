@@ -1,3 +1,7 @@
+include ':BlinkReceiptEarnings'
+include ':LibBlinkReceiptEarnings'
+include ':LibBlinkReceiptBarcode'
+include ':BlinkReceiptBarcode'
 include ':LibBlinkReceiptRecognizer'
 include ':LibBlinkReceiptDigital'
 include ':LibBlinkReceiptCore'

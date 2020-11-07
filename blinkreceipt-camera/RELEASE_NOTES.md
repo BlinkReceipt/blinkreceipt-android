@@ -46,3 +46,7 @@
 - partial fix for blank preview after locking/unlocking screen
 - initial orientation now set to activity orientation by default to avoid NPE if not set
 - force camera1 on Samsung devices with aspect ratio issues
+
+## 1.1.0
+
+- downgrade target to api 29, but compiled against api 30
