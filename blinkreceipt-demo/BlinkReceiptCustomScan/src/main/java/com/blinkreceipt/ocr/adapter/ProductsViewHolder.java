@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 final class ProductsViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView name;
+    private final TextView name;
 
-    private TextView total;
+    private final TextView total;
 
     ProductsViewHolder(@NonNull View itemView) {
         super( itemView );
@@ -30,7 +30,7 @@ final class ProductsViewHolder extends RecyclerView.ViewHolder {
 
         name.setText( TypeValueUtils.value( product.description() ) );
 
-        total.setText( context.getString( R.string.total_price, product.totalPrice() ) );
+        total.setText( context.getString( R.string.total_price, TypeValueUtils.value(product.totalPrice()) ) );
     }
 
 }

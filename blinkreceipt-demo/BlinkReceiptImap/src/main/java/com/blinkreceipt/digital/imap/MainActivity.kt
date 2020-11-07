@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        client.destroy()
+        client.close()
     }
 
     fun onClear(view: View) {
@@ -116,10 +116,10 @@ class MainActivity : AppCompatActivity() {
 
         client.verify().addOnSuccessListener {
             Toast.makeText(applicationContext,
-                    "verify: ${it.toString()}", Toast.LENGTH_SHORT).show()
+                    "verify: $it", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(applicationContext,
-                    "verify failure: ${it.toString()}", Toast.LENGTH_SHORT).show()
+                    "verify failure: $it", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }.addOnFailureListener {
                         Toast.makeText(applicationContext,
-                                "User login failure: ${it.toString()}", Toast.LENGTH_SHORT).show()
+                                "User login failure: $it", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }

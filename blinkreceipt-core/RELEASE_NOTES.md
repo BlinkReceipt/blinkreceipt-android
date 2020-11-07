@@ -1,4 +1,4 @@
-## Release Notes
+# Release Notes
 
 ## 1.0.0
 
@@ -50,3 +50,8 @@
 
 - core stability fixes
 - okio 2.9.0
+
+## 1.1.0
+
+-***Breaking Change*** Product totalPrice type changed from float to FloatType
+- downgrade target to api 29, but compiled against api 30

@@ -18,6 +18,7 @@ com.microblink.internal.services.linux
 com.microblink.internal.services.logs
 com.microblink.internal.services.lookup
 com.microblink.internal.services.merchants
+com.microblink.internal.services.productmerchant
 com.microblink.internal.services.receipt
 com.microblink.internal.services.store
 com.microblink.internal.services.summary

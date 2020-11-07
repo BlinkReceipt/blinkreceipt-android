@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.blinkreceipt.earnings"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
+        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../blink-receipt-demos.jsk")
+            storePassword "${keys.storePassword}"
+            keyAlias "${keys.keyAlias}"
+            keyPassword "${keys.keyPassword}"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "com.google.android.material:material:${versions.material}"
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
+
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
+    implementation "com.squareup.okio:okio:${versions.okio}"
+
+    implementation project(':LibBlinkReceiptCore')
+    implementation project(':LibBlinkReceiptEarnings')
+
+    testImplementation 'junit:junit:4.+'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

@@ -6,9 +6,9 @@ import java.util.Collection;
 
 import androidx.annotation.NonNull;
 
-public class Utility {
+import com.microblink.core.Timberland;
 
-    private static final String TAG = "Utility";
+public class Utility {
 
     private Utility() {
         super();
@@ -26,7 +26,7 @@ public class Utility {
                 }
             }
         } catch ( Throwable e ) {
-            Log.e( TAG, e.toString() );
+            Timberland.e( e );
         }
     }
 

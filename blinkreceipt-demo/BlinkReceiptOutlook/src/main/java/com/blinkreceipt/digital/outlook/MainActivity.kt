@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var client: OutlookClient
 
     init {
-        Timberland.enable( true )
+        Timberland.enable(true)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }).apply {
-            dayCutoff( 15 )
+            dayCutoff(15)
         }
     }
 
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
         }.addOnFailureListener { e ->
             Toast.makeText(this@MainActivity,
-                    "User login failure: ${e.toString()}", Toast.LENGTH_LONG).show()
+                    "User login failure: $e", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                             "User logged out!", Toast.LENGTH_LONG).show()
                 }.addOnFailureListener { e ->
                     Toast.makeText(this@MainActivity,
-                            "User Logout failure: ${e.toString()}", Toast.LENGTH_LONG).show()
+                            "User Logout failure: $e", Toast.LENGTH_LONG).show()
                 }
     }
 
@@ -76,13 +76,13 @@ class MainActivity : AppCompatActivity() {
                     "User logged in! ${data?.toString()}", Toast.LENGTH_LONG).show()
         }.addOnFailureListener { e ->
             Toast.makeText(this@MainActivity,
-                    "User login failure: ${e.toString()}", Toast.LENGTH_LONG).show()
+                    "User login failure: $e", Toast.LENGTH_LONG).show()
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
 
-        client.destroy()
+        client.close()
     }
 }
