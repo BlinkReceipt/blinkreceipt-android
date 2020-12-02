@@ -8,6 +8,7 @@ import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
 import com.blinkreceipt.digital.imap.databinding.CredentialsViewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microblink.core.InitializeCallback
+import com.microblink.core.PasswordCredentials
 import com.microblink.core.Timberland
 import com.microblink.digital.*
 
@@ -147,6 +148,7 @@ class MainActivity : AppCompatActivity() {
                                             ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
                                             ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
                                             ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
+                                            else -> Timberland.d("setup result $it")
                                         }
 
                                         if (!supportFragmentManager.isDestroyed) {

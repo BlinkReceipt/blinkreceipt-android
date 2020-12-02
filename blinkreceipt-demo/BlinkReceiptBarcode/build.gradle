@@ -74,7 +74,9 @@ dependencies {
     implementation "com.google.zxing:core:${versions.zxing}"
 
     implementation project(':LibBlinkReceiptBarcode')
+
     implementation project(':LibBlinkReceiptCore')
+
     implementation project(':LibBlinkReceiptCamera')
 
     testImplementation 'junit:junit:4.+'

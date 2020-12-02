@@ -66,6 +66,7 @@ dependencies {
     implementation "com.squareup.okio:okio:${versions.okio}"
 
     implementation project(':LibBlinkReceiptCore')
+
     implementation project(':LibBlinkReceiptEarnings')
 
     testImplementation 'junit:junit:4.+'

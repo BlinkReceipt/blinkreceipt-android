@@ -58,3 +58,7 @@
 
 - license key is required to initialize the SDK
 - downgrade target to api 29, but compiled against api 30
+
+## 1.1.1
+
+- bug fixes

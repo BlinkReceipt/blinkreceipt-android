@@ -300,3 +300,8 @@ Blink Receipt Recognizer
 - downgrade target to api 29, but compiled against api 30
 - amazon secure internal stored files. Requires "androidx.security:security-crypto:1.1.0-alpha02"
 - enhanced security for users stored credentials using jetpack security instead of standard encryption algorithms.
+
+## 1.4.0
+
+- fix amazon manager threading model to prevent ANR
+- scan results total, subTotal, tax returned as null if not found on receipt

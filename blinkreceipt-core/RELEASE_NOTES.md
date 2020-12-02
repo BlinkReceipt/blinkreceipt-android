@@ -55,3 +55,7 @@
 
 -***Breaking Change*** Product totalPrice type changed from float to FloatType
 - downgrade target to api 29, but compiled against api 30
+
+## 1.1.1
+
+- PasswordCredentials moved to core package to share across different sdk surfaces

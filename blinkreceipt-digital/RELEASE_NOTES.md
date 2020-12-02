@@ -58,3 +58,9 @@
 - downgrade target to api 29, but compiled against api 30
 - Android 11 imap messages failed due to missing mail classes on Android 11
 - provide your own list of supported merchants
+
+## 1.0.9
+
+- GmailClient provide proper error message when prod intel key isn't provided or expires.
+- Debug messages interface to test sender and html parsing.
+- Move Password Credentials to core package to share across diffrent SDKs
