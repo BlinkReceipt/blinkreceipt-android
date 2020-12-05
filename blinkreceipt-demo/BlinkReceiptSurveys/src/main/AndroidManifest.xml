@@ -3,6 +3,7 @@
     package="com.microblink.blinkreceiptsurveys">
 
   <application
+      android:name=".BlinkSurveysApplication"
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
@@ -16,6 +17,15 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+
+    <meta-data
+        android:name="com.microblink.ProductIntelligence"
+        android:value="[PRODUCT INTEL KEY]" />
+
+    <meta-data
+        android:name="com.microblink.ClientUserId"
+        android:value="nadirw_user_id_9120204354" />
+
   </application>
 
 </manifest>
