@@ -76,8 +76,8 @@ dependencies {
   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
   implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
 
-  implementation project(':blink-receipt-core')
-  implementation project(':blink-receipt-surveys')
+  implementation project(':LibBlinkReceiptCore')
+  implementation project(':LibBlinkReceiptSurveys')
 
   annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

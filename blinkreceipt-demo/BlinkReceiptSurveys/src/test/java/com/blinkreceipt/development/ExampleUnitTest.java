@@ -1,4 +1,4 @@
-package com.microblink.blinkreceiptsurveys;
+package com.blinkreceipt.development;
 
 import org.junit.Test;
 

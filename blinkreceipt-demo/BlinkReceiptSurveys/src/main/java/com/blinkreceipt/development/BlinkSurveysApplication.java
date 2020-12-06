@@ -1,4 +1,4 @@
-package com.microblink.blinkreceiptsurveys;
+package com.blinkreceipt.development;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
