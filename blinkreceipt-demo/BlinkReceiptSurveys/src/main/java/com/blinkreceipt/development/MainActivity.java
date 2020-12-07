@@ -5,13 +5,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
-import com.microblink.core.AccessToken;
-import com.microblink.core.AccessTokenManager;
 import com.microblink.surveys.SurveyFragment;
 import com.microblink.surveys.SurveyLoader;
 import com.microblink.surveys.SurveyViewModel;
-import org.json.JSONObject;
-import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,9 +33,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        SurveyFragment surveyFragment = SurveyFragment.newInstance(R.style.DemoSurvey);
+
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.survey_id_container, SurveyFragment.newInstance(R.style.DemoSurvey))
+                .add(R.id.survey_id_container, surveyFragment)
                 .commitAllowingStateLoss();
+
+        viewModel.surveyCompletionLiveData().observe(this, isSurveyComplete -> {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .remove(surveyFragment)
+                    .commitAllowingStateLoss();
+        });
     }
 }
