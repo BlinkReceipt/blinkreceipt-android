@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         SurveyViewModel viewModel = new ViewModelProvider(this).get(SurveyViewModel.class);
 
-        findViewById(R.id.load_survey_btn).setOnClickListener(v -> new SurveyLoader().loadSurveys()
+        findViewById(R.id.load_survey_btn).setOnClickListener(v -> new SurveyLoader().load()
                 .addOnSuccessListener(surveys -> {
                     if (surveys != null && !surveys.isEmpty()) {
                         viewModel.survey(surveys.get(0));
