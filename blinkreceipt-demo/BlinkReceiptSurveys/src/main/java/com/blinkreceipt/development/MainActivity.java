@@ -1,5 +1,7 @@
 package com.blinkreceipt.development;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,9 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
         SurveyViewModel viewModel = new ViewModelProvider(this).get(SurveyViewModel.class);
 
-        findViewById(R.id.load_survey_btn).setOnClickListener(v -> new SurveyLoader().load()
+        Button loadSurveyBtn = findViewById(R.id.load_survey_btn);
+
+        loadSurveyBtn.setOnClickListener(v -> new SurveyLoader().load()
                 .addOnSuccessListener(surveys -> {
                     if (surveys != null && !surveys.isEmpty()) {
+                        loadSurveyBtn.setVisibility(View.GONE);
+
                         viewModel.survey(surveys.get(0));
                     } else {
                         Toast.makeText(MainActivity.this, "RESPONSE NULL OR EMPTY", Toast.LENGTH_SHORT).show();
@@ -39,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .remove(surveyFragment)
                     .commitAllowingStateLoss();
+
+            loadSurveyBtn.setVisibility(View.VISIBLE);
         });
     }
 }
