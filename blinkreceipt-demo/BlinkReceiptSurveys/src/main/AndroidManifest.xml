@@ -24,7 +24,7 @@
 
     <meta-data
         android:name="com.microblink.ClientUserId"
-        android:value="nadirw_user_id_9120204354" />
+        android:value="" />
 
   </application>
 
