@@ -305,3 +305,19 @@ Blink Receipt Recognizer
 
 - fix amazon manager threading model to prevent ANR
 - scan results total, subTotal, tax returned as null if not found on receipt
+
+## 1.4.1
+
+- amazon secure internal stored files. Requires "androidx.security:security-crypto:1.1.0-alpha03"
+- security: updated Tink to stable release 1.5.0
+- add ability to specify a cutoff Date instead of cut off number of days
+- performance improvements across all non-Apple platforms (primarily newer Android phones)
+- internal serialization performance
+- AmazonManager ***Breaking Change***
+    - must call initialize before accessing orders, verify, credentials
+    - clearOrders() now returns Task<Boolean>
+    - clearCredentials() now returns Task<Boolean>
+    - storeCredentials now returns Task<Boolean>
+- fix incorrect handling for bad password in Amazon
+- web kit 1.4.0
+- parsing bug fixes

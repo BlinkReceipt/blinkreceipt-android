@@ -59,3 +59,8 @@
 ## 1.1.1
 
 - PasswordCredentials moved to core package to share across different sdk surfaces
+
+## 1.1.2
+
+- security: updated Tink to stable release 1.5.0
+- internal serialization performance

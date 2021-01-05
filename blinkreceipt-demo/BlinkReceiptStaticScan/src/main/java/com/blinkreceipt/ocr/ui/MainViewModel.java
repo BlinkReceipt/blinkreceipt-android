@@ -1,7 +1,5 @@
 package com.blinkreceipt.ocr.ui;
 
-import android.app.Application;
-
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
@@ -9,18 +7,18 @@ import com.microblink.ScanOptions;
 import com.microblink.core.Retailer;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
-public class MainViewModel extends AndroidViewModel {
+public class MainViewModel extends ViewModel {
 
     private final ScanOptions scanOptions;
 
     private final MutableLiveData<RecognizerResults> scanItems = new MutableLiveData<>();
 
-    public MainViewModel(@NonNull Application application) {
-        super(application);
+    public MainViewModel() {
+        super();
 
         scanOptions = ScanOptions.newBuilder()
                 .retailer(Retailer.UNKNOWN)

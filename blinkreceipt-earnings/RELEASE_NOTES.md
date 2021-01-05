@@ -68,3 +68,7 @@
 ## 1.1.1
 
 - bug fixes
+
+## 1.1.2
+
+- internal serialization performance

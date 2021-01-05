@@ -42,14 +42,14 @@ dependencies {
  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
  implementation 'com.squareup.okio:okio:2.9.0'
 
- implementation "androidx.security:security-crypto:1.1.0-alpha02"
+ implementation "androidx.security:security-crypto:1.1.0-alpha03"
 
  implementation "com.google.android.gms:play-services-tasks:17.2.0"
  implementation "com.google.android.gms:play-services-auth:19.0.0"
 
  implementation 'com.jakewharton.timber:timber:4.7.1'
 
- implementation "androidx.webkit:webkit:1.3.0"
+ implementation "androidx.webkit:webkit:1.4.0"
 
  implementation project( ':blinkreceipt-core' )
  implementation project( ':blinkreceipt-recognizer' )
