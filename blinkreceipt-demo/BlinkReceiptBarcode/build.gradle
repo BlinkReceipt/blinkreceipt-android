@@ -71,6 +71,11 @@ dependencies {
     implementation "com.squareup.okio:okio:${versions.okio}"
     implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
 
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
+
     implementation "com.google.zxing:core:${versions.zxing}"
 
     implementation project(':LibBlinkReceiptBarcode')
@@ -83,4 +88,6 @@ dependencies {
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

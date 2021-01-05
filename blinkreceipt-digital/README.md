@@ -189,9 +189,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
-    implementation "androidx.webkit:webkit:1.3.0-rc02"
+    implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "androidx.security:security-crypto:1.1.0-alpha02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
     implementation "com.sun.mail:android-mail:1.6.5"
     implementation "com.sun.mail:android-activation:1.6.5"
 

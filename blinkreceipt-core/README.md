@@ -27,7 +27,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    implementation "androidx.security:security-crypto:1.1.0-alpha02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
 }
 ```
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_orders"
+        android:onClick="orders"
+        android:title="Orders"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_verify_account"
+        android:onClick="verifyAccount"
+        android:title="Verify Account"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_clear_orders"
+        android:onClick="clearOrders"
+        android:title="Clear Orders"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_clear_account_info"
+        android:onClick="clearCredentials"
+        android:title="Clear Account"
+        app:showAsAction="never" />
+
+</menu>

@@ -62,3 +62,8 @@
 ## 1.1.1
 
 - bug fixes
+
+## 1.1.2
+
+- removed dynamic invocation of method from samsung jar
+- remove samsung security vulnerability

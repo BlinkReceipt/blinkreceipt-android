@@ -58,7 +58,6 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${androidx.lifecycle}"
     implementation "androidx.recyclerview:recyclerview:${androidx.recyclerview}"
 
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
@@ -66,6 +65,11 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
     implementation "com.squareup.okio:okio:${versions.okio}"
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 
     implementation "com.google.android.material:material:${versions.material}"
 

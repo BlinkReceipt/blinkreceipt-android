@@ -58,9 +58,19 @@
 - downgrade target to api 29, but compiled against api 30
 - Android 11 imap messages failed due to missing mail classes on Android 11
 - provide your own list of supported merchants
+- Add new option for email scanning, `useAggregation` to compress results from the same order into one result
 
 ## 1.0.9
 
 - GmailClient provide proper error message when prod intel key isn't provided or expires.
 - Debug messages interface to test sender and html parsing.
-- Move Password Credentials to core package to share across diffrent SDKs
+- Move Password Credentials to core package to share across dfferent SDKs
+
+## 1.1.0
+
+- security: updated Tink to stable release 1.5.0
+- Add functionality to all Email clients to specify date window for email searches in terms of Date
+- Add functionality for all email clients to contain a search senders list that matches email aliases with their retail
+counterpart
+- internal serialization performance
+- web kit 1.4.0
