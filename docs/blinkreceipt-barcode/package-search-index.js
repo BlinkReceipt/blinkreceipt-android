@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.microblink.barcode"},{"l":"com.microblink.barcode.internal"},{"l":"com.microblink.barcode.internal.services"}]
