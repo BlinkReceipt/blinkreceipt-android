@@ -20,11 +20,7 @@
 
     <meta-data
         android:name="com.microblink.LicenseKey"
-        android:value="sRwAAAAYY29tLmJsaW5rcmVjZWlwdC5zdXJ2ZXlzh1Abwgh8le/dWIol0Xw6wvpMplT4/2UcI8gnypHpg/eWVnEKvWBeso66PqE/78CB/7UZ5WP/I7TI/xNva3Mt4cwiorD9JlEgVk/4DJTGx8k2/cGm3xHtwGs2NpUzjxbSPtKYLVkrk/pEDl2j6chR6jfOpyWnCu9cOAp/mMAfEQbStit/Pq8=" />
-
-<!--    <meta-data-->
-<!--        android:name="com.microblink.ClientUserId"-->
-<!--        android:value="" />-->
+        android:value="[PLACE LICENSE KEY HERE]" />
 
   </application>
 

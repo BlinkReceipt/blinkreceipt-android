@@ -3,23 +3,34 @@ plugins {
 }
 
 android {
-  compileSdkVersion 30
-  buildToolsVersion "30.0.2"
+  compileSdkVersion versions.compileSdk
+  buildToolsVersion versions.buildTools
 
   defaultConfig {
-    applicationId "com.nadir.blinkreceiptsurveys"
-    minSdkVersion 23
-    targetSdkVersion 30
-    versionCode 1
-    versionName "1.0"
+    applicationId "com.blinkreceipt.survey"
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
+    versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
+  signingConfigs {
+    release {
+      storeFile file("../blink-receipt-demos.jsk")
+      storePassword "${keys.storePassword}"
+      keyAlias "${keys.keyAlias}"
+      keyPassword "${keys.keyPassword}"
+    }
+  }
+
   buildTypes {
     release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      minifyEnabled true
+      shrinkResources true
+      signingConfig signingConfigs.release
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
 
