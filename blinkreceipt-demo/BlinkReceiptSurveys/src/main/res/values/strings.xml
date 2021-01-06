@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">Blink Receipt Survey</string>
+  <string name="load_surveys">Load Demo Surveys</string>
+</resources>
