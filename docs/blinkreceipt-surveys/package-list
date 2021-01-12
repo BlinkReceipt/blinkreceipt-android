@@ -1,0 +1,5 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.surveys/SurveyFragment.Companion///PointingToDeclaration/com/microblink/surveys/SurveyFragment.Companion.html
+com.microblink.surveys
+
