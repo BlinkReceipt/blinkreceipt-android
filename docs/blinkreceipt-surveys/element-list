@@ -1,5 +1,10 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
+$dokka.location:com.microblink.surveys.internal/Status.ERROR///PointingToDeclaration/com/microblink/surveys/internal/Status.ERROR.html
+$dokka.location:com.microblink.surveys.internal/Status.SUCCESS///PointingToDeclaration/com/microblink/surveys/internal/Status.SUCCESS.html
+$dokka.location:com.microblink.surveys.internal/SubmitSurveyWorker.Companion///PointingToDeclaration/com/microblink/surveys/internal/SubmitSurveyWorker.Companion.html
 $dokka.location:com.microblink.surveys/SurveyFragment.Companion///PointingToDeclaration/com/microblink/surveys/SurveyFragment.Companion.html
 com.microblink.surveys
+com.microblink.surveys.internal
+com.microblink.surveys.internal.services
 

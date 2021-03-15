@@ -1,3 +1,14 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
+$dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
+$dokka.location:com.microblink.core/ScanResults.Builder///PointingToDeclaration/com/microblink/core/ScanResults.Builder.html
+$dokka.location:com.microblink.core/Shipment.Builder///PointingToDeclaration/com/microblink/core/Shipment.Builder.html
+$dokka.location:com.microblink.core/Survey.Builder///PointingToDeclaration/com/microblink/core/Survey.Builder.html
+$dokka.location:com.microblink.core/SurveyAnswer.Builder///PointingToDeclaration/com/microblink/core/SurveyAnswer.Builder.html
+$dokka.location:com.microblink.core/SurveyQuestion.Builder///PointingToDeclaration/com/microblink/core/SurveyQuestion.Builder.html
+$dokka.location:com.microblink.core/SurveyResponse.Builder///PointingToDeclaration/com/microblink/core/SurveyResponse.Builder.html
 com.microblink.core
 com.microblink.core.internal
 com.microblink.core.internal.services
+

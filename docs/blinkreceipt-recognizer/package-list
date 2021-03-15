@@ -1,3 +1,30 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.internal.merchant/MerchantDetector.DetectorStateObserver///PointingToDeclaration/com/microblink/internal/merchant/MerchantDetector.DetectorStateObserver.html
+$dokka.location:com.microblink.internal.merchant/MerchantDetector.State///PointingToDeclaration/com/microblink/internal/merchant/MerchantDetector.State.html
+$dokka.location:com.microblink.internal.merchant/MerchantResult.Source///PointingToDeclaration/com/microblink/internal/merchant/MerchantResult.Source.html
+$dokka.location:com.microblink.internal.services.duplicates/SearchParameters.Builder///PointingToDeclaration/com/microblink/internal/services/duplicates/SearchParameters.Builder.html
+$dokka.location:com.microblink.internal.services.google/GooglePlacesRepository.Listener///PointingToDeclaration/com/microblink/internal/services/google/GooglePlacesRepository.Listener.html
+$dokka.location:com.microblink.internal.services.lookup/StoreLookUpServiceFactory.ServiceType///PointingToDeclaration/com/microblink/internal/services/lookup/StoreLookUpServiceFactory.ServiceType.html
+$dokka.location:com.microblink.internal.services.lookup/StoreLookupRepository.Listener///PointingToDeclaration/com/microblink/internal/services/lookup/StoreLookupRepository.Listener.html
+$dokka.location:com.microblink.internal.services.merchants/MerchantLookupProcess.Listener///PointingToDeclaration/com/microblink/internal/services/merchants/MerchantLookupProcess.Listener.html
+$dokka.location:com.microblink.internal.services.store/StoreLookUpService.Listener///PointingToDeclaration/com/microblink/internal/services/store/StoreLookUpService.Listener.html
+$dokka.location:com.microblink.internal.view.presenter/CameraScanContract.Presenter///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.Presenter.html
+$dokka.location:com.microblink.internal.view.presenter/CameraScanContract.View///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.View.html
+$dokka.location:com.microblink/AmazonManager.JavaScriptInterface///PointingToDeclaration/com/microblink/AmazonManager.JavaScriptInterface.html
+$dokka.location:com.microblink/DispatcherOptions.Type///PointingToDeclaration/com/microblink/DispatcherOptions.Type.html
+$dokka.location:com.microblink/EdgeDetectionConfiguration.Builder///PointingToDeclaration/com/microblink/EdgeDetectionConfiguration.Builder.html
+$dokka.location:com.microblink/EdgeDetectionState.DetectionState///PointingToDeclaration/com/microblink/EdgeDetectionState.DetectionState.html
+$dokka.location:com.microblink/FrameCharacteristics.Builder///PointingToDeclaration/com/microblink/FrameCharacteristics.Builder.html
+$dokka.location:com.microblink/FrameCharacteristics.FrameExtension///PointingToDeclaration/com/microblink/FrameCharacteristics.FrameExtension.html
+$dokka.location:com.microblink/FrameResults.Builder///PointingToDeclaration/com/microblink/FrameResults.Builder.html
+$dokka.location:com.microblink/Merchant.Source///PointingToDeclaration/com/microblink/Merchant.Source.html
+$dokka.location:com.microblink/MerchantConfiguration.Builder///PointingToDeclaration/com/microblink/MerchantConfiguration.Builder.html
+$dokka.location:com.microblink/OcrRecognizerFactory.Recognizer///PointingToDeclaration/com/microblink/OcrRecognizerFactory.Recognizer.html
+$dokka.location:com.microblink/ProductDetector.DetectorState///PointingToDeclaration/com/microblink/ProductDetector.DetectorState.html
+$dokka.location:com.microblink/ProductDetector.Listener///PointingToDeclaration/com/microblink/ProductDetector.Listener.html
+$dokka.location:com.microblink/RecognizerDispatcher.LifecycleState///PointingToDeclaration/com/microblink/RecognizerDispatcher.LifecycleState.html
+$dokka.location:com.microblink/ScanOptions.Builder///PointingToDeclaration/com/microblink/ScanOptions.Builder.html
 com.microblink
 com.microblink.internal
 com.microblink.internal.amazon
@@ -26,3 +53,4 @@ com.microblink.internal.services.walmart
 com.microblink.internal.services.yelp
 com.microblink.internal.view
 com.microblink.internal.view.presenter
+

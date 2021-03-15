@@ -59,8 +59,8 @@ dependencies {
 
   implementation "androidx.core:core-ktx:${androidx.core}"
 
-  implementation "androidx.work:work-runtime:${androidx.workermanager}"
-  implementation "androidx.work:work-runtime-ktx:${androidx.workermanager}"
+  implementation "androidx.work:work-runtime:${androidx.worker}"
+  implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
 
   implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecyclektx}"
   implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
@@ -80,7 +80,7 @@ dependencies {
   implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlinx}"
 
   implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
-  implementation "com.google.android.material:material:${androidx.material}"
+  implementation "com.google.android.material:material:${versions.material}"
 
   implementation "androidx.constraintlayout:constraintlayout:${androidx.constraintLayout}"
   implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"

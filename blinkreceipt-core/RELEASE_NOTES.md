@@ -64,3 +64,12 @@
 
 - security: updated Tink to stable release 1.5.0
 - internal serialization performance
+
+## 1.1.3
+
+- stability fixes and improvements
+- okio version 2.10.0
+- gms tasks updated to 17.2.1
+- Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
+- Add PVP Activation caching ability
+- kotlin 1.4.31

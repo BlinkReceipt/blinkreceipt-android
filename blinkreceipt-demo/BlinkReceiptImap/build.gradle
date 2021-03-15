@@ -64,7 +64,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:${androidx.lifecycle}"
-    implementation "androidx.security:security-crypto:${androidx.crypto}"
     implementation "androidx.webkit:webkit:${androidx.webkit}"
 
     implementation "com.google.android.material:material:${versions.material}"
@@ -73,7 +72,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 
     implementation project(':LibBlinkReceiptCore')
-
     implementation project(':LibBlinkReceiptDigital')
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"

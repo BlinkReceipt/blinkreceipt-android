@@ -321,3 +321,19 @@ Blink Receipt Recognizer
 - fix incorrect handling for bad password in Amazon
 - web kit 1.4.0
 - parsing bug fixes
+
+## 1.4.2
+
+- stability fixes and improvements
+- recognizerCallback CameraRecognizerCallback now nullable
+- okio version 2.10.0
+- Make RecognizerView lifecycle aware
+- gms tasks updated to 17.2.1
+- Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
+- Add Inverted Text scan ability for Basket scanning
+- Make Recognizer View lifecycle aware
+- Modified Product Intelligence call to dedupe multiple products of the same type
+- Added Logo merchant detection threshold for Merchant determination
+- With the introduction of NDK r22, receipt recognition is disabled in the emulator environment
+- kotlin 1.4.31
+- fixed crash in amazon related to https://issuetracker.google.com/issues/167977579, https://issuetracker.google.com/issues/175132222

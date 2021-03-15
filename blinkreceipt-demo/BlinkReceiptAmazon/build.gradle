@@ -52,7 +52,8 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.+'
+    testImplementation "junit:junit:${versions.junit}"
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
@@ -74,9 +75,7 @@ dependencies {
     implementation "com.google.android.material:material:${versions.material}"
 
     implementation project(':LibBlinkReceiptRecognizer')
-
     implementation project(':LibBlinkReceiptCore')
-
     implementation project(':LibBlinkReceiptCamera')
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
@@ -87,8 +86,6 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
-
-    implementation "androidx.security:security-crypto:${androidx.crypto}"
 
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 

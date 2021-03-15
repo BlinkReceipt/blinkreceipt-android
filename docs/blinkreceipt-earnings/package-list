@@ -1,3 +1,7 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+
 com.microblink.earnings
 com.microblink.earnings.internal
 com.microblink.earnings.internal.services
+

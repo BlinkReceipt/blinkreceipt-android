@@ -66,7 +66,6 @@ dependencies {
     implementation "com.google.android.material:material:${versions.material}"
 
     implementation project(':LibBlinkReceiptCore')
-
     implementation project(':LibBlinkReceiptDigital')
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"

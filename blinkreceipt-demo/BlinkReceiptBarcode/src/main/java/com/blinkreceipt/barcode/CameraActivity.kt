@@ -36,7 +36,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
         val callbacks = MetadataCallbacks()
 
         callbacks.failedDetectionCallback {
-            Timberland.e("Unable to find barcode!")
+            Toast.makeText(applicationContext, "Unable to find barcode!", Toast.LENGTH_LONG).show()
         }
 
         callbacks.recognizerCallback {
