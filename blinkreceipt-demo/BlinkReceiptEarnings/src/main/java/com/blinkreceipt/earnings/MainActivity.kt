@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onEarnings(view: View) {
         MissedEarningsClient(applicationContext)
-                .results("blink receipt id").addOnSuccessListener {
+                .results("[REPLACE WITH BLINK RECEIPT ID]").addOnSuccessListener {
                     Toast.makeText(applicationContext, "Results $it", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener {
                     Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()

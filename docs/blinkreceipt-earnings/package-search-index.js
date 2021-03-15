@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.microblink.earnings"},{"l":"com.microblink.earnings.internal"},{"l":"com.microblink.earnings.internal.services"}]
+var packageSearchIndex = [{"l":"com.microblink.earnings","url":"com/microblink/earnings/package-summary.html"}, {"l":"com.microblink.earnings.internal","url":"com/microblink/earnings/internal/package-summary.html"}, {"l":"com.microblink.earnings.internal.services","url":"com/microblink/earnings/internal/services/package-summary.html"}, {"l":"All packages","url":"index.html"}]

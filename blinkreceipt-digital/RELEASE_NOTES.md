@@ -74,3 +74,17 @@
 counterpart
 - internal serialization performance
 - web kit 1.4.0
+
+## 1.1.1
+
+- stability fixes and improvements
+- captcha handling for yahoo & aol
+- fix crash when searching users inbox (mail service)
+- gms tasks updated to 17.2.1
+- upgrade material to 1.3.0
+- androidx lifecycle 2.3.0
+- Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
+- Changed Date and Time formatting for ScanResults to match iOS SDK
+- kotlin 1.4.31
+- gmail client search [gmail]/all mail folder
+- - fixed crash related to https://issuetracker.google.com/issues/167977579, https://issuetracker.google.com/issues/175132222

@@ -131,7 +131,7 @@ dependencies {
      api project( ':blinkreceipt-recognizer' )
      api project( ':blinkreceipt-camera' )
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -146,7 +146,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    implementation "com.google.android.gms:play-services-tasks:17.2.0"
+    implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
     implementation "com.google.apis:google-api-services-gmail:v1-rev105-1.25.0" exclude module: 'httpclient'
     implementation "com.google.api-client:google-api-client-android:1.30.10" exclude module: 'httpclient'
@@ -186,18 +186,17 @@ IMAP integration requires 9 additional AAR in your build gradle.
 ```groovy
 dependencies {
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "androidx.security:security-crypto:1.1.0-alpha03"
     implementation "com.sun.mail:android-mail:1.6.5"
     implementation "com.sun.mail:android-activation:1.6.5"
 
     implementation "androidx.fragment:fragment:1.2.5"
 
-    implementation "com.google.android.material:material:1.2.0"
+    implementation "com.google.android.material:material:1.3.0"
 
 }
 ```

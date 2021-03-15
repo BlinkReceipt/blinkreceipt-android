@@ -55,8 +55,7 @@ android {
 }
 
 dependencies {
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation "androidx.core:core-ktx:${androidx.core}"
@@ -79,12 +78,10 @@ dependencies {
     implementation "com.google.zxing:core:${versions.zxing}"
 
     implementation project(':LibBlinkReceiptBarcode')
-
     implementation project(':LibBlinkReceiptCore')
-
     implementation project(':LibBlinkReceiptCamera')
 
-    testImplementation 'junit:junit:4.+'
+    testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

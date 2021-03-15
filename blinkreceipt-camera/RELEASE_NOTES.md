@@ -59,3 +59,8 @@
 
 - removed dynamic invocation of method from samsung jar
 - remove samsung security vulnerability
+
+## 1.1.3
+
+- stability fixes and improvements
+- kotlin 1.4.31
