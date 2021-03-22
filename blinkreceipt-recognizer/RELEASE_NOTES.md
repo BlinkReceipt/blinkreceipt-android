@@ -337,3 +337,7 @@ Blink Receipt Recognizer
 - With the introduction of NDK r22, receipt recognition is disabled in the emulator environment
 - kotlin 1.4.31
 - fixed crash in amazon related to https://issuetracker.google.com/issues/167977579, https://issuetracker.google.com/issues/175132222
+
+## 1.4.3
+
+- harden native context & encryption protocols

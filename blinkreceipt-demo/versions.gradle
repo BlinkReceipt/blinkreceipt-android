@@ -56,6 +56,6 @@ buildscript {
             "javaMail"              : '1.6.5',
             'versionMajor'          : 1,
             'versionMinor'          : 4,
-            'versionPatch'          : 2
+            'versionPatch'          : 3
     ]
 }

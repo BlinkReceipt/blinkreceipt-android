@@ -73,3 +73,7 @@
 - Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
 - Add PVP Activation caching ability
 - kotlin 1.4.31
+
+## 1.1.4
+
+- stability fixes and improvements
