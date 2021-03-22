@@ -64,3 +64,8 @@
 
 - stability fixes and improvements
 - kotlin 1.4.31
+
+## 1.1.4
+
+- stability fixes and improvements
+- fix for Oukitel WP8 Pro - front camera not working

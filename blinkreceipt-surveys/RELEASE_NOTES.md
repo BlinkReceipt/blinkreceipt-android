@@ -16,3 +16,8 @@
 - Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
 - kotlin 1.4.31
 - minor bug fixes
+
+## 1.0.2
+
+- stability fixes and improvements
+- harden native context & encryption protocols

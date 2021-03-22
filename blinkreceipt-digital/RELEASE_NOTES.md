@@ -88,3 +88,8 @@ counterpart
 - kotlin 1.4.31
 - gmail client search [gmail]/all mail folder
 - - fixed crash related to https://issuetracker.google.com/issues/167977579, https://issuetracker.google.com/issues/175132222
+
+## 1.1.2
+
+- stability fixes and improvements
+- harden native context & encryption protocols
