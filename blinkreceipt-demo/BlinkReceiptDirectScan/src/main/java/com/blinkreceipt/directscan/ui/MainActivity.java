@@ -15,14 +15,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blinkreceipt.directscan.R;
 import com.blinkreceipt.directscan.ui.recyclerview.ImageAdapter;
+import com.microblink.Media;
+import com.microblink.RecognizerCallback;
+import com.microblink.RecognizerClient;
+import com.microblink.RecognizerResult;
+import com.microblink.ScanOptions;
+import com.microblink.core.Retailer;
+import com.microblink.core.ScanResults;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -57,24 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Bitmap[] bitmaps;
 
+    private RecognizerClient client;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imageRecyclerview = findViewById(R.id.image_rv);
-        orientationLabel = findViewById(R.id.orientation_label);
-        selectImageBtn = findViewById(R.id.select_image);
-        scanImageBtn = findViewById(R.id.scan_image);
-        rotateImagesLeftBtn = findViewById(R.id.rotate_image_left);
-        rotateImagesRightBtn = findViewById(R.id.rotate_image_right);
+        initializeViews();
 
-        imageAdapter = new ImageAdapter();
+        initializeRecyclerView();
 
-        imageRecyclerview.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        );
-        imageRecyclerview.setAdapter(imageAdapter);
+        initializeClient();
 
         selectImageBtn.setOnClickListener(v -> {
             Intent intent = createSelectImageIntent();
@@ -86,8 +85,52 @@ public class MainActivity extends AppCompatActivity {
         rotateImagesRightBtn.setOnClickListener(v -> rotateBitmapsRight());
 
         scanImageBtn.setOnClickListener(v -> {
-            // TODO Send images to direct api
+            sendBitmapsForScanning();
         });
+    }
+
+    private void sendBitmapsForScanning() {
+        ScanOptions options = ScanOptions.newBuilder()
+                .retailer(Retailer.UNKNOWN)
+                .build();
+
+        client.recognize(options, new RecognizerCallback() {
+            @Override
+            public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
+                Toast.makeText(MainActivity.this, "Exception: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRecognizerException(@NonNull Throwable throwable) {
+                Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
+
+            }
+        }, bitmaps);
+    }
+
+    private void initializeClient() {
+        client = new RecognizerClient(this);
+    }
+
+    private void initializeRecyclerView() {
+        imageAdapter = new ImageAdapter();
+        imageRecyclerview.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        );
+        imageRecyclerview.setAdapter(imageAdapter);
+    }
+
+    private void initializeViews() {
+        imageRecyclerview = findViewById(R.id.image_rv);
+        orientationLabel = findViewById(R.id.orientation_label);
+        selectImageBtn = findViewById(R.id.select_image);
+        scanImageBtn = findViewById(R.id.scan_image);
+        rotateImagesLeftBtn = findViewById(R.id.rotate_image_left);
+        rotateImagesRightBtn = findViewById(R.id.rotate_image_right);
     }
 
     @Override
