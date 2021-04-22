@@ -52,7 +52,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     // Lifecycles only (without ViewModel or LiveData)
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.1'
 
     implementation 'com.google.zxing:core:3.3.0'
 

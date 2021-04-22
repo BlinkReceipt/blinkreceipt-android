@@ -85,3 +85,7 @@
 
 - stability fixes and improvements
 - harden native context & encryption protocols
+
+## 1.1.5
+
+- stability fixes and improvements

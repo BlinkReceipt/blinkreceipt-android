@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32"
 
   implementation "androidx.appcompat:appcompat:1.2.0"
 
@@ -23,7 +23,7 @@ In addition to those 2 modules you will need to pull in the following as well.
   implementation "androidx.work:work-runtime:2.5.0"
   implementation "androidx.work:work-runtime-ktx:2.5.0"
 
-  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
   implementation "com.squareup.okhttp3:okhttp:4.9.1"
   implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
@@ -35,17 +35,17 @@ In addition to those 2 modules you will need to pull in the following as well.
 
   implementation "com.jakewharton.timber:timber:4.7.1"
 
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.2"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3"
 
   implementation "com.google.android.gms:play-services-tasks:17.2.1"
   implementation "com.google.android.material:material:1.3.0"
 
   implementation "androidx.constraintlayout:constraintlayout:2.0.4"
   implementation "androidx.fragment:fragment-ktx:1.2.5"
-  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
-  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
 ```
 
 You may notice that there are Kotlin dependencies as part of this list. This is because the SDK is partially written in Kotlin. If your app does not use Kotlin that is ok you will just need to configure the app to use kotlin, but this will not require you to change programming languages as Kotlin is compatible with java.
@@ -55,7 +55,7 @@ Project build.gradle
 buildscript {
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
     }
 }
 ```

@@ -11,6 +11,7 @@ $dokka.location:com.microblink.internal.services.merchants/MerchantLookupProcess
 $dokka.location:com.microblink.internal.services.store/StoreLookUpService.Listener///PointingToDeclaration/com/microblink/internal/services/store/StoreLookUpService.Listener.html
 $dokka.location:com.microblink.internal.view.presenter/CameraScanContract.Presenter///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.Presenter.html
 $dokka.location:com.microblink.internal.view.presenter/CameraScanContract.View///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.View.html
+$dokka.location:com.microblink.internal/WorkerStoreDelete.Companion///PointingToDeclaration/com/microblink/internal/WorkerStoreDelete.Companion.html
 $dokka.location:com.microblink/AmazonManager.JavaScriptInterface///PointingToDeclaration/com/microblink/AmazonManager.JavaScriptInterface.html
 $dokka.location:com.microblink/DispatcherOptions.Type///PointingToDeclaration/com/microblink/DispatcherOptions.Type.html
 $dokka.location:com.microblink/EdgeDetectionConfiguration.Builder///PointingToDeclaration/com/microblink/EdgeDetectionConfiguration.Builder.html

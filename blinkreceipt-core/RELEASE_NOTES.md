@@ -77,3 +77,14 @@
 ## 1.1.4
 
 - stability fixes and improvements
+
+## 1.1.5
+
+- stability fixes and improvements
+- New Product Intelligence fields added
+    - sector
+    - department
+    - majorCategory
+    - subCategory
+    - itemType
+    - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value

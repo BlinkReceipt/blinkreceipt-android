@@ -21,3 +21,9 @@
 
 - stability fixes and improvements
 - harden native context & encryption protocols
+
+## 1.0.3
+
+- stability fixes and improvements
+- coroutines 1.4.3, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.3
+- update androidx lifecycle to 2.3.1

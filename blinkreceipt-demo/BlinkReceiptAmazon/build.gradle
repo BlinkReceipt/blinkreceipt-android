@@ -69,6 +69,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
 
+    implementation "androidx.work:work-runtime:${androidx.worker}"
+    implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
+
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 

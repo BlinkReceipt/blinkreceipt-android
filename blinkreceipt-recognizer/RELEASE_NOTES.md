@@ -341,3 +341,11 @@ Blink Receipt Recognizer
 ## 1.4.3
 
 - harden native context & encryption protocols
+
+## 1.4.4
+
+- stability fixes and improvements
+- add api for direct recognition of images
+- added kotlin, coroutines, androidx core and worker manager (required) dependencies for more efficent internal processing
+- direct api support available on supported licenses
+- coroutines 1.4.3, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.3
