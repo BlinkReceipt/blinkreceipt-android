@@ -93,3 +93,10 @@ counterpart
 
 - stability fixes and improvements
 - harden native context & encryption protocols
+
+## 1.1.3
+
+- stability fixes and improvements
+- fix digital receipt date parsing bugs
+- fix Yahoo/AOL IMAP setup
+- update androidx lifecycle to 2.3.1

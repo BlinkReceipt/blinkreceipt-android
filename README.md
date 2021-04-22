@@ -36,17 +36,14 @@ dependencies {
 
  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
- implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+ implementation 'com.squareup.okhttp3:okhttp:4.9.1'
  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
- implementation 'com.squareup.okio:okio:2.9.0'
+ implementation 'com.squareup.okio:okio:2.10.0'
 
- implementation "androidx.security:security-crypto:1.1.0-alpha03"
-
- implementation "com.google.android.gms:play-services-tasks:17.2.0"
+ implementation "com.google.android.gms:play-services-tasks:17.2.1"
  implementation "com.google.android.gms:play-services-auth:19.0.0"
- implementation "androidx.security:security-crypto:1.1.0-alpha03"
 
  implementation 'com.jakewharton.timber:timber:4.7.1'
 

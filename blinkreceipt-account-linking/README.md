@@ -15,7 +15,7 @@ In addition to those 2 modules you will need to pull in the following as well.
 
 ```groovy
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31"
+implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32"
 implementation "androidx.core:core-ktx:1.3.2"
 implementation "androidx.work:work-runtime:2.5.0"
 implementation "androidx.work:work-runtime-ktx:2.5.0"
@@ -28,9 +28,9 @@ implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
 implementation "com.squareup.okio:okio:2.10.0"
 implementation "com.jakewharton.timber:timber:4.7.1"
 implementation "com.google.android.gms:play-services-tasks:17.2.1"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.2"
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3"
 implementation "androidx.webkit:webkit:1.4.0"
 ```
 
@@ -40,9 +40,9 @@ Project build.gradle
 
 ```groovy
 buildscript {
-	dependencies {
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31"
-	}
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
+    }
 }
 ```
 
@@ -52,11 +52,11 @@ In you application class override the `onCreate` method and initialize the SDK.
 ```kotlin
 
 BlinkReceiptLinkingSdk.initialize( this, object: InitializeCallback {
-	override fun onComplete() {
-	}
+    override fun onComplete() {
+    }
 
-	override fun onException(throwable: Throwable) {
-	}
+    override fun onException(throwable: Throwable) {
+    }
 } )
 
 ```
@@ -67,13 +67,13 @@ In order to access linked retailers you needs to provide your license and produc
 
 ```xml
 <meta-data
-	android:name="com.microblink.LicenseKey"
-	android:value=""
+    android:name="com.microblink.LicenseKey"
+    android:value=""
 />
 
 <meta-data
-	android:name="com.microblink.ProductIntelligence"
-	android:value=""
+    android:name="com.microblink.ProductIntelligence"
+    android:value=""
 />
 ```
 
@@ -98,11 +98,11 @@ Before parsing retailer information you should capture the users credentials and
 
 ```kotlin
 val account = Account(
-	WALMART,
-	PasswordCredentials(
-		"",
-		""
-	)
+    WALMART,
+    PasswordCredentials(
+        "",
+        ""
+    )
 )
 
 client.link(account).addOnSuccessListener {
@@ -118,15 +118,15 @@ Linked accounts can be verified by calling `verify` on the `AccountLinkingClient
 
 ```kotlin
 val account = Account(
-	WALMART,
-	PasswordCredentials(
-		"",
-		""
-	)
+    WALMART,
+    PasswordCredentials(
+        "",
+        ""
+    )
 )
 
 client.verify(account.retailerId) {
-	//Preview should only be used in development.
+    //Preview should only be used in development.
 }.addOnSuccessListener {
 
 }.addOnFailureListener {
@@ -140,23 +140,23 @@ Locate orders by passing in the linked retailer id.
 
 ```kotlin
 val account = Account(
-	WALMART,
-	PasswordCredentials(
-		"",
-		""
-	)
+    WALMART,
+    PasswordCredentials(
+        "",
+        ""
+    )
 )
 
 client.orders(account.retailerId,
-	{ retailerId, results, remaining ->
+    { retailerId, results, remaining ->
 
-	},
-	{ retailerId, throwable ->
+    },
+    { retailerId, throwable ->
 
-	},
-	{
-		//preview is only available in development
-	}
+    },
+    {
+        //preview is only available in development
+    }
 )
 ```
 
@@ -192,11 +192,11 @@ By calling `unlink` and passing in an `Account` on the `AccountLinkingClient` wi
 
 ```kotlin
 val account = Account(
-	WALMART,
-	PasswordCredentials(
-		"",
-		""
-	)
+    WALMART,
+    PasswordCredentials(
+        "",
+        ""
+    )
 )
 
 client.unlink(account).addOnSuccessListener {
@@ -236,8 +236,8 @@ In `onDestroy` of your fragment or activity close the `AccountLinkingClient` to 
 
 ```kotlin
 override fun onDestroy() {
-	client.close()
+    client.close()
 
-	super.onDestroy()
+    super.onDestroy()
 }
 ```

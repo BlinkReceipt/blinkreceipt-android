@@ -72,6 +72,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
     implementation "com.google.android.material:material:${versions.material}"
 
+    implementation "androidx.work:work-runtime:${androidx.worker}"
+    implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
+
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 
     implementation "pub.devrel:easypermissions:${versions.easyPermissions}"

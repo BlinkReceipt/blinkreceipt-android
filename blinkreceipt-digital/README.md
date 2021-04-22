@@ -186,9 +186,9 @@ IMAP integration requires 9 additional AAR in your build gradle.
 ```groovy
 dependencies {
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.0"
-    implementation "androidx.lifecycle:lifecycle-livedata:2.3.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
     implementation "com.sun.mail:android-mail:1.6.5"

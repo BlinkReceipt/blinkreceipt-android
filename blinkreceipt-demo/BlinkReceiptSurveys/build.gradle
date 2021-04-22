@@ -62,7 +62,7 @@ dependencies {
   implementation "androidx.work:work-runtime:${androidx.worker}"
   implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
 
-  implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecyclektx}"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
   implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
   implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp3}"
 

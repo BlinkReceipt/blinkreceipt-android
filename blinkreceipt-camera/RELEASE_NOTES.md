@@ -69,3 +69,7 @@
 
 - stability fixes and improvements
 - fix for Oukitel WP8 Pro - front camera not working
+
+## 1.1.5
+
+- stability fixes and improvements
