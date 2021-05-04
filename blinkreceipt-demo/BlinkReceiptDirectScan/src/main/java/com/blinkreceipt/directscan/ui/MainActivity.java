@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView imageRecyclerview;
 
     @NonNull
-    private TextView orientationLabel;
-
-    @NonNull
     private Button selectImageBtn;
 
     @NonNull
@@ -125,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeViews() {
         imageRecyclerview = findViewById(R.id.image_rv);
-        orientationLabel = findViewById(R.id.orientation_label);
         selectImageBtn = findViewById(R.id.select_image);
         scanImageBtn = findViewById(R.id.scan_image);
         rotateImagesLeftBtn = findViewById(R.id.rotate_image_left);
