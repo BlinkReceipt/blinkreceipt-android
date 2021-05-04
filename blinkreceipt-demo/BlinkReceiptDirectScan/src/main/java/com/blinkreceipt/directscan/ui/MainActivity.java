@@ -29,7 +29,6 @@ import com.microblink.ScanOptions;
 import com.microblink.core.Retailer;
 import com.microblink.core.ScanResults;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
