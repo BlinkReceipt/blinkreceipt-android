@@ -379,14 +379,14 @@ When you wish to finish your scan session call `finishedScanning()`. This will b
 All RecognizerCallback methods are executed on the main thread.
 
 ## <a name=recognizerClient></a>Recognizer Client
-If you wish to enable users to provide their own receipt image, instead of providing them with a camera interface, then you can opt out of using the `RecognizerClient` instead of the `RecognizerView`. This component provides a non-ui interface to the recognition mechanisms under the covers of the Recognizer View. It is simple to use and requires minimal setup. 
+If you wish to enable users to provide their own receipt image, instead of providing them with a camera interface, then you can opt out of using the `RecognizerClient` instead of the `RecognizerView`. This component provides a non-ui interface to the recognition mechanisms under the covers of the Recognizer View. It is simple to use and requires minimal setup.
 
 #### Initialization And Running Scans
 The `RecognizerClient` can be instantiated with its primary constructor which takes in  a `context`. Once the client is instantiated, it is now ready for use. To use the `RecognizerClient` call the `recognize(ScanOptions options, RecognizerCallback listener, Bitmap... bitmaps)` function. The scan options you define is the exact same object you define when initializing the `RecognizerView`. The `RecognizerCallback` is an interface which acts as a listener for the client when images are going through processing. The `onRecognizerDone` function is the indicator that the images passed in have been successfully processed and the scan session has completed. You will notice this is the same interface used in the `RecognizerView` implementation.
 
-**NOTE this feature must be enabled through your license in order to use. If your application is not allowed to use this api, then onRecognizerException will immediately trigger informing you of your missing permissions.**
+**NOTE this feature must be enabled through your license in order to use.**
 
-```java 
+```java
 public class MainActivity extends AppCompatActivity {
 
     @Override
