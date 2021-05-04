@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         client.recognize(options, new RecognizerCallback() {
             @Override
             public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
-                Toast.makeText(MainActivity.this, "Exception: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
