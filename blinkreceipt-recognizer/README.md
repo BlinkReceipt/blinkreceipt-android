@@ -384,7 +384,7 @@ If you wish to enable users to provide their own receipt image, instead of provi
 #### Initialization And Running Scans
 The `RecognizerClient` can be instantiated with its primary constructor which takes in  a `context`. Once the client is instantiated, it is now ready for use. To use the `RecognizerClient` call the `recognize(ScanOptions options, RecognizerCallback listener, Bitmap... bitmaps)` function. The scan options you define is the exact same object you define when initializing the `RecognizerView`. The `RecognizerCallback` is an interface which acts as a listener for the client when images are going through processing. The `onRecognizerDone` function is the indicator that the images passed in have been successfully processed and the scan session has completed. You will notice this is the same interface used in the `RecognizerView` implementation.
 
-**NOTE this feature must be enabled through your license in order to use.**
+**NOTE this feature must be enabled through your license in order to use. If your application is not allowed to use this api, then onRecognizerException will immediately trigger informing you of your missing permissions.**
 
 ```java
 public class MainActivity extends AppCompatActivity {
