@@ -65,6 +65,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:${androidx.lifecycle}"
     implementation "androidx.webkit:webkit:${androidx.webkit}"
+    implementation "androidx.preference:preference-ktx:${androidx.preference}"
 
     implementation "com.google.android.material:material:${versions.material}"
 

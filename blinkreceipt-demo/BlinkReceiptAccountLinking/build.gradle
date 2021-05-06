@@ -55,6 +55,7 @@ dependencies {
 
     implementation "androidx.work:work-runtime:${androidx.worker}"
     implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
+    implementation "androidx.preference:preference-ktx:${androidx.preference}"
 
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"

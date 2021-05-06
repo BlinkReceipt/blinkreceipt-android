@@ -74,6 +74,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
+    implementation "androidx.preference:preference-ktx:${androidx.preference}"
 
     implementation "com.google.zxing:core:${versions.zxing}"
 

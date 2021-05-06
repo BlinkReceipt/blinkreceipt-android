@@ -88,3 +88,8 @@
     - subCategory
     - itemType
     - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
+
+## 1.1.6
+
+- stability fixes and improvements
+- added kotlin, coroutines, androidx core, worker manager and preference dependencies for more efficent internal processing

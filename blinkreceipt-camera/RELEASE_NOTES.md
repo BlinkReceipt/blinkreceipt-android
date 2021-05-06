@@ -73,3 +73,7 @@
 ## 1.1.5
 
 - stability fixes and improvements
+
+## 1.1.6
+
+- stability fixes and improvements
