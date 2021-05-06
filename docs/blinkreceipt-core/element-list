@@ -1,6 +1,8 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
+$dokka.location:com.microblink.core.internal/MixPanelRemoveWorker.Companion///PointingToDeclaration/com/microblink/core/internal/MixPanelRemoveWorker.Companion.html
+$dokka.location:com.microblink.core.internal/MixPanelWorker.Companion///PointingToDeclaration/com/microblink/core/internal/MixPanelWorker.Companion.html
 $dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
 $dokka.location:com.microblink.core/Product.Builder///PointingToDeclaration/com/microblink/core/Product.Builder.html
 $dokka.location:com.microblink.core/ScanResults.Builder///PointingToDeclaration/com/microblink/core/ScanResults.Builder.html

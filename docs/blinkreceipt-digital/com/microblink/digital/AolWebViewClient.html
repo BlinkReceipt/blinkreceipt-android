@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>WorkerStoreDelete </title>
+    <title>AolWebViewClient </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class WorkerStoreDelete" class="title">Class WorkerStoreDelete</h2>
+        <h2 title="Class AolWebViewClient" class="title">Class AolWebViewClient</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -104,11 +104,26 @@ var pathtoroot = "../../../";
             <ul class="blockList">
                 <li class="blockList">
                     
+                    <dl>
+                        <dt>All Implemented Interfaces:</dt>
+                        <dd>
+                            
+                            <code>org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface</code>
+                            
+                            ,
+                            
+                            
+                            <code>org.chromium.support_lib_boundary.WebViewClientBoundaryInterface</code>
+                            
+                            
+                        </dd>
+                    </dl>
+                    
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=WorkerStoreDelete.html>WorkerStoreDelete</a></span>
-extends <a href=https://developer.android.com/reference/kotlin/androidx/work/CoroutineWorker.html>CoroutineWorker</a>
+final class <span class="typeNameLabel"><a href=AolWebViewClient.html>AolWebViewClient</a></span>
+extends <a href=WebClientCompat.html>WebClientCompat</a>
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -119,62 +134,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                 <li class="blockList">
                 <!-- ======== NESTED CLASS SUMMARY ======== -->
                     
-                    <section role="region">
-                        <ul class="blockList">
-                            <li class="blockList"><a id="nested.class.summary">
-                                <!--   -->
-                            </a>
-                                <h3>Nested Class Summary</h3>
-                                <div class="memberSummary">
-                                    <table>
-                                        <caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
-                                        <tr>
-                                            <th class="colFirst" scope="col">Modifier and Type</th>
-                                            <th class="colSecond" scope="col">Class</th>
-                                            <th class="colLast" scope="col">Description</th>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>public class</code></td>
-                                            <th class="colSecond" scope="row"><code><a href="WorkerStoreDelete.Companion.html">WorkerStoreDelete.Companion</a></span></code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                    </table>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
-                    
                     <!-- =========== FIELD SUMMARY =========== -->
-                    
-                    <section role="region">
-                        <ul class="blockList">
-                            <li class="blockList"><a id="field.summary">
-                                <!--   -->
-                            </a>
-                                <h3>Field Summary</h3>
-                                <div class="memberSummary">
-                                    <table>
-                                        <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-                                        <tr>
-                                            <th class="colFirst" scope="col">Modifier and Type</th>
-                                            <th class="colSecond" scope="col">Field</th>
-                                            <th class="colLast" scope="col">Description</th>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>private final CoroutineDispatcher</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=WorkerStoreDelete.html#coroutineContext>coroutineContext</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                    </table>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
                     
                     <!-- ======== CONSTRUCTOR SUMMARY ======== -->
                     
@@ -196,7 +156,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#WorkerStoreDelete(Context,WorkerParameters)">WorkerStoreDelete</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/androidx/work/WorkerParameters.html>WorkerParameters</a> parameters)</code></th>
+                                                        href="#AolWebViewClient(Context,String,PasswordCredentials,WebNavigation,WebNavigationCallback)">AolWebViewClient</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> scripts, PasswordCredentials credentials, <a href=WebNavigation.html>WebNavigation</a> navigation, <a href=WebNavigationCallback.html>WebNavigationCallback</a> callback)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -232,17 +192,17 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/androidx/work/ListenableWorker.Result.html>ListenableWorker.Result</a></code>
+                                            <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WorkerStoreDelete.html#doWork()>doWork</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AolWebViewClient.html#destroy()>destroy</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>CoroutineDispatcher</code>
+                                            <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WorkerStoreDelete.html#getCoroutineContext()>getCoroutineContext</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AolWebViewClient.html#onPageFinished(WebView,String)>onPageFinished</a>(<a href=https://developer.android.com/reference/kotlin/android/webkit/WebView.html>WebView</a> view, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> url) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -252,23 +212,17 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                 </div>
                                 <ul class="blockList">
                                 
-                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.work.ListenableWorker">
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.webkit.WebViewClientCompat">
                                             <!--   -->
                                         </a>
-                                            <h3>Methods inherited from class&nbsp;androidx.work.ListenableWorker</h3>
-                                            <code>equals, hashCode, toString</code></li>
+                                            <h3>Methods inherited from class&nbsp;androidx.webkit.WebViewClientCompat</h3>
+                                            <code>getSupportedFeatures, onPageCommitVisible, onReceivedError, onReceivedHttpError, onSafeBrowsingHit, shouldOverrideUrlLoading</code></li>
                                  
-                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.work.CoroutineWorker">
+                                    <li class="blockList"><a id="methods.inherited.from.class.android.webkit.WebViewClient">
                                             <!--   -->
                                         </a>
-                                            <h3>Methods inherited from class&nbsp;androidx.work.CoroutineWorker</h3>
-                                            <code>getApplicationContext, getBackgroundExecutor, getId, getInputData, getNetwork, getRunAttemptCount, getTags, getTaskExecutor, getTriggeredContentAuthorities, getTriggeredContentUris, getWorkerFactory, isRunInForeground, isStopped, isUsed, setForegroundAsync, setProgressAsync, setUsed, stop</code></li>
-                                 
-                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.internal.WorkerStoreDelete">
-                                            <!--   -->
-                                        </a>
-                                            <h3>Methods inherited from class&nbsp;com.microblink.internal.WorkerStoreDelete</h3>
-                                            <code>onStopped, setForeground, setProgress, startWork</code></li>
+                                            <h3>Methods inherited from class&nbsp;android.webkit.WebViewClient</h3>
+                                            <code>doUpdateVisitedHistory, onFormResubmission, onLoadResource, onPageFinished, onPageStarted, onReceivedClientCertRequest, onReceivedHttpAuthRequest, onReceivedLoginRequest, onReceivedSslError, onRenderProcessGone, onScaleChanged, onTooManyRedirects, onUnhandledKeyEvent, shouldInterceptRequest, shouldOverrideKeyEvent</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -296,11 +250,11 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="WorkerStoreDelete(Context,WorkerParameters)"></a>
+                                <a name="AolWebViewClient(Context,String,PasswordCredentials,WebNavigation,WebNavigationCallback)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>WorkerStoreDelete</h4>
-                                        <pre>WorkerStoreDelete(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/androidx/work/WorkerParameters.html>WorkerParameters</a> parameters)</pre>
+                                        <h4>AolWebViewClient</h4>
+                                        <pre>AolWebViewClient(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> scripts, PasswordCredentials credentials, <a href=WebNavigation.html>WebNavigation</a> navigation, <a href=WebNavigationCallback.html>WebNavigationCallback</a> callback)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -319,30 +273,30 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="doWork()">
+                                <a id="destroy()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>doWork</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/androidx/work/ListenableWorker.Result.html>ListenableWorker.Result</a> <a href=WorkerStoreDelete.html#doWork()>doWork</a>()</pre>
+                                        <h4>destroy</h4>
+                                        <pre class="methodSignature"> void <a href=AolWebViewClient.html#destroy()>destroy</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="getCoroutineContext()">
+                                <a id="onPageFinished(WebView,String)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>getCoroutineContext</h4>
-                                        <pre class="methodSignature"> CoroutineDispatcher <a href=WorkerStoreDelete.html#getCoroutineContext()>getCoroutineContext</a>()</pre>
+                                        <h4>onPageFinished</h4>
+                                        <pre class="methodSignature"> void <a href=AolWebViewClient.html#onPageFinished(WebView,String)>onPageFinished</a>(<a href=https://developer.android.com/reference/kotlin/android/webkit/WebView.html>WebView</a> view, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> url)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
