@@ -27,3 +27,7 @@
 - stability fixes and improvements
 - coroutines 1.4.3, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.3
 - update androidx lifecycle to 2.3.1
+
+## 1.0.4
+
+- stability fixes and improvements

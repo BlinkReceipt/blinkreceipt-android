@@ -26,6 +26,8 @@ dependencies {
     implementation 'com.squareup.okio:okio:2.10.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation "androidx.preference:preference-ktx:1.1.1"
 }
 ```
 

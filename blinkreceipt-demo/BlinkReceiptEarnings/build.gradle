@@ -52,9 +52,12 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
+
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "androidx.preference:preference-ktx:${androidx.preference}"
+
     implementation "com.google.android.material:material:${versions.material}"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"

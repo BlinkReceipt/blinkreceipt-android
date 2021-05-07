@@ -100,3 +100,8 @@ counterpart
 - fix digital receipt date parsing bugs
 - fix Yahoo/AOL IMAP setup
 - update androidx lifecycle to 2.3.1
+
+## 1.1.4
+
+- stability fixes and improvements
+- fix generating passwords for aol accounts

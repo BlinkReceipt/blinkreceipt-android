@@ -23,7 +23,8 @@ buildscript {
         'collection'            : '1.1.0',
         'worker'                : '2.5.0',
         'webkit'                : '1.4.0',
-        'constraintLayout'      : '2.0.4'
+        'constraintLayout'      : '2.0.4',
+        'preference'            : '1.1.1',
     ]
 
     ext.versions = [
@@ -52,9 +53,9 @@ buildscript {
             'ndk'                   : '22.0.7026061',
             'zxing'                 : '3.3.0',
             'msal'                  : '1.6.0',
-            "javaMail"              : '1.6.5',
+            'javaMail'              : '1.6.5',
             'versionMajor'          : 1,
             'versionMinor'          : 4,
-            'versionPatch'          : 4
+            'versionPatch'          : 5
     ]
 }

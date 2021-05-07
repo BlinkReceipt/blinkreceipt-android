@@ -86,3 +86,7 @@
 
 - stability fixes and improvements
 - update androidx lifecycle to 2.3.1
+
+## 1.1.6
+
+- stability fixes and improvements
