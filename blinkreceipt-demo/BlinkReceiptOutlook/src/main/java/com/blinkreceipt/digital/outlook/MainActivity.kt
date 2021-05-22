@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        client = OutlookClient(applicationContext, R.raw.auth_config_single_account, object : InitializeCallback {
+        client = OutlookClient(applicationContext,
+            R.raw.auth_config_single_account, object : InitializeCallback {
 
             override fun onComplete() {
                 Toast.makeText(this@MainActivity,
@@ -35,6 +36,21 @@ class MainActivity : AppCompatActivity() {
 
         }).apply {
             dayCutoff(15)
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun onRemoteMessages(view: View) {
+        client.remoteMessages().addOnSuccessListener {
+            Toast.makeText(
+                applicationContext,
+                "Remote messages $it", Toast.LENGTH_SHORT
+            ).show()
+        }.addOnFailureListener {
+            Toast.makeText(
+                applicationContext,
+                "Remote messages failure: $it", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
