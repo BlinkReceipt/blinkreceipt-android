@@ -353,3 +353,8 @@ Blink Receipt Recognizer
 ## 1.4.5
 
 - stability fixes and improvements
+
+## 1.4.6
+
+- stability fixes and improvements
+- kotlin 1.5.0

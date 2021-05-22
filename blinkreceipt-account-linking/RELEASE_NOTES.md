@@ -20,3 +20,8 @@
 - stability fixes and improvements
 - support for Shipt & Walgreens
 - display correct UPC for products
+
+## 1.0.4
+
+- stability fixes and improvements
+- kotlin 1.5.0

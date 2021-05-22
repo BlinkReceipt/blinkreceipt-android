@@ -1,5 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
     compileSdkVersion versions.compileSdk
@@ -47,6 +49,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/ASL2.0")
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+        exclude("META-INF/*.kotlin_module")
+        exclude("META-INF/licenses/ASM")
+    }
 }
 
 dependencies {
@@ -71,6 +87,10 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${versions.coroutines}"
+
+    implementation "androidx.work:work-runtime:${androidx.worker}"
+    implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
 
     implementation project(':LibBlinkReceiptCore')
     implementation project(':LibBlinkReceiptDigital')

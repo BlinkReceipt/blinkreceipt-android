@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0"
 
   implementation "androidx.appcompat:appcompat:1.2.0"
 
@@ -55,7 +55,7 @@ Project build.gradle
 buildscript {
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0"
     }
 }
 ```
