@@ -105,3 +105,16 @@ counterpart
 
 - stability fixes and improvements
 - fix generating passwords for aol accounts
+
+## 1.1.5
+
+- stability fixes and improvements
+- add androidx core and kotlin stdlib
+- update java mail and activation sdk to 1.6.7
+- update google api services gmail to v1-rev20210510-1.31.0
+- update google api client android to 1.31.5
+- update google http client gson to 1.39.2-sp.1
+- provide merchant email, shipping cost and email subject via scan results
+- add coroutines core, coroutines android, coroutines play services
+- provide currency code via scan results
+- add worker manager libraries

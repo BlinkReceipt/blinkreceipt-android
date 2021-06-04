@@ -228,7 +228,7 @@ var pathtoroot = "../../";
                     <pre class="wrap-overflow">
 
 public class <span class="typeNameLabel"><a href=CameraScanActivity.html>CameraScanActivity</a></span>
-extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html>AppCompatActivity</a> implements <a href=../com/microblink/internal/view/presenter/CameraScanContract.View.html>CameraScanContract.View</a>, <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a>
+extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompat/app/AppCompatActivity.html>AppCompatActivity</a> implements <a href=internal/view/presenter/CameraScanContract.View.html>CameraScanContract.View</a>, <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a>
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -377,7 +377,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private  <a href=../com/microblink/internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a></code></td>
+                                            <td class="colFirst"><code>private  <a href=internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#presenter>presenter</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -416,7 +416,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onStart()>onStart</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#setPresenter(CameraScanContract.Presenter)>setPresenter</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a> presenter) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -424,7 +424,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onStop()>onStop</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onStart()>onStart</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -432,7 +432,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerDone(ScanResults,Media)>onRecognizerDone</a>(ScanResults results, <a href=Media.html>Media</a> media) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onStop()>onStop</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -440,7 +440,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerException(Throwable)>onRecognizerException</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> e) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerDone(ScanResults,Media)>onRecognizerDone</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() ScanResults results, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Media.html>Media</a> media) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -448,7 +448,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i4" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPreviewStarted()>onPreviewStarted</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerException(Throwable)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> e) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -456,7 +456,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerResultsChanged(RecognizerResult)>onRecognizerResultsChanged</a>(<a href=RecognizerResult.html>RecognizerResult</a> result) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPreviewStarted()>onPreviewStarted</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -464,7 +464,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onConfirmPicture(File)>onConfirmPicture</a>(<a href=https://developer.android.com/reference/kotlin/java/io/File.html>File</a> file) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onRecognizerResultsChanged(RecognizerResult)>onRecognizerResultsChanged</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -472,7 +472,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPermissionDenied()>onPermissionDenied</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onConfirmPicture(File)>onConfirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/io/File.html>File</a> file) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -480,7 +480,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPreviewStopped()>onPreviewStopped</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPermissionDenied()>onPermissionDenied</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -488,7 +488,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onException(Throwable)>onException</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> throwable) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onPreviewStopped()>onPreviewStopped</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -496,7 +496,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onConfigurationChanged(Configuration)>onConfigurationChanged</a>(<a href=https://developer.android.com/reference/kotlin/android/content/res/Configuration.html>Configuration</a> newConfig) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onException(Throwable)>onException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> throwable) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -504,7 +504,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#captureFrame()>captureFrame</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#onConfigurationChanged(Configuration)>onConfigurationChanged</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/res/Configuration.html>Configuration</a> newConfig) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -512,7 +512,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#confirmPhoto(boolean)>confirmPhoto</a>(boolean animateConfirmedFrame) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#captureFrame()>captureFrame</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -520,7 +520,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#discardCapturedFrame()>discardCapturedFrame</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#confirmPhoto(boolean)>confirmPhoto</a>(boolean animateConfirmedFrame) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -528,7 +528,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#capturedFrameCount(int)>capturedFrameCount</a>(int count) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#discardCapturedFrame()>discardCapturedFrame</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -536,7 +536,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#cancelButtonText(String)>cancelButtonText</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cancelMsg) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#capturedFrameCount(int)>capturedFrameCount</a>(int count) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -544,7 +544,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#doneButtonText(String)>doneButtonText</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> doneMsg) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#cancelButtonText(String)>cancelButtonText</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cancelMsg) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -552,7 +552,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#hintMsg(String)>hintMsg</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> hint) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#doneButtonText(String)>doneButtonText</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> doneMsg) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -560,7 +560,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#tipMsg(String)>tipMsg</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> tip) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#hintMsg(String)>hintMsg</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> hint) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -568,7 +568,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayTip(boolean)>displayTip</a>(boolean visible) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#tipMsg(String)>tipMsg</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> tip) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -576,7 +576,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i20" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayHint(boolean)>displayHint</a>(boolean visible) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayTip(boolean)>displayTip</a>(boolean visible) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -584,7 +584,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayDoneButton(boolean)>displayDoneButton</a>(boolean visible) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayHint(boolean)>displayHint</a>(boolean visible) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -592,7 +592,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i22" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#setEnableCaptureFrameBtn(boolean)>setEnableCaptureFrameBtn</a>(boolean enabled) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayDoneButton(boolean)>displayDoneButton</a>(boolean visible) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -600,7 +600,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i23" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#enableDoneButton()>enableDoneButton</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#setEnableCaptureFrameBtn(boolean)>setEnableCaptureFrameBtn</a>(boolean enabled) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -608,7 +608,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i24" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#disableDoneButton()>disableDoneButton</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#enableDoneButton()>enableDoneButton</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -616,7 +616,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i25" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#captureContentDescription(String)>captureContentDescription</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> contentDescription) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#disableDoneButton()>disableDoneButton</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -624,7 +624,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i26" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#finishScan()>finishScan</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#captureContentDescription(String)>captureContentDescription</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> contentDescription) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -632,7 +632,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i27" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayTorch(boolean)>displayTorch</a>(boolean displayTorch) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#finishScan()>finishScan</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -640,7 +640,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i28" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#toggleTorch(boolean,SuccessCallback)>toggleTorch</a>(boolean shouldTurnOn, SuccessCallback callback) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#displayTorch(boolean)>displayTorch</a>(boolean displayTorch) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -648,7 +648,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i29" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#cancelScan()>cancelScan</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#toggleTorch(boolean,SuccessCallback)>toggleTorch</a>(boolean shouldTurnOn, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() SuccessCallback callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -656,7 +656,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                         <tr id="i30" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#setPresenter(CameraScanContract.Presenter)>setPresenter</a>(<a href=../com/microblink/internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a> presenter) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraScanActivity.html#cancelScan()>cancelScan</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -670,13 +670,13 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;androidx.appcompat.app.AppCompatActivity</h3>
-                                            <code>addContentView, attachBaseContext, closeOptionsMenu, dispatchKeyEvent, findViewById, getDelegate, getDrawerToggleDelegate, getMenuInflater, getResources, getSupportActionBar, getSupportParentActivityIntent, invalidateOptionsMenu, onConfigurationChanged, onContentChanged, onCreate, onCreateSupportNavigateUpTaskStack, onDestroy, onKeyDown, onMenuItemSelected, onMenuOpened, onNightModeChanged, onPanelClosed, onPostCreate, onPostResume, onPrepareSupportNavigateUpTaskStack, onSaveInstanceState, onStart, onStop, onSupportActionModeFinished, onSupportActionModeStarted, onSupportContentChanged, onSupportNavigateUp, onTitleChanged, onWindowStartingSupportActionMode, openOptionsMenu, performMenuItemShortcut, setContentView, setSupportActionBar, setSupportProgress, setSupportProgressBarIndeterminate, setSupportProgressBarIndeterminateVisibility, setSupportProgressBarVisibility, setTheme, startSupportActionMode, supportInvalidateOptionsMenu, supportNavigateUpTo, supportRequestWindowFeature, supportShouldUpRecreateTask</code></li>
+                                            <code>addContentView, closeOptionsMenu, dispatchKeyEvent, findViewById, getDelegate, getDrawerToggleDelegate, getMenuInflater, getResources, getSupportActionBar, getSupportParentActivityIntent, invalidateOptionsMenu, onConfigurationChanged, onContentChanged, onCreateSupportNavigateUpTaskStack, onKeyDown, onMenuItemSelected, onMenuOpened, onPanelClosed, onPrepareSupportNavigateUpTaskStack, onSupportActionModeFinished, onSupportActionModeStarted, onSupportContentChanged, onSupportNavigateUp, onWindowStartingSupportActionMode, openOptionsMenu, setContentView, setSupportActionBar, setSupportProgress, setSupportProgressBarIndeterminate, setSupportProgressBarIndeterminateVisibility, setSupportProgressBarVisibility, setTheme, startSupportActionMode, supportInvalidateOptionsMenu, supportNavigateUpTo, supportRequestWindowFeature, supportShouldUpRecreateTask</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.androidx.fragment.app.FragmentActivity">
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;androidx.fragment.app.FragmentActivity</h3>
-                                            <code>allocateRequestIndex, checkForValidRequestCode, dispatchFragmentsOnCreateView, dump, getSupportFragmentManager, getSupportLoaderManager, markFragmentsCreated, markState, onActivityResult, onAttachFragment, onCreatePanelMenu, onCreateView, onLowMemory, onMultiWindowModeChanged, onNewIntent, onPause, onPictureInPictureModeChanged, onPrepareOptionsPanel, onPreparePanel, onRequestPermissionsResult, onResume, onResumeFragments, onStateNotSaved, requestPermissionsFromFragment, setEnterSharedElementCallback, setExitSharedElementCallback, startActivityForResult, startActivityFromFragment, startIntentSenderForResult, startIntentSenderFromFragment, supportFinishAfterTransition, supportPostponeEnterTransition, supportStartPostponedEnterTransition, validateRequestPermissionsRequestCode</code></li>
+                                            <code>dump, getSupportFragmentManager, getSupportLoaderManager, onAttachFragment, onCreatePanelMenu, onCreateView, onLowMemory, onMultiWindowModeChanged, onPictureInPictureModeChanged, onPreparePanel, onRequestPermissionsResult, onStateNotSaved, setEnterSharedElementCallback, setExitSharedElementCallback, startActivityForResult, startActivityFromFragment, startIntentSenderForResult, startIntentSenderFromFragment, supportFinishAfterTransition, supportPostponeEnterTransition, supportStartPostponedEnterTransition, validateRequestPermissionsRequestCode</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.androidx.activity.ComponentActivity">
                                             <!--   -->
@@ -694,7 +694,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;android.app.Activity</h3>
-                                            <code>closeContextMenu, createPendingResult, dismissDialog, dismissKeyboardShortcutsHelper, dispatchGenericMotionEvent, dispatchPopulateAccessibilityEvent, dispatchTouchEvent, dispatchTrackballEvent, enterPictureInPictureMode, enterPictureInPictureMode, finish, finishActivity, finishActivityFromChild, finishAffinity, finishAfterTransition, finishAndRemoveTask, finishFromChild, getActionBar, getApplication, getCallingActivity, getCallingPackage, getChangingConfigurations, getComponentName, getContentScene, getContentTransitionManager, getCurrentFocus, getFragmentManager, getIntent, getLastNonConfigurationInstance, getLayoutInflater, getLoaderManager, getLocalClassName, getMaxNumPictureInPictureActions, getMediaController, getParent, getParentActivityIntent, getPreferences, getReferrer, getRequestedOrientation, getSearchEvent, getSystemService, getTaskId, getTitle, getTitleColor, getVoiceInteractor, getVolumeControlStream, getWindow, getWindowManager, hasWindowFocus, isActivityTransitionRunning, isChangingConfigurations, isChild, isDestroyed, isFinishing, isImmersive, isInMultiWindowMode, isInPictureInPictureMode, isLocalVoiceInteractionSupported, isTaskRoot, isVoiceInteraction, isVoiceInteractionRoot, managedQuery, moveTaskToBack, navigateUpTo, navigateUpToFromChild, onActionModeFinished, onActionModeStarted, onActivityReenter, onApplyThemeResource, onAttachedToWindow, onChildTitleChanged, onContextItemSelected, onContextMenuClosed, onCreateContextMenu, onCreateDescription, onCreateDialog, onCreateNavigateUpTaskStack, onCreateOptionsMenu, onCreatePanelView, onCreateThumbnail, onDetachedFromWindow, onEnterAnimationComplete, onGenericMotionEvent, onGetDirectActions, onKeyLongPress, onKeyMultiple, onKeyShortcut, onKeyUp, onLocalVoiceInteractionStarted, onLocalVoiceInteractionStopped, onNavigateUp, onNavigateUpFromChild, onOptionsItemSelected, onOptionsMenuClosed, onPerformDirectAction, onPictureInPictureRequested, onPrepareDialog, onPrepareNavigateUpTaskStack, onPrepareOptionsMenu, onProvideAssistContent, onProvideAssistData, onProvideKeyboardShortcuts, onProvideReferrer, onRestart, onRestoreInstanceState, onSearchRequested, onTopResumedActivityChanged, onTouchEvent, onTrackballEvent, onTrimMemory, onUserInteraction, onUserLeaveHint, onVisibleBehindCanceled, onWindowAttributesChanged, onWindowFocusChanged, onWindowStartingActionMode, openContextMenu, overridePendingTransition, postponeEnterTransition, recreate, registerActivityLifecycleCallbacks, registerForContextMenu, releaseInstance, removeDialog, reportFullyDrawn, requestDragAndDropPermissions, requestPermissions, requestShowKeyboardShortcuts, requestVisibleBehind, requestWindowFeature, requireViewById, runOnUiThread, setActionBar, setContentTransitionManager, setDefaultKeyMode, setFeatureDrawable, setFeatureDrawableAlpha, setFeatureDrawableResource, setFeatureDrawableUri, setFinishOnTouchOutside, setImmersive, setInheritShowWhenLocked, setIntent, setLocusContext, setMediaController, setPictureInPictureParams, setProgress, setProgressBarIndeterminate, setProgressBarIndeterminateVisibility, setProgressBarVisibility, setRequestedOrientation, setResult, setSecondaryProgress, setShowWhenLocked, setTaskDescription, setTitle, setTitleColor, setTranslucent, setTurnScreenOn, setVisible, setVolumeControlStream, setVrModeEnabled, shouldShowRequestPermissionRationale, shouldUpRecreateTask, showAssist, showDialog, showDialog, showLockTaskEscapeMessage, startActionMode, startActivities, startActivity, startActivityFromChild, startActivityIfNeeded, startIntentSender, startIntentSenderFromChild, startLocalVoiceInteraction, startLockTask, startManagingCursor, startNextMatchingActivity, startPostponedEnterTransition, startSearch, stopLocalVoiceInteraction, stopLockTask, stopManagingCursor, takeKeyEvents, triggerSearch, unregisterActivityLifecycleCallbacks, unregisterForContextMenu</code></li>
+                                            <code>closeContextMenu, createPendingResult, dismissDialog, dismissKeyboardShortcutsHelper, dispatchGenericMotionEvent, dispatchPopulateAccessibilityEvent, dispatchTouchEvent, dispatchTrackballEvent, enterPictureInPictureMode, enterPictureInPictureMode, finish, finishActivity, finishActivityFromChild, finishAffinity, finishAfterTransition, finishAndRemoveTask, finishFromChild, getActionBar, getApplication, getCallingActivity, getCallingPackage, getChangingConfigurations, getComponentName, getContentScene, getContentTransitionManager, getCurrentFocus, getFragmentManager, getIntent, getLastNonConfigurationInstance, getLayoutInflater, getLoaderManager, getLocalClassName, getMaxNumPictureInPictureActions, getMediaController, getParent, getParentActivityIntent, getPreferences, getReferrer, getRequestedOrientation, getSearchEvent, getSystemService, getTaskId, getTitle, getTitleColor, getVoiceInteractor, getVolumeControlStream, getWindow, getWindowManager, hasWindowFocus, isActivityTransitionRunning, isChangingConfigurations, isChild, isDestroyed, isFinishing, isImmersive, isInMultiWindowMode, isInPictureInPictureMode, isLocalVoiceInteractionSupported, isTaskRoot, isVoiceInteraction, isVoiceInteractionRoot, managedQuery, moveTaskToBack, navigateUpTo, navigateUpToFromChild, onActionModeFinished, onActionModeStarted, onActivityReenter, onAttachedToWindow, onContextItemSelected, onContextMenuClosed, onCreateContextMenu, onCreateDescription, onCreateNavigateUpTaskStack, onCreateOptionsMenu, onCreatePanelView, onCreateThumbnail, onDetachedFromWindow, onEnterAnimationComplete, onGenericMotionEvent, onGetDirectActions, onKeyLongPress, onKeyMultiple, onKeyShortcut, onKeyUp, onLocalVoiceInteractionStarted, onLocalVoiceInteractionStopped, onNavigateUp, onNavigateUpFromChild, onOptionsItemSelected, onOptionsMenuClosed, onPerformDirectAction, onPictureInPictureRequested, onPrepareNavigateUpTaskStack, onPrepareOptionsMenu, onProvideAssistContent, onProvideAssistData, onProvideKeyboardShortcuts, onProvideReferrer, onSearchRequested, onTopResumedActivityChanged, onTouchEvent, onTrackballEvent, onTrimMemory, onUserInteraction, onVisibleBehindCanceled, onWindowAttributesChanged, onWindowFocusChanged, onWindowStartingActionMode, openContextMenu, overridePendingTransition, postponeEnterTransition, recreate, registerActivityLifecycleCallbacks, registerForContextMenu, releaseInstance, removeDialog, reportFullyDrawn, requestDragAndDropPermissions, requestPermissions, requestShowKeyboardShortcuts, requestVisibleBehind, requestWindowFeature, requireViewById, runOnUiThread, setActionBar, setContentTransitionManager, setDefaultKeyMode, setFeatureDrawable, setFeatureDrawableAlpha, setFeatureDrawableResource, setFeatureDrawableUri, setFinishOnTouchOutside, setImmersive, setInheritShowWhenLocked, setIntent, setLocusContext, setMediaController, setPictureInPictureParams, setProgress, setProgressBarIndeterminate, setProgressBarIndeterminateVisibility, setProgressBarVisibility, setRequestedOrientation, setResult, setSecondaryProgress, setShowWhenLocked, setTaskDescription, setTitle, setTitleColor, setTranslucent, setTurnScreenOn, setVisible, setVolumeControlStream, setVrModeEnabled, shouldShowRequestPermissionRationale, shouldUpRecreateTask, showAssist, showDialog, showDialog, showLockTaskEscapeMessage, startActionMode, startActivities, startActivity, startActivityFromChild, startActivityIfNeeded, startIntentSender, startIntentSenderFromChild, startLocalVoiceInteraction, startLockTask, startManagingCursor, startNextMatchingActivity, startPostponedEnterTransition, startSearch, stopLocalVoiceInteraction, stopLockTask, stopManagingCursor, takeKeyEvents, triggerSearch, unregisterActivityLifecycleCallbacks, unregisterForContextMenu</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.android.view.ContextThemeWrapper">
                                             <!--   -->
@@ -772,6 +772,21 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                             </a>
                                 <h3>Method Detail</h3>
                                 
+                                <a id="setPresenter(CameraScanContract.Presenter)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPresenter</h4>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#setPresenter(CameraScanContract.Presenter)>setPresenter</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a> presenter)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="onStart()">
                                     <!--   -->
                                 </a>
@@ -810,7 +825,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onRecognizerDone</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerDone(ScanResults,Media)>onRecognizerDone</a>(ScanResults results, <a href=Media.html>Media</a> media)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerDone(ScanResults,Media)>onRecognizerDone</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() ScanResults results, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Media.html>Media</a> media)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -825,7 +840,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onRecognizerException</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerException(Throwable)>onRecognizerException</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> e)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerException(Throwable)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> e)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -855,7 +870,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onRecognizerResultsChanged</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerResultsChanged(RecognizerResult)>onRecognizerResultsChanged</a>(<a href=RecognizerResult.html>RecognizerResult</a> result)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onRecognizerResultsChanged(RecognizerResult)>onRecognizerResultsChanged</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -870,7 +885,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onConfirmPicture</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onConfirmPicture(File)>onConfirmPicture</a>(<a href=https://developer.android.com/reference/kotlin/java/io/File.html>File</a> file)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onConfirmPicture(File)>onConfirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/io/File.html>File</a> file)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -915,7 +930,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onException</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onException(Throwable)>onException</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> throwable)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onException(Throwable)>onException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> throwable)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -930,7 +945,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>onConfigurationChanged</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onConfigurationChanged(Configuration)>onConfigurationChanged</a>(<a href=https://developer.android.com/reference/kotlin/android/content/res/Configuration.html>Configuration</a> newConfig)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#onConfigurationChanged(Configuration)>onConfigurationChanged</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/res/Configuration.html>Configuration</a> newConfig)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1005,7 +1020,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>cancelButtonText</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#cancelButtonText(String)>cancelButtonText</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cancelMsg)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#cancelButtonText(String)>cancelButtonText</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cancelMsg)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1020,7 +1035,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>doneButtonText</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#doneButtonText(String)>doneButtonText</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> doneMsg)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#doneButtonText(String)>doneButtonText</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> doneMsg)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1035,7 +1050,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>hintMsg</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#hintMsg(String)>hintMsg</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> hint)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#hintMsg(String)>hintMsg</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> hint)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1050,7 +1065,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>tipMsg</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#tipMsg(String)>tipMsg</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> tip)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#tipMsg(String)>tipMsg</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> tip)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1155,7 +1170,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>captureContentDescription</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#captureContentDescription(String)>captureContentDescription</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> contentDescription)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#captureContentDescription(String)>captureContentDescription</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> contentDescription)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1200,7 +1215,7 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                           >
                                     <li class="blockList">
                                         <h4>toggleTorch</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#toggleTorch(boolean,SuccessCallback)>toggleTorch</a>(boolean shouldTurnOn, SuccessCallback callback)</pre>
+                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#toggleTorch(boolean,SuccessCallback)>toggleTorch</a>(boolean shouldTurnOn, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() SuccessCallback callback)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1211,26 +1226,11 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/appcompa
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockList"
+                                              "blockListLast"
                                           >
                                     <li class="blockList">
                                         <h4>cancelScan</h4>
                                         <pre class="methodSignature"> void <a href=CameraScanActivity.html#cancelScan()>cancelScan</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="setPresenter(CameraScanContract.Presenter)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockListLast"
-                                          >
-                                    <li class="blockList">
-                                        <h4>setPresenter</h4>
-                                        <pre class="methodSignature"> void <a href=CameraScanActivity.html#setPresenter(CameraScanContract.Presenter)>setPresenter</a>(<a href=../com/microblink/internal/view/presenter/CameraScanContract.Presenter.html>CameraScanContract.Presenter</a> presenter)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

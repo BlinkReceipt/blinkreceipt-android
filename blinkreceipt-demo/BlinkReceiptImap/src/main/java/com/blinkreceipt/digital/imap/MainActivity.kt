@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
                 binding.messages.isEnabled = true
 
                 binding.verify.isEnabled = true
+
+                binding.remoteMessages.isEnabled = true
             }
 
             override fun onException(throwable: Throwable) {
@@ -69,6 +71,8 @@ class MainActivity : AppCompatActivity() {
                 binding.messages.isEnabled = true
 
                 binding.verify.isEnabled = true
+
+                binding.remoteMessages.isEnabled = true
             }
 
         }).apply {
@@ -77,8 +81,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onDestroy() {
+        super.onDestroy()
 
         client.close()
     }
@@ -121,6 +125,21 @@ class MainActivity : AppCompatActivity() {
         }.addOnFailureListener {
             Toast.makeText(applicationContext,
                     "verify failure: $it", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun onRemoteMessages(view: View) {
+        client.remoteMessages().addOnSuccessListener {
+            Toast.makeText(
+                applicationContext,
+                "Remote messages $it", Toast.LENGTH_SHORT
+            ).show()
+        }.addOnFailureListener {
+            Toast.makeText(
+                applicationContext,
+                "Remote messages failure: $it", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

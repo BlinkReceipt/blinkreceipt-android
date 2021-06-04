@@ -128,8 +128,8 @@ Please follow the [Project Integration and Initialization](https://github.com/Bl
 dependencies {
      api project( ':blinkreceipt-core' )
 
-     api project( ':blinkreceipt-recognizer' )
-     api project( ':blinkreceipt-camera' )
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "androidx.core:core-ktx:1.3.2"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
@@ -148,9 +148,9 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation "com.google.apis:google-api-services-gmail:v1-rev105-1.25.0" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.30.10" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.36.0" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
 
 }
 ```
@@ -191,8 +191,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "com.sun.mail:android-mail:1.6.5"
-    implementation "com.sun.mail:android-activation:1.6.5"
+    implementation "com.sun.mail:android-mail:1.6.7"
+    implementation "com.sun.mail:android-activation:1.6.7"
 
     implementation "androidx.fragment:fragment:1.2.5"
 
@@ -449,7 +449,7 @@ Outlook integration requires 1 additional AAR in your build gradle.
 ```groovy
 dependencies {
 
-    implementation( "com.microsoft.identity.client:msal:1.6.0" ) {
+    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
         exclude group: 'com.microsoft.device.display'
     }
 }
@@ -585,7 +585,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation "com.google.apis:google-api-services-gmail:${latest-version}" exclude module: 'httpclient'
 
-        implementation "com.google.api-client:google-api-client-android:${latest-version}" exclude module: 'httpclient'
+        implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
     }
 ```
 

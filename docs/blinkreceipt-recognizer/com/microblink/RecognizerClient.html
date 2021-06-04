@@ -145,12 +145,6 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                                 <td class="colLast"></td>
                                             </tr>
                                         
-                                            <tr class="rowColor">
-                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#RecognizerClient(Context,FrameProcessor,FrameUploadRepository,ScanSettingRepository)">RecognizerClient</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=FrameProcessor.html>FrameProcessor</a> frameProcessor, <a href=FrameUploadRepository.html>FrameUploadRepository</a> repository, <a href=../com/microblink/internal/services/ScanSettingRepository.html>ScanSettingRepository</a> scanRepository)</code></th>
-                                                <td class="colLast"></td>
-                                            </tr>
-                                        
 
                                         </tbody>
                                     </table>
@@ -185,7 +179,7 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,Array)>recognize</a>(<a href=ScanOptions.html>ScanOptions</a> scanOptions, <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,Array)>recognize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> scanOptions, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -193,7 +187,7 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,CameraOrientation,Array)>recognize</a>(<a href=ScanOptions.html>ScanOptions</a> scanOptions, <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, <a href=CameraOrientation.html>CameraOrientation</a> orientation, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,CameraOrientation,Array)>recognize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> scanOptions, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraOrientation.html>CameraOrientation</a> orientation, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -239,16 +233,6 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                     </li>
                                 </ul>
                                 
-                                <a name="RecognizerClient(Context,FrameProcessor,FrameUploadRepository,ScanSettingRepository)"></a>
-                                <ul class="blockList">
-                                    <li class="blockList">
-                                        <h4>RecognizerClient</h4>
-                                        <pre>RecognizerClient(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=FrameProcessor.html>FrameProcessor</a> frameProcessor, <a href=FrameUploadRepository.html>FrameUploadRepository</a> repository, <a href=../com/microblink/internal/services/ScanSettingRepository.html>ScanSettingRepository</a> scanRepository)</pre>
-                                        <div class="block"></div>
-                                        
-                                    </li>
-                                </ul>
-                                
                             </li>
                         </ul>
                     </section>
@@ -270,7 +254,7 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                           >
                                     <li class="blockList">
                                         <h4>recognize</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,Array)>recognize</a>(<a href=ScanOptions.html>ScanOptions</a> scanOptions, <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() void <a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,Array)>recognize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> scanOptions, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -285,7 +269,7 @@ public final class <span class="typeNameLabel"><a href=RecognizerClient.html>Rec
                                           >
                                     <li class="blockList">
                                         <h4>recognize</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,CameraOrientation,Array)>recognize</a>(<a href=ScanOptions.html>ScanOptions</a> scanOptions, <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, <a href=CameraOrientation.html>CameraOrientation</a> orientation, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() void <a href=RecognizerClient.html#recognize(ScanOptions,RecognizerCallback,CameraOrientation,Array)>recognize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> scanOptions, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerCallback.html>RecognizerCallback</a> recognizerCallback, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraOrientation.html>CameraOrientation</a> orientation, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a>&gt; bitmaps)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

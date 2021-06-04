@@ -93,3 +93,7 @@
 ## 1.1.6
 
 - stability fixes and improvements
+
+## 1.1.7
+
+- stability fixes and improvements

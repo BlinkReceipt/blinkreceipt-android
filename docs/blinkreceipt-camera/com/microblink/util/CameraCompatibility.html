@@ -174,22 +174,6 @@ public class <span class="typeNameLabel"><a href=CameraCompatibility.html>Camera
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>static void</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#initCompatibility(int,DeviceManager)>initCompatibility</a>(int activityOrientation, <a href=../com/microblink/hardware/DeviceManager.html>DeviceManager</a> deviceManager) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>static boolean</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#isPortraitCameraSupported()>isPortraitCameraSupported</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>static int</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#getDisplayOrientation()>getDisplayOrientation</a>() </code>
@@ -197,10 +181,26 @@ public class <span class="typeNameLabel"><a href=CameraCompatibility.html>Camera
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#setDisplayOrientation(Camera,int,int,boolean)>setDisplayOrientation</a>(<a href=https://developer.android.com/reference/kotlin/android/hardware/Camera.html>Camera</a> camera, int orientation, int cameraSensorOrientation, boolean frontFacing) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#setDisplayOrientation(Camera,int,int,boolean)>setDisplayOrientation</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/hardware/Camera.html>Camera</a> camera, int orientation, int cameraSensorOrientation, boolean frontFacing) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>static void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#initCompatibility(int,DeviceManager)>initCompatibility</a>(int activityOrientation, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../hardware/DeviceManager.html>DeviceManager</a> deviceManager) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code>static boolean</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=CameraCompatibility.html#isPortraitCameraSupported()>isPortraitCameraSupported</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -238,36 +238,6 @@ public class <span class="typeNameLabel"><a href=CameraCompatibility.html>Camera
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="initCompatibility(int,DeviceManager)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>initCompatibility</h4>
-                                        <pre class="methodSignature"> static void <a href=CameraCompatibility.html#initCompatibility(int,DeviceManager)>initCompatibility</a>(int activityOrientation, <a href=../com/microblink/hardware/DeviceManager.html>DeviceManager</a> deviceManager)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="isPortraitCameraSupported()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>isPortraitCameraSupported</h4>
-                                        <pre class="methodSignature"> static boolean <a href=CameraCompatibility.html#isPortraitCameraSupported()>isPortraitCameraSupported</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
                                 <a id="getDisplayOrientation()">
                                     <!--   -->
                                 </a>
@@ -287,11 +257,41 @@ public class <span class="typeNameLabel"><a href=CameraCompatibility.html>Camera
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>setDisplayOrientation</h4>
-                                        <pre class="methodSignature"> static void <a href=CameraCompatibility.html#setDisplayOrientation(Camera,int,int,boolean)>setDisplayOrientation</a>(<a href=https://developer.android.com/reference/kotlin/android/hardware/Camera.html>Camera</a> camera, int orientation, int cameraSensorOrientation, boolean frontFacing)</pre>
+                                        <pre class="methodSignature"> static void <a href=CameraCompatibility.html#setDisplayOrientation(Camera,int,int,boolean)>setDisplayOrientation</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/hardware/Camera.html>Camera</a> camera, int orientation, int cameraSensorOrientation, boolean frontFacing)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="initCompatibility(int,DeviceManager)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>initCompatibility</h4>
+                                        <pre class="methodSignature"> static void <a href=CameraCompatibility.html#initCompatibility(int,DeviceManager)>initCompatibility</a>(int activityOrientation, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../hardware/DeviceManager.html>DeviceManager</a> deviceManager)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="isPortraitCameraSupported()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>isPortraitCameraSupported</h4>
+                                        <pre class="methodSignature"> static boolean <a href=CameraCompatibility.html#isPortraitCameraSupported()>isPortraitCameraSupported</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
