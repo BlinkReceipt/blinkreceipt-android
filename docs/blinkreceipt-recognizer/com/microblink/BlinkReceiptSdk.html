@@ -176,7 +176,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>static synchronized void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#autoInitialize(Context)>autoInitialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -184,7 +184,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>static synchronized void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context,InitializeCallback)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() InitializeCallback callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -192,23 +192,23 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>static synchronized void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context,InitializeCallback)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, InitializeCallback callback) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context,String,InitializeCallback)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> licenseKey, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() InitializeCallback callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code>static synchronized void</code>
+                                            <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialize(Context,String,InitializeCallback)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> licenseKey, InitializeCallback callback) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#daysToStoreScan(Context,int)>daysToStoreScan</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code>static void</code>
+                                            <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#loadPvpActivations(Context)>loadPvpActivations</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#daysToStoreScan(Context)>daysToStoreScan</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -216,7 +216,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#deletePastDaysToStore(Context,int)>deletePastDaysToStore</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#frameResults(boolean)>frameResults</a>(boolean frameResults) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -224,44 +224,12 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>static boolean</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#ocrCorrections()>ocrCorrections</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code>static void</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#daysToStoreScan(Context,int)>daysToStoreScan</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i8" class="altColor">
-                                            <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#daysToStoreScan(Context)>daysToStoreScan</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i9" class="rowColor">
-                                            <td class="colFirst"><code>static void</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#frameResults(boolean)>frameResults</a>(boolean frameResults) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i10" class="altColor">
-                                            <td class="colFirst"><code>static boolean</code>
-                                            </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#frameResults()>frameResults</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i11" class="rowColor">
+                                        <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>static boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#onDeviceOcr()>onDeviceOcr</a>() </code>
@@ -269,7 +237,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i8" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#onDeviceOcr(boolean)>onDeviceOcr</a>(boolean onDeviceOcr) </code>
@@ -277,15 +245,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i13" class="rowColor">
+                                        <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>static synchronized void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#scanType(ScanType)>scanType</a>(<a href=ScanType.html>ScanType</a> type) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#scanType(ScanType)>scanType</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanType.html>ScanType</a> type) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i14" class="altColor">
+                                        <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>static <a href=ScanType.html>ScanType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#scanType()>scanType</a>() </code>
@@ -293,7 +261,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i15" class="rowColor">
+                                        <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>static float</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#cpuPowerIndex()>cpuPowerIndex</a>() </code>
@@ -301,7 +269,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i16" class="altColor">
+                                        <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>static boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#networkOffline()>networkOffline</a>() </code>
@@ -309,7 +277,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i17" class="rowColor">
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#networkOffline(boolean)>networkOffline</a>(boolean networkOffline) </code>
@@ -317,15 +285,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i18" class="altColor">
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#logger(Logger)>logger</a>(Logger logger) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#logger(Logger)>logger</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() Logger logger) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i19" class="rowColor">
+                                        <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#debug(boolean)>debug</a>(boolean debug) </code>
@@ -333,7 +301,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i20" class="altColor">
+                                        <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>static boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#autoConfigured()>autoConfigured</a>() </code>
@@ -341,7 +309,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i21" class="rowColor">
+                                        <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#autoConfigured(boolean)>autoConfigured</a>(boolean autoConfiguration) </code>
@@ -349,7 +317,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i22" class="altColor">
+                                        <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>static boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#debug()>debug</a>() </code>
@@ -357,7 +325,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i23" class="rowColor">
+                                        <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>static synchronized boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#initialized()>initialized</a>() </code>
@@ -365,7 +333,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i24" class="altColor">
+                                        <tr id="i20" class="altColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#licenseKey()>licenseKey</a>() </code>
@@ -373,15 +341,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i25" class="rowColor">
+                                        <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#webApiKey(String)>webApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#webApiKey(String)>webApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i26" class="altColor">
+                                        <tr id="i22" class="altColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#webApiKey()>webApiKey</a>() </code>
@@ -389,7 +357,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i27" class="rowColor">
+                                        <tr id="i23" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#licenseeName()>licenseeName</a>() </code>
@@ -397,15 +365,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i28" class="altColor">
+                                        <tr id="i24" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#clientUserId(String)>clientUserId</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> clientUserId) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#clientUserId(String)>clientUserId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> clientUserId) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i29" class="rowColor">
+                                        <tr id="i25" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#clientUserId()>clientUserId</a>() </code>
@@ -413,15 +381,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i30" class="altColor">
+                                        <tr id="i26" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#googleApiKey(String)>googleApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> googleApiKey) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#googleApiKey(String)>googleApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> googleApiKey) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i31" class="rowColor">
+                                        <tr id="i27" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#googleApiKey()>googleApiKey</a>() </code>
@@ -429,15 +397,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i32" class="altColor">
+                                        <tr id="i28" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#yelpApiKey(String)>yelpApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> yelpApiKey) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#yelpApiKey(String)>yelpApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> yelpApiKey) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i33" class="rowColor">
+                                        <tr id="i29" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#yelpApiKey()>yelpApiKey</a>() </code>
@@ -445,15 +413,15 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i34" class="altColor">
+                                        <tr id="i30" class="altColor">
                                             <td class="colFirst"><code>static void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#productIntelligenceKey(String)>productIntelligenceKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productIntelligenceKey) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#productIntelligenceKey(String)>productIntelligenceKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productIntelligenceKey) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i35" class="rowColor">
+                                        <tr id="i31" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#productIntelligenceKey()>productIntelligenceKey</a>() </code>
@@ -461,55 +429,31 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i36" class="altColor">
+                                        <tr id="i32" class="altColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#versionName(Context)>versionName</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#versionName(Context)>versionName</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i37" class="rowColor">
+                                        <tr id="i33" class="rowColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#versionCode(Context)>versionCode</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#versionCode(Context)>versionCode</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i38" class="altColor">
+                                        <tr id="i34" class="altColor">
                                             <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#packageName(Context)>packageName</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#packageName(Context)>packageName</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i39" class="rowColor">
-                                            <td class="colFirst"><code>static DeviceInformation</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#deviceInformation(Context)>deviceInformation</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i40" class="altColor">
-                                            <td class="colFirst"><code>static boolean</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#reserveMemoryOnStart()>reserveMemoryOnStart</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i41" class="rowColor">
-                                            <td class="colFirst"><code>static boolean</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#releaseMemoryOnTerminate()>releaseMemoryOnTerminate</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i42" class="altColor">
+                                        <tr id="i35" class="rowColor">
                                             <td class="colFirst"><code>static native void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=BlinkReceiptSdk.html#terminate()>terminate</a>() </code>
@@ -550,21 +494,6 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="autoInitialize(Context)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>autoInitialize</h4>
-                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#autoInitialize(Context)>autoInitialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
                                 <a id="initialize(Context)">
                                     <!--   -->
                                 </a>
@@ -573,7 +502,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>initialize</h4>
-                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
+                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -588,7 +517,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>initialize</h4>
-                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context,InitializeCallback)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, InitializeCallback callback)</pre>
+                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context,InitializeCallback)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() InitializeCallback callback)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -603,52 +532,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>initialize</h4>
-                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context,String,InitializeCallback)>initialize</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> licenseKey, InitializeCallback callback)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="loadPvpActivations(Context)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>loadPvpActivations</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#loadPvpActivations(Context)>loadPvpActivations</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="deletePastDaysToStore(Context,int)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>deletePastDaysToStore</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#deletePastDaysToStore(Context,int)>deletePastDaysToStore</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="ocrCorrections()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>ocrCorrections</h4>
-                                        <pre class="methodSignature"> static boolean <a href=BlinkReceiptSdk.html#ocrCorrections()>ocrCorrections</a>()</pre>
+                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#initialize(Context,String,InitializeCallback)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> licenseKey, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() InitializeCallback callback)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -663,7 +547,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>daysToStoreScan</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#daysToStoreScan(Context,int)>daysToStoreScan</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#daysToStoreScan(Context,int)>daysToStoreScan</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, int days)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -678,7 +562,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>daysToStoreScan</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> <a href=BlinkReceiptSdk.html#daysToStoreScan(Context)>daysToStoreScan</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> <a href=BlinkReceiptSdk.html#daysToStoreScan(Context)>daysToStoreScan</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -753,7 +637,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>scanType</h4>
-                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#scanType(ScanType)>scanType</a>(<a href=ScanType.html>ScanType</a> type)</pre>
+                                        <pre class="methodSignature"> static synchronized void <a href=BlinkReceiptSdk.html#scanType(ScanType)>scanType</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanType.html>ScanType</a> type)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -828,7 +712,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>logger</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#logger(Logger)>logger</a>(Logger logger)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#logger(Logger)>logger</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() Logger logger)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -933,7 +817,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>webApiKey</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#webApiKey(String)>webApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#webApiKey(String)>webApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -978,7 +862,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>clientUserId</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#clientUserId(String)>clientUserId</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> clientUserId)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#clientUserId(String)>clientUserId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> clientUserId)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1008,7 +892,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>googleApiKey</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#googleApiKey(String)>googleApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> googleApiKey)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#googleApiKey(String)>googleApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> googleApiKey)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1038,7 +922,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>yelpApiKey</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#yelpApiKey(String)>yelpApiKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> yelpApiKey)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#yelpApiKey(String)>yelpApiKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> yelpApiKey)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1068,7 +952,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>productIntelligenceKey</h4>
-                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#productIntelligenceKey(String)>productIntelligenceKey</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productIntelligenceKey)</pre>
+                                        <pre class="methodSignature"> static void <a href=BlinkReceiptSdk.html#productIntelligenceKey(String)>productIntelligenceKey</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productIntelligenceKey)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1098,7 +982,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>versionName</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#versionName(Context)>versionName</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#versionName(Context)>versionName</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1113,7 +997,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>versionCode</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#versionCode(Context)>versionCode</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#versionCode(Context)>versionCode</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1128,52 +1012,7 @@ public final class <span class="typeNameLabel"><a href=BlinkReceiptSdk.html>Blin
                                           >
                                     <li class="blockList">
                                         <h4>packageName</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#packageName(Context)>packageName</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="deviceInformation(Context)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>deviceInformation</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static DeviceInformation <a href=BlinkReceiptSdk.html#deviceInformation(Context)>deviceInformation</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="reserveMemoryOnStart()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>reserveMemoryOnStart</h4>
-                                        <pre class="methodSignature"> static boolean <a href=BlinkReceiptSdk.html#reserveMemoryOnStart()>reserveMemoryOnStart</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="releaseMemoryOnTerminate()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>releaseMemoryOnTerminate</h4>
-                                        <pre class="methodSignature"> static boolean <a href=BlinkReceiptSdk.html#releaseMemoryOnTerminate()>releaseMemoryOnTerminate</a>()</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkReceiptSdk.html#packageName(Context)>packageName</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

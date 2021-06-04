@@ -3,10 +3,6 @@ $dokka.linkExtension:html
 $dokka.location:com.microblink.hardware.camera.camera1.strategy/CameraStrategy.PreviewSize///PointingToDeclaration/com/microblink/hardware/camera/camera1/strategy/CameraStrategy.PreviewSize.html
 $dokka.location:com.microblink.hardware.camera.camera1/Camera1SurfaceWrapper.PreviewHandler///PointingToDeclaration/com/microblink/hardware/camera/camera1/Camera1SurfaceWrapper.PreviewHandler.html
 $dokka.location:com.microblink.hardware.camera.camera2.frame/BaseCamera2Frame.ImageCloser///PointingToDeclaration/com/microblink/hardware/camera/camera2/frame/BaseCamera2Frame.ImageCloser.html
-$dokka.location:com.microblink.hardware.camera.camera2/Camera2SurfaceWrapper.PreviewHandler///PointingToDeclaration/com/microblink/hardware/camera/camera2/Camera2SurfaceWrapper.PreviewHandler.html
-$dokka.location:com.microblink.hardware.camera.camera2/CameraDeviceWrapper.CameraListener///PointingToDeclaration/com/microblink/hardware/camera/camera2/CameraDeviceWrapper.CameraListener.html
-$dokka.location:com.microblink.hardware.camera.camera2/CameraDeviceWrapper.State///PointingToDeclaration/com/microblink/hardware/camera/camera2/CameraDeviceWrapper.State.html
-$dokka.location:com.microblink.hardware.camera.camera2/ImageReaderHandler.CameraManager///PointingToDeclaration/com/microblink/hardware/camera/camera2/ImageReaderHandler.CameraManager.html
 $dokka.location:com.microblink.hardware.camera.memory/BufferCameraFrame.ExtendedCodecCapabilities///PointingToDeclaration/com/microblink/hardware/camera/memory/BufferCameraFrame.ExtendedCodecCapabilities.html
 $dokka.location:com.microblink.hardware.camera/ICameraManager.CameraStartupCallback///PointingToDeclaration/com/microblink/hardware/camera/ICameraManager.CameraStartupCallback.html
 $dokka.location:com.microblink.util/Log.LogLevel///PointingToDeclaration/com/microblink/util/Log.LogLevel.html

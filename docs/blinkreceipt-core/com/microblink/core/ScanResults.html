@@ -252,7 +252,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#writeToParcel(Parcel,int)>writeToParcel</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#writeToParcel(Parcel,int)>writeToParcel</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -260,7 +260,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#barcode()>barcode</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#currencyCode()>currencyCode</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -268,15 +268,15 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptPOSSystem()>eReceiptPOSSystem</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptEmailSubject()>eReceiptEmailSubject</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            <td class="colFirst"><code>float</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptSubMerchant()>eReceiptSubMerchant</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptShippingCosts()>eReceiptShippingCosts</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -284,7 +284,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptShippingStatus()>eReceiptShippingStatus</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#barcode()>barcode</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -292,15 +292,15 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptFulfilledBy()>eReceiptFulfilledBy</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptMerchantEmail()>eReceiptMerchantEmail</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code>boolean</code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptAuthenticated()>eReceiptAuthenticated</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptPOSSystem()>eReceiptPOSSystem</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -308,12 +308,44 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#purchaseType()>purchaseType</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptSubMerchant()>eReceiptSubMerchant</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptShippingStatus()>eReceiptShippingStatus</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptFulfilledBy()>eReceiptFulfilledBy</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code>boolean</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptAuthenticated()>eReceiptAuthenticated</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#purchaseType()>purchaseType</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#extendedFields()>extendedFields</a>() </code>
@@ -321,7 +353,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i10" class="altColor">
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#qualified()>qualified</a>() </code>
@@ -329,7 +361,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i11" class="rowColor">
+                                        <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#unqualified()>unqualified</a>() </code>
@@ -337,7 +369,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>int</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#productsPendingLookup()>productsPendingLookup</a>() </code>
@@ -345,7 +377,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i13" class="rowColor">
+                                        <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#duplicateBlinkReceiptIds()>duplicateBlinkReceiptIds</a>() </code>
@@ -353,7 +385,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i14" class="altColor">
+                                        <tr id="i18" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#receiptDateTime()>receiptDateTime</a>() </code>
@@ -361,15 +393,15 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i15" class="rowColor">
+                                        <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code><a href=ScanResults.html>ScanResults</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#submissionDate(Date)>submissionDate</a>(<a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#submissionDate(Date)>submissionDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i16" class="altColor">
+                                        <tr id="i20" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#submissionDate()>submissionDate</a>() </code>
@@ -377,7 +409,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i17" class="rowColor">
+                                        <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptEmailId()>eReceiptEmailId</a>() </code>
@@ -385,7 +417,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i18" class="altColor">
+                                        <tr id="i22" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptEmailProvider()>eReceiptEmailProvider</a>() </code>
@@ -393,7 +425,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i19" class="rowColor">
+                                        <tr id="i23" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptRawHtml()>eReceiptRawHtml</a>() </code>
@@ -401,7 +433,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i20" class="altColor">
+                                        <tr id="i24" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptShippingAddress()>eReceiptShippingAddress</a>() </code>
@@ -409,7 +441,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i21" class="rowColor">
+                                        <tr id="i25" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#longTransactionId()>longTransactionId</a>() </code>
@@ -417,7 +449,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i22" class="altColor">
+                                        <tr id="i26" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptOrderNumber()>eReceiptOrderNumber</a>() </code>
@@ -425,7 +457,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i23" class="rowColor">
+                                        <tr id="i27" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptOrderStatus()>eReceiptOrderStatus</a>() </code>
@@ -433,7 +465,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i24" class="altColor">
+                                        <tr id="i28" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Shipment.html>Shipment</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#shipments()>shipments</a>() </code>
@@ -441,7 +473,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i25" class="rowColor">
+                                        <tr id="i29" class="rowColor">
                                             <td class="colFirst"><code><a href=Retailer.html>Retailer</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#retailerId()>retailerId</a>() </code>
@@ -449,7 +481,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i26" class="altColor">
+                                        <tr id="i30" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Product.html>Product</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#products()>products</a>() </code>
@@ -457,7 +489,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i27" class="rowColor">
+                                        <tr id="i31" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Coupon.html>Coupon</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#coupons()>coupons</a>() </code>
@@ -465,7 +497,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i28" class="altColor">
+                                        <tr id="i32" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#merchantMatchGuess()>merchantMatchGuess</a>() </code>
@@ -473,7 +505,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i29" class="rowColor">
+                                        <tr id="i33" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#receiptDate()>receiptDate</a>() </code>
@@ -481,7 +513,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i30" class="altColor">
+                                        <tr id="i34" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#originalReceiptDate()>originalReceiptDate</a>() </code>
@@ -489,7 +521,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i31" class="rowColor">
+                                        <tr id="i35" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#receiptTime()>receiptTime</a>() </code>
@@ -497,7 +529,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i32" class="altColor">
+                                        <tr id="i36" class="altColor">
                                             <td class="colFirst"><code><a href=FloatType.html>FloatType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#total()>total</a>() </code>
@@ -505,7 +537,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i33" class="rowColor">
+                                        <tr id="i37" class="rowColor">
                                             <td class="colFirst"><code><a href=FloatType.html>FloatType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#subtotal()>subtotal</a>() </code>
@@ -513,7 +545,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i34" class="altColor">
+                                        <tr id="i38" class="altColor">
                                             <td class="colFirst"><code><a href=FloatType.html>FloatType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#taxes()>taxes</a>() </code>
@@ -521,7 +553,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i35" class="rowColor">
+                                        <tr id="i39" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeNumber()>storeNumber</a>() </code>
@@ -529,7 +561,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i36" class="altColor">
+                                        <tr id="i40" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#merchantName()>merchantName</a>() </code>
@@ -537,7 +569,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i37" class="rowColor">
+                                        <tr id="i41" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeAddress()>storeAddress</a>() </code>
@@ -545,7 +577,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i38" class="altColor">
+                                        <tr id="i42" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeCountry()>storeCountry</a>() </code>
@@ -553,7 +585,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i39" class="rowColor">
+                                        <tr id="i43" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeCity()>storeCity</a>() </code>
@@ -561,7 +593,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i40" class="altColor">
+                                        <tr id="i44" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeState()>storeState</a>() </code>
@@ -569,7 +601,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i41" class="rowColor">
+                                        <tr id="i45" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storeZip()>storeZip</a>() </code>
@@ -577,7 +609,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i42" class="altColor">
+                                        <tr id="i46" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#storePhone()>storePhone</a>() </code>
@@ -585,7 +617,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i43" class="rowColor">
+                                        <tr id="i47" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#cashierId()>cashierId</a>() </code>
@@ -593,7 +625,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i44" class="altColor">
+                                        <tr id="i48" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#transactionId()>transactionId</a>() </code>
@@ -601,7 +633,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i45" class="rowColor">
+                                        <tr id="i49" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#registerId()>registerId</a>() </code>
@@ -609,7 +641,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i46" class="altColor">
+                                        <tr id="i50" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=PaymentMethod.html>PaymentMethod</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#paymentMethods()>paymentMethods</a>() </code>
@@ -617,7 +649,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i47" class="rowColor">
+                                        <tr id="i51" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#blinkReceiptId()>blinkReceiptId</a>() </code>
@@ -625,7 +657,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i48" class="altColor">
+                                        <tr id="i52" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#taxId()>taxId</a>() </code>
@@ -633,7 +665,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i49" class="rowColor">
+                                        <tr id="i53" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#mallName()>mallName</a>() </code>
@@ -641,7 +673,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i50" class="altColor">
+                                        <tr id="i54" class="altColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#last4cc()>last4cc</a>() </code>
@@ -649,7 +681,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i51" class="rowColor">
+                                        <tr id="i55" class="rowColor">
                                             <td class="colFirst"><code>float</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#ocrConfidence()>ocrConfidence</a>() </code>
@@ -657,7 +689,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i52" class="altColor">
+                                        <tr id="i56" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#subtotalMatches()>subtotalMatches</a>() </code>
@@ -665,7 +697,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i53" class="rowColor">
+                                        <tr id="i57" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#merchantSource()>merchantSource</a>() </code>
@@ -673,7 +705,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i54" class="altColor">
+                                        <tr id="i58" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#foundTopEdge()>foundTopEdge</a>() </code>
@@ -681,7 +713,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i55" class="rowColor">
+                                        <tr id="i59" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#foundBottomEdge()>foundBottomEdge</a>() </code>
@@ -689,7 +721,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i56" class="altColor">
+                                        <tr id="i60" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#duplicate()>duplicate</a>() </code>
@@ -697,7 +729,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i57" class="rowColor">
+                                        <tr id="i61" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#fraudulent()>fraudulent</a>() </code>
@@ -705,7 +737,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i58" class="altColor">
+                                        <tr id="i62" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#loyaltyForBanner()>loyaltyForBanner</a>() </code>
@@ -713,7 +745,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i59" class="rowColor">
+                                        <tr id="i63" class="rowColor">
                                             <td class="colFirst"><code><a href=StringType.html>StringType</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#channel()>channel</a>() </code>
@@ -721,7 +753,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i60" class="altColor">
+                                        <tr id="i64" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=ScanResults.html>ScanResults</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#eReceiptComponentEmails()>eReceiptComponentEmails</a>() </code>
@@ -729,7 +761,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i61" class="rowColor">
+                                        <tr id="i65" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Survey.html>Survey</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#qualifiedSurveys()>qualifiedSurveys</a>() </code>
@@ -737,39 +769,39 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i62" class="altColor">
+                                        <tr id="i66" class="altColor">
                                             <td class="colFirst"><code><a href=ScanResults.html>ScanResults</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#correctedReceiptDate(String)>correctedReceiptDate</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> date) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#correctedReceiptDate(String)>correctedReceiptDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> date) </code>
                                             </th>
                                             <td class="colLast">For custom user corrections flow, when a user modifies the date, call this method to update the receipt's purchase date</td>
                                         </tr>
                                         
-                                        <tr id="i63" class="rowColor">
+                                        <tr id="i67" class="rowColor">
                                             <td class="colFirst"><code><a href=ScanResults.html>ScanResults</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#qualified(List)>qualified</a>(<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#qualified(List)>qualified</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i64" class="altColor">
+                                        <tr id="i68" class="altColor">
                                             <td class="colFirst"><code><a href=ScanResults.html>ScanResults</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#unqualified(List)>unqualified</a>(<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#unqualified(List)>unqualified</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i65" class="rowColor">
+                                        <tr id="i69" class="rowColor">
                                             <td class="colFirst"><code><a href=ScanResults.html>ScanResults</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#add(String,String,String,String,float,float)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> brand, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> upc, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productName, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> imageUrl, float totalPrice, float quantity) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ScanResults.html#add(String,String,String,String,float,float)>add</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> brand, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> upc, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productName, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> imageUrl, float totalPrice, float quantity) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i66" class="altColor">
+                                        <tr id="i70" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#equals(Object)>equals</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a> o) </code>
@@ -777,7 +809,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i67" class="rowColor">
+                                        <tr id="i71" class="rowColor">
                                             <td class="colFirst"><code>int</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#hashCode()>hashCode</a>() </code>
@@ -785,7 +817,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i68" class="altColor">
+                                        <tr id="i72" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#toString()>toString</a>() </code>
@@ -793,7 +825,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i69" class="rowColor">
+                                        <tr id="i73" class="rowColor">
                                             <td class="colFirst"><code>static <a href=ScanResults.Builder.html>ScanResults.Builder</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ScanResults.html#newBuilder()>newBuilder</a>() </code>
@@ -884,7 +916,52 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>writeToParcel</h4>
-                                        <pre class="methodSignature"> void <a href=ScanResults.html#writeToParcel(Parcel,int)>writeToParcel</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags)</pre>
+                                        <pre class="methodSignature"> void <a href=ScanResults.html#writeToParcel(Parcel,int)>writeToParcel</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="currencyCode()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>currencyCode</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=ScanResults.html#currencyCode()>currencyCode</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="eReceiptEmailSubject()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>eReceiptEmailSubject</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=ScanResults.html#eReceiptEmailSubject()>eReceiptEmailSubject</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="eReceiptShippingCosts()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>eReceiptShippingCosts</h4>
+                                        <pre class="methodSignature"> float <a href=ScanResults.html#eReceiptShippingCosts()>eReceiptShippingCosts</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -900,6 +977,21 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                     <li class="blockList">
                                         <h4>barcode</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=ScanResults.html#barcode()>barcode</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="eReceiptMerchantEmail()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>eReceiptMerchantEmail</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=ScanResults.html#eReceiptMerchantEmail()>eReceiptMerchantEmail</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1094,7 +1186,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>submissionDate</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#submissionDate(Date)>submissionDate</a>(<a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#submissionDate(Date)>submissionDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1799,7 +1891,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>correctedReceiptDate</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#correctedReceiptDate(String)>correctedReceiptDate</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> date)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#correctedReceiptDate(String)>correctedReceiptDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> date)</pre>
                                         <div class="block"><p>For custom user corrections flow, when a user modifies the date, call this method to update the receipt's purchase date</p></div>
                                         
                                         <dl>
@@ -1823,7 +1915,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>qualified</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#qualified(List)>qualified</a>(<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#qualified(List)>qualified</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1838,7 +1930,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>unqualified</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#unqualified(List)>unqualified</a>(<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#unqualified(List)>unqualified</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Promotion.html>Promotion</a>&gt; promotions)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1853,7 +1945,7 @@ public final class <span class="typeNameLabel"><a href=ScanResults.html>ScanResu
                                           >
                                     <li class="blockList">
                                         <h4>add</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#add(String,String,String,String,float,float)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> brand, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> upc, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productName, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> imageUrl, float totalPrice, float quantity)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResults.html>ScanResults</a> <a href=ScanResults.html#add(String,String,String,String,float,float)>add</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> brand, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> upc, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> productName, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> imageUrl, float totalPrice, float quantity)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

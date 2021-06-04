@@ -1,13 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-$dokka.location:com.microblink.digital.internal/GmailMessageCallable.MessageBody///PointingToDeclaration/com/microblink/digital/internal/GmailMessageCallable.MessageBody.html
-$dokka.location:com.microblink.digital.internal/GmailMessageCallable.MessageType///PointingToDeclaration/com/microblink/digital/internal/GmailMessageCallable.MessageType.html
 $dokka.location:com.microblink.digital.internal/ImapMessage.Builder///PointingToDeclaration/com/microblink/digital/internal/ImapMessage.Builder.html
-$dokka.location:com.microblink.digital.internal/ImapSessionClient.MessagesMapper///PointingToDeclaration/com/microblink/digital/internal/ImapSessionClient.MessagesMapper.html
-$dokka.location:com.microblink.digital.internal/Mail.Builder///PointingToDeclaration/com/microblink/digital/internal/Mail.Builder.html
 $dokka.location:com.microblink.digital.internal/Message.Builder///PointingToDeclaration/com/microblink/digital/internal/Message.Builder.html
-$dokka.location:com.microblink.digital/ProviderSetupDialogFragment.GeneratePasswordRunnable///PointingToDeclaration/com/microblink/digital/ProviderSetupDialogFragment.GeneratePasswordRunnable.html
-$dokka.location:com.microblink.digital/ProviderSetupDialogFragment.NavigationCallback///PointingToDeclaration/com/microblink/digital/ProviderSetupDialogFragment.NavigationCallback.html
 $dokka.location:com.microblink.digital/ProviderSetupOptions.Builder///PointingToDeclaration/com/microblink/digital/ProviderSetupOptions.Builder.html
 com.microblink.digital
 com.microblink.digital.internal
