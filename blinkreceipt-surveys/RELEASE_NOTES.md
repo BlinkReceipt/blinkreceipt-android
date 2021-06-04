@@ -35,4 +35,4 @@
 ## 1.0.5
 
 - stability fixes and improvements
-- kotlin 1.5.0
+- kotlin 1.5.10

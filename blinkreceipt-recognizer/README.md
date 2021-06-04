@@ -33,7 +33,7 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
- implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0"
+ implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
 
  implementation 'androidx.appcompat:appcompat:1.2.0'
 

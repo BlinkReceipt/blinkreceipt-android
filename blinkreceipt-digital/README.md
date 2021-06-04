@@ -128,7 +128,7 @@ Please follow the [Project Integration and Initialization](https://github.com/Bl
 dependencies {
      api project( ':blinkreceipt-core' )
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
     implementation "androidx.core:core-ktx:1.3.2"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'

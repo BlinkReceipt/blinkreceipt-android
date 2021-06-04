@@ -97,6 +97,6 @@
 ## 1.1.7
 
 - stability fixes and improvements
-- kotlin 1.5.0
+- kotlin 1.5.10
 - provide merchant email, shipping cost and email subject via scan results
 - provide currency code via scan results
