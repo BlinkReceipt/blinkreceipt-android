@@ -94,6 +94,9 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 
+    implementation "com.sun.mail:android-mail:${versions.javaMail}"
+    implementation "com.sun.mail:android-activation:${versions.javaMail}"
+
     implementation "com.squareup.okio:okio:${versions.okio}"
 
     //Outlook
