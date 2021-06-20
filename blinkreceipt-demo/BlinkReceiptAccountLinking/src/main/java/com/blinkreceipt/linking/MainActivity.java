@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private static final Account ACCOUNT = new Account(
             RetailerIds.STARBUCKS,
             new PasswordCredentials(
-                    "",
-                    ""
+                    "jonathan.gabriel@microblink.com",
+                    "Blink123!"
             )
     );
 
@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
             new Account(
                     RetailerIds.WALMART,
                     new PasswordCredentials(
-                            "",
-                            ""
+                            "nat.eastman1@gmail.com",
+                            "blink123"
                     )
             ),
             new Account(
                     RetailerIds.HOME_DEPOT,
                     new PasswordCredentials(
-                            "",
-                            ""
+                            "blinkreceipt@gmail.com",
+                            "blink123!"
                     )
             )
     );
