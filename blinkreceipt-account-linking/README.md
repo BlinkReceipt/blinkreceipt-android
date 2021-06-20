@@ -14,24 +14,32 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```groovy
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "androidx.core:core-ktx:1.5.0"
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
-implementation "androidx.core:core-ktx:1.3.2"
-implementation "androidx.work:work-runtime:2.5.0"
-implementation "androidx.work:work-runtime-ktx:2.5.0"
-implementation "androidx.appcompat:appcompat:1.2.0"
-implementation "com.squareup.okhttp3:okhttp:4.9.1"
-implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
-implementation "com.squareup.retrofit2:retrofit:2.9.0"
-implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
-implementation "com.squareup.okio:okio:2.10.0"
-implementation "com.jakewharton.timber:timber:4.7.1"
-implementation "com.google.android.gms:play-services-tasks:17.2.1"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3"
-implementation "androidx.webkit:webkit:1.4.0"
+    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
+
+    implementation "com.squareup.okio:okio:2.10.0"
+
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    implementation "com.google.android.gms:play-services-tasks:17.2.1"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+
+    implementation "androidx.webkit:webkit:1.4.0"
 ```
 
 You may notice that there are Kotlin dependencies as part of this list. This is because the SDK is written in Kotlin. If your app does not use Kotlin that is ok you will just need to configure the app to use kotlin, but this will not require you to change programming languages as Kotlin is compatible with java.

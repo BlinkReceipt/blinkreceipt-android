@@ -44,6 +44,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
 
     implementation 'com.squareup.okhttp3:logging-interceptor:2.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:2.9.0"
 
     implementation 'com.squareup.okio:okio:2.10.0'
 
@@ -57,7 +58,6 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.0'
 
     implementation project( ':blinkreceipt-core' )
-
     implementation project( ':blinkreceipt-camera' )
 }
 ```

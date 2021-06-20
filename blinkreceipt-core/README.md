@@ -14,6 +14,16 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "androidx.core:core-ktx:1.5.0"
+
+    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
