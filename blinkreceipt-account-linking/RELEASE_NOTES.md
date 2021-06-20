@@ -25,3 +25,10 @@
 
 - stability fixes and improvements
 - kotlin 1.5.10
+
+## 1.0.5
+
+- stability fixes and improvements
+- coroutines 1.5.0, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.5.0
+- support for sams club
+

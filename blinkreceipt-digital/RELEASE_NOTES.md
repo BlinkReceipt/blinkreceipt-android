@@ -118,3 +118,8 @@ counterpart
 - add coroutines core, coroutines android, coroutines play services
 - provide currency code via scan results
 - add worker manager libraries
+
+## 1.1.6
+
+- stability fixes and improvements
+- support for additional provider date formats

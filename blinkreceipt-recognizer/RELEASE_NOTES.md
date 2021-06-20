@@ -358,3 +358,8 @@ Blink Receipt Recognizer
 
 - stability fixes and improvements
 - kotlin 1.5.10
+
+## 1.4.7
+
+- stability fixes and improvements
+- coroutines 1.5.0, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.5.0

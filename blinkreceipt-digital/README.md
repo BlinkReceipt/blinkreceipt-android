@@ -128,6 +128,37 @@ Please follow the [Project Integration and Initialization](https://github.com/Bl
 dependencies {
      api project( ':blinkreceipt-core' )
 
+    implementation "com.google.android.gms:play-services-auth:19.0.0"
+
+    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    //Outlook
+    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+        exclude group: 'com.microsoft.device.display'
+    }
+
+    implementation "com.sun.mail:android-mail:1.6.7"
+    implementation "com.sun.mail:android-activation:1.6.7"
+
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+    implementation "androidx.webkit:webkit:1.4.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+
+    implementation "com.google.android.material:material:1.3.0"
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
     implementation "androidx.core:core-ktx:1.3.2"
 
@@ -151,7 +182,6 @@ dependencies {
     implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
     implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
     implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
-
 }
 ```
 
@@ -185,19 +215,62 @@ IMAP integration requires 9 additional AAR in your build gradle.
 
 ```groovy
 dependencies {
+     api project( ':blinkreceipt-core' )
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
-    implementation "androidx.webkit:webkit:1.4.0"
+    implementation "com.google.android.gms:play-services-auth:19.0.0"
+
+    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    //Outlook
+    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+        exclude group: 'com.microsoft.device.display'
+    }
 
     implementation "com.sun.mail:android-mail:1.6.7"
     implementation "com.sun.mail:android-activation:1.6.7"
 
-    implementation "androidx.fragment:fragment:1.2.5"
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+    implementation "androidx.webkit:webkit:1.4.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
 
     implementation "com.google.android.material:material:1.3.0"
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "androidx.core:core-ktx:1.3.2"
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    implementation "androidx.core:core:1.3.1"
+
+    implementation 'com.squareup.okio:okio:2.8.0'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation "com.google.android.gms:play-services-tasks:17.2.1"
+
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
 }
 ```
 <br />
@@ -448,10 +521,62 @@ Outlook integration requires 1 additional AAR in your build gradle.
 
 ```groovy
 dependencies {
+    api project( ':blinkreceipt-core' )
 
+    implementation "com.google.android.gms:play-services-auth:19.0.0"
+
+    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+    //Outlook
     implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
         exclude group: 'com.microsoft.device.display'
     }
+
+    implementation "com.sun.mail:android-mail:1.6.7"
+    implementation "com.sun.mail:android-activation:1.6.7"
+
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+    implementation "androidx.webkit:webkit:1.4.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+
+    implementation "com.google.android.material:material:1.3.0"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "androidx.core:core-ktx:1.3.2"
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    implementation "androidx.core:core:1.3.1"
+
+    implementation 'com.squareup.okio:okio:2.8.0'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation "com.google.android.gms:play-services-tasks:17.2.1"
+
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
 }
 ```
 
@@ -580,12 +705,62 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
 ```groovy
     dependencies {
-        implementation "com.google.android.gms:play-services-auth:${latest-version}"
-        implementation "com.google.android.gms:play-services-tasks:${latest-version}"
+        api project( ':blinkreceipt-core' )
 
-        implementation "com.google.apis:google-api-services-gmail:${latest-version}" exclude module: 'httpclient'
+        implementation "com.google.android.gms:play-services-auth:19.0.0"
 
+        implementation "androidx.work:work-runtime:2.5.0"
+        implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+        //Outlook
+        implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+            exclude group: 'com.microsoft.device.display'
+        }
+
+        implementation "com.sun.mail:android-mail:1.6.7"
+        implementation "com.sun.mail:android-activation:1.6.7"
+
+        implementation "androidx.appcompat:appcompat:1.2.0"
+
+        implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+
+        implementation "androidx.fragment:fragment-ktx:1.2.5"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+        implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+        implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+        implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+        implementation "androidx.webkit:webkit:1.4.0"
+
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+
+        implementation "com.google.android.material:material:1.3.0"
+
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+        implementation "androidx.core:core-ktx:1.3.2"
+
+        implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+        implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+        implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+        implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+        implementation "androidx.core:core:1.3.1"
+
+        implementation 'com.squareup.okio:okio:2.8.0'
+
+        implementation 'com.jakewharton.timber:timber:4.7.1'
+
+        implementation "com.google.android.gms:play-services-tasks:17.2.1"
+
+        implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
         implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
+        implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
     }
 ```
 

@@ -100,3 +100,8 @@
 - kotlin 1.5.10
 - provide merchant email, shipping cost and email subject via scan results
 - provide currency code via scan results
+
+## 1.1.8
+
+- stability fixes and improvements
+- support for additional date formats
