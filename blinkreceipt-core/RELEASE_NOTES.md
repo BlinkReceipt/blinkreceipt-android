@@ -105,3 +105,7 @@
 
 - stability fixes and improvements
 - support for additional date formats
+
+## 1.1.9
+
+- stability fixes and improvements

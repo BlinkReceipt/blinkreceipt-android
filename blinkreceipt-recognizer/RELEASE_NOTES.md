@@ -363,3 +363,10 @@ Blink Receipt Recognizer
 
 - stability fixes and improvements
 - coroutines 1.5.0, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.5.0
+
+## 1.4.8
+
+- stability fixes for possible products & qualified promotions
+- fix KOHL'S payment method
+- fixed rogue quantity issue
+
