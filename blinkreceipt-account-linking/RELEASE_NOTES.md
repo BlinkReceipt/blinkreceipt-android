@@ -32,3 +32,7 @@
 - coroutines 1.5.0, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.5.0
 - support for sams club
 
+## 1.0.6
+
+- stability fixes and improvements
+

@@ -41,3 +41,7 @@
 
 - stability fixes and improvements
 - coroutines 1.5.0, https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.5.0
+
+## 1.0.7
+
+- stability fixes and improvements

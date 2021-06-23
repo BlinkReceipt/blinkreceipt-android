@@ -123,3 +123,7 @@ counterpart
 
 - stability fixes and improvements
 - support for additional provider date formats
+
+## 1.1.7
+
+- stability fixes and improvements
