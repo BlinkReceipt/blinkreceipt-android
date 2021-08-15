@@ -212,7 +212,7 @@ extends <a href=Camera1AbstractFrame.html>Camera1AbstractFrame</a>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Camera1PhotoFrame.html#recycle()>recycle</a>() </code>
                                             </th>
-                                            <td class="colLast">Used for recycling frame buffer back into camera so its buffer can be reused for new camera frame.Also, releases all native part if required.</td>
+                                            <td class="colLast">Used for recycling frame buffer back into camera so its buffer can be reused for new camera frame.</td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
@@ -236,7 +236,7 @@ extends <a href=Camera1AbstractFrame.html>Camera1AbstractFrame</a>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Camera1PhotoFrame.html#getNativeCameraFrame()>getNativeCameraFrame</a>() </code>
                                             </th>
-                                            <td class="colLast">Accessed from native code to obtain pointer to implementation of native camera frame.The returned pointer must be a valid pointer to object implementing mv::ICameraFramenative interface.</td>
+                                            <td class="colLast">Accessed from native code to obtain pointer to implementation of native camera frame.</td>
                                         </tr>
                                         
                                         <tr id="i6" class="altColor">
@@ -257,12 +257,6 @@ extends <a href=Camera1AbstractFrame.html>Camera1AbstractFrame</a>
                                         </a>
                                             <h3>Methods inherited from class&nbsp;com.microblink.hardware.camera.camera1.frame.Camera1AbstractFrame</h3>
                                             <code>dispose, finalizePoolObject, getFrameID, getHeight, getImgBuffer, getOrientation, getVisiblePart, getWidth, initializePoolObject, isDeviceMoving, isFocused, setDeviceMoving, setFocused, setFrameID, setImgBuffer, setOrientation, setVisiblePart</code></li>
-                                 
-                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.hardware.camera.frame.ICameraFrame">
-                                            <!--   -->
-                                        </a>
-                                            <h3>Methods inherited from class&nbsp;com.microblink.hardware.camera.frame.ICameraFrame</h3>
-                                            <code>initializeNativePart</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -352,7 +346,7 @@ extends <a href=Camera1AbstractFrame.html>Camera1AbstractFrame</a>
                                     <li class="blockList">
                                         <h4>recycle</h4>
                                         <pre class="methodSignature"> void <a href=Camera1PhotoFrame.html#recycle()>recycle</a>()</pre>
-                                        <div class="block"><p>Used for recycling frame buffer back into camera so its buffer can be reused for new camera frame.Also, releases all native part if required.</p></div>
+                                        <div class="block"><p>Used for recycling frame buffer back into camera so its buffer can be reused for new camera frame. Also, releases all native part if required.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -397,7 +391,7 @@ extends <a href=Camera1AbstractFrame.html>Camera1AbstractFrame</a>
                                     <li class="blockList">
                                         <h4>getNativeCameraFrame</h4>
                                         <pre class="methodSignature"> long <a href=Camera1PhotoFrame.html#getNativeCameraFrame()>getNativeCameraFrame</a>()</pre>
-                                        <div class="block"><p>Accessed from native code to obtain pointer to implementation of native camera frame.The returned pointer must be a valid pointer to object implementing mv::ICameraFramenative interface.</p></div>
+                                        <div class="block"><p>Accessed from native code to obtain pointer to implementation of native camera frame. The returned pointer must be a valid pointer to object implementing mv::ICameraFrame native interface.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>

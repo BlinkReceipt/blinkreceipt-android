@@ -127,3 +127,11 @@ counterpart
 ## 1.1.7
 
 - stability fixes and improvements
+
+## 1.1.8
+
+- stability fixes and improvements
+- fix gradle transform resource api conflicts
+- updated google play services authentication to 19.2.0
+- update coroutines to 1.5.1
+- timber 5.0.0

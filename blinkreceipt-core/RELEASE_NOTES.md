@@ -109,3 +109,11 @@
 ## 1.1.9
 
 - stability fixes and improvements
+
+## 1.2.0
+
+- stability fixes and improvements
+- kotlin 1.5.21
+- update banner id for specific retailers
+- fix extended field mapping
+- timber 5.0.0

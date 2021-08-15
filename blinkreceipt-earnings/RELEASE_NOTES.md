@@ -105,3 +105,8 @@
 ## 1.1.9
 
 - stability fixes and improvements
+
+## 1.2.0
+
+- stability fixes and improvements
+- timber 5.0.0
