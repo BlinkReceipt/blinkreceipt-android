@@ -50,7 +50,7 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton.timber:timber:5.0.0'
 
     // Lifecycles only (without ViewModel or LiveData)
     implementation 'androidx.lifecycle:lifecycle-runtime:2.3.1'

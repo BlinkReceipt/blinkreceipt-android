@@ -43,9 +43,9 @@ dependencies {
  implementation 'com.squareup.okio:okio:2.10.0'
 
  implementation "com.google.android.gms:play-services-tasks:17.2.1"
- implementation "com.google.android.gms:play-services-auth:19.0.0"
+ implementation "com.google.android.gms:play-services-auth:19.2.0"
 
- implementation 'com.jakewharton.timber:timber:4.7.1'
+ implementation 'com.jakewharton.timber:timber:5.0.0'
 
  implementation "androidx.webkit:webkit:1.4.0"
 

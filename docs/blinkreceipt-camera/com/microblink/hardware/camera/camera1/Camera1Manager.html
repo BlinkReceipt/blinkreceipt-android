@@ -367,12 +367,6 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                 </div>
                                 <ul class="blockList">
                                 
-                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.hardware.camera.ICameraManager">
-                                            <!--   -->
-                                        </a>
-                                            <h3>Methods inherited from class&nbsp;com.microblink.hardware.camera.ICameraManager</h3>
-                                            <code>setMeteringAreas, setTorchState, setZoomLevel, startPreview</code></li>
-                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -412,7 +406,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                             
                                             
                                             
-                                            <dd><code>accelManager</code> - Accelerometer manager that will provide information aboutphone movements.</dd>
+                                            <dd><code>accelManager</code> - Accelerometer manager that will provide information about phone movements.</dd>
                                             
                                             
                                             
@@ -420,7 +414,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                             
                                             
                                             
-                                            <dd><code>cameraDelegate</code> - Camera delegate that will be notified with new frames fromthis camera manager.</dd>
+                                            <dd><code>cameraDelegate</code> - Camera delegate that will be notified with new frames from this camera manager.</dd>
                                             
                                             
                                             
@@ -469,7 +463,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                     <li class="blockList">
                                         <h4>startPreview</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html>UiThread</a>() void <a href=Camera1Manager.html#startPreview(Context,CameraSettings,ICameraManager.CameraStartupCallback)>startPreview</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../CameraSettings.html>CameraSettings</a> factorySettings, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../ICameraManager.CameraStartupCallback.html>ICameraManager.CameraStartupCallback</a> cameraStartupCallback)</pre>
-                                        <div class="block"><p>This method should be called on resuming the activity. It will reopencamera, restart focus and accelerometer management and prepare cameracallbacks.Implementations should take care if multiple startPreview calls are issued to ignore all but first.</p></div>
+                                        <div class="block"><p>This method should be called on resuming the activity. It will reopen camera, restart focus and accelerometer management and prepare camera callbacks. Implementations should take care if multiple startPreview calls are issued to ignore all but first.</p></div>
                                         
                                         <dl>
                                             <dt><span class="paramLabel">Parameters:</span></dt>
@@ -501,7 +495,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                     <li class="blockList">
                                         <h4>stopPreview</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html>UiThread</a>() void <a href=Camera1Manager.html#stopPreview()>stopPreview</a>()</pre>
-                                        <div class="block"><p>This method should be called on pausing the activity. It will pause theframe grabbing, pause the focus and accelerometer management and it willclose the camera to save power.</p></div>
+                                        <div class="block"><p>This method should be called on pausing the activity. It will pause the frame grabbing, pause the focus and accelerometer management and it will close the camera to save power.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -636,7 +630,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                     <li class="blockList">
                                         <h4>isAutofocusSupported</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=Camera1Manager.html#isAutofocusSupported()>isAutofocusSupported</a>()</pre>
-                                        <div class="block"><p>Returns true if opened camera supports autofocus. Returns false if opened cameradoes not support autofocus. Returns null if camera is not opened.</p></div>
+                                        <div class="block"><p>Returns true if opened camera supports autofocus. Returns false if opened camera does not support autofocus. Returns null if camera is not opened.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -657,7 +651,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
-                                            <dd><code>on</code> - if true, torch will be enabled, if false, torch will bedisabled</dd>
+                                            <dd><code>on</code> - if true, torch will be enabled, if false, torch will be disabled</dd>
                                             
                                             
                                             
@@ -724,7 +718,7 @@ public class <span class="typeNameLabel"><a href=Camera1Manager.html>Camera1Mana
                                     <li class="blockList">
                                         <h4>getOpenedCameraType</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() final <a href=../CameraType.html>CameraType</a> <a href=Camera1Manager.html#getOpenedCameraType()>getOpenedCameraType</a>()</pre>
-                                        <div class="block"><p>Return the type of currently opened camera. Returns null if no camera isopen.</p></div>
+                                        <div class="block"><p>Return the type of currently opened camera. Returns null if no camera is open.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>

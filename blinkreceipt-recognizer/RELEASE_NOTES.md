@@ -370,3 +370,14 @@ Blink Receipt Recognizer
 - fix KOHL'S payment method
 - fixed rogue quantity issue
 
+## 1.4.9
+
+- stability fixes and improvements
+- kotlin 1.5.21
+- fix gradle transform resource api conflicts
+- fix amazon parsing issue for UK customers
+- fix amazon parsing issue verified accounts
+- updated google play services authentication to 19.2.0
+- update coroutines to 1.5.1
+- amazon duplicate sign in detection bug fix.
+- timber 5.0.0

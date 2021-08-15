@@ -128,7 +128,7 @@ Please follow the [Project Integration and Initialization](https://github.com/Bl
 dependencies {
      api project( ':blinkreceipt-core' )
 
-    implementation "com.google.android.gms:play-services-auth:19.0.0"
+    implementation "com.google.android.gms:play-services-auth:19.2.0"
 
     implementation "androidx.work:work-runtime:2.5.0"
     implementation "androidx.work:work-runtime-ktx:2.5.0"
@@ -153,13 +153,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1"
 
-    implementation "com.google.android.material:material:1.3.0"
+    implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21"
     implementation "androidx.core:core-ktx:1.3.2"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
@@ -175,7 +175,7 @@ dependencies {
 
     implementation 'com.squareup.okio:okio:2.8.0'
 
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton.timber:timber:5.0.0'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
@@ -217,7 +217,7 @@ IMAP integration requires 9 additional AAR in your build gradle.
 dependencies {
      api project( ':blinkreceipt-core' )
 
-    implementation "com.google.android.gms:play-services-auth:19.0.0"
+    implementation "com.google.android.gms:play-services-auth:19.2.0"
 
     implementation "androidx.work:work-runtime:2.5.0"
     implementation "androidx.work:work-runtime-ktx:2.5.0"
@@ -242,13 +242,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1"
 
-    implementation "com.google.android.material:material:1.3.0"
+    implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21"
     implementation "androidx.core:core-ktx:1.3.2"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
@@ -264,7 +264,7 @@ dependencies {
 
     implementation 'com.squareup.okio:okio:2.8.0'
 
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton.timber:timber:5.0.0'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
@@ -296,7 +296,6 @@ dependencies {
         android:name=".BlinkApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
@@ -523,7 +522,7 @@ Outlook integration requires 1 additional AAR in your build gradle.
 dependencies {
     api project( ':blinkreceipt-core' )
 
-    implementation "com.google.android.gms:play-services-auth:19.0.0"
+    implementation "com.google.android.gms:play-services-auth:19.2.0"
 
     implementation "androidx.work:work-runtime:2.5.0"
     implementation "androidx.work:work-runtime-ktx:2.5.0"
@@ -548,13 +547,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1"
 
-    implementation "com.google.android.material:material:1.3.0"
+    implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21"
     implementation "androidx.core:core-ktx:1.3.2"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
@@ -570,7 +569,7 @@ dependencies {
 
     implementation 'com.squareup.okio:okio:2.8.0'
 
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton.timber:timber:5.0.0'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
@@ -707,7 +706,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
     dependencies {
         api project( ':blinkreceipt-core' )
 
-        implementation "com.google.android.gms:play-services-auth:19.0.0"
+        implementation "com.google.android.gms:play-services-auth:19.2.0"
 
         implementation "androidx.work:work-runtime:2.5.0"
         implementation "androidx.work:work-runtime-ktx:2.5.0"
@@ -732,13 +731,13 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
         implementation "androidx.webkit:webkit:1.4.0"
 
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1"
 
-        implementation "com.google.android.material:material:1.3.0"
+        implementation "com.google.android.material:material:1.4.0"
 
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21"
         implementation "androidx.core:core-ktx:1.3.2"
 
         implementation 'com.squareup.okhttp3:okhttp:4.9.1'
@@ -754,7 +753,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation 'com.squareup.okio:okio:2.8.0'
 
-        implementation 'com.jakewharton.timber:timber:4.7.1'
+        implementation 'com.jakewharton.timber:timber:5.0.0'
 
         implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
