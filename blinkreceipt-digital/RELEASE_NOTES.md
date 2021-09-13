@@ -135,3 +135,11 @@ counterpart
 - updated google play services authentication to 19.2.0
 - update coroutines to 1.5.1
 - timber 5.0.0
+
+## 1.1.9
+
+- stability fixes and improvements
+- timber 5.0.1
+- override post job url
+- override post job date
+- update coroutines to 1.5.2

@@ -52,3 +52,10 @@
 - kotlin 1.5.21
 - update coroutines to 1.5.1
 - timber 5.0.0
+
+## 1.0.9
+
+- stability fixes and improvements
+- timber 5.0.1
+- kotlin 1.5.30
+- update coroutines to 1.5.2

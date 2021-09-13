@@ -27,7 +27,7 @@ dependencies {
 
     implementation 'com.squareup.okio:okio:2.10.0'
 
-    implementation 'com.jakewharton.timber:timber:5.0.0'
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 
     api project( ':blinkreceipt-core' )
 }

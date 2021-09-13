@@ -33,7 +33,7 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21"
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
 
      implementation 'androidx.appcompat:appcompat:1.2.0'
 
@@ -48,18 +48,18 @@ dependencies {
      implementation "com.google.android.gms:play-services-tasks:17.2.1"
      implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-     implementation 'com.jakewharton.timber:timber:5.0.0'
+     implementation 'com.jakewharton.timber:timber:5.0.1'
 
      implementation "androidx.webkit:webkit:1.4.0"
 
      implementation "androidx.work:work-runtime:2.5.0"
      implementation "androidx.work:work-runtime-ktx:2.5.0"
 
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
 
-     implementation "androidx.core:core-ktx:1.3.2"
+     implementation "androidx.core:core-ktx:1.6.0"
 
      implementation project( ':blinkreceipt-core' )
      implementation project( ':blinkreceipt-camera' )

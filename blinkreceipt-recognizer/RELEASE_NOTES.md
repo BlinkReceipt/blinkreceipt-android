@@ -381,3 +381,12 @@ Blink Receipt Recognizer
 - update coroutines to 1.5.1
 - amazon duplicate sign in detection bug fix.
 - timber 5.0.0
+
+## 1.5.0
+
+- fix preliminary results crash
+- stability fixes and improvements
+- timber 5.0.1
+- kotlin 1.5.30
+- update coroutines to 1.5.2
+- remove support for amazon prime now as its shutting down

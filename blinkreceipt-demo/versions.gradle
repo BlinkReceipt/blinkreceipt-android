@@ -44,17 +44,17 @@ buildscript {
             'googleApis'            : '1.31.5',
             'googleHttpClient'      : '1.39.2-sp.1',
             'tasks'                 : '17.2.1',
-            'kotlin'                : '1.5.21',
+            'kotlin'                : '1.5.30',
             'easyPermissions'       : '3.0.0',
             'junit'                 : '4.13.2',
-            'coroutines'            : '1.5.1',
-            'timber'                : '5.0.0',
+            'coroutines'            : '1.5.2',
+            'timber'                : '5.0.1',
             'ndk'                   : '22.0.7026061',
             'zxing'                 : '3.3.0',
             'msal'                  : '2.0.12',
             "javaMail"              : '1.6.7',
             'versionMajor'          : 1,
-            'versionMinor'          : 4,
-            'versionPatch'          : 9
+            'versionMinor'          : 5,
+            'versionPatch'          : 0
     ]
 }
