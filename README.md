@@ -45,7 +45,7 @@ dependencies {
  implementation "com.google.android.gms:play-services-tasks:17.2.1"
  implementation "com.google.android.gms:play-services-auth:19.2.0"
 
- implementation 'com.jakewharton.timber:timber:5.0.0'
+ implementation 'com.jakewharton.timber:timber:5.0.1'
 
  implementation "androidx.webkit:webkit:1.4.0"
 

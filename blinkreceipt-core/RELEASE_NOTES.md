@@ -117,3 +117,10 @@
 - update banner id for specific retailers
 - fix extended field mapping
 - timber 5.0.0
+
+## 1.2.1
+
+- stability fixes and improvements
+- timber 5.0.1
+- kotlin 1.5.30
+- update coroutines to 1.5.2

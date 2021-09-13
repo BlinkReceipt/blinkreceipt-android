@@ -25,7 +25,7 @@ import kotlin.Unit;
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
-            RetailerIds.STARBUCKS,
+            RetailerIds.HOME_DEPOT,
             new PasswordCredentials(
                     "",
                     ""
