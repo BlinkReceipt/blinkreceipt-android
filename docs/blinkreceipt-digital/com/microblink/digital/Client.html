@@ -162,25 +162,25 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Client.html#searchUntil()>searchUntil</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#overrideEndpoint()>overrideEndpoint</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=Client.html>Client</a></code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Client.html#searchUntil(Date)>searchUntil</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> searchUntil) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#overrideDate()>overrideDate</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
+                                            <td class="colFirst"><code><a href=Client.html>Client</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Client.html#dateCutoff()>dateCutoff</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#overrideDate(Date)>overrideDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -188,12 +188,44 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                         <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=Client.html>Client</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Client.html#dateCutoff(Date)>dateCutoff</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> dateCutoff) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#overrideEndpoint(String)>overrideEndpoint</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> endpoint) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#searchUntil()>searchUntil</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code><a href=Client.html>Client</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#searchUntil(Date)>searchUntil</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> searchUntil) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#dateCutoff()>dateCutoff</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code><a href=Client.html>Client</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Client.html#dateCutoff(Date)>dateCutoff</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> dateCutoff) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i8" class="altColor">
                                             <td class="colFirst"><code>int</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#dayCutoff()>dayCutoff</a>() </code>
@@ -201,7 +233,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i5" class="rowColor">
+                                        <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#dayCutoff(int)>dayCutoff</a>(int dayCutoff) </code>
@@ -209,7 +241,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i6" class="altColor">
+                                        <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#filterSensitive()>filterSensitive</a>() </code>
@@ -217,7 +249,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i7" class="rowColor">
+                                        <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#subProducts()>subProducts</a>() </code>
@@ -225,7 +257,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i8" class="altColor">
+                                        <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#subProducts(boolean)>subProducts</a>(boolean subProducts) </code>
@@ -233,7 +265,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i9" class="rowColor">
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#filterSensitive(boolean)>filterSensitive</a>(boolean filterSensitive) </code>
@@ -241,7 +273,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i10" class="altColor">
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#useAggregation(boolean)>useAggregation</a>(boolean useAggregation) </code>
@@ -249,7 +281,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i11" class="rowColor">
+                                        <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#sendersToSearch(Map)>sendersToSearch</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=Merchant.html>Merchant</a>&gt; senders) </code>
@@ -257,7 +289,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast">If populated, only senders in this list will be searched for e-receipts.</td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i16" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=Merchant.html>Merchant</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#sendersToSearch()>sendersToSearch</a>() </code>
@@ -265,7 +297,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i13" class="rowColor">
+                                        <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#countryCode()>countryCode</a>() </code>
@@ -273,7 +305,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i14" class="altColor">
+                                        <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#countryCode(String)>countryCode</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> countryCode) </code>
@@ -281,7 +313,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i15" class="rowColor">
+                                        <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#useAggregation()>useAggregation</a>() </code>
@@ -289,7 +321,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i16" class="altColor">
+                                        <tr id="i20" class="altColor">
                                             <td class="colFirst"><code>Task&lt;<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ScanResults&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#messages(String,String)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> sender, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> html) </code>
@@ -297,7 +329,7 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                             <td class="colLast">For debugging the parsing of e-receipt HTML</td>
                                         </tr>
                                         
-                                        <tr id="i17" class="rowColor">
+                                        <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code>Task&lt;<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ScanResults&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Client.html#messages(Executor,String,String)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> sender, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> html) </code>
@@ -343,6 +375,66 @@ public abstract class <span class="typeNameLabel"><a href=Client.html>Client</a>
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
+                                
+                                <a id="overrideEndpoint()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overrideEndpoint</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=Client.html#overrideEndpoint()>overrideEndpoint</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="overrideDate()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overrideDate</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> <a href=Client.html#overrideDate()>overrideDate</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="overrideDate(Date)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overrideDate</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Client.html>Client</a> <a href=Client.html#overrideDate(Date)>overrideDate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> date)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="overrideEndpoint(String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overrideEndpoint</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Client.html>Client</a> <a href=Client.html#overrideEndpoint(String)>overrideEndpoint</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> endpoint)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
                                 
                                 <a id="searchUntil()">
                                     <!--   -->
