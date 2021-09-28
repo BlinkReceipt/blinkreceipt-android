@@ -21,7 +21,6 @@ public class MainViewModel extends ViewModel {
         super();
 
         scanOptions = ScanOptions.newBuilder()
-                .retailer(Retailer.UNKNOWN)
                 .frameCharacteristics(FrameCharacteristics.newBuilder()
                         .externalStorage(false)
                         .build())
