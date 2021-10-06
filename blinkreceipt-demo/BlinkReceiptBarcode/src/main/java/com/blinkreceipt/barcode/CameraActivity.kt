@@ -12,11 +12,11 @@ import com.microblink.barcode.DefaultDecoderFactory
 import com.microblink.barcode.MetadataCallbacks
 import com.microblink.barcode.RecognizerBundle
 import com.microblink.barcode.RecognizerClient
+import com.microblink.camera.hardware.orientation.Orientation
+import com.microblink.camera.view.BaseCameraView
+import com.microblink.camera.view.CameraAspectMode
+import com.microblink.camera.view.CameraEventsListener
 import com.microblink.core.Timberland
-import com.microblink.hardware.orientation.Orientation
-import com.microblink.view.BaseCameraView
-import com.microblink.view.CameraAspectMode
-import com.microblink.view.CameraEventsListener
 
 class CameraActivity : AppCompatActivity(), CameraEventsListener {
 

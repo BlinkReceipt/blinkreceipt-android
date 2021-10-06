@@ -49,3 +49,18 @@
 - timber 5.0.1
 - kotlin 1.5.30
 - update coroutines to 1.5.2
+
+## 1.0.9
+
+- stability fixes and improvements
+- kotlin 1.5.31
+- added captcha support for Giant Eagle
+- added 2fa support for DoorDash
+- fixed returning an empty list of orders for BJ's Wholesale Club
+- fixed 2fa issues with Bed Bath & Beyond
+- fix user authentication for Chewy, Domino's Pizza, Target, Shipt, Macy's, Nike, Instacart
+- fix for no orders returned for Dollar Tree, Giant Eagle, Walmart, Starbucks
+- fix order total in ShopRite orders
+- overall bug fixes for Meijer
+- removed Walmart Grocery
+- okhttp 4.9.2

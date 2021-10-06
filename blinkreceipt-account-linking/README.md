@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```groovy
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation "androidx.work:work-runtime:2.5.0"
@@ -22,8 +22,8 @@ In addition to those 2 modules you will need to pull in the following as well.
 
     implementation "androidx.appcompat:appcompat:1.2.0"
 
-    implementation "com.squareup.okhttp3:okhttp:4.9.1"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    implementation "com.squareup.okhttp3:okhttp:4.9.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.2"
 
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
@@ -49,7 +49,7 @@ Project build.gradle
 ```groovy
 buildscript {
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
     }
 }
 ```

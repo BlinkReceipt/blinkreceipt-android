@@ -390,3 +390,10 @@ Blink Receipt Recognizer
 - kotlin 1.5.30
 - update coroutines to 1.5.2
 - remove support for amazon prime now as its shutting down
+
+## 1.5.1
+
+- stability fixes and improvements
+- kotlin 1.5.31
+- removed retailer from frame results as its always set to UNKNOWN
+- okhttp 4.9.2

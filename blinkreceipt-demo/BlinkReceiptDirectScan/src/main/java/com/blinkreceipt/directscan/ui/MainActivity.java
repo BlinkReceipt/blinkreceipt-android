@@ -86,11 +86,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendBitmapsForScanning() {
-        ScanOptions options = ScanOptions.newBuilder()
-                .retailer(Retailer.UNKNOWN)
-                .build();
-
-        client.recognize(options, new RecognizerCallback() {
+        client.recognize(ScanOptions.newBuilder()
+                .build(), new RecognizerCallback() {
             @Override
             public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
                 Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();

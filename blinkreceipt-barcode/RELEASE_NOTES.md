@@ -113,3 +113,8 @@
 
 - stability fixes and improvements
 - timber 5.0.1
+
+## 1.2.2
+
+- stability fixes and improvements
+- okhttp 4.9.2

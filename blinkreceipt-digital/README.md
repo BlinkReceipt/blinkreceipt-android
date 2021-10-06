@@ -159,10 +159,10 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -248,10 +248,10 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -553,10 +553,10 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -737,10 +737,10 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation "com.google.android.material:material:1.4.0"
 
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
         implementation "androidx.core:core-ktx:1.6.0"
 
-        implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+        implementation 'com.squareup.okhttp3:okhttp:4.9.2'
         implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
         implementation 'com.squareup.retrofit2:retrofit:2.9.0'

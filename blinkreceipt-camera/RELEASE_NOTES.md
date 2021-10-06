@@ -100,3 +100,8 @@
 
 - stability fixes and improvements
 - timber 5.0.1
+
+## 1.2.2
+
+- stability fixes and improvements
+- moved camera classes to new package (com.microblink.camera)

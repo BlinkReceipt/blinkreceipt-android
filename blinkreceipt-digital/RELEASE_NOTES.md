@@ -143,3 +143,9 @@ counterpart
 - override post job url
 - override post job date
 - update coroutines to 1.5.2
+
+## 1.2.0
+
+- stability fixes and improvements
+- handle bad email & password for german locales
+- okhttp 4.9.2
