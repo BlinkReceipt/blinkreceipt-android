@@ -36,7 +36,7 @@ dependencies {
 
  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
- implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+ implementation 'com.squareup.okhttp3:okhttp:4.9.2'
  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
@@ -127,7 +127,6 @@ The easiest way to get started scanning your first receipt would be to use the i
 
 ```java
     ScanOptions scanOptions = ScanOptions.newBuilder()
-     .retailer( Retailer.UNKNOWN )
      .frameCharacteristics( FrameCharacteristics.newBuilder()
         .storeFrames( true )
         .compressionQuality( 100 )

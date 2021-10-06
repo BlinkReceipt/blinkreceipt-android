@@ -124,3 +124,10 @@
 - timber 5.0.1
 - kotlin 1.5.30
 - update coroutines to 1.5.2
+
+## 1.2.2
+
+- stability fixes and improvements
+- kotlin 1.5.31
+- remove ability to set retailer in scan options
+- okhttp 4.9.2
