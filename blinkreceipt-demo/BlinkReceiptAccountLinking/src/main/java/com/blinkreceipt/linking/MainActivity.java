@@ -9,11 +9,11 @@ import android.widget.Toast;
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.microblink.core.PasswordCredentials;
 import com.microblink.core.Timberland;
 import com.microblink.linking.Account;
 import com.microblink.linking.AccountLinkingClient;
 import com.microblink.linking.AccountLinkingException;
+import com.microblink.linking.PasswordCredentials;
 import com.microblink.linking.RetailerIds;
 
 import java.util.ArrayList;
