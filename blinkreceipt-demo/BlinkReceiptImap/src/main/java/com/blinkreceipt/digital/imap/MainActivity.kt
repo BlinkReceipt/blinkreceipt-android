@@ -405,52 +405,41 @@ class MainActivity : AppCompatActivity() {
                     binding.password.text.toString()
                 ).build()
 
-                client.store(
-                    account
-                ).addOnSuccessListener {
-                    if (!supportFragmentManager.isDestroyed) {
-                        ProviderSetupDialogFragment.newInstance(
-                            ProviderSetupOptions.newBuilder(
-                                account
-                            ).build()
-                        )
-                            .callback {
-                                this.binding.results.text = "Status ${it.name}"
+                if (!supportFragmentManager.isDestroyed) {
+                    ProviderSetupDialogFragment.newInstance(
+                        ProviderSetupOptions.newBuilder(
+                            account
+                        ).build()
+                    )
+                        .callback {
+                            this.binding.results.text = "Status ${it.name}"
 
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Status ${it.name}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Status ${it.name}",
+                                Toast.LENGTH_SHORT
+                            ).show()
 
-                                when (it) {
-                                    ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
-                                    ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
-                                    ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
-                                    ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
-                                    ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
-                                    ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
-                                    ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
+                            when (it) {
+                                ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
+                                ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
+                                ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
+                                ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
+                                ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
+                                ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
+                                ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
+                            }
+
+                            if (!supportFragmentManager.isDestroyed) {
+                                val dialog = supportFragmentManager.findFragmentByTag(
+                                    TAG
+                                ) as ProviderSetupDialogFragment
+
+                                if (dialog.isAdded) {
+                                    dialog.dismiss()
                                 }
-
-                                if (!supportFragmentManager.isDestroyed) {
-                                    val dialog = supportFragmentManager.findFragmentByTag(
-                                        TAG
-                                    ) as ProviderSetupDialogFragment
-
-                                    if (dialog.isAdded) {
-                                        dialog.dismiss()
-                                    }
-                                }
-                            }.show(supportFragmentManager, TAG)
-                    }
-                }.addOnFailureListener {
-                    Toast.makeText(
-                        applicationContext,
-                        "User login failure: $it", Toast.LENGTH_SHORT
-                    ).show()
-
-                    this.binding.results.text = "User login failure: $it"
+                            }
+                        }.show(supportFragmentManager, TAG)
                 }
             }
             .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
