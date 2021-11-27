@@ -80,22 +80,14 @@ public class MainActivity extends AppCompatActivity {
     public void onVerifyAccount(View view) {
         binding.webContainer.removeAllViews();
 
-        client.verify(ACCOUNT.retailerId(), webView -> {
-            if (webView != null) {
-                binding.webContainer.removeAllViews();
-
-                binding.webContainer.addView(webView);
-            }
-
-            Timberland.d("preview debug only available in development mode.");
-
-            return Unit.INSTANCE;
-        }).addOnSuccessListener(this, verification -> {
+        client.verify(ACCOUNT.retailerId(), (verification, s) -> {
             Timberland.d("verification " + verification);
 
             Toast.makeText(getApplicationContext(),
                     "verification " + verification, Toast.LENGTH_LONG).show();
-        }).addOnFailureListener(this, e -> {
+
+            return Unit.INSTANCE;
+        }, e -> {
             if (e instanceof AccountLinkingException) {
                 AccountLinkingException exception = (AccountLinkingException) e;
 
@@ -107,6 +99,18 @@ public class MainActivity extends AppCompatActivity {
             }
 
             Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
+
+            return Unit.INSTANCE;
+        }, webView -> {
+            if (webView != null) {
+                binding.webContainer.removeAllViews();
+
+                binding.webContainer.addView(webView);
+            }
+
+            Timberland.d("preview debug only available in development mode.");
+
+            return Unit.INSTANCE;
         });
     }
 

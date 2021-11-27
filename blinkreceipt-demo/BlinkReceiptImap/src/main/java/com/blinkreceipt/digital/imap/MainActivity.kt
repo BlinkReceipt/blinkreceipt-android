@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Suppress("UNUSED_PARAMETER")
-    public fun onClear(view: View) {
+    fun onClear(view: View) {
         client.clearLastCheckedTime().addOnSuccessListener {
             binding.results.text = null
 
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onMessagesClick(view: View) {
+    fun onMessagesClick(view: View) {
         binding.results.text = "Searching for messages..."
 
         client.accounts().addOnSuccessListener { accounts ->
@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onDebugMessages(view: View) {
+    fun onDebugMessages(view: View) {
         binding.results.text = "Searching for debug messages..."
 
         @Suppress("DEPRECATION")
@@ -196,7 +196,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onSingleLogout(view: View) {
+    fun onSingleLogout(view: View) {
         binding.results.text = "Logging user out of account..."
 
         client.accounts().addOnSuccessListener {
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onLogout(view: View) {
+    fun onLogout(view: View) {
         binding.results.text = "Logging user out of all accounts..."
 
         client.logout().addOnSuccessListener {
@@ -248,7 +248,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onMultipleMessages(view: View) {
+    fun onMultipleMessages(view: View) {
         binding.results.text = "Multiple Messages..."
 
         val messages = mutableMapOf<PasswordCredentials, List<ScanResults>>()
@@ -284,7 +284,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onMultipleRemoteMessages(view: View) {
+    fun onMultipleRemoteMessages(view: View) {
         binding.results.text = "Multiple Remote Messages..."
 
         val messages = mutableMapOf<PasswordCredentials, JobResults>()
@@ -311,7 +311,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onRemoteMessages(view: View) {
+    fun onRemoteMessages(view: View) {
         binding.results.text = "Remote Messages..."
 
         client.accounts().addOnSuccessListener {
@@ -346,7 +346,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onVerify(view: View) {
+    fun onVerify(view: View) {
         binding.results.text = "Verifying account..."
 
         client.accounts().addOnSuccessListener {
@@ -381,7 +381,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    public fun onLogin(view: View) {
+    fun onLogin(view: View) {
         binding.results.text = "Logging in..."
 
         val binding = CredentialsViewBinding.inflate(layoutInflater)
