@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
             Timberland.d("preview debug only available in development mode.");
 
             return Unit.INSTANCE;
-        }).addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                "verification " + success, Toast.LENGTH_LONG).show())
+        }).addOnSuccessListener(this, verification -> Toast.makeText(getApplicationContext(),
+                "verification " + verification, Toast.LENGTH_LONG).show())
                 .addOnFailureListener(this, e -> {
                     if (e instanceof AccountLinkingException) {
                         AccountLinkingException exception = (AccountLinkingException) e;
@@ -150,10 +150,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "exception " + e, Toast.LENGTH_SHORT).show()));
 
         Tasks.whenAllComplete(tasks)
-                .addOnSuccessListener(this, completed -> client.orders((retailerId, scanResults, remaining) -> {
+                .addOnSuccessListener(this, completed -> client.orders((retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
-                            "retailer id " + retailerId + " remaining " + remaining,
+                            "retailer id " + retailerId + " remaining "
+                                    + remaining + " uuid " + uuid,
                             Toast.LENGTH_SHORT
                     ).show();
 
@@ -174,10 +175,11 @@ public class MainActivity extends AppCompatActivity {
     public void onOrders(View view) {
         binding.webContainer.removeAllViews();
 
-        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining) -> {
+        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
-                            "retailer id " + retailerId + " remaining " + remaining,
+                            "retailer id " + retailerId + " remaining "
+                                    + remaining + " uuid " + uuid,
                             Toast.LENGTH_SHORT
                     ).show();
 
