@@ -25,7 +25,7 @@ import kotlin.Unit;
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
-            RetailerIds.HOME_DEPOT,
+            RetailerIds.TARGET,
             new PasswordCredentials(
                     "",
                     ""
@@ -90,21 +90,24 @@ public class MainActivity extends AppCompatActivity {
             Timberland.d("preview debug only available in development mode.");
 
             return Unit.INSTANCE;
-        }).addOnSuccessListener(this, verification -> Toast.makeText(getApplicationContext(),
-                "verification " + verification, Toast.LENGTH_LONG).show())
-                .addOnFailureListener(this, e -> {
-                    if (e instanceof AccountLinkingException) {
-                        AccountLinkingException exception = (AccountLinkingException) e;
+        }).addOnSuccessListener(this, verification -> {
+            Timberland.d("verification " + verification);
 
-                        if (exception.view() != null) {
-                            binding.webContainer.removeAllViews();
+            Toast.makeText(getApplicationContext(),
+                    "verification " + verification, Toast.LENGTH_LONG).show();
+        }).addOnFailureListener(this, e -> {
+            if (e instanceof AccountLinkingException) {
+                AccountLinkingException exception = (AccountLinkingException) e;
 
-                            binding.webContainer.addView(exception.view());
-                        }
-                    }
+                if (exception.view() != null) {
+                    binding.webContainer.removeAllViews();
 
-                    Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
-                });
+                    binding.webContainer.addView(exception.view());
+                }
+            }
+
+            Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
+        });
     }
 
     public void onResetHistory(View view) {

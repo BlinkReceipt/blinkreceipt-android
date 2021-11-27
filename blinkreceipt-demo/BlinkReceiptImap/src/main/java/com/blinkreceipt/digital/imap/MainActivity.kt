@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     internal companion object Imap {
 
-        const val DAYS_CUT_OFF = 280
+        const val DAYS_CUT_OFF = 15
 
         const val COUNTRY_CODE = "US"
 
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Suppress("UNUSED_PARAMETER")
-    fun onClear(view: View) {
+    public fun onClear(view: View) {
         client.clearLastCheckedTime().addOnSuccessListener {
             binding.results.text = null
 
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onMessagesClick(view: View) {
+    public fun onMessagesClick(view: View) {
         binding.results.text = "Searching for messages..."
 
         client.accounts().addOnSuccessListener { accounts ->
@@ -149,10 +149,11 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             } ?: Toast.makeText(
-                applicationContext, "unable to " +
-                        "find tester account ${tester.username()}", Toast.LENGTH_SHORT
+                applicationContext,
+                "unable to " +
+                        "find tester account ${tester.username()}",
+                Toast.LENGTH_SHORT
             ).show()
-
         }.addOnFailureListener {
             Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
         }
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onDebugMessages(view: View) {
+    public fun onDebugMessages(view: View) {
         binding.results.text = "Searching for debug messages..."
 
         @Suppress("DEPRECATION")
@@ -195,7 +196,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onSingleLogout(view: View) {
+    public fun onSingleLogout(view: View) {
         binding.results.text = "Logging user out of account..."
 
         client.accounts().addOnSuccessListener {
@@ -219,16 +220,13 @@ class MainActivity : AppCompatActivity() {
 
                     binding.results.text = "User logout failure: $it"
                 }
-            } ?: Toast.makeText(
-                applicationContext, "unable to " +
-                        "find tester account ${tester.username()}", Toast.LENGTH_SHORT
-            ).show()
+            }
         }
     }
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onLogout(view: View) {
+    public fun onLogout(view: View) {
         binding.results.text = "Logging user out of all accounts..."
 
         client.logout().addOnSuccessListener {
@@ -250,7 +248,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onMultipleMessages(view: View) {
+    public fun onMultipleMessages(view: View) {
         binding.results.text = "Multiple Messages..."
 
         val messages = mutableMapOf<PasswordCredentials, List<ScanResults>>()
@@ -273,7 +271,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }"
-
             }
 
             @SuppressLint("SetTextI18n")
@@ -282,13 +279,12 @@ class MainActivity : AppCompatActivity() {
 
                 binding.results.text = "Multiple Messages $throwable"
             }
-
         })
     }
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onMultipleRemoteMessages(view: View) {
+    public fun onMultipleRemoteMessages(view: View) {
         binding.results.text = "Multiple Remote Messages..."
 
         val messages = mutableMapOf<PasswordCredentials, JobResults>()
@@ -310,13 +306,12 @@ class MainActivity : AppCompatActivity() {
 
                 binding.results.text = "Multiple Remote $throwable"
             }
-
         })
     }
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onRemoteMessages(view: View) {
+    public fun onRemoteMessages(view: View) {
         binding.results.text = "Remote Messages..."
 
         client.accounts().addOnSuccessListener {
@@ -339,10 +334,11 @@ class MainActivity : AppCompatActivity() {
                     binding.results.text = "Remote messages failure: $it"
                 }
             } ?: Toast.makeText(
-                applicationContext, "unable to " +
-                        "find tester account ${tester.username()}", Toast.LENGTH_SHORT
+                applicationContext,
+                "unable to " +
+                        "find tester account ${tester.username()}",
+                Toast.LENGTH_SHORT
             ).show()
-
         }.addOnFailureListener {
             Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
         }
@@ -350,7 +346,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onVerify(view: View) {
+    public fun onVerify(view: View) {
         binding.results.text = "Verifying account..."
 
         client.accounts().addOnSuccessListener {
@@ -373,10 +369,11 @@ class MainActivity : AppCompatActivity() {
                     binding.results.text = "Account Failure: $it"
                 }
             } ?: Toast.makeText(
-                applicationContext, "unable to " +
-                        "find tester account ${tester.username()}", Toast.LENGTH_SHORT
+                applicationContext,
+                "unable to " +
+                        "find tester account ${tester.username()}",
+                Toast.LENGTH_SHORT
             ).show()
-
         }.addOnFailureListener {
             Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
         }
@@ -384,7 +381,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
-    fun onLogin(view: View) {
+    public fun onLogin(view: View) {
         binding.results.text = "Logging in..."
 
         val binding = CredentialsViewBinding.inflate(layoutInflater)
@@ -410,39 +407,39 @@ class MainActivity : AppCompatActivity() {
                         ProviderSetupOptions.newBuilder(
                             account
                         ).build()
-                    )
-                        .callback {
-                            this.binding.results.text = "Status ${it.name}"
+                    ).callback {
+                        this.binding.results.text = "Status ${it.name}"
 
-                            Toast.makeText(
-                                applicationContext,
-                                "Status ${it.name}",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                        Toast.makeText(
+                            applicationContext,
+                            "Status ${it.name}",
+                            Toast.LENGTH_SHORT
+                        ).show()
 
-                            when (it) {
-                                ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
-                                ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
-                                ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
-                                ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
-                                ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
-                                ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
-                                ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
+                        when (it) {
+                            ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
+                            ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
+                            ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
+                            ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
+                            ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
+                            ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
+                            ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
+                        }
+
+                        if (!supportFragmentManager.isDestroyed) {
+                            val dialog = supportFragmentManager.findFragmentByTag(
+                                TAG
+                            ) as ProviderSetupDialogFragment
+
+                            if (dialog.isAdded) {
+                                dialog.dismiss()
                             }
-
-                            if (!supportFragmentManager.isDestroyed) {
-                                val dialog = supportFragmentManager.findFragmentByTag(
-                                    TAG
-                                ) as ProviderSetupDialogFragment
-
-                                if (dialog.isAdded) {
-                                    dialog.dismiss()
-                                }
-                            }
-                        }.show(supportFragmentManager, TAG)
+                        }
+                    }.show(supportFragmentManager, TAG)
                 }
             }
             .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
             .show()
     }
+
 }
