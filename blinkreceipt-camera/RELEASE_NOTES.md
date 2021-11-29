@@ -107,3 +107,5 @@
 - moved camera classes to new package (com.microblink.camera)
 
 ## 1.2.3
+
+- stability fixes and improvements
