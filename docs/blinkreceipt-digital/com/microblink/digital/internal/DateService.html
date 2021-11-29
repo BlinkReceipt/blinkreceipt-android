@@ -104,6 +104,13 @@ var pathtoroot = "../../../../";
             <ul class="blockList">
                 <li class="blockList">
                     
+                    <dl>
+                        <dt>All Implemented Interfaces:</dt>
+                        <dd>
+                            
+                        </dd>
+                    </dl>
+                    
                     <hr>
                     <pre class="wrap-overflow">
 
@@ -119,11 +126,95 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                 <li class="blockList">
                 <!-- ======== NESTED CLASS SUMMARY ======== -->
                     
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="nested.class.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Nested Class Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Class</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
                     <!-- =========== FIELD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="field.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Field Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Field</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
                     
                     <!-- ======== CONSTRUCTOR SUMMARY ======== -->
                     
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tbody>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Constructor</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+
+                                        
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
                     <!-- =========== ENUM CONSTANT SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="enum.constant.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Enum Constant Summary</h3>
+                                <table class="memberSummary">
+                                    <caption><span>Enum Constants</span><span class="tabEnd">&nbsp;</span></caption>
+                                    <tr>
+                                        <th class="colFirst" scope="col">Enum Constant</th>
+                                        <th class="colLast" scope="col">Description</th>
+                                    </tr>
+                                    
+                                </table>
+                            </li>
+                        </ul>
+                    </section>
                     
                     <!-- ========== METHOD SUMMARY =========== -->
                     
@@ -149,7 +240,7 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>abstract long</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DateService.html#lastCheckedTime()>lastCheckedTime</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=DateService.html#lastCheckedTime(Provider)>lastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -157,23 +248,23 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DateService.html#limit(int)>limit</a>(int dayCutoff) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DateService.html#limit(Provider,int)>limit</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider, int dayCutoff) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>abstract boolean</code>
+                                            <td class="colFirst"><code>abstract void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DateService.html#lastCheckedTime(long)>lastCheckedTime</a>(long lastCheckedTime) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DateService.html#lastCheckedTime(Provider,long)>lastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider, long lastCheckedTime) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code>abstract boolean</code>
+                                            <td class="colFirst"><code>abstract void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DateService.html#clearLastCheckedTime()>clearLastCheckedTime</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=DateService.html#clearLastCheckedTime(Array)>clearLastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=../Provider.html>Provider</a>&gt; providers) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -202,6 +293,17 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                 <li class="blockList">
                     <!-- ========= CONSTRUCTOR DETAIL ======== -->
                     
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Detail</h3>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
                     <!-- ============ METHOD DETAIL ========== -->
                     
                     <section role="region">
@@ -211,7 +313,7 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="lastCheckedTime()">
+                                <a id="lastCheckedTime(Provider)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -219,14 +321,14 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                           >
                                     <li class="blockList">
                                         <h4>lastCheckedTime</h4>
-                                        <pre class="methodSignature"> abstract long <a href=DateService.html#lastCheckedTime()>lastCheckedTime</a>()</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/WorkerThread.html>WorkerThread</a>() abstract long <a href=DateService.html#lastCheckedTime(Provider)>lastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="limit(int)">
+                                <a id="limit(Provider,int)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -234,14 +336,14 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                           >
                                     <li class="blockList">
                                         <h4>limit</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() abstract <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> <a href=DateService.html#limit(int)>limit</a>(int dayCutoff)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/WorkerThread.html>WorkerThread</a>()@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() abstract <a href=https://developer.android.com/reference/kotlin/java/util/Date.html>Date</a> <a href=DateService.html#limit(Provider,int)>limit</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider, int dayCutoff)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="lastCheckedTime(long)">
+                                <a id="lastCheckedTime(Provider,long)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -249,14 +351,14 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                           >
                                     <li class="blockList">
                                         <h4>lastCheckedTime</h4>
-                                        <pre class="methodSignature"> abstract boolean <a href=DateService.html#lastCheckedTime(long)>lastCheckedTime</a>(long lastCheckedTime)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/WorkerThread.html>WorkerThread</a>() abstract void <a href=DateService.html#lastCheckedTime(Provider,long)>lastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=../Provider.html>Provider</a> provider, long lastCheckedTime)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="clearLastCheckedTime()">
+                                <a id="clearLastCheckedTime(Array)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -264,7 +366,7 @@ public interface <span class="typeNameLabel"><a href=DateService.html>DateServic
                                           >
                                     <li class="blockList">
                                         <h4>clearLastCheckedTime</h4>
-                                        <pre class="methodSignature"> abstract boolean <a href=DateService.html#clearLastCheckedTime()>clearLastCheckedTime</a>()</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/WorkerThread.html>WorkerThread</a>() abstract void <a href=DateService.html#clearLastCheckedTime(Array)>clearLastCheckedTime</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=../Provider.html>Provider</a>&gt; providers)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
