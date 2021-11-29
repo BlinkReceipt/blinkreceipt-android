@@ -156,3 +156,4 @@ counterpart
 - update google http client gson to 1.40.0
 - return client merchant name
 - **BREAKING CHANGES** multiple email support
+- stability fixes and improvements

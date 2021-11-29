@@ -122,3 +122,4 @@
 ## 1.2.3
 
 - okio version 2.10.0
+- stability fixes and improvements

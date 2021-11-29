@@ -404,3 +404,4 @@ Blink Receipt Recognizer
 - fix parsing dates for Makro receipts.
 - okio version 2.10.0
 - amazon support for CA
+- stability fixes and improvements

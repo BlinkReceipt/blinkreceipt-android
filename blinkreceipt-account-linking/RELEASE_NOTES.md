@@ -73,3 +73,4 @@
 - added support for drizly, walmart ca, staples ca and seamless
 - **BREAKING CHANGE** verification api changed from task to callback
 - uuid support for debugging purposes
+- stability fixes and improvements
