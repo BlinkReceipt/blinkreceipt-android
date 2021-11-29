@@ -14,9 +14,7 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blinkreceipt.directscan.R;
@@ -26,8 +24,8 @@ import com.microblink.RecognizerCallback;
 import com.microblink.RecognizerClient;
 import com.microblink.RecognizerResult;
 import com.microblink.ScanOptions;
-import com.microblink.core.Retailer;
 import com.microblink.core.ScanResults;
+import com.microblink.core.Timberland;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,24 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int IMAGE_REQUEST_CODE = 100;
 
-    private static final String TAG = "MainActivity";
-
-    @NonNull
     private RecyclerView imageRecyclerview;
 
-    @NonNull
     private Button selectImageBtn;
 
-    @NonNull
     private Button scanImageBtn;
 
-    @NonNull
     private Button rotateImagesLeftBtn;
 
-    @NonNull
     private Button rotateImagesRightBtn;
 
-    @NonNull
     private ImageAdapter imageAdapter;
 
     private Bitmap[] bitmaps;
@@ -175,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Timberland.e(e);
         }
 
         return null;

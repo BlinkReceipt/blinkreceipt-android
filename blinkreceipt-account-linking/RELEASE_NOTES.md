@@ -64,3 +64,13 @@
 - overall bug fixes for Meijer
 - removed Walmart Grocery
 - okhttp 4.9.2
+
+## 1.1.0
+
+- add Walmart in-store order support
+- androidx worker manager 2.6.0. performance improvements on older android devices.
+- add 2FA support for Target
+- added support for drizly, walmart ca, staples ca and seamless
+- **BREAKING CHANGE** verification api changed from task to callback
+- uuid support for debugging purposes
+- stability fixes and improvements

@@ -6,7 +6,7 @@ Using Blink Receipt in your app requires a valid license key.  After registering
 
 See below for more information about how to integrate Blink Receipt SDK into your app.
 
-# Table of contents
+# Table of Contents
 
 * [Android _BlinkReceipt_ integration instructions](#intro)
 * [Quick Start: Scan your first receipt](#quickStart)
@@ -14,6 +14,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
   * [Customize Camera Scan Activity](#customizeScanActivity)
   * [Customize Scan Configuration](#customizeScanSession)
 * [Recognizer View](#recognizerView)
+* [Recognizer Client](#recognizerClient)
 * [Adding Product Intelligence](#intelligence)
 * [Adding Google Places](#google)
 * [Adding Yelp](#yelp)
@@ -32,26 +33,36 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
- implementation 'androidx.appcompat:appcompat:1.2.0'
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
 
- implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+     implementation 'androidx.appcompat:appcompat:1.2.0'
 
- implementation 'com.squareup.okhttp3:okhttp:4.9.2'
- implementation 'com.squareup.retrofit2:retrofit:2.9.0'
- implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
- implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
- implementation 'com.squareup.okio:okio:2.10.0'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
- implementation "com.google.android.gms:play-services-tasks:17.2.1"
- implementation "com.google.android.gms:play-services-auth:19.2.0"
+     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+     implementation 'com.squareup.okio:okio:2.10.0'
 
- implementation 'com.jakewharton.timber:timber:5.0.1'
+     implementation "com.google.android.gms:play-services-tasks:17.2.1"
+     implementation "com.google.android.gms:play-services-auth:19.2.0"
 
- implementation "androidx.webkit:webkit:1.4.0"
+     implementation 'com.jakewharton.timber:timber:5.0.1'
 
- implementation project( ':blinkreceipt-core' )
- implementation project( ':blinkreceipt-recognizer' )
- implementation project( ':blinkreceipt-camera' )
+     implementation "androidx.webkit:webkit:1.4.0"
+
+     implementation "androidx.work:work-runtime:2.6.0"
+     implementation "androidx.work:work-runtime-ktx:2.6.0"
+
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+
+     implementation "androidx.core:core-ktx:1.6.0"
+
+     implementation project( ':blinkreceipt-core' )
+     implementation project( ':blinkreceipt-camera' )
 }
 ```
 
@@ -365,6 +376,79 @@ When you wish to finish your scan session call `finishedScanning()`. This will b
 *Note*
 All RecognizerCallback methods are executed on the main thread.
 
+## <a name=recognizerClient></a>Recognizer Client
+If you wish to enable users to provide their own receipt image, instead of providing them with a camera interface, then you can opt out of using the `RecognizerClient` instead of the `RecognizerView`. This component provides a non-ui interface to the recognition mechanisms under the covers of the Recognizer View. It is simple to use and requires minimal setup.
+
+#### Initialization And Running Scans
+The `RecognizerClient` can be instantiated with its primary constructor which takes in  a `context`. Once the client is instantiated, it is now ready for use. To use the `RecognizerClient` call the `recognize(ScanOptions options, RecognizerCallback listener, Bitmap... bitmaps)` function. The scan options you define is the exact same object you define when initializing the `RecognizerView`. The `RecognizerCallback` is an interface which acts as a listener for the client when images are going through processing. The `onRecognizerDone` function is the indicator that the images passed in have been successfully processed and the scan session has completed. You will notice this is the same interface used in the `RecognizerView` implementation.
+
+**NOTE this feature must be enabled through your license in order to use. If your application is not allowed to use this api, then onRecognizerException will immediately trigger informing you of your missing permissions.**
+
+```java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        initializeClient();
+
+        // fetch bitmaps
+        sendBitmapsForScanning()
+    }
+
+    private void initializeClient() {
+        client = new RecognizerClient(this);
+    }
+
+    private void sendBitmapsForScanning() {
+        ScanOptions options = ScanOptions.newBuilder()
+                .build();
+
+        client.recognize(options, new RecognizerCallback() {
+            @Override
+            public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
+                Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRecognizerException(@NonNull Throwable throwable) {
+                Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
+
+            }
+        }, bitmaps);
+    }
+}
+```
+#### Image Orientation [OPTIONAL]
+Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
+ _________
+T         |
+O         |   CameraOrientation.ORIENTATION_LANDSCAPE_LEFT
+P_________|
+
+| TOP |
+|     |       CameraOrientation.ORIENTATION_PORTRAIT
+|_____|
+
+ _________
+|         T
+|         O   CameraOrientation.ORIENTATION_LANDSCAPE_RIGHT
+|_________P
+
+_______
+|     |
+|     |       CameraOrientation.ORIENTATION_PORTRAIT_UPSIDE_DOWN
+| TOP |
+
+If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the sdk will make a best guess as to what the orientation is based on the Bitmap properties.
+
+
 ## <a name=intelligence></a>Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
@@ -409,10 +493,10 @@ AmazonManager.getInstance( this ).credentials( AmazonCredentials( "AMAZON_EMAIL"
 ```java
 AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 
- override fun onComplete(orders: List<ScanResults>?) { }
+        override fun onComplete(orders: List<ScanResults>?) { }
 
- override fun onException( e: AmazonException) { }
- } )
+        override fun onException( e: AmazonException) { }
+        } )
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -432,25 +516,25 @@ If you manually initialize the SDK you should disable auto configuration in your
 ```java
 @Override
 public void onCreate() {
-    super.onCreate();
+        super.onCreate();
 
-    BlinkReceiptSdk.initialize( context );
-}
+        BlinkReceiptSdk.initialize( context );
+        }
 ```
 
 ```xml
 <meta-data
-    android:name="com.microblink.AutoConfiguration"
-    android:value="false" />
+        android:name="com.microblink.AutoConfiguration"
+        android:value="false" />
 ```
 
 ```java
 @Override
 public void onTerminate() {
-    BlinkReceiptSdk.terminate();
+        BlinkReceiptSdk.terminate();
 
-    super.onTerminate();
-}
+        super.onTerminate();
+        }
 ```
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations

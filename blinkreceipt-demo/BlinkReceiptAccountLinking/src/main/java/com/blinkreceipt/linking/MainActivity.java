@@ -9,11 +9,11 @@ import android.widget.Toast;
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.microblink.core.PasswordCredentials;
 import com.microblink.core.Timberland;
 import com.microblink.linking.Account;
 import com.microblink.linking.AccountLinkingClient;
 import com.microblink.linking.AccountLinkingException;
+import com.microblink.linking.PasswordCredentials;
 import com.microblink.linking.RetailerIds;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import kotlin.Unit;
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
-            RetailerIds.HOME_DEPOT,
+            RetailerIds.TARGET,
             new PasswordCredentials(
                     "",
                     ""
@@ -80,7 +80,28 @@ public class MainActivity extends AppCompatActivity {
     public void onVerifyAccount(View view) {
         binding.webContainer.removeAllViews();
 
-        client.verify(ACCOUNT.retailerId(), webView -> {
+        client.verify(ACCOUNT.retailerId(), (verification, s) -> {
+            Timberland.d("verification " + verification);
+
+            Toast.makeText(getApplicationContext(),
+                    "verification " + verification, Toast.LENGTH_LONG).show();
+
+            return Unit.INSTANCE;
+        }, e -> {
+            if (e instanceof AccountLinkingException) {
+                AccountLinkingException exception = (AccountLinkingException) e;
+
+                if (exception.view() != null) {
+                    binding.webContainer.removeAllViews();
+
+                    binding.webContainer.addView(exception.view());
+                }
+            }
+
+            Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
+
+            return Unit.INSTANCE;
+        }, webView -> {
             if (webView != null) {
                 binding.webContainer.removeAllViews();
 
@@ -90,21 +111,7 @@ public class MainActivity extends AppCompatActivity {
             Timberland.d("preview debug only available in development mode.");
 
             return Unit.INSTANCE;
-        }).addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                "verification " + success, Toast.LENGTH_LONG).show())
-                .addOnFailureListener(this, e -> {
-                    if (e instanceof AccountLinkingException) {
-                        AccountLinkingException exception = (AccountLinkingException) e;
-
-                        if (exception.view() != null) {
-                            binding.webContainer.removeAllViews();
-
-                            binding.webContainer.addView(exception.view());
-                        }
-                    }
-
-                    Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
-                });
+        });
     }
 
     public void onResetHistory(View view) {
@@ -150,10 +157,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "exception " + e, Toast.LENGTH_SHORT).show()));
 
         Tasks.whenAllComplete(tasks)
-                .addOnSuccessListener(this, completed -> client.orders((retailerId, scanResults, remaining) -> {
+                .addOnSuccessListener(this, completed -> client.orders((retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
-                            "retailer id " + retailerId + " remaining " + remaining,
+                            "retailer id " + retailerId + " remaining "
+                                    + remaining + " uuid " + uuid,
                             Toast.LENGTH_SHORT
                     ).show();
 
@@ -174,10 +182,11 @@ public class MainActivity extends AppCompatActivity {
     public void onOrders(View view) {
         binding.webContainer.removeAllViews();
 
-        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining) -> {
+        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
-                            "retailer id " + retailerId + " remaining " + remaining,
+                            "retailer id " + retailerId + " remaining "
+                                    + remaining + " uuid " + uuid,
                             Toast.LENGTH_SHORT
                     ).show();
 

@@ -131,3 +131,9 @@
 - kotlin 1.5.31
 - remove ability to set retailer in scan options
 - okhttp 4.9.2
+
+## 1.2.3
+
+- androidx worker manager 2.6.0. performance improvements on older android devices.
+- okio version 2.10.0
+- stability fixes and improvements

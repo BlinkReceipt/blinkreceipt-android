@@ -65,3 +65,9 @@
 - stability fixes and improvements
 - kotlin 1.5.31
 - okhttp 4.9.2
+
+## 1.1.1
+
+- androidx worker manager 2.6.0. performance improvements on older android devices.
+- okio version 2.10.0
+- stability fixes and improvements
