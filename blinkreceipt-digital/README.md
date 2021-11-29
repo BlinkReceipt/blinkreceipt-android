@@ -130,11 +130,11 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-    implementation "androidx.work:work-runtime:2.5.0"
-    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.work:work-runtime:2.6.0"
+    implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -173,15 +173,15 @@ dependencies {
 
     implementation "androidx.core:core:1.3.1"
 
-    implementation 'com.squareup.okio:okio:2.8.0'
+    implementation 'com.squareup.okio:okio:2.10.0'
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
 }
 ```
 
@@ -196,9 +196,11 @@ class BlinkApplication : Application() {
         BlinkReceiptDigitalSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {
+
             }
 
             override fun onException(e: Throwable) {
+
             }
 
         })
@@ -207,7 +209,6 @@ class BlinkApplication : Application() {
 ```
 <br />
 <br />
-
 
 ## IMAP
 
@@ -219,11 +220,11 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-    implementation "androidx.work:work-runtime:2.5.0"
-    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.work:work-runtime:2.6.0"
+    implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -262,15 +263,15 @@ dependencies {
 
     implementation "androidx.core:core:1.3.1"
 
-    implementation 'com.squareup.okio:okio:2.8.0'
+    implementation 'com.squareup.okio:okio:2.10.0'
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
 }
 ```
 <br />
@@ -284,21 +285,12 @@ dependencies {
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="false" />
-
-    <uses-feature
-        android:name="android.hardware.camera.flash"
-        android:required="false" />
-
     <application
         android:name=".BlinkApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        android:theme="@style/AppTheme">
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
@@ -336,12 +328,7 @@ IMAP authorization UI uses the material bottom sheet. This requires your theme p
 IMAP client is the main entry point which allows the SDK to connect to imap accounts. Initializing the client is asynchronous and requires the caller to wait until its complete before accessing the imap messages or account information. ***Note: if you use lazy this will cause exceptions until the client has been initialized. This is on a per instance basis.***
 
 ```kotlin
-private val options by lazy {
-    ProviderSetupOptions.newBuilder(Provider.YAHOO)
-        .build()
-}
-
-ImapClient( applicationContext, options.provider(), object : InitializeCallback {
+ImapClient( applicationContext, object : InitializeCallback {
 
     override fun onComplete() {
 
@@ -361,16 +348,17 @@ ImapClient( applicationContext, options.provider(), object : InitializeCallback 
 After collecting the users credentials initiate the provider setup workflow, which will walk the user through linking their account to the provider (Yahoo, AOL, Gmail).
 
 ```kotlin
- ProviderSetupDialogFragment.newInstance(options)
-    .callback {
-        when (it) {
-            ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
-            ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
-            ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
-            ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
-            ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
-        }
-    }.show(supportFragmentManager, TAG)
+     ProviderSetupDialogFragment.newInstance(
+      ProviderSetupOptions.newBuilder(
+         PasswordCredentials.newBuilder(
+            Provider.GMAIL,
+            "email@blink.com",
+            "account password"
+         ).build()
+      ).build()
+   ).callback {
+
+   }.show(supportFragmentManager, TAG)
 ```
 <br />
 <br />
@@ -379,44 +367,26 @@ After collecting the users credentials initiate the provider setup workflow, whi
 The `verify()` function is used to determine if the sdk has any cached credentials that can be used without explicit sign in. This can be called without any parameters or with an `Executor` and `PasswordCredentials`. The empty parameter function call will automatically attempt to fetch the cached credentials within the sdk and verify the credentials against the ImapService. This function call returns a `Task<Boolean>`. When the result emitted is a `true` value, then the credentials that were either passed in or cached in the sdk grant access to a valid account. In the event an exception is thrown, that means that the credentials, either passed in or cached, are not valid credentials to access a specific account.
 
 ```kotlin
-client.verify().addOnSuccessListener { isVerified ->
-   if (isVerified) {
-       // We have a valid account, fetch user messages
-   } else {
-       // We do not have valid credentials, display error or show login flow
-   }
-}.addOnFailureListener {
-   //Something went wrong, but we do not have valid credentials. Display error or show login flow.
-}
-```
-<br />
-
-**NOTE**
-If a user has never signed into their IMAP account. Then it is safe to assume that when you call verify the result will be false or throw an exception. If this ends up being the case then you should capture the credentials from your user and recall verify with a passed in `PasswordCredentials` object. IMAP client requires the caller to collect the user's imap credentials that correspond to the selected provider. Credentials will be securely stored using JetPack Security.
-
-```kotlin
-client.credentials(
-        PasswordCredentials(
-                "EMAIL",
-                "PASSWORD"
-        )
-).addOnSuccessListener {
+client.verify(PasswordCredentials.newBuilder(
+   Provider.GMAIL,
+   "test@gmail.com",
+   "app password"
+).build()).addOnSuccessListener { isVerified ->
 
 }.addOnFailureListener {
 
 }
 ```
-<br />
 <br />
 
 ### IMAP Credentials
 The `credentials()` function is used to fetch the cached account's `PasswordCredentials` on the sdk. This is usually called AFTER `verify()`, once a client can verify that there is a valid account on the sdk. This does not verify the account credentials. It only fetches them from our encrypted cache and returns them to the caller.
 
 ```kotlin
-client.credentials().addOnSuccessListener { credentials ->
-   textview.text = "Welcome ${credentials.username()}"
+client.accounts().addOnSuccessListener { accounts ->
+
 }.addOnFailureListener {
-   Toast.makeText(context, "Unable to fetch account", Toast.LENGTH_SHORT).show()
+
 }
 ```
 
@@ -440,35 +410,17 @@ Once the client is configured then we are ready to start parsing emails. On the 
 <br />
 **EXAMPLE IMAP READ MESSAGES**
 
-```java
-    public void readUserMessages() {
-        client.messages(requireActivity()).addOnSuccessListener( new OnSuccessListener<List<ScanResults>>() {
-             @Override
-             public void onSuccess(List<ScanResults> account) {
-                // Successfully fetched messages, do something
-                binding.resultsToDisplay.text = "Scanned Results (${results.size})"
-            }
-        }).addOnFailureListener( new OnFailureListener() {
-             @Override
-             public void onFailure(Exception exception) {
-               //User authentication has failed
-             }
-        });
-    }
-
-```
-
 ```kotlin
+    fun messages() {
+      client.messages(PasswordCredentials.newBuilder(
+         Provider.GMAIL,
+         "test@gmail.com",
+         "app password"
+      ).build()).addOnSuccessListener {
 
-    fun readUserMessages() {
-      client.messages(requireActivity())
-                .addOnSuccessListener { results ->
-                    // Successfully fetched messages, do something
-                    binding.resultsToDisplay.text = "Scanned Results (${results.size})"
-                }.addOnFailureListener {
-                    // Error fetching/parsing messages
-                    Toast.makeText(requireContext(), it.message,Toast.LENGTH_SHORT).show()
-                }
+       }.addOnFailureListener {
+
+       }
     }
 
 ```
@@ -481,10 +433,14 @@ When you wish to sign out from a user's current account use the `logout()` funct
 <br />
 
 ```kotlin
- client.logout().addOnSuccessListener { successfullyLoggedOut ->
-    // check boolean result to see if a user has successfully logged out and show appropriate UI
+ client.logout(PasswordCredentials.newBuilder(
+   Provider.GMAIL,
+   "test@gmail.com",
+   "app password"
+).build()).addOnSuccessListener {
+
 }.addOnFailureListener {
-    // Something has gone wrong the user may or may not be signed out, please check exception.
+
 }
 ```
 <br />
@@ -507,11 +463,11 @@ We always want to make sure we are adhereing to any component's lifecycle. There
 <br />
 
 ```kotlin
-override fun onDestroy() {
-    super.onDestroy()
+   override fun onDestroy() {
+       super.onDestroy()
 
-    client.destroy()
-}
+       client.destroy()
+   }
 ```
 
 ## Outlook
@@ -524,11 +480,11 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-    implementation "androidx.work:work-runtime:2.5.0"
-    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.work:work-runtime:2.6.0"
+    implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -567,15 +523,15 @@ dependencies {
 
     implementation "androidx.core:core:1.3.1"
 
-    implementation 'com.squareup.okio:okio:2.8.0'
+    implementation 'com.squareup.okio:okio:2.10.0'
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
+    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
+    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
+    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
 }
 ```
 
@@ -634,55 +590,29 @@ OutlookClient(applicationContext, R.raw.auth_config_single_account, object : Ini
 ```
 ### Outlook Login
 ```kotlin
-client.login(this).addOnSuccessListener(
-        object : OnSuccessListener<Account> {
+    client.login(this).addOnSuccessListener {
 
-            override fun onSuccess(data: Account?) {
+   }.addOnFailureListener {
 
-            }
-
-        }).addOnFailureListener(object : OnFailureListener {
-
-    override fun onFailure(e: Exception) {
-
-    }
-
-})
+   }
 ```
 ### Outlook Logout
 ```kotlin
-client.logout()
-        .addOnSuccessListener(object : OnSuccessListener<Boolean> {
+client.logout().addOnSuccessListener {
 
-            override fun onSuccess(data: Boolean?) {
+}.addOnFailureListener {
 
-            }
-
-        }).addOnFailureListener(object : OnFailureListener {
-
-            override fun onFailure(e: Exception) {
-
-            }
-
-        })
+}
 ```
 
 ### Outlook Messages
 Messages returns a Task, which allows you to get a list of scan results for messages found in the Outlook mailbox.
 ```kotlin
-client.messages().addOnSuccessListener(object : OnSuccessListener<List<ScanResults>> {
+ client.messages().addOnSuccessListener {
 
-    override fun onSuccess(data: List<ScanResults>?) {
+}.addOnFailureListener {
 
-    }
-
-}).addOnFailureListener(object : OnFailureListener {
-
-    override fun onFailure(e: Exception) {
-
-    }
-
-})
+}
 ```
 ### Outlook Destroy Client
 ```kotlin
@@ -708,11 +638,11 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-        implementation "androidx.work:work-runtime:2.5.0"
-        implementation "androidx.work:work-runtime-ktx:2.5.0"
+        implementation "androidx.work:work-runtime:2.6.0"
+        implementation "androidx.work:work-runtime-ktx:2.6.0"
 
         //Outlook
-        implementation( "com.microsoft.identity.client:msal:2.0.12" ) {
+        implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
             exclude group: 'com.microsoft.device.display'
         }
 
@@ -751,15 +681,15 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation "androidx.core:core:1.3.1"
 
-        implementation 'com.squareup.okio:okio:2.8.0'
+        implementation 'com.squareup.okio:okio:2.10.0'
 
         implementation 'com.jakewharton.timber:timber:5.0.1'
 
         implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-        implementation "com.google.apis:google-api-services-gmail:v1-rev20210510-1.31.0" exclude module: 'httpclient'
-        implementation "com.google.api-client:google-api-client-android:1.31.5" exclude module: 'httpclient'
-        implementation "com.google.http-client:google-http-client-gson:1.39.2-sp.1" exclude module: 'httpclient'
+        implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
+        implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
+        implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
     }
 ```
 
@@ -783,48 +713,19 @@ To instantiate the `GmailClient` you must provide the constructor 3 non-null and
 #### Code sample for Gmail Client Instantiation: KOTLIN
 ```kotlin
     // Activity Example
-    class MyGmailActivity: Activity() {
+    class GmailActivity: Activity() {
 
         override fun onCreate(savedInstanceState: Bundle?) {
-            val gmailClient = GmailClient(this, 4, "android-oauth-client-id-from-google")
+            val gmailClient = GmailClient(this, 4)
         }
 
     }
 
     // Fragment Example
-    class MyGmailFragment: Fragment() {
+    class GmailFragment: Fragment() {
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            val gmailClient = GmailClient(requireActivity(), 4, "android-oauth-client-id-from-google")
-        }
-
-    }
-```
-
-
-
-#### Code sample for Gmail Client Instantiation: JAVA
-```java
-    //Activity Example
-    public class MyGmailActivity extends Activity() {
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-
-            GmailClient gmailClient = new GmailClient(this, 4, "android-oauth-client-id-from-google");
-
-        }
-
-    }
-
-    // Fragment Example
-    public class MyGmailFragment extends Fragment() {
-
-        @Override
-        public void onViewCreated(View view, Bundle savedInstanceState) {
-
-            GmailClient gmailClient = new GmailClient(this, 4, "android-oauth-client-id-from-google");
-
+            val gmailClient = GmailClient(requireActivity(), 4)
         }
 
     }
@@ -853,29 +754,12 @@ A successful login attemt will return a valid `GoogleSignInAccount`. This sign i
 
 Here is an example of some happy case scenarios when calling the login() function.
 
-```java
-    public void loginUser() {
-        Task<GoogleSignInAccount> task = gmailClient.login();
-
-        task.addOnSuccessListener(
-            new OnSuccessListener<GoogleSignInAccount>() {
-                @Override
-                public void onSuccess(GoogleSignInAccount account) {
-                    // Enable a UI button for reading message now that we have a successful login
-                    readMessagesBtn.setEnabled(true);
-                }
-            }
-        );
-    }
-```
-
 ```kotlin
     fun loginUser() {
         val task: Task<GoogleSignInAccount> = gmailClient.login()
 
         task.addOnSuccessListener {
-             // Enable a UI button for reading message now that we have a successful login
-             readMessagesBtn.enabled = true
+
         }
     }
 ```
@@ -904,64 +788,6 @@ The `onAccountAuthorizationActivityResult` function also returns a task of type 
 
 **EXAMPLE GMAIL LOGIN IMPLEMENTATION**
 
-```java
-    public class MyGmailActivity extends Activity {
-
-        private GmailClient client;
-
-        //...Instantiate GmailClient in one of the lifecycle methods
-
-        // Attempt to login
-        public void login() {
-            Task<GoogleSignInAccount> task = client.login();
-
-            task.addOnSuccessListener( new OnSuccessListener<GoogleSignInAccount>() {
-                @Override
-                public void onSuccess(GoogleSignInAccount account) {
-                    //User has successfully signed in do something
-                    textView.setText("Welcome " + account.getEmail() )
-                }
-            })
-            .addOnFailureListener( new OnFailureListener() {
-                @Override
-                public void onFailure(Exception exception) {
-                    //User authentication has failed
-
-                  if (e instanceOf GmailAuthException) {
-                        //Exception is a Gmail Auth Exception with recourse for the user
-
-                        GmailAuthException authException = (GmailAuthException) e;
-
-                        // authException contains specific intent to launch as well as a bundled request code used by client later in the onActivityResult callback
-                        startActivityForResult(authException.signInIntent, authException.requestCode)
-                    } else {
-                        // User auth failed, no recourse show user message
-                    }
-                }
-              } );
-        }
-
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, Intent data)() {
-            Task<GoogleSignInAccount> authResultTask = gmailClient.onAccountAuthorizationActivityResult(requestCode, resultCode, data)
-
-            authResultTask.addOnSuccessListener( new OnSuccessListener<GoogleSignInAccount>() {
-                @Override
-                public void onSuccess(GoogleSignInAccount account) {
-                    //User has successfully signed in after recourse do something
-                    textView.setText("Welcome " + account.getEmail() )
-                }
-            })
-            .addOnFailureListener( new OnFailureListener() {
-                @Override
-                public void onFailure(Exception exception) {
-                    // User auth failed, no recourse show user message
-                }
-              } );
-        }
-    }
-```
-
 ```kotlin
 class GmailInboxFragment : Fragment() {
 
@@ -972,10 +798,8 @@ class GmailInboxFragment : Fragment() {
     // Attempt to login
     fun login() {
         gmailClient.login()
-                .addOnSuccessListener { signInAccount ->
-                    val email = signInAccount.email
+                .addOnSuccessListener {
 
-                    textView.text = "Welcome $email"
                 }.addOnFailureListener { e ->
                     if (e is GmailAuthException) {
                         startActivityForResult(e.signInIntent, e.requestCode)
@@ -988,10 +812,9 @@ class GmailInboxFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        gmailClient.onAccountAuthorizationActivityResult(requestCode, resultCode, data).addOnSuccessListener { signInAccount ->
-            val email = signInAccount.email
+        gmailClient.onAccountAuthorizationActivityResult(requestCode, resultCode, data)
+           .addOnSuccessListener { signInAccount ->
 
-            textView.text = "Welcome $email"
         }.addOnFailureListener {
             //Set error display
         }
@@ -1014,74 +837,14 @@ In the event, the result returns a `true` value, this indicates that we have an 
 
 **EXAMPLE GMAIL VERIFY AND CREDENTIALS IMPLEMENTATION**
 
-```java
-    private void verifyUser() {
-        gmailClient.verify().addOnSuccessListener( new OnSuccessListener<Boolean>() {
-             @Override
-             public void onSuccess(Boolean account) {
-                //User has signed in before and there is a cached account if true, no user signed in if false
-                Toast.makeText(requireContext(),"ACCOUNT VERIFIED $it",Toast.LENGTH_SHORT).show()
-            }
-        })..addOnFailureListener( new OnFailureListener() {
-             @Override
-             public void onFailure(Exception e) {
-                //Exception has occurred while verifying, logout and try calling the login function
-                Toast.makeText( requireContext(), "ACCOUNT EXCEPTION $it",Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
-    private void credentials() {
-        gmailClient.credentials().addOnSuccessListener( new OnSuccessListener<GoogleSignInAccount>() {
-                @Override
-                public void onSuccess(GoogleSignInAccount account) {
-                    //User has successfully signed in do something
-                    textView.setText("Welcome " + account.getEmail() )
-                }
-            })
-            .addOnFailureListener( new OnFailureListener() {
-                @Override
-                public void onFailure(Exception exception) {
-                    //User authentication has failed
-
-                  if (e instanceOf GmailAuthException) {
-                        //Exception is a Gmail Auth Exception with recourse for the user
-
-                        GmailAuthException authException = (GmailAuthException) e;
-
-                        // authException contains specific intent to launch as well as a bundled request code used by client later in the onActivityResult callback
-                        startActivityForResult(authException.signInIntent, authException.requestCode)
-                    } else {
-                        // User auth failed, no recourse show user message
-                    }
-                }
-              } );
-    }
-
-```
-
 ```kotlin
      private fun verifyUser() {
         gmailClient.verify()
             .addOnSuccessListener {
-                Toast.makeText(requireContext(),"ACCOUNT VERIFIED $it",Toast.LENGTH_SHORT).show()
+
             }.addOnFailureListener {
-                Toast.makeText( requireContext(), "ACCOUNT EXCEPTION $it",Toast.LENGTH_SHORT).show()
+
             }
-    }
-
-    private fun userCredentials() {
-        gmailClient.userCredentials().addOnSuccessListener { signInAccount ->
-                    val email = signInAccount.email
-
-                    textView.text = "Welcome $email"
-                }.addOnFailureListener { e ->
-                    if (e is GmailAuthException) {
-                        startActivityForResult(e.signInIntent, e.requestCode)
-                    } else {
-                        //Set error display
-                    }
-                }
     }
 ```
 
@@ -1096,23 +859,10 @@ Users may log out of gmail via the client's `logout()` function. The logout func
 
 **EXAMPLE GMAIL LOGOUT IMPLEMENTATION**
 
-```java
-    private void logoutUser() {
-        gmailClient.logout().addOnSuccessListener( new OnSuccessListener<Boolean>() {
-             @Override
-             public void onSuccess(Boolean account) {
-                //User has successfully signed out
-            Toast.makeText(context, "onSignedOut()", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-```
-
 ```kotlin
     private fun logoutUser() {
         gmailClient.logout().addOnSuccessListener {
-            //User has successfully signed out
-            Toast.makeText(this@GmailFragment.context, "onSignedOut()", Toast.LENGTH_SHORT).show()
+
         }
     }
 ```
@@ -1135,35 +885,16 @@ Once the client is configured then we are ready to start parsing emails. On the 
 <br />
 
 **EXAMPLE GMAIL READ MESSAGES**
-```java
-    public void readUserMessages() {
-        client.messages(requireActivity()).addOnSuccessListener( new OnSuccessListener<List<ScanResults>>() {
-             @Override
-             public void onSuccess(List<ScanResults> account) {
-                // Successfully fetched messages, do something
-                binding.resultsToDisplay.text = "Scanned Results (${results.size})"
-            }
-        }).addOnFailureListener( new OnFailureListener() {
-             @Override
-             public void onFailure(Exception exception) {
-               //User authentication has failed
-             }
-        });
-    }
-
-```
 
 ```kotlin
 
-    fun readUserMessages() {
+    fun messages() {
       client.messages(requireActivity())
-                .addOnSuccessListener { results ->
-                    // Successfully fetched messages, do something
-                    binding.resultsToDisplay.text = "Scanned Results (${results.size})"
-                }.addOnFailureListener {
-                    // Error fetching/parsing messages
-                    Toast.makeText(requireContext(), it.message,Toast.LENGTH_SHORT).show()
-                }
+       .addOnSuccessListener { results ->
+
+       }.addOnFailureListener {
+
+       }
     }
 
 ```

@@ -20,8 +20,8 @@ In addition to those 2 modules you will need to pull in the following as well.
 
   implementation "androidx.core:core-ktx:1.6.0"
 
-  implementation "androidx.work:work-runtime:2.5.0"
-  implementation "androidx.work:work-runtime-ktx:2.5.0"
+  implementation "androidx.work:work-runtime:2.6.0"
+  implementation "androidx.work:work-runtime-ktx:2.6.0"
 
   implementation "com.squareup.okhttp3:okhttp:4.9.2"
   implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"

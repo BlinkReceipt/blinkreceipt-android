@@ -120,3 +120,7 @@
 
 - stability fixes and improvements
 - okhttp 4.9.2
+
+## 1.2.3
+
+- okio version 2.10.0

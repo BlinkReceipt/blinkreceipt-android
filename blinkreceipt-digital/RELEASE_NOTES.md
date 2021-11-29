@@ -149,3 +149,10 @@ counterpart
 - stability fixes and improvements
 - handle bad email & password for german locales
 - okhttp 4.9.2
+
+## 1.2.1
+- update google api services gmail to v1-rev20210614-1.32.1
+- update google api client android to 1.32.1
+- update google http client gson to 1.40.0
+- return client merchant name
+- **BREAKING CHANGES** multiple email support

@@ -397,3 +397,10 @@ Blink Receipt Recognizer
 - kotlin 1.5.31
 - removed retailer from frame results as its always set to UNKNOWN
 - okhttp 4.9.2
+
+## 1.5.2
+
+- androidx worker manager 2.6.0. performance improvements on older android devices.
+- fix parsing dates for Makro receipts.
+- okio version 2.10.0
+- amazon support for CA
