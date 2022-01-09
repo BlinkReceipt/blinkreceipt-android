@@ -15,7 +15,7 @@ import com.microblink.core.Timberland
 import com.microblink.core.internal.ExecutorSupplier
 import com.microblink.core.internal.IOUtils
 import com.microblink.digital.*
-import com.microblink.digital.internal.find
+import com.microblink.digital.internal.Credentials
 
 class MainActivity : AppCompatActivity() {
 
@@ -129,10 +129,8 @@ class MainActivity : AppCompatActivity() {
     fun onMessagesClick(view: View) {
         binding.results.text = "Searching for messages..."
 
-        client.accounts().addOnSuccessListener { accounts ->
-            accounts.find(
-                tester
-            )?.let { account ->
+        client.accounts().addOnSuccessListener {
+            Credentials.account(it, tester)?.let { account ->
                 client.messages(account).addOnSuccessListener { results ->
                     binding.results.text = "ScanResults Size: ${results.size}"
 
@@ -200,9 +198,7 @@ class MainActivity : AppCompatActivity() {
         binding.results.text = "Logging user out of account..."
 
         client.accounts().addOnSuccessListener {
-            it.find(
-                tester
-            )?.let {
+            Credentials.account(it, tester)?.let {
                 client.logout(
                     tester
                 ).addOnSuccessListener {
@@ -315,9 +311,7 @@ class MainActivity : AppCompatActivity() {
         binding.results.text = "Remote Messages..."
 
         client.accounts().addOnSuccessListener {
-            it.find(
-                tester
-            )?.let { account ->
+            Credentials.account(it, tester)?.let { account ->
                 client.remoteMessages(account).addOnSuccessListener {
                     Toast.makeText(
                         applicationContext,
@@ -350,9 +344,7 @@ class MainActivity : AppCompatActivity() {
         binding.results.text = "Verifying account..."
 
         client.accounts().addOnSuccessListener {
-            it.find(
-                tester
-            )?.let { account ->
+            Credentials.account(it, tester)?.let { account ->
                 client.verify(account).addOnSuccessListener {
                     Toast.makeText(
                         applicationContext,
