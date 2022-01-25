@@ -109,3 +109,7 @@
 ## 1.2.3
 
 - stability fixes and improvements
+
+## 1.2.4
+
+- stability fixes and improvements
