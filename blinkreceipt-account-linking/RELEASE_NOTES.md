@@ -74,3 +74,8 @@
 - **BREAKING CHANGE** verification api changed from task to callback
 - uuid support for debugging purposes
 - stability fixes and improvements
+
+## 1.1.1
+
+- stability fixes and improvements
+- coroutines to 1.6.0

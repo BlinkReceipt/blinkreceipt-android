@@ -47,14 +47,15 @@ buildscript {
             'kotlin'                : '1.5.31',
             'easyPermissions'       : '3.0.0',
             'junit'                 : '4.13.2',
-            'coroutines'            : '1.5.2',
+            'coroutines'            : '1.6.0',
             'timber'                : '5.0.1',
             'ndk'                   : '22.1.717167',
             'zxing'                 : '3.3.0',
             'msal'                  : '2.2.1',
             "javaMail"              : '1.6.7',
+            "gradle"                : '7.0.4',
             'versionMajor'          : 1,
             'versionMinor'          : 5,
-            'versionPatch'          : 2
+            'versionPatch'          : 3
     ]
 }

@@ -35,9 +35,9 @@ In addition to those 2 modules you will need to pull in the following as well.
 
     implementation "com.google.android.gms:play-services-tasks:17.2.1"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
     implementation "androidx.webkit:webkit:1.4.0"
 ```

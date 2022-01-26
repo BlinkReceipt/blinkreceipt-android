@@ -21,8 +21,8 @@ dependencies {
     implementation "androidx.work:work-runtime:2.6.0"
     implementation "androidx.work:work-runtime-ktx:2.6.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
 

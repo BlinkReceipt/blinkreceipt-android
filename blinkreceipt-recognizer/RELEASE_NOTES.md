@@ -405,3 +405,9 @@ Blink Receipt Recognizer
 - okio version 2.10.0
 - amazon support for CA
 - stability fixes and improvements
+
+## 1.5.3
+
+- stability fixes and improvements
+- coroutines to 1.6.0
+- amazon fix 2fa sign in issues

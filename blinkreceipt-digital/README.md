@@ -153,9 +153,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
     implementation "com.google.android.material:material:1.4.0"
 
@@ -243,9 +243,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
     implementation "com.google.android.material:material:1.4.0"
 
@@ -503,9 +503,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
     implementation "com.google.android.material:material:1.4.0"
 
@@ -661,9 +661,9 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
         implementation "androidx.webkit:webkit:1.4.0"
 
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
         implementation "com.google.android.material:material:1.4.0"
 

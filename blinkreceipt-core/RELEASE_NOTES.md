@@ -137,3 +137,9 @@
 - androidx worker manager 2.6.0. performance improvements on older android devices.
 - okio version 2.10.0
 - stability fixes and improvements
+
+## 1.2.4
+
+- stability fixes and improvements
+- coroutines to 1.6.0
+
