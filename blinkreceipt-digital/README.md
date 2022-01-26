@@ -159,7 +159,7 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
@@ -249,7 +249,7 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
@@ -509,7 +509,7 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
@@ -667,7 +667,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 
         implementation "com.google.android.material:material:1.4.0"
 
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
         implementation "androidx.core:core-ktx:1.6.0"
 
         implementation 'com.squareup.okhttp3:okhttp:4.9.2'

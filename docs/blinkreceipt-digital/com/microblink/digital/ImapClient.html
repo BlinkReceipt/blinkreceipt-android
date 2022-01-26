@@ -348,7 +348,7 @@ extends <a href=Client.html>Client</a>
                                         <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>Task&lt;<a href=JobResults.html>JobResults</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(PasswordCredentials)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(String,Provider,String)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> email, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Provider.html>Provider</a> provider, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> eml) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -356,12 +356,28 @@ extends <a href=Client.html>Client</a>
                                         <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>Task&lt;<a href=JobResults.html>JobResults</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(Executor,PasswordCredentials)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(Executor,String,Provider,String)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> email, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Provider.html>Provider</a> provider, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> eml) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code>Task&lt;<a href=JobResults.html>JobResults</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(PasswordCredentials)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i14" class="altColor">
+                                            <td class="colFirst"><code>Task&lt;<a href=JobResults.html>JobResults</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ImapClient.html#remoteMessages(Executor,PasswordCredentials)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ImapClient.html#messages(MessagesCallback)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=MessagesCallback.html>MessagesCallback</a> callback) </code>
@@ -369,7 +385,7 @@ extends <a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i14" class="altColor">
+                                        <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ImapClient.html#messages(Executor,MessagesCallback)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=MessagesCallback.html>MessagesCallback</a> callback) </code>
@@ -377,7 +393,7 @@ extends <a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i15" class="rowColor">
+                                        <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code>Task&lt;<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ScanResults&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ImapClient.html#messages(PasswordCredentials)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
@@ -385,7 +401,7 @@ extends <a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i16" class="altColor">
+                                        <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>Task&lt;<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ScanResults&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ImapClient.html#messages(Executor,PasswordCredentials)>messages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=PasswordCredentials.html>PasswordCredentials</a> credentials) </code>
@@ -393,7 +409,7 @@ extends <a href=Client.html>Client</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i17" class="rowColor">
+                                        <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ImapClient.html#close()>close</a>() </code>
@@ -630,6 +646,36 @@ extends <a href=Client.html>Client</a>
                                     <li class="blockList">
                                         <h4>remoteMessages</h4>
                                         <pre class="methodSignature"> void <a href=ImapClient.html#remoteMessages(Executor,JobResultsCallback)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=JobResultsCallback.html>JobResultsCallback</a> callback)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="remoteMessages(String,Provider,String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>remoteMessages</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() Task&lt;<a href=JobResults.html>JobResults</a>&gt; <a href=ImapClient.html#remoteMessages(String,Provider,String)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> email, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Provider.html>Provider</a> provider, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> eml)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="remoteMessages(Executor,String,Provider,String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>remoteMessages</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() Task&lt;<a href=JobResults.html>JobResults</a>&gt; <a href=ImapClient.html#remoteMessages(Executor,String,Provider,String)>remoteMessages</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html>Executor</a> executor, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> email, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Provider.html>Provider</a> provider, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> eml)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

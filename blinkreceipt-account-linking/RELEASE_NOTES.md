@@ -78,5 +78,4 @@
 ## 1.1.1
 
 - stability fixes and improvements
-- kotlin 1.6.10
 - coroutines to 1.6.0

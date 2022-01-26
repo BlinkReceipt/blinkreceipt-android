@@ -409,6 +409,5 @@ Blink Receipt Recognizer
 ## 1.5.3
 
 - stability fixes and improvements
-- kotlin 1.6.10
 - coroutines to 1.6.0
 - amazon fix 2fa sign in issues

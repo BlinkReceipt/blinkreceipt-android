@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```groovy
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation "androidx.work:work-runtime:2.6.0"
@@ -49,7 +49,7 @@ Project build.gradle
 ```groovy
 buildscript {
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
     }
 }
 ```
