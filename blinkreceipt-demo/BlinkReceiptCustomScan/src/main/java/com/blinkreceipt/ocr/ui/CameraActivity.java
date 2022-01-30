@@ -13,10 +13,10 @@ import com.blinkreceipt.ocr.R;
 import com.microblink.BitmapResult;
 import com.microblink.CameraCaptureListener;
 import com.microblink.CameraRecognizerCallback;
-import com.microblink.CameraScanActivity;
 import com.microblink.Media;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
+import com.microblink.camera.ui.CameraScanActivity;
 import com.microblink.core.ScanResults;
 import com.microblink.core.Timberland;
 
