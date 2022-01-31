@@ -76,3 +76,7 @@
 
 - stability fixes and improvements
 - coroutines to 1.6.0
+
+## 1.1.3
+
+- stability fixes and improvements

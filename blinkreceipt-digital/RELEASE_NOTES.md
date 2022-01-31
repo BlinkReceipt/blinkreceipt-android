@@ -166,3 +166,7 @@ counterpart
 - fix filtering merchant logic in GmailClient
 - clear web view cache by default 
 - add remote messages interface for eml
+
+## 1.2.3
+
+- stability fixes and improvements
