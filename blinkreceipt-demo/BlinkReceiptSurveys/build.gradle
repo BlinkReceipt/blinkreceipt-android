@@ -47,16 +47,12 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md', 'META-INF/ASL2.0', 'META-INF/AL2.0', 'META-INF/LGPL2.1', 'META-INF/*.kotlin_module', 'META-INF/licenses/ASM']
+        }
+    }
 
-  packagingOptions {
-    exclude("META-INF/NOTICE.md")
-    exclude("META-INF/LICENSE.md")
-    exclude("META-INF/ASL2.0")
-    exclude("META-INF/AL2.0")
-    exclude("META-INF/LGPL2.1")
-    exclude("META-INF/*.kotlin_module")
-    exclude("META-INF/licenses/ASM")
-  }
 }
 
 dependencies {

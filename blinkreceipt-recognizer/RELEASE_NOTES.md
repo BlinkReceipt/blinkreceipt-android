@@ -411,3 +411,8 @@ Blink Receipt Recognizer
 - stability fixes and improvements
 - coroutines to 1.6.0
 - amazon fix 2fa sign in issues
+
+## 1.5.4
+
+- stability fixes and improvements
+- Support for data extraction for additional Canadian merchants
