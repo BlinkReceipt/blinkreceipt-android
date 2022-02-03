@@ -15,14 +15,18 @@ import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
-import com.microblink.Media;
-import com.microblink.camera.ui.CameraScanActivity;
+import com.microblink.camera.ui.RecognizerViewActivity;
+import com.microblink.camera.ui.ScanSessionResults;
+import com.microblink.camera.ui.ScanUIConfiguration;
+import com.microblink.camera.ui.ScanUIConfigurationKt;
+import com.microblink.camera.ui.internal.ReceiptDataConfigOption;
 import com.microblink.core.Product;
-import com.microblink.core.ScanResults;
-import com.microblink.core.Timberland;
+import com.microblink.core.internal.CollectionUtils;
 
 import java.util.List;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     private static final int PERMISSIONS_REQUEST_CODE = 1000;
 
-    private static final int CAMERA_SCAN_REQUEST_CODE = 1001;
-
     private static final String[] requestPermissions = {
             Manifest.permission.CAMERA
     };
@@ -47,6 +49,20 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private MainViewModel viewModel;
 
     private MainPresenter presenter;
+
+    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        Intent data = result.getData();
+
+        if (data != null && result.getResultCode() == Activity.RESULT_OK) {
+            ScanSessionResults.ScanResults scanResult = data.getParcelableExtra(RecognizerViewActivity.RECOGNIZER_RESULT_KEY);
+
+            if (scanResult != null) {
+                viewModel.scanItems(new RecognizerResults(scanResult.getScanResults(), scanResult.getMedia()));
+            } else {
+                viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
+            }
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,32 +149,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case PERMISSIONS_REQUEST_CODE:
-                startCameraScanForResult();
-
-                break;
-            case CAMERA_SCAN_REQUEST_CODE:
-                if (resultCode == Activity.RESULT_OK) {
-                    if (data != null) {
-                        ScanResults results = data.getParcelableExtra(CameraScanActivity.DATA_EXTRA);
-
-                        Media media = data.getParcelableExtra(CameraScanActivity.MEDIA_EXTRA);
-
-                        viewModel.scanItems(new RecognizerResults(results, media));
-                    } else {
-                        viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
-                    }
-                }
-
-                break;
-        }
-    }
-
-    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
@@ -178,17 +168,20 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void startCameraScanForResult() {
-        try {
-            final Bundle bundle = new Bundle();
-
-            bundle.putParcelable(CameraScanActivity.SCAN_OPTIONS_EXTRA, viewModel.scanOptions());
-
-            startActivityForResult(new Intent(MainActivity.this, CameraScanActivity.class)
-                            .putExtra(CameraScanActivity.BUNDLE_EXTRA, bundle),
-                    CAMERA_SCAN_REQUEST_CODE);
-        } catch (Exception e) {
-            Timberland.e(e);
-        }
+        launcher.launch(RecognizerViewActivity.Companion.createCameraScanIntent(MainActivity.this,
+                viewModel.scanOptions(), new ScanUIConfiguration(
+                        ScanUIConfigurationKt.getDEFAULT_SCAN_REGION(),
+                        true,
+                        R.style.BlinkRecognizerStyle,
+                        CollectionUtils.newArrayList(
+                                ReceiptDataConfigOption.DATE.INSTANCE,
+                                ReceiptDataConfigOption.TOTAL.INSTANCE,
+                                ReceiptDataConfigOption.MERCHANT.INSTANCE),
+                        true,
+                        3,
+                        3,
+                        3
+                )));
     }
 
 }

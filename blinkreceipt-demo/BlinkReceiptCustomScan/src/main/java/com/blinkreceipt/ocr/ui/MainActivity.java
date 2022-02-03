@@ -16,12 +16,13 @@ import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
 import com.microblink.Media;
-import com.microblink.camera.ui.CameraScanActivity;
 import com.microblink.core.Product;
 import com.microblink.core.ScanResults;
 
 import java.util.List;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,11 +36,13 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
+    public static final String DATA_EXTRA = "dataExtra";
+
+    public static final String MEDIA_EXTRA = "mediaExtra";
+
     public static final String SCAN_OPTIONS_EXTRA = "scanOptionsExtra";
 
     private static final int PERMISSIONS_REQUEST_CODE = 1000;
-
-    private static final int CAMERA_SCAN_REQUEST_CODE = 1001;
 
     private static final String[] requestPermissions = {
             Manifest.permission.CAMERA
@@ -48,6 +51,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private MainViewModel viewModel;
 
     private MainPresenter presenter;
+
+    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        Intent data = result.getData();
+
+        if (data != null && result.getResultCode() == Activity.RESULT_OK) {
+            ScanResults scanResult = data.getParcelableExtra(MainActivity.DATA_EXTRA);
+
+            if (scanResult != null) {
+                Media media = data.getParcelableExtra(MainActivity.MEDIA_EXTRA);
+
+                viewModel.scanItems(new RecognizerResults(scanResult,media));
+            } else {
+                viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
+            }
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,32 +155,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case PERMISSIONS_REQUEST_CODE:
-                startCameraScanForResult();
-
-                break;
-            case CAMERA_SCAN_REQUEST_CODE:
-                if (resultCode == Activity.RESULT_OK) {
-                    if (data != null) {
-                        ScanResults results = data.getParcelableExtra(CameraScanActivity.DATA_EXTRA);
-
-                        Media media = data.getParcelableExtra(CameraScanActivity.MEDIA_EXTRA);
-
-                        viewModel.scanItems(new RecognizerResults(results, media));
-                    } else {
-                        viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
-                    }
-                }
-
-                break;
-        }
-    }
-
-    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
@@ -181,8 +174,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void startCameraScanForResult() {
-        startActivityForResult(new Intent(this, CameraActivity.class)
-                .putExtra(SCAN_OPTIONS_EXTRA, viewModel.scanOptions()), CAMERA_SCAN_REQUEST_CODE);
+        launcher.launch(new Intent(this, CameraActivity.class)
+                .putExtra(SCAN_OPTIONS_EXTRA, viewModel.scanOptions()));
     }
 
 }

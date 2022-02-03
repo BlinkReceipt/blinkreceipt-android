@@ -16,7 +16,6 @@ import com.microblink.CameraRecognizerCallback;
 import com.microblink.Media;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
-import com.microblink.camera.ui.CameraScanActivity;
 import com.microblink.core.ScanResults;
 import com.microblink.core.Timberland;
 
@@ -171,8 +170,8 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         finishScan.setEnabled(true);
 
         setResult(Activity.RESULT_OK, new Intent()
-                .putExtra(CameraScanActivity.DATA_EXTRA, results)
-                .putExtra(CameraScanActivity.MEDIA_EXTRA, media));
+                .putExtra(MainActivity.DATA_EXTRA, results)
+                .putExtra(MainActivity.MEDIA_EXTRA, media));
 
         finish();
     }
@@ -186,7 +185,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        Timberland.d("results: " + result.toString());
+        Timberland.d("results: " + result);
     }
 
     @Override
