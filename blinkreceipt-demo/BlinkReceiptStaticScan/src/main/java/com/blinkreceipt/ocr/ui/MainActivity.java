@@ -1,8 +1,6 @@
 package com.blinkreceipt.ocr.ui;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,18 +13,15 @@ import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
-import com.microblink.camera.ui.RecognizerViewActivity;
-import com.microblink.camera.ui.ScanSessionResults;
-import com.microblink.camera.ui.ScanUIConfiguration;
-import com.microblink.camera.ui.ScanUIConfigurationKt;
-import com.microblink.camera.ui.internal.ReceiptDataConfigOption;
+import com.microblink.camera.ui.CameraCharacteristics;
+import com.microblink.camera.ui.CameraConfigurations;
+import com.microblink.camera.ui.CameraResultsContract;
+import com.microblink.camera.ui.CameraScanResults;
 import com.microblink.core.Product;
-import com.microblink.core.internal.CollectionUtils;
 
 import java.util.List;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,17 +45,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     private MainPresenter presenter;
 
-    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-        Intent data = result.getData();
+    private final ActivityResultLauncher<CameraConfigurations> launcher = registerForActivityResult(new CameraResultsContract(), result -> {
+        if (result instanceof CameraScanResults.CameraResults) {
+            CameraScanResults.CameraResults results = ((CameraScanResults.CameraResults) result);
 
-        if (data != null && result.getResultCode() == Activity.RESULT_OK) {
-            ScanSessionResults.ScanResults scanResult = data.getParcelableExtra(RecognizerViewActivity.RECOGNIZER_RESULT_KEY);
+            viewModel.scanItems(new RecognizerResults( results.scanResults(), results.media()));
 
-            if (scanResult != null) {
-                viewModel.scanItems(new RecognizerResults(scanResult.getScanResults(), scanResult.getMedia()));
-            } else {
-                viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
-            }
+        } else if (result instanceof CameraScanResults.CameraException) {
+            viewModel.scanItems(new RecognizerResults(((CameraScanResults.CameraException)result).exception()));
+        } else {
+            Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
         }
     });
 
@@ -168,20 +162,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void startCameraScanForResult() {
-        launcher.launch(RecognizerViewActivity.Companion.createCameraScanIntent(MainActivity.this,
-                viewModel.scanOptions(), new ScanUIConfiguration(
-                        ScanUIConfigurationKt.getDEFAULT_SCAN_REGION(),
-                        true,
-                        R.style.BlinkRecognizerStyle,
-                        CollectionUtils.newArrayList(
-                                ReceiptDataConfigOption.DATE.INSTANCE,
-                                ReceiptDataConfigOption.TOTAL.INSTANCE,
-                                ReceiptDataConfigOption.MERCHANT.INSTANCE),
-                        true,
-                        3,
-                        3,
-                        3
-                )));
+        launcher.launch(new CameraConfigurations(viewModel.scanOptions(),
+                new CameraCharacteristics.Builder()
+                .enableCameraPermissionHandling(true)
+                .style(R.style.BlinkRecognizerStyle)
+                .build()));
+
     }
 
 }
