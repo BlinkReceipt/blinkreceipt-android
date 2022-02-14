@@ -30,7 +30,7 @@ buildscript {
     ext.versions = [
             'minSdk'                : 21,
             'compileSdk'            : 31,
-            'targetSdk'             : 31,
+            'targetSdk'             : 30,
             'buildTools'            : '32.0.0',
             'material'              : '1.4.0',
             'okhttp3'               : '4.9.2',
