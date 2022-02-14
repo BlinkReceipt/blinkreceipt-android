@@ -1,0 +1,17 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.camera.ui.internal/CameraScanContract.Presenter///PointingToDeclaration/com/microblink/camera/ui/internal/CameraScanContract.Presenter.html
+$dokka.location:com.microblink.camera.ui.internal/CameraScanContract.View///PointingToDeclaration/com/microblink/camera/ui/internal/CameraScanContract.View.html
+$dokka.location:com.microblink.camera.ui/CameraCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraCharacteristics.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraCharacteristics.Companion///PointingToDeclaration/com/microblink/camera/ui/CameraCharacteristics.Companion.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionFragment.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionFragment.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionFragment.Companion///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionFragment.Companion.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionOptions.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionOptions.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionResults.Cancelled///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionResults.Cancelled.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionResults.Exception///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionResults.Exception.html
+$dokka.location:com.microblink.camera.ui/CameraRecognitionResults.Success///PointingToDeclaration/com/microblink/camera/ui/CameraRecognitionResults.Success.html
+$dokka.location:com.microblink.camera.ui/ScanCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/ScanCharacteristics.Builder.html
+$dokka.location:com.microblink.camera.ui/TooltipCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/TooltipCharacteristics.Builder.html
+com.microblink.camera.ui
+com.microblink.camera.ui.internal
+
