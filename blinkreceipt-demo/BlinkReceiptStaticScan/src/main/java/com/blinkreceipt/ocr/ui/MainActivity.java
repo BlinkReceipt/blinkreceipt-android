@@ -14,9 +14,11 @@ import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
 import com.microblink.camera.ui.CameraCharacteristics;
-import com.microblink.camera.ui.CameraConfigurations;
-import com.microblink.camera.ui.CameraResultsContract;
-import com.microblink.camera.ui.CameraScanResults;
+import com.microblink.camera.ui.CameraRecognitionContract;
+import com.microblink.camera.ui.CameraRecognitionOptions;
+import com.microblink.camera.ui.CameraRecognitionResults;
+import com.microblink.camera.ui.ScanCharacteristics;
+import com.microblink.camera.ui.TooltipCharacteristics;
 import com.microblink.core.Product;
 
 import java.util.List;
@@ -45,14 +47,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     private MainPresenter presenter;
 
-    private final ActivityResultLauncher<CameraConfigurations> launcher = registerForActivityResult(new CameraResultsContract(), result -> {
-        if (result instanceof CameraScanResults.CameraResults) {
-            CameraScanResults.CameraResults results = ((CameraScanResults.CameraResults) result);
+    private final ActivityResultLauncher<CameraRecognitionOptions> launcher = registerForActivityResult(new CameraRecognitionContract(), result -> {
+        if (result instanceof CameraRecognitionResults.Success) {
+            CameraRecognitionResults.Success results = ((CameraRecognitionResults.Success) result);
 
             viewModel.scanItems(new RecognizerResults( results.scanResults(), results.media()));
-
-        } else if (result instanceof CameraScanResults.CameraException) {
-            viewModel.scanItems(new RecognizerResults(((CameraScanResults.CameraException)result).exception()));
+        } else if (result instanceof CameraRecognitionResults.Exception) {
+            viewModel.scanItems(new RecognizerResults(((CameraRecognitionResults.Exception)result).exception()));
         } else {
             Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
         }
@@ -162,12 +163,17 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void startCameraScanForResult() {
-        launcher.launch(new CameraConfigurations(viewModel.scanOptions(),
-                new CameraCharacteristics.Builder()
-                .enableCameraPermissionHandling(true)
+        launcher.launch(new CameraRecognitionOptions(viewModel.scanOptions(), new CameraCharacteristics.Builder()
+                .cameraPermission(true)
                 .style(R.style.BlinkRecognizerStyle)
+                .scanCharacteristics(
+                        new ScanCharacteristics.Builder()
+                                .build())
+                .tooltipCharacteristics(
+                        new TooltipCharacteristics.Builder()
+                                .displayTooltips(true)
+                                .build())
                 .build()));
-
     }
 
 }
