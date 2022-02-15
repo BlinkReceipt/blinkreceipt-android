@@ -1,6 +1,5 @@
 package com.blinkreceipt.ocr.ui;
 
-import android.Manifest;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,17 +13,15 @@ import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
 import com.microblink.camera.ui.CameraCharacteristics;
-import com.microblink.camera.ui.CameraRecognitionContract;
-import com.microblink.camera.ui.CameraRecognitionOptions;
-import com.microblink.camera.ui.CameraRecognitionResults;
-import com.microblink.camera.ui.ScanCharacteristics;
+import com.microblink.camera.ui.CameraRecognizerContract;
+import com.microblink.camera.ui.CameraRecognizerOptions;
+import com.microblink.camera.ui.CameraRecognizerResults;
 import com.microblink.camera.ui.TooltipCharacteristics;
 import com.microblink.core.Product;
 
 import java.util.List;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -32,28 +29,19 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import pub.devrel.easypermissions.AppSettingsDialog;
-import pub.devrel.easypermissions.EasyPermissions;
-
-public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
-
-    private static final int PERMISSIONS_REQUEST_CODE = 1000;
-
-    private static final String[] requestPermissions = {
-            Manifest.permission.CAMERA
-    };
+public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
 
     private MainPresenter presenter;
 
-    private final ActivityResultLauncher<CameraRecognitionOptions> launcher = registerForActivityResult(new CameraRecognitionContract(), result -> {
-        if (result instanceof CameraRecognitionResults.Success) {
-            CameraRecognitionResults.Success results = ((CameraRecognitionResults.Success) result);
+    private final ActivityResultLauncher<CameraRecognizerOptions> launcher = registerForActivityResult(new CameraRecognizerContract(), result -> {
+        if (result instanceof CameraRecognizerResults.Success) {
+            CameraRecognizerResults.Success results = ((CameraRecognizerResults.Success) result);
 
-            viewModel.scanItems(new RecognizerResults( results.scanResults(), results.media()));
-        } else if (result instanceof CameraRecognitionResults.Exception) {
-            viewModel.scanItems(new RecognizerResults(((CameraRecognitionResults.Exception)result).exception()));
+            viewModel.scanItems(new RecognizerResults(results.scanResults(), results.media()));
+        } else if (result instanceof CameraRecognizerResults.Exception) {
+            viewModel.scanItems(new RecognizerResults(((CameraRecognizerResults.Exception) result).exception()));
         } else {
             Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
         }
@@ -130,50 +118,21 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         }
 
         if (item.getItemId() == R.id.camera) {
-            if (EasyPermissions.hasPermissions(this, requestPermissions)) {
-                startCameraScanForResult();
-            } else {
-                EasyPermissions.requestPermissions(this, getString(R.string.permissions_rationale),
-                        PERMISSIONS_REQUEST_CODE, requestPermissions);
-            }
+            launcher.launch(new CameraRecognizerOptions.Builder()
+                    .options(viewModel.scanOptions())
+                    .characteristics(new CameraCharacteristics.Builder()
+                            .cameraPermission(true)
+                            .tooltipCharacteristics(
+                                    new TooltipCharacteristics.Builder()
+                                            .displayTooltips(true)
+                                            .build())
+                            .build())
+                    .build());
 
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
-
-    @Override
-    public void onPermissionsGranted(int requestCode, @NonNull List<String> permissions) {
-        startCameraScanForResult();
-    }
-
-    @Override
-    public void onPermissionsDenied(int requestCode, @NonNull List<String> permissions) {
-        if (EasyPermissions.somePermissionPermanentlyDenied(this, permissions)) {
-            new AppSettingsDialog.Builder(this).build().show();
-        }
-    }
-
-    private void startCameraScanForResult() {
-        launcher.launch(new CameraRecognitionOptions(viewModel.scanOptions(), new CameraCharacteristics.Builder()
-                .cameraPermission(true)
-                .style(R.style.BlinkRecognizerStyle)
-                .scanCharacteristics(
-                        new ScanCharacteristics.Builder()
-                                .build())
-                .tooltipCharacteristics(
-                        new TooltipCharacteristics.Builder()
-                                .displayTooltips(true)
-                                .build())
-                .build()));
     }
 
 }

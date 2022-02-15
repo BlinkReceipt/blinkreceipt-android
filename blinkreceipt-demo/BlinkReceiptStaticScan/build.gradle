@@ -96,8 +96,6 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 
-    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
-
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation project(':LibBlinkReceiptRecognizer')
