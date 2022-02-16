@@ -16,6 +16,7 @@ import com.microblink.camera.ui.CameraCharacteristics;
 import com.microblink.camera.ui.CameraRecognizerContract;
 import com.microblink.camera.ui.CameraRecognizerOptions;
 import com.microblink.camera.ui.CameraRecognizerResults;
+import com.microblink.camera.ui.ScanCharacteristics;
 import com.microblink.camera.ui.TooltipCharacteristics;
 import com.microblink.core.Product;
 
@@ -122,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
                     .options(viewModel.scanOptions())
                     .characteristics(new CameraCharacteristics.Builder()
                             .cameraPermission(true)
+                            .scanCharacteristics( new ScanCharacteristics.Builder()
+                                    .total(true)
+                                    .merchant(true)
+                                    .date(true)
+                                    .build())
                             .tooltipCharacteristics(
                                     new TooltipCharacteristics.Builder()
                                             .displayTooltips(true)
