@@ -416,3 +416,12 @@ Blink Receipt Recognizer
 
 - stability fixes and improvements
 - Support for data extraction for additional Canadian merchants
+
+## 1.5.5
+
+- stability fixes and improvements
+- androidx appcompat updated to 1.3.1
+- kotlin 1.6.10
+- okio version 3.0.0
+- gms tasks updated to 18.0.1
+- ***BREAKING CHANGES*** move Amazon to the account linking sdk.
