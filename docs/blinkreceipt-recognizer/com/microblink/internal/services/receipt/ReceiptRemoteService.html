@@ -240,7 +240,7 @@ public interface <span class="typeNameLabel"><a href=ReceiptRemoteService.html>R
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>abstract Call&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ReceiptRemoteService.html#eReceipt(Map)>eReceipt</a>(@FieldMap() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; data) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ReceiptRemoteService.html#summary(Map,List)>summary</a>(@FieldMap() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; data, @Field(value = "promotion_ids[]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; promotions) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -248,20 +248,12 @@ public interface <span class="typeNameLabel"><a href=ReceiptRemoteService.html>R
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>abstract Call&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ReceiptRemoteService.html#summary(Map,List)>summary</a>(@FieldMap() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; data, @Field(value = "promotion_ids[]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; promotions) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>abstract Call&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;</code>
-                                            </td>
                                             <th class="colSecond" scope="row"><code><a href=ReceiptRemoteService.html#images(String,MultipartBody.Part,RequestBody,RequestBody,RequestBody,RequestBody,RequestBody,RequestBody,RequestBody)>images</a>(@Url() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> url, @Part() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() MultipartBody.Part image, @Part(value = "receipt_images[index]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody index, @Part(value = "receipt_images[confidence]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody confidence, @Part(value = "receipt_images[blink_receipt_id]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody blinkReceiptId, @Part(value = "receipt_images[blur_score]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody blurScore, @Part(value = "receipt_images[is_blurry]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody isBlurry, @Part(value = "receipt_images[not_receipt]") @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() RequestBody isNotReceipt, @Part(value = "receipt_images[is_screen]") RequestBody isScreen) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>abstract Call&lt;<a href=../duplicates/DuplicateSearchResponse.html>DuplicateSearchResponse</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ReceiptRemoteService.html#duplicateSearch(Map)>duplicateSearch</a>(@FieldMap() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; data) </code>
@@ -312,21 +304,6 @@ public interface <span class="typeNameLabel"><a href=ReceiptRemoteService.html>R
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
-                                
-                                <a id="eReceipt(Map)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>eReceipt</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>()@POST(value = "api/e_receipts")@FormUrlEncoded() abstract Call&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; <a href=ReceiptRemoteService.html#eReceipt(Map)>eReceipt</a>(@FieldMap() @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; data)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
                                 
                                 <a id="summary(Map,List)">
                                     <!--   -->
