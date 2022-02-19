@@ -131,3 +131,8 @@
 ## 1.2.5
 
 - stability fixes and improvements
+
+## 1.2.6
+
+- stability fixes and improvements
+- okio version 3.0.0

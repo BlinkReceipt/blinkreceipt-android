@@ -64,6 +64,8 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
+
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation "androidx.recyclerview:recyclerview:${androidx.recyclerview}"
@@ -85,15 +87,21 @@ dependencies {
     implementation "androidx.work:work-runtime:${androidx.worker}"
     implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
 
-    implementation "com.jakewharton.timber:timber:${versions.timber}"
+    implementation "androidx.core:core-ktx:${androidx.core}"
 
-    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
+    implementation "androidx.fragment:fragment:${androidx.fragment}"
+    implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${androidx.swiperefreshlayout}"
+
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation project(':LibBlinkReceiptRecognizer')
     implementation project(':LibBlinkReceiptCore')
     implementation project(':LibBlinkReceiptCamera')
+    implementation project(':LibBlinkReceiptCameraUi')
 
     annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

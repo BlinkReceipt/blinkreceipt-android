@@ -1,8 +1,5 @@
 package com.blinkreceipt.ocr.ui;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,15 +12,17 @@ import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.BlinkReceiptSdk;
-import com.microblink.CameraScanActivity;
-import com.microblink.Media;
+import com.microblink.camera.ui.CameraCharacteristics;
+import com.microblink.camera.ui.CameraRecognizerContract;
+import com.microblink.camera.ui.CameraRecognizerOptions;
+import com.microblink.camera.ui.CameraRecognizerResults;
+import com.microblink.camera.ui.ScanCharacteristics;
+import com.microblink.camera.ui.TooltipCharacteristics;
 import com.microblink.core.Product;
-import com.microblink.core.ScanResults;
-import com.microblink.core.Timberland;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -31,22 +30,23 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import pub.devrel.easypermissions.AppSettingsDialog;
-import pub.devrel.easypermissions.EasyPermissions;
-
-public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
-
-    private static final int PERMISSIONS_REQUEST_CODE = 1000;
-
-    private static final int CAMERA_SCAN_REQUEST_CODE = 1001;
-
-    private static final String[] requestPermissions = {
-            Manifest.permission.CAMERA
-    };
+public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
 
     private MainPresenter presenter;
+
+    private final ActivityResultLauncher<CameraRecognizerOptions> launcher = registerForActivityResult(new CameraRecognizerContract(), result -> {
+        if (result instanceof CameraRecognizerResults.Success) {
+            CameraRecognizerResults.Success results = ((CameraRecognizerResults.Success) result);
+
+            viewModel.scanItems(new RecognizerResults(results.scanResults(), results.media()));
+        } else if (result instanceof CameraRecognizerResults.Exception) {
+            viewModel.scanItems(new RecognizerResults(((CameraRecognizerResults.Exception) result).exception()));
+        } else {
+            Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,76 +119,26 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         }
 
         if (item.getItemId() == R.id.camera) {
-            if (EasyPermissions.hasPermissions(this, requestPermissions)) {
-                startCameraScanForResult();
-            } else {
-                EasyPermissions.requestPermissions(this, getString(R.string.permissions_rationale),
-                        PERMISSIONS_REQUEST_CODE, requestPermissions);
-            }
+            launcher.launch(new CameraRecognizerOptions.Builder()
+                    .options(viewModel.scanOptions())
+                    .characteristics(new CameraCharacteristics.Builder()
+                            .cameraPermission(true)
+                            .scanCharacteristics( new ScanCharacteristics.Builder()
+                                    .total(true)
+                                    .merchant(true)
+                                    .date(true)
+                                    .build())
+                            .tooltipCharacteristics(
+                                    new TooltipCharacteristics.Builder()
+                                            .displayTooltips(true)
+                                            .build())
+                            .build())
+                    .build());
 
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case PERMISSIONS_REQUEST_CODE:
-                startCameraScanForResult();
-
-                break;
-            case CAMERA_SCAN_REQUEST_CODE:
-                if (resultCode == Activity.RESULT_OK) {
-                    if (data != null) {
-                        ScanResults results = data.getParcelableExtra(CameraScanActivity.DATA_EXTRA);
-
-                        Media media = data.getParcelableExtra(CameraScanActivity.MEDIA_EXTRA);
-
-                        viewModel.scanItems(new RecognizerResults(results, media));
-                    } else {
-                        viewModel.scanItems(new RecognizerResults(new Exception(getString(R.string.scan_results_error))));
-                    }
-                }
-
-                break;
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
-
-    @Override
-    public void onPermissionsGranted(int requestCode, @NonNull List<String> permissions) {
-        startCameraScanForResult();
-    }
-
-    @Override
-    public void onPermissionsDenied(int requestCode, @NonNull List<String> permissions) {
-        if (EasyPermissions.somePermissionPermanentlyDenied(this, permissions)) {
-            new AppSettingsDialog.Builder(this).build().show();
-        }
-    }
-
-    private void startCameraScanForResult() {
-        try {
-            final Bundle bundle = new Bundle();
-
-            bundle.putParcelable(CameraScanActivity.SCAN_OPTIONS_EXTRA, viewModel.scanOptions());
-
-            startActivityForResult(new Intent(MainActivity.this, CameraScanActivity.class)
-                            .putExtra(CameraScanActivity.BUNDLE_EXTRA, bundle),
-                    CAMERA_SCAN_REQUEST_CODE);
-        } catch (Exception e) {
-            Timberland.e(e);
-        }
     }
 
 }

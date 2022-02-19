@@ -99,6 +99,7 @@ dependencies {
     implementation project(':LibBlinkReceiptRecognizer')
     implementation project(':LibBlinkReceiptCore')
     implementation project(':LibBlinkReceiptCamera')
+    implementation project(':LibBlinkReceiptCameraUi')
 
     annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

@@ -146,4 +146,11 @@
 ## 1.2.5
 
 - stability fixes and improvements
+- gms tasks updated to 18.0.1
 
+## 1.2.6
+
+- stability fixes and improvements
+- okio version 3.0.0
+- kotlin 1.6.10
+- androidx appcompat updated to 1.3.1

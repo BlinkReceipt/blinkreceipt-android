@@ -1,14 +1,24 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.CSVMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.CSVMerchant.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.Companion///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.Companion.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.LogoMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.LogoMerchant.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.LongTailMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.LongTailMerchant.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.MatchTypeWinner///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.MatchTypeWinner.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.PhoneMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.PhoneMerchant.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.ProductLookupMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.ProductLookupMerchant.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.RawTextBasedLookup///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.RawTextBasedLookup.html
+$dokka.location:com.microblink.internal.merchant.dto/Merchant.TaxIdMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.TaxIdMerchant.html
+$dokka.location:com.microblink.internal.merchant.resolvers/ProductLookupMerchantResolver.Companion///PointingToDeclaration/com/microblink/internal/merchant/resolvers/ProductLookupMerchantResolver.Companion.html
 $dokka.location:com.microblink.internal.merchant/MerchantDetector.DetectorStateObserver///PointingToDeclaration/com/microblink/internal/merchant/MerchantDetector.DetectorStateObserver.html
+$dokka.location:com.microblink.internal.merchant/MerchantManagerImpl.Companion///PointingToDeclaration/com/microblink/internal/merchant/MerchantManagerImpl.Companion.html
 $dokka.location:com.microblink.internal.merchant/MerchantResult.Source///PointingToDeclaration/com/microblink/internal/merchant/MerchantResult.Source.html
+$dokka.location:com.microblink.internal.merchant/WinningMerchantResolver.Companion///PointingToDeclaration/com/microblink/internal/merchant/WinningMerchantResolver.Companion.html
 $dokka.location:com.microblink.internal.services.duplicates/SearchParameters.Builder///PointingToDeclaration/com/microblink/internal/services/duplicates/SearchParameters.Builder.html
 $dokka.location:com.microblink.internal.services.google/GooglePlacesRepository.Listener///PointingToDeclaration/com/microblink/internal/services/google/GooglePlacesRepository.Listener.html
 $dokka.location:com.microblink.internal.services.lookup/StoreLookupRepository.Listener///PointingToDeclaration/com/microblink/internal/services/lookup/StoreLookupRepository.Listener.html
 $dokka.location:com.microblink.internal.services.merchants/MerchantLookupProcess.Listener///PointingToDeclaration/com/microblink/internal/services/merchants/MerchantLookupProcess.Listener.html
 $dokka.location:com.microblink.internal.services.store/StoreLookUpService.Listener///PointingToDeclaration/com/microblink/internal/services/store/StoreLookUpService.Listener.html
-$dokka.location:com.microblink.internal.view.presenter/CameraScanContract.Presenter///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.Presenter.html
-$dokka.location:com.microblink.internal.view.presenter/CameraScanContract.View///PointingToDeclaration/com/microblink/internal/view/presenter/CameraScanContract.View.html
 $dokka.location:com.microblink.internal/StoreDeleteWorker.Companion///PointingToDeclaration/com/microblink/internal/StoreDeleteWorker.Companion.html
 $dokka.location:com.microblink/EdgeDetectionConfiguration.Builder///PointingToDeclaration/com/microblink/EdgeDetectionConfiguration.Builder.html
 $dokka.location:com.microblink/FrameCharacteristics.Builder///PointingToDeclaration/com/microblink/FrameCharacteristics.Builder.html
@@ -18,15 +28,18 @@ $dokka.location:com.microblink/ProductDetector.Listener///PointingToDeclaration/
 $dokka.location:com.microblink/ScanOptions.Builder///PointingToDeclaration/com/microblink/ScanOptions.Builder.html
 com.microblink
 com.microblink.internal
-com.microblink.internal.amazon
 com.microblink.internal.candidate
 com.microblink.internal.country
 com.microblink.internal.logo
 com.microblink.internal.merchant
+com.microblink.internal.merchant.compat
+com.microblink.internal.merchant.dto
+com.microblink.internal.merchant.mapper
+com.microblink.internal.merchant.resolvers
+com.microblink.internal.merchant.utils
 com.microblink.internal.phone
 com.microblink.internal.services
 com.microblink.internal.services.abn
-com.microblink.internal.services.amazon
 com.microblink.internal.services.duplicates
 com.microblink.internal.services.google
 com.microblink.internal.services.io
@@ -41,6 +54,4 @@ com.microblink.internal.services.store
 com.microblink.internal.services.summary
 com.microblink.internal.services.walmart
 com.microblink.internal.services.yelp
-com.microblink.internal.view
-com.microblink.internal.view.presenter
 

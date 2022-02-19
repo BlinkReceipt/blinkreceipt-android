@@ -133,3 +133,10 @@
 ## 1.2.5
 
 - stability fixes and improvements
+
+## 1.2.6
+
+- stability fixes and improvements
+- androidx appcompat updated to 1.3.1
+- okio version 3.0.0
+- gms tasks updated to 18.0.1

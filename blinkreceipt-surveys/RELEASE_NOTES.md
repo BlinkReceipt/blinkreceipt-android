@@ -80,3 +80,12 @@
 ## 1.1.3
 
 - stability fixes and improvements
+
+## 1.1.4
+
+- stability fixes and improvements
+- androidx appcompat updated to 1.3.1
+- androidx fragment updated to 1.3.6
+- kotlin 1.6.10
+- okio version 3.0.0
+- gms tasks updated to 18.0.1

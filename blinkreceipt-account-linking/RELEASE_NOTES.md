@@ -83,3 +83,11 @@
 ## 1.1.2
 
 - stability fixes and improvements
+
+## 1.1.3
+
+- stability fixes and improvements
+- kotlin 1.6.10
+- moved amazon manager from recognizer sdk to account linking framework
+- amazon initialized now throws an exception if initialization fails
+- verify returns AccountLinkingException instead of Throwable

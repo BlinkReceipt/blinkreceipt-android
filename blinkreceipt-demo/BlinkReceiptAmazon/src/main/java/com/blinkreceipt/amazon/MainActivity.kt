@@ -7,12 +7,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.blinkreceipt.amazon.databinding.ActivityMainBinding
-import com.microblink.AmazonCallback
-import com.microblink.AmazonCredentials
-import com.microblink.AmazonException
-import com.microblink.AmazonManager
 import com.microblink.core.ScanResults
 import com.microblink.core.Timberland
+import com.microblink.linking.AmazonCallback
+import com.microblink.linking.AmazonCredentials
+import com.microblink.linking.AmazonException
+import com.microblink.linking.AmazonManager
 
 class MainActivity : AppCompatActivity() {
 

@@ -84,9 +84,8 @@ dependencies {
 
     implementation "com.google.android.material:material:${versions.material}"
 
-    implementation project(':LibBlinkReceiptRecognizer')
+    implementation project('::LibBlinkReceiptAccountLinking')
     implementation project(':LibBlinkReceiptCore')
-    implementation project(':LibBlinkReceiptCamera')
 
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 

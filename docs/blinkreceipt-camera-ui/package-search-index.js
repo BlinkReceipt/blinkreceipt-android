@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"com.microblink.camera.ui","url":"com/microblink/camera/ui/package-summary.html"}, {"l":"com.microblink.camera.ui.internal","url":"com/microblink/camera/ui/internal/package-summary.html"}, {"l":"All packages","url":"index.html"}]

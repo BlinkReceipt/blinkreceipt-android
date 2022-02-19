@@ -164,9 +164,15 @@ counterpart
 - stability fixes and improvements
 - coroutines to 1.6.0
 - fix filtering merchant logic in GmailClient
-- clear web view cache by default 
+- clear web view cache by default
 - add remote messages interface for eml
 
 ## 1.2.3
 
 - stability fixes and improvements
+
+## 1.2.4
+
+- stability fixes and improvements
+- androidx appcompat updated to 1.3.1
+- gms tasks updated to 18.0.1

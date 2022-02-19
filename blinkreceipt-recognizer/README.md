@@ -33,9 +33,9 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
 
-     implementation 'androidx.appcompat:appcompat:1.2.0'
+     implementation 'androidx.appcompat:appcompat:1.3.1'
 
      implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
@@ -43,9 +43,9 @@ dependencies {
      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
      implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-     implementation 'com.squareup.okio:okio:2.10.0'
+     implementation 'com.squareup.okio:okio:3.0.0'
 
-     implementation "com.google.android.gms:play-services-tasks:17.2.1"
+     implementation "com.google.android.gms:play-services-tasks:18.0.1"
      implementation "com.google.android.gms:play-services-auth:19.2.0"
 
      implementation 'com.jakewharton.timber:timber:5.0.1'
