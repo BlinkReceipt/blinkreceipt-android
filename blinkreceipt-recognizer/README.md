@@ -39,7 +39,7 @@ dependencies {
 
      implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
      implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
@@ -448,6 +448,7 @@ _______
 
 If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the sdk will make a best guess as to what the orientation is based on the Bitmap properties.
 
+**NOTE The recognizer client is not a threadsafe mechanism. Though the function `recognize` is not blocking only ONE scan session can be ran at a time. Attempting to call `recognize` multiple times while previous scans have not finished could potentially lead to unexpected behavior including fatal crashes**
 
 ## <a name=intelligence></a>Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.

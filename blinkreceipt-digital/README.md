@@ -162,7 +162,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -252,7 +252,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -346,6 +346,8 @@ ImapClient( applicationContext, object : InitializeCallback {
 
 ## Provider Setup
 After collecting the users credentials initiate the provider setup workflow, which will walk the user through linking their account to the provider (Yahoo, AOL, Gmail).
+
+**Note: The `ProviderSetupDialogFragment` only supports the following providers Yahoo, AOL, and Gmail. Attempting to set an unsupported IMAP provider will result in an IllegalStateException.**
 
 ```kotlin
      ProviderSetupDialogFragment.newInstance(
@@ -512,7 +514,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -670,7 +672,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
         implementation "androidx.core:core-ktx:1.6.0"
 
-        implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+        implementation 'com.squareup.okhttp3:okhttp:4.9.3'
         implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
         implementation 'com.squareup.retrofit2:retrofit:2.9.0'

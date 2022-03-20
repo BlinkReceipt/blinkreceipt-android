@@ -91,3 +91,15 @@
 - moved amazon manager from recognizer sdk to account linking framework
 - amazon initialized now throws an exception if initialization fails
 - verify returns AccountLinkingException instead of Throwable
+
+## 1.1.4
+
+- stability fixes and improvements
+- amazon beta support for US,UK,CA
+- add support for uber eats
+- add support for gap
+- add support for sprouts
+- add support for ulta
+- added support for last orders only
+- return shipments for online and products for in store/pickup
+- okhttp 4.9.3

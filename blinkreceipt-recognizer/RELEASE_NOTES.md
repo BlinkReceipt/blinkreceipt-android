@@ -425,3 +425,8 @@ Blink Receipt Recognizer
 - okio version 3.0.0
 - gms tasks updated to 18.0.1
 - ***BREAKING CHANGES*** move Amazon to the account linking sdk.
+
+## 1.5.6
+
+- stability fixes and improvements
+- okhttp 4.9.3

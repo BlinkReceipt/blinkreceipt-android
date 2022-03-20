@@ -154,3 +154,8 @@
 - okio version 3.0.0
 - kotlin 1.6.10
 - androidx appcompat updated to 1.3.1
+
+## 1.2.7
+
+- stability fixes and improvements
+- okhttp 4.9.3
