@@ -296,15 +296,15 @@ public interface <span class="typeNameLabel"><a href=MerchantManager.html>Mercha
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#cancel()>cancel</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#addListener(Function1)>addListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i8" class="altColor">
-                                            <td class="colFirst"><code>abstract Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt;</code>
+                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#getListener()>getListener</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#cancel()>cancel</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -312,7 +312,15 @@ public interface <span class="typeNameLabel"><a href=MerchantManager.html>Mercha
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#setListener(Function1)>setListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener) </code>
+                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#removeListener(Function1)>removeListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
+                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=MerchantManager.html#removeAllListeners()>removeAllListeners</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -466,6 +474,21 @@ public interface <span class="typeNameLabel"><a href=MerchantManager.html>Mercha
                                     </li>
                                 </ul>
                                 
+                                <a id="addListener(Function1)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>addListener</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MerchantManager.html#addListener(Function1)>addListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="cancel()">
                                     <!--   -->
                                 </a>
@@ -481,30 +504,30 @@ public interface <span class="typeNameLabel"><a href=MerchantManager.html>Mercha
                                     </li>
                                 </ul>
                                 
-                                <a id="getListener()">
+                                <a id="removeListener(Function1)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getListener</h4>
-                                        <pre class="methodSignature"> abstract Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; <a href=MerchantManager.html#getListener()>getListener</a>()</pre>
+                                        <h4>removeListener</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MerchantManager.html#removeListener(Function1)>removeListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="setListener(Function1)">
+                                <a id="removeAllListeners()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>setListener</h4>
-                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MerchantManager.html#setListener(Function1)>setListener</a>(Function1&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; listener)</pre>
+                                        <h4>removeAllListeners</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MerchantManager.html#removeAllListeners()>removeAllListeners</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
