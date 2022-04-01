@@ -21,3 +21,21 @@
 #-renamesourcefileattribute SourceFile
 
 -dontwarn com.microblink.**
+
+-keep class * extends com.google.gson.TypeAdapter
+        -keep class * implements com.google.gson.TypeAdapterFactory
+        -keep class * implements com.google.gson.JsonSerializer
+        -keep class * implements com.google.gson.JsonDeserializer
+
+# Prevent R8 from leaving Data object members always null
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+
+-keepclassmembers class * extends androidx.work.Worker {
+    public <init>(android.content.Context,androidx.work.WorkerParameters);
+}
+
+-keepclassmembers class com.microblink.digital.databinding.**  {
+    public <methods>;
+}
