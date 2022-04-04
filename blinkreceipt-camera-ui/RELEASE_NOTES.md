@@ -7,3 +7,4 @@
 ## 1.0.1
 
 - stability fixes and improvements
+- Chip UI optimizations

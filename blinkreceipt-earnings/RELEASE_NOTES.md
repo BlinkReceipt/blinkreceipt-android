@@ -144,4 +144,4 @@
 ## 1.2.7
 
 - stability fixes and improvements
-- okhttp 4.9.3
+- upgraded to okhttp 4.9.3
