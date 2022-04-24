@@ -91,3 +91,27 @@
 - moved amazon manager from recognizer sdk to account linking framework
 - amazon initialized now throws an exception if initialization fails
 - verify returns AccountLinkingException instead of Throwable
+
+## 1.1.4
+
+- stability fixes and improvements
+- add support for uber eats
+- add support for gap
+- add support for sprouts
+- add support for ulta
+- added support for last orders only
+- return shipments for online and products for in store/pickup
+- okhttp 4.9.3
+- Walmart
+  - Authentication improvements
+- GAP
+  - Improved fetching of orders
+- Kroger
+  - Authentication improvements
+- Amazon
+    - proguard fix to prevent crashes while linking accounts
+    - Authentication flow improvements
+    - Improved analytics
+    - Improved 2FA support
+    - Fixed bug failing to return prices of some Canadian orders
+    - Fixed bug intermittently not completing when no new orders are found

@@ -176,3 +176,10 @@ counterpart
 - stability fixes and improvements
 - androidx appcompat updated to 1.3.1
 - gms tasks updated to 18.0.1
+
+## 1.2.5
+
+- stability fixes and improvements
+- upgraded to okhttp 4.9.3
+- link IMAP account with app password
+- fix unable to store account when using multiple clients within the same session.

@@ -89,3 +89,8 @@
 - kotlin 1.6.10
 - okio version 3.0.0
 - gms tasks updated to 18.0.1
+
+## 1.1.5
+
+- stability fixes and improvements
+- upgraded to okhttp 4.9.3

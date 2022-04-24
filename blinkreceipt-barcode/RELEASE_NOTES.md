@@ -136,3 +136,8 @@
 
 - stability fixes and improvements
 - okio version 3.0.0
+
+## 1.2.7
+
+- stability fixes and improvements
+- upgraded to okhttp 4.9.3

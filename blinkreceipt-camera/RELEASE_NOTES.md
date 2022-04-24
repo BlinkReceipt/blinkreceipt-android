@@ -121,3 +121,7 @@
 ## 1.2.6
 
 - stability fixes and improvements
+
+## 1.2.7
+
+- stability fixes and improvements

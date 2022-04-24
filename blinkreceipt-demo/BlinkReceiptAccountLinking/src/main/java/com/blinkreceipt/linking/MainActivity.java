@@ -12,7 +12,6 @@ import com.google.android.gms.tasks.Tasks;
 import com.microblink.core.Timberland;
 import com.microblink.linking.Account;
 import com.microblink.linking.AccountLinkingClient;
-import com.microblink.linking.AccountLinkingException;
 import com.microblink.linking.PasswordCredentials;
 import com.microblink.linking.RetailerIds;
 
@@ -88,13 +87,11 @@ public class MainActivity extends AppCompatActivity {
 
             return Unit.INSTANCE;
         }, e -> {
-            if (e instanceof AccountLinkingException) {
-                AccountLinkingException exception = (AccountLinkingException) e;
-
-                if (exception.view() != null) {
+            if (e != null) {
+                if (e.view() != null) {
                     binding.webContainer.removeAllViews();
 
-                    binding.webContainer.addView(exception.view());
+                    binding.webContainer.addView(e.view());
                 }
             }
 
