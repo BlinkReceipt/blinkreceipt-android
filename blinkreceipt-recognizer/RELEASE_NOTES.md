@@ -431,3 +431,5 @@ Blink Receipt Recognizer
 - stability fixes and improvements
 - okhttp 4.9.3
 - upgraded to okhttp 4.9.3
+- refactored merchant fetching
+- reimplemented timer to fix dead lock bug

@@ -5,9 +5,22 @@ Blink Receipt Digital SDK for Android is an SDK that enables you to easily add e
 
 See below for more information about how to integrate Blink Receipt Digital SDK into your app.
 
+# Table of Contents
+
+* [Tasks](#tasks)
+  * [Handling Results From A Task](#results)
+    * [Recommended Way](#recommended_way)
+    * [Unrecommended Way](#unrecommended_way)
+* [Optional Section: Adding An AAR to your project](#aar_adding)
+* [Project Integration and Initialization](#project_integration)
+* [IMAP](#imap_client)
+* [Outlook](#outlook)
+* [Gmail](#gmail)
+
+
 <br />
 
-## Tasks
+# Tasks <a name=tasks></a>
 
 The Blink Receipt Digital Sdk heavily leverages Google's [Task](https://developers.google.com/android/guides/tasks) for result and exception handling when interfacing with the sdk. Here is a high level comprehensive guide on how to use the Task framework.
 
@@ -15,13 +28,13 @@ The `Task<T>` object, returned by most functions in the sdk, can be thought of a
 
 <br />
 
-### Handling Results From A Task
+## Handling Results From A Task <a name=results></a>
 
 When you have a Task, you are able to apply different sets of listeners that will receive your result or catch your exceptions. There are 2 ways to approach this result handling
 
 <br />
 
-#### First Way (Recommended)
+### <a name=recommended_way></a> First Way (Recommended)
 
 A successful callback listener, `OnSuccessListener<? super TResult>`, can be added to the task by calling `task.addOnSuccessListener(OnSuccessListener<? super TResult>)`. This listener has a single method `onSuccess(T result)` that needs to be implemented. This listener callback will be invoked upon a successful completion of a given Task.
 
@@ -85,7 +98,7 @@ Result listeners can be chained for a cleaner look.
 
 <br />
 
-#### Second Way (Not Recommended)
+### Second Way (Not Recommended) <a name=unrecommended_way></a>
 
 We believe it is better to separate out the two outcomes of a task, but not all share the same philosophy. This method of result and exception handling combines both eventualities into a single callback, `OnCompleteListener<TResult> listener`. This has a single abstract method which will be implemented `onComplete (Task<TResult> task)`. The invoking of this callback does not signify a successful or a failed task result. Extra logic must be added to make that determination. The `OnCompleteListener` gives you a reference to the task. It is from here that you can do status checks `task.isSuccessful()`, `task.isCompleted()`, or `task.isCanceled()`. The result of the task can be retrieved by calling `task.getResult()`. Alternatively, the thrown exception can be retrieved with a simple `task.getException()` call.
 
@@ -99,7 +112,7 @@ The package contains Android Archive (AAR) that contains everything you need to 
 
 <br />
 
-## Optional Section: Adding An AAR to your project
+## <a name=aar_adding></a> Optional Section: Adding An AAR to your project
 As Android developers, we have become very reliant on the gradle build system to pull in any dependencies with a few lines changes to our `build.gradle` file. Unfortunately, sometimes we need to add aar files manually to our project. This is done by adding the dependencies as modules within our project. The Blink Receipt Digital Sdk is one of these scenarios. Luckily, adding an AAR via Android Studio has become very straight over the years.
 
 1) Download/Checkout the aar file from the git repo.
@@ -117,7 +130,7 @@ Once the project has been synced the AAR should now be accessible via the code i
 
 <br />
 
-## Project Integration and Initialization
+## <a name=projectIntegration></a>Project Integration and Initialization
 To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
 
 ***Note: When declaring dependencies for the digital sdk, you must add the :blinkreceipt-recognizer and :blinkreceipt-camera aars to your project. Even if you do not plan on explicitly using the functionality within those sdks, without these aars the license verification process will fail and the digital sdk will fail to work.***
@@ -210,7 +223,7 @@ class BlinkApplication : Application() {
 <br />
 <br />
 
-## IMAP
+## <a name=imap_client></a> IMAP
 
 IMAP integration requires 9 additional AAR in your build gradle.
 
@@ -405,8 +418,9 @@ After a user has been signed in to their IMAP Account, we can now fetch their em
 | filterSensitive | Boolean | false    | filterSensitive(boolean filterSensitive)| When set to true the sdk will not return product results for products deemed to be sensitive i.e. adult products |
 | subProducts   | Boolean | false      | subProducts(boolean subProducts)| Enable sdk to return subproducts found on receipts under parent products i.e. "Burrito + Guacamole <- Guac is subproduct" |
 | countryCode   | String  |  "US"      | countryCode(String countryCode) | Helps classify products and apply internal product intelligence  |
+| sendersToSearch | List\<Merchant\> | null | sendersToSearch(List\<Merchant\> sendersToSearch) | This allows clients to search for merchants that may have sent receipts under a different email. For example, Target may have sent an email from "receipts@uniquetarget.com". It is still a Target receipt, but under a different email. Therefore, the client can provide a Merchant like `new Merchant("Target.com", "receipts@uniquetarget.com")`. |
 
-Once the client is configured then we are ready to start parsing emails. On the `ImapClient` call `messages(@NonNull Activity activity)` to begin the message reading. This call returns a `Task<List<ScanResults>>`. The calling of this function completes a series of tasks internally, before potentially returning a `List<ScanResults>`. Upon a successful execution, the task will emit a result of `List<ScanResults>`. If no results were able to be found, then the list will be empty. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
+Once the client is configured then we are ready to start parsing emails. On the `ImapClient` call `messages(@NonNull MessagesCallback callback)` to begin the message reading. The calling of this function completes a series of tasks internally, before potentially returning a list of `List<ScanResults>` via the `MessagesCallback` parameter. Upon a successful execution, the callback will emit a result of `List<ScanResults>` from the overriden onComplete() function. The number of `onComplete()` emissions depends on the number IMAP accounts you have credentials for. The `messages(...)` function will attempt to read messages based on the specified configuration set on the client for each account logged in. In addition to a List<ScanResults>, each emission of onComplete will give you the `PasswordCredential` of the corresponding account from which the scan results were derived from. Within the callback, there is an onException interface method. This will be triggered in the event of an error fetching messages from an account. The account e-mail retrieval process is segregated from each other. Therefore, failure to retrive messages from one account doesn't mean a failure to retrieve messages from all accounts. It is entirely possible, to receive an onException callback AND an onComplete callback within a single `messages(...)` call. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
 
 
 <br />
@@ -414,20 +428,28 @@ Once the client is configured then we are ready to start parsing emails. On the 
 
 ```kotlin
     fun messages() {
-      client.messages(PasswordCredentials.newBuilder(
-         Provider.GMAIL,
-         "test@gmail.com",
-         "app password"
-      ).build()).addOnSuccessListener {
+      client.messages(
+          object: MessagesCallback {
+              override fun onComplete(credential: PasswordCredentials,result: List<ScanResults>) {
+                  // do stuff with scan results
+                  // see credentials of account
+              }
 
-       }.addOnFailureListener {
-
-       }
+              override fun onException(throwable: Throwable) {
+                  Toast.makeText(getContext(), throwable.toString(), Toast.LENGTH_SHORT).show
+              }
+          }
+      )
     }
 
 ```
 <br />
 <br />
+
+### IMAP Remote Messages
+
+The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credential: PasswordCredentials` and `result: JobResults`. The password credentials is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request. 
+
 
 ### IMAP Logout
 When you wish to sign out from a user's current account use the `logout()` function on the `ImapClient`. This takes in an optional `Boolean clearCache` parameter. The logout function will sign a user out of their account and clear the credentials cached in the sdk. By opting to set the clearCache flag, the logout function will also clear all Cookies stored. The return type is a `Task<Boolean>`. When a successful `true` result is given then it can be assumed that the client has successfully cleared all stored credentials and data for a user. If an exception is thrown then, there could have been an issue with one or more of the tasks executed to complete the logout functionality.
@@ -468,11 +490,20 @@ We always want to make sure we are adhereing to any component's lifecycle. There
    override fun onDestroy() {
        super.onDestroy()
 
-       client.destroy()
+       client.close()
    }
 ```
 
-## Outlook
+### Exception Handling
+
+The sdk will throw exceptions in the event it runs into an error while fetching emails. Here are some helpful explanations of common exception messages you may run into while using the sdk.
+
+| Function | Exception Message |    Explanation    |
+|----------|-------------------|-------------------|
+| messages() | "unable to find provider accounts" | While fetching the cached email accounts on the device, there were no accounts found in the cache. These could have been removed by the `logout()` function, or some other data clearing action. The only recourse is to readd the accounts.  |
+|  logout()  | "unable to store this provider " + provider | While attempting to logout of a provided account, the specified account was not found in the cache |
+
+## <a name=Outlook></a> Outlook
 
 Outlook integration requires 1 additional AAR in your build gradle.
 
@@ -621,7 +652,7 @@ Messages returns a Task, which allows you to get a list of scan results for mess
 override fun onDestroy() {
     super.onDestroy()
 
-    client.destroy()
+    client.close()
 }
 ```
 
@@ -698,7 +729,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
 <br />
 <br />
 
-### **Gmail Client**
+## <a name=gmail></a> **Gmail Client**
 
 The `GmailClient` is the corner stone of the gmail sdk integration. It is the access point for reading and parsing emails from clients. It leverages Google's task framework to allow for seamless and clear multi-threadding functionality.
 
