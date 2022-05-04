@@ -487,7 +487,7 @@ If you wish to include Amazon functionality within your project. Note: Amazon fu
 
 `Credentials`
 ```java
-AmazonManager.getInstance( this ).credentials( AmazonCredentials( "AMAZON_EMAIL", "AMAZON_PASSWORD" ) )
+AmazonManager.getInstance( this ).storeCredentials( AmazonCredentials( "AMAZON_EMAIL", "AMAZON_PASSWORD" ) )
 ```
 
 `Orders`

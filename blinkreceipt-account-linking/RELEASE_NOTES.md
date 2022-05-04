@@ -115,3 +115,7 @@
     - Improved 2FA support
     - Fixed bug failing to return prices of some Canadian orders
     - Fixed bug intermittently not completing when no new orders are found
+
+## 1.1.5
+
+- stability fixes and improvements
