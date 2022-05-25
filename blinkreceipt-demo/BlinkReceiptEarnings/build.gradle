@@ -54,6 +54,8 @@ android {
         }
     }
 
+    namespace 'com.blinkreceipt.earnings'
+
 }
 
 dependencies {
