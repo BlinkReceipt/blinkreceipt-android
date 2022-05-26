@@ -160,3 +160,7 @@
 - stability fixes and improvements
 - upgraded to okhttp 4.9.3
 - Scan Results extended field changed from a Bundle to a map to fix parcel crashes on some Samsung devices.
+
+## 1.2.8
+
+- stability fixes and improvements

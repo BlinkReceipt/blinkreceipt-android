@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>MailboxServiceImpl </title>
+    <title>ServiceLogger </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class MailboxServiceImpl" class="title">Class MailboxServiceImpl</h2>
+        <h2 title="Class ServiceLogger" class="title">Class ServiceLogger</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,19 +108,16 @@ var pathtoroot = "../../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>com.microblink.digital.internal.MailboxService</code>
-                            
-                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=MailboxServiceImpl.html>MailboxServiceImpl</a></span>
- implements <a href=MailboxService.html>MailboxService</a>
+public abstract class <span class="typeNameLabel"><a href=ServiceLogger.html>ServiceLogger</a>&lt;R extends <a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a>, T extends <a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a>&gt;</span>
+
                     </pre>
-                    <div class="block"></div>
+                    <div class="block"><p>Abstract class meant to be used as the base for all service logging. Each concrete implementation of the class will extend this and get free functionality like measuring.</p></div>
                 </li>
             </ul>
         </div>
@@ -193,7 +190,7 @@ public final class <span class="typeNameLabel"><a href=MailboxServiceImpl.html>M
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#MailboxServiceImpl(Context,ScrapeEReceiptServiceLogger)">MailboxServiceImpl</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=ScrapeEReceiptServiceLogger.html>ScrapeEReceiptServiceLogger</a> logger)</code></th>
+                                                        href="#ServiceLogger()">ServiceLogger</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -247,9 +244,25 @@ public final class <span class="typeNameLabel"><a href=MailboxServiceImpl.html>M
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;Mailbox&gt;</code>
+                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=MailboxServiceImpl.html#scrape(String,List,boolean,boolean)>scrape</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> countryCode, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Message.html>Message</a>&gt; messages, boolean store, boolean useAggregation) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ServiceLogger.html#log(R,T,Integer,String)>log</a>(<a href=ServiceLogger.html>R</a> input, <a href=ServiceLogger.html>T</a> response, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> httpStatusCode, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> error) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ServiceLogger.html#startMeasure()>startMeasure</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ServiceLogger.html#stopMeasure()>stopMeasure</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -285,11 +298,11 @@ public final class <span class="typeNameLabel"><a href=MailboxServiceImpl.html>M
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="MailboxServiceImpl(Context,ScrapeEReceiptServiceLogger)"></a>
+                                <a name="ServiceLogger()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>MailboxServiceImpl</h4>
-                                        <pre>MailboxServiceImpl(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=ScrapeEReceiptServiceLogger.html>ScrapeEReceiptServiceLogger</a> logger)</pre>
+                                        <h4>ServiceLogger</h4>
+                                        <pre>ServiceLogger()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -308,15 +321,45 @@ public final class <span class="typeNameLabel"><a href=MailboxServiceImpl.html>M
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="scrape(String,List,boolean,boolean)">
+                                <a id="log(R,T,Integer,String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>log</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ServiceLogger.html#log(R,T,Integer,String)>log</a>(<a href=ServiceLogger.html>R</a> input, <a href=ServiceLogger.html>T</a> response, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> httpStatusCode, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> error)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="startMeasure()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>startMeasure</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ServiceLogger.html#startMeasure()>startMeasure</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="stopMeasure()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>scrape</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>()@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/WorkerThread.html>WorkerThread</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;Mailbox&gt; <a href=MailboxServiceImpl.html#scrape(String,List,boolean,boolean)>scrape</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> countryCode, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=Message.html>Message</a>&gt; messages, boolean store, boolean useAggregation)</pre>
+                                        <h4>stopMeasure</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ServiceLogger.html#stopMeasure()>stopMeasure</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

@@ -94,3 +94,7 @@
 
 - stability fixes and improvements
 - upgraded to okhttp 4.9.3
+
+## 1.1.6
+
+- stability fixes and improvements

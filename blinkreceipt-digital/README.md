@@ -34,7 +34,7 @@ When you have a Task, you are able to apply different sets of listeners that wil
 
 <br />
 
-### <a name=recommended_way></a> First Way (Recommended)
+### First Way (Recommended) <a name=recommended_way></a> 
 
 A successful callback listener, `OnSuccessListener<? super TResult>`, can be added to the task by calling `task.addOnSuccessListener(OnSuccessListener<? super TResult>)`. This listener has a single method `onSuccess(T result)` that needs to be implemented. This listener callback will be invoked upon a successful completion of a given Task.
 
@@ -502,6 +502,8 @@ The sdk will throw exceptions in the event it runs into an error while fetching 
 |----------|-------------------|-------------------|
 | messages() | "unable to find provider accounts" | While fetching the cached email accounts on the device, there were no accounts found in the cache. These could have been removed by the `logout()` function, or some other data clearing action. The only recourse is to readd the accounts.  |
 |  logout()  | "unable to store this provider " + provider | While attempting to logout of a provided account, the specified account was not found in the cache |
+|  verify()  | "unable to connect to imap service!" | There was an error in connecting to the IMAP client. It could be an issue with the server, or the credentials. You can try again later or have a user reinput their credentials. |
+| remoteMessages() | "Unable to encrypt credentials "+ credentials.username() | Credentials are encrypted and stored for easy access. When provided we attempt to encrypt the provided credentials. In the event of a failure this exception will be thrown informing you of the error. |
 
 ## <a name=Outlook></a> Outlook
 
@@ -942,7 +944,7 @@ We always want to make sure we are adhereing to any component's lifecycle. There
 override fun onDestroy() {
     super.onDestroy()
 
-    client.destroy()
+    client.close()
 }
 ```
 

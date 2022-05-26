@@ -59,6 +59,8 @@ android {
         }
     }
 
+    namespace 'com.blinkreceipt.digital.imap'
+
 }
 
 dependencies {

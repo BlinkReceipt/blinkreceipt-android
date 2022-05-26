@@ -4,7 +4,6 @@ import com.blinkreceipt.ocr.transfer.RecognizerResults;
 import com.microblink.EdgeDetectionConfiguration;
 import com.microblink.FrameCharacteristics;
 import com.microblink.ScanOptions;
-import com.microblink.core.Retailer;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -23,6 +22,7 @@ public class MainViewModel extends ViewModel {
         scanOptions = ScanOptions.newBuilder()
                 .frameCharacteristics(FrameCharacteristics.newBuilder()
                         .externalStorage(false)
+                        .storeFrames(true)
                         .build())
                 .edgeDetectionConfiguration(EdgeDetectionConfiguration.newBuilder().build())
                 .build();

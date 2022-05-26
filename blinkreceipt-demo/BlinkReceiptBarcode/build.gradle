@@ -58,6 +58,8 @@ android {
         }
     }
 
+    namespace 'com.blinkreceipt.barcode'
+
 }
 
 dependencies {

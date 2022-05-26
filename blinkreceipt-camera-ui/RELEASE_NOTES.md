@@ -8,3 +8,7 @@
 
 - stability fixes and improvements
 - Chip UI optimizations
+
+## 1.0.2
+
+- stability fixes and improvements
