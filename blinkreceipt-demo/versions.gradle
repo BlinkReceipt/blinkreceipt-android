@@ -54,7 +54,7 @@ buildscript {
             'zxing'                 : '3.3.0',
             'msal'                  : '2.2.1',
             "javaMail"              : '1.6.7',
-            "agp"                   : '7.2.1',
+            "agp"                   : '7.1.3',
             'versionMajor'          : 1,
             'versionMinor'          : 5,
             'versionPatch'          : 7
