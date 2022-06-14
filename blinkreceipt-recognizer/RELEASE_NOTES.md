@@ -437,4 +437,13 @@ Blink Receipt Recognizer
 ## 1.5.7
 
 - stability fixes and improvements
+- Indicates whether corresponding email is a valid e-receipt or a promotional/marketing message
+- fixed potential deadlock in scan session
+- optimized merchant delivery in sdk startup
+
+## 1.5.8
+
+- stability fixes and improvements
+- kotlin 1.6.21
+- paymentTerminalId and paymentTransactionId returned in scan results.
 

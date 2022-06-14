@@ -45,7 +45,7 @@ buildscript {
             'googleApis'            : '1.32.1',
             'googleHttpClient'      : '1.40.0',
             'tasks'                 : '18.0.1',
-            'kotlin'                : '1.6.10',
+            'kotlin'                : '1.6.21',
             'easyPermissions'       : '3.0.0',
             'junit'                 : '4.13.2',
             'coroutines'            : '1.6.0',
