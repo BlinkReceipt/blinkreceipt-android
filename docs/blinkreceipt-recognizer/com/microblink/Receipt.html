@@ -774,7 +774,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                         <tr id="i63" class="rowColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storeAddress(StringType)>storeAddress</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType address) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#paymentTerminalId(StringType)>paymentTerminalId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType id) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -782,15 +782,15 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                         <tr id="i64" class="altColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#taxId(StringType)>taxId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType taxId) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#paymentTransactionId(StringType)>paymentTransactionId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType id) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i65" class="rowColor">
-                                            <td class="colFirst"><code>boolean</code>
+                                            <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#fuelTypeFoundInProducts()>fuelTypeFoundInProducts</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storeAddress(StringType)>storeAddress</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType address) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -798,15 +798,15 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                         <tr id="i66" class="altColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#addOcrProducts(List)>addOcrProducts</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=internal/OcrProduct.html>OcrProduct</a>&gt; products) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#taxId(StringType)>taxId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType taxId) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i67" class="rowColor">
-                                            <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
+                                            <td class="colFirst"><code>boolean</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#addOcrProduct(OcrProduct)>addOcrProduct</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=internal/OcrProduct.html>OcrProduct</a> product) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#fuelTypeFoundInProducts()>fuelTypeFoundInProducts</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -814,12 +814,28 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                         <tr id="i68" class="altColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#detectedBannerId(int)>detectedBannerId</a>(int detectedBannerId) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#addOcrProducts(List)>addOcrProducts</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=internal/OcrProduct.html>OcrProduct</a>&gt; products) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i69" class="rowColor">
+                                            <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#addOcrProduct(OcrProduct)>addOcrProduct</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=internal/OcrProduct.html>OcrProduct</a> product) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i70" class="altColor">
+                                            <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#detectedBannerId(int)>detectedBannerId</a>(int detectedBannerId) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i71" class="rowColor">
                                             <td class="colFirst"><code>int</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#detectedBannerId()>detectedBannerId</a>() </code>
@@ -827,7 +843,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i70" class="altColor">
+                                        <tr id="i72" class="altColor">
                                             <td class="colFirst"><code>FloatType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#total()>total</a>() </code>
@@ -835,7 +851,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i71" class="rowColor">
+                                        <tr id="i73" class="rowColor">
                                             <td class="colFirst"><code>FloatType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#subTotal()>subTotal</a>() </code>
@@ -843,7 +859,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i72" class="altColor">
+                                        <tr id="i74" class="altColor">
                                             <td class="colFirst"><code>FloatType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#taxes()>taxes</a>() </code>
@@ -851,7 +867,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i73" class="rowColor">
+                                        <tr id="i75" class="rowColor">
                                             <td class="colFirst"><code>DateTime</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#purchaseDateTime()>purchaseDateTime</a>() </code>
@@ -859,7 +875,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i74" class="altColor">
+                                        <tr id="i76" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#blinkReceiptId()>blinkReceiptId</a>() </code>
@@ -867,7 +883,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i75" class="rowColor">
+                                        <tr id="i77" class="rowColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#merchantName()>merchantName</a>() </code>
@@ -875,7 +891,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i76" class="altColor">
+                                        <tr id="i78" class="altColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#cashierId()>cashierId</a>() </code>
@@ -883,7 +899,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i77" class="rowColor">
+                                        <tr id="i79" class="rowColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#transactionId()>transactionId</a>() </code>
@@ -891,7 +907,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i78" class="altColor">
+                                        <tr id="i80" class="altColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#storeAddress()>storeAddress</a>() </code>
@@ -899,7 +915,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i79" class="rowColor">
+                                        <tr id="i81" class="rowColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#storeCity()>storeCity</a>() </code>
@@ -907,7 +923,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i80" class="altColor">
+                                        <tr id="i82" class="altColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#storeState()>storeState</a>() </code>
@@ -915,7 +931,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i81" class="rowColor">
+                                        <tr id="i83" class="rowColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#storeZip()>storeZip</a>() </code>
@@ -923,26 +939,10 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i82" class="altColor">
-                                            <td class="colFirst"><code>StringType</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storePhone()>storePhone</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i83" class="rowColor">
-                                            <td class="colFirst"><code>StringType</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#registerId()>registerId</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
                                         <tr id="i84" class="altColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storeNumber()>storeNumber</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#paymentTerminalId()>paymentTerminalId</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -950,12 +950,44 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                         <tr id="i85" class="rowColor">
                                             <td class="colFirst"><code>StringType</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#taxId()>taxId</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#paymentTransactionId()>paymentTransactionId</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i86" class="altColor">
+                                            <td class="colFirst"><code>StringType</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storePhone()>storePhone</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i87" class="rowColor">
+                                            <td class="colFirst"><code>StringType</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#registerId()>registerId</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i88" class="altColor">
+                                            <td class="colFirst"><code>StringType</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#storeNumber()>storeNumber</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i89" class="rowColor">
+                                            <td class="colFirst"><code>StringType</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Receipt.html#taxId()>taxId</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i90" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#foundScreen()>foundScreen</a>() </code>
@@ -963,7 +995,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i87" class="rowColor">
+                                        <tr id="i91" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;PaymentMethod&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#paymentMethods()>paymentMethods</a>() </code>
@@ -971,7 +1003,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i88" class="altColor">
+                                        <tr id="i92" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/ArrayList.html>ArrayList</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#rawResults()>rawResults</a>() </code>
@@ -979,7 +1011,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i89" class="rowColor">
+                                        <tr id="i93" class="rowColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#addRawResult(String)>addRawResult</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> result) </code>
@@ -987,7 +1019,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i90" class="altColor">
+                                        <tr id="i94" class="altColor">
                                             <td class="colFirst"><code><a href=Receipt.html>Receipt</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#longTailMerchantName(MerchantResult)>longTailMerchantName</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=internal/merchant/MerchantResult.html>MerchantResult</a> merchantResult) </code>
@@ -995,7 +1027,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i91" class="rowColor">
+                                        <tr id="i95" class="rowColor">
                                             <td class="colFirst"><code><a href=internal/merchant/MerchantResult.html>MerchantResult</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#longTailMerchant()>longTailMerchant</a>() </code>
@@ -1003,7 +1035,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i92" class="altColor">
+                                        <tr id="i96" class="altColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#hasProducts()>hasProducts</a>() </code>
@@ -1011,7 +1043,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i93" class="rowColor">
+                                        <tr id="i97" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#doesSubtotalMatch()>doesSubtotalMatch</a>() </code>
@@ -1019,7 +1051,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i94" class="altColor">
+                                        <tr id="i98" class="altColor">
                                             <td class="colFirst"><code><a href=internal/merchant/MerchantResult.html>MerchantResult</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#textBasedMerchant()>textBasedMerchant</a>() </code>
@@ -1027,7 +1059,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i95" class="rowColor">
+                                        <tr id="i99" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#textBasedMerchant(MerchantResult)>textBasedMerchant</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=internal/merchant/MerchantResult.html>MerchantResult</a> textBasedMerchant) </code>
@@ -1035,7 +1067,7 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i96" class="altColor">
+                                        <tr id="i100" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Receipt.html#toString()>toString</a>() </code>
@@ -2042,6 +2074,36 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                     </li>
                                 </ul>
                                 
+                                <a id="paymentTerminalId(StringType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>paymentTerminalId</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Receipt.html>Receipt</a> <a href=Receipt.html#paymentTerminalId(StringType)>paymentTerminalId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType id)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="paymentTransactionId(StringType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>paymentTransactionId</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Receipt.html>Receipt</a> <a href=Receipt.html#paymentTransactionId(StringType)>paymentTransactionId</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType id)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="storeAddress(StringType)">
                                     <!--   -->
                                 </a>
@@ -2321,6 +2383,36 @@ public final class <span class="typeNameLabel"><a href=Receipt.html>Receipt</a><
                                     <li class="blockList">
                                         <h4>storeZip</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType <a href=Receipt.html#storeZip()>storeZip</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="paymentTerminalId()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>paymentTerminalId</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType <a href=Receipt.html#paymentTerminalId()>paymentTerminalId</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="paymentTransactionId()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>paymentTransactionId</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() StringType <a href=Receipt.html#paymentTransactionId()>paymentTransactionId</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
