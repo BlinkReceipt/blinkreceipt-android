@@ -187,3 +187,9 @@ counterpart
 ## 1.2.6
 
 - stability fixes and improvements
+- enriched mailbox data returned when scrape fails to return structured data.
+- added override date time for date and long objects
+
+## 1.2.7
+
+- stability fixes and improvements

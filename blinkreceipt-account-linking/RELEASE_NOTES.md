@@ -119,3 +119,11 @@
 ## 1.1.5
 
 - stability fixes and improvements
+- proguard optimizations
+- added experimental coroutine support for kotlin 1.6
+
+## 1.1.6
+
+- stability fixes and improvements
+- kotlin 1.6.21
+- clear web cache per retail by default is disabled

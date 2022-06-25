@@ -146,3 +146,7 @@
 
 - stability fixes and improvements
 
+## 1.2.9
+
+- stability fixes and improvements
+
