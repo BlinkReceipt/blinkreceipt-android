@@ -447,3 +447,7 @@ Blink Receipt Recognizer
 - kotlin 1.6.21
 - paymentTerminalId and paymentTransactionId returned in scan results.
 
+## 1.5.9
+
+- stability fixes and improvements
+

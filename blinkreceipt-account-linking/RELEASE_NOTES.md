@@ -127,3 +127,7 @@
 - stability fixes and improvements
 - kotlin 1.6.21
 - clear web cache per retail by default is disabled
+
+## 1.1.7
+
+- stability fixes and improvements

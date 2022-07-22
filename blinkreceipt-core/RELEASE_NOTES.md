@@ -169,3 +169,7 @@
 
 - stability fixes and improvements
 - kotlin 1.6.21
+
+## 1.3.0
+
+- stability fixes and improvements
