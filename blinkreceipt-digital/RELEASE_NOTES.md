@@ -193,3 +193,9 @@ counterpart
 ## 1.2.7
 
 - stability fixes and improvements
+
+## 1.2.8
+
+- stability fixes and improvements
+- gmail v3 login support
+- remove dialog when bottom sheet closes

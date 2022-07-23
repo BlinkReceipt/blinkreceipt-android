@@ -1,4 +1,4 @@
-package com.blinkreceipt.development;
+package com.blinkreceipt.surveys;
 
 import android.app.Application;
 import androidx.annotation.NonNull;

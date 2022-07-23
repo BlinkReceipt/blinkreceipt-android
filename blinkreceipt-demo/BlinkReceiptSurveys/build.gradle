@@ -53,7 +53,7 @@ android {
         }
     }
 
-    namespace 'com.blinkreceipt.development'
+    namespace 'com.blinkreceipt.surveys'
 
 }
 
