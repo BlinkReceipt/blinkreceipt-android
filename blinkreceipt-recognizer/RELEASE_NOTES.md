@@ -451,3 +451,7 @@ Blink Receipt Recognizer
 
 - stability fixes and improvements
 
+## 1.6.0
+
+- stability fixes and improvements
+
