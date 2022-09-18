@@ -173,3 +173,7 @@
 ## 1.3.0
 
 - stability fixes and improvements
+
+## 1.3.1
+
+- stability fixes and improvements

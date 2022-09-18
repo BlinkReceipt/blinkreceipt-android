@@ -131,3 +131,23 @@
 ## 1.1.7
 
 - stability fixes and improvements
+
+## 1.1.8
+
+- stability fixes and improvements
+- fixed out of memory issue when parsing accounts with large order history
+- Add Albertsons support
+- Add Jewel Osco support
+- Add Safeway support
+- Add Vons support
+- Add Acme Markets support
+- Add Harris Teeter support
+- Add Fred Meyer support
+- Add Food 4 Less support
+- Add Ralphs support
+  - Kroger
+    - Improved order status support
+      - Returning orders from related merchants (Harris Teeter, Pick 'n Save) with propeply mapped merchantName and retailerId
+  -CVS, Starbucks
+      - User authentication improvements
+      - Improved logging
