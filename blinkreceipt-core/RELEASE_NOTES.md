@@ -177,3 +177,10 @@
 ## 1.3.1
 
 - stability fixes and improvements
+- kotlin 1.7.10
+
+## 1.3.2
+
+- stability fixes and improvements
+- kotlin 1.7.20
+- okhttp 4.10.0

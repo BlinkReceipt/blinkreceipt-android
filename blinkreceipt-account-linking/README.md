@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ```groovy
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation "androidx.work:work-runtime:2.6.0"
@@ -22,7 +22,7 @@ In addition to those 2 modules you will need to pull in the following as well.
 
     implementation "androidx.appcompat:appcompat:1.2.0"
 
-    implementation "com.squareup.okhttp3:okhttp:4.9.3"
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
 
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
@@ -35,9 +35,9 @@ In addition to those 2 modules you will need to pull in the following as well.
 
     implementation "com.google.android.gms:play-services-tasks:18.0.1"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
     implementation "androidx.webkit:webkit:1.4.0"
 ```
@@ -49,7 +49,7 @@ Project build.gradle
 ```groovy
 buildscript {
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
     }
 }
 ```

@@ -416,6 +416,7 @@ class MainActivity : AppCompatActivity() {
                             ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
                             ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
                             ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
+                            ProviderSetupResults.DUPLICATE_EMAIL -> Timberland.e("DUPLICATE_EMAIL")
                         }
 
                         if (!supportFragmentManager.isDestroyed) {

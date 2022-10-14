@@ -166,16 +166,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -256,16 +256,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -538,16 +538,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -696,16 +696,16 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
         implementation "androidx.webkit:webkit:1.4.0"
 
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
         implementation "com.google.android.material:material:1.4.0"
 
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
         implementation "androidx.core:core-ktx:1.6.0"
 
-        implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+        implementation 'com.squareup.okhttp3:okhttp:4.10.0'
         implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
         implementation 'com.squareup.retrofit2:retrofit:2.9.0'
