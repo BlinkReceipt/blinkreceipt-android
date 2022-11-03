@@ -459,6 +459,4 @@ Blink Receipt Recognizer
 ## 1.6.1
 
 - stability fixes and improvements
-- fix anr in merchant detector
-- kotlin 1.7.20
-- okhttp 4.10.0
+

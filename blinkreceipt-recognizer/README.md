@@ -33,13 +33,13 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
 
      implementation 'androidx.appcompat:appcompat:1.3.1'
 
      implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
      implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
@@ -55,9 +55,9 @@ dependencies {
      implementation "androidx.work:work-runtime:2.6.0"
      implementation "androidx.work:work-runtime-ktx:2.6.0"
 
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
      implementation "androidx.core:core-ktx:1.6.0"
 

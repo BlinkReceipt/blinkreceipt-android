@@ -116,5 +116,3 @@
 ## 1.2.0
 
 - stability fixes and improvements
-- kotlin 1.7.20
-- okhttp 4.10.0

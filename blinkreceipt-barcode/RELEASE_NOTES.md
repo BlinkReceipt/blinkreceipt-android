@@ -161,5 +161,4 @@
 ## 1.3.2
 
 - stability fixes and improvements
-- okhttp 4.10.0
 
