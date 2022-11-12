@@ -459,4 +459,5 @@ Blink Receipt Recognizer
 ## 1.6.1
 
 - stability fixes and improvements
+- expose combined raw text
 
