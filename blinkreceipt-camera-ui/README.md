@@ -22,7 +22,7 @@ To setup the Blink Camera UI SDK please pull in the `Blink Camera UI` aar into y
 In addition to the `Blink Recognizer` library, your app will require the following dependencies.
 
 ```groovy
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
 
     implementation "androidx.core:core-ktx:1.6.0"
     implementation "androidx.appcompat:appcompat:1.3.1"
@@ -44,7 +44,7 @@ Project build.gradle
 buildscript {
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
     }
 }
 ```

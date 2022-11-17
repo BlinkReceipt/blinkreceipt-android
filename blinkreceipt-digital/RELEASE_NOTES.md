@@ -203,3 +203,8 @@ counterpart
 ## 1.2.9
 
 - stability fixes and improvements
+
+## 1.3.0
+
+- stability fixes and improvements
+- update aol create password web context

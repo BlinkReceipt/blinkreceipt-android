@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
     <link rel="stylesheet" type="text/css" href="../../dokka-javadoc-stylesheet.css" title="Style">
     <link rel="stylesheet" type="text/css" href="../../jquery/jquery-ui.css" title="Style">
-    <script type="text/javascript" src="../../jquery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../../jquery/jquery-migrate-3.0.1.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-migrate-3.4.0.min.js"></script>
     <script type="text/javascript" src="../../jquery/jquery-ui.js"></script>
 
     <script type="text/javascript" src="../../search.js"></script>
@@ -250,14 +250,6 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>CoroutineDispatcher</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=CSVMerchantWorker.html#getCoroutineContext()>getCoroutineContext</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/androidx/work/ListenableWorker.Result.html>ListenableWorker.Result</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=CSVMerchantWorker.html#doWork()>doWork</a>() </code>
@@ -274,13 +266,13 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;androidx.work.CoroutineWorker</h3>
-                                            <code>getApplicationContext, getBackgroundExecutor, getId, getInputData, getNetwork, getRunAttemptCount, getTags, getTaskExecutor, getTriggeredContentAuthorities, getTriggeredContentUris, getWorkerFactory, isRunInForeground, isStopped, isUsed, setForegroundAsync, setProgressAsync, setUsed, stop</code></li>
+                                            <code>getCoroutineContext, onStopped, setForeground, setProgress, startWork</code></li>
                                  
-                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.CSVMerchantWorker">
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.work.ListenableWorker">
                                             <!--   -->
                                         </a>
-                                            <h3>Methods inherited from class&nbsp;com.microblink.CSVMerchantWorker</h3>
-                                            <code>onStopped, setForeground, setProgress, startWork</code></li>
+                                            <h3>Methods inherited from class&nbsp;androidx.work.ListenableWorker</h3>
+                                            <code>getApplicationContext, getBackgroundExecutor, getId, getInputData, getNetwork, getRunAttemptCount, getTags, getTaskExecutor, getTriggeredContentAuthorities, getTriggeredContentUris, getWorkerFactory, isRunInForeground, isStopped, isUsed, setForegroundAsync, setProgressAsync, setUsed, stop</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -330,21 +322,6 @@ extends <a href=https://developer.android.com/reference/kotlin/androidx/work/Cor
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
-                                
-                                <a id="getCoroutineContext()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getCoroutineContext</h4>
-                                        <pre class="methodSignature"> CoroutineDispatcher <a href=CSVMerchantWorker.html#getCoroutineContext()>getCoroutineContext</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
                                 
                                 <a id="doWork()">
                                     <!--   -->

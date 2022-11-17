@@ -135,6 +135,7 @@
 ## 1.1.8
 
 - stability fixes and improvements
+- kotlin 1.7.10
 - fixed out of memory issue when parsing accounts with large order history
 - Add Albertsons support
 - Add Jewel Osco support
@@ -151,3 +152,7 @@
   -CVS, Starbucks
       - User authentication improvements
       - Improved logging
+
+## 1.1.9
+
+- stability fixes and improvements

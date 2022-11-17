@@ -111,3 +111,8 @@
 ## 1.1.9
 
 - stability fixes and improvements
+- kotlin 1.7.10
+
+## 1.2.0
+
+- stability fixes and improvements

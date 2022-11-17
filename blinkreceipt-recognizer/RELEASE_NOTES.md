@@ -454,4 +454,10 @@ Blink Receipt Recognizer
 ## 1.6.0
 
 - stability fixes and improvements
+- kotlin 1.7.10
+
+## 1.6.1
+
+- stability fixes and improvements
+- expose combined raw text
 
