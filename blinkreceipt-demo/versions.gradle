@@ -57,6 +57,6 @@ buildscript {
             "agp"                   : '7.3.1',
             'versionMajor'          : 1,
             'versionMinor'          : 6,
-            'versionPatch'          : 1
+            'versionPatch'          : 2
     ]
 }

@@ -458,6 +458,10 @@ Blink Receipt Recognizer
 
 ## 1.6.1
 
-- stability fixes and improvements
 - expose combined raw text
+- expose purchase type
+- fix an issue with attaching promotions
 
+## 1.6.2
+
+- stability fixes and improvements

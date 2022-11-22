@@ -208,3 +208,7 @@ counterpart
 
 - stability fixes and improvements
 - update aol create password web context
+
+## 1.3.1
+
+- stability fixes and improvements
