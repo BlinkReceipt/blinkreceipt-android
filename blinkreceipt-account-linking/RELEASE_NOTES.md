@@ -156,3 +156,8 @@
 ## 1.1.9
 
 - stability fixes and improvements
+
+## 1.2.0
+
+- stability fixes and improvements
+- fix a bug where orders only one set of orders is returned
