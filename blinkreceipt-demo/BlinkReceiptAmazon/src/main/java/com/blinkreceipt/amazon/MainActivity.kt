@@ -1,5 +1,6 @@
 package com.blinkreceipt.amazon
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -14,6 +15,7 @@ import com.microblink.linking.AmazonCredentials
 import com.microblink.linking.AmazonException
 import com.microblink.linking.AmazonManager
 
+@SuppressLint("SetTextI18n")
 class MainActivity : AppCompatActivity() {
 
     private val scanResultOrders = mutableSetOf<ScanResults>()
@@ -84,6 +86,7 @@ class MainActivity : AppCompatActivity() {
         AmazonManager.getInstance(applicationContext).destroy()
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun clearCredentials(menu: MenuItem) {
         scanResultOrders.clear()
 
@@ -112,6 +115,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun orders(menu: MenuItem) {
         if (TextUtils.isEmpty(binding.accountEmail.text)) {
             Toast.makeText(
@@ -161,6 +165,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun verifyAccount(menu: MenuItem) {
         if (TextUtils.isEmpty(binding.accountEmail.text)) {
             Toast.makeText(
@@ -210,6 +215,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun clearOrders(menu: MenuItem) {
         scanResultOrders.clear()
 

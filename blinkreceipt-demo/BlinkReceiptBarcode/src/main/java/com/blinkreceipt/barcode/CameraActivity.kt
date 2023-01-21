@@ -142,6 +142,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
     override fun onCameraPermissionDenied() {
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onResumeScan(view: View) {
         binding.recognizer.resumeScanning(true)
     }

@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onClear(view: View) {
         client.clearLastCheckedTime().addOnSuccessListener {
             Toast.makeText(this@MainActivity,
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onMessagesClick(view: View) {
         client.messages().addOnSuccessListener { data ->
             Toast.makeText(this@MainActivity,
@@ -75,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onLogout(view: View) {
         client.logout()
                 .addOnSuccessListener {
@@ -86,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                 }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onLogin(view: View) {
         client.login(this).addOnSuccessListener { data ->
             Toast.makeText(this@MainActivity,
