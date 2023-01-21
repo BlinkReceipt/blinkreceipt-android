@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity(), PermissionCallbacks {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onPermissionsCheck(view: View) {
         if (EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)) {
             startCamera()
