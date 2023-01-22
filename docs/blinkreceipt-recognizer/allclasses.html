@@ -149,13 +149,15 @@
         
             <li><a href=com/microblink/BlinkCountdownTimer.html>BlinkCountdownTimer</a></li>
         
-            <li><a href=com/microblink/CSVMerchantRunner.html>CSVMerchantRunner</a></li>
-        
             <li><a href=com/microblink/CSVMerchantWorker.html>CSVMerchantWorker</a></li>
         
             <li><a href=com/microblink/FlowCountdownTimer.html>FlowCountdownTimer</a></li>
         
+            <li><a href=com/microblink/LinuxLogWorker.html>LinuxLogWorker</a></li>
+        
             <li><a href=com/microblink/MerchantRecognizerResult.html>MerchantRecognizerResult</a></li>
+        
+            <li><a href=com/microblink/StoreDeleteWorker.html>StoreDeleteWorker</a></li>
         
             <li><a href=com/microblink/StringsKt.html>StringsKt</a></li>
         
@@ -172,8 +174,6 @@
             <li><a href=com/microblink/internal/MainThreadExecutor.html>MainThreadExecutor</a></li>
         
             <li><a href=com/microblink/internal/OcrSubproductMatcher.html>OcrSubproductMatcher</a></li>
-        
-            <li><a href=com/microblink/internal/CameraRecognizerFrameFactory.html>CameraRecognizerFrameFactory</a></li>
         
             <li><a href=com/microblink/internal/LogoResult.html>LogoResult</a></li>
         
@@ -273,17 +273,11 @@
         
             <li><a href=com/microblink/internal/NativeLibraryLoader.html>NativeLibraryLoader</a></li>
         
+            <li><a href=com/microblink/internal/CameraRecognizerFactory.html>CameraRecognizerFactory</a></li>
+        
             <li><a href=com/microblink/internal/Priority.html>Priority</a></li>
         
             <li><a href=com/microblink/internal/Line.html>Line</a></li>
-        
-            <li><a href=com/microblink/internal/LinuxLogWorker.html>LinuxLogWorker</a></li>
-        
-            <li><a href=com/microblink/internal/StoreDeleteWorker.html>StoreDeleteWorker</a></li>
-        
-            <li><a href=com/microblink/internal/candidate/CandidatePhoneLookupHandler.html>CandidatePhoneLookupHandler</a></li>
-        
-            <li><a href=com/microblink/internal/candidate/CandidateResultHandler.html>CandidateResultHandler</a></li>
         
             <li><a href=com/microblink/internal/candidate/CandidateResult.html>CandidateResult</a></li>
         
@@ -437,11 +431,11 @@
         
             <li><a href=com/microblink/internal/services/lookup/StoreLookUpService.html>StoreLookUpService</a></li>
         
-            <li><a href=com/microblink/internal/services/lookup/BlinkStoreLookupService.html>BlinkStoreLookupService</a></li>
-        
             <li><a href=com/microblink/internal/services/lookup/StoreLookUpServiceImpl.html>StoreLookUpServiceImpl</a></li>
         
             <li><a href=com/microblink/internal/services/lookup/StoreLookupRequest.html>StoreLookupRequest</a></li>
+        
+            <li><a href=com/microblink/internal/services/lookup/StoresLookupService.html>StoresLookupService</a></li>
         
             <li><a href=com/microblink/internal/services/lookup/StoreLookUpServiceFactory.html>StoreLookUpServiceFactory</a></li>
         
@@ -465,7 +459,7 @@
         
             <li><a href=com/microblink/internal/services/merchants/MerchantDetectionProcess.html>MerchantDetectionProcess</a></li>
         
-            <li><a href=com/microblink/internal/services/merchants/BlinkMerchantLookupProcess.html>BlinkMerchantLookupProcess</a></li>
+            <li><a href=com/microblink/internal/services/merchants/MerchantsLookupProcess.html>MerchantsLookupProcess</a></li>
         
             <li><a href=com/microblink/internal/services/merchants/MerchantRemoteService.html>MerchantRemoteService</a></li>
         
@@ -575,8 +569,6 @@
         
             <li><a href=com/microblink/internal/merchant/MerchantSummaryMapper.html>MerchantSummaryMapper</a></li>
         
-            <li><a href=com/microblink/internal/merchant/MerchantDetector.html>MerchantDetector</a></li>
-        
             <li><a href=com/microblink/internal/merchant/AddressMatch.html>AddressMatch</a></li>
         
             <li><a href=com/microblink/internal/merchant/YelpPhoneResultMapper.html>YelpPhoneResultMapper</a></li>
@@ -609,23 +601,15 @@
         
             <li><a href=com/microblink/internal/merchant/MerchantResultValidatorImpl.html>MerchantResultValidatorImpl</a></li>
         
-            <li><a href=com/microblink/internal/merchant/GoogleCandidateResultMapper.html>GoogleCandidateResultMapper</a></li>
-        
-            <li><a href=com/microblink/internal/merchant/GooglePlacesResultMapper.html>GooglePlacesResultMapper</a></li>
-        
             <li><a href=com/microblink/internal/merchant/AddressMatchMapper.html>AddressMatchMapper</a></li>
         
             <li><a href=com/microblink/internal/merchant/MerchantResultHandler.html>MerchantResultHandler</a></li>
         
             <li><a href=com/microblink/internal/merchant/MerchantResultValidatorInvalidStores.html>MerchantResultValidatorInvalidStores</a></li>
         
-            <li><a href=com/microblink/internal/merchant/GoogleAddressResultMapper.html>GoogleAddressResultMapper</a></li>
-        
             <li><a href=com/microblink/internal/merchant/MerchantLookupListener.html>MerchantLookupListener</a></li>
         
             <li><a href=com/microblink/internal/merchant/DetectedMerchantHandler.html>DetectedMerchantHandler</a></li>
-        
-            <li><a href=com/microblink/internal/merchant/MerchantManagerImpl.html>MerchantManagerImpl</a></li>
         
             <li><a href=com/microblink/internal/merchant/MerchantVoteTeller.html>MerchantVoteTeller</a></li>
         
@@ -659,8 +643,6 @@
         
             <li><a href=com/microblink/internal/merchant/resolvers/FuelMerchantResolver.html>FuelMerchantResolver</a></li>
         
-            <li><a href=com/microblink/internal/merchant/resolvers/LogoMerchantResolver.html>LogoMerchantResolver</a></li>
-        
             <li><a href=com/microblink/internal/merchant/resolvers/LongTailMerchantResolver.html>LongTailMerchantResolver</a></li>
         
             <li><a href=com/microblink/internal/merchant/resolvers/MerchantResolver.html>MerchantResolver</a></li>
@@ -668,8 +650,6 @@
             <li><a href=com/microblink/internal/merchant/resolvers/PhoneMerchantResolver.html>PhoneMerchantResolver</a></li>
         
             <li><a href=com/microblink/internal/merchant/resolvers/ProductLookupMerchantResolver.html>ProductLookupMerchantResolver</a></li>
-        
-            <li><a href=com/microblink/internal/merchant/resolvers/TaxIdMerchantResolver.html>TaxIdMerchantResolver</a></li>
         
             <li><a href=com/microblink/internal/merchant/resolvers/TextBasedLookupMerchantResolver.html>TextBasedLookupMerchantResolver</a></li>
         

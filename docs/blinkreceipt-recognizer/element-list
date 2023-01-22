@@ -10,8 +10,6 @@ $dokka.location:com.microblink.internal.merchant.dto/Merchant.ProductLookupMerch
 $dokka.location:com.microblink.internal.merchant.dto/Merchant.RawTextBasedLookup///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.RawTextBasedLookup.html
 $dokka.location:com.microblink.internal.merchant.dto/Merchant.TaxIdMerchant///PointingToDeclaration/com/microblink/internal/merchant/dto/Merchant.TaxIdMerchant.html
 $dokka.location:com.microblink.internal.merchant.resolvers/ProductLookupMerchantResolver.Companion///PointingToDeclaration/com/microblink/internal/merchant/resolvers/ProductLookupMerchantResolver.Companion.html
-$dokka.location:com.microblink.internal.merchant/MerchantDetector.DetectorStateObserver///PointingToDeclaration/com/microblink/internal/merchant/MerchantDetector.DetectorStateObserver.html
-$dokka.location:com.microblink.internal.merchant/MerchantManagerImpl.Companion///PointingToDeclaration/com/microblink/internal/merchant/MerchantManagerImpl.Companion.html
 $dokka.location:com.microblink.internal.merchant/MerchantResult.Source///PointingToDeclaration/com/microblink/internal/merchant/MerchantResult.Source.html
 $dokka.location:com.microblink.internal.merchant/WinningMerchantResolver.Companion///PointingToDeclaration/com/microblink/internal/merchant/WinningMerchantResolver.Companion.html
 $dokka.location:com.microblink.internal.services.duplicates/SearchParameters.Builder///PointingToDeclaration/com/microblink/internal/services/duplicates/SearchParameters.Builder.html
@@ -19,13 +17,13 @@ $dokka.location:com.microblink.internal.services.google/GooglePlacesRepository.L
 $dokka.location:com.microblink.internal.services.lookup/StoreLookupRepository.Listener///PointingToDeclaration/com/microblink/internal/services/lookup/StoreLookupRepository.Listener.html
 $dokka.location:com.microblink.internal.services.merchants/MerchantLookupProcess.Listener///PointingToDeclaration/com/microblink/internal/services/merchants/MerchantLookupProcess.Listener.html
 $dokka.location:com.microblink.internal.services.store/StoreLookUpService.Listener///PointingToDeclaration/com/microblink/internal/services/store/StoreLookUpService.Listener.html
-$dokka.location:com.microblink.internal/StoreDeleteWorker.Companion///PointingToDeclaration/com/microblink/internal/StoreDeleteWorker.Companion.html
 $dokka.location:com.microblink/EdgeDetectionConfiguration.Builder///PointingToDeclaration/com/microblink/EdgeDetectionConfiguration.Builder.html
 $dokka.location:com.microblink/FrameCharacteristics.Builder///PointingToDeclaration/com/microblink/FrameCharacteristics.Builder.html
 $dokka.location:com.microblink/FrameCharacteristics.FrameExtension///PointingToDeclaration/com/microblink/FrameCharacteristics.FrameExtension.html
 $dokka.location:com.microblink/MerchantConfiguration.Builder///PointingToDeclaration/com/microblink/MerchantConfiguration.Builder.html
 $dokka.location:com.microblink/ProductDetector.Listener///PointingToDeclaration/com/microblink/ProductDetector.Listener.html
 $dokka.location:com.microblink/ScanOptions.Builder///PointingToDeclaration/com/microblink/ScanOptions.Builder.html
+$dokka.location:com.microblink/StoreDeleteWorker.Companion///PointingToDeclaration/com/microblink/StoreDeleteWorker.Companion.html
 com.microblink
 com.microblink.internal
 com.microblink.internal.candidate
