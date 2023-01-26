@@ -161,3 +161,9 @@
 
 - stability fixes and improvements
 - fix a bug where orders only one set of orders is returned
+
+## 1.2.1
+
+- stability fixes and improvements
+- Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
+- map internal exception codes to public account linking codes.

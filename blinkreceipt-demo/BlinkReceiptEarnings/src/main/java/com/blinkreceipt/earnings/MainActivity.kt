@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onEarnings(view: View) {
         MissedEarningsClient(applicationContext)
                 .results("[REPLACE WITH BLINK RECEIPT ID]").addOnSuccessListener {

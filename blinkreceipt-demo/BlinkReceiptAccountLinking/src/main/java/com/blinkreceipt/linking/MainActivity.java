@@ -2,6 +2,7 @@ package com.blinkreceipt.linking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import kotlin.Unit;
 
+@SuppressLint("UnsafeOptInUsageWarning")
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(

@@ -1,9 +1,10 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
-$dokka.location:com.microblink.core.internal/MixPanelRemoveWorker.Companion///PointingToDeclaration/com/microblink/core/internal/MixPanelRemoveWorker.Companion.html
-$dokka.location:com.microblink.core.internal/MixPanelWorker.Companion///PointingToDeclaration/com/microblink/core/internal/MixPanelWorker.Companion.html
+$dokka.location:com.microblink.core.internal/Processor.Companion///PointingToDeclaration/com/microblink/core/internal/Processor.Companion.html
 $dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
+$dokka.location:com.microblink.core/MixPanelRemoveWorker.Companion///PointingToDeclaration/com/microblink/core/MixPanelRemoveWorker.Companion.html
+$dokka.location:com.microblink.core/MixPanelWorker.Companion///PointingToDeclaration/com/microblink/core/MixPanelWorker.Companion.html
 $dokka.location:com.microblink.core/Product.Builder///PointingToDeclaration/com/microblink/core/Product.Builder.html
 $dokka.location:com.microblink.core/ScanResults.Builder///PointingToDeclaration/com/microblink/core/ScanResults.Builder.html
 $dokka.location:com.microblink.core/Shipment.Builder///PointingToDeclaration/com/microblink/core/Shipment.Builder.html

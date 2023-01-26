@@ -32,3 +32,8 @@
 ## 1.0.7
 
 - stability fixes and improvements
+
+## 1.0.8
+
+- stability fixes and improvements
+- Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
