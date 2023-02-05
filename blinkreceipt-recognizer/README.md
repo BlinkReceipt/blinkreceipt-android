@@ -33,36 +33,36 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
 
-  implementation 'androidx.appcompat:appcompat:1.3.1'
+     implementation 'androidx.appcompat:appcompat:1.3.1'
 
-  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-  implementation 'com.squareup.okhttp3:okhttp:4.9.3'
-  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-  implementation 'com.squareup.okio:okio:3.0.0'
+     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+     implementation 'com.squareup.okio:okio:3.0.0'
 
-  implementation "com.google.android.gms:play-services-tasks:18.0.1"
-  implementation "com.google.android.gms:play-services-auth:19.2.0"
+     implementation "com.google.android.gms:play-services-tasks:18.0.1"
+     implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-  implementation 'com.jakewharton.timber:timber:5.0.1'
+     implementation 'com.jakewharton.timber:timber:5.0.1'
 
-  implementation "androidx.webkit:webkit:1.4.0"
+     implementation "androidx.webkit:webkit:1.4.0"
 
-  implementation "androidx.work:work-runtime:2.6.0"
-  implementation "androidx.work:work-runtime-ktx:2.6.0"
+     implementation "androidx.work:work-runtime:2.6.0"
+     implementation "androidx.work:work-runtime-ktx:2.6.0"
 
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
-  implementation "androidx.core:core-ktx:1.6.0"
+     implementation "androidx.core:core-ktx:1.6.0"
 
-  implementation project( ':blinkreceipt-core' )
-  implementation project( ':blinkreceipt-camera' )
+     implementation project( ':blinkreceipt-core' )
+     implementation project( ':blinkreceipt-camera' )
 }
 ```
 
@@ -130,44 +130,44 @@ Even though there are different ways to initialize the sdk, the recommended way 
 `AndroidManifest.xml`
 ```xml
  <meta-data
-        android:name="com.microblink.LicenseKey"
-        android:value="BLINK RECEIPT LICENSE KEY" />
+    android:name="com.microblink.LicenseKey"
+    android:value="BLINK RECEIPT LICENSE KEY" />
 ```
 
 The easiest way to get started scanning your first receipt would be to use the internal Scan Activity within the aar.
 
 ```java
     ScanOptions scanOptions = ScanOptions.newBuilder()
-        .frameCharacteristics( FrameCharacteristics.newBuilder()
+     .frameCharacteristics( FrameCharacteristics.newBuilder()
         .storeFrames( true )
         .compressionQuality( 100 )
         .externalStorage( false ) .build() )
-        .logoDetection( true )
-        .build();
+    .logoDetection( true )
+    .build();
 
-        Bundle bundle = new Bundle();
+    Bundle bundle = new Bundle();
 
-        bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
+    bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
 
-        Intent intent = new Intent( this, CameraScanActivity.class )
+    Intent intent = new Intent( this, CameraScanActivity.class )
         .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );
 
-        startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
+    startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
 ```
 
 The results are returned through 2 objects, which can be retrieved by getting the parcelable extras `ScanResults` and `Media`. The `ScanResults` object contain the results from the scan session.
 
 ```java
  @Override
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
 
-        if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
+     if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
         ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );
 
         Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA );
-        }
-        }
+    }
+}
 ```
 
 ### <a name=customizeScanActivity></a> Customize Camera Scan Activity
@@ -210,9 +210,9 @@ CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA;
 UI Dimens
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
-  <dimen name="camera_scan_take_picture_size">60dp</dimen>
+ <resources>
+    <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
+    <dimen name="camera_scan_take_picture_size">60dp</dimen>
 </resources>
 ```
 ### <a name=customizeScanSession></a> Customize Scan Configuration
@@ -236,25 +236,25 @@ Want to see your captured frames? save scanned results? This extra functionality
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
 ```java
 public interface RecognizerCallback {
-  // Called when scan results are compiled and saved images are processed.
-  void onRecognizerDone( @NonNull ScanResults results, Media media );
+ // Called when scan results are compiled and saved images are processed.
+void onRecognizerDone( @NonNull ScanResults results, Media media );
 
-  // Called in the case there is an exception while scanning the captured frame.
-  void onRecognizerException(@NonNull Throwable e );
+ // Called in the case there is an exception while scanning the captured frame.
+void onRecognizerException(@NonNull Throwable e );
 
-  // The callback invoked whenever a step within the scanning process is returned.
-  void onRecognizerResultsChanged( @NonNull RecognizerResult result );
+// The callback invoked whenever a step within the scanning process is returned.
+void onRecognizerResultsChanged( @NonNull RecognizerResult result );
 }
 ```
 
 ```java
 public interface CameraRecognizerCallback {
-  // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
-  // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
-  //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
-  void onPreviewStopped();
+    // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
+    // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
+    //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
+    void onPreviewStopped();
 
-  void onException( @NonNull Throwable throwable );
+    void onException( @NonNull Throwable throwable );
 }
 ```
 The RecognizerCallback also provides preliminary results.
@@ -265,10 +265,10 @@ The RecognizerCallback also provides preliminary results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        if ( result instanceof PreliminaryResult ) {
+    if ( result instanceof PreliminaryResult ) {
         PreliminaryResult results = (PreliminaryResult) result;
-        }
-        }
+    }
+}
 ```
 
 The RecognizerCallback also provides raw results.
@@ -276,10 +276,10 @@ The RecognizerCallback also provides raw results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        if ( result instanceof OcrRawResult ) {
+    if ( result instanceof OcrRawResult ) {
         OcrRawResult ocrRawResult = (OcrRawResult) result;
-        }
-        }
+    }
+}
 ```
 
 The RecognizerCallback also provides edge results.
@@ -287,10 +287,10 @@ The RecognizerCallback also provides edge results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        if ( result instanceof EdgeDetectionResult ) {
+    if ( result instanceof EdgeDetectionResult ) {
         EdgeDetectionResult edges = (EdgeDetectionResult) result;
-        }
-        }
+    }
+}
 ```
 
 `RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
@@ -314,45 +314,45 @@ The sdk does have an easy to use activity that can be used and customized as des
 
 ```java
     @Override
-protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         recognizerView.create();
-        }
+    }
 
-@Override
-public void onStart() {
+    @Override
+    public void onStart() {
         super.onStart();
 
         recognizerView.start();
-        }
+    }
 
-@Override
-public void onResume() {
+    @Override
+    public void onResume() {
         super.onResume();
         recognizerView.resume();
-        }
+    }
 
-@Override
-public void onPause() {
+    @Override
+    public void onPause() {
         super.onPause();
 
         recognizerView.pause();
-        }
+    }
 
-@Override
-public void onStop() {
+    @Override
+    public void onStop() {
         super.onStop();
 
         recognizerView.stop();
-        }
+    }
 
-@Override
-public void onDestroy() {
+    @Override
+    public void onDestroy() {
         super.onDestroy();
 
         recognizerView.destroy();
-        }
+    }
 ```
 ### Capabilities and Customizations
 
@@ -387,42 +387,42 @@ The `RecognizerClient` can be instantiated with its primary constructor which ta
 ```java
 public class MainActivity extends AppCompatActivity {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    initializeClient();
+        initializeClient();
 
-    // fetch bitmaps
-    sendBitmapsForScanning()
-  }
+        // fetch bitmaps
+        sendBitmapsForScanning()
+    }
 
-  private void initializeClient() {
-    client = new RecognizerClient(this);
-  }
+    private void initializeClient() {
+        client = new RecognizerClient(this);
+    }
 
-  private void sendBitmapsForScanning() {
-    ScanOptions options = ScanOptions.newBuilder()
-            .build();
+    private void sendBitmapsForScanning() {
+        ScanOptions options = ScanOptions.newBuilder()
+                .build();
 
-    client.recognize(options, new RecognizerCallback() {
-      @Override
-      public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
-        Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
-      }
+        client.recognize(options, new RecognizerCallback() {
+            @Override
+            public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
+                Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
+            }
 
-      @Override
-      public void onRecognizerException(@NonNull Throwable throwable) {
-        Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-      }
+            @Override
+            public void onRecognizerException(@NonNull Throwable throwable) {
+                Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            }
 
-      @Override
-      public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
+            @Override
+            public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
 
-      }
-    }, bitmaps);
-  }
+            }
+        }, bitmaps);
+    }
 }
 ```
 #### Image Orientation [OPTIONAL]
@@ -494,10 +494,10 @@ AmazonManager.getInstance( this ).storeCredentials( AmazonCredentials( "AMAZON_E
 ```java
 AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 
-        override fun onComplete(orders: List<ScanResults>?) { }
+ override fun onComplete(orders: List<ScanResults>?) { }
 
-        override fun onException( e: AmazonException) { }
-        } )
+ override fun onException( e: AmazonException) { }
+ } )
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -517,28 +517,28 @@ If you manually initialize the SDK you should disable auto configuration in your
 ```java
 @Override
 public void onCreate() {
-        super.onCreate();
+    super.onCreate();
 
-        BlinkReceiptSdk.initialize( context );
-        }
+    BlinkReceiptSdk.initialize( context );
+}
 ```
 
 ```xml
 <meta-data
-        android:name="com.microblink.AutoConfiguration"
-        android:value="false" />
+    android:name="com.microblink.AutoConfiguration"
+    android:value="false" />
 ```
 
 ```java
 @Override
 public void onTerminate() {
-        BlinkReceiptSdk.terminate();
+    BlinkReceiptSdk.terminate();
 
-        super.onTerminate();
-        }
+    super.onTerminate();
+}
 ```
 
-## <a name=processorConfigurations></a> Processor Architecture Considerations
+## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
 BlinkReceipt is distributed with **ARMv7** and **ARM64** native library binaries.
 
