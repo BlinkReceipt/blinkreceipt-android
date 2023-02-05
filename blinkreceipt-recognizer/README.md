@@ -33,36 +33,36 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
 
-     implementation 'androidx.appcompat:appcompat:1.3.1'
+  implementation 'androidx.appcompat:appcompat:1.3.1'
 
-     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
-     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-     implementation 'com.squareup.okio:okio:3.0.0'
+  implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+  implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+  implementation 'com.squareup.okio:okio:3.0.0'
 
-     implementation "com.google.android.gms:play-services-tasks:18.0.1"
-     implementation "com.google.android.gms:play-services-auth:19.2.0"
+  implementation "com.google.android.gms:play-services-tasks:18.0.1"
+  implementation "com.google.android.gms:play-services-auth:19.2.0"
 
-     implementation 'com.jakewharton.timber:timber:5.0.1'
+  implementation 'com.jakewharton.timber:timber:5.0.1'
 
-     implementation "androidx.webkit:webkit:1.4.0"
+  implementation "androidx.webkit:webkit:1.4.0"
 
-     implementation "androidx.work:work-runtime:2.6.0"
-     implementation "androidx.work:work-runtime-ktx:2.6.0"
+  implementation "androidx.work:work-runtime:2.6.0"
+  implementation "androidx.work:work-runtime-ktx:2.6.0"
 
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
-     implementation "androidx.core:core-ktx:1.6.0"
+  implementation "androidx.core:core-ktx:1.6.0"
 
-     implementation project( ':blinkreceipt-core' )
-     implementation project( ':blinkreceipt-camera' )
+  implementation project( ':blinkreceipt-core' )
+  implementation project( ':blinkreceipt-camera' )
 }
 ```
 
@@ -130,44 +130,44 @@ Even though there are different ways to initialize the sdk, the recommended way 
 `AndroidManifest.xml`
 ```xml
  <meta-data
-    android:name="com.microblink.LicenseKey"
-    android:value="BLINK RECEIPT LICENSE KEY" />
+        android:name="com.microblink.LicenseKey"
+        android:value="BLINK RECEIPT LICENSE KEY" />
 ```
 
 The easiest way to get started scanning your first receipt would be to use the internal Scan Activity within the aar.
 
 ```java
     ScanOptions scanOptions = ScanOptions.newBuilder()
-     .frameCharacteristics( FrameCharacteristics.newBuilder()
+        .frameCharacteristics( FrameCharacteristics.newBuilder()
         .storeFrames( true )
         .compressionQuality( 100 )
         .externalStorage( false ) .build() )
-    .logoDetection( true )
-    .build();
+        .logoDetection( true )
+        .build();
 
-    Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();
 
-    bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
+        bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
 
-    Intent intent = new Intent( this, CameraScanActivity.class )
+        Intent intent = new Intent( this, CameraScanActivity.class )
         .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );
 
-    startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
+        startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
 ```
 
 The results are returned through 2 objects, which can be retrieved by getting the parcelable extras `ScanResults` and `Media`. The `ScanResults` object contain the results from the scan session.
 
 ```java
  @Override
- protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-     if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
+        if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
         ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );
 
         Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA );
-    }
-}
+        }
+        }
 ```
 
 ### <a name=customizeScanActivity></a> Customize Camera Scan Activity
@@ -210,9 +210,9 @@ CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA;
 UI Dimens
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
- <resources>
-    <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
-    <dimen name="camera_scan_take_picture_size">60dp</dimen>
+<resources>
+  <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
+  <dimen name="camera_scan_take_picture_size">60dp</dimen>
 </resources>
 ```
 ### <a name=customizeScanSession></a> Customize Scan Configuration
@@ -236,25 +236,25 @@ Want to see your captured frames? save scanned results? This extra functionality
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
 ```java
 public interface RecognizerCallback {
- // Called when scan results are compiled and saved images are processed.
-void onRecognizerDone( @NonNull ScanResults results, Media media );
+  // Called when scan results are compiled and saved images are processed.
+  void onRecognizerDone( @NonNull ScanResults results, Media media );
 
- // Called in the case there is an exception while scanning the captured frame.
-void onRecognizerException(@NonNull Throwable e );
+  // Called in the case there is an exception while scanning the captured frame.
+  void onRecognizerException(@NonNull Throwable e );
 
-// The callback invoked whenever a step within the scanning process is returned.
-void onRecognizerResultsChanged( @NonNull RecognizerResult result );
+  // The callback invoked whenever a step within the scanning process is returned.
+  void onRecognizerResultsChanged( @NonNull RecognizerResult result );
 }
 ```
 
 ```java
 public interface CameraRecognizerCallback {
-    // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
-    // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
-    //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
-    void onPreviewStopped();
+  // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
+  // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
+  //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
+  void onPreviewStopped();
 
-    void onException( @NonNull Throwable throwable );
+  void onException( @NonNull Throwable throwable );
 }
 ```
 The RecognizerCallback also provides preliminary results.
@@ -265,10 +265,10 @@ The RecognizerCallback also provides preliminary results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof PreliminaryResult ) {
+        if ( result instanceof PreliminaryResult ) {
         PreliminaryResult results = (PreliminaryResult) result;
-    }
-}
+        }
+        }
 ```
 
 The RecognizerCallback also provides raw results.
@@ -276,10 +276,10 @@ The RecognizerCallback also provides raw results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof OcrRawResult ) {
+        if ( result instanceof OcrRawResult ) {
         OcrRawResult ocrRawResult = (OcrRawResult) result;
-    }
-}
+        }
+        }
 ```
 
 The RecognizerCallback also provides edge results.
@@ -287,10 +287,10 @@ The RecognizerCallback also provides edge results.
 ```java
 @Override
 public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof EdgeDetectionResult ) {
+        if ( result instanceof EdgeDetectionResult ) {
         EdgeDetectionResult edges = (EdgeDetectionResult) result;
-    }
-}
+        }
+        }
 ```
 
 `RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
@@ -314,45 +314,45 @@ The sdk does have an easy to use activity that can be used and customized as des
 
 ```java
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         recognizerView.create();
-    }
+        }
 
-    @Override
-    public void onStart() {
+@Override
+public void onStart() {
         super.onStart();
 
         recognizerView.start();
-    }
+        }
 
-    @Override
-    public void onResume() {
+@Override
+public void onResume() {
         super.onResume();
         recognizerView.resume();
-    }
+        }
 
-    @Override
-    public void onPause() {
+@Override
+public void onPause() {
         super.onPause();
 
         recognizerView.pause();
-    }
+        }
 
-    @Override
-    public void onStop() {
+@Override
+public void onStop() {
         super.onStop();
 
         recognizerView.stop();
-    }
+        }
 
-    @Override
-    public void onDestroy() {
+@Override
+public void onDestroy() {
         super.onDestroy();
 
         recognizerView.destroy();
-    }
+        }
 ```
 ### Capabilities and Customizations
 
@@ -387,42 +387,42 @@ The `RecognizerClient` can be instantiated with its primary constructor which ta
 ```java
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-        initializeClient();
+    initializeClient();
 
-        // fetch bitmaps
-        sendBitmapsForScanning()
-    }
+    // fetch bitmaps
+    sendBitmapsForScanning()
+  }
 
-    private void initializeClient() {
-        client = new RecognizerClient(this);
-    }
+  private void initializeClient() {
+    client = new RecognizerClient(this);
+  }
 
-    private void sendBitmapsForScanning() {
-        ScanOptions options = ScanOptions.newBuilder()
-                .build();
+  private void sendBitmapsForScanning() {
+    ScanOptions options = ScanOptions.newBuilder()
+            .build();
 
-        client.recognize(options, new RecognizerCallback() {
-            @Override
-            public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
-                Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
-            }
+    client.recognize(options, new RecognizerCallback() {
+      @Override
+      public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
+        Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
+      }
 
-            @Override
-            public void onRecognizerException(@NonNull Throwable throwable) {
-                Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+      @Override
+      public void onRecognizerException(@NonNull Throwable throwable) {
+        Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+      }
 
-            @Override
-            public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
+      @Override
+      public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
 
-            }
-        }, bitmaps);
-    }
+      }
+    }, bitmaps);
+  }
 }
 ```
 #### Image Orientation [OPTIONAL]
@@ -494,10 +494,10 @@ AmazonManager.getInstance( this ).storeCredentials( AmazonCredentials( "AMAZON_E
 ```java
 AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 
- override fun onComplete(orders: List<ScanResults>?) { }
+        override fun onComplete(orders: List<ScanResults>?) { }
 
- override fun onException( e: AmazonException) { }
- } )
+        override fun onException( e: AmazonException) { }
+        } )
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -517,48 +517,133 @@ If you manually initialize the SDK you should disable auto configuration in your
 ```java
 @Override
 public void onCreate() {
-    super.onCreate();
+        super.onCreate();
 
-    BlinkReceiptSdk.initialize( context );
-}
+        BlinkReceiptSdk.initialize( context );
+        }
 ```
 
 ```xml
 <meta-data
-    android:name="com.microblink.AutoConfiguration"
-    android:value="false" />
+        android:name="com.microblink.AutoConfiguration"
+        android:value="false" />
 ```
 
 ```java
 @Override
 public void onTerminate() {
-    BlinkReceiptSdk.terminate();
+        BlinkReceiptSdk.terminate();
 
-    super.onTerminate();
-}
+        super.onTerminate();
+        }
 ```
 
 ## <a name=processorConfigurations></a> Processor Architecture Considerations
 
-BlinkReceipt is distributed with both ARMv7, ARM64, x86 native library binaries.
+BlinkReceipt is distributed with **ARMv7** and **ARM64** native library binaries.
 
-ARMv7 architecture gives the ability to take advantage of hardware accelerated floating point operations and SIMD processing with NEON. This gives BlinkReceipt a huge performance boost on devices that have ARMv7 processors. Most new devices (all since 2012.) have ARMv7 processor so it makes little sense not to take advantage of performance boosts that those processors can give. Also note that some devices with ARMv7 processors do not support NEON instruction sets. Most popular are those based on NVIDIA Tegra 2 fall into this category. Since these devices are old by today's standard, BlinkReceipt does not support them.
+**ARMv7** architecture gives the ability to take advantage of hardware accelerated floating point operations and SIMD processing with [NEON](http://www.arm.com/products/processors/technologies/neon.php). This gives BlinkReceipt a huge performance boost on devices that have ARMv7 processors. Most new devices (all since 2012.) have ARMv7 processor so it makes little sense not to take advantage of performance boosts that those processors can give. Also note that some devices with ARMv7 processors do not support NEON and VFPv4 instruction sets, most popular being those based on [NVIDIA Tegra 2](https://en.wikipedia.org/wiki/Tegra#Tegra_2), [ARM Cortex A9](https://en.wikipedia.org/wiki/ARM_Cortex-A9) and older. Since these devices are old by today's standard, BlinkReceipt does not support them. For the same reason, BlinkReceipt does not support devices with ARMv5 (`armeabi`) architecture.
 
-ARM64 is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with single instruction.
+**ARM64** is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with a single instruction.
 
-x86 architecture gives the ability to obtain native speed on x86 android devices, like Asus Zenfone 4. Without that, BlinkReceipt will not work on such devices, or it will be run on top of ARM emulator that is shipped with device - this will give a huge performance penalty.
+There are some issues to be considered:
 
-However, there are some issues to be considered:
+- ARMv7 build of the native library cannot be run on devices that do not have ARMv7 compatible processor
+- ARMv7 processors do not understand x86 instruction set
+- ARM64 processors understand ARMv7 instruction set, but ARMv7 processors do not understand ARM64 instructions.
+  - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
+- if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
 
-ARMv7 build of native library cannot be run on devices that do not have ARMv7 compatible processor (list of those old devices can be found here)
-ARMv7 processors does not understand x86 instruction set
-x86 processors do not understand neither ARM64 nor ARMv7 instruction sets
-however, some x86 android devices ship with the builtin ARM emulator - such devices are able to run ARM binaries but with performance penalty. There is also a risk that builtin ARM emulator will not understand some specific ARM instruction and will crash.
-ARM64 processors understand ARMv7 instruction set, but ARMv7 processors does not understand ARM64 instructions
-if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
-x86_64 processors understand x86 instruction set, but x86 processors do not understand x86_64 instruction set
-if x86_64 processor executes x86 code, it does not take advantage of 64-bit registers and use two instructions instead of one for 64-bit operations
-LibBlinkReceipt.aar archive contains ARMv7, ARM64, x86 and x86_64 builds of native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all processor architectures. Thus, BlinkReceipt will work on ARMv7, ARM64, x86 and x86_64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
+`LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
+
+## <a name="reduce-size"></a> Reducing the final size of your app
+
+We recommend that you distribute your app using [App Bundle](https://developer.android.com/platform/technology/app-bundle). This will defer apk generation to Google Play, allowing it to generate minimal APK for each specific device that downloads your app, including only required processor architecture support.
+
+### Using APK splits
+
+If you are unable to use App Bundle, you can create multiple flavors of your app - one flavor for each architecture. With gradle and Android studio this is very easy - just add the following code to `build.gradle` file of your app:
+
+```
+android {
+  ...
+  splits {
+    abi {
+      enable true
+      reset()
+      include 'armeabi-v7a', 'arm64-v8a'
+      universalApk true
+    }
+  }
+}
+```
+
+With that build instructions, gradle will build two different APK files for your app. Each APK will contain only native library for one processor architecture and one APK will contain all architectures. In order for Google Play to accept multiple APKs of the same app, you need to ensure that each APK has different version code. This can easily be done by defining a version code prefix that is dependent on architecture and adding real version code number to it in following gradle script:
+
+```
+// map for the version code
+def abiVersionCodes = ['armeabi-v7a':1, 'arm64-v8a':2]
+
+import com.android.build.OutputFile
+
+android.applicationVariants.all { variant ->
+    // assign different version code for each output
+    variant.outputs.each { output ->
+        def filter = output.getFilter(OutputFile.ABI)
+        if(filter != null) {
+            output.versionCodeOverride = abiVersionCodes.get(output.getFilter(OutputFile.ABI)) * 1000000 + android.defaultConfig.versionCode
+        }
+    }
+}
+```
+
+For more information about creating APK splits with gradle, check [this article from Google](https://developer.android.com/studio/build/configure-apk-splits.html#configure-abi-split).
+
+After generating multiple APK's, you need to upload them to Google Play. For tutorial and rules about uploading multiple APK's to Google Play, please read the [official Google article about multiple APKs](https://developer.android.com/google/play/publishing/multiple-apks.html).
+
+### Removing processor architecture support
+
+If you won't be distributing your app via Google Play or for some other reasons want to have single APK of smaller size, you can completely remove support for certain CPU architecture from your APK. **This is not recommended due to [consequences](#arch-consequences)**.
+
+To keep only some CPU architectures, for example `armeabi-v7a` and `arm64-v8a`, add the following statement to your `android` block inside `build.gradle`:
+
+```
+android {
+    ...
+    ndk {
+        // Tells Gradle to package the following ABIs into your application
+        abiFilters 'armeabi-v7a', 'arm64-v8a'
+    }
+}
+```
+
+This will remove other architecture builds for **all** native libraries used by the application.
+
+To remove support for a certain CPU architecture only for BlinkReceipt, add the following statement to your `android` block inside `build.gradle`:
+
+```
+android {
+    ...
+    packagingOptions {
+        exclude 'lib/<ABI>/libBlinkReceipt.so'
+    }
+}
+```
+
+where `<ABI>` represents the CPU architecture you want to remove:
+
+- to remove ARMv7 support, use `exclude 'lib/armeabi-v7a/libBlinkReceipt.so'`
+- to remove ARM64 support, use `exclude 'lib/arm64-v8a/libBlinkReceipt.so'`
+
+You can also remove multiple processor architectures by specifying `exclude` directive multiple times. Just bear in mind that removing processor architecture will have side effects on performance and stability of your app. Please read [this](#arch-consequences) for more information.
+
+### <a name="arch-consequences"></a> Consequences of removing processor architecture
+
+- Google decided that as of August 2019 all apps on Google Play that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64). This means that you cannot upload application to Google Play Console that supports only 32-bit ABI and does not support corresponding 64-bit ABI.
+
+- By removing ARMv7 support, BlinkReceipt will not work on devices that have ARMv7 processors.
+- By removing ARM64 support, BlinkReceipt will not use ARM64 features on ARM64 device
+- also, some future devices may ship with ARM64 processors that will not support ARMv7 instruction set.
 
 ## <a name=requirements></a> Requirements
 - AndroidX
