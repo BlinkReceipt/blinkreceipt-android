@@ -2,7 +2,7 @@
 
 Blink Receipt Barcode SDK for Android is an SDK that enables you to easily add barcode functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
 
-## <a name=processorConfigurations></a> Processor Architecture Considerations
+## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
 Blink Receipt Barcode is distributed with both ARMv7, ARM64, x86 native library binaries.
 
