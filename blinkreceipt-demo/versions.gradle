@@ -21,6 +21,7 @@ buildscript {
         'core'                  : '1.6.0',
         'collection'            : '1.2.0',
         'worker'                : '2.6.0',
+        'datastore'             : '1.0.0',
         'webkit'                : '1.4.0',
         'constraintLayout'      : '2.1.2',
         'preference'            : '1.1.1',
