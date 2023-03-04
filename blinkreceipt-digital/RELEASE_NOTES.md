@@ -218,3 +218,8 @@ counterpart
 - stability fixes and improvements
 - Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
 - fix gmail bad password detection
+
+## 1.3.3
+
+- stability fixes and improvements
+- increase network timeout for Outlook integration

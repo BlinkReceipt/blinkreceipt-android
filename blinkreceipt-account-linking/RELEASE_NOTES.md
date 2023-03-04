@@ -167,3 +167,10 @@
 - stability fixes and improvements
 - Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
 - map internal exception codes to public account linking codes.
+
+## 1.2.2
+
+- stability fixes and improvements
+- Force window size to a default size when initializing the account linking SDK.
+- added androidx data store (androidx.datastore:datastore-preferences)
+- added support to return latest orders only
