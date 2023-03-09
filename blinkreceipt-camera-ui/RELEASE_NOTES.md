@@ -40,4 +40,4 @@
 
 ## 1.0.9
 
-- stability fixes and improvements
+- Stability fixes and improvements

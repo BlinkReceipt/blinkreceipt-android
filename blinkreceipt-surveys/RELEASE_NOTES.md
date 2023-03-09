@@ -128,5 +128,5 @@
 
 ## 1.2.3
 
-- stability fixes and improvements
+- Stability fixes and improvements
 

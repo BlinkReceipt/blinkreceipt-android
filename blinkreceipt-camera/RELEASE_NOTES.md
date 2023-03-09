@@ -157,5 +157,5 @@
 
 ## 1.3.5
 
-- stability fixes and improvements
+- Stability fixes and improvements
 

@@ -221,5 +221,5 @@ counterpart
 
 ## 1.3.3
 
-- stability fixes and improvements
-- increase network timeout for Outlook integration
+- Stability fixes and improvements
+- Increase network timeout for Outlook integration
