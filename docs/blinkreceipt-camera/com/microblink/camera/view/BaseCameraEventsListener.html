@@ -259,7 +259,7 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>abstract void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BaseCameraEventsListener.html#onError(Throwable)>onError</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> exc) </code>
+                                            <th class="colSecond" scope="row"><code><a href=BaseCameraEventsListener.html#onError(Throwable)>onError</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html>Throwable</a> exc) </code>
                                             </th>
                                             <td class="colLast">Called when recognition results with exception.</td>
                                         </tr>
@@ -352,7 +352,7 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
                                           >
                                     <li class="blockList">
                                         <h4>onError</h4>
-                                        <pre class="methodSignature"> abstract void <a href=BaseCameraEventsListener.html#onError(Throwable)>onError</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> exc)</pre>
+                                        <pre class="methodSignature"> abstract void <a href=BaseCameraEventsListener.html#onError(Throwable)>onError</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html>Throwable</a> exc)</pre>
                                         <div class="block"><p>Called when recognition results with exception. Known exceptions that can occur are following: * com.microblink.camera.hardware.camera.CameraResolutionTooSmallException is thrown when largest possible camera preview resolution is not enough for making a successful scan * java.lang.UnsatisfiedLinkError is thrown when native library was not successfully loaded thus making scans impossible * com.microblink.recognition.RecognizerError is thrown when initialization or reinitialization of native recognizer fails * com.microblink.recognition.FeatureNotSupportedException is thrown when scanning cannot be performed. The reason why scanning cannot be perfomed can be obtained by calling getReason() method of thrown exception. * java.lang.Throwable is thrown in all other cases (for example when camera is not ready because it is used by other apps or some unknown error has occurred)</p></div>
                                         
                                         <dl>
