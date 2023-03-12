@@ -163,9 +163,9 @@ class MainActivity : AppCompatActivity() {
         binding.results.text = "Searching for debug messages..."
 
         @Suppress("DEPRECATION")
-        Tasks.call(ExecutorSupplier.getInstance().io(), {
+        Tasks.call(ExecutorSupplier.getInstance().io()) {
             IOUtils.tryReadStream(applicationContext.assets.open("peapod.html")) ?: ""
-        }).addOnSuccessListener { html ->
+        }.addOnSuccessListener { html ->
             client.messages(Provider.GMAIL, "yourfriends@peapod.com", html)
                 .addOnSuccessListener {
                     Toast.makeText(
