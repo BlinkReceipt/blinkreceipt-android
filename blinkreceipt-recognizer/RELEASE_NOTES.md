@@ -470,3 +470,19 @@ Blink Receipt Recognizer
 
 - stability fixes and improvements
 - Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
+
+## 1.6.4
+
+- Fixed a crash related to r8 removing the Emulators class from the classpath
+- Deprecated metadata com.microblink.AutoConfiguration. If you manually initialize the SDK, please remove the auto-initialized provider.
+    ```xml
+      <provider
+          android:name="com.microblink.BlinkRecognizerProvider"
+          android:authorities="${applicationId}.BlinkRecognizerProvider"
+          tools:node="remove" />
+    ```
+- Fixed regressions with French receipts
+  - "1X" left in the RSD in two products with bogus "8" qty because of detached 'B'
+  - We fixed an issue with tagging totals related to coupons.
+- We fixed an issue with certain receipts missing the last four digits of the credit card.
+- We fixed an issue where Pet Supply Plus returned the incorrect date.

@@ -37,3 +37,7 @@
 
 - stability fixes and improvements
 - Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
+
+## 1.0.9
+
+- Stability fixes and improvements
