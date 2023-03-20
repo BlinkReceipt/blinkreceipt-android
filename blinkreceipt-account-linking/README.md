@@ -40,6 +40,8 @@ In addition to those 2 modules you will need to pull in the following as well.
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
 
     implementation "androidx.webkit:webkit:1.4.0"
+
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 ```
 
 You may notice that there are Kotlin dependencies as part of this list. This is because the SDK is written in Kotlin. If your app does not use Kotlin that is ok you will just need to configure the app to use kotlin, but this will not require you to change programming languages as Kotlin is compatible with java.
