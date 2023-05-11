@@ -174,3 +174,7 @@
 - Force window size to default when initializing the account linking SDK.
 - Added androidx data store (androidx.datastore:datastore-preferences)
 - Added support to return the latest orders only
+
+## 1.2.3
+
+- Stability fixes and improvements

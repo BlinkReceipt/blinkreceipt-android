@@ -486,3 +486,20 @@ Blink Receipt Recognizer
   - We fixed an issue with tagging totals related to coupons.
 - We fixed an issue with certain receipts missing the last four digits of the credit card.
 - We fixed an issue where Pet Supply Plus returned the incorrect date.
+
+## 1.6.5
+
+- Stability fixes and improvements
+- Fixed bogus - missing date 
+- Fixed Upside fuel amount bug
+- Purchase type fix for Panera
+- Bogus quantity fix for Dollar General
+- Set gas product info line to product text for Upside 
+- Add more fuel terms for Upside 
+- Tag fuel amount text as fallback fuel product text
+- Digit detection out of bounds array index fix 
+- Fix nullptr reference in gas check function
+- Look for PRODUCT to tag fuel product text 
+- Look for PREPAY to tag fuel product text
+- Fix crash in fuel products
+
