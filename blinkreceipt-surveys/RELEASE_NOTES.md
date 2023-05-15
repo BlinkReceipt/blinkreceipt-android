@@ -130,3 +130,7 @@
 
 - Stability fixes and improvements
 
+## 1.2.4
+
+- Stability fixes and improvements
+

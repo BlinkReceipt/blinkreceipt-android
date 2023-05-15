@@ -223,3 +223,7 @@ counterpart
 
 - Stability fixes and improvements
 - Increase network timeout for Outlook integration
+
+## 1.3.4
+
+- Stability fixes and improvements
