@@ -147,7 +147,7 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
+    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -166,13 +166,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
@@ -237,7 +237,7 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
+    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -256,13 +256,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
@@ -519,7 +519,7 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:2.6.0"
 
     //Outlook
-    implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
+    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
         exclude group: 'com.microsoft.device.display'
     }
 
@@ -538,13 +538,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.webkit:webkit:1.4.0"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
     implementation "com.google.android.material:material:1.4.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     implementation "androidx.core:core-ktx:1.6.0"
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
@@ -677,7 +677,7 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "androidx.work:work-runtime-ktx:2.6.0"
 
         //Outlook
-        implementation( "com.microsoft.identity.client:msal:2.2.1" ) {
+        implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
             exclude group: 'com.microsoft.device.display'
         }
 
@@ -696,13 +696,13 @@ Blink Receipt Digital sdk allows for full Gmail Integration. The following depen
         implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
         implementation "androidx.webkit:webkit:1.4.0"
 
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
         implementation "com.google.android.material:material:1.4.0"
 
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
         implementation "androidx.core:core-ktx:1.6.0"
 
         implementation 'com.squareup.okhttp3:okhttp:4.9.3'

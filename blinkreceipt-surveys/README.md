@@ -14,7 +14,7 @@ Dependencies
 In addition to those 2 modules you will need to pull in the following as well.
 
 ``` groovy
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
 
   implementation "androidx.appcompat:appcompat:1.3.1"
 
@@ -34,9 +34,9 @@ In addition to those 2 modules you will need to pull in the following as well.
 
   implementation "com.jakewharton.timber:timber:5.0.1"
 
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
   implementation "com.google.android.gms:play-services-tasks:18.0.1"
   implementation "com.google.android.material:material:1.4.0"

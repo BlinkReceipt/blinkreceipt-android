@@ -199,3 +199,9 @@
 ## 1.3.6
 
 - Stability fixes and improvements
+
+## 1.3.7
+
+- Stability fixes and improvements
+- Fixed bug with deserialization where null values would incorrectly get deserialized to 0 when expecting a float type
+- Updated to Kotlin 1.8.21 and Kotlin Coroutines 1.7.1

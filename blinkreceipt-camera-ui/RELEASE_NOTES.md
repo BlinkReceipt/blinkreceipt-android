@@ -45,3 +45,7 @@
 ## 1.1.0
 
 - Stability fixes and improvements
+
+## 1.1.1
+
+- Stability fixes and improvements
