@@ -134,3 +134,8 @@
 
 - Stability fixes and improvements
 
+## 1.2.5
+
+- Stability fixes and improvements
+- Fix crash related to coroutine exception handling in the fetching surveys.
+

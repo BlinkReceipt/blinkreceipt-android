@@ -490,16 +490,18 @@ Blink Receipt Recognizer
 ## 1.6.5
 
 - Stability fixes and improvements
-- Fixed bogus - missing date 
-- Fixed Upside fuel amount bug
-- Purchase type fix for Panera
-- Bogus quantity fix for Dollar General
-- Set gas product info line to product text for Upside 
-- Add more fuel terms for Upside 
-- Tag fuel amount text as fallback fuel product text
-- Digit detection out of bounds array index fix 
-- Fix nullptr reference in gas check function
-- Look for PRODUCT to tag fuel product text 
-- Look for PREPAY to tag fuel product text
-- Fix crash in fuel products
+- Added support for new fuel product properties
+- Added support for additional Canadian date formats
+- Overall improvements in receipt total detection for top merchants in the UK
+- Fixed an issue with some Walgreens product quantities may have been returned incorrectly
+- Fixed and issue where purchase type for Panera and Dollar General receipts was incorrectly returned as “Delivery” 
 
+## 1.6.6
+
+- stability fixes and improvements
+- Improve accuracy of FullPrice property
+- Improve detection of unusual price formats
+- Support special date format for some Canada merchants
+- Improve fake receipts detection
+- Improve total detection on UK receipts
+- Fix Walgreens quantities detection

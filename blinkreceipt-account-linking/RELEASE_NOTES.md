@@ -178,3 +178,10 @@
 ## 1.2.3
 
 - Stability fixes and improvements
+
+## 1.2.4
+
+- Stability fixes and improvements
+- Remove duplicate orders from internal datastore
+- Fixed bug with deserialization where null values would incorrectly get deserialized to 0 when expecting a float type
+- Started using Kotlin context receivers, which will require you to update your Kotlin version to 1.8.21, as well as coroutines to 1.7.1

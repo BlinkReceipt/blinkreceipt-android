@@ -248,20 +248,12 @@ public interface <span class="typeNameLabel"><a href=OutlookService.html>Outlook
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=services/GraphUser.html>GraphUser</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=OutlookService.html#me()>me</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>abstract <a href=services/GraphUser.html>GraphUser</a></code>
-                                            </td>
                                             <th class="colSecond" scope="row"><code><a href=OutlookService.html#me(String)>me</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> token) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>abstract void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=OutlookService.html#logout(ISingleAccountPublicClientApplication.SignOutCallback)>logout</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() ISingleAccountPublicClientApplication.SignOutCallback callback) </code>
@@ -269,10 +261,18 @@ public interface <span class="typeNameLabel"><a href=OutlookService.html>Outlook
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i4" class="altColor">
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>abstract void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=OutlookService.html#login(Activity,AuthenticationCallback)>login</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/app/Activity.html>Activity</a> activity, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() AuthenticationCallback callback) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i4" class="altColor">
+                                            <td class="colFirst"><code>abstract ICurrentAccountResult</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=OutlookService.html#account()>account</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -336,21 +336,6 @@ public interface <span class="typeNameLabel"><a href=OutlookService.html>Outlook
                                     </li>
                                 </ul>
                                 
-                                <a id="me()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>me</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() abstract <a href=services/GraphUser.html>GraphUser</a> <a href=OutlookService.html#me()>me</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
                                 <a id="me(String)">
                                     <!--   -->
                                 </a>
@@ -385,11 +370,26 @@ public interface <span class="typeNameLabel"><a href=OutlookService.html>Outlook
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>login</h4>
                                         <pre class="methodSignature"> abstract void <a href=OutlookService.html#login(Activity,AuthenticationCallback)>login</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/app/Activity.html>Activity</a> activity, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() AuthenticationCallback callback)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="account()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>account</h4>
+                                        <pre class="methodSignature"> abstract ICurrentAccountResult <a href=OutlookService.html#account()>account</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

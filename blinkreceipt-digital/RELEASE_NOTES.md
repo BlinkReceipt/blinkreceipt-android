@@ -221,9 +221,17 @@ counterpart
 
 ## 1.3.3
 
-- Stability fixes and improvements
-- Increase network timeout for Outlook integration
+- stability fixes and improvements
+- increase network timeout for Outlook integration
 
 ## 1.3.4
 
 - Stability fixes and improvements
+
+## 1.3.5
+
+- Stability fixes and improvements
+- Outlook Client returns the current account signed into the app or in the case of shared device mode. Signed into the device
+- update Microsoft SDK to 4.2.0 
+- Fix crash related to coroutine exception handling in the remote messages api.
+- Fixed bug with deserialization where null float values would incorrectly get deserialized to 0 when expecting a float type
