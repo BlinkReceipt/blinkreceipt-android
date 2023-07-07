@@ -194,4 +194,4 @@
 - Stability fixes and improvements
 - Updated the following dependencies:
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1

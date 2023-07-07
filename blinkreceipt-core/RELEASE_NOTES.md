@@ -214,11 +214,13 @@
 - Updated the following dependencies:
   - androidx.appcompat:appcompat: 1.3.1 -> 1.6.1
   - androidx.core:core-ktx:1.6.0 -> 1.10.0
-  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0 -> 1.6.4
-  - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0 -> 1.7.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.7.1
   - com.squareup.okhttp3:okhttp:4.9.3 -> 4.11.0
   - com.squareup.okhttp3:logging-interceptor:4.9.0 -> 4.11.0
   - com.google.android.gms:play-services-tasks:18.0.1 -> 18.0.2 
   - com.squareup.okio:okio:3.0.0 -> 3.3.0
   - androidx.preference:preference-ktx:1.1.1 -> 1.2.0
+  - androidx.work:work-runtime:2.6.0 -> 2.8.1
+  - androidx.work:work-runtime-ktx:2.6.0 -> 2.8.1
 - Stability fixes and improvements
