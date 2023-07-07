@@ -235,3 +235,21 @@ counterpart
 - update Microsoft SDK to 4.2.0 
 - Fix crash related to coroutine exception handling in the remote messages api.
 - Fixed bug with deserialization where null float values would incorrectly get deserialized to 0 when expecting a float type
+
+## 1.3.6
+### Platform changes :warning:
+- The SDK now officially supports Android 13 and we now target and compile against API level 33
+
+### Other changes
+- Stability fixes and improvements
+- Updated the following dependencies:
+  - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
+  - androidx.constraintlayout:constraintlayout:2.0.4 -> 2.1.4
+  - androidx.fragment:fragment-ktx:1.3.1 -> 1.5.7
+  - androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1 -> 2.6.1
+  - androidx.lifecycle:lifecycle-livedata-ktx:2.3.1 -> 2.6.1
+  - androidx.lifecycle:lifecycle-common-java8:2.3.1 -> 2.6.1
+  - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
+  - androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1 -> 2.6.1
+  - androidx.webkit:webkit:1.4.0 -> 1.6.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4

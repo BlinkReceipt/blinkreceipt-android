@@ -17,29 +17,29 @@ In addition to those 2 modules you will need to pull in the following as well.
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     implementation "androidx.core:core-ktx:1.6.0"
 
-    implementation "androidx.work:work-runtime:2.6.0"
-    implementation "androidx.work:work-runtime-ktx:2.6.0"
+    implementation "androidx.work:work-runtime:2.8.1"
+    implementation "androidx.work:work-runtime-ktx:2.8.1"
 
-    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
 
-    implementation "com.squareup.okhttp3:okhttp:4.9.3"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
 
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
 
-    implementation "com.squareup.okio:okio:3.0.0"
+    implementation "com.squareup.okio:okio:3.3.0"
 
     implementation "com.jakewharton.timber:timber:5.0.1"
 
-    implementation "com.google.android.gms:play-services-tasks:18.0.1"
+    implementation "com.google.android.gms:play-services-tasks:18.0.2"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
-    implementation "androidx.webkit:webkit:1.4.0"
+    implementation "androidx.webkit:webkit:1.6.1"
 
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 ```
@@ -251,3 +251,18 @@ override fun onDestroy() {
     super.onDestroy()
 }
 ```
+## Account Linking Error Codes
+
+| Error Code |         Name         |                                                                     Description                                                                      |
+|:----------:|:--------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+|    1003    | MISSING_CREDENTIALS  |                     No linked account was found for the specific retailer when attempting to fetch orders or verify the account                      |
+|    1004    | VERIFICATION_NEEDED  |                                 Login encountered a scenario requiring manual user intervention (CAPTCHA, 2FA, etc)                                  |
+|    1005    |   PARSING_FAILURE    |                       The structure of the merchant’s website or data feed that was encountered during parsing was unexpected                        |
+|    1006    |    INTERNAL_ERROR    |                                                 An unexpected error occurred during login or parsing                                                 |
+|    1007    |    INTERNAL_ERROR    |                                                 An unexpected error occurred during login or parsing                                                 |
+|    1008    | USER_INPUT_COMPLETED | After VERIFICATION_NEEDED was returned and the WebView was shown to the user, the user completed the necessary action and the WebView can be removed |
+|    1009    |    INTERNAL_ERROR    |                                                 An unexpected error occurred during login or parsing                                                 |
+|    1050    |   PARSING_FAILURE    |                       The structure of the merchant’s website or data feed that was encountered during parsing was unexpected                        |
+|    1051    | INVALID_CREDENTIALS  |                                            Login failed on the merchant’s site due to invalid credentials                                            |
+
+

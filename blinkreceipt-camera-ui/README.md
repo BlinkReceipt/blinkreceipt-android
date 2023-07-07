@@ -24,12 +24,12 @@ In addition to the `Blink Recognizer` library, your app will require the followi
 ```groovy
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
 
-    implementation "androidx.core:core-ktx:1.6.0"
-    implementation "androidx.appcompat:appcompat:1.3.1"
-    implementation "com.google.android.material:material:1.4.0"
+    implementation "androidx.core:core-ktx:1.10.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.8.0"
 
-    implementation "androidx.fragment:fragment:1.3.6"
-    implementation "androidx.fragment:fragment-ktx:1.3.6"
+    implementation "androidx.fragment:fragment:1.5.7"
+    implementation "androidx.fragment:fragment-ktx:1.5.7"
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 ```

@@ -186,3 +186,10 @@
 ## 1.3.7
 
 - Stability fixes and improvements
+
+## 1.3.8
+### Platform changes :warning:
+- The SDK now officially supports Android 13 and we now target and compile against API level 33
+
+### Other changes
+- Stability fixes and improvements
