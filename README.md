@@ -35,31 +35,31 @@ To add sdk to your android project please add the following to your dependency s
 dependencies {
      implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
 
-     implementation 'androidx.appcompat:appcompat:1.2.0'
+     implementation 'androidx.appcompat:appcompat:1.6.1'
 
-     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
      implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-     implementation 'com.squareup.okio:okio:3.0.0'
+     implementation 'com.squareup.okio:okio:3.3.0'
 
-     implementation "com.google.android.gms:play-services-tasks:18.0.1"
-     implementation "com.google.android.gms:play-services-auth:19.2.0"
+     implementation "com.google.android.gms:play-services-tasks:18.0.2"
+     implementation "com.google.android.gms:play-services-auth:20.5.0"
 
      implementation 'com.jakewharton.timber:timber:5.0.1'
 
-     implementation "androidx.webkit:webkit:1.4.0"
+     implementation "androidx.webkit:webkit:1.6.1"
 
-     implementation "androidx.work:work-runtime:2.6.0"
-     implementation "androidx.work:work-runtime-ktx:2.6.0"
+     implementation "androidx.work:work-runtime:2.8.1"
+     implementation "androidx.work:work-runtime-ktx:2.8.1"
 
      implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
      implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
      implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
 
-     implementation "androidx.core:core-ktx:1.6.0"
+     implementation "androidx.core:core-ktx:1.10.0"
 
      implementation project( ':blinkreceipt-core' )
      implementation project( ':blinkreceipt-camera' )
@@ -509,7 +509,10 @@ Even though there are different ways to initialize the sdk, the recommended way 
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.AutoConfiguration" android:value="false" />
+<provider
+  android:name="com.microblink.BlinkRecognizerProvider"
+  android:authorities="${applicationId}.BlinkRecognizerProvider"
+  tools:node="remove" />
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -523,9 +526,10 @@ public void onCreate() {
 ```
 
 ```xml
-<meta-data
-        android:name="com.microblink.AutoConfiguration"
-        android:value="false" />
+<provider
+        android:name="com.microblink.BlinkRecognizerProvider"
+        android:authorities="${applicationId}.BlinkRecognizerProvider"
+        tools:node="remove" />
 ```
 
 ```java

@@ -35,9 +35,9 @@ To add sdk to your android project please add the following to your dependency s
 
 ```groovy
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -46,16 +46,16 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:2.9.0'
     implementation "com.squareup.okhttp3:logging-interceptor:2.9.0"
 
-    implementation 'com.squareup.okio:okio:3.0.0'
+    implementation 'com.squareup.okio:okio:3.3.0'
 
-    implementation "com.google.android.gms:play-services-tasks:18.0.1"
+    implementation "com.google.android.gms:play-services-tasks:18.0.2"
 
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // Lifecycles only (without ViewModel or LiveData)
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.6.1'
 
-    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.google.zxing:core:3.5.1'
 
     implementation project( ':blinkreceipt-core' )
     implementation project( ':blinkreceipt-camera' )

@@ -498,10 +498,22 @@ Blink Receipt Recognizer
 
 ## 1.6.6
 
-- stability fixes and improvements
+- Stability fixes and improvements
 - Improve accuracy of FullPrice property
 - Improve detection of unusual price formats
 - Support special date format for some Canada merchants
 - Improve fake receipts detection
 - Improve total detection on UK receipts
 - Fix Walgreens quantities detection
+
+## 1.6.7
+### Platform changes :warning:
+- The SDK now officially supports Android 13 and we now target and compile against API level 33
+
+### Other changes
+- Updated the following dependencies:
+  - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
+  - androidx.webkit:webkit:1.4.0 -> 1.6.1
+- Tag long transaction ID for Walmart
+- Stability fixes and improvements
+
