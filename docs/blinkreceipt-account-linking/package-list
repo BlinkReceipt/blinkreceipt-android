@@ -1,10 +1,6 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-$dokka.location:com.microblink.linking.internal/DeleteTrackWorker.Companion///PointingToDeclaration/com/microblink/linking/internal/DeleteTrackWorker.Companion.html
-$dokka.location:com.microblink.linking.internal/LogWorker.Companion///PointingToDeclaration/com/microblink/linking/internal/LogWorker.Companion.html
-$dokka.location:com.microblink.linking.internal/ProductIntelWorker.Companion///PointingToDeclaration/com/microblink/linking/internal/ProductIntelWorker.Companion.html
-$dokka.location:com.microblink.linking.internal/StoreDeleteWorker.Companion///PointingToDeclaration/com/microblink/linking/internal/StoreDeleteWorker.Companion.html
-$dokka.location:com.microblink.linking.internal/SummaryWorker.Companion///PointingToDeclaration/com/microblink/linking/internal/SummaryWorker.Companion.html
+
 com.microblink.linking
 com.microblink.linking.internal
 

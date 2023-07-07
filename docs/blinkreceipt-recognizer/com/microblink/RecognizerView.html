@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>RecognizerView </title>
+    <title>RecognizerView 1.6.7 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
@@ -88,7 +88,7 @@ var pathtoroot = "../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink</a></div>
         <h2 title="Class RecognizerView" class="title">Class RecognizerView</h2>
     </div>
     <div class="contentContainer">
@@ -133,6 +133,16 @@ var pathtoroot = "../../";
                             ,
                             
                             
+                            <code>androidx.lifecycle.DefaultLifecycleObserver</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.FullLifecycleObserver</code>
+                            
+                            ,
+                            
+                            
                             <code>androidx.lifecycle.LifecycleObserver</code>
                             
                             ,
@@ -158,7 +168,7 @@ var pathtoroot = "../../";
                     <pre class="wrap-overflow">
 
 public final class <span class="typeNameLabel"><a href=RecognizerView.html>RecognizerView</a></span>
-extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallback, <a href=OnCompleteListener.html>OnCompleteListener</a>&lt;<a href=OnCompleteListener.html>T</a>&gt;, <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html>LifecycleObserver</a>
+extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallback, <a href=OnCompleteListener.html>OnCompleteListener</a>&lt;<a href=OnCompleteListener.html>T</a>&gt;, <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/DefaultLifecycleObserver.html>DefaultLifecycleObserver</a>
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -401,689 +411,719 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         
                                         <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL>DRAG_FLAG_GLOBAL</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_ACCESSIBILITY_ACTION>DRAG_FLAG_ACCESSIBILITY_ACTION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
+                                            <td class="colFirst"><code>public final static int</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL>DRAG_FLAG_GLOBAL</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION>DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION>DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL_URI_READ>DRAG_FLAG_GLOBAL_URI_READ</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_GLOBAL_URI_WRITE>DRAG_FLAG_GLOBAL_URI_WRITE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAG_FLAG_OPAQUE>DRAG_FLAG_OPAQUE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAWING_CACHE_QUALITY_AUTO>DRAWING_CACHE_QUALITY_AUTO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAWING_CACHE_QUALITY_HIGH>DRAWING_CACHE_QUALITY_HIGH</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#DRAWING_CACHE_QUALITY_LOW>DRAWING_CACHE_QUALITY_LOW</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FIND_VIEWS_WITH_CONTENT_DESCRIPTION>FIND_VIEWS_WITH_CONTENT_DESCRIPTION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FIND_VIEWS_WITH_TEXT>FIND_VIEWS_WITH_TEXT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUSABLE>FOCUSABLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUSABLES_ALL>FOCUSABLES_ALL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUSABLES_TOUCH_MODE>FOCUSABLES_TOUCH_MODE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUSABLE_AUTO>FOCUSABLE_AUTO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_BACKWARD>FOCUS_BACKWARD</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_DOWN>FOCUS_DOWN</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_FORWARD>FOCUS_FORWARD</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_LEFT>FOCUS_LEFT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_RIGHT>FOCUS_RIGHT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#FOCUS_UP>FOCUS_UP</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#GONE>GONE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#HAPTIC_FEEDBACK_ENABLED>HAPTIC_FEEDBACK_ENABLED</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_ACCESSIBILITY_AUTO>IMPORTANT_FOR_ACCESSIBILITY_AUTO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_ACCESSIBILITY_NO>IMPORTANT_FOR_ACCESSIBILITY_NO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS>IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_ACCESSIBILITY_YES>IMPORTANT_FOR_ACCESSIBILITY_YES</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_AUTOFILL_AUTO>IMPORTANT_FOR_AUTOFILL_AUTO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_AUTOFILL_NO>IMPORTANT_FOR_AUTOFILL_NO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS>IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_AUTOFILL_YES>IMPORTANT_FOR_AUTOFILL_YES</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS>IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_CONTENT_CAPTURE_AUTO>IMPORTANT_FOR_CONTENT_CAPTURE_AUTO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_CONTENT_CAPTURE_NO>IMPORTANT_FOR_CONTENT_CAPTURE_NO</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_CONTENT_CAPTURE_NO_EXCLUDE_DESCENDANTS>IMPORTANT_FOR_CONTENT_CAPTURE_NO_EXCLUDE_DESCENDANTS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_CONTENT_CAPTURE_YES>IMPORTANT_FOR_CONTENT_CAPTURE_YES</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#IMPORTANT_FOR_CONTENT_CAPTURE_YES_EXCLUDE_DESCENDANTS>IMPORTANT_FOR_CONTENT_CAPTURE_YES_EXCLUDE_DESCENDANTS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#INVISIBLE>INVISIBLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#KEEP_SCREEN_ON>KEEP_SCREEN_ON</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYER_TYPE_HARDWARE>LAYER_TYPE_HARDWARE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYER_TYPE_NONE>LAYER_TYPE_NONE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYER_TYPE_SOFTWARE>LAYER_TYPE_SOFTWARE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYOUT_DIRECTION_INHERIT>LAYOUT_DIRECTION_INHERIT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYOUT_DIRECTION_LOCALE>LAYOUT_DIRECTION_LOCALE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYOUT_DIRECTION_LTR>LAYOUT_DIRECTION_LTR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#LAYOUT_DIRECTION_RTL>LAYOUT_DIRECTION_RTL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#MEASURED_HEIGHT_STATE_SHIFT>MEASURED_HEIGHT_STATE_SHIFT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#MEASURED_SIZE_MASK>MEASURED_SIZE_MASK</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#MEASURED_STATE_MASK>MEASURED_STATE_MASK</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#MEASURED_STATE_TOO_SMALL>MEASURED_STATE_TOO_SMALL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#NOT_FOCUSABLE>NOT_FOCUSABLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#NO_ID>NO_ID</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#OVER_SCROLL_ALWAYS>OVER_SCROLL_ALWAYS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#OVER_SCROLL_IF_CONTENT_SCROLLS>OVER_SCROLL_IF_CONTENT_SCROLLS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#OVER_SCROLL_NEVER>OVER_SCROLL_NEVER</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#ROTATION>ROTATION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#ROTATION_X>ROTATION_X</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#ROTATION_Y>ROTATION_Y</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCALE_X>SCALE_X</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCALE_Y>SCALE_Y</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCREEN_STATE_OFF>SCREEN_STATE_OFF</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCREEN_STATE_ON>SCREEN_STATE_ON</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBARS_INSIDE_INSET>SCROLLBARS_INSIDE_INSET</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBARS_INSIDE_OVERLAY>SCROLLBARS_INSIDE_OVERLAY</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBARS_OUTSIDE_INSET>SCROLLBARS_OUTSIDE_INSET</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBARS_OUTSIDE_OVERLAY>SCROLLBARS_OUTSIDE_OVERLAY</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBAR_POSITION_DEFAULT>SCROLLBAR_POSITION_DEFAULT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBAR_POSITION_LEFT>SCROLLBAR_POSITION_LEFT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLLBAR_POSITION_RIGHT>SCROLLBAR_POSITION_RIGHT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_AXIS_HORIZONTAL>SCROLL_AXIS_HORIZONTAL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_AXIS_NONE>SCROLL_AXIS_NONE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_AXIS_VERTICAL>SCROLL_AXIS_VERTICAL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public final static int</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_CAPTURE_HINT_AUTO>SCROLL_CAPTURE_HINT_AUTO</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                         <tr class="altColor">
+                                            <td class="colFirst"><code>public final static int</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_CAPTURE_HINT_EXCLUDE>SCROLL_CAPTURE_HINT_EXCLUDE</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public final static int</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_CAPTURE_HINT_EXCLUDE_DESCENDANTS>SCROLL_CAPTURE_HINT_EXCLUDE_DESCENDANTS</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public final static int</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_CAPTURE_HINT_INCLUDE>SCROLL_CAPTURE_HINT_INCLUDE</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_BOTTOM>SCROLL_INDICATOR_BOTTOM</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_END>SCROLL_INDICATOR_END</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_LEFT>SCROLL_INDICATOR_LEFT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_RIGHT>SCROLL_INDICATOR_RIGHT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_START>SCROLL_INDICATOR_START</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SCROLL_INDICATOR_TOP>SCROLL_INDICATOR_TOP</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SOUND_EFFECTS_ENABLED>SOUND_EFFECTS_ENABLED</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#STATUS_BAR_HIDDEN>STATUS_BAR_HIDDEN</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#STATUS_BAR_VISIBLE>STATUS_BAR_VISIBLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_FULLSCREEN>SYSTEM_UI_FLAG_FULLSCREEN</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_HIDE_NAVIGATION>SYSTEM_UI_FLAG_HIDE_NAVIGATION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_IMMERSIVE>SYSTEM_UI_FLAG_IMMERSIVE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_IMMERSIVE_STICKY>SYSTEM_UI_FLAG_IMMERSIVE_STICKY</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN>SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION>SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LAYOUT_STABLE>SYSTEM_UI_FLAG_LAYOUT_STABLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR>SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LIGHT_STATUS_BAR>SYSTEM_UI_FLAG_LIGHT_STATUS_BAR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_LOW_PROFILE>SYSTEM_UI_FLAG_LOW_PROFILE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_FLAG_VISIBLE>SYSTEM_UI_FLAG_VISIBLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#SYSTEM_UI_LAYOUT_FLAGS>SYSTEM_UI_LAYOUT_FLAGS</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_CENTER>TEXT_ALIGNMENT_CENTER</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_GRAVITY>TEXT_ALIGNMENT_GRAVITY</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_INHERIT>TEXT_ALIGNMENT_INHERIT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_TEXT_END>TEXT_ALIGNMENT_TEXT_END</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_TEXT_START>TEXT_ALIGNMENT_TEXT_START</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_VIEW_END>TEXT_ALIGNMENT_VIEW_END</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_ALIGNMENT_VIEW_START>TEXT_ALIGNMENT_VIEW_START</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_ANY_RTL>TEXT_DIRECTION_ANY_RTL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_FIRST_STRONG>TEXT_DIRECTION_FIRST_STRONG</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_FIRST_STRONG_LTR>TEXT_DIRECTION_FIRST_STRONG_LTR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_FIRST_STRONG_RTL>TEXT_DIRECTION_FIRST_STRONG_RTL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_INHERIT>TEXT_DIRECTION_INHERIT</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_LOCALE>TEXT_DIRECTION_LOCALE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_LTR>TEXT_DIRECTION_LTR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TEXT_DIRECTION_RTL>TEXT_DIRECTION_RTL</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TRANSLATION_X>TRANSLATION_X</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TRANSLATION_Y>TRANSLATION_Y</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#TRANSLATION_Z>TRANSLATION_Z</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#VISIBLE>VISIBLE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#X>X</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#Y>Y</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/util/Property.html>Property</a>&lt;<a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#Z>Z</a></code></th>
                                             <td class="colLast"></td>
@@ -1115,13 +1155,13 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#RecognizerView(Context)">RecognizerView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</code></th>
+                                                        href="#RecognizerView(android.content.Context)">RecognizerView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
                                             <tr class="rowColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#RecognizerView(Context,AttributeSet)">RecognizerView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs)</code></th>
+                                                        href="#RecognizerView(android.content.Context,android.util.AttributeSet)">RecognizerView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -1177,7 +1217,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onCameraFrameResults(BitmapResult)>onCameraFrameResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onCameraFrameResults(com.microblink.BitmapResult)>onCameraFrameResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1185,7 +1225,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onCameraFrameException(Exception)>onCameraFrameException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onCameraFrameException(java.lang.Exception)>onCameraFrameException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1193,7 +1233,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onEdgeDetectionResults(EdgeDetectionResult)>onEdgeDetectionResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=EdgeDetectionResult.html>EdgeDetectionResult</a> result) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onEdgeDetectionResults(com.microblink.EdgeDetectionResult)>onEdgeDetectionResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=EdgeDetectionResult.html>EdgeDetectionResult</a> result) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1201,7 +1241,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#cameraEventsListener(CameraEventsListener)>cameraEventsListener</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() CameraEventsListener cameraEventsListener) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#cameraEventsListener(com.microblink.camera.view.CameraEventsListener)>cameraEventsListener</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() CameraEventsListener cameraEventsListener) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1209,7 +1249,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i4" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#create()>create</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onCreate(androidx.lifecycle.LifecycleOwner)>onCreate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1217,7 +1257,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#start()>start</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#create()>create</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1225,7 +1265,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resume()>resume</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onStart(androidx.lifecycle.LifecycleOwner)>onStart</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1233,7 +1273,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#pause()>pause</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#start()>start</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1241,7 +1281,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#stop()>stop</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onResume(androidx.lifecycle.LifecycleOwner)>onResume</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1249,7 +1289,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#destroy()>destroy</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resume()>resume</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1257,7 +1297,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onRecognizerResult(RecognizerResult)>onRecognizerResult</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onPause(androidx.lifecycle.LifecycleOwner)>onPause</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1265,7 +1305,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onRecognizerException(RecognizerException)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerException.html>RecognizerException</a> e) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#pause()>pause</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1273,7 +1313,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onBlurScoreChange(int)>onBlurScoreChange</a>(int blurScore) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onStop(androidx.lifecycle.LifecycleOwner)>onStop</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1281,7 +1321,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onProcessStateChanged(int)>onProcessStateChanged</a>(int state) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#stop()>stop</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1289,7 +1329,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#recognizerCallback(CameraRecognizerCallback)>recognizerCallback</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a> callback) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onDestroy(androidx.lifecycle.LifecycleOwner)>onDestroy</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1297,7 +1337,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#takePicture(CameraCaptureListener)>takePicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=CameraCaptureListener.html>CameraCaptureListener</a> listener) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#destroy()>destroy</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1305,7 +1345,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#confirmPicture(BitmapResult)>confirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onRecognizerResult(com.microblink.RecognizerResult)>onRecognizerResult</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1313,7 +1353,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#lifecycle(LifecycleOwner)>lifecycle</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> lifecycleOwner) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onRecognizerException(com.microblink.RecognizerException)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerException.html>RecognizerException</a> e) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1321,7 +1361,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#initialize(ScanOptions)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> options) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onBlurScoreChange(int)>onBlurScoreChange</a>(int blurScore) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1329,7 +1369,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#terminate()>terminate</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onProcessStateChanged(int)>onProcessStateChanged</a>(int state) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1337,7 +1377,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i20" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#finishedScanning()>finishedScanning</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#recognizerCallback(com.microblink.CameraRecognizerCallback)>recognizerCallback</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a> callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1345,7 +1385,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#preliminaryResults()>preliminaryResults</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#takePicture(com.microblink.CameraCaptureListener)>takePicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=CameraCaptureListener.html>CameraCaptureListener</a> listener) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1353,7 +1393,55 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                         <tr id="i22" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onComplete(BitmapResult)>onComplete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> result) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#confirmPicture(com.microblink.BitmapResult)>confirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i23" class="rowColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#lifecycle(androidx.lifecycle.LifecycleOwner)>lifecycle</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> lifecycleOwner) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i24" class="altColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#initialize(com.microblink.ScanOptions)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> options) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i25" class="rowColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#terminate()>terminate</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i26" class="altColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#finishedScanning()>finishedScanning</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i27" class="rowColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#preliminaryResults()>preliminaryResults</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i28" class="altColor">
+                                            <td class="colFirst"><code>void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onComplete(com.microblink.BitmapResult)>onComplete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> result) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -1379,13 +1467,13 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;android.view.ViewGroup</h3>
-                                            <code>addChildrenForAccessibility, addExtraDataToAccessibilityNodeInfo, addFocusables, addKeyboardNavigationClusters, addStatesFromChildren, addTouchables, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchCapturedPointerEvent, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchFinishTemporaryDetach, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchPointerCaptureChanged, dispatchProvideAutofillStructure, dispatchProvideStructure, dispatchSetActivated, dispatchSetSelected, dispatchStartTemporaryDetach, dispatchSystemUiVisibilityChanged, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowInsetsAnimationEnd, dispatchWindowInsetsAnimationPrepare, dispatchWindowInsetsAnimationProgress, dispatchWindowInsetsAnimationStart, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findViewsWithText, focusSearch, focusableViewAvailable, gatherTransparentRegion, generateLayoutParams, getAccessibilityClassName, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isLayoutSuppressed, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onDescendantInvalidated, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, restoreDefaultFocus, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, setWindowInsetsAnimationCallback, shouldDelayChildPressedState, showContextMenuForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, suppressLayout, updateViewLayout</code></li>
+                                            <code>addChildrenForAccessibility, addExtraDataToAccessibilityNodeInfo, addFocusables, addKeyboardNavigationClusters, addStatesFromChildren, addTouchables, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchCapturedPointerEvent, dispatchConfigurationChanged, dispatchCreateViewTranslationRequest, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchFinishTemporaryDetach, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchPointerCaptureChanged, dispatchProvideAutofillStructure, dispatchProvideStructure, dispatchScrollCaptureSearch, dispatchSetActivated, dispatchSetSelected, dispatchStartTemporaryDetach, dispatchSystemUiVisibilityChanged, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowInsetsAnimationEnd, dispatchWindowInsetsAnimationPrepare, dispatchWindowInsetsAnimationProgress, dispatchWindowInsetsAnimationStart, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findOnBackInvokedDispatcherForChild, findViewsWithText, focusSearch, focusableViewAvailable, gatherTransparentRegion, generateLayoutParams, getAccessibilityClassName, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isLayoutSuppressed, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onDescendantInvalidated, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, restoreDefaultFocus, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, setWindowInsetsAnimationCallback, shouldDelayChildPressedState, showContextMenuForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, suppressLayout, updateViewLayout</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.android.view.View">
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;android.view.View</h3>
-                                            <code>addOnAttachStateChangeListener, addOnLayoutChangeListener, addOnUnhandledKeyEventListener, animate, announceForAccessibility, autofill, bringToFront, buildDrawingCache, buildLayer, callOnClick, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, checkInputConnectionProxy, clearAnimation, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, draw, drawableHotspotChanged, findViewById, findViewWithTag, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityDelegate, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityPaneTitle, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getAnimationMatrix, getApplicationWindowToken, getAttributeResolutionStack, getAttributeSourceResourceMap, getAutofillHints, getAutofillId, getAutofillType, getAutofillValue, getBackground, getBackgroundTintBlendMode, getBackgroundTintList, getBackgroundTintMode, getBaseline, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentCaptureSession, getContentDescription, getContext, getDefaultFocusHighlightEnabled, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getExplicitStyle, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusable, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintBlendMode, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getHorizontalScrollbarThumbDrawable, getHorizontalScrollbarTrackDrawable, getId, getImportantForAccessibility, getImportantForAutofill, getImportantForContentCapture, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInSurface, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextClusterForwardId, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineAmbientShadowColor, getOutlineProvider, getOutlineSpotShadowColor, getOverScrollMode, getOverlay, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getSourceLayoutResId, getStateDescription, getStateListAnimator, getSystemGestureExclusionRects, getSystemUiVisibility, getTag, getTextAlignment, getTextDirection, getTooltipText, getTop, getTouchDelegate, getTouchables, getTransitionAlpha, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getUniqueDrawingId, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarThumbDrawable, getVerticalScrollbarTrackDrawable, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowInsetsController, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasExplicitFocusable, hasFocusable, hasNestedScrollingParent, hasOnClickListeners, hasOnLongClickListeners, hasOverlappingRendering, hasPointerCapture, hasWindowFocus, inflate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isAccessibilityHeading, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isFocusedByDefault, isForceDarkAllowed, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isImportantForAutofill, isImportantForContentCapture, isInEditMode, isInLayout, isInTouchMode, isKeyboardNavigationCluster, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPivotSet, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScreenReaderFocusable, isScrollContainer, isScrollbarFadingEnabled, isSelected, isShowingLayoutBounds, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, isVisibleToUserForAutofill, keyboardNavigationClusterSearch, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCapturedPointerEvent, onCheckIsTextEditor, onCreateInputConnection, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPointerCaptureChange, onPopulateAccessibilityEvent, onProvideAutofillStructure, onProvideAutofillVirtualStructure, onProvideContentCaptureStructure, onProvideStructure, onProvideVirtualStructure, onRtlPropertiesChanged, onScreenStateChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performHapticFeedback, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidateDelayed, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, releasePointerCapture, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, removeOnUnhandledKeyEventListener, requestApplyInsets, requestFitSystemWindows, requestFocusFromTouch, requestLayout, requestPointerCapture, requestRectangleOnScreen, requestUnbufferedDispatch, requireViewById, resetPivot, resolveSize, resolveSizeAndState, restoreHierarchyState, saveAttributeDataForStyleable, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityHeading, setAccessibilityLiveRegion, setAccessibilityPaneTitle, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setAnimationMatrix, setAutofillHints, setAutofillId, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintBlendMode, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentCaptureSession, setContentDescription, setContextClickable, setDefaultFocusHighlightEnabled, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setFocusedByDefault, setForceDarkAllowed, setForeground, setForegroundGravity, setForegroundTintBlendMode, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHorizontalScrollbarThumbDrawable, setHorizontalScrollbarTrackDrawable, setHovered, setId, setImportantForAccessibility, setImportantForAutofill, setImportantForContentCapture, setKeepScreenOn, setKeyboardNavigationCluster, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLeftTopRightBottom, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextClusterForwardId, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnCapturedPointerListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineAmbientShadowColor, setOutlineProvider, setOutlineSpotShadowColor, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScreenReaderFocusable, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollX, setScrollY, setScrollbarFadingEnabled, setSelected, setSoundEffectsEnabled, setStateDescription, setStateListAnimator, setSystemGestureExclusionRects, setSystemUiVisibility, setTag, setTextAlignment, setTextDirection, setTooltipText, setTop, setTouchDelegate, setTransitionAlpha, setTransitionName, setTransitionVisibility, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVerticalScrollbarThumbDrawable, setVerticalScrollbarTrackDrawable, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, transformMatrixToGlobal, transformMatrixToLocal, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw</code></li>
+                                            <code>addOnAttachStateChangeListener, addOnLayoutChangeListener, addOnUnhandledKeyEventListener, animate, announceForAccessibility, autofill, bringToFront, buildDrawingCache, buildLayer, callOnClick, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, checkInputConnectionProxy, clearAnimation, clearViewTranslationCallback, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, draw, drawableHotspotChanged, findOnBackInvokedDispatcher, findViewById, findViewWithTag, forceHasOverlappingRendering, forceLayout, generateDisplayHash, generateViewId, getAccessibilityDelegate, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityPaneTitle, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getAnimationMatrix, getApplicationWindowToken, getAttributeResolutionStack, getAttributeSourceResourceMap, getAutofillHints, getAutofillId, getAutofillType, getAutofillValue, getBackground, getBackgroundTintBlendMode, getBackgroundTintList, getBackgroundTintMode, getBaseline, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentCaptureSession, getContentDescription, getContext, getDefaultFocusHighlightEnabled, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getExplicitStyle, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusable, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintBlendMode, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getHorizontalScrollbarThumbDrawable, getHorizontalScrollbarTrackDrawable, getId, getImportantForAccessibility, getImportantForAutofill, getImportantForContentCapture, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInSurface, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextClusterForwardId, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineAmbientShadowColor, getOutlineProvider, getOutlineSpotShadowColor, getOverScrollMode, getOverlay, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getPreferKeepClearRects, getReceiveContentMimeTypes, getResources, getRevealOnFocusHint, getRight, getRootSurfaceControl, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollCaptureHint, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getSourceLayoutResId, getStateDescription, getStateListAnimator, getSystemGestureExclusionRects, getSystemUiVisibility, getTag, getTextAlignment, getTextDirection, getTooltipText, getTop, getTouchDelegate, getTouchables, getTransitionAlpha, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getUniqueDrawingId, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarThumbDrawable, getVerticalScrollbarTrackDrawable, getVerticalScrollbarWidth, getViewTranslationResponse, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowInsetsController, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasExplicitFocusable, hasFocusable, hasNestedScrollingParent, hasOnClickListeners, hasOnLongClickListeners, hasOverlappingRendering, hasPointerCapture, hasWindowFocus, inflate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isAccessibilityHeading, isActivated, isAttachedToWindow, isAutoHandwritingEnabled, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isFocusedByDefault, isForceDarkAllowed, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isImportantForAutofill, isImportantForContentCapture, isInEditMode, isInLayout, isInTouchMode, isKeyboardNavigationCluster, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPivotSet, isPreferKeepClear, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScreenReaderFocusable, isScrollContainer, isScrollbarFadingEnabled, isSelected, isShowingLayoutBounds, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, isVisibleToUserForAutofill, keyboardNavigationClusterSearch, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCapturedPointerEvent, onCheckIsTextEditor, onCreateInputConnection, onCreateViewTranslationRequest, onCreateVirtualViewTranslationRequests, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPointerCaptureChange, onPopulateAccessibilityEvent, onProvideAutofillStructure, onProvideAutofillVirtualStructure, onProvideContentCaptureStructure, onProvideStructure, onProvideVirtualStructure, onReceiveContent, onRtlPropertiesChanged, onScreenStateChanged, onScrollCaptureSearch, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onViewTranslationResponse, onVirtualViewTranslationResponses, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performHapticFeedback, performLongClick, performReceiveContent, playSoundEffect, post, postDelayed, postInvalidate, postInvalidateDelayed, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, releasePointerCapture, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, removeOnUnhandledKeyEventListener, requestApplyInsets, requestFitSystemWindows, requestFocusFromTouch, requestLayout, requestPointerCapture, requestRectangleOnScreen, requestUnbufferedDispatch, requireViewById, resetPivot, resolveSize, resolveSizeAndState, restoreHierarchyState, saveAttributeDataForStyleable, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityHeading, setAccessibilityLiveRegion, setAccessibilityPaneTitle, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAllowClickWhenDisabled, setAlpha, setAnimation, setAnimationMatrix, setAutoHandwritingEnabled, setAutofillHints, setAutofillId, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintBlendMode, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentCaptureSession, setContentDescription, setContextClickable, setDefaultFocusHighlightEnabled, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setFocusedByDefault, setForceDarkAllowed, setForeground, setForegroundGravity, setForegroundTintBlendMode, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHorizontalScrollbarThumbDrawable, setHorizontalScrollbarTrackDrawable, setHovered, setId, setImportantForAccessibility, setImportantForAutofill, setImportantForContentCapture, setKeepScreenOn, setKeyboardNavigationCluster, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLeftTopRightBottom, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextClusterForwardId, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnCapturedPointerListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnReceiveContentListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineAmbientShadowColor, setOutlineProvider, setOutlineSpotShadowColor, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPreferKeepClear, setPreferKeepClearRects, setPressed, setRenderEffect, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScreenReaderFocusable, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollBarSize, setScrollBarStyle, setScrollCaptureCallback, setScrollCaptureHint, setScrollContainer, setScrollIndicators, setScrollX, setScrollY, setScrollbarFadingEnabled, setSelected, setSoundEffectsEnabled, setStateDescription, setStateListAnimator, setSystemGestureExclusionRects, setSystemUiVisibility, setTag, setTextAlignment, setTextDirection, setTooltipText, setTop, setTouchDelegate, setTransitionAlpha, setTransitionName, setTransitionVisibility, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVerticalScrollbarThumbDrawable, setVerticalScrollbarTrackDrawable, setViewTranslationCallback, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, transformMatrixToGlobal, transformMatrixToLocal, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -1413,7 +1501,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="RecognizerView(Context)"></a>
+                                <a name="RecognizerView(android.content.Context)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>RecognizerView</h4>
@@ -1423,7 +1511,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
-                                <a name="RecognizerView(Context,AttributeSet)"></a>
+                                <a name="RecognizerView(android.content.Context,android.util.AttributeSet)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>RecognizerView</h4>
@@ -1446,7 +1534,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="onCameraFrameResults(BitmapResult)">
+                                <a id="onCameraFrameResults(com.microblink.BitmapResult)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1454,14 +1542,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onCameraFrameResults</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onCameraFrameResults(BitmapResult)>onCameraFrameResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onCameraFrameResults(com.microblink.BitmapResult)>onCameraFrameResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="onCameraFrameException(Exception)">
+                                <a id="onCameraFrameException(java.lang.Exception)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1469,14 +1557,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onCameraFrameException</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onCameraFrameException(Exception)>onCameraFrameException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onCameraFrameException(java.lang.Exception)>onCameraFrameException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="onEdgeDetectionResults(EdgeDetectionResult)">
+                                <a id="onEdgeDetectionResults(com.microblink.EdgeDetectionResult)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1484,14 +1572,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onEdgeDetectionResults</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onEdgeDetectionResults(EdgeDetectionResult)>onEdgeDetectionResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=EdgeDetectionResult.html>EdgeDetectionResult</a> result)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onEdgeDetectionResults(com.microblink.EdgeDetectionResult)>onEdgeDetectionResults</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=EdgeDetectionResult.html>EdgeDetectionResult</a> result)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="cameraEventsListener(CameraEventsListener)">
+                                <a id="cameraEventsListener(com.microblink.camera.view.CameraEventsListener)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1499,7 +1587,22 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>cameraEventsListener</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#cameraEventsListener(CameraEventsListener)>cameraEventsListener</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() CameraEventsListener cameraEventsListener)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#cameraEventsListener(com.microblink.camera.view.CameraEventsListener)>cameraEventsListener</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() CameraEventsListener cameraEventsListener)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onCreate(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onCreate</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onCreate(androidx.lifecycle.LifecycleOwner)>onCreate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1521,6 +1624,21 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
+                                <a id="onStart(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onStart</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onStart(androidx.lifecycle.LifecycleOwner)>onStart</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="start()">
                                     <!--   -->
                                 </a>
@@ -1530,6 +1648,21 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     <li class="blockList">
                                         <h4>start</h4>
                                         <pre class="methodSignature"> void <a href=RecognizerView.html#start()>start</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onResume(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onResume</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onResume(androidx.lifecycle.LifecycleOwner)>onResume</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1551,6 +1684,21 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
+                                <a id="onPause(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPause</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onPause(androidx.lifecycle.LifecycleOwner)>onPause</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="pause()">
                                     <!--   -->
                                 </a>
@@ -1560,6 +1708,21 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     <li class="blockList">
                                         <h4>pause</h4>
                                         <pre class="methodSignature"> void <a href=RecognizerView.html#pause()>pause</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onStop(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onStop</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onStop(androidx.lifecycle.LifecycleOwner)>onStop</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1581,6 +1744,21 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
+                                <a id="onDestroy(androidx.lifecycle.LifecycleOwner)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDestroy</h4>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onDestroy(androidx.lifecycle.LifecycleOwner)>onDestroy</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
                                 <a id="destroy()">
                                     <!--   -->
                                 </a>
@@ -1596,7 +1774,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
-                                <a id="onRecognizerResult(RecognizerResult)">
+                                <a id="onRecognizerResult(com.microblink.RecognizerResult)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1604,14 +1782,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onRecognizerResult</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onRecognizerResult(RecognizerResult)>onRecognizerResult</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onRecognizerResult(com.microblink.RecognizerResult)>onRecognizerResult</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerResult.html>RecognizerResult</a> result)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="onRecognizerException(RecognizerException)">
+                                <a id="onRecognizerException(com.microblink.RecognizerException)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1619,7 +1797,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onRecognizerException</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onRecognizerException(RecognizerException)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerException.html>RecognizerException</a> e)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onRecognizerException(com.microblink.RecognizerException)>onRecognizerException</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=RecognizerException.html>RecognizerException</a> e)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1656,7 +1834,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
-                                <a id="recognizerCallback(CameraRecognizerCallback)">
+                                <a id="recognizerCallback(com.microblink.CameraRecognizerCallback)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1664,14 +1842,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>recognizerCallback</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#recognizerCallback(CameraRecognizerCallback)>recognizerCallback</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a> callback)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#recognizerCallback(com.microblink.CameraRecognizerCallback)>recognizerCallback</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=CameraRecognizerCallback.html>CameraRecognizerCallback</a> callback)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="takePicture(CameraCaptureListener)">
+                                <a id="takePicture(com.microblink.CameraCaptureListener)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1679,14 +1857,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>takePicture</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#takePicture(CameraCaptureListener)>takePicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=CameraCaptureListener.html>CameraCaptureListener</a> listener)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#takePicture(com.microblink.CameraCaptureListener)>takePicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=CameraCaptureListener.html>CameraCaptureListener</a> listener)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="confirmPicture(BitmapResult)">
+                                <a id="confirmPicture(com.microblink.BitmapResult)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1694,14 +1872,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>confirmPicture</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#confirmPicture(BitmapResult)>confirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#confirmPicture(com.microblink.BitmapResult)>confirmPicture</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> results)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="lifecycle(LifecycleOwner)">
+                                <a id="lifecycle(androidx.lifecycle.LifecycleOwner)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1709,14 +1887,14 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>lifecycle</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#lifecycle(LifecycleOwner)>lifecycle</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> lifecycleOwner)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#lifecycle(androidx.lifecycle.LifecycleOwner)>lifecycle</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> lifecycleOwner)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="initialize(ScanOptions)">
+                                <a id="initialize(com.microblink.ScanOptions)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1724,7 +1902,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>initialize</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() void <a href=RecognizerView.html#initialize(ScanOptions)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> options)</pre>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() void <a href=RecognizerView.html#initialize(com.microblink.ScanOptions)>initialize</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanOptions.html>ScanOptions</a> options)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -1776,7 +1954,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                     </li>
                                 </ul>
                                 
-                                <a id="onComplete(BitmapResult)">
+                                <a id="onComplete(com.microblink.BitmapResult)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -1784,7 +1962,7 @@ extends RecognizerCameraView implements CameraDataListener, RecognizeDataCallbac
                                           >
                                     <li class="blockList">
                                         <h4>onComplete</h4>
-                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onComplete(BitmapResult)>onComplete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> result)</pre>
+                                        <pre class="methodSignature"> void <a href=RecognizerView.html#onComplete(com.microblink.BitmapResult)>onComplete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BitmapResult.html>BitmapResult</a> result)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

@@ -2,7 +2,6 @@ $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.digital.internal/ImapMessage.Builder///PointingToDeclaration/com/microblink/digital/internal/ImapMessage.Builder.html
 $dokka.location:com.microblink.digital.internal/Message.Builder///PointingToDeclaration/com/microblink/digital/internal/Message.Builder.html
-$dokka.location:com.microblink.digital.internal/ServiceLoggerJob.Companion///PointingToDeclaration/com/microblink/digital/internal/ServiceLoggerJob.Companion.html
 $dokka.location:com.microblink.digital/PasswordCredentials.Builder///PointingToDeclaration/com/microblink/digital/PasswordCredentials.Builder.html
 $dokka.location:com.microblink.digital/ProviderSetupOptions.Builder///PointingToDeclaration/com/microblink/digital/ProviderSetupOptions.Builder.html
 com.microblink.digital
