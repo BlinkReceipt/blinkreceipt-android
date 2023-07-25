@@ -1,0 +1,20 @@
+name: BlinkReceipt Docs CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  mkdocs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Source Code Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'false'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          lfs: 'false'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
