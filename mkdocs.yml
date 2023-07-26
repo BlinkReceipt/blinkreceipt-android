@@ -1,0 +1,61 @@
+extra:
+  blinkreceipt:
+    release: '1.6.6'
+    next_release: '1.6.7'
+
+site_name: BlinkReceipt
+site_url: https://microblink.github.io/blinkreceipt-android/
+repo_name: BlinkReceipt
+edit_uri: ""
+repo_url: https://github.com/BlinkReceipt/blinkreceipt-android
+site_description: "A collection of libraries for scanning physical and digital receipts"
+site_author: Microblink
+remote_branch: gh-pages
+
+theme:
+  name: material
+  logo: mkdocs/images/logo.png
+  favicon: mkdocs/images/logo.png
+  features:
+    - content.code.copy
+
+plugins:
+  - search
+
+nav:
+    - Overview: index.md
+    - Account Linking:
+        - Getting Started: getting_started_alp.md
+        - Configuring the client: configuring_client_alp.md
+        - How to use: how_to_use_alp.md
+        - Running in the background: alp_background.md
+        - Supported merchants: https://ereceipts.blinkreceipt.com/account-linking
+        - Error codes: alp_error_codes.md
+    - Javadoc: javadoc.md
+
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - tables
+  - admonition
+  - attr_list
