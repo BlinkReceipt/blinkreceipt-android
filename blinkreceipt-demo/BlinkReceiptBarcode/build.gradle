@@ -63,37 +63,14 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
-    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
-    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation "androidx.core:core-ktx:${androidx.core}"
-    implementation "com.google.android.material:material:${versions.material}"
-    implementation "com.jakewharton.timber:timber:${versions.timber}"
-    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
+    implementation("com.google.android.material:material:${versions.material}")
+    implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
 
-    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
-    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
-    implementation "com.squareup.okio:okio:${versions.okio}"
-    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
-
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
-    implementation "androidx.preference:preference-ktx:${androidx.preference}"
-
-    implementation "com.google.zxing:core:${versions.zxing}"
-
-    implementation project(':LibBlinkReceiptBarcode')
-    implementation project(':LibBlinkReceiptCore')
-    implementation project(':LibBlinkReceiptCamera')
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.7"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-barcode")
 
     testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
-
-    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }

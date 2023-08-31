@@ -64,44 +64,15 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.material:material:${versions.material}")
+    implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
+
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.7"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
+
     testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
-
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
-    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation "androidx.recyclerview:recyclerview:${androidx.recyclerview}"
-
-    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
-    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
-    implementation "com.squareup.okio:okio:${versions.okio}"
-
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
-    implementation "androidx.preference:preference-ktx:${androidx.preference}"
-
-    implementation "androidx.work:work-runtime:${androidx.worker}"
-    implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
-
-    implementation "com.google.android.material:material:${versions.material}"
-
-    implementation "com.jakewharton.timber:timber:${versions.timber}"
-
-    implementation "pub.devrel:easypermissions:${versions.easyPermissions}"
-
-    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
-
-    implementation project(':LibBlinkReceiptRecognizer')
-    implementation project(':LibBlinkReceiptCore')
-    implementation project(':LibBlinkReceiptCamera')
-    implementation project(':LibBlinkReceiptCameraUi')
-
-    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:${androidx.lifecycle}"
 }
