@@ -140,11 +140,9 @@
 - Fix crash related to coroutine exception handling in the fetching surveys.
 
 ## 1.2.6
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
 - Stability fixes and improvements
+- Updated to target and compile API Level 33
 - Updated the following dependencies:
     - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
     - com.google.android.material:material:1.4.0 -> 1.8.0
@@ -153,3 +151,6 @@
     - androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1 -> 2.6.1
     - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
 
+## 1.2.7
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+- Stability fixes and improvements

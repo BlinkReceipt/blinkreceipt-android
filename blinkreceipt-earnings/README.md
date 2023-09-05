@@ -10,26 +10,23 @@ See below for more information about how to integrate Blink Receipt SDK into you
 The package contains Android Archive (AAR) that contains everything you need to use Blink Receipt Earnings library.
 
 ## <a name=intro></a> Project Integration and Initialization
-To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
+To add the sdk to your android project please follow these steps:
+
+1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
+
+    ```groovy
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
+    ```
+
+2. Add the following to your dependency section in your app `build.gradle`.
 
 ```groovy
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-
-    implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-    implementation 'com.squareup.okio:okio:3.3.0'
-
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    api project( ':blinkreceipt-core' )
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
+    
+    implementation("com.microblink.blinkreceipt:blinkreceipt-earnings")
 }
 ```
 

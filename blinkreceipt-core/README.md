@@ -6,40 +6,24 @@ Using Blink Receipt Core in your app requires a valid license key.  After regist
 
 See below for more information about how to integrate Blink Receipt SDK into your app.
 
-## AAR
-The package contains Android Archive (AAR) that contains everything you need to use Blink Receipt Core library.
-
 ## <a name=intro></a> Project Integration and Initialization
-To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
+To add the sdk to your android project please follow these steps:
+
+1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
+
+    ```groovy
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
+    ```
+
+2. Add the following to your dependency section in your app `build.gradle`.
 
 ```groovy
 dependencies {
-    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
 
-    implementation "androidx.core:core-ktx:1.10.0"
-
-    implementation "androidx.work:work-runtime:2.8.1"
-    implementation "androidx.work:work-runtime-ktx:2.8.1"
-
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-    implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-    implementation 'com.squareup.okio:okio:3.3.0'
-
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation("com.microblink.blinkreceipt:blinkreceipt-core")
 }
 ```
 

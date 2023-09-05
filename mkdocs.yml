@@ -31,6 +31,7 @@ nav:
         - Running in the background: alp_background.md
         - Supported merchants: https://ereceipts.blinkreceipt.com/account-linking
         - Error codes: alp_error_codes.md
+    - Maven migration guide: maven_migration.md
     - Javadoc: javadoc.md
 
 

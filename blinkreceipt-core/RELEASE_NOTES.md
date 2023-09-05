@@ -207,20 +207,20 @@
 - Updated to Kotlin 1.8.21 and Kotlin Coroutines 1.7.1
 
 ## 1.3.8
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
+- Updated to target and compile API Level 33
 - Updated the following dependencies:
   - androidx.appcompat:appcompat: 1.3.1 -> 1.6.1
   - androidx.core:core-ktx:1.6.0 -> 1.10.0
-  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0 -> 1.7.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.7.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.6.4
   - com.squareup.okhttp3:okhttp:4.9.3 -> 4.11.0
   - com.squareup.okhttp3:logging-interceptor:4.9.0 -> 4.11.0
   - com.google.android.gms:play-services-tasks:18.0.1 -> 18.0.2 
   - com.squareup.okio:okio:3.0.0 -> 3.3.0
   - androidx.preference:preference-ktx:1.1.1 -> 1.2.0
-  - androidx.work:work-runtime:2.6.0 -> 2.8.1
-  - androidx.work:work-runtime-ktx:2.6.0 -> 2.8.1
+- Stability fixes and improvements
+
+## 1.3.9
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - Stability fixes and improvements

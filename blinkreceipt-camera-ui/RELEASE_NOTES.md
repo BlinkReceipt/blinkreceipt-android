@@ -51,12 +51,14 @@
 - Stability fixes and improvements
 
 ## 1.1.2
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
 - Stability fixes and improvements
+- Updated to target and compile API Level 33
 - Updated the following dependencies:
   - com.google.android.material:material:1.4.0 -> 1.8.0
   - androidx.fragment:fragment:1.3.6 -> 1.5.7
   - androidx.fragment:fragment-ktx:1.3.6 -> 1.5.7
+
+## 1.1.3
+- Stability fixes and improvements
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.

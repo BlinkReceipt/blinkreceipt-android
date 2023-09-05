@@ -188,8 +188,10 @@
 - Stability fixes and improvements
 
 ## 1.3.8
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
+- Stability fixes and improvements
+- Updated to target and compile API Level 33
+
+## 1.3.9
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - Stability fixes and improvements

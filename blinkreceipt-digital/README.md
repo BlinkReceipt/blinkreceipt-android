@@ -131,70 +131,25 @@ Once the project has been synced the AAR should now be accessible via the code i
 <br />
 
 ## <a name=projectIntegration></a>Project Integration and Initialization
-To add sdk to your android project please add the following to your dependency section in your app `build.gradle`.
-
-***Note: When declaring dependencies for the digital sdk, you must add the :blinkreceipt-recognizer and :blinkreceipt-camera aars to your project. Even if you do not plan on explicitly using the functionality within those sdks, without these aars the license verification process will fail and the digital sdk will fail to work.***
-
 Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
+
+To add the sdk to your android project please follow these steps:
+
+1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
+
+    ```groovy
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
+    ```
+
+2. Add the following to your dependency section in your app `build.gradle`.
 
 ```groovy
 dependencies {
-     api project( ':blinkreceipt-core' )
-
-    implementation "com.google.android.gms:play-services-auth:20.5.0"
-
-    implementation "androidx.work:work-runtime:2.8.1"
-    implementation "androidx.work:work-runtime-ktx:2.8.1"
-
-    //Outlook
-    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
-        exclude group: 'com.microsoft.device.display'
-    }
-
-    implementation "com.sun.mail:android-mail:1.6.7"
-    implementation "com.sun.mail:android-activation:1.6.7"
-
-    implementation "androidx.appcompat:appcompat:1.6.1"
-
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-    implementation "androidx.fragment:fragment-ktx:1.5.7"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
-    implementation "androidx.webkit:webkit:1.6.1"
-
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
-
-    implementation "com.google.android.material:material:1.8.0"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-    implementation "androidx.core:core-ktx:1.6.0"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-    implementation "androidx.core:core:1.3.1"
-
-    implementation 'com.squareup.okio:okio:3.3.0'
-
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
+    
+    implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
 }
 ```
 
@@ -224,71 +179,6 @@ class BlinkApplication : Application() {
 <br />
 
 ## <a name=imap_client></a> IMAP
-
-IMAP integration requires 9 additional AAR in your build gradle.
-
-```groovy
-dependencies {
-     api project( ':blinkreceipt-core' )
-
-    implementation "com.google.android.gms:play-services-auth:20.5.0"
-
-    implementation "androidx.work:work-runtime:2.8.1"
-    implementation "androidx.work:work-runtime-ktx:2.8.1"
-
-    //Outlook
-    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
-        exclude group: 'com.microsoft.device.display'
-    }
-
-    implementation "com.sun.mail:android-mail:1.6.7"
-    implementation "com.sun.mail:android-activation:1.6.7"
-
-    implementation "androidx.appcompat:appcompat:1.6.1"
-
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-    implementation "androidx.fragment:fragment-ktx:1.2.5"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
-    implementation "androidx.webkit:webkit:1.6.1"
-
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
-
-    implementation "com.google.android.material:material:1.8.0"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-    implementation "androidx.core:core-ktx:1.6.0"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
-
-    implementation "androidx.core:core:1.3.1"
-
-    implementation 'com.squareup.okio:okio:3.3.0'
-
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
-}
-```
-<br />
-
 ### Android Manifest
 
 ```xml
@@ -506,71 +396,7 @@ The sdk will throw exceptions in the event it runs into an error while fetching 
 | remoteMessages() | "Unable to encrypt credentials "+ credentials.username() | Credentials are encrypted and stored for easy access. When provided we attempt to encrypt the provided credentials. In the event of a failure this exception will be thrown informing you of the error. |
 
 ## <a name=Outlook></a> Outlook
-
-Outlook integration requires 1 additional AAR in your build gradle.
-
-```groovy
-dependencies {
-    api project( ':blinkreceipt-core' )
-
-    implementation "com.google.android.gms:play-services-auth:20.5.0"
-
-    implementation "androidx.work:work-runtime:2.8.1"
-    implementation "androidx.work:work-runtime-ktx:2.8.1"
-
-    //Outlook
-    implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
-        exclude group: 'com.microsoft.device.display'
-    }
-
-    implementation "com.sun.mail:android-mail:1.6.7"
-    implementation "com.sun.mail:android-activation:1.6.7"
-
-    implementation "androidx.appcompat:appcompat:1.6.1"
-
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-    implementation "androidx.fragment:fragment-ktx:1.2.5"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
-    implementation "androidx.webkit:webkit:1.6.1"
-
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
-
-    implementation "com.google.android.material:material:1.8.0"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-    implementation "androidx.core:core-ktx:1.6.0"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-    implementation "androidx.core:core:1.3.1"
-
-    implementation 'com.squareup.okio:okio:3.3.0'
-
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-    implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
-    implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
-    implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
-}
-```
-
-You must also register an application in the [MS Application Registration Portal](https://apps.dev.microsoft.com/), add a Native Application platform, and obtain an Application ID.
+You must register an application in the [MS Application Registration Portal](https://apps.dev.microsoft.com/), add a Native Application platform, and obtain an Application ID.
 
 ### Android Manifest
 
@@ -665,71 +491,7 @@ override fun onDestroy() {
 
 ## **Gmail**
 
-Blink Receipt Digital sdk allows for full Gmail Integration. The following dependencies must be added in order to support Gmail integration.
-
-```groovy
-    dependencies {
-        api project( ':blinkreceipt-core' )
-
-        implementation "com.google.android.gms:play-services-auth:20.5.0"
-
-        implementation "androidx.work:work-runtime:2.8.1"
-        implementation "androidx.work:work-runtime-ktx:2.8.1"
-
-        //Outlook
-        implementation( "com.microsoft.identity.client:msal:4.2.0" ) {
-            exclude group: 'com.microsoft.device.display'
-        }
-
-        implementation "com.sun.mail:android-mail:1.6.7"
-        implementation "com.sun.mail:android-activation:1.6.7"
-
-        implementation "androidx.appcompat:appcompat:1.6.1"
-
-        implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-        implementation "androidx.fragment:fragment-ktx:1.2.5"
-        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-        implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-        implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-        implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-        implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
-        implementation "androidx.webkit:webkit:1.6.1"
-
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
-
-        implementation "com.google.android.material:material:1.8.0"
-
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-        implementation "androidx.core:core-ktx:1.6.0"
-
-        implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-        implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-        implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-        implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-
-        implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
-        implementation "androidx.core:core:1.3.1"
-
-        implementation 'com.squareup.okio:okio:3.3.0'
-
-        implementation 'com.jakewharton.timber:timber:5.0.1'
-
-        implementation "com.google.android.gms:play-services-tasks:18.0.2"
-
-        implementation "com.google.apis:google-api-services-gmail:v1-rev20210614-1.32.1" exclude module: 'httpclient'
-        implementation "com.google.api-client:google-api-client-android:1.32.1" exclude module: 'httpclient'
-        implementation "com.google.http-client:google-http-client-gson:1.40.0" exclude module: 'httpclient'
-    }
-```
-
-<br />
-<br />
+Blink Receipt Digital sdk allows for full Gmail Integration.
 
 ## <a name=gmail></a> **Gmail Client**
 

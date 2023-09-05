@@ -64,27 +64,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":LibBlinkReceiptCore"))
-    implementation(project(":LibBlinkReceiptRecognizer"))
-    implementation project(':LibBlinkReceiptCamera')
+    implementation("com.google.android.material:material:${versions.material}")
 
-    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
-    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
-    implementation "com.squareup.retrofit2:converter-scalars:${versions.retrofit}"
-    implementation "com.squareup.okio:okio:${versions.okio}"
-
-    implementation "androidx.work:work-runtime:${androidx.worker}"
-    implementation "androidx.work:work-runtime-ktx:${androidx.worker}"
-
-    implementation "com.jakewharton.timber:timber:${versions.timber}"
-    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
-
-    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
-
-    implementation "com.google.android.material:material:${versions.material}"
-
-    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 
     testImplementation "junit:junit:${versions.junit}"
 

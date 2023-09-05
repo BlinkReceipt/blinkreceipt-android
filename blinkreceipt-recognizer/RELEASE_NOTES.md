@@ -507,13 +507,15 @@ Blink Receipt Recognizer
 - Fix Walgreens quantities detection
 
 ## 1.6.7
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
+- Updated to target and compile API Level 33
 - Updated the following dependencies:
   - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
 - Tag long transaction ID for Walmart
+- Stability fixes and improvements
+
+## 1.6.8
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - Stability fixes and improvements
 

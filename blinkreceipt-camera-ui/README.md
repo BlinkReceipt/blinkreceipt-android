@@ -14,40 +14,27 @@
 The Blink Camera UI SDK is a wrapper implementation of the existing `RecognizerView`. This sdk provides a plug and play solution for those who wish to leverage a prebaked implementation of the Recgonizer Experience. Though the UI is predefined, there are many options available that enable you to make this experience uniquely yours!
 
 ## <a name=setup></a> The Setup
+To add the sdk to your android project please follow these steps:
 
-To setup the Blink Camera UI SDK please pull in the `Blink Camera UI` aar into your project. Use of this SDK will also depend upon the following Blink Android Libraries.
+1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
-`Blink Recognizer`
+    ```groovy
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
+    ```
 
-In addition to the `Blink Recognizer` library, your app will require the following dependencies.
+2. Add the following to your dependency section in your app `build.gradle`.
 
 ```groovy
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-
-    implementation "androidx.core:core-ktx:1.10.0"
-    implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "com.google.android.material:material:1.8.0"
-
-    implementation "androidx.fragment:fragment:1.5.7"
-    implementation "androidx.fragment:fragment-ktx:1.5.7"
-
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+dependencies {
+     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
+   
+     implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
+}
 ```
 
 Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
-
-You may notice that there are Kotlin dependencies as part of this list. This is because the SDK is partially written in Kotlin. If your app does not use Kotlin that is ok you will just need to configure the app to use kotlin, but this will not require you to change programming languages as Kotlin is compatible with java.
-
-Project build.gradle
-
-```groovy
-buildscript {
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
-    }
-}
-```
 
 ## <a name=start_camera_scan></a> How to start a Camera Scan
 
