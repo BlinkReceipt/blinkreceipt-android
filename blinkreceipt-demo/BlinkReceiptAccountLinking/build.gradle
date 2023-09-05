@@ -61,7 +61,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation("com.google.android.material:material:${versions.material}")
 
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.7"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
 
     testImplementation "junit:junit:${versions.junit}"

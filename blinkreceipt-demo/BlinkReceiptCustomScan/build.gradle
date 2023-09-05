@@ -67,7 +67,7 @@ dependencies {
     implementation("com.google.android.material:material:${versions.material}")
     implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
 
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.7"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
 
