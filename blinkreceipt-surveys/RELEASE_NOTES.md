@@ -144,7 +144,7 @@
 - Stability fixes and improvements
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
-    - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+    - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
     - com.google.android.material:material:1.4.0 -> 1.8.0
     - androidx.constraintlayout:constraintlayout:2.0.4 -> 2.1.4
     - androidx.fragment:fragment-ktx:1.3.6 -> 1.5.7

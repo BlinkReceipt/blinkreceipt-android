@@ -192,7 +192,7 @@
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
 
 ## 1.2.6
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.

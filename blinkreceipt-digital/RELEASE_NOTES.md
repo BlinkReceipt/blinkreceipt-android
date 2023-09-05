@@ -250,7 +250,7 @@ counterpart
   - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
   - androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1 -> 2.6.1
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
 
 ## 1.3.7
 - Lowercase the email address in `OutlookClient` when executing `remoteMessages` to ensure identical emails with different casing are not treated as new email accounts.

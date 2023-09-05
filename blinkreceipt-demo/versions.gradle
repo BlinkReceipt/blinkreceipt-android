@@ -8,7 +8,7 @@ buildscript {
 
     ext.androidx = [
         'appcompat'             : '1.6.1',
-        'constraintLayout'      : '2.1.4',
+        'constraints'           : '2.1.4',
         'junit'                 : '1.1.5'
     ]
 
@@ -16,6 +16,7 @@ buildscript {
             'minSdk'                : 21,
             'compileSdk'            : 33,
             'targetSdk'             : 33,
+            'androidTestRunner'     : '1.5.2',
             'buildTools'            : '32.0.0',
             'material'              : '1.9.0',
             'kotlin'                : '1.8.21',
@@ -26,6 +27,6 @@ buildscript {
             'espresso'              : '3.4.0',
             'versionMajor'          : 1,
             'versionMinor'          : 6,
-            'versionPatch'          : 7
+            'versionPatch'          : 8
     ]
 }
