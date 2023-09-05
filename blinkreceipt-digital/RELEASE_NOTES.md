@@ -237,11 +237,9 @@ counterpart
 - Fixed bug with deserialization where null float values would incorrectly get deserialized to 0 when expecting a float type
 
 ## 1.3.6
-### Platform changes :warning:
-- The SDK now officially supports Android 13 and we now target and compile against API level 33
 
-### Other changes
 - Stability fixes and improvements
+- Updated to target and compile API Level 33
 - Updated the following dependencies:
   - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
   - androidx.constraintlayout:constraintlayout:2.0.4 -> 2.1.4
@@ -252,4 +250,9 @@ counterpart
   - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
   - androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1 -> 2.6.1
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+
+## 1.3.7
+- Lowercase the email address in `OutlookClient` when executing `remoteMessages` to ensure identical emails with different casing are not treated as new email accounts.
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+- Stability fixes and improvements

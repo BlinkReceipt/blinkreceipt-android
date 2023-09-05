@@ -4,49 +4,31 @@
 The Blink Survey SDK enables you to fetch and display surveys to your users, using either the stock sdk UI or your own custom UI.
 
 ## Setup
-
-To setup the `Blink Survey SDK` then please pull in the aar file into your project. Use of this SDK will also depend on the `Blink Receipt Core` sdk module as well. If this is your first time integrating Blink into your project please refer to the following documentation, otherwise skip to the `Dependencies` section.
+If this is your first time integrating Blink into your project please refer to the following documentation, otherwise skip to the `Dependencies` section.
 
 Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
 
 
 Dependencies
-In addition to those 2 modules you will need to pull in the following as well.
 
-``` groovy
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
+To add the sdk to your android project please follow these steps:
 
-  implementation "androidx.appcompat:appcompat:1.6.1"
+1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
-  implementation "androidx.core:core-ktx:1.10.0"
+    ```groovy
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
+    ```
 
-  implementation "androidx.work:work-runtime:2.8.1"
-  implementation "androidx.work:work-runtime-ktx:2.8.1"
+2. Add the following to your dependency section in your app `build.gradle`.
 
-  implementation "com.squareup.okhttp3:okhttp:4.10.0"
-  implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
-
-  implementation "com.squareup.retrofit2:retrofit:2.9.0"
-  implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-  implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
-
-  implementation "com.squareup.okio:okio:3.3.0"
-
-  implementation "com.jakewharton.timber:timber:5.0.1"
-
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1"
-
-  implementation "com.google.android.gms:play-services-tasks:18.0.2"
-  implementation "com.google.android.material:material:1.8.0"
-
-  implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-  implementation "androidx.fragment:fragment-ktx:1.5.7"
-  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-
-  api project(':blinkreceipt-core')
+```groovy
+dependencies {
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.8"))
+    
+    implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
+}
 ```
 
 You may notice that there are Kotlin dependencies as part of this list. This is because the SDK is partially written in Kotlin. If your app does not use Kotlin that is ok you will just need to configure the app to use kotlin, but this will not require you to change programming languages as Kotlin is compatible with java.
