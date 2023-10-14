@@ -21,6 +21,15 @@
 #-renamesourcefileattribute SourceFile
 
 -dontwarn com.microblink.**
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.crypto.tink.subtle.Ed25519Sign$KeyPair
+-dontwarn com.google.crypto.tink.subtle.Ed25519Sign
+-dontwarn com.google.crypto.tink.subtle.Ed25519Verify
+-dontwarn com.google.crypto.tink.subtle.X25519
+-dontwarn com.microsoft.device.display.DisplayMask
+-dontwarn edu.umd.cs.findbugs.annotations.NonNull
+-dontwarn edu.umd.cs.findbugs.annotations.Nullable
+-dontwarn edu.umd.cs.findbugs.annotations.SuppressFBWarnings
 
 -keep class * extends com.google.gson.TypeAdapter
         -keep class * implements com.google.gson.TypeAdapterFactory

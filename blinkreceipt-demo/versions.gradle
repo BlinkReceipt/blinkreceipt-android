@@ -17,16 +17,16 @@ buildscript {
             'compileSdk'            : 33,
             'targetSdk'             : 33,
             'androidTestRunner'     : '1.5.2',
-            'buildTools'            : '32.0.0',
+            'buildTools'            : '34.0.0',
             'material'              : '1.9.0',
             'kotlin'                : '1.8.21',
             'easyPermissions'       : '3.0.0',
             'junit'                 : '4.13.2',
-            "agp"                   : '7.4.2',
+            "agp"                   : '8.1.2',
             'testRunner'            : '1.4.0',
             'espresso'              : '3.4.0',
             'versionMajor'          : 1,
             'versionMinor'          : 6,
-            'versionPatch'          : 8
+            'versionPatch'          : 9
     ]
 }
