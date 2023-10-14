@@ -14,7 +14,7 @@ buildscript {
 
     ext.versions = [
             'minSdk'                : 21,
-            'compileSdk'            : 33,
+            'compileSdk'            : 34,
             'targetSdk'             : 33,
             'androidTestRunner'     : '1.5.2',
             'buildTools'            : '34.0.0',
@@ -24,7 +24,8 @@ buildscript {
             'junit'                 : '4.13.2',
             "agp"                   : '8.1.2',
             'testRunner'            : '1.4.0',
-            'espresso'              : '3.4.0',
+            'espresso'              : '3.5.1',
+            'bom'                   : '1.6.9',
             'versionMajor'          : 1,
             'versionMinor'          : 6,
             'versionPatch'          : 9
