@@ -6,7 +6,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        mavenLocal()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${versions.agp}"
@@ -22,7 +21,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        mavenLocal()
         maven { url "https://maven.microblink.com" }
     }
 }
