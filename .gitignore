@@ -1,4 +1,7 @@
 # Built application files
+/*/build/
+
+# Built application files
 *.apk
 *.ap_
 
@@ -7,6 +10,9 @@
 
 # Java class files
 *.class
+
+# Crashlytics configuations
+com_crashlytics_export_strings.xml
 
 # Generated files
 bin/
@@ -34,7 +40,7 @@ captures/
 
 # Intellij
 *.iml
-.idea/
+.idea
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -45,6 +51,13 @@ captures/
 .idea/misc.xml
 .idea/caches/
 .idea/codeStyles/
+.idea/runConfigurations.xml
+.idea/libraries/
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/scopes/scope_settings.xml
 
 
 # Keystore files
@@ -60,3 +73,12 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
