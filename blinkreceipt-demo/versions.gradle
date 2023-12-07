@@ -22,12 +22,12 @@ buildscript {
             'kotlin'                : '1.8.21',
             'easyPermissions'       : '3.0.0',
             'junit'                 : '4.13.2',
-            "agp"                   : '8.1.2',
+            "agp"                   : '8.2.0',
             'testRunner'            : '1.4.0',
             'espresso'              : '3.5.1',
-            'bom'                   : '1.6.9',
+            'bom'                   : '1.7.0',
             'versionMajor'          : 1,
-            'versionMinor'          : 6,
-            'versionPatch'          : 9
+            'versionMinor'          : 7,
+            'versionPatch'          : 0
     ]
 }
