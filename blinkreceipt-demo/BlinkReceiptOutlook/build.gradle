@@ -59,11 +59,13 @@ android {
 
 dependencies {
     implementation("com.google.android.material:material:${versions.material}")
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
 
     testImplementation "junit:junit:${versions.junit}"
+
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }

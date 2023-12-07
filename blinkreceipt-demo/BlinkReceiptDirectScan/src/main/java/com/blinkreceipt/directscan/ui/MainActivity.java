@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 import com.blinkreceipt.directscan.R;
 import com.blinkreceipt.directscan.ui.recyclerview.ImageAdapter;
+import com.microblink.ImageClient;
 import com.microblink.Media;
 import com.microblink.RecognizerCallback;
-import com.microblink.RecognizerClient;
 import com.microblink.RecognizerResult;
 import com.microblink.ScanOptions;
 import com.microblink.core.ScanResults;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Bitmap[] bitmaps;
 
-    private RecognizerClient client;
+    private ImageClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeClient() {
-        client = new RecognizerClient(this);
+        client = new ImageClient(this);
     }
 
     private void initializeRecyclerView() {

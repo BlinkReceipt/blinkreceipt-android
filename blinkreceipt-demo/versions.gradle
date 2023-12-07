@@ -1,33 +1,35 @@
 buildscript {
 
     ext.keys = [
-            'keyPassword' : 'b11nkREcei9tDem0s@2016',
-            'storePassword' : 'b11nkREceiPtDemos@2016',
-            'keyAlias' : 'blinkReceiptDemos'
+            'keyPassword'  : 'b11nkREcei9tDem0s@2016',
+            'storePassword': 'b11nkREceiPtDemos@2016',
+            'keyAlias'     : 'blinkReceiptDemos'
     ]
 
     ext.androidx = [
-        'appcompat'             : '1.6.1',
-        'constraints'           : '2.1.4',
-        'junit'                 : '1.1.5'
+            'appcompat'  : '1.6.1',
+            'constraints': '2.1.4',
+            'junit'      : '1.1.5',
+            'lifecycle'  : '2.6.2'
     ]
 
     ext.versions = [
-            'minSdk'                : 21,
-            'compileSdk'            : 34,
-            'targetSdk'             : 33,
-            'androidTestRunner'     : '1.5.2',
-            'buildTools'            : '34.0.0',
-            'material'              : '1.9.0',
-            'kotlin'                : '1.8.21',
-            'easyPermissions'       : '3.0.0',
-            'junit'                 : '4.13.2',
-            "agp"                   : '8.2.0',
-            'testRunner'            : '1.4.0',
-            'espresso'              : '3.5.1',
-            'bom'                   : '1.7.0',
-            'versionMajor'          : 1,
-            'versionMinor'          : 7,
-            'versionPatch'          : 0
+            'minSdk'           : 21,
+            'compileSdk'       : 34,
+            'targetSdk'        : 33,
+            'androidTestRunner': '1.5.2',
+            'buildTools'       : '34.0.0',
+            'material'         : '1.10.0',
+            'kotlin'           : '1.9.21',
+            'easyPermissions'  : '3.0.0',
+            'junit'            : '4.13.2',
+            "agp"              : '8.2.0',
+            'testRunner'       : '1.4.0',
+            'espresso'         : '3.5.1',
+            'bom'              : '1.7.0',
+            'tasks'            : '18.0.2',
+            'versionMajor'     : 1,
+            'versionMinor'     : 7,
+            'versionPatch'     : 0
     ]
 }
