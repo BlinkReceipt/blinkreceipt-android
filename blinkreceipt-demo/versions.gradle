@@ -12,7 +12,8 @@ buildscript {
             'junit'         : '1.1.5',
             'lifecycle'     : '2.6.2',
             'core'          : '1.12.0',
-            'recyclerview'  : '1.3.2'
+            'recyclerview'  : '1.3.2',
+            'fragment'      : '1.6.2',
     ]
 
     ext.versions = [
@@ -30,6 +31,7 @@ buildscript {
             'espresso'         : '3.5.1',
             'bom'              : '1.7.0',
             'tasks'            : '18.0.2',
+            'logcat'           : '0.1',
             'versionMajor'     : 1,
             'versionMinor'     : 7,
             'versionPatch'     : 0

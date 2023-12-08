@@ -60,7 +60,7 @@ android {
 
 dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation("com.google.android.material:material:${versions.material}")
+    implementation "com.google.android.material:material:${versions.material}"
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))

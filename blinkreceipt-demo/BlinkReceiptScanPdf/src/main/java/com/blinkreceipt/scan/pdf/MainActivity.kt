@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blinkreceipt.scan.pdf.databinding.ActivityMainBinding
+import com.blinkreceipt.scan.pdf.internal.PdfApplication
 import com.blinkreceipt.scan.pdf.internal.PdfViewer
 import com.blinkreceipt.scan.pdf.internal.PdfViewerAdapter
 import com.microblink.PdfClient
@@ -28,8 +29,12 @@ class MainActivity : AppCompatActivity() {
 
     private var document: Uri? = null
 
+    private val events by lazy {
+        PdfApplication.events
+    }
+
     private val pdfViewer: PdfViewer by lazy {
-        PdfViewer()
+        PdfViewer(events)
     }
 
     private lateinit var pdfAdapter: PdfViewerAdapter
@@ -89,8 +94,16 @@ class MainActivity : AppCompatActivity() {
 
                 runCatching {
                     client.recognize(uri)
-                        .addOnSuccessListener(this) {
-                            Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_LONG)
+                        .addOnSuccessListener(this) { results ->
+                            events.log {
+                                results.toString()
+                            }
+
+                            Toast.makeText(
+                                applicationContext,
+                                results.toString(),
+                                Toast.LENGTH_LONG
+                            )
                                 .show()
                         }.addOnFailureListener {
                             Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_LONG)
