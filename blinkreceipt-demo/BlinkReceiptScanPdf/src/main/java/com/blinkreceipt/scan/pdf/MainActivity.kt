@@ -1,13 +1,10 @@
 package com.blinkreceipt.scan.pdf
 
 import android.content.ContentResolver
-import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.ParcelFileDescriptor
-import android.os.Parcelable
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.VisibleForTesting
@@ -118,17 +115,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun ContentResolver.toFileDescriptor(uri: Uri): ParcelFileDescriptor? =
         openFileDescriptor(uri, READ_MODE)
-
-    private inline fun <reified T : Parcelable> Intent.parcelable(key: String): T? = when {
-        Build.VERSION.SDK_INT >= 33 -> {
-            getParcelableExtra(key, T::class.java)
-        }
-
-        else -> {
-            @Suppress("DEPRECATION")
-            getParcelableExtra(key)
-        }
-    }
 
 
     internal companion object {
