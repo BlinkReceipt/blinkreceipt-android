@@ -50,11 +50,12 @@ android {
 }
 
 dependencies {
-
+    implementation "androidx.recyclerview:recyclerview:${androidx.recyclerview}"
     implementation "androidx.core:core-ktx:${androidx.core}"
     implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
