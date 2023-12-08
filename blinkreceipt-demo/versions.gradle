@@ -10,7 +10,8 @@ buildscript {
             'appcompat'  : '1.6.1',
             'constraints': '2.1.4',
             'junit'      : '1.1.5',
-            'lifecycle'  : '2.6.2'
+            'lifecycle'  : '2.6.2',
+            'core'       : '1.12.0',
     ]
 
     ext.versions = [

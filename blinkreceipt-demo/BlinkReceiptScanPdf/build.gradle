@@ -1,17 +1,17 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
+    namespace 'com.blinkreceipt.scan.pdf'
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "com.blinkreceipt.linking"
+        applicationId "com.blinkreceipt.scan.pdf"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
-
         versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
         versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
 
@@ -47,27 +47,20 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    packagingOptions {
-        resources {
-            excludes += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md', 'META-INF/ASL2.0', 'META-INF/AL2.0', 'META-INF/LGPL2.1', 'META-INF/*.kotlin_module', 'META-INF/licenses/ASM']
-        }
-    }
-
-    namespace 'com.blinkreceipt.linking'
-
 }
 
 dependencies {
+
+    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
+    implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation("com.google.android.material:material:${versions.material}")
-    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
-    implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 
     testImplementation "junit:junit:${versions.junit}"
 
-    androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
+    androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }
