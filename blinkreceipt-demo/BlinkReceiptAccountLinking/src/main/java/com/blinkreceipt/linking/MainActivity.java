@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private static final Account ACCOUNT = new Account(
             RetailerIds.AMAZON_BETA,
             new PasswordCredentials(
-                    "christopherbrown34@gmail.com",
-                    "Y*X4aeCe-Bi!vd6ZHoNr_m_c"
+                    "",
+                    ""
             )
     );
 
@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
             new Account(
                     RetailerIds.WALMART,
                     new PasswordCredentials(
-                            "christopherbrown34@gmail.com",
-                            "a4LKJ.wdGusbiipC9kYMiGm2"
+                            "",
+                            ""
                     )
             ),
             new Account(
                     RetailerIds.TARGET,
                     new PasswordCredentials(
-                            "christopherbrown34@gmail.com",
-                            "Jcg.U_UB7uPsgcFiUx9t"
+                            "",
+                            ""
                     )
             )
     );
