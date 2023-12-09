@@ -192,10 +192,19 @@
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
 
 ## 1.2.6
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - added support for Postmates
   - when linking an account for Postmates, the username is the users phone number
+- Stability fixes and improvements
+
+## 1.2.7
+- Stability fixes and improvements
+- **BREAKING CHANGE** Removed legacy Amazon Manager.
+
+## 1.2.8
+- Changed internal dependencies from api to implementation. Please include the following:
+  - implementation "com.google.android.gms:play-services-tasks:18.0.2"
 - Stability fixes and improvements

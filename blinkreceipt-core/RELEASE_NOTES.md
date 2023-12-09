@@ -216,11 +216,17 @@
   - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.6.4
   - com.squareup.okhttp3:okhttp:4.9.3 -> 4.11.0
   - com.squareup.okhttp3:logging-interceptor:4.9.0 -> 4.11.0
-  - com.google.android.gms:play-services-tasks:18.0.1 -> 18.0.2 
+  - com.google.android.gms:play-services-tasks:18.0.1 -> 18.0.2
   - com.squareup.okio:okio:3.0.0 -> 3.3.0
   - androidx.preference:preference-ktx:1.1.1 -> 1.2.0
 - Stability fixes and improvements
 
 ## 1.3.9
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+- Stability fixes and improvements
+
+## 1.4.0
+- Stability fixes and improvements
+
+## 1.4.1
 - Stability fixes and improvements
