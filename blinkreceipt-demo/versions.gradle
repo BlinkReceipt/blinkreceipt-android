@@ -32,6 +32,8 @@ buildscript {
             'bom'              : '1.7.0',
             'tasks'            : '18.0.2',
             'logcat'           : '0.1',
+            'msal'             : '4.10.0',
+            'telemetry'        : '1.18.0',
             'versionMajor'     : 1,
             'versionMinor'     : 7,
             'versionPatch'     : 0
