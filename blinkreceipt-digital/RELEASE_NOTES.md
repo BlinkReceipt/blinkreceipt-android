@@ -3,7 +3,7 @@
 ## 1.0.0
 
 - Outlook Support
-    - Requires Blink Receipt Recognizer to be initialized
+  - Requires Blink Receipt Recognizer to be initialized
 
 ## 1.0.1
 
@@ -71,7 +71,7 @@
 - security: updated Tink to stable release 1.5.0
 - Add functionality to all Email clients to specify date window for email searches in terms of Date
 - Add functionality for all email clients to contain a search senders list that matches email aliases with their retail
-counterpart
+  counterpart
 - internal serialization performance
 - web kit 1.4.0
 
@@ -263,4 +263,10 @@ counterpart
 ## 1.3.9
 - Changed internal dependencies from api to implementation. Please include the following:
   - implementation "com.google.android.gms:play-services-tasks:18.0.2"
+  -  implementation( "com.microsoft.identity.client:msal:4.10.0" ) {
+     exclude group: 'com.microsoft.device.display'
+     exclude group: 'io.opentelemetry'
+     }
+  - implementation("io.opentelemetry:opentelemetry-api:1.18.0")
+  - implementation("io.opentelemetry:opentelemetry-context:1.18.0")
 - Stability fixes and improvements
