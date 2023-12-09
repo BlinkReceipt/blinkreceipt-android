@@ -11,7 +11,6 @@
 
     <application
         android:name=".internal.PdfApplication"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -29,11 +28,11 @@
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
-            android:value="sB3QUEyOz0mKBrzWLJvpTdqJMva8B6FtuH78tEQ+1/ULxCJccy9T5YaAotU/l3WC" />
+            android:value="" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="sRwAAAAZY29tLmJsaW5rcmVjZWlwdC5zY2FuLnBkZmgqiaU/y2JTFGlGYkEDZxxdQfy+b8DPt+5HIFVDWtRxMyIi0G50Noct8bWcQ0Ft77RKJX0IZVeKsVjFpe+ts/VQNnTJxYHW8YqubUtmIFfxczlbJUyYT8fmKWGWFNY/COHGqQr0++mRD7/VLAMIdmQ5t6ZN+3Lvyn9qDQjuODu+3opzelcP" />
+            android:value="" />
 
     </application>
 

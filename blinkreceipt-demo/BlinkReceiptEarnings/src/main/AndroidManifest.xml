@@ -5,7 +5,6 @@
 
     <application
         android:name=".BlinkApplication"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,11 +23,11 @@
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
-            android:value="sB3QUEyOz0mKBrzWLJvpTYb7iG+BbmOAXBYg/Ol+tZnHKMMhWoN+ee5NmWKFe9wO" />
+            android:value="" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="sRwAAAAZY29tLmJsaW5rcmVjZWlwdC5lYXJuaW5nc4jUxor7w21Ji6q+itrO6XnMspCDKRwR30EcyYaipTM2Jjpp2gwzFnaL7W1cduz2fGSR4H/HEen7b9N9GqML+H2e75pGsWRye1diJ/+a0VteL8liAczW8UPNpS+yV/Oo2qnay2xMw6GpDmYQmva3UWQdsHBzftMHh+Klvlo+0NGVDeWntmSs" />
+            android:value="" />
 
     </application>
 

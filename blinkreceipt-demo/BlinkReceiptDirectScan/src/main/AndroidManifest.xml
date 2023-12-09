@@ -4,7 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -23,11 +22,11 @@
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
-            android:value="sB3QUEyOz0mKBrzWLJvpTQyZ4zzRz4BcuCNGev3dCTeL+IeD/qnf8whXzZ3xfIxH" />
+            android:value="" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="sRwAAAAbY29tLmJsaW5rcmVjZWlwdC5kaXJlY3RzY2Fu9xHK9Ixz1unJxlNl+PXzpD4dKetM/VpG19TCDw5x4g8bimV8n3PVFVukcQr2KQ/MTVs9UGh2FIPD4sXw7+Me5Yhj+WvNljDE0Vx40DYDGmijBOCkDNNDRiUXsXFxx65FtpE69FAv5AZcbDjcOFYImfuzMeoA39zSc7LQ6wrjPN6WS1mR4n4=" />
+            android:value="" />
 
     </application>
 
