@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>BaseCameraEventsListener 1.4.0 API </title>
+    <title>BaseCameraEventsListener 1.4.1 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -121,6 +121,14 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
  implements <a href=../hardware/camera/AutofocusListener.html>AutofocusListener</a>
                     </pre>
                     <div class="block"></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -324,8 +332,16 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
                                         <h4>onCameraPreviewStarted</h4>
                                         <pre class="methodSignature"> abstract void <a href=BaseCameraEventsListener.html#onCameraPreviewStarted()>onCameraPreviewStarted</a>()</pre>
                                         <div class="block"><p>Called just after camera preview has successfully started and no exceptions occurred. When this method is called, it means that from now on, frames will arrive and preview will be shown.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -339,8 +355,16 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
                                         <h4>onCameraPreviewStopped</h4>
                                         <pre class="methodSignature"> abstract void <a href=BaseCameraEventsListener.html#onCameraPreviewStopped()>onCameraPreviewStopped</a>()</pre>
                                         <div class="block"><p>Called inside pause method of CameraView just haver camera preview has been stopped. After this method is called, frames will no longer arrive nor will be shown.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -354,17 +378,23 @@ public interface <span class="typeNameLabel"><a href=BaseCameraEventsListener.ht
                                         <h4>onError</h4>
                                         <pre class="methodSignature"> abstract void <a href=BaseCameraEventsListener.html#onError(java.lang.Throwable)>onError</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Throwable.html>Throwable</a> exc)</pre>
                                         <div class="block"><p>Called when recognition results with exception. Known exceptions that can occur are following: * com.microblink.camera.hardware.camera.CameraResolutionTooSmallException is thrown when largest possible camera preview resolution is not enough for making a successful scan * java.lang.UnsatisfiedLinkError is thrown when native library was not successfully loaded thus making scans impossible * com.microblink.recognition.RecognizerError is thrown when initialization or reinitialization of native recognizer fails * com.microblink.recognition.FeatureNotSupportedException is thrown when scanning cannot be performed. The reason why scanning cannot be perfomed can be obtained by calling getReason() method of thrown exception. * java.lang.Throwable is thrown in all other cases (for example when camera is not ready because it is used by other apps or some unknown error has occurred)</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>exc</code> - Exception that occurred during recognition.</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

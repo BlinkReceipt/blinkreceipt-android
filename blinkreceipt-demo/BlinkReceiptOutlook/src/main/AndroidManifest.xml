@@ -40,11 +40,11 @@
 
             <meta-data
                 android:name="com.microblink.ProductIntelligence"
-                android:value="[PRODUCT INTEL KEY]" />
+                android:value="" />
 
             <meta-data
                 android:name="com.microblink.LicenseKey"
-                android:value="PLACE KEY HERE" />
+                android:value="" />
 
         </activity>
 

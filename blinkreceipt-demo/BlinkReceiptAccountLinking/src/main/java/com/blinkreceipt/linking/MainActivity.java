@@ -26,7 +26,7 @@ import kotlin.Unit;
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
-            RetailerIds.TARGET,
+            RetailerIds.AMAZON_BETA,
             new PasswordCredentials(
                     "",
                     ""
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     )
             ),
             new Account(
-                    RetailerIds.HOME_DEPOT,
+                    RetailerIds.TARGET,
                     new PasswordCredentials(
                             "",
                             ""

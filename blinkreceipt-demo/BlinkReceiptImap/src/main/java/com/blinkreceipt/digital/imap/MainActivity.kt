@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val tester = PasswordCredentials.newBuilder(
             Provider.GMAIL,
-            "email address",
+            "",
             "app password stored"
         ).build()
     }

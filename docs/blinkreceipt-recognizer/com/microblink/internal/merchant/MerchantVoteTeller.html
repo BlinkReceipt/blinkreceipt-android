@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>MerchantVoteTeller 1.6.9 API </title>
+    <title>MerchantVoteTeller 1.7.0 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -118,6 +118,14 @@ public final class <span class="typeNameLabel"><a href=MerchantVoteTeller.html>M
 
                     </pre>
                     <div class="block"><p>This MerchantVoteTeller is responsible for taking the list of found merchants via the various lookups and tallying up the votes. It contains functionality to tally votes and determine if 2 merchants are voting for the same Merchant.</p></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -315,8 +323,19 @@ public final class <span class="typeNameLabel"><a href=MerchantVoteTeller.html>M
                                         <h4>vote</h4>
                                         <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=dto/Merchant.html>Merchant</a>, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=dto/Merchant.html>Merchant</a>&gt;&gt; <a href=MerchantVoteTeller.html#vote(java.util.List)>vote</a>(<a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=dto/Merchant.html>Merchant</a>&gt; merchants)</pre>
                                         <div class="block"><p>The vote function takes in the list of found merchants (via the MerchantStore) and returns a map of the tallied votes. It discerns unique votes from those similar to other lookup methods.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+                                            <dt><span class="returnLabel">Returns:</span></dt>
+                                            <dd><p>the tallied votes where each key represents the highest ranked lookup method and the value, a list (in descending order) of other merchant lookups that pointed to the same merchant.</p></dd>
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

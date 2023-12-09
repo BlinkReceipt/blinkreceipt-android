@@ -34,7 +34,7 @@ When you have a Task, you are able to apply different sets of listeners that wil
 
 <br />
 
-### First Way (Recommended) <a name=recommended_way></a> 
+### First Way (Recommended) <a name=recommended_way></a>
 
 A successful callback listener, `OnSuccessListener<? super TResult>`, can be added to the task by calling `task.addOnSuccessListener(OnSuccessListener<? super TResult>)`. This listener has a single method `onSuccess(T result)` that needs to be implemented. This listener callback will be invoked upon a successful completion of a given Task.
 
@@ -147,9 +147,10 @@ To add the sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.9"))
-    
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.0"))
+
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 }
 ```
 
@@ -338,7 +339,7 @@ Once the client is configured then we are ready to start parsing emails. On the 
 
 ### IMAP Remote Messages
 
-The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credential: PasswordCredentials` and `result: JobResults`. The password credentials is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request. 
+The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credential: PasswordCredentials` and `result: JobResults`. The password credentials is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.
 
 
 ### IMAP Logout

@@ -12,7 +12,7 @@
 ## 1.0.2
 
 - stability fixes and improvements
-- 
+-
 ## 1.0.3
 
 - stability fixes and improvements
@@ -62,3 +62,9 @@
 ## 1.1.3
 - Stability fixes and improvements
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+
+## 1.1.4
+- Stability fixes and improvements
+
+## 1.1.5
+- Stability fixes and improvements

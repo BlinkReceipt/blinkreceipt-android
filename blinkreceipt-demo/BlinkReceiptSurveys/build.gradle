@@ -58,6 +58,12 @@ android {
 }
 
 dependencies {
+  implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
+  implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
+  implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+  implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
+
   implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
   implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
 

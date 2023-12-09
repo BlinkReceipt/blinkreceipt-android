@@ -175,3 +175,8 @@
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - Stability fixes and improvements
 
+## 1.4.0
+- Stability fixes and improvements
+
+## 1.4.1
+- Stability fixes and improvements

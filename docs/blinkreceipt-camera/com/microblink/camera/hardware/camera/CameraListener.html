@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>CameraListener 1.4.0 API </title>
+    <title>CameraListener 1.4.1 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
@@ -121,6 +121,14 @@ public interface <span class="typeNameLabel"><a href=CameraListener.html>CameraL
  implements <a href=AutofocusListener.html>AutofocusListener</a>
                     </pre>
                     <div class="block"></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -324,17 +332,23 @@ public interface <span class="typeNameLabel"><a href=CameraListener.html>CameraL
                                         <h4>onCameraFrame</h4>
                                         <pre class="methodSignature"> abstract void <a href=CameraListener.html#onCameraFrame(com.microblink.camera.hardware.camera.frame.ICameraFrame)>onCameraFrame</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=frame/ICameraFrame.html>ICameraFrame</a> frame)</pre>
                                         <div class="block"><p>Called when camera manager prepares frame for processing.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>frame</code> - frame that has arrived from camera</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -348,17 +362,23 @@ public interface <span class="typeNameLabel"><a href=CameraListener.html>CameraL
                                         <h4>onHighResFrame</h4>
                                         <pre class="methodSignature"> abstract void <a href=CameraListener.html#onHighResFrame(com.microblink.camera.hardware.camera.frame.ICameraFrame)>onHighResFrame</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=frame/ICameraFrame.html>ICameraFrame</a> frame)</pre>
                                         <div class="block"><p>Called when camera manager prepares max resolution frame for processing.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>frame</code> - max resolution frame that has arrived from camera</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -372,8 +392,16 @@ public interface <span class="typeNameLabel"><a href=CameraListener.html>CameraL
                                         <h4>canReceiveFrame</h4>
                                         <pre class="methodSignature"> abstract boolean <a href=CameraListener.html#canReceiveFrame()>canReceiveFrame</a>()</pre>
                                         <div class="block"><p>Called before onCameraFrame to determine if frame can be received. If false is returned, camera manager will immediately recycle the new camera frame.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

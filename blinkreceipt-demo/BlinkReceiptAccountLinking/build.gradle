@@ -47,6 +47,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     packagingOptions {
         resources {
             excludes += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md', 'META-INF/ASL2.0', 'META-INF/AL2.0', 'META-INF/LGPL2.1', 'META-INF/*.kotlin_module', 'META-INF/licenses/ASM']
@@ -59,7 +60,8 @@ android {
 
 dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation("com.google.android.material:material:${versions.material}")
+    implementation "com.google.android.material:material:${versions.material}"
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")

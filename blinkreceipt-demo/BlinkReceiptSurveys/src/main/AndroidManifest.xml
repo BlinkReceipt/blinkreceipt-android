@@ -3,7 +3,6 @@
 
     <application
         android:name=".BlinkSurveysApplication"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -22,7 +21,7 @@
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="[PLACE LICENSE KEY HERE]" />
+            android:value="" />
 
     </application>
 

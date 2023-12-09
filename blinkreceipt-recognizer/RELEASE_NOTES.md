@@ -494,7 +494,7 @@ Blink Receipt Recognizer
 - Added support for additional Canadian date formats
 - Overall improvements in receipt total detection for top merchants in the UK
 - Fixed an issue with some Walgreens product quantities may have been returned incorrectly
-- Fixed and issue where purchase type for Panera and Dollar General receipts was incorrectly returned as “Delivery” 
+- Fixed and issue where purchase type for Panera and Dollar General receipts was incorrectly returned as “Delivery”
 
 ## 1.6.6
 
@@ -519,3 +519,15 @@ Blink Receipt Recognizer
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
 - Stability fixes and improvements
 
+## 1.6.9
+- fixed total UI marker to allow users to submit images only when we capture a total
+- Stability fixes and improvements
+
+## 1.7.0
+- added raw basket property
+- added raw trip header property
+- added raw trip footer property
+- Scan PDFs
+- Rename RecognizerClient to ImageClient
+- Change internal dependencies from api to implementation
+- Stability fixes and improvements

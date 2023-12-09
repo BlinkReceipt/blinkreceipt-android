@@ -3,7 +3,7 @@
 ## 1.0.0
 
 - Outlook Support
-    - Requires Blink Receipt Recognizer to be initialized
+  - Requires Blink Receipt Recognizer to be initialized
 
 ## 1.0.1
 
@@ -71,7 +71,7 @@
 - security: updated Tink to stable release 1.5.0
 - Add functionality to all Email clients to specify date window for email searches in terms of Date
 - Add functionality for all email clients to contain a search senders list that matches email aliases with their retail
-counterpart
+  counterpart
 - internal serialization performance
 - web kit 1.4.0
 
@@ -232,7 +232,7 @@ counterpart
 
 - Stability fixes and improvements
 - Outlook Client returns the current account signed into the app or in the case of shared device mode. Signed into the device
-- update Microsoft SDK to 4.2.0 
+- update Microsoft SDK to 4.2.0
 - Fix crash related to coroutine exception handling in the remote messages api.
 - Fixed bug with deserialization where null float values would incorrectly get deserialized to 0 when expecting a float type
 
@@ -250,9 +250,23 @@ counterpart
   - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
   - androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1 -> 2.6.1
   - androidx.webkit:webkit:1.4.0 -> 1.6.1
-  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.7.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
 
 ## 1.3.7
 - Lowercase the email address in `OutlookClient` when executing `remoteMessages` to ensure identical emails with different casing are not treated as new email accounts.
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+- Stability fixes and improvements
+
+## 1.3.8
+- Stability fixes and improvements
+
+## 1.3.9
+- Changed internal dependencies from api to implementation. Please include the following:
+  - implementation "com.google.android.gms:play-services-tasks:18.0.2"
+  -  implementation( "com.microsoft.identity.client:msal:4.10.0" ) {
+     exclude group: 'com.microsoft.device.display'
+     exclude group: 'io.opentelemetry'
+     }
+  - implementation("io.opentelemetry:opentelemetry-api:1.18.0")
+  - implementation("io.opentelemetry:opentelemetry-context:1.18.0")
 - Stability fixes and improvements
