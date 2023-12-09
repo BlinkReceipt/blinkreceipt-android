@@ -24,11 +24,11 @@
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="[REPLACE WITH LICENSE KEY]" />
+            android:value="sRwAAAAYY29tLmJsaW5rcmVjZWlwdC5saW5raW5nobvFgzFBiDAKa82i2w7OEqXvts9pBn51mM/GgKOj7W1Y5JhBdmxec4Elh9u+8TfpC4kiBjsoufHkasJNLLBkXwIlFlIouHPggWe6BEDb+9hmPFdSiuISLSLJYMoXdKdbQ6lA8wPHHr++lx4n7a6Sr2Zo9cgPW0ex2+pU+nHuDfA5h+Ru8bM=" />
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
-            android:value="[REPLACE WITH INTELLIGENCE KEY]" />
+            android:value="sB3QUEyOz0mKBrzWLJvpTcypZqCUkBuy3cbpoaZYqU4XmCGpt6S2tcV/MjoSqBEP" />
 
     </application>
 

@@ -22,7 +22,7 @@
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="[PLACE LICENSE KEY HERE]" />
+            android:value="sRwAAAAYY29tLmJsaW5rcmVjZWlwdC5zdXJ2ZXlzh1Abwsh8le/dWIol1Dw0xoVTXFZJS9Qd5fQlH7wmRj0npRYVGKUAn3uVnY/ELAw0xS5JbLZWnUwCcxG1hCgdW9tWLPNezENiBXYcRAMCxdF2kpkf5TlIe3JLLryZXiXHDOCxt81eCBr8nT9/FKY3sVqx881HOHPzxlWdM3jzl9PB1fbYFeg=" />
 
     </application>
 
