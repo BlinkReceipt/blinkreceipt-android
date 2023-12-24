@@ -36,6 +36,6 @@ buildscript {
             'telemetry'        : '1.18.0',
             'versionMajor'     : 1,
             'versionMinor'     : 7,
-            'versionPatch'     : 0
+            'versionPatch'     : 1
     ]
 }
