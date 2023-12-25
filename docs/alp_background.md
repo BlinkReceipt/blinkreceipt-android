@@ -1,5 +1,5 @@
 The recommended way of using the Account Linking Android SDK in the background is using [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager), which is the recommended solution for persistent work.
-To start, you have to define a class which will extend from a WorkManager worker. 
+To start, you have to define a class which will extend from a WorkManager worker.
 We recommend extending from `CoroutineWorker` if you're working with Kotlin, and `ListenableWorker` if you're working with Java,
 as we have to wait until the Account Linking SDK finishes before finishing work.
 
@@ -34,7 +34,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
         val client = AccountLinkingClient(applicationContext)
         //configure the client
         client.dayCutoff = 14
-    
+
         val suspendResult = suspendCoroutine { continuation ->
             client.orders(AMAZON_BETA, failure = { retailerId, exception ->
                 //log exception
@@ -43,20 +43,20 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
                     // if verification is needed, you should attempt to retrieve orders while the app is in the foreground,
                     // and show the exception.view to the end user so he can complete the required verification
                 }
-    
+
                 continuation.resume(Result.failure())
             }, success = { retailerId, results, remaining, uuid ->
                 if(results != null){
                     //store results in database, API etc.
                 }
-    
+
                 // no remaining orders, so we can complete the session
                 if(remaining == 0){
                     continuation.resume(Result.success())
                 }
             })
         }
-    
+
         return suspendResult
     }
     ```
@@ -65,14 +65,14 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
     @NonNull
     @Override
     public ListenableFuture<Result> startWork() {
-    
+
         //set license keys if you haven't done so in your AndroidManifest.xml
         BlinkReceiptLinkingSdk.licenseKey("<your_account_linking_licence_key>");
         BlinkReceiptLinkingSdk.productIntelligenceKey("<your_product_intelligence_key>");
-        
+
         //initialize the sdk
         BlinkReceiptLinkingSdk.initialize(getApplicationContext());
-        
+
         SettableFuture<Result> future = SettableFuture.create();
         AccountLinkingClient client = new AccountLinkingClient(this.getApplicationContext());
         //configure the client
@@ -105,7 +105,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
     ```
 
 After we're done with the Worker implementation, we need to enqueue its execution. WorkManager enables you to enqueue either [one-time](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_one-time_work) or [periodic](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_periodic_work) work.
-Depending on your specific needs, you can enqueue the execution at a specific point in your users journey. 
+Depending on your specific needs, you can enqueue the execution at a specific point in your users journey.
 Preferably, you should enqueue background work after you've successfully verified an account or retrieved orders at least once in the foreground, as additional verification may be required from the end user.
 Here's an example on how to enqueue periodic work:
 

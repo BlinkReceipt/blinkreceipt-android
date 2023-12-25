@@ -4,7 +4,7 @@ Before you can start retrieving orders, you have to link and verify an account. 
 you have to instantiate an `Account` object and call the `link` method on an instance of the `AccountLinkingClient` class:
 
 === "Kotlin"
-    ```kotlin 
+    ```kotlin
     // AMAZON_BETA is used just as an example
     val account = Account(
         AMAZON_BETA,
@@ -13,11 +13,11 @@ you have to instantiate an `Account` object and call the `link` method on an ins
             "amazon_password"
         )
     )
-    
+
     client.link(account).addOnSuccessListener {
         //move on to the next step, verifying the account or retrieving orders
     }.addOnFailureListener {
-        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID. 
+        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID.
     }
     ```
 === "Java"
@@ -34,7 +34,7 @@ you have to instantiate an `Account` object and call the `link` method on an ins
         //move on to the next step, verifying the account or retrieving orders
     })
     .addOnFailureListener (exception ->{
-        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID. 
+        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID.
     });
     ```
 
@@ -54,7 +54,7 @@ implementation:
     val client = AcountLinkingClient(context)
     client.link(Account(AMAZON_BETA, PasswordCredentials("amazon_username", "amazon_password")))
     //do some work, verify, grab orders, etc...
-    
+
     //retrieve and unlink account
     client.accounts().addOnSuccessListener {
         val amazonAccount = it?.firstOrNull { it.retailerId == AMAZON_BETA }
@@ -70,7 +70,7 @@ implementation:
     AccountLinkingClient client = new AccountLinkingClient(context);
     client.link(new Account(AMAZON_BETA, new PasswordCredentials("amazon_username", "amazon_password")));
     //do some work, verify, grab orders, etc...
-    
+
     //retrieve and unlink account
     client.accounts().addOnSuccessListener(accounts ->{
         Optional<Account> account = accounts.stream().filter(acc -> acc.retailerId() == AMAZON_BETA).findFirst();
@@ -110,15 +110,15 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
     ```kotlin
     val client = AccountLinkingClient(context)
     //config the client, or link an account if you haven't linked it already
-    
+
     val allOrders = mutableListOf<ScanResults>()
-    
+
     client.orders(AMAZON_BETA,
         success = { retailerId: Int, results: ScanResults?, remaining: Int, uuid: String ->
             if (results != null) {
                 allOrders.add(results)
             }
-    
+
             if (remaining == 0) {
                 //process the collected orders
             }
@@ -144,9 +144,9 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
                     "amazon_password"
             )
     );
-    
+
     List<ScanResults> allResults = new ArrayList<>();
-    
+
     client.orders(AMAZON_BETA, (Integer retailerId, ScanResults results, Integer remaining, String uuid) ->{
         allResults.add(results);
         if(remaining == 0){
@@ -197,7 +197,7 @@ This is meant to be used only for debugging purposes.
 === "Kotlin"
     ```kotlin
     val client = AccountLinkingClient(context)
-    
+
     val account = Account(
         AMAZON_BETA,
         PasswordCredentials(
@@ -205,7 +205,7 @@ This is meant to be used only for debugging purposes.
             "amazon_password"
         )
     )
-    
+
     client.link(account).addOnSuccessListener {
         client.verify(account.retailerId,
             success = { success: Boolean, uuid: String -> // grab orders, etc...
@@ -229,7 +229,7 @@ This is meant to be used only for debugging purposes.
     Account account = new Account(
             AMAZON_BETA,
             new PasswordCredentials(
-                    "amazon_username", 
+                    "amazon_username",
                     "amazon_password"
             )
     );
@@ -267,7 +267,7 @@ which you had already retrieved before.
 === "Kotlin"
     ```kotlin title="Reset retailer history"
     val client = AccountLinkingClient(context)
-    
+
     client.resetHistory(AMAZON_BETA).addOnSuccessListener {
        // e.g. link a different amazon account
     }
@@ -278,7 +278,7 @@ which you had already retrieved before.
 
     client.resetHistory(AMAZON_BETA).addOnSuccessListener(success -> {
       // e.g. link a different amazon account
-    });    
+    });
     ```
 
 Similarly, you can reset the history for all retailers, by calling the `resetHistory` method which takes in no parameters.
@@ -286,14 +286,14 @@ Similarly, you can reset the history for all retailers, by calling the `resetHis
 === "Kotlin"
     ```kotlin title="Reset all retailers history"
     val client = AccountLinkingClient(context)
-    
+
     client.resetHistory().addOnSuccessListener {
     }
     ```
 === "Java"
     ```java title="Reset all retailers history"
     AccountLinkingClient client = new AccountLinkingClient(context);
-    
+
     client.resetHistory().addOnSuccessListener(sucess -> {
     });
     ```
