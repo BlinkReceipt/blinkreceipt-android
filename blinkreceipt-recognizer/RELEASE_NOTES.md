@@ -531,3 +531,11 @@ Blink Receipt Recognizer
 - Rename RecognizerClient to ImageClient
 - Change internal dependencies from api to implementation
 - Stability fixes and improvements
+
+## 1.7.1
+- add cashback property detected on the receipt, if any 
+- Fuel product detection improvements in US, UK 
+- Discount detection improvements in FR, UK 
+- Sales Tax detection improvements for US 
+- Product QTY improvements for US
+- Stability fixes and improvements

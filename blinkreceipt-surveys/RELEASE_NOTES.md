@@ -166,3 +166,6 @@
   - implementation "androidx.constraintlayout:constraintlayout:2.1.4"
   - implementation "androidx.fragment:fragment-ktx:1.6.2"
 - Stability fixes and improvements
+
+## 1.3.0
+- Stability fixes and improvements

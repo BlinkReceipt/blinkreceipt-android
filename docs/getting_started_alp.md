@@ -25,7 +25,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
     dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.9"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.1"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
     }
@@ -33,7 +33,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Groovy"
     ```groovy
     dependencies {
-    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.6.9")
+    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.1")
 
     implementation "com.microblink.blinkreceipt:blinkreceipt-account-linking"
     }
@@ -84,7 +84,7 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
     BlinkReceiptLinkingSdk.initialize(this, object: InitializeCallback {
         override fun onComplete() {
         }
-    
+
         override fun onException(throwable: Throwable) {
         // log exception...
         }
@@ -95,9 +95,9 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
     BlinkReceiptLinkingSdk.initialize(this, new InitializeCallback() {
         @Override
         public void onComplete() {
-            
+
         }
-    
+
         @Override
         public void onException(@NonNull Throwable throwable) {
             // log exception

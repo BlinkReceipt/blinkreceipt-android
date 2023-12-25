@@ -14,5 +14,5 @@ Our features include:
 
 - AndroidX
 - Min SDK 21+
-- Compile SDK: 29+
+- Compile SDK: 34+
 - Java 8+
