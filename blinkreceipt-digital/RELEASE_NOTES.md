@@ -1,4 +1,4 @@
-# Release Notes
+[# Release Notes
 
 ## 1.0.0
 
@@ -269,4 +269,7 @@
      }
   - implementation("io.opentelemetry:opentelemetry-api:1.18.0")
   - implementation("io.opentelemetry:opentelemetry-context:1.18.0")
+- Stability fixes and improvements
+
+## 1.4.0
 - Stability fixes and improvements
