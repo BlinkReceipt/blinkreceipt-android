@@ -8,10 +8,9 @@ See below for more information about how to integrate Blink Receipt Digital SDK 
 # Table of Contents
 
 * [Tasks](#tasks)
-  * [Handling Results From A Task](#results)
-    * [Recommended Way](#recommended_way)
-    * [Unrecommended Way](#unrecommended_way)
-* [Optional Section: Adding An AAR to your project](#aar_adding)
+    * [Handling Results From A Task](#results)
+        * [Recommended Way](#recommended_way)
+        * [Unrecommended Way](#unrecommended_way)
 * [Project Integration and Initialization](#project_integration)
 * [IMAP](#imap_client)
 * [Outlook](#outlook)
@@ -105,29 +104,6 @@ We believe it is better to separate out the two outcomes of a task, but not all 
 **WARNING** Calling `task.getResult()` while the task is still executing or has already failed will result in a `IllegalStateException` and a `RuntimeException` respectively.
 
 <br />
-<br />
-
-## AAR
-The package contains Android Archive (AAR) that contains everything you need to use Blink Receipt Digital library.
-
-<br />
-
-## <a name=aar_adding></a> Optional Section: Adding An AAR to your project
-As Android developers, we have become very reliant on the gradle build system to pull in any dependencies with a few lines changes to our `build.gradle` file. Unfortunately, sometimes we need to add aar files manually to our project. This is done by adding the dependencies as modules within our project. The Blink Receipt Digital Sdk is one of these scenarios. Luckily, adding an AAR via Android Studio has become very straight over the years.
-
-1) Download/Checkout the aar file from the git repo.
-2) Open up your development project. Then select `File` -> `New` -> `New Module`
-3) This should open up a modal displaying a list of `Module Types` to choose from. There are a variety of types to choose from, but for our purposes we can select `Import .JAR/.AAR Package`
-4) The next page should ask you to input two fields
-   1) FileName: This is the path to the aar file
-   2) Subproject Name: This is the customizable name of the module as it will appear in your project. You can leave it as the default name auto-populated by the selected aar, or you can rename it to whatever is appropriate i.e. `blink-receipt-digital-sdk`
-5) Once your configuration is set you can finish and exit the wizard. This action will create a new module and add the selected aar file to that module. It should also modify your `settings.gradle` file which should now include a new line `include ':{newly-named-module}'`. This indicates that the build system will now compile this module when you build your project. However, this does not mean that the sdk has been added to YOUR app module.
-6) To add the sdk to your app module you must do the following:
-   1) Navigate to your the `build.gradle` file of your app module
-   2) add the following line to your `dependencies` block `implementation project( ':{newly-named-module}' )`
-
-Once the project has been synced the AAR should now be accessible via the code in your app module :)
-
 <br />
 
 ## <a name=projectIntegration></a>Project Integration and Initialization
