@@ -224,3 +224,6 @@
   - Uber Eats UK
   - Shein
 - Stability fixes and improvements
+
+## 1.3.0
+- Stability fixes and improvements

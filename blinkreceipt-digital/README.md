@@ -8,9 +8,9 @@ See below for more information about how to integrate Blink Receipt Digital SDK 
 # Table of Contents
 
 * [Tasks](#tasks)
-    * [Handling Results From A Task](#results)
-        * [Recommended Way](#recommended_way)
-        * [Unrecommended Way](#unrecommended_way)
+  * [Handling Results From A Task](#results)
+    * [Recommended Way](#recommended_way)
+    * [Unrecommended Way](#unrecommended_way)
 * [Project Integration and Initialization](#project_integration)
 * [IMAP](#imap_client)
 * [Outlook](#outlook)
