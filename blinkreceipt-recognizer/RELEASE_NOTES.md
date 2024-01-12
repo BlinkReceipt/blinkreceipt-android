@@ -539,3 +539,10 @@ Blink Receipt Recognizer
 - Sales Tax detection improvements for US 
 - Product QTY improvements for US
 - Stability fixes and improvements
+
+## 1.7.2
+- Merchant detection improvements in DE, ZA 
+- Total extraction improvements for M&S in the UK 
+- Improved support for extracting longTransactionId for Walmart, Costco, Target, Walgreens and Sam’s Club US receipts 
+- Gas product extraction improvements in the US 
+- Overall extraction improvements

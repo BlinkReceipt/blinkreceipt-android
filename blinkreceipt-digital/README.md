@@ -8,9 +8,9 @@ See below for more information about how to integrate Blink Receipt Digital SDK 
 # Table of Contents
 
 * [Tasks](#tasks)
-    * [Handling Results From A Task](#results)
-        * [Recommended Way](#recommended_way)
-        * [Unrecommended Way](#unrecommended_way)
+  * [Handling Results From A Task](#results)
+    * [Recommended Way](#recommended_way)
+    * [Unrecommended Way](#unrecommended_way)
 * [Project Integration and Initialization](#project_integration)
 * [IMAP](#imap_client)
 * [Outlook](#outlook)
@@ -123,7 +123,7 @@ To add the sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.1"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.2"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
