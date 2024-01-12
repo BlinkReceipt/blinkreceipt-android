@@ -25,7 +25,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
     dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.1"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.2"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
     }
@@ -33,7 +33,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Groovy"
     ```groovy
     dependencies {
-    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.1")
+    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.2")
 
     implementation "com.microblink.blinkreceipt:blinkreceipt-account-linking"
     }
