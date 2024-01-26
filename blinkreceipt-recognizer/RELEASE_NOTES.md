@@ -546,3 +546,12 @@ Blink Receipt Recognizer
 - Improved support for extracting longTransactionId for Walmart, Costco, Target, Walgreens and Sam’s Club US receipts 
 - Gas product extraction improvements in the US 
 - Overall extraction improvements
+
+## 1.7.3
+- Fix issue with duplication detection results by saving long transaction id 
+- Improvements to loyaltyProgram detection 
+- Product QTY improvements for Albertsons banners in the US 
+- Merchant detection improvements in US, UK and DE
+- loyalty member number detected on the receipt, if any
+- Stability fixes and improvements
+

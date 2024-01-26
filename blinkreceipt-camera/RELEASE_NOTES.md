@@ -186,3 +186,6 @@
 
 ## 1.4.3
 - Stability fixes and improvements
+
+## 1.4.4
+- Stability fixes and improvements
