@@ -555,3 +555,9 @@ Blink Receipt Recognizer
 - loyalty member number detected on the receipt, if any
 - Stability fixes and improvements
 
+## 1.7.4
+- Physical Receipts 
+  - Product QTY improvements in the US 
+  - Improvements to tip extraction
+- Stability fixes and improvements
+

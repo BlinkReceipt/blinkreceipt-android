@@ -230,3 +230,6 @@
 
 ## 1.3.1
 - Stability fixes and improvements
+
+## 1.3.2
+- Stability fixes and improvements
