@@ -175,3 +175,6 @@
 
 ## 1.3.2
 - Stability fixes and improvements
+
+## 1.3.3
+- Stability fixes and improvements

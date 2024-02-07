@@ -77,3 +77,6 @@
 
 ## 1.1.8
 - Stability fixes and improvements
+
+## 1.1.9
+- Stability fixes and improvements
