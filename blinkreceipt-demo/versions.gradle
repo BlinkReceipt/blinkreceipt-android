@@ -26,7 +26,7 @@ buildscript {
             'kotlin'           : '1.9.21',
             'easyPermissions'  : '3.0.0',
             'junit'            : '4.13.2',
-            "agp"              : '8.2.2',
+            "agp"              : '8.3.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.5.1',
             'bom'              : '1.7.4',
@@ -36,6 +36,6 @@ buildscript {
             'telemetry'        : '1.18.0',
             'versionMajor'     : 1,
             'versionMinor'     : 7,
-            'versionPatch'     : 4
+            'versionPatch'     : 5
     ]
 }
