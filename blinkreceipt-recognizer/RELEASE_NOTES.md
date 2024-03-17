@@ -533,31 +533,34 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 1.7.1
-- add cashback property detected on the receipt, if any 
-- Fuel product detection improvements in US, UK 
-- Discount detection improvements in FR, UK 
-- Sales Tax detection improvements for US 
+- add cashback property detected on the receipt, if any
+- Fuel product detection improvements in US, UK
+- Discount detection improvements in FR, UK
+- Sales Tax detection improvements for US
 - Product QTY improvements for US
 - Stability fixes and improvements
 
 ## 1.7.2
-- Merchant detection improvements in DE, ZA 
-- Total extraction improvements for M&S in the UK 
-- Improved support for extracting longTransactionId for Walmart, Costco, Target, Walgreens and Sam’s Club US receipts 
-- Gas product extraction improvements in the US 
+- Merchant detection improvements in DE, ZA
+- Total extraction improvements for M&S in the UK
+- Improved support for extracting longTransactionId for Walmart, Costco, Target, Walgreens and Sam’s Club US receipts
+- Gas product extraction improvements in the US
 - Overall extraction improvements
 
 ## 1.7.3
-- Fix issue with duplication detection results by saving long transaction id 
-- Improvements to loyaltyProgram detection 
-- Product QTY improvements for Albertsons banners in the US 
+- Fix issue with duplication detection results by saving long transaction id
+- Improvements to loyaltyProgram detection
+- Product QTY improvements for Albertsons banners in the US
 - Merchant detection improvements in US, UK and DE
 - loyalty member number detected on the receipt, if any
 - Stability fixes and improvements
 
 ## 1.7.4
-- Physical Receipts 
-  - Product QTY improvements in the US 
+- Physical Receipts
+  - Product QTY improvements in the US
   - Improvements to tip extraction
 - Stability fixes and improvements
 
+## 1.7.5
+- Overall extraction improvements in the UK (1.4.0)
+- Stability fixes and improvements
