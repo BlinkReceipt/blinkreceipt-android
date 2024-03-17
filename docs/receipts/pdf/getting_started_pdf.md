@@ -22,7 +22,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.4"))
+        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5"))
 
         implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     }
@@ -30,7 +30,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Groovy"
     ```groovy
     dependencies {
-        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.4")
+        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5")
 
         implementation "com.microblink.blinkreceipt:blinkreceipt-recognizer"
     }
@@ -74,9 +74,9 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
     ``` kotlin
     BlinkReceiptSdk.initialize(this, object : InitializeCallback {
         override fun onComplete() {}
-        
+
             override fun onException(exception: Throwable) {}
-        
+
         })
     ```
 
