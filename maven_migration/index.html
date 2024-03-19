@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A collection of libraries for scanning physical and digital receipts">
+      
+      
+        <meta name="author" content="Microblink">
+      
+      
+        <link rel="canonical" href="https://microblink.github.io/blinkreceipt-android/maven_migration/">
+      
+      
+        <link rel="prev" href="../alp_error_codes/">
+      
+      
+        <link rel="next" href="../receipts/pdf/getting_started_pdf/">
+      
+      
+      <link rel="icon" href="../mkdocs/images/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+    
+    
+      
+        <title>Maven migration guide - BlinkReceipt</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-aar-libraries-were-added-until-now" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BlinkReceipt" class="md-header__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BlinkReceipt
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maven migration guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BlinkReceipt" class="md-nav__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    BlinkReceipt
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Account Linking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Account Linking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_alp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuring_client_alp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_alp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running in the background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ereceipts.blinkreceipt.com/account-linking" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported Merchants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_error_codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Maven migration guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Maven migration guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-aar-libraries-were-added-until-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      How .aar libraries were added until now
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How .aar libraries were added until now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      As a separate module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-files-into-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying the files into your project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-migrate-to-our-maven-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to migrate to our Maven integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to migrate to our Maven integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-the-old-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove the old integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remove the old integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-as-a-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration as a separate module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-by-copying-the-files-to-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration by copying the files to your project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-our-maven-repository-to-your-project-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add our Maven repository to your project configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add our Maven repository to your project configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      build.gradle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingsgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      settings.gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-transitive-dependencies-and-reference-our-dependencies-in-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove transitive dependencies and reference our dependencies in your code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-multiple-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining multiple libraries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Receipt Scanning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Receipt Scanning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PDF Recognition
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            PDF Recognition
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/getting_started_pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/configuring_client_pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/how_to_use_pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javadoc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-aar-libraries-were-added-until-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      How .aar libraries were added until now
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How .aar libraries were added until now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      As a separate module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-files-into-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying the files into your project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-migrate-to-our-maven-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to migrate to our Maven integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to migrate to our Maven integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-the-old-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove the old integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remove the old integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-as-a-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration as a separate module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-by-copying-the-files-to-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration by copying the files to your project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-our-maven-repository-to-your-project-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add our Maven repository to your project configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add our Maven repository to your project configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      build.gradle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingsgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      settings.gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-transitive-dependencies-and-reference-our-dependencies-in-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove transitive dependencies and reference our dependencies in your code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-multiple-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining multiple libraries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Maven migration guide</h1>
+
+<p>With the release <a href="https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.6.8">v1.6.8</a> we are moving away from distributing static <code>.aar</code>
+files on our GitHub Repository
+and starting to distribute our libraries via Maven. This means there will also be changes in the way you integrate our libraries.</p>
+<p>This is a short guide on how we suggest you migrate from using static <code>.aar</code> files and start using our libraries via Maven.</p>
+<h3 id="how-aar-libraries-were-added-until-now">How <code>.aar</code> libraries were added until now<a class="headerlink" href="#how-aar-libraries-were-added-until-now" title="Permanent link">&para;</a></h3>
+<p>There are two ways you could include an <code>.aar</code> library into an Android project until now:</p>
+<ol>
+<li>
+<h4 id="as-a-separate-module">As a separate module<a class="headerlink" href="#as-a-separate-module" title="Permanent link">&para;</a></h4>
+<p>This was possible through Android Studio until a few versions ago - you could go to <code>File -&gt; New -&gt; New Module -&gt; Import .JAR-.AAR Package</code>,
+and select the <code>.aar</code> file you wanted to include in your project. This would create a new module in your project, which would contain only a
+small <code>build.gradle</code> file and your <code>.aar</code> file. It would also add an entry to your <code>settings.gradle</code> file for the new module.</p>
+<p>Here is an example of what this looks like for our <code>LibBlinkReceiptCore.aar</code> library in our GitHub sample
+app - <a href="https://github.com/BlinkReceipt/blinkreceipt-android/tree/485d4f3f66c6938c976e8f1ff7510f851e5742d8/blinkreceipt-demo/LibBlinkReceiptCore">link</a>.</p>
+<p>After that, you could reference the new module in your other modules, e.g. your app module, by adding it as a dependency in your <code>build.gradle</code>
+dependency block:
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">project</span><span class="o">(</span><span class="s2">&quot;:LibBlinkReceiptCore&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<h4 id="copying-the-files-into-your-project">Copying the files into your project<a class="headerlink" href="#copying-the-files-into-your-project" title="Permanent link">&para;</a></h4>
+<p>The second way was copying the <code>.aar</code> file(s) into your project, usually into a <code>libs</code> folder in the root of your project, and then referencing it
+in your <code>build.gradle</code> files like this:
+ <div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">files</span><span class="o">(</span><span class="s2">&quot;../libs/LibBlinkReceiptCore.aar&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>But this would only add our binary <code>.aar</code> file to your project, which meant you also had to include all our transitive dependencies manually - and
+keep track of them as we updated them.</p>
+<h3 id="how-to-migrate-to-our-maven-integration">How to migrate to our Maven integration<a class="headerlink" href="#how-to-migrate-to-our-maven-integration" title="Permanent link">&para;</a></h3>
+<p>We&rsquo;ve migrated over to using Maven as our main and recommended way of distributing our libraries and keeping track of our transitive dependencies. So,
+here are the steps you need to take to migrate over to using our maven integration:</p>
+<ol>
+<li>
+<h4 id="remove-the-old-integration">Remove the old integration<a class="headerlink" href="#remove-the-old-integration" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="integration-as-a-separate-module">Integration as a separate module<a class="headerlink" href="#integration-as-a-separate-module" title="Permanent link">&para;</a></h5>
+<p>If your current integration was <a href="#as-a-separate-module">As a separate module</a>, you&rsquo;ll have to remove/delete those modules for all of our
+libraries. I.e., if you were using our <code>LibBlinkReceiptRecognizer</code> module to scan physical receipts, you also had to
+use <code>LibBlinkReceiptCore</code>, <code>LibBlinkReceiptCamera</code>, and possibly <code>LibBlinkReceiptCameraUi</code>, which means you would have to delete each of these
+modules.
+Then, remove the <code>include</code> entries from the <code>settings.gradle</code> for those modules, i.e.:</p>
+<p><div class="highlight"><span class="filename">settings.gradle</span><pre><span></span><code><span class="w"> </span>include &#39;:app&#39;
+<span class="gd">-include &#39;:LibBlinkReceiptCore&#39;</span>
+<span class="gd">-include &#39;:LibBlinkReceiptRecognizer&#39;</span>
+<span class="gd">-include &#39;:LibBlinkReceiptCamera&#39;</span>
+<span class="gd">-include &#39;:LibBlinkReceiptCameraUi&#39;</span>
+</code></pre></div>
+Lastly, remove the dependency declarations for these modules, i.e.:</p>
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code><span class="w"> </span>dependencies {
+<span class="w"> </span>...//your other dependencies
+<span class="gd">-implementation(project(&#39;:LibBlinkReceiptCore&#39;))</span>
+<span class="gd">-implementation(project(&#39;:LibBlinkReceiptRecognizer&#39;))</span>
+<span class="gd">-implementation(project(&#39;:LibBlinkReceiptCamera&#39;))</span>
+<span class="gd">-implementation(project(&#39;:LibBlinkReceiptCameraUi&#39;))</span>
+}
+</code></pre></div>
+</li>
+<li>
+<h5 id="integration-by-copying-the-files-to-your-project">Integration by copying the files to your project<a class="headerlink" href="#integration-by-copying-the-files-to-your-project" title="Permanent link">&para;</a></h5>
+<p>If your current integration was by <a href="#copying-the-files-into-your-project">Copying the files into your project</a>, you&rsquo;ll have to delete
+the <code>.aar</code> files from your project. I.e., if you were using our <code>LibBlinkReceiptRecognizer</code> module to scan physical receipts, you also had to
+use <code>LibBlinkReceiptCore</code>, <code>LibBlinkReceiptCamera</code>, and possibly <code>LibBlinkReceiptCameraUi</code>, you would have to
+delete <code>LibBlinkReceiptRecognizer.aar</code>,<code>LibBlinkReceiptCore.aar</code>, <code>LibBlinkReceiptCamera.aar</code>and <code>LibBlinkReceiptCameraUi.aar</code>.
+Then, remove the dependency declarations to these files from your code, i.e.:</p>
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+...//your other dependencies
+<span class="gd">-implementation(files(&quot;../libs/LibBlinkReceiptCore.aar&quot;))</span>
+<span class="gd">-implementation(files(&quot;../libs/LibBlinkReceiptRecognizer.aar&quot;))</span>
+<span class="gd">-implementation(files(&quot;../libs/LibBlinkReceiptCamera.aar&quot;))</span>
+<span class="gd">-implementation(files(&quot;../libs/LibBlinkReceiptCameraUi.aar&quot;))</span>
+}
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="add-our-maven-repository-to-your-project-configuration">Add our Maven repository to your project configuration<a class="headerlink" href="#add-our-maven-repository-to-your-project-configuration" title="Permanent link">&para;</a></h4>
+<p>Our libraries are hosted on our own Maven server, at <a href="https://maven.microblink.com">https://maven.microblink.com</a>. To be able to reference our libraries, you have to add
+   our Maven server to your project configuration. There are currently two ways of doing this, either in your root <code>build.gradle</code> file or in
+   your <code>settings.gradle</code> file. Older projects usually have the maven repositories declared in the root <code>build.gradle</code>, while newer ones have it in
+   <code>settings.gradle</code>. To add our Maven server to your project configuration, do the following, depending on if you have the config in
+   your <code>build.gradle</code> or <code>settings.gradle</code> file:</p>
+<ol>
+<li>
+<h5 id="buildgradle">build.gradle<a class="headerlink" href="#buildgradle" title="Permanent link">&para;</a></h5>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Kotlin</label><label for="__tabbed_1_2">Groovy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle.kts</span><pre><span></span><code>allProjects {
+<span class="w"> </span> repositories {
+<span class="w"> </span>   ... // your other repositories
+<span class="gi">+    maven { url &quot;https://maven.microblink.com&quot; }</span>
+<span class="w"> </span> }
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>allProjects {
+<span class="w"> </span> repositories {
+<span class="w"> </span>   ... // your other repositories
+<span class="gi">+    maven { url = uri(&quot;https://maven.microblink.com&quot;) }</span>
+<span class="w"> </span> }
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<h5 id="settingsgradle">settings.gradle<a class="headerlink" href="#settingsgradle" title="Permanent link">&para;</a></h5>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Kotlin</label><label for="__tabbed_2_2">Groovy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">settings.gradle.kts</span><pre><span></span><code><span class="w"> </span>  dependencyResolutionManagement {
+<span class="w"> </span>    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+<span class="w"> </span>    repositories {
+<span class="w"> </span>      ... // your other repositories
+<span class="gi">+      maven { url = uri(&quot;https://maven.microblink.com&quot;) }</span>
+<span class="w"> </span>    }
+<span class="w"> </span>  }
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">settings.gradle</span><pre><span></span><code><span class="w"> </span>  dependencyResolutionManagement {
+<span class="w"> </span>    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+<span class="w"> </span>    repositories {
+<span class="w"> </span>      ... // your other repositories
+<span class="gi">+      maven { url &quot;https://maven.microblink.com&quot; }</span>
+<span class="w"> </span>    }
+<span class="w"> </span>  }
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="remove-transitive-dependencies-and-reference-our-dependencies-in-your-code">Remove transitive dependencies and reference our dependencies in your code<a class="headerlink" href="#remove-transitive-dependencies-and-reference-our-dependencies-in-your-code" title="Permanent link">&para;</a></h4>
+<p>All that&rsquo;s left is to remove transitive dependencies and add our maven dependency declarations in your <code>build.gradle</code> dependencies blocks. Since we&rsquo;re using
+   a <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms">BOM</a> implementation
+   for our maven integration, you only have to declare the root version of our SDK using the platform declaration. You can then declare only the
+   necessary modules you want to use, without specifying a version.
+   Here are the changes you are supposed to make in your build.gradle, for each of our library modules:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:8"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><input id="__tabbed_3_7" name="__tabbed_3" type="radio" /><input id="__tabbed_3_8" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">BlinkReceiptRecognizer</label><label for="__tabbed_3_2">BlinkReceiptAccountLinking</label><label for="__tabbed_3_3">BlinkReceiptDigital</label><label for="__tabbed_3_4">BlinkReceiptEarnings</label><label for="__tabbed_3_5">BlinkReceiptSurveys</label><label for="__tabbed_3_6">BlinkReceiptBarcode</label><label for="__tabbed_3_7">BlinkReceiptCore</label><label for="__tabbed_3_8">BlinkReceiptCameraUi</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-auth:20.7.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.webkit:webkit:1.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime-ktx:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-recognizer&quot;)</span>
+<span class="w"> </span>  //BlinkReceiptRecognizer doesn&#39;t depend on BlinkReceiptCameraUi, so if you want to use our default scanning UI you also have to include the following dependency
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-camera-ui&quot;)</span>
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime-ktx:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.2.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.9.3&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:4.9.3&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.0.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.webkit:webkit:1.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.datastore:datastore-preferences:1.0.0&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;)</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-account-linking&quot;)</span>
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime-ktx:2.9.0&quot;)</span>
+<span class="gd">-  implementation( &quot;com.microsoft.identity.client:msal:4.2.0&quot; ) {</span>
+<span class="gd">-    exclude group: &quot;com.microsoft.device.display&quot;</span>
+<span class="gd">-}</span>
+<span class="gd">-  implementation(&quot;com.sun.mail:android-mail:1.6.7&quot;)</span>
+<span class="gd">-  implementation(&quot;com.sun.mail:android-activation:1.6.7&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.fragment:fragment-ktx:1.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-livedata-ktx:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-common-java8:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.webkit:webkit:1.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.material:material:1.10.0&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core:1.3.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.apis:google-api-services-gmail:v1-rev110-1.25.0&quot; exclude module: &quot;httpclient&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.api-client:google-api-client-android:1.32.1&quot; exclude module: &quot;httpclient&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.http-client:google-http-client-gson:1.40.0&quot; exclude module: &quot;httpclient&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-digital&quot;)</span>
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-earnings&quot;)</span>
+<span class="w"> </span>}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime-ktx:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.10.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:4.10.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.material:material:1.10.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.fragment:fragment-ktx:1.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.6.2&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-surveys&quot;)</span>
+<span class="w"> </span>}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.lifecycle:lifecycle-runtime:2.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.zxing:core:3.5.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-barcode&quot;)</span>
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.work:work-runtime-ktx:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</span>
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:okhttp:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okhttp3:logging-interceptor:4.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.gms:play-services-tasks:18.0.2&quot;)</span>
+<span class="gd">-  implementation(&quot;com.squareup.okio:okio:3.6.0&quot;)</span>
+<span class="gd">-  implementation(&quot;com.jakewharton.timber:timber:5.0.1&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.preference:preference-ktx:1.2.1&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-core&quot;)</span>
+}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">build.gradle</span><pre><span></span><code>dependencies {
+<span class="gd">-  implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)</span>
+<span class="gd">-  implementation(&quot;com.google.android.material:material:1.10.0&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.fragment:fragment:1.5.7&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.fragment:fragment-ktx:1.6.2&quot;)</span>
+<span class="gd">-  implementation(&quot;androidx.swiperefreshlayout:swiperefreshlayout:1.1.0&quot;)</span>
+
+<span class="gi">+  implementation(platform(&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;))</span>
+<span class="gi">+  implementation(&quot;com.microblink.blinkreceipt:blinkreceipt-camera-ui&quot;)</span>
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<h4 id="combining-multiple-libraries">Combining multiple libraries<a class="headerlink" href="#combining-multiple-libraries" title="Permanent link">&para;</a></h4>
+<p>If you want to combine multiple libraries, you only have to declare the BOM dependency once, and then list the other dependencies, e.g., if you wanted
+to use the BlinkReceiptRecognizer, BlinkReceiptAccountLinking and BlinkReceiptDigital libraries in the same project, your dependencies block would
+look something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">&quot;com.microblink.blinkreceipt:blinkreceipt-bom:1.7.5&quot;</span><span class="o">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="o">(</span><span class="s2">&quot;com.microblink.blinkreceipt:blinkreceipt-recognizer&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="o">(</span><span class="s2">&quot;com.microblink.blinkreceipt:blinkreceipt-account-linking&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="o">(</span><span class="s2">&quot;com.microblink.blinkreceipt:blinkreceipt-digital&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Since <code>BlinkReceiptRecognizer</code> depends on <code>BlinkReceiptCore</code> and <code>BlinkReceiptCamera</code>, it will pull them in without you having to declare them as
+dependencies. Same goes for <code>BlinkReceiptAccountLinking</code> and <code>BlinkReceiptDigital</code> which depend on <code>BlinkReceiptCore</code>.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>

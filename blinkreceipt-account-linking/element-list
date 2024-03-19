@@ -1,0 +1,6 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+
+com.microblink.linking
+com.microblink.linking.internal
+
