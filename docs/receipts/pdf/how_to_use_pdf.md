@@ -3,13 +3,13 @@ Before you can start scanning PDFs, you have to create an instance of the `PdfCl
     ```kotlin
     client = PdfClient(applicationContext).also {
         val options: ScanOptions = ScanOptions.newBuilder().build()
-    
+
         it.countryCode = options.countryCode()
-    
+
         it.filterSensitiveData = options.filterSensitiveData()
-    
+
         it.returnSubProducts = options.returnSubProducts()
-    
+
         it.returnVoidedProducts = options.returnVoidedProducts()
 
         lifecycle.addObserver(it)
