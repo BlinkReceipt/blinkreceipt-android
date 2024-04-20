@@ -83,3 +83,6 @@
 
 ## 1.2.0
 - Stability fixes and improvements
+
+## 1.2.1
+- Stability fixes and improvements

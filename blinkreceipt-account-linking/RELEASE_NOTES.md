@@ -237,3 +237,6 @@
 ## 1.3.3
 - Integrate Account Linking 2.11.0. https://github.com/BlinkReceipt/br_account_linking/blob/master/CHANGELOG.md
 - Stability fixes and improvements
+
+## 1.3.4
+- Stability fixes and improvements
