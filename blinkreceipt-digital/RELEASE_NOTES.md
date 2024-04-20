@@ -265,10 +265,7 @@
   - implementation "com.google.android.gms:play-services-tasks:18.0.2"
   -  implementation( "com.microsoft.identity.client:msal:4.10.0" ) {
      exclude group: 'com.microsoft.device.display'
-     exclude group: 'io.opentelemetry'
      }
-  - implementation("io.opentelemetry:opentelemetry-api:1.18.0")
-  - implementation("io.opentelemetry:opentelemetry-context:1.18.0")
 - Stability fixes and improvements
 
 ## 1.4.0
@@ -284,4 +281,7 @@
 - Stability fixes and improvements
 
 ## 1.4.4
+- Stability fixes and improvements
+
+## 1.4.5
 - Stability fixes and improvements

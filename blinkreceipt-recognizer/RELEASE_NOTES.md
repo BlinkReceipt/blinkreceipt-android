@@ -564,3 +564,8 @@ Blink Receipt Recognizer
 ## 1.7.5
 - Overall extraction improvements in the UK (1.4.0)
 - Stability fixes and improvements
+
+## 1.7.6
+- Overall extraction improvements in US, including product weights and quantities
+- Date extraction improvements in DE & US
+- Stability fixes and improvements
