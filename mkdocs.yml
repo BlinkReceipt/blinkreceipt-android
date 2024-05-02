@@ -32,6 +32,8 @@ nav:
         - Fetch Orders from All Merchants: fetch_orders_from_all_merchants.md
         - Error codes: alp_error_codes.md
     - Maven migration guide: maven_migration.md
+    - Override Labels: 
+        - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
         - PDF Recognition:
             - Getting Started: receipts/pdf/getting_started_pdf.md
