@@ -569,3 +569,12 @@ Blink Receipt Recognizer
 - Overall extraction improvements in US, including product weights and quantities
 - Date extraction improvements in DE & US
 - Stability fixes and improvements
+
+## 1.7.7
+- Stability fixes and improvements
+
+## 1.7.8
+- US Regressions - last 4CC
+- ZA - Trip Improvements - Phone- Part 2
+- ZA - Trip Improvements - Phone
+- Stability fixes and improvements
