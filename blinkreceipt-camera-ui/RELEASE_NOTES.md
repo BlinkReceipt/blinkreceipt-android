@@ -85,4 +85,11 @@
 - Stability fixes and improvements
 
 ## 1.2.1
+- Camera support for coroutines 1.8.0
+- Stability fixes and improvements
+
+## 1.2.2
+- Stability fixes and improvements
+
+## 1.2.3
 - Stability fixes and improvements

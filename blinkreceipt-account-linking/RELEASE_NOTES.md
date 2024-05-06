@@ -239,4 +239,12 @@
 - Stability fixes and improvements
 
 ## 1.3.4
+- Deprecated BlinkReceiptLinkingSdk.debug
+- Stability fixes and improvements
+
+## 1.3.5
+- Stability fixes and improvements
+
+## 1.3.6
+- Addressed a compatibility issue that was causing Amazon to block requests made from the Android WebView, ensuring seamless functionality and improved user experience.
 - Stability fixes and improvements
