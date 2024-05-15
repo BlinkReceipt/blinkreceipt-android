@@ -248,3 +248,7 @@
 ## 1.3.6
 - Addressed a compatibility issue that was causing Amazon to block requests made from the Android WebView, ensuring seamless functionality and improved user experience.
 - Stability fixes and improvements
+
+## 1.3.7
+- Amazon AU, Coles and Woolworths support
+- Stability fixes and improvements
