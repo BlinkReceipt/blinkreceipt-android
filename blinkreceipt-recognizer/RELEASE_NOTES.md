@@ -578,3 +578,10 @@ Blink Receipt Recognizer
 - ZA - Trip Improvements - Phone- Part 2
 - ZA - Trip Improvements - Phone
 - Stability fixes and improvements
+
+## 1.7.9
+- Improvements to date accuracy in CA
+- Improvements to QTY and weighed product extraction for H-E-B, Walgreens and various US merchants
+- Improvements to long_transaction_id extraction for Walmart in US
+- Introduce support for various ISO associations for the United Kingdom
+- Added support for country code UK and GB. Setting either option from within the SDK will return uniform results

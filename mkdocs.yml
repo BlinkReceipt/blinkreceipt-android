@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.7.8'
-    next_release: '1.7.9'
+    release: '1.7.9'
+    next_release: '1.8.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -29,8 +29,11 @@ nav:
         - How to use: how_to_use_alp.md
         - Running in the background: alp_background.md
         - Supported Merchants: https://ereceipts.blinkreceipt.com/account-linking
+        - Fetch Orders from All Merchants: fetch_orders_from_all_merchants.md
         - Error codes: alp_error_codes.md
     - Maven migration guide: maven_migration.md
+    - Override Labels:
+      - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
         - PDF Recognition:
             - Getting Started: receipts/pdf/getting_started_pdf.md
