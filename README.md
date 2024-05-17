@@ -11,11 +11,9 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Android _BlinkReceipt_ integration instructions](#intro)
 * [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/blinkreceipt-camera-ui)
 * [Recognizer View](#recognizerView)
-* [Recognizer Client](#recognizerClient)
 * [Adding Product Intelligence](#intelligence)
 * [Adding Google Places](#google)
 * [Adding Yelp](#yelp)
-* [Adding Amazon](#amazon)
 * [Processor Configuration Considerations](#processorConfigurations)
 * [Android OS Support](#androidos)
 * [Auto Configuration](#autoConfiguration)
@@ -40,7 +38,7 @@ To add sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.9"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.0"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-core")
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
@@ -232,14 +230,12 @@ The sdk does have an easy to use activity that can be used and customized as des
 #### Pre Scanning Configuration
 Before the RecognizerView can be used it must be initialized via the `initialize( ScanOptions scanOptions )`. Please see above for the description of the ScanOptions class.
 
-The RecognizerView provides the ability to attach your own `RecognizerCall.class` with the `setRecognizerCallback()` method for listening to results for each step of the scanning process.
-
 #### Scanning Capabilities
 The RecognizerView is also able to capture frames, not unlike a regular camera application. This is achieved with the `takePicture( CameraCaptureListener listener )` method. The method takes in a `CameraCaptureListener.class`. This listener provides the recognizer view a callback to pass back the resulting image. The image is returned within a `BitmapResults` object. In order to access the resulting bitmap, call bitmap(). The RecognizerView will create a copy of this bitmap, so you are free to manipulate, display, clean it up, etc... however you feel fit. Once the user confirms the picture you should call `confirmPicture( @NonNull BitmapResult results )`.
 
 In addition to the take picture functionality the `RecognizerView` provide the ability to write the frame to disk and have the set of captured frames returned to you at the end of the scan session via the `Media` object in the `onRecognizerDone()` call back a part of the `RecognizerCallback.class`.
 
-You can also cancel your current scan if it is taking longer than normal to retrieve any result callback, but it is recommened to set an appropriate Timeout within your scanOptions object so that it may be resolved internally.
+You can also cancel your current scan if it is taking longer than normal to retrieve any result callback, but it is recommended to set an appropriate Timeout within your scanOptions object so that it may be resolved internally.
 
 Terminating your scan via `terminate()` will end your session, resetting the parser and internal result calculating mechanism.
 
@@ -249,55 +245,6 @@ When you wish to finish your scan session call `finishedScanning()`. This will b
 *Note*
 All RecognizerCallback methods are executed on the main thread.
 
-## <a name=recognizerClient></a>Recognizer Client
-If you wish to enable users to provide their own receipt image, instead of providing them with a camera interface, then you can opt out of using the `RecognizerClient` instead of the `RecognizerView`. This component provides a non-ui interface to the recognition mechanisms under the covers of the Recognizer View. It is simple to use and requires minimal setup.
-
-#### Initialization And Running Scans
-The `RecognizerClient` can be instantiated with its primary constructor which takes in  a `context`. Once the client is instantiated, it is now ready for use. To use the `RecognizerClient` call the `recognize(ScanOptions options, RecognizerCallback listener, Bitmap... bitmaps)` function. The scan options you define is the exact same object you define when initializing the `RecognizerView`. The `RecognizerCallback` is an interface which acts as a listener for the client when images are going through processing. The `onRecognizerDone` function is the indicator that the images passed in have been successfully processed and the scan session has completed. You will notice this is the same interface used in the `RecognizerView` implementation.
-
-**NOTE this feature must be enabled through your license in order to use. If your application is not allowed to use this api, then onRecognizerException will immediately trigger informing you of your missing permissions.**
-
-```java
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initializeClient();
-
-        // fetch bitmaps
-        sendBitmapsForScanning()
-    }
-
-    private void initializeClient() {
-        client = new RecognizerClient(this);
-    }
-
-    private void sendBitmapsForScanning() {
-        ScanOptions options = ScanOptions.newBuilder()
-                .build();
-
-        client.recognize(options, new RecognizerCallback() {
-            @Override
-            public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
-                Toast.makeText(MainActivity.this, "Results: " + scanResults.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRecognizerException(@NonNull Throwable throwable) {
-                Toast.makeText(MainActivity.this, "Exception: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
-
-            }
-        }, bitmaps);
-    }
-}
-```
 #### Image Orientation [OPTIONAL]
 Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
 _________
@@ -352,24 +299,6 @@ If you wish to include your client user id within your project add your client u
 `AndroidManifest.xml`
 ```xml
 <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
-```
-
-## <a name=amazon></a>Amazon
-If you wish to include Amazon functionality within your project. Note: Amazon functionality targets KitKat and above.
-
-`Credentials`
-```java
-AmazonManager.getInstance( this ).credentials( AmazonCredentials( "AMAZON_EMAIL", "AMAZON_PASSWORD" ) )
-```
-
-`Orders`
-```java
-AmazonManager.getInstance( this ).orders( object: AmazonCallback {
-
-        override fun onComplete(orders: List<ScanResults>?) { }
-
-        override fun onException( e: AmazonException) { }
-        } )
 ```
 
 ## <a name=androidos></a> Android OS Support
