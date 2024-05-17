@@ -35,7 +35,7 @@ buildscript {
             'msal'             : '4.10.0',
             'telemetry'        : '1.18.0',
             'versionMajor'     : 1,
-            'versionMinor'     : 7,
-            'versionPatch'     : 9
+            'versionMinor'     : 8,
+            'versionPatch'     : 1
     ]
 }
