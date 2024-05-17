@@ -9,10 +9,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 # Table of Contents
 
 * [Android _BlinkReceipt_ integration instructions](#intro)
-* [Quick Start: Scan your first receipt](#quickStart)
-  * [Understanding Results](#results)
-  * [Customize Camera Scan Activity](#customizeScanActivity)
-  * [Customize Scan Configuration](#customizeScanSession)
+* [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/blinkreceipt-camera-ui)
 * [Recognizer View](#recognizerView)
 * [Recognizer Client](#recognizerClient)
 * [Adding Product Intelligence](#intelligence)
@@ -32,7 +29,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+    maven { url  "https://maven.microblink.com" }
     }
     ```
 
@@ -60,7 +57,7 @@ Retrofit
 
 # Retain service method parameters when optimizing.
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
- @retrofit2.http.* <methods>;}
+@retrofit2.http.* <methods>;}
 
 # Ignore annotation used for build tooling.
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
@@ -104,122 +101,14 @@ okhttp
 -dontwarn okhttp3.internal.platform.ConscryptPlatform
 ```
 
-## <a name="quickStart"></a> Scanning Your First Receipt
-Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration.
-
-`AndroidManifest.xml`
-```xml
- <meta-data
-    android:name="com.microblink.LicenseKey"
-    android:value="BLINK RECEIPT LICENSE KEY" />
-```
-
-The easiest way to get started scanning your first receipt would be to use the internal Scan Activity within the aar.
-
-```java
-    ScanOptions scanOptions = ScanOptions.newBuilder()
-     .frameCharacteristics( FrameCharacteristics.newBuilder()
-        .storeFrames( true )
-        .compressionQuality( 100 )
-        .externalStorage( false ) .build() )
-    .logoDetection( true )
-    .build();
-
-    Bundle bundle = new Bundle();
-
-    bundle.putParcelable( CameraScanActivity.SCAN_OPTIONS_EXTRA, scanOptions );
-
-    Intent intent = new Intent( this, CameraScanActivity.class )
-        .putExtra( CameraScanActivity.BUNDLE_EXTRA, bundle );
-
-    startActivityForResult( intent, SCAN_RECEIPT_REQUEST );
-```
-
-The results are returned through 2 objects, which can be retrieved by getting the parcelable extras `ScanResults` and `Media`. The `ScanResults` object contain the results from the scan session.
-
-```java
- @Override
- protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-
-     if ( requestCode == SCAN_RECEIPT_REQUEST && resultCode == Activity.RESULT_OK ) {
-        ScanResults brScanResults = data.getParcelableExtra( CameraScanActivity.DATA_EXTRA );
-
-        Media media = data.getParcelableExtra( CameraScanActivity.MEDIA_EXTRA );
-    }
-}
-```
-
-### <a name=customizeScanActivity></a> Customize Camera Scan Activity
-The camera scan activity baked into the sdk contains numerous configurations that can be controlled via intent extras.
-
-ScanOptions (Recommended) Extra recommended to properly scan receipt.
-```java
-CameraScanActivity.SCAN_OPTIONS_EXTRA;
-```
-Extra to have the activity be a full screen activity. `false` by default.
-
-```java
-CameraScanActivity.FULL_SCREEN_EXTRA;
-```
-Extra to keep screen on while scanning session in progress. `false` by default.
-```java
-CameraScanActivity.KEEP_SCREEN_ON_EXTRA;
-```
-Enable enhanced autofocus for camera during scan session. `false` by default.
-```java
-CameraScanActivity.ENABLE_ENHANCED_AUTO_FOCUS;
-```
-Alternative way to initialize SDK if not done through default method.
-```java
-CameraScanActivity.LICENSE_KEY_EXTRA;
-```
-Defines the region in which we want to scan on the frame. The properties of the RectF are defined as a percentage of the screen.
-```java
-CameraScanActivity.VIEW_PORT_EXTRA;
-```
-Video resolution preset extra for camera.
-```java
-CameraScanActivity.VIDEO_RESOLUTION_EXTRA;
-```
-Interface passed in as a parcelable extra, that will receive every recognizer's result.
-```java
-CameraScanActivity.CAMERA_RECOGNIZER_CALLBACK_EXTRA;
-```
-
-UI Dimens
-```xml
-<?xml version="1.0" encoding="utf-8"?>
- <resources>
-    <dimen name="camera_scan_bottom_frame_height">80dp</dimen>
-    <dimen name="camera_scan_take_picture_size">60dp</dimen>
-</resources>
-```
-### <a name=customizeScanSession></a> Customize Scan Configuration
-Want to see your captured frames? save scanned results? This extra functionality is possible through the scanOptions object. The builder pattern allows you to customize your scan session configuration.
-
-`retailer( Retailer retailer )`: If the retailer is known the sdk can take advantage of the pre-defined text styles and other known characteristics of that retailer's receipt.
-
-`searchTargets( List<Product> searchTargets )`: If searching for particular set of Products, those products can be passed into the scan options and consequently the scansession itself.
-
-`storeFrames( boolean storeFrames )`: If set to true, this configuration will save the captured and confirmed frames to disk. The paths to those files will be returned within the `Media` object which is returned in the onActivityResults bundle.
-
-`useExternalStorage( boolean useExternalStorage )`: This configuration goes hand in hand with the previous configuration. By default frames will be stored within the applications internal storage. If set to `true` the path will be set to be the external application storage. Results and access to these files will be returned the same way.
-
-`edgeDetectionConfiguration( EdgeDetectionConfiguration configuration )`: The sdk's functionality includes edge detection. Here we can determine the edges of the receipt and therefore the content percentage of the receipt. This configurations allow for customized parameters to be set around what is acceptable criteria scanning a receipt. In the case of a low content percentage or below the defined threshold we display a helpful message to the user to let them know to move closer.
-
-`promotionSlugs( Utility.newArrayList( new Slug( "[NAME OF SLUG]" ) ) )`: If set, this configuration will validate promotions based on the configured slugs.
-
-`validatePromotions( true || false )`: If set to true, this configuration will validate promotions..
-
 ## <a name=results></a>Retrieving Results
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
 ```java
 public interface RecognizerCallback {
- // Called when scan results are compiled and saved images are processed.
+// Called when scan results are compiled and saved images are processed.
 void onRecognizerDone( @NonNull ScanResults results, Media media );
 
- // Called in the case there is an exception while scanning the captured frame.
+// Called in the case there is an exception while scanning the captured frame.
 void onRecognizerException(@NonNull Throwable e );
 
 // The callback invoked whenever a step within the scanning process is returned.
@@ -240,7 +129,7 @@ public interface CameraRecognizerCallback {
 The RecognizerCallback also provides preliminary results.
 
 ```java
- recognizerView.preliminaryResults();
+recognizerView.preliminaryResults();
 ```
 ```java
 @Override
@@ -407,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 #### Image Orientation [OPTIONAL]
 Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
- _________
+_________
 T         |
 O         |   CameraOrientation.ORIENTATION_LANDSCAPE_LEFT
 P_________|
@@ -416,7 +305,7 @@ P_________|
 |     |       CameraOrientation.ORIENTATION_PORTRAIT
 |_____|
 
- _________
+_________
 |         T
 |         O   CameraOrientation.ORIENTATION_LANDSCAPE_RIGHT
 |_________P
@@ -435,7 +324,7 @@ If you wish to include product intelligence functionality within your project ad
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+<meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```
 
 ## <a name=google></a>Google Places
@@ -443,7 +332,7 @@ If you wish to include Google Places functionality within your project add your 
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
+<meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
 ```
 
 ## <a name=yelp></a>Yelp
@@ -451,7 +340,7 @@ If you wish to include Yelp functionality within your project add your license k
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
+<meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
 ```
 
 ## <a name=clientId></a>Client User Id
@@ -459,7 +348,7 @@ If you wish to include your client user id within your project add your client u
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
+<meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
 ```
 
 ## <a name=amazon></a>Amazon
@@ -474,10 +363,10 @@ AmazonManager.getInstance( this ).storeCredentials( AmazonCredentials( "AMAZON_E
 ```java
 AmazonManager.getInstance( this ).orders( object: AmazonCallback {
 
- override fun onComplete(orders: List<ScanResults>?) { }
+override fun onComplete(orders: List<ScanResults>?) { }
 
- override fun onException( e: AmazonException) { }
- } )
+override fun onException( e: AmazonException) { }
+} )
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -491,9 +380,9 @@ Even though there are different ways to initialize the sdk, the recommended way 
 `AndroidManifest.xml`
 ```xml
 <provider
-  android:name="com.microblink.BlinkRecognizerProvider"
-  android:authorities="${applicationId}.BlinkRecognizerProvider"
-  tools:node="remove" />
+android:name="com.microblink.BlinkRecognizerProvider"
+android:authorities="${applicationId}.BlinkRecognizerProvider"
+tools:node="remove" />
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -508,9 +397,9 @@ public void onCreate() {
 
 ```xml
 <provider
-  android:name="com.microblink.BlinkRecognizerProvider"
-  android:authorities="${applicationId}.BlinkRecognizerProvider"
-  tools:node="remove" />
+android:name="com.microblink.BlinkRecognizerProvider"
+android:authorities="${applicationId}.BlinkRecognizerProvider"
+tools:node="remove" />
 ```
 
 ```java
@@ -535,7 +424,7 @@ There are some issues to be considered:
 - ARMv7 build of the native library cannot be run on devices that do not have ARMv7 compatible processor
 - ARMv7 processors do not understand x86 instruction set
 - ARM64 processors understand ARMv7 instruction set, but ARMv7 processors do not understand ARM64 instructions.
-  - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
+- <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
 - if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
 
 `LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
@@ -550,15 +439,15 @@ If you are unable to use App Bundle, you can create multiple flavors of your app
 
 ```
 android {
-  ...
-  splits {
+...
+splits {
     abi {
-      enable true
-      reset()
-      include 'armeabi-v7a', 'arm64-v8a'
-      universalApk true
+    enable true
+    reset()
+    include 'armeabi-v7a', 'arm64-v8a'
+    universalApk true
     }
-  }
+}
 }
 ```
 
