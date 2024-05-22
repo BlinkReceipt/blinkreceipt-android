@@ -27,7 +27,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-    maven { url  "https://maven.microblink.com" }
+      maven { url  "https://maven.microblink.com" }
     }
     ```
 
@@ -35,7 +35,7 @@ To add the sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.7.9"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.0"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 }
@@ -55,7 +55,7 @@ Retrofit
 
 # Retain service method parameters when optimizing.
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
-@retrofit2.http.* <methods>;}
+ @retrofit2.http.* <methods>;}
 
 # Ignore annotation used for build tooling.
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
@@ -103,10 +103,10 @@ okhttp
 The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
 ```java
 public interface RecognizerCallback {
-// Called when scan results are compiled and saved images are processed.
+ // Called when scan results are compiled and saved images are processed.
 void onRecognizerDone( @NonNull ScanResults results, Media media );
 
-// Called in the case there is an exception while scanning the captured frame.
+ // Called in the case there is an exception while scanning the captured frame.
 void onRecognizerException(@NonNull Throwable e );
 
 // The callback invoked whenever a step within the scanning process is returned.
@@ -127,7 +127,7 @@ public interface CameraRecognizerCallback {
 The RecognizerCallback also provides preliminary results.
 
 ```java
-recognizerView.preliminaryResults();
+ recognizerView.preliminaryResults();
 ```
 ```java
 @Override
@@ -243,7 +243,7 @@ All RecognizerCallback methods are executed on the main thread.
 
 #### Image Orientation [OPTIONAL]
 Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
-_________
+ _________
 T         |
 O         |   CameraOrientation.ORIENTATION_LANDSCAPE_LEFT
 P_________|
@@ -252,7 +252,7 @@ P_________|
 |     |       CameraOrientation.ORIENTATION_PORTRAIT
 |_____|
 
-_________
+ _________
 |         T
 |         O   CameraOrientation.ORIENTATION_LANDSCAPE_RIGHT
 |_________P
@@ -271,7 +271,7 @@ If you wish to include product intelligence functionality within your project ad
 
 `AndroidManifest.xml`
 ```xml
-<meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+ <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```
 
 ## <a name=google></a>Google Places
@@ -279,7 +279,7 @@ If you wish to include Google Places functionality within your project add your 
 
 `AndroidManifest.xml`
 ```xml
-<meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
+ <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
 ```
 
 ## <a name=yelp></a>Yelp
@@ -287,7 +287,7 @@ If you wish to include Yelp functionality within your project add your license k
 
 `AndroidManifest.xml`
 ```xml
-<meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
+ <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
 ```
 
 ## <a name=clientId></a>Client User Id
@@ -295,7 +295,7 @@ If you wish to include your client user id within your project add your client u
 
 `AndroidManifest.xml`
 ```xml
-<meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
+ <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -309,9 +309,9 @@ Even though there are different ways to initialize the sdk, the recommended way 
 `AndroidManifest.xml`
 ```xml
 <provider
-android:name="com.microblink.BlinkRecognizerProvider"
-android:authorities="${applicationId}.BlinkRecognizerProvider"
-tools:node="remove" />
+  android:name="com.microblink.BlinkRecognizerProvider"
+  android:authorities="${applicationId}.BlinkRecognizerProvider"
+  tools:node="remove" />
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -326,9 +326,9 @@ public void onCreate() {
 
 ```xml
 <provider
-android:name="com.microblink.BlinkRecognizerProvider"
-android:authorities="${applicationId}.BlinkRecognizerProvider"
-tools:node="remove" />
+  android:name="com.microblink.BlinkRecognizerProvider"
+  android:authorities="${applicationId}.BlinkRecognizerProvider"
+  tools:node="remove" />
 ```
 
 ```java
@@ -353,7 +353,7 @@ There are some issues to be considered:
 - ARMv7 build of the native library cannot be run on devices that do not have ARMv7 compatible processor
 - ARMv7 processors do not understand x86 instruction set
 - ARM64 processors understand ARMv7 instruction set, but ARMv7 processors do not understand ARM64 instructions.
-- <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
+  - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
 - if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
 
 `LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
@@ -368,15 +368,15 @@ If you are unable to use App Bundle, you can create multiple flavors of your app
 
 ```
 android {
-...
-splits {
+  ...
+  splits {
     abi {
-    enable true
-    reset()
-    include 'armeabi-v7a', 'arm64-v8a'
-    universalApk true
+      enable true
+      reset()
+      include 'armeabi-v7a', 'arm64-v8a'
+      universalApk true
     }
-}
+  }
 }
 ```
 

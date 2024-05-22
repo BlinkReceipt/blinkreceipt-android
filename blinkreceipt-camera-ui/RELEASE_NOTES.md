@@ -97,3 +97,6 @@
 ## 1.2.4
 - Removed legacy static camera implementation ***Breaking Change***
 - Stability fixes and improvements
+
+## 1.2.5
+- Stability fixes and improvements

@@ -252,3 +252,6 @@
 ## 1.3.7
 - Amazon AU, Coles and Woolworths support
 - Stability fixes and improvements
+
+## 1.3.8
+- Stability fixes and improvements

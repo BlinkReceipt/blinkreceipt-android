@@ -585,3 +585,6 @@ Blink Receipt Recognizer
 - Improvements to long_transaction_id extraction for Walmart in US
 - Introduce support for various ISO associations for the United Kingdom
 - Added support for country code UK and GB. Setting either option from within the SDK will return uniform results
+
+## 1.8.0
+- Stability fixes and improvements
