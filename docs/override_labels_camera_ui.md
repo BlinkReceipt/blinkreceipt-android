@@ -1,16 +1,29 @@
 String resource mapping
 
-| string key                                                        | English(Default)                                                  | Preview
-| ---------------------------------------------------------------   | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `recognizer_camera_long_receipt_add_photos_hint`                  | Long receipt? Add Photos.                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_4.png){ width="300" } |
-| `recognizer_camera_initial_instruction`                           | Align left and right receipt edge.<br/>Long receipt? Take multiple photos      |                                                      |
-| `recognizer_align_image_hint`                                     | Start next photo here.                                            | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_6.png){ width="300" } |
-| `recognizer_blurry_image_tooltip`                                 | Image seems blurry. You can<br/>try again and tap to focus.  | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `recognizer_missing_data_tooltip`                                 | Data missing? You can still hit<br/>checkmark to finish scan |                                                                        |
-| `recognizer_blurry_image_btn`                                     | Dismiss |                                                                                                                             |
-| `recognizer_move_closer_suggestion`                               | Move Closer | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_5.png){ width="300" } |
-| `recognizer_move_further_suggestion`                              | Move Further |                                                                                                                        |
-| `confirm`                                                         | confirm |                                                                                                                             |
+| string key                                         | English(Default)                                                          | Preview                                                                          
+|----------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| `recognizer_receipt_edge`                          | R\ne\nc\ne\ni\np\nt\n\nE\nd\ng\ne                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_date`                 | Date                                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_total`                | Total                                                                     | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_merchant`             | Merchant                                                                  | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_subtotal`             | Subtotal                                                                  |                                                                                  |
+| `scan_characteristics_option_taxes`                | Taxes                                                                  |                                                                                  |
+| `scan_characteristics_option_time`                 | Time                                                                  |                                                                                  |
+| `scan_characteristics_option_store_address`        | Store Address                                                                  |                                                                                  |
+| `scan_characteristics_option_store_city`           | Store City                                                                  |                                                                                  |
+| `scan_characteristics_option_store_country`        | Store Country                                                                  |                                                                                  |
+| `scan_characteristics_option_store_state`          | Store State                                                                  |                                                                                  |
+| `scan_characteristics_option_store_zip`            | Store Zip                                                                  |                                                                                  |
+| `scan_characteristics_option_store_phone`          | Store Phone                                                                  |                                                                                  |
+| `recognizer_camera_long_receipt_add_photos_hint`   | Long receipt? Add Photos.                                                 | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_4.png){ width="300" } |
+| `recognizer_camera_initial_instruction`            | Align left and right receipt edge.<br/>Long receipt? Take multiple photos |                                                                                  |
+| `recognizer_align_image_hint`                      | Start next photo here.                                                    | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_6.png){ width="300" } |
+| `recognizer_blurry_image_tooltip`                  | Image seems blurry. You can<br/>try again and tap to focus.               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `recognizer_missing_data_tooltip`                  | Data missing? You can still hit<br/>checkmark to finish scan              |                                                                                  |
+| `recognizer_blurry_image_btn`                      | Dismiss                                                                   |                                                                                  |
+| `recognizer_move_closer_suggestion`                | Move Closer                                                               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_5.png){ width="300" } |
+| `recognizer_move_further_suggestion`               | Move Further                                                              |                                                                                  |
+| `confirm`                                          | confirm                                                                   |                                                                                  |
 
 
 You can apply your own translation on each string entry. This can be done by doing the following steps:
@@ -24,6 +37,20 @@ You can apply your own translation on each string entry. This can be done by doi
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- You can override the following labels(German) -->
+    <string name="recognizer_receipt_edge">Q\nu\ni\nt\nt\nu\nn\ng\n\nR\na\nn\nd</string>
+    <string name="scan_characteristics_option_date">Datum</string>
+    <string name="scan_characteristics_option_total">Gesamt</string>
+    <string name="scan_characteristics_option_merchant">Händler</string>
+    <string name="scan_characteristics_option_subtotal">Zwischensumme</string>
+    <string name="scan_characteristics_option_taxes">Steuern</string>
+    <string name="scan_characteristics_option_time">Zeit</string>
+    <string name="scan_characteristics_option_store_address">Adresse des Geschäfts</string>
+    <string name="scan_characteristics_option_store_city">Stadt des Geschäft</string>
+    <string name="scan_characteristics_option_store_country">Land des Geschäfts</string>
+    <string name="scan_characteristics_option_store_state">Staat des Geschäfts</string>
+    <string name="scan_characteristics_option_store_zip">Postleitzahl des Geschäfts</string>
+    <string name="scan_characteristics_option_store_phone">Telefon des Geschäfts</string>
+  
     <string name="recognizer_camera_long_receipt_add_photos_hint">Lange Quittung? Fotos hinzufügen.</string>
     <string name="recognizer_camera_initial_instruction">Richten Sie die linke und rechte Bonkante aus.\nLange Quittung? Machen Sie mehrere Fotos</string>
     <string name="recognizer_align_image_hint">Beginnen Sie hier mit dem nächsten Foto.</string>

@@ -588,3 +588,10 @@ Blink Receipt Recognizer
 
 ## 1.8.0
 - Stability fixes and improvements
+
+## 1.8.1
+- Improvements to Tax extraction for Ahold Banners in the US 
+- Improvements to Last 4 CC extraction 
+- Improvements to basket/product extraction in US and ZA for various merchants 
+- Improvements to phone number extraction in DE
+- Stability fixes and improvements

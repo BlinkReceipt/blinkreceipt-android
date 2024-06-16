@@ -196,3 +196,6 @@
 
 ## 1.3.9
 - Stability fixes and improvements
+
+## 1.4.0
+- Stability fixes and improvements

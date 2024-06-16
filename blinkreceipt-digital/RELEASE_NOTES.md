@@ -298,3 +298,6 @@
 ## 1.4.9
 - Support new Gmail IMAP 2FA flow
 - Stability fixes and improvements
+
+## 1.5.0
+- Stability fixes and improvements
