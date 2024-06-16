@@ -29,13 +29,13 @@ buildscript {
             "agp"              : '8.5.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.5.1',
-            'bom'              : '1.8.0',
+            'bom'              : '1.8.1',
             'tasks'            : '18.0.2',
             'logcat'           : '0.1',
             'msal'             : '4.10.0',
             'telemetry'        : '1.18.0',
             'versionMajor'     : 1,
             'versionMinor'     : 8,
-            'versionPatch'     : 0
+            'versionPatch'     : 1
     ]
 }
