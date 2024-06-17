@@ -100,3 +100,14 @@
 
 ## 1.2.5
 - Stability fixes and improvements
+
+## 1.2.6
+- Out of the Box experience: Added support for localization to allow language customization for data “chips” that indicate to the user whether the date, total, or merchant has been successfully detected in the receipt.
+- Resolved issues with camera UI
+  - Where shutter effect triggered twice
+  - Removed artificial delay on missing data tooltip display
+  - Confirm button visibility fixes while CapturedFrame receipt data is in-progress
+  - Added Scan Results feature to include to output media items count and frames scanned
+  - Also fixed issue where frameScanned is NOT incremented on finishScan()
+- Resolved an issue with whereCameraRecognizerContract  media items did not correspond with the scan results count
+- Stability fixes and improvements
