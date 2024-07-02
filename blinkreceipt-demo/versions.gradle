@@ -29,7 +29,7 @@ buildscript {
             "agp"              : '8.5.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.5.1',
-            'bom'              : '1.8.1',
+            'bom'              : '1.8.2',
             'tasks'            : '18.0.2',
             'logcat'           : '0.1',
             'msal'             : '4.10.0',
