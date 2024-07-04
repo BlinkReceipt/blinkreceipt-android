@@ -7,13 +7,13 @@ buildscript {
     ]
 
     ext.androidx = [
-            'appcompat'     : '1.6.1',
+            'appcompat'     : '1.7.0',
             'constraints'   : '2.1.4',
             'junit'         : '1.2.1',
-            'lifecycle'     : '2.6.2',
-            'core'          : '1.12.0',
+            'lifecycle'     : '2.8.3',
+            'core'          : '1.13.1',
             'recyclerview'  : '1.3.2',
-            'fragment'      : '1.6.2',
+            'fragment'      : '1.8.1',
     ]
 
     ext.versions = [
@@ -30,10 +30,9 @@ buildscript {
             'testRunner'       : '1.4.0',
             'espresso'         : '3.6.1',
             'bom'              : '1.8.2',
-            'tasks'            : '18.0.2',
+            'tasks'            : '18.2.0',
             'logcat'           : '0.1',
-            'msal'             : '4.10.0',
-            'telemetry'        : '1.18.0',
+            'msal'             : '5.4.0',
             'versionMajor'     : 1,
             'versionMinor'     : 8,
             'versionPatch'     : 2

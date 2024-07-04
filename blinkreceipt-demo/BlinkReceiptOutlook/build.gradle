@@ -63,11 +63,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
     implementation( "com.microsoft.identity.client:msal:${versions.msal}" ) {
         exclude group: 'com.microsoft.device.display'
-        exclude group: 'io.opentelemetry'
     }
-
-    implementation("io.opentelemetry:opentelemetry-api:${versions.telemetry}")
-    implementation("io.opentelemetry:opentelemetry-context:${versions.telemetry}")
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
