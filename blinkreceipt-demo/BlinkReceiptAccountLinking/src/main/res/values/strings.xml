@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Blink Receipt Account Linking</string>
+    <string name="linking_reset_history">reset history</string>
+    <string name="linking_reset_retailer_history">reset retailer history</string>
+    <string name="linking_orders">Orders</string>
+    <string name="linking_verify">verify</string>
+    <string name="linking_unlink_all">unlink all</string>
+    <string name="linking_accounts">accounts</string>
+    <string name="linking_unlink">unlink</string>
+    <string name="linking_link">link</string>
 </resources>
