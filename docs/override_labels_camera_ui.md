@@ -1,6 +1,6 @@
 String resource mapping
 
-| string key                                         | English(Default)                                                          | Preview                                                                          
+| string key                                         | English(Default)                                                          | Preview
 |----------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | `recognizer_receipt_edge`                          | R\ne\nc\ne\ni\np\nt\n\nE\nd\ng\ne                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
 | `scan_characteristics_option_date`                 | Date                                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
@@ -50,7 +50,7 @@ You can apply your own translation on each string entry. This can be done by doi
     <string name="scan_characteristics_option_store_state">Staat des Geschäfts</string>
     <string name="scan_characteristics_option_store_zip">Postleitzahl des Geschäfts</string>
     <string name="scan_characteristics_option_store_phone">Telefon des Geschäfts</string>
-  
+
     <string name="recognizer_camera_long_receipt_add_photos_hint">Lange Quittung? Fotos hinzufügen.</string>
     <string name="recognizer_camera_initial_instruction">Richten Sie die linke und rechte Bonkante aus.\nLange Quittung? Machen Sie mehrere Fotos</string>
     <string name="recognizer_align_image_hint">Beginnen Sie hier mit dem nächsten Foto.</string>

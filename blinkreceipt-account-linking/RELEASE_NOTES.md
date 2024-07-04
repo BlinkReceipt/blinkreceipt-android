@@ -258,3 +258,11 @@
 
 ## 1.3.9
 - Stability fixes and improvements
+
+## 1.4.0
+- **BREAKING CHANGE** Removed PasswordCredentials and replaced with Credentials
+- **BREAKING CHANGE** Removed retrieval of orders by all retailers
+- Changed the behavior of the web view to match parent vs wrap content
+- Add Merchant Support for Amazon ES, FR, DE
+- Added support for Retailer WebView Authentication
+- Added general optimizations and stability improvements

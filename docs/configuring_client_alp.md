@@ -14,8 +14,6 @@ There are also some more options for configuring the client.
 
 #### Cutoff Day
 
-The cutoff day is the day until which the most recent orders will be retrieved. There are two ways of setting the cutoff day:
-
 1. Setting the `dayCutoff` property on the `AccountLinkingClient` instance, i.e.:
 
     === "Kotlin"
@@ -28,8 +26,8 @@ The cutoff day is the day until which the most recent orders will be retrieved. 
         AccountLinkingClient client = new AccountLinkingClient(context);
         client.dayCutoff(14);
         ```
-   This means that the orders from the last 14 days will be retrieved from the linked account.
-   By default, the `dayCutoff` is set to 15 days.
+    This means that the orders from the last 14 days will be retrieved from the linked account.
+    By default, the `dayCutoff` is set to 15 days.
 
 2. Setting the `dateCutoff` property on the `AccountLinkingClient` instance, i.e.:
 
@@ -43,8 +41,16 @@ The cutoff day is the day until which the most recent orders will be retrieved. 
         AccountLinkingClient client = new AccountLinkingClient(context);
         client.dateCutoff(Date.from(Instant.now().minus(14, ChronoUnit.DAYS)));
         ```
-   This will also mean that orders from the last 14 days are retrieved, but you could also set a fixed date. The default value is `null`, and
-   the `dayCutoff` value is used instead.
+    This will also mean that orders from the last 14 days are retrieved, but you could also set a fixed date.
+    By default, the `dateCutoff` value is set to `null`, then the `dayCutoff` value will be used instead.
+
+The first scrape will attempt to retrieve orders back to the `dayCutoff` OR `dateCutoff`. All subsequent scrapes will only go as far back as the last scrape date regardless of whether the first scrape completed.
+
+* If the `dayCutoff` was set to 365 days (OR `dateCutoff` equivalent to Date instance that is 365 days ago) BUT the first scrape only went as far back as day 100, then any subsequent scrapes will only return the latest orders within that 100 days.
+
+Subsequent scrapes will continue to fetch historical orders until `dayCutoff` OR `dateCutoff` is reached, and after that, scrapes will only go back to the last scrape date.
+
+* If the `dayCutoff` was set to 365 days (OR `dateCutoff` equivalent to Date instance that is 365 days ago) BUT the first scrape only went as far back as 100 days, then subsequent scrapes would still attempt to get all of the orders within that 365 day window before starting to grab latest orders.
 
 #### Latest Orders Only
 
