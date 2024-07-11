@@ -149,6 +149,13 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="WebCookiesManager.Cookie.html">WebCookiesManager.Cookie</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -198,7 +205,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#WebCookiesManager(android.webkit.CookieManager,com.microblink.core.internal.CookieStorage,com.microblink.core.Events)">WebCookiesManager</a></span>(<a href=https://developer.android.com/reference/kotlin/android/webkit/CookieManager.html>CookieManager</a> manager, <a href=CookieStorage.html>CookieStorage</a> storage, <a href=../Events.html>Events</a> events)</code></th>
+                                                        href="#WebCookiesManager()">WebCookiesManager</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -252,57 +259,17 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final static <a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#get(android.content.Context,com.microblink.core.Events)>get</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=../Events.html>Events</a> events) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
+                                            <td class="colFirst"><code>final static <a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#flush()>flush</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code>final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#remove(java.lang.String,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;&gt; additionalCookiesToRemove) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code>final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#removeAll()>removeAll</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> retailer, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManager.html#get(android.content.Context,com.microblink.core.Events)>get</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -338,11 +305,11 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="WebCookiesManager(android.webkit.CookieManager,com.microblink.core.internal.CookieStorage,com.microblink.core.Events)"></a>
+                                <a name="WebCookiesManager()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>WebCookiesManager</h4>
-                                        <pre>WebCookiesManager(<a href=https://developer.android.com/reference/kotlin/android/webkit/CookieManager.html>CookieManager</a> manager, <a href=CookieStorage.html>CookieStorage</a> storage, <a href=../Events.html>Events</a> events)</pre>
+                                        <pre>WebCookiesManager()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -361,15 +328,15 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="cookie(java.lang.String,android.net.Uri,java.util.List)">
+                                <a id="get(android.content.Context,com.microblink.core.Events)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>cookie</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManager.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies)</pre>
+                                        <h4>get</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html>JvmOverloads</a>() final static <a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> <a href=WebCookiesManager.html#get(android.content.Context,com.microblink.core.Events)>get</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=../Events.html>Events</a> events)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -384,130 +351,15 @@ public final class <span class="typeNameLabel"><a href=WebCookiesManager.html>We
                                     </li>
                                 </ul>
                                 
-                                <a id="cookie(java.lang.String,android.net.Uri,java.lang.String)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>cookie</h4>
-                                        <pre class="methodSignature"> final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManager.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="cookie(android.net.Uri)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>cookie</h4>
-                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=WebCookiesManager.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="flush()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>flush</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManager.html#flush()>flush</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="remove(java.lang.String,java.util.Set,java.util.List)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>remove</h4>
-                                        <pre class="methodSignature"> final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManager.html#remove(java.lang.String,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;&gt; additionalCookiesToRemove)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="removeAll()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>removeAll</h4>
-                                        <pre class="methodSignature"> final Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManager.html#removeAll()>removeAll</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="add(java.lang.String,android.net.Uri)">
+                                <a id="get(android.content.Context)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>add</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManager.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> retailer, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <h4>get</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html>JvmOverloads</a>() final static <a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> <a href=WebCookiesManager.html#get(android.content.Context,com.microblink.core.Events)>get</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
                                         <div class="block"></div>
 
                                         <dl>
