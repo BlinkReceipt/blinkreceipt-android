@@ -10,8 +10,6 @@ class BlinkApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        BlinkReceiptEarningSdk.debug(true)
-
         BlinkReceiptEarningSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {

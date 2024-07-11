@@ -8,17 +8,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.microblink.core.Timberland;
 import com.microblink.linking.Account;
 import com.microblink.linking.AccountLinkingClient;
-import com.microblink.linking.PasswordCredentials;
+import com.microblink.linking.Credentials;
 import com.microblink.linking.RetailerIds;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import kotlin.Unit;
 
@@ -27,28 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
             RetailerIds.AMAZON_BETA,
-            new PasswordCredentials(
-                    "",
-                    ""
-            )
-    );
-
-    private static final List<Account> ACCOUNTS = Arrays.asList(
-            ACCOUNT,
-            new Account(
-                    RetailerIds.WALMART,
-                    new PasswordCredentials(
-                            "",
-                            ""
-                    )
-            ),
-            new Account(
-                    RetailerIds.TARGET,
-                    new PasswordCredentials(
-                            "",
-                            ""
-                    )
-            )
+            Credentials.None.INSTANCE
     );
 
     private ActivityMainBinding binding;
@@ -131,51 +104,9 @@ public class MainActivity extends AppCompatActivity {
                         getApplicationContext(),
                         "reset history: " + success, Toast.LENGTH_SHORT
                 ).show()).addOnFailureListener(this, e -> Toast.makeText(
-                getApplicationContext(),
-                "reset history: " + e, Toast.LENGTH_SHORT
-        ).show());
-    }
-
-    public void onAllOrders(View view) {
-        binding.webContainer.removeAllViews();
-
-        List<Task<?>> tasks = new ArrayList<>();
-
-        for (Account account : ACCOUNTS) {
-            //noinspection deprecation
-            tasks.add(Tasks.call(ExecutorSupplier.getInstance().io(),
-                    () -> Tasks.await(client.link(account))));
-        }
-
-        //noinspection deprecation
-        tasks.add(Tasks.call(ExecutorSupplier.getInstance().io(),
-                () -> Tasks.await(client.accounts()))
-                .addOnSuccessListener(this, accounts -> Toast.makeText(getApplicationContext(),
-                        "accounts " + accounts.toString(), Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(this, e ->
-                        Toast.makeText(getApplicationContext(), "exception " + e, Toast.LENGTH_SHORT).show()));
-
-        Tasks.whenAllComplete(tasks)
-                .addOnSuccessListener(this, completed -> client.orders((retailerId, scanResults, remaining, uuid) -> {
-                    Toast.makeText(
-                            getApplicationContext(),
-                            "retailer id " + retailerId + " remaining "
-                                    + remaining + " uuid " + uuid,
-                            Toast.LENGTH_SHORT
-                    ).show();
-
-                    return Unit.INSTANCE;
-                }, (retailerId, e) -> {
-                    if (e.view() != null) {
-                        binding.webContainer.removeAllViews();
-
-                        binding.webContainer.addView(e.view());
-                    }
-
-                    Toast.makeText(getApplicationContext(), "orders exception" + e, Toast.LENGTH_LONG).show();
-
-                    return Unit.INSTANCE;
-                }));
+                        getApplicationContext(),
+                        "reset history: " + e, Toast.LENGTH_SHORT
+                ).show());
     }
 
     public void onOrders(View view) {
@@ -231,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAccounts(View view) {
         client.accounts().addOnSuccessListener(this, accounts -> Toast.makeText(getApplicationContext(),
-                "Account linked " + accounts.toString(), Toast.LENGTH_SHORT).show())
+                        "Account linked " + accounts.toString(), Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(this, e -> Toast.makeText(getApplicationContext(),
                         "Account linked " + e, Toast.LENGTH_SHORT).show());
     }

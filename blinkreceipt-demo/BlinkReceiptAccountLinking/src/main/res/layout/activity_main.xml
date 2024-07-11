@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onLink"
-        android:text="link"
+        android:text="@string/linking_link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accounts" />
 
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onUnlinkAccount"
-        android:text="unlink"
+        android:text="@string/linking_unlink"
         app:layout_constraintStart_toEndOf="@+id/accounts"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onAccounts"
-        android:text="accounts"
+        android:text="@string/linking_accounts"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onUnlinkAccounts"
-        android:text="unlink all"
+        android:text="@string/linking_unlink_all"
         app:layout_constraintStart_toEndOf="@+id/unlink"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onVerifyAccount"
-        android:text="verify"
+        android:text="@string/linking_verify"
         app:layout_constraintStart_toEndOf="@+id/link"
         app:layout_constraintTop_toBottomOf="@+id/unlink" />
 
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onOrders"
-        android:text="Orders"
+        android:text="@string/linking_orders"
         app:layout_constraintStart_toEndOf="@+id/verifyAccount"
         app:layout_constraintTop_toBottomOf="@+id/unlinkAccounts" />
 
@@ -71,19 +71,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onResetHistory"
-        android:text="reset history"
+        android:text="@string/linking_reset_history"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link" />
-
-    <Button
-        android:id="@+id/allOrders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onAllOrders"
-        android:text="all orders"
-        app:layout_constraintStart_toEndOf="@+id/resetHistory"
-        app:layout_constraintTop_toBottomOf="@+id/verifyAccount" />
 
     <Button
         android:id="@+id/resetRetailerHistory"
@@ -91,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:onClick="onResetRetailerHistory"
-        android:text="reset retailer history"
+        android:text="@string/linking_reset_retailer_history"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resetHistory" />
 

@@ -1,14 +1,18 @@
 ### Linking Accounts
 
 Before you can start retrieving orders, you have to link and verify an account. To link an account to the SDK,
-you have to instantiate an `Account` object and call the `link` method on an instance of the `AccountLinkingClient` class:
+you have to instantiate an `Account` object and call the `link` method on an instance of the `AccountLinkingClient` class.
+
+Account Linking offers two UI/UX experiences when linking and verifying a retailer’s connection. Depending on your app needs you can choose:
+#### 1. Host App Authentication
+Using this flow, the client’s host app provides a native prompt for users to populate credentials. All other interactions with the merchant are done with the webview hidden in the background with exception when 2FA, Captcha or other required user input.
 
 === "Kotlin"
     ```kotlin
     // AMAZON_BETA is used just as an example
     val account = Account(
-        AMAZON_BETA,
-        PasswordCredentials(
+        retailerId = AMAZON_BETA,
+        credentials = Credentials.Password(
             "amazon_username",
             "amazon_password"
         )
@@ -24,11 +28,11 @@ you have to instantiate an `Account` object and call the `link` method on an ins
     ```java
     Account account = new Account(
         AMAZON_BETA,
-        new PasswordCredentials(
+        new Credentials.Password(
             "amazon_username",
             "amazon_password"
-            )
-        );
+        )
+    );
 
     client.link(account).addOnSuccessListener(success -> {
         //move on to the next step, verifying the account or retrieving orders
@@ -38,9 +42,47 @@ you have to instantiate an `Account` object and call the `link` method on an ins
     });
     ```
 
+- Collect the user’s credentials for a given retailer using your own UI
+
+#### 2. Retailer Web View Authentication
+Using this flow the host app doesn’t need to provide any native functionality to collect credentials but instead present a WebView with retailer’s webpage pre-populated.
+All steps needed for authentication, a user may handle in the same WebView.
+
+=== "Kotlin"
+    ```kotlin
+    // AMAZON_BETA is used just as an example.
+    val account = Account(
+        retailerId = AMAZON_BETA,
+        credentials = Credentials.None // No need to explicitly provide credentials
+    )
+
+    client.link(account).addOnSuccessListener {
+        //move on to the next step, verifying the account or retrieving orders
+    }.addOnFailureListener {
+        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID.
+    }
+    ```
+=== "Java"
+    ```java
+    Account account = new Account(
+        AMAZON_BETA,
+        Credentials.None.INSTANCE
+        true
+    );
+
+    client.link(account).addOnSuccessListener(success -> {
+        //move on to the next step, verifying the account or retrieving orders
+    })
+    .addOnFailureListener (exception ->{
+        //linking shouldn't fail, as the API forbids you from using an invalid retailer ID.
+    });
+    ```
+
+- Already linked connections can be switched back and forward by invoking again `AccountLinkingClient.link()`, passing an updated `Account` instance.
+
 !!! info "The `link` method takes in a `vararg` of `Account`, so you can link multiple accounts (for different retailers) at once if needed"
 
-By linking the account, it is cached locally and encrypted for future use and can be retrieved using the `accounts` method.
+By linking the account, the details of that account (e.g. `retailerId`, `credentials` field values) is cached locally and encrypted for future use and can be retrieved using the `accounts` method.
 
 !!! warning
     Only one account can be linked per retailer at once. E.g. you can only link one Walmart account.
@@ -52,7 +94,15 @@ implementation:
 === "Kotlin"
     ```kotlin
     val client = AcountLinkingClient(context)
-    client.link(Account(AMAZON_BETA, PasswordCredentials("amazon_username", "amazon_password")))
+    client.link(
+        Account(
+            AMAZON_BETA,
+            Credentials.Password(
+                "amazon_username",
+                "amazon_password"
+            )
+        )
+    )
     //do some work, verify, grab orders, etc...
 
     //retrieve and unlink account
@@ -68,7 +118,15 @@ implementation:
 === "Java"
     ```java
     AccountLinkingClient client = new AccountLinkingClient(context);
-    client.link(new Account(AMAZON_BETA, new PasswordCredentials("amazon_username", "amazon_password")));
+    client.link(
+        new Account(
+            AMAZON_BETA,
+            new Credentials.Password(
+                "amazon_username",
+                "amazon_password"
+            )
+        )
+    );
     //do some work, verify, grab orders, etc...
 
     //retrieve and unlink account
@@ -138,11 +196,11 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
     AccountLinkingClient client = new AccountLinkingClient(context);
     //config the client, or link an account if you haven't linked it already
     Account account = new Account(
-            AMAZON_BETA,
-            new PasswordCredentials(
-                    "amazon_username",
-                    "amazon_password"
-            )
+        AMAZON_BETA,
+        Credentials.Password(
+            "amazon_username",
+            "amazon_password"
+        )
     );
 
     List<ScanResults> allResults = new ArrayList<>();
@@ -200,7 +258,7 @@ This is meant to be used only for debugging purposes.
 
     val account = Account(
         AMAZON_BETA,
-        PasswordCredentials(
+        Credentials.Password(
             "amazon_username",
             "amazon_password"
         )
@@ -228,9 +286,9 @@ This is meant to be used only for debugging purposes.
 
     Account account = new Account(
             AMAZON_BETA,
-            new PasswordCredentials(
-                    "amazon_username",
-                    "amazon_password"
+            Credentials.Password(
+                "amazon_username",
+                "amazon_password"
             )
     );
 

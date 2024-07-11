@@ -199,3 +199,6 @@
 
 ## 1.4.0
 - Stability fixes and improvements
+
+## 1.4.1
+- Stability fixes and improvements

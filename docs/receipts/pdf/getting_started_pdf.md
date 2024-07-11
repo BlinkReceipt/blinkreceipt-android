@@ -22,7 +22,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.1"))
+        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2"))
 
         implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     }
@@ -30,7 +30,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Groovy"
     ```groovy
     dependencies {
-        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.1")
+        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2")
 
         implementation "com.microblink.blinkreceipt:blinkreceipt-recognizer"
     }
@@ -55,6 +55,8 @@ In your `AndroidManifest.xml` file, create the following `meta-data` tags, and i
     android:value=""
 />
 ```
+
+Both the values for `com.microblink.LicenseKey` and `com.microblink.ProductIntelligence` can be obtained by emailing [blinkreceipt@microblink.com](mailto:blinkreceipt@microblink.com).
 
 ### Programmatically
 

@@ -111,3 +111,6 @@
   - Also fixed issue where frameScanned is NOT incremented on finishScan()
 - Resolved an issue with whereCameraRecognizerContract  media items did not correspond with the scan results count
 - Stability fixes and improvements
+
+## 1.2.7
+- Stability fixes and improvements

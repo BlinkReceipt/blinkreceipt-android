@@ -114,8 +114,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 Toast.makeText(MainActivity.this, R.string.no_products_found_on_receipt, Toast.LENGTH_SHORT).show();
             }
         });
-
-        BlinkReceiptSdk.debug(true);
     }
 
     @Override

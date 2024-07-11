@@ -1,5 +1,5 @@
 
-The Account Linking SDK enables you to easily add user-permissioned merchant connection functionality to your app with the purpose of extracting order history from online retailer accounts.
+The Account Linking SDK enables you to easily add user-permissioned retailer connection functionality to your app with the purpose of extracting order history from online retailer accounts.
 
 It supports parsing digital and in-store orders from a growing list of online retailers.
 
@@ -25,7 +25,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
     dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.1"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
     }
@@ -33,7 +33,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Groovy"
     ```groovy
     dependencies {
-    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.1")
+    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2")
 
     implementation "com.microblink.blinkreceipt:blinkreceipt-account-linking"
     }
@@ -58,6 +58,8 @@ In your `AndroidManifest.xml` file, create the following `meta-data` tags, and i
     android:value=""
 />
 ```
+
+ License and Product Intelligence Keys can be obtained by emailing [blinkreceipt@microblink.com](mailto:blinkreceipt@microblink.com).
 
 ### Programmatically
 

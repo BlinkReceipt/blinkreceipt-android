@@ -1,29 +1,29 @@
-Starting from version [1.7.6](https://github.com/windfall-labs/windfall-android-sdk/releases/tag/1.7.6), `AccountLinkingClient.orders(success:failure:)` function, where the SDK allows you to perform fetching ALL orders from ALL of your linked merchant(s), was already removed. Hence, a breaking API change. The main reason is that this method caused synchronization and race condition issues which led to unexpected results.
+Starting from version [1.7.6](https://github.com/windfall-labs/windfall-android-sdk/releases/tag/1.7.6), `AccountLinkingClient.orders(success:failure:)` function, where the SDK allows you to perform fetching ALL orders from ALL of your linked retailer(s), was already removed. Hence, a breaking API change. The main reason is that this method caused synchronization and race condition issues which led to unexpected results.
 
-In order to still achieve the same functionality to perform Fetch ALL order from ALL of your linked merchant(s), we highly recommend to follow a similar approach below:
+In order to still achieve the same functionality to perform Fetch ALL order from ALL of your linked retailer(s), we highly recommend to follow a similar approach below:
 
 === "Kotlin"
     ```kotlin
     val client = AccountLinkingClient(context)
     // ...
-    // Link merchants
+    // Link retailers
     // ...
 
     // Execute the following code block under a suspend function
     // OR execute under a coroutine scope
     coroutineScope.launch {
-        val merchantAccounts = withContext(Dispatchers.IO) {
+        val retailerAccounts = withContext(Dispatchers.IO) {
             client.accounts().await() ?: listOf()
         }
 
         // Collect Scan Results from each retailer. Each retailer can have multiple Scan Results.
         val allOrdersScanResults = MutableStateFlow(listOf<ScanResults>())
 
-        // Create a sequence of callback flows that represents fetch orders from each merchant
-        val fetchOrderOperationFlowSequence = merchantAccounts.map { merchant ->
+        // Create a sequence of callback flows that represents fetch orders from each retailer
+        val fetchOrderOperationFlowSequence = retailerAccounts.map { retailer ->
             callbackFlow<Result<Unit>> {
                 client.orders(
-                    retailerId = merchant.retailerId,
+                    retailerId = retailer.retailerId,
                     success = { /*retailerId*/_: Int, results: ScanResults?, remaining: Int, /*uuid*/_: String ->
                         if(results != null) {
                             // Append results
@@ -38,7 +38,7 @@ In order to still achieve the same functionality to perform Fetch ALL order from
                         }
 
                         if(remaining <= 0) {
-                            close()    // Close this callbackFlow since there are NO more remaining products to scan from this merchant
+                            close()    // Close this callbackFlow since there are NO more remaining products to scan from this retailer
                         }
                     },
                     failure = { _: Int, throwable: AccountLinkingException ->
@@ -65,7 +65,7 @@ In order to still achieve the same functionality to perform Fetch ALL order from
             .collect()
 
         if(allOrdersScanResults.value.isNotEmpty()) {
-            // You may SORT Scanned Results by Merchant
+            // You may SORT Scanned Results by Retailer
             val sortedScannedResults = allOrdersScanResults.value
                 .sortedBy { it.retailerId().id() }
             // TODO:: Show SCANNED RESULTS
@@ -77,4 +77,4 @@ In order to still achieve the same functionality to perform Fetch ALL order from
 
     ```
 
-You may implement your own implementation of Fetch ALL Orders operation for as long as the execution is done in SYNCHRONOUS manner, execute Fetch Order operation from 1 merchant at a time.
+You may implement your own implementation of Fetch ALL Orders operation for as long as the execution is done in SYNCHRONOUS manner, execute Fetch Order operation from 1 retailer at a time.

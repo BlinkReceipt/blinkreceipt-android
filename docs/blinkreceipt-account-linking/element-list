@@ -1,6 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:com.microblink.linking/Credentials.None///PointingToDeclaration/com/microblink/linking/Credentials.None.html
+$dokka.location:com.microblink.linking/Credentials.Password///PointingToDeclaration/com/microblink/linking/Credentials.Password.html
 com.microblink.linking
 com.microblink.linking.internal
 

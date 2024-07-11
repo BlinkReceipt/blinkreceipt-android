@@ -234,3 +234,7 @@
 
 ## 1.5.2
 - Stability fixes and improvements
+
+## 1.5.3
+- **BREAKING CHANGE** Remove debug property from public api surfaces
+- Stability fixes and improvements
