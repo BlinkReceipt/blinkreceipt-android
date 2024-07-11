@@ -21,10 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
             RetailerIds.AMAZON_BETA,
-            new Credentials.Password(
-                    "",
-                    ""
-            )
+            Credentials.None.INSTANCE
     );
 
     private ActivityMainBinding binding;
