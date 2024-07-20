@@ -22,7 +22,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2"))
+        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3"))
 
         implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     }
@@ -30,7 +30,7 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Groovy"
     ```groovy
     dependencies {
-        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.2")
+        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3")
 
         implementation "com.microblink.blinkreceipt:blinkreceipt-recognizer"
     }

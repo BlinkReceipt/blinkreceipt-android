@@ -599,3 +599,9 @@ Blink Receipt Recognizer
 ## 1.8.2
 - **BREAKING CHANGE** Remove debug property from public api surfaces
 - Improvements to Last 4 CC extraction
+
+## 1.8.3
+- Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
+- Improvements to date extraction in CA, US 
+- Improvements to Last 4 CC extraction in US 
+- Improvements to merchant detection in UK

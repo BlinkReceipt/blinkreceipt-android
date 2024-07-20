@@ -266,3 +266,6 @@
 - Add Merchant Support for Amazon ES, FR, DE
 - Added support for Retailer WebView Authentication
 - Added general optimizations and stability improvements
+
+## 1.4.1
+- Stability fixes and improvements
