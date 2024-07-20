@@ -114,3 +114,6 @@
 
 ## 1.2.7
 - Stability fixes and improvements
+
+## 1.2.8
+- Stability fixes and improvements

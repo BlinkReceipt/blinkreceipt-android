@@ -305,3 +305,6 @@
 ## 1.5.1
 - **BREAKING CHANGE** Remove debug property from public api surfaces
 - Stability fixes and improvements
+
+## 1.5.2
+- Stability fixes and improvements
