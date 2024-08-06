@@ -205,3 +205,7 @@
 
 ## 1.4.2
 - Stability fixes and improvements
+
+## 1.4.3
+- Updated to target API Level 34
+- Stability fixes and improvements
