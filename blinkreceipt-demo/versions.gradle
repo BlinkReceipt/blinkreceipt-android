@@ -19,7 +19,7 @@ buildscript {
     ext.versions = [
             'minSdk'           : 21,
             'compileSdk'       : 34,
-            'targetSdk'        : 33,
+            'targetSdk'        : 34,
             'androidTestRunner': '1.5.2',
             'buildTools'       : '35.0.0',
             'material'         : '1.12.0',
