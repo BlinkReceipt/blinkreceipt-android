@@ -269,3 +269,8 @@
 
 ## 1.5.4
 - Stability fixes and improvements
+
+## 1.5.5
+- Add price post fix to the scan results product
+- Updated to target API Level 34
+- Stability fixes and improvements

@@ -117,3 +117,7 @@
 
 ## 1.2.8
 - Stability fixes and improvements
+
+## 1.2.9
+- Updated to target API Level 34
+- Stability fixes and improvements

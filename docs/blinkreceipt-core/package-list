@@ -1,7 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
-$dokka.location:com.microblink.core.internal/CookieStorage.Companion///PointingToDeclaration/com/microblink/core/internal/CookieStorage.Companion.html
+$dokka.location:com.microblink.core.internal/WebCookiesManager.Compat///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Compat.html
 $dokka.location:com.microblink.core.internal/WebCookiesManager.Cookie///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Cookie.html
 $dokka.location:com.microblink.core/DeviceStateManager.Factory///PointingToDeclaration/com/microblink/core/DeviceStateManager.Factory.html
 $dokka.location:com.microblink.core/HttpHeaders.Companion///PointingToDeclaration/com/microblink/core/HttpHeaders.Companion.html

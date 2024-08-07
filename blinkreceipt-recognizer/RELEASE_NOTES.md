@@ -605,3 +605,10 @@ Blink Receipt Recognizer
 - Improvements to date extraction in CA, US 
 - Improvements to Last 4 CC extraction in US 
 - Improvements to merchant detection in UK
+
+## 1.8.4
+- Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
+- Merchant detection improvements in DE 
+- Improvements to sales tax extraction if sales tax exemption is found on receipt. 
+- Improvements to QTY extraction in US for Albertsons banners and Lowe’s receipts
+- Updated to target API Level 34
