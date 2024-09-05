@@ -223,3 +223,6 @@
 ## 1.5.5
 - Updated to target API Level 34
 - Stability fixes and improvements
+
+## 1.5.6
+- Fix Receipt Data collection behavior to avoid scan characteristic chips from appearing while in the Scanning state

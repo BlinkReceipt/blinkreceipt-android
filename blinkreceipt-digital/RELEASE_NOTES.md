@@ -313,3 +313,6 @@
 - Updated to target API Level 34
 - Optimization to cookies management
 - Stability fixes and improvements
+
+## 1.5.4
+- Stability fixes and improvements
