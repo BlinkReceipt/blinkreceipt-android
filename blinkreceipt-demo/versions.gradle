@@ -35,6 +35,6 @@ buildscript {
             'msal'             : '5.4.0',
             'versionMajor'     : 1,
             'versionMinor'     : 8,
-            'versionPatch'     : 5
+            'versionPatch'     : 6
     ]
 }
