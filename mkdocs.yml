@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.8.5'
-    next_release: '1.8.6'
+    release: '1.8.6'
+    next_release: '1.8.7'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -31,6 +31,13 @@ nav:
         - Supported Retailers: supported_retailers.md
         - Fetch Orders from All Retailers: fetch_orders_from_all_retailers.md
         - Error codes: alp_error_codes.md
+    - Digital Receipts:
+        - Tasks: digital_tasks.md
+        - Project Integration and Instantiation: digital_integration.md
+        - IMAP: digital_imap.md
+        - Outlook: digital_outlook.md
+        - Gmail: digital_gmail.md
+        - Requirements: digital_requirements.md
     - Maven migration guide: maven_migration.md
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md
