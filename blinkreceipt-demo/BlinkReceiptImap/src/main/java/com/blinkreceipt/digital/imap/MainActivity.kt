@@ -426,12 +426,11 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         if (!supportFragmentManager.isDestroyed) {
-                            val dialog = supportFragmentManager.findFragmentByTag(
-                                TAG
-                            ) as ProviderFragment
-
-                            if (dialog.isAdded) {
-                                dialog.dismiss()
+                            (supportFragmentManager.findFragmentByTag(TAG)
+                                    as? ProviderFragment)?.let { dialog ->
+                                if (dialog.isAdded) {
+                                    dialog.dismiss()
+                                }
                             }
                         }
 
