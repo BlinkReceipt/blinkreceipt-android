@@ -4,11 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
 import com.blinkreceipt.digital.imap.databinding.CredentialsViewBinding
 import com.google.android.gms.tasks.Tasks
@@ -31,17 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         const val TAG = "ProviderSetupDialogFragment"
 
-        var accountSelected: Credentials.Password? = null
-
-        private const val GMAIL: String = "Gmail"
-
-        private const val GMAIL_LEGACY: String = "Gmail Legacy"
-
-        private const val YAHOO: String = "Yahoo"
-
-        private const val AOL: String = "Aol"
-
-        private val providerSpinnerItems: List<String> = listOf(GMAIL, GMAIL_LEGACY, YAHOO, AOL)
+        var tester: Credentials.Password? = null
     }
 
     private lateinit var client: ImapClient
@@ -86,8 +72,6 @@ class MainActivity : AppCompatActivity() {
                     binding.multipleRemote.isEnabled = true
 
                     binding.logoutSingle.isEnabled = true
-
-                    binding.selectAccount.isEnabled = true
                 }
 
                 override fun onException(throwable: Throwable) {
@@ -139,11 +123,11 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
     fun onMessagesClick(view: View) {
-        binding.results.text = "Searching for messages..."
+        tester?.let { credentials ->
+            binding.results.text = "Searching for messages..."
 
-        accountSelected?.let { account ->
             client.accounts().addOnSuccessListener {
-                it.account(account)?.let { account ->
+                it.account(credentials)?.let { account ->
                     client.messages(account).addOnSuccessListener { results ->
                         binding.results.text = "ScanResults Size: ${results.size}"
 
@@ -151,25 +135,24 @@ class MainActivity : AppCompatActivity() {
                             applicationContext,
                             "ScanResults Size: ${results.size}", Toast.LENGTH_SHORT
                         ).show()
-                    }.addOnFailureListener {
-                        binding.results.text = "User messages failure: $it"
+                    }.addOnFailureListener { failure ->
+                        binding.results.text = "User messages failure: $failure"
 
                         Toast.makeText(
                             applicationContext,
-                            "User messages failure: $it", Toast.LENGTH_SHORT
+                            "User messages failure: $failure", Toast.LENGTH_SHORT
                         ).show()
                     }
                 } ?: Toast.makeText(
                     applicationContext,
                     "unable to " +
-                            "find tester account ${account.username}",
+                            "find tester account ${credentials.username}",
                     Toast.LENGTH_SHORT
                 ).show()
             }.addOnFailureListener {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
             }
-        }?: noAccountSelectedAlert()
-
+        }?: accountNotLinkedAlert()
     }
 
     @SuppressLint("SetTextI18n")
@@ -210,33 +193,33 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
     fun onSingleLogout(view: View) {
-        binding.results.text = "Logging user out of account..."
+        tester?.let { credentials ->
+            binding.results.text = "Logging user out of account..."
 
-        accountSelected?.let { account ->
             client.accounts().addOnSuccessListener {
-                it.account(account)?.let {
+                it.account(credentials)?.let {
                     client.logout(
-                        account
-                    ).addOnSuccessListener {
+                        credentials
+                    ).addOnSuccessListener { results ->
                         Toast.makeText(
                             applicationContext,
-                            "User logged out $it", Toast.LENGTH_SHORT
+                            "User logged out $results", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "User logged out $it"
-                    }.addOnFailureListener {
+                        binding.results.text = "User logged out $results"
+
+                        tester = null
+                    }.addOnFailureListener { failure ->
                         Toast.makeText(
                             applicationContext,
-                            "User logout failure: $it", Toast.LENGTH_SHORT
+                            "User logout failure: $failure", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "User logout failure: $it"
+                        binding.results.text = "User logout failure: $failure"
                     }
                 }
             }
-        }?: noAccountSelectedAlert()
-
-        setDefaultAccountIfExists()
+        }?: accountNotLinkedAlert()
     }
 
     @SuppressLint("SetTextI18n")
@@ -251,6 +234,8 @@ class MainActivity : AppCompatActivity() {
             ).show()
 
             binding.results.text = "User logged out $it"
+
+            tester = null
         }.addOnFailureListener {
             Toast.makeText(
                 applicationContext,
@@ -259,8 +244,6 @@ class MainActivity : AppCompatActivity() {
 
             binding.results.text = "User logout failure: $it"
         }
-
-        setDefaultAccountIfExists()
     }
 
     @SuppressLint("SetTextI18n")
@@ -329,71 +312,71 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
     fun onRemoteMessages(view: View) {
-        binding.results.text = "Remote Messages..."
+        tester?.let { credentials ->
+            binding.results.text = "Remote Messages..."
 
-        accountSelected?.let { account ->
             client.accounts().addOnSuccessListener {
-                it.account(account)?.let { account ->
-                    client.remoteMessages(account).addOnSuccessListener {
+                it.account(credentials)?.let { account ->
+                    client.remoteMessages(account).addOnSuccessListener { results ->
                         Toast.makeText(
                             applicationContext,
-                            "Remote messages $it", Toast.LENGTH_SHORT
+                            "Remote messages $results", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "Remote messages $it"
-                    }.addOnFailureListener {
+                        binding.results.text = "Remote messages $results"
+                    }.addOnFailureListener { failure ->
                         Toast.makeText(
                             applicationContext,
-                            "Remote messages failure: $it", Toast.LENGTH_SHORT
+                            "Remote messages failure: $failure", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "Remote messages failure: $it"
+                        binding.results.text = "Remote messages failure: $failure"
                     }
                 } ?: Toast.makeText(
                     applicationContext,
                     "unable to " +
-                            "find tester account ${account.username}",
+                            "find tester account ${credentials.username}",
                     Toast.LENGTH_SHORT
                 ).show()
             }.addOnFailureListener {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
             }
-        }?: noAccountSelectedAlert()
+        }?: accountNotLinkedAlert()
     }
 
     @SuppressLint("SetTextI18n")
     @Suppress("UNUSED_PARAMETER")
     fun onVerify(view: View) {
-        binding.results.text = "Verifying account..."
+        tester?.let { credentials ->
+            binding.results.text = "Verifying account..."
 
-        accountSelected?.let { account ->
             client.accounts().addOnSuccessListener {
-                it.account(account)?.let { account ->
-                    client.verify(account).addOnSuccessListener {
+                it.account(credentials)?.let { account ->
+                    client.verify(account).addOnSuccessListener { results ->
                         Toast.makeText(
                             applicationContext,
-                            "Verify: $it", Toast.LENGTH_SHORT
+                            "Verify: $results", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "Account Verify: $it"
-                    }.addOnFailureListener {
+                        binding.results.text = "Account Verify: $results"
+                    }.addOnFailureListener { failure ->
                         Toast.makeText(
                             applicationContext,
-                            "Verify failure: $it", Toast.LENGTH_SHORT
+                            "Verify failure: $failure", Toast.LENGTH_SHORT
                         ).show()
 
-                        binding.results.text = "Account Failure: $it"
+                        binding.results.text = "Account Failure: $failure"
                     }
                 } ?: Toast.makeText(
                     applicationContext,
                     "unable to " +
-                            "find tester account ${account.username}",
+                            "find tester account ${credentials.username}",
                     Toast.LENGTH_SHORT
                 ).show()
             }.addOnFailureListener {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
             }
-        }?: noAccountSelectedAlert()
+        }?: accountNotLinkedAlert()
     }
 
     @SuppressLint("SetTextI18n")
@@ -403,33 +386,6 @@ class MainActivity : AppCompatActivity() {
 
         val binding = CredentialsViewBinding.inflate(layoutInflater)
 
-        var selectedPosition = 0
-
-        binding.provider.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, providerSpinnerItems)
-
-        binding.provider.setSelection(selectedPosition)
-
-        binding.provider.onItemSelectedListener = object : OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedPosition = position
-
-                when (position){
-                    0 -> {
-                        binding.email.visibility = View.GONE
-                        binding.password.visibility = View.GONE
-                        binding.appPasswordMode.visibility = View.VISIBLE
-                    }
-                    else -> {
-                        binding.email.visibility = View.VISIBLE
-                        binding.password.visibility = View.VISIBLE
-                        binding.appPasswordMode.visibility = View.GONE
-                    }
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        }
-
         MaterialAlertDialogBuilder(this)
             .setTitle("Credentials")
             .setView(binding.root)
@@ -438,26 +394,14 @@ class MainActivity : AppCompatActivity() {
             ) { it, _ ->
                 it.dismiss()
 
-                if (selectedPosition != 0){
-                    if (binding.email.text.isNullOrEmpty() || binding.password.text.isNullOrEmpty()) {
-                        Toast.makeText(applicationContext, "Username and password can't be blank", Toast.LENGTH_SHORT).show()
-                        return@setPositiveButton
-                    }
-                }
-
                 Toast.makeText(applicationContext, "Logging in...", Toast.LENGTH_SHORT).show()
 
+                val account: Credentials = Credentials.None.Gmail()
+
                 if (!supportFragmentManager.isDestroyed) {
-
-                    val credentials: Credentials = when (selectedPosition){
-                        0 -> Credentials.None.Gmail(if (binding.appPasswordMode.isChecked) AppPassword.MANUAL else AppPassword.AUTOMATIC)
-                        1 -> Credentials.Password.Gmail(binding.email.text.toString(), binding.password.text.toString())
-                        2 -> Credentials.Password.Yahoo(binding.email.text.toString(), binding.password.text.toString())
-                        3 -> Credentials.Password.Aol(binding.email.text.toString(), binding.password.text.toString())
-                        else -> throw IllegalArgumentException("selected provider is not valid")
-                    }
-
-                    ProviderSetupFragmentFactory.create(credentials).callback {
+                    ProviderSetupFragmentFactory.create(
+                        account
+                    ).callback {
                         this.binding.results.text = "Status ${it.name}"
 
                         Toast.makeText(
@@ -471,9 +415,9 @@ class MainActivity : AppCompatActivity() {
                             ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
                             ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
                             ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
-                            ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
-                            ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
                             ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
+                            ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
+                            ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
                             ProviderSetupResults.DUPLICATE_EMAIL -> Timberland.e("DUPLICATE_EMAIL")
                             ProviderSetupResults.USER_CANCELLED -> Timberland.e("USER_CANCELLED")
                             ProviderSetupResults.REDIRECT_TO_BROWSER -> Timberland.e("REDIRECT_TO_BROWSER")
@@ -491,7 +435,11 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
 
-                        setDefaultAccountIfExists()
+                        client.accounts().addOnSuccessListener { accounts ->
+                            if (accounts.isNotEmpty()){
+                                tester = accounts[0]
+                            }
+                        }
                     }.show(supportFragmentManager, TAG)
                 }
             }
@@ -499,40 +447,8 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    fun onSelectAccount(view: View) {
-        val dialog = AlertDialog.Builder(this).setTitle("Select account")
-        client.accounts().addOnSuccessListener { account ->
-            dialog.setItems(account.map { it.username }.toTypedArray()) { _, index ->
-                setDefaultAccountIfExists(account[index])
-            }
-            dialog.show()
-        }
-    }
-
-    private fun setDefaultAccountIfExists(account: Credentials.Password) {
-        accountSelected = account
-        binding.selectedAccount.setText("Selected account: ${accountSelected!!.username}")
-    }
-
-    private fun setDefaultAccountIfExists() {
-        client.accounts().addOnSuccessListener {
-            if (it.any()) {
-                accountSelected = it[0]
-                binding.selectedAccount.setText("Selected account: ${accountSelected!!.username}")
-            } else {
-                accountSelected = null
-                binding.selectedAccount.setText("No account selected")
-            }
-        }
-    }
-
-    private fun noAccountSelectedAlert(){
-        Toast.makeText(
-            applicationContext,
-            "No account selected!",
-            Toast.LENGTH_SHORT
-        ).show()
+    private fun accountNotLinkedAlert(){
+        Toast.makeText(applicationContext, "Please login to account", Toast.LENGTH_SHORT).show()
     }
 
 }
