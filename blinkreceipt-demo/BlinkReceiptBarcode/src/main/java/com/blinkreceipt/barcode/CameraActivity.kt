@@ -123,7 +123,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
     override fun onCameraPreviewStarted() {
         if (binding.recognizer.cameraViewState != BaseCameraView.CameraViewState.RESUMED) {
-            Timberland.w("Camera preview started callback received after view was paused")
+            Timberland.d("Camera preview started callback received after view was paused")
 
             return
         }

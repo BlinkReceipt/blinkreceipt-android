@@ -401,19 +401,30 @@ class MainActivity : AppCompatActivity() {
                 if (!supportFragmentManager.isDestroyed) {
                     ProviderSetupFragmentFactory.create(
                         account
-                    ).callback {
-                        this.binding.results.text = "Status ${it.name}"
+                    ).callback { providerResult: ProviderResults ->
+                        this.binding.results.text = "Status ${providerResult.results.name}"
 
                         Toast.makeText(
                             applicationContext,
-                            "Status ${it.name}",
+                            "Status ${providerResult.results.name}",
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        when (it) {
+                        when (providerResult.results) {
                             ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
                             ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
-                            ProviderSetupResults.CREATED_APP_PASSWORD -> Timberland.d("CREATED_APP_PASSWORD")
+                            ProviderSetupResults.CREATED_APP_PASSWORD -> {
+                                Timberland.d("CREATED_APP_PASSWORD")
+                                val linked = providerResult.credentials as Credentials.Password
+
+                                tester = linked
+
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Linked: ${linked.username}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                             ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
                             ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
                             ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
@@ -434,10 +445,24 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
 
-                        client.accounts().addOnSuccessListener { accounts ->
-                            if (accounts.isNotEmpty()){
-                                tester = accounts[0]
-                            }
+                        // If the status is not CREATED_APP_PASSWORD, then display "Not Linked"
+                        // message with credentials
+                        if (providerResult.results != ProviderSetupResults.CREATED_APP_PASSWORD) {
+                            val message: String =
+                                when (val credentials = providerResult.credentials){
+                                    is Credentials.Password -> {
+                                        "Not Linked: ${credentials.username}"
+                                    }
+                                    is Credentials.None -> {
+                                        "Not Linked: No Credentials"
+                                    }
+                                }
+
+                            Toast.makeText(
+                                applicationContext,
+                                message,
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }.show(supportFragmentManager, TAG)
                 }
