@@ -291,3 +291,6 @@
 ## 1.4.3
 - Verify and orders trigger an AccountLinkingException with error code 1052 for unsupported retailers
 - Stability fixes and improvements
+
+## 1.4.4
+- Stability fixes and improvements

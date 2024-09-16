@@ -126,3 +126,6 @@
 - Resolved the issue of the UI freezing when all scan characteristics are disabled
 - Fix Receipt Data collection behavior to avoid scan characteristic chips from appearing while in the Scanning state
 - Stability fixes and improvements
+
+## 1.3.1
+- Stability fixes and improvements

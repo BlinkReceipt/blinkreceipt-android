@@ -617,3 +617,7 @@ Blink Receipt Recognizer
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
 - Improvements to QTY extraction in US for Albertsons banners 
 - Improvements to Last 4 CC extraction in US
+
+## 1.8.6
+- Fixed an issue where onDeviceOcr() was not returned with the correct value
+- Stability fixes and improvements

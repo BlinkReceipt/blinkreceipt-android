@@ -226,3 +226,6 @@
 
 ## 1.5.6
 - Fix Receipt Data collection behavior to avoid scan characteristic chips from appearing while in the Scanning state
+
+## 1.5.7
+- Stability fixes and improvements
