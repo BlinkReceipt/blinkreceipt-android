@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -41,10 +42,10 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
         callbacks.recognizerCallback {
             client.lookup(it.text()).addOnSuccessListener { product ->
                 Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener {
+            }.addOnFailureListener { e ->
                 binding.recognizer.resumeScanning(true)
 
-                LogcatManager.event().exception{ e }
+                Log.e(TAG, "failed in onCreate", e );
             }
         }
 
@@ -122,7 +123,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
     override fun onCameraPreviewStarted() {
         if (binding.recognizer.cameraViewState != BaseCameraView.CameraViewState.RESUMED) {
-            LogcatManager.event().debug{ "Camera preview started callback received after view was paused" }
+            Log.d(TAG,  "Camera preview started callback received after view was paused")
 
             return
         }
@@ -144,6 +145,10 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
     @Suppress("UNUSED_PARAMETER")
     fun onResumeScan(view: View) {
         binding.recognizer.resumeScanning(true)
+    }
+
+    private companion object {
+        const val TAG = "CameraActivity"
     }
 
 }

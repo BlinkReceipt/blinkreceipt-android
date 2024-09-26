@@ -2,6 +2,7 @@ package com.blinkreceipt.digital.outlook
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.microblink.core.InitializeCallback
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                     "ScanResults Size: ${data?.size.toString()}", Toast.LENGTH_LONG).show()
 
             data?.forEach {
-                LogcatManager.event().debug{ it.toString() }
+                Log.d(TAG,  it.toString() )
             }
         }.addOnFailureListener { e ->
             Toast.makeText(this@MainActivity,
@@ -99,5 +100,9 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
 
         client.close()
+    }
+
+    private companion object {
+        const val TAG = "OutlookMainActivity"
     }
 }

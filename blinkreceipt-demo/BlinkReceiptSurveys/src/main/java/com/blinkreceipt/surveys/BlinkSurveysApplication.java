@@ -1,11 +1,15 @@
 package com.blinkreceipt.surveys;
 
 import android.app.Application;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import com.microblink.core.InitializeCallback;
 import com.microblink.surveys.BlinkReceiptSurveysSdk;
 
 public class BlinkSurveysApplication extends Application  {
+
+    private final String TAG = "BlinkSurveysApplication";
 
     @Override
     public void onCreate() {
@@ -14,12 +18,12 @@ public class BlinkSurveysApplication extends Application  {
         BlinkReceiptSurveysSdk.initialize(this, new InitializeCallback() {
             @Override
             public void onComplete() {
-                LogcatManager.event().debug(() -> "BlinkReceiptSurveySdk initialized!!!");
+                Log.d(TAG, "BlinkReceiptSurveySdk initialized!!!");
             }
 
             @Override
             public void onException(@NonNull Throwable throwable) {
-                LogcatManager.event().exception(() -> throwable);
+                Log.e(TAG, "failure in initialize", throwable);
             }
         });
     }

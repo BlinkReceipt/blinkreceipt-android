@@ -14,6 +14,7 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     private Bitmap[] bitmaps;
 
     private ImageClient client;
+
+    private final String TAG = "DirectScanMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
         } catch (Exception e) {
-            LogcatManager.event().exception(() -> e);
+            Log.e(TAG, "failure in loadBitmapFromUri", e);
         }
 
         return null;

@@ -3,6 +3,7 @@ package com.blinkreceipt.digital.imap
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
@@ -11,8 +12,6 @@ import com.google.android.gms.tasks.Tasks
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microblink.core.InitializeCallback
 import com.microblink.core.ScanResults
-import com.microblink.core.internal.ExecutorSupplier
-import com.microblink.core.internal.IOUtils
 import com.microblink.digital.*
 import com.microblink.digital.internal.account
 
@@ -27,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         const val TAG = "ProviderSetupDialogFragment"
 
         var tester: Credentials.Password? = null
+
+        const val LOG_TAG = "ImapMainActivity"
     }
 
     private lateinit var client: ImapClient
@@ -180,7 +181,7 @@ class MainActivity : AppCompatActivity() {
                     binding.results.text = "User messages failure: $it"
                 }
         }.addOnFailureListener {
-            LogcatManager.event().exception{ it }
+            Log.e(LOG_TAG, "failure in onDebugMessages",  it )
 
             Toast.makeText(
                 applicationContext,
@@ -259,7 +260,7 @@ class MainActivity : AppCompatActivity() {
                 credentials: Credentials.Password,
                 result: List<ScanResults>
             ) {
-                LogcatManager.event().debug{"credentials $credentials results $result"}
+                Log.d(LOG_TAG, "credentials $credentials results $result")
 
                 messages[credentials] = result
 
@@ -274,7 +275,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onException(throwable: Throwable) {
-                LogcatManager.event().exception{ throwable }
+                Log.e(LOG_TAG, "failure in onException", throwable )
 
                 binding.results.text = "Multiple Messages $throwable"
             }
@@ -292,7 +293,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onComplete(credentials: Credentials.Password, result: JobResults) {
-                LogcatManager.event().debug{ "credentials $credentials results $result" }
+                Log.d(LOG_TAG, "credentials $credentials results $result" )
 
                 messages[credentials] = result
 
@@ -301,7 +302,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onException(throwable: Throwable) {
-                LogcatManager.event().exception{ throwable }
+                Log.e(LOG_TAG, "failure in onException", throwable )
 
                 binding.results.text = "Multiple Remote $throwable"
             }
@@ -410,10 +411,10 @@ class MainActivity : AppCompatActivity() {
                         ).show()
 
                         when (providerResult.results) {
-                            ProviderSetupResults.BAD_PASSWORD -> LogcatManager.event().debug{ "BAD_PASSWORD" }
-                            ProviderSetupResults.BAD_EMAIL -> LogcatManager.event().debug{ "BAD_EMAIL" }
+                            ProviderSetupResults.BAD_PASSWORD -> Log.d(LOG_TAG, "BAD_PASSWORD" )
+                            ProviderSetupResults.BAD_EMAIL -> Log.d(LOG_TAG, "BAD_EMAIL" )
                             ProviderSetupResults.CREATED_APP_PASSWORD -> {
-                                LogcatManager.event().debug{ "CREATED_APP_PASSWORD" }
+                                Log.d(LOG_TAG, "CREATED_APP_PASSWORD" )
                                 val linked = providerResult.credentials as Credentials.Password
 
                                 tester = linked
@@ -424,15 +425,15 @@ class MainActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                            ProviderSetupResults.NO_CREDENTIALS -> LogcatManager.event().debug{ "NO_CREDENTIALS" }
-                            ProviderSetupResults.UNKNOWN -> LogcatManager.event().debug{ "UNKNOWN" }
-                            ProviderSetupResults.NO_APP_PASSWORD -> LogcatManager.event().debug{ "NO_APP_PASSWORD" }
-                            ProviderSetupResults.LSA_ENABLED -> LogcatManager.event().debug{ "LSA_ENABLED" }
-                            ProviderSetupResults.DUPLICATE_EMAIL -> LogcatManager.event().debug{ "DUPLICATE_EMAIL" }
-                            ProviderSetupResults.USER_CANCELLED -> LogcatManager.event().debug{ "USER_CANCELLED" }
-                            ProviderSetupResults.REDIRECT_TO_BROWSER -> LogcatManager.event().debug{ "REDIRECT_TO_BROWSER" }
-                            ProviderSetupResults.ADMIN_NEEDED -> LogcatManager.event().debug{ "ADMIN_NEEDED" }
-                            ProviderSetupResults.RESULT_SAVED -> LogcatManager.event().debug{ "RESULT_SAVED" }
+                            ProviderSetupResults.NO_CREDENTIALS -> Log.d(LOG_TAG, "NO_CREDENTIALS" )
+                            ProviderSetupResults.UNKNOWN -> Log.d(LOG_TAG, "UNKNOWN" )
+                            ProviderSetupResults.NO_APP_PASSWORD -> Log.d(LOG_TAG, "NO_APP_PASSWORD" )
+                            ProviderSetupResults.LSA_ENABLED -> Log.d(LOG_TAG, "LSA_ENABLED" )
+                            ProviderSetupResults.DUPLICATE_EMAIL -> Log.d(LOG_TAG, "DUPLICATE_EMAIL" )
+                            ProviderSetupResults.USER_CANCELLED -> Log.d(LOG_TAG, "USER_CANCELLED" )
+                            ProviderSetupResults.REDIRECT_TO_BROWSER -> Log.d(LOG_TAG, "REDIRECT_TO_BROWSER" )
+                            ProviderSetupResults.ADMIN_NEEDED -> Log.d(LOG_TAG, "ADMIN_NEEDED" )
+                            ProviderSetupResults.RESULT_SAVED -> Log.d(LOG_TAG, "RESULT_SAVED" )
                         }
 
                         if (!supportFragmentManager.isDestroyed) {

@@ -1,4 +1,4 @@
-package com.blinkreceipt.linking;
+package com.blinkreceipt.digital.imap;
 
 import androidx.annotation.NonNull;
 
@@ -40,5 +40,4 @@ public final class ExecutorSupplier {
     public Executor io() {
         return io;
     }
-
 }

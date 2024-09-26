@@ -29,10 +29,11 @@ buildscript {
             "agp"              : '8.6.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.6.1',
-            'bom'              : '1.8.6-alpha02',
+            'bom'              : '1.8.6-beta01',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
+            'okio'             : '3.9.0',
             'versionMajor'     : 1,
             'versionMinor'     : 8,
             'versionPatch'     : 6

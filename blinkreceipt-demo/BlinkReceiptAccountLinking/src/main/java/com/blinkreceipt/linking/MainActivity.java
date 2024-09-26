@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private AccountLinkingClient client;
+
+    private final String TAG = "AccountLinkingMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         binding.webContainer.removeAllViews();
 
         client.verify(ACCOUNT.retailerId(), (verification, s) -> {
-            LogcatManager.event().debug(() -> "verification " + verification);
+            Log.d(TAG, "verification " + verification);
 
             Toast.makeText(getApplicationContext(),
                     "verification " + verification, Toast.LENGTH_LONG).show();
@@ -79,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.webContainer.addView(webView);
             }
 
-            LogcatManager.event().debug(() -> "preview debug only available in development mode.");
+            Log.d(TAG, "preview debug only available in development mode.");
 
             return Unit.INSTANCE;
         });

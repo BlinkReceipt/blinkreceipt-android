@@ -1,6 +1,7 @@
 package com.blinkreceipt.linking;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -8,6 +9,8 @@ import com.microblink.core.InitializeCallback;
 import com.microblink.linking.BlinkReceiptLinkingSdk;
 
 public class BlinkApplication extends Application {
+
+    private final String TAG = "AccountLinkingApplication";
 
     @Override
     public void onCreate() {
@@ -17,12 +20,12 @@ public class BlinkApplication extends Application {
 
             @Override
             public void onComplete() {
-                LogcatManager.event().debug(() -> "account linking initialization complete");
+                Log.d(TAG, "account linking initialization complete");
             }
 
             @Override
             public void onException(@NonNull Throwable throwable) {
-                LogcatManager.event().exception(() -> throwable);
+                Log.e(TAG,  "failure in initialize", throwable);
             }
 
         });

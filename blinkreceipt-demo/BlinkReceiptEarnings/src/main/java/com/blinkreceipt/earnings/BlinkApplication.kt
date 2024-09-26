@@ -1,6 +1,7 @@
 package com.blinkreceipt.earnings
 
 import android.app.Application
+import android.util.Log
 import com.microblink.core.InitializeCallback
 import com.microblink.earnings.BlinkReceiptEarningSdk
 
@@ -12,13 +13,17 @@ class BlinkApplication : Application() {
         BlinkReceiptEarningSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {
-                LogcatManager.event().debug{ "initialize complete" }
+                Log.d(TAG, "initialize complete" )
             }
 
             override fun onException(e: Throwable) {
-                LogcatManager.event().exception{ e }
+                Log.e(TAG, "failure in initialize", e )
             }
 
         })
+    }
+
+    private companion object {
+        const val TAG = "EarningsApplication"
     }
 }
