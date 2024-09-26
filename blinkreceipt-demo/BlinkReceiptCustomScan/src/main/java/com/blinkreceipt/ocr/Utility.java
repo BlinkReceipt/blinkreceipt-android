@@ -6,8 +6,6 @@ import java.util.Collection;
 
 import androidx.annotation.NonNull;
 
-import com.microblink.core.Timberland;
-
 public class Utility {
 
     private Utility() {
@@ -26,7 +24,7 @@ public class Utility {
                 }
             }
         } catch ( Throwable e ) {
-            Timberland.e( e );
+            LogcatManager.event().exception(() -> e);
         }
     }
 

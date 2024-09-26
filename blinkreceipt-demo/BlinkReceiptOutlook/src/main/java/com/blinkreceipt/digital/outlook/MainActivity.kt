@@ -5,16 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.microblink.core.InitializeCallback
-import com.microblink.core.Timberland
 import com.microblink.digital.OutlookClient
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var client: OutlookClient
-
-    init {
-        Timberland.enable(true)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     "ScanResults Size: ${data?.size.toString()}", Toast.LENGTH_LONG).show()
 
             data?.forEach {
-                Timberland.d(it.toString())
+                LogcatManager.event().debug{ it.toString() }
             }
         }.addOnFailureListener { e ->
             Toast.makeText(this@MainActivity,

@@ -25,7 +25,6 @@ import com.microblink.RecognizerCallback;
 import com.microblink.RecognizerResult;
 import com.microblink.ScanOptions;
 import com.microblink.core.ScanResults;
-import com.microblink.core.Timberland;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
         } catch (Exception e) {
-            Timberland.e(e);
+            LogcatManager.event().exception(() -> e);
         }
 
         return null;

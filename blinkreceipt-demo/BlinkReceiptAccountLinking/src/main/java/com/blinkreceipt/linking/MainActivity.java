@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
-import com.microblink.core.Timberland;
 import com.microblink.linking.Account;
 import com.microblink.linking.AccountLinkingClient;
 import com.microblink.linking.Credentials;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         binding.webContainer.removeAllViews();
 
         client.verify(ACCOUNT.retailerId(), (verification, s) -> {
-            Timberland.d("verification " + verification);
+            LogcatManager.event().debug(() -> "verification " + verification);
 
             Toast.makeText(getApplicationContext(),
                     "verification " + verification, Toast.LENGTH_LONG).show();
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.webContainer.addView(webView);
             }
 
-            Timberland.d("preview debug only available in development mode.");
+            LogcatManager.event().debug(() -> "preview debug only available in development mode.");
 
             return Unit.INSTANCE;
         });

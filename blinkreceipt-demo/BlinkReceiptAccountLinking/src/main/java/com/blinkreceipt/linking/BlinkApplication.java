@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 
 import com.microblink.core.InitializeCallback;
-import com.microblink.core.Timberland;
 import com.microblink.linking.BlinkReceiptLinkingSdk;
 
 public class BlinkApplication extends Application {
@@ -18,12 +17,12 @@ public class BlinkApplication extends Application {
 
             @Override
             public void onComplete() {
-                Timberland.d("account linking initialization complete");
+                LogcatManager.event().debug(() -> "account linking initialization complete");
             }
 
             @Override
             public void onException(@NonNull Throwable throwable) {
-                Timberland.e("account linking initialization failed " + throwable.getMessage());
+                LogcatManager.event().exception(() -> throwable);
             }
 
         });

@@ -11,7 +11,6 @@ import com.google.android.gms.tasks.Tasks
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microblink.core.InitializeCallback
 import com.microblink.core.ScanResults
-import com.microblink.core.Timberland
 import com.microblink.core.internal.ExecutorSupplier
 import com.microblink.core.internal.IOUtils
 import com.microblink.digital.*
@@ -181,7 +180,7 @@ class MainActivity : AppCompatActivity() {
                     binding.results.text = "User messages failure: $it"
                 }
         }.addOnFailureListener {
-            Timberland.e(it)
+            LogcatManager.event().exception{ it }
 
             Toast.makeText(
                 applicationContext,
@@ -260,7 +259,7 @@ class MainActivity : AppCompatActivity() {
                 credentials: Credentials.Password,
                 result: List<ScanResults>
             ) {
-                Timberland.d("credentials $credentials results $result")
+                LogcatManager.event().debug{"credentials $credentials results $result"}
 
                 messages[credentials] = result
 
@@ -275,7 +274,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onException(throwable: Throwable) {
-                Timberland.e(throwable)
+                LogcatManager.event().exception{ throwable }
 
                 binding.results.text = "Multiple Messages $throwable"
             }
@@ -293,7 +292,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onComplete(credentials: Credentials.Password, result: JobResults) {
-                Timberland.d("credentials $credentials results $result")
+                LogcatManager.event().debug{ "credentials $credentials results $result" }
 
                 messages[credentials] = result
 
@@ -302,7 +301,7 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onException(throwable: Throwable) {
-                Timberland.e(throwable)
+                LogcatManager.event().exception{ throwable }
 
                 binding.results.text = "Multiple Remote $throwable"
             }
@@ -411,10 +410,10 @@ class MainActivity : AppCompatActivity() {
                         ).show()
 
                         when (providerResult.results) {
-                            ProviderSetupResults.BAD_PASSWORD -> Timberland.e("BAD_PASSWORD")
-                            ProviderSetupResults.BAD_EMAIL -> Timberland.e("BAD_EMAIL")
+                            ProviderSetupResults.BAD_PASSWORD -> LogcatManager.event().debug{ "BAD_PASSWORD" }
+                            ProviderSetupResults.BAD_EMAIL -> LogcatManager.event().debug{ "BAD_EMAIL" }
                             ProviderSetupResults.CREATED_APP_PASSWORD -> {
-                                Timberland.d("CREATED_APP_PASSWORD")
+                                LogcatManager.event().debug{ "CREATED_APP_PASSWORD" }
                                 val linked = providerResult.credentials as Credentials.Password
 
                                 tester = linked
@@ -425,15 +424,15 @@ class MainActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                            ProviderSetupResults.NO_CREDENTIALS -> Timberland.e("NO_CREDENTIALS")
-                            ProviderSetupResults.UNKNOWN -> Timberland.e("UNKNOWN")
-                            ProviderSetupResults.NO_APP_PASSWORD -> Timberland.e("NO_APP_PASSWORD")
-                            ProviderSetupResults.LSA_ENABLED -> Timberland.e("LSA_ENABLED")
-                            ProviderSetupResults.DUPLICATE_EMAIL -> Timberland.e("DUPLICATE_EMAIL")
-                            ProviderSetupResults.USER_CANCELLED -> Timberland.e("USER_CANCELLED")
-                            ProviderSetupResults.REDIRECT_TO_BROWSER -> Timberland.e("REDIRECT_TO_BROWSER")
-                            ProviderSetupResults.ADMIN_NEEDED -> Timberland.e("ADMIN_NEEDED")
-                            ProviderSetupResults.RESULT_SAVED -> Timberland.e("RESULT_SAVED")
+                            ProviderSetupResults.NO_CREDENTIALS -> LogcatManager.event().debug{ "NO_CREDENTIALS" }
+                            ProviderSetupResults.UNKNOWN -> LogcatManager.event().debug{ "UNKNOWN" }
+                            ProviderSetupResults.NO_APP_PASSWORD -> LogcatManager.event().debug{ "NO_APP_PASSWORD" }
+                            ProviderSetupResults.LSA_ENABLED -> LogcatManager.event().debug{ "LSA_ENABLED" }
+                            ProviderSetupResults.DUPLICATE_EMAIL -> LogcatManager.event().debug{ "DUPLICATE_EMAIL" }
+                            ProviderSetupResults.USER_CANCELLED -> LogcatManager.event().debug{ "USER_CANCELLED" }
+                            ProviderSetupResults.REDIRECT_TO_BROWSER -> LogcatManager.event().debug{ "REDIRECT_TO_BROWSER" }
+                            ProviderSetupResults.ADMIN_NEEDED -> LogcatManager.event().debug{ "ADMIN_NEEDED" }
+                            ProviderSetupResults.RESULT_SAVED -> LogcatManager.event().debug{ "RESULT_SAVED" }
                         }
 
                         if (!supportFragmentManager.isDestroyed) {

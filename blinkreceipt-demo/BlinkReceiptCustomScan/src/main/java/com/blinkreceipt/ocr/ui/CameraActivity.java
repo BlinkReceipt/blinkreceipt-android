@@ -17,7 +17,6 @@ import com.microblink.Media;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
 import com.microblink.core.ScanResults;
-import com.microblink.core.Timberland;
 
 import java.io.File;
 import java.util.Objects;
@@ -151,7 +150,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
             try {
                 recognizerView.destroy();
             } catch (Exception e) {
-                Timberland.e(e);
+                LogcatManager.event().exception(() -> e);
             }
         }
     }
@@ -185,12 +184,12 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        Timberland.d("results: " + result);
+        LogcatManager.event().debug(() -> "results: " + result);
     }
 
     @Override
     public void onConfirmPicture(@NonNull File file) {
-        Timberland.d(file.toString());
+        TLogcatManager.event().debug(() -> file.toString());
     }
 
     @Override
@@ -212,7 +211,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onException(@NonNull Throwable throwable) {
-        Timberland.e(throwable);
+        LogcatManager.event().exception(() -> throwable);
 
         Toast.makeText(getApplicationContext(), throwable.toString(), Toast.LENGTH_LONG).show();
     }

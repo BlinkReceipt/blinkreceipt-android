@@ -16,7 +16,6 @@ import com.microblink.camera.hardware.orientation.Orientation
 import com.microblink.camera.view.BaseCameraView
 import com.microblink.camera.view.CameraAspectMode
 import com.microblink.camera.view.CameraEventsListener
-import com.microblink.core.Timberland
 
 class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
@@ -45,7 +44,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
             }.addOnFailureListener {
                 binding.recognizer.resumeScanning(true)
 
-                Timberland.e(it)
+                LogcatManager.event().exception{ e }
             }
         }
 
@@ -123,7 +122,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
     override fun onCameraPreviewStarted() {
         if (binding.recognizer.cameraViewState != BaseCameraView.CameraViewState.RESUMED) {
-            Timberland.d("Camera preview started callback received after view was paused")
+            LogcatManager.event().debug{ "Camera preview started callback received after view was paused" }
 
             return
         }
