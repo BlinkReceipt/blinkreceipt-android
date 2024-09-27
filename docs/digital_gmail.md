@@ -44,7 +44,7 @@ Users may log in to gmail via the client's `login()` function. There is an overl
 
 The login call returns a Google `Task` of type `GoogleSignInAccount`. The `GoogleSignInAccount` is an object which contains the basic account information of the signed in Google user. The reference for GoogleSignInAccount can be found [here](https://developers.google.com/android/reference/com/google/android/gms/auth/api/signin/GoogleSignInAccount).
 
-`login()` can be called from any thread, because the return type is a `Task<GoogleSignInAccount>`. If you read the previous section of this document on the [Task](#tasks) framework you should have some familiarity with how this process works.
+`login()` can be called from any thread, because the return type is a `Task<GoogleSignInAccount>`. If you read the previous section of this document on the [Task](digital_tasks.md) framework you should have some familiarity with how this process works.
 
 Let's step through the different login scenario results that can occur and how to provide proper handling of each scenario.
 

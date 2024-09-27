@@ -27,8 +27,8 @@ When recognizing text in a PDF document, you might use ParcelFileDescriptor to e
 === "Kotlin"
     ```kotlin
     client.recognize(uri).addOnSuccessListener(this) {
-        //TODO:: Handle Results
+        //Handle Results
     }.addOnFailureListener {
-        //TODO:: Handle failure
+        //Handle failure
     }
     ```

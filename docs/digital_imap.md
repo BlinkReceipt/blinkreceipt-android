@@ -59,33 +59,40 @@ IMAP client is the main entry point which allows the SDK to connect to imap acco
       }
     )
     ```
-## ImapProvider
-An `ImapProvider` object defines the Provider being connected as well as the mode of authentication. There are currently 4 supported types for `ImapProvider`:
+## Credentials
+A `Credentials` object defines the credentials being used to login to a specific IMAP provider. `Credentials` is a sealed class that contains 2 subtypes: `None` and `Password`, each of which contains a collection of subtypes corresponding to the IMAP provider.
 
 === "Kotlin"
     ```kotlin
-        data class GmailNone(val appPasswordMode: AppPasswordMode)            : ImapProvider
-        data class GmailPassword(val username: String, val password: String)  : ImapProvider
-        data class Yahoo(val username: String, val password: String)          : ImapProvider
-        data class Aol(val username: String, val password: String)            : ImapProvider
+        sealed class Credentials {
+            sealed class None {
+                data class Gmail(val appPassword: AppPassword)  
+            }
+            sealed class Password {
+                data class Gmail(val username: String, val password: String)
+                data class Yahoo(val username: String, val password: String)
+                data class Aol(val username: String, val password: String)
+            }
+        }
     ```
 
-`GmailPassword`, `Yahoo`, and `Aol` accepts username and password inputs from the application UI. `GmailNone` is used for IMAP web authentication (where the user inputs credentials via Gmail's login page). This is similar to the BlinkReceipt Account Linking SDK where Retailer Web Auth is invoked using `Credentials.NONE`. The `AppPasswordMode` enum parameter in `GmailNone` is is used to specify whether the user has to manually input a Gmail app password name during the authentication process (`AppPasswordName.MANUAL`) or the Gmail app password name should be automatically injected using your application's name (`AppPasswordName.AUTOMATIC`). If this enum flag is not specified, `AppPasswordName.AUTOMATIC` will be used by default.
+`Credentials.Password` accepts username and password inputs from the application UI. `Credentials.None` allows for IMAP web authentication (where the user inputs credentials via the provider's WebView login page), which is functionally analogous to the BlinkReceipt Account Linking SDK where Retailer Web Auth is enabled using `Credentials.NONE`. The `AppPassword` enum parameter in `None` is used to specify whether the user has to manually input a Gmail app password name during the authentication process (`AppPassword.MANUAL`) or the Gmail app password name should be automatically injected using your application's name (`AppPassword.AUTOMATIC`). If this enum flag is not specified, `AppPassword.AUTOMATIC` will be used by default.
 
-**Note: `ImapProvider` replaces `PasswordCredentials` for IMAP linking starting from BlinkReceipt SDK version `1.8.5`.**
+**Note: `Credentials` replaces `PasswordCredentials` in the IMAP public API surface starting from version 1.8.6.**
 
-**Note: Linking with `GmailNone` will cause a `GmailPassword` to be saved to disk after successful authentication. Then, the saved `GmailPassword` object can be used for subsequent operations.**
+**Note: Linking with `Credentials.None.Gmail` will cause a `Credentials.Password.Gmail` to be saved to disk if login is successful. The saved `Credentials.Password.Gmail` object can be retrieved for other operations.**
 
 ## Provider Setup
-To start the IMAP account linking process, we first create an `ImapProvider` object, then call `ProviderSetupFragmentFactory#create` that returns an instance of `ProviderFragment`.
+To start the IMAP account linking process, we first create a `Credentials` object, then call `ProviderSetupFragmentFactory.create(credentials)` that returns a `ProviderFragment`. The fragment accepts a callback that receives a `ProviderResults` object containing a `Credentials` and a `ProviderSetupResults` enum. The callback will be invoked after the authentication process is finished.
 
-Example: Gmail web authentication workflow
+Example: Gmail (web authentication) workflow
 
 === "Kotlin"
     ```kotlin
-    val imapProvider: ImapProvider = GmailNone()
-    ProviderSetupFragmentFactory.create(imapProvider).callback {
-       
+    val credentials: Credentials = Credentials.None.Gmail()
+
+    ProviderSetupFragmentFactory.create(credentials).callback { result: ProviderResult ->
+        // do something upon receiving provider result
     }.show(supportFragmentManager, TAG)
     ```
 
@@ -93,23 +100,30 @@ Example: Gmail (traditional) authentication workflow
 
 === "Kotlin"
     ```kotlin
-    val imapProvider: ImapProvider = GmailPassword("email@blink.com", "account password")
-    ProviderSetupFragmentFactory.create(imapProvider).callback {
-        
+    val credentials: Credentials = Credentials.Password.Gmail(
+        "email@microblink.com", 
+        "account password"
+    )
+
+    ProviderSetupFragmentFactory.create(credentials).callback { result: ProviderResult ->
+        // do something upon receiving provider result
     }.show(supportFragmentManager, TAG)
     ```
 
-**Note: `ProviderSetupDialogFragment.newInstance(provider)` is no longer supported since BlinkReceipt SDK version 1.8.5.**
+**Note: `ProviderSetupDialogFragment.newInstance(provider)` is no longer supported since version 1.8.6.**
+
+**Note: The `ProviderResults` callback result will only contain valid and authenticated credentials if `ProviderSetupResults` is `CREATED_APP_PASSWORD`. Otherwise, `ProviderResults` contains the original credentials you created.**
+
+**Note: `Credentials.None` should only be used here at account login, and not at any other public API.**
 
 ### IMAP Login To/Verify Account
-The `verify()` function is used to determine if the sdk has any cached `ImapProvider` that can be used without explicit sign in. This can be called without any parameters or with an `Executor` and `ImapProvider`. The empty parameter function call will automatically attempt to fetch the cached `ImapProvider` within the sdk and verify it against the ImapService. This function call returns a `Task<Boolean>`. When the result emitted is a `true` value, then the `ImapProvider` that were either passed in or cached in the sdk grant access to a valid account. In the event an exception is thrown, that means that the `ImapProvider`, either passed in or cached, are not valid to access a specific account.
-
-**Note: this method requires an `ImapProvider` with credentials, such as `GmailPassword`. If an `ImapProvider` without credentials (`GmailNone`) is used, this method will throw an `IllegalArgumentException`.**
+The `verify()` function is used to determine if the sdk has any cached `Credentials.Password` that can be used without explicit sign in. This can be called without any parameters or with an `Executor` and `Credentials.Password`. The empty parameter function call will automatically attempt to fetch the cached `Credentials.Password` within the sdk and verify it against the ImapService. This function call returns a `Task<Boolean>`. When the result emitted is a `true` value, then the `Credentials.Password` that were either passed in or cached in the sdk grant access to a valid account. In the event an exception is thrown, that means that the `Credentials.Password`, either passed in or cached, are not valid to access a specific account.
 
 === "Kotlin"
     ```kotlin
-    val imapProvider: ImapProvider = GmailPassword("email@blink.com", "account password")
-    client.verify(imapProvider).addOnSuccessListener { isVerified: Boolean ->
+    val credentials: Credentials.Password = Credentials.Password.Gmail("email@microblink.com", "account password")
+    
+    client.verify(credentials).addOnSuccessListener { isVerified: Boolean ->
     
     }.addOnFailureListener {
     
@@ -117,13 +131,11 @@ The `verify()` function is used to determine if the sdk has any cached `ImapProv
     ```
 
 ### IMAP Credentials
-The `accounts()` function is used to fetch the cached account's `ImapProvider` on the sdk. This is usually called AFTER `verify()`, once a client can verify that there is a valid account on the sdk. This does not verify the account credentials. It only fetches them from our encrypted cache and returns them to the caller.
-
-**Note: If the user logged in using `GmailNone`, a `GmailPassword` will be stored on disk with credentials retrieved in the web session. Thus, `GmailNone` is only used at linking.**
+The `accounts()` function is used to fetch the cached account's `Credentials.Password` on the sdk. This is usually called AFTER `verify()`, once a client can verify that there is a valid account on the sdk. This does not verify the account credentials. It only fetches them from our encrypted cache and returns them to the caller.
 
 === "Kotlin"
     ```kotlin
-    client.accounts().addOnSuccessListener { accounts: List<ImapProvider> ->
+    client.accounts().addOnSuccessListener { accounts: List<Credentials.Password> ->
     
     }.addOnFailureListener {
     
@@ -142,7 +154,7 @@ After a user has been signed in to their IMAP Account, we can now fetch their em
 | countryCode   | String                                  |  "US"      | countryCode(String countryCode) | Helps classify products and apply internal product intelligence                                                                                                                                                                                                                                                                                                                                                                                 |
 | sendersToSearch | Map\<String, Merchant\> | null | sendersToSearch(Map\<String, Merchant\> sendersToSearch) | This allows clients to search for merchants that may have sent receipts under a different email. For example, Target may have sent an email from "receipts@uniquetarget.com". It is still a Target receipt, but under a different email. Therefore, the client can provide a Merchant like `mapOf( "receipts@uniquetarget.com" to  Merchant( "Target.com", "receipts@uniquetarget.com"))`. |
 
-Once the client is configured then we are ready to start parsing emails. On the `ImapClient` call `messages(@NonNull MessagesCallback callback)` to begin the message reading. The calling of this function completes a series of tasks internally, before potentially returning a list of `List<ScanResults>` via the `MessagesCallback` parameter. Upon a successful execution, the callback will emit a result of `List<ScanResults>` from the overriden onComplete() function. The number of `onComplete()` emissions depends on the number IMAP accounts you have credentials for. The `messages(...)` function will attempt to read messages based on the specified configuration set on the client for each account logged in. In addition to a List<ScanResults>, each emission of onComplete will give you the `ImapProvider` of the corresponding account from which the scan results were derived from. Within the callback, there is an onException interface method. This will be triggered in the event of an error fetching messages from an account. The account e-mail retrieval process is segregated from each other. Therefore, failure to retrive messages from one account doesn't mean a failure to retrieve messages from all accounts. It is entirely possible, to receive an onException callback AND an onComplete callback within a single `messages(...)` call. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
+Once the client is configured then we are ready to start parsing emails. On the `ImapClient` call `messages(@NonNull MessagesCallback callback)` to begin the message reading. The calling of this function completes a series of tasks internally, before potentially returning a list of `List<ScanResults>` via the `MessagesCallback` parameter. Upon a successful execution, the callback will emit a result of `List<ScanResults>` from the overriden onComplete() function. The number of `onComplete()` emissions depends on the number IMAP accounts you have credentials for. The `messages(...)` function will attempt to read messages based on the specified configuration set on the client for each account logged in. In addition to a List<ScanResults>, each emission of onComplete will give you the `Credentials.Password` of the corresponding account from which the scan results were derived from. Within the callback, there is an onException interface method. This will be triggered in the event of an error fetching messages from an account. The account e-mail retrieval process is segregated from each other. Therefore, failure to retrive messages from one account doesn't mean a failure to retrieve messages from all accounts. It is entirely possible, to receive an onException callback AND an onComplete callback within a single `messages(...)` call. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
 
 **EXAMPLE IMAP READ MESSAGES**
 
@@ -151,7 +163,7 @@ Once the client is configured then we are ready to start parsing emails. On the 
         fun messages() {
           client.messages(
               object: MessagesCallback {
-                  override fun onComplete(imapProvider: ImapProvider, result: List<ScanResults>) {
+                  override fun onComplete(credentials: Credentials.Password, result: List<ScanResults>) {
                       // do stuff with scan results
                       // see credentials of account
                   }
@@ -166,7 +178,7 @@ Once the client is configured then we are ready to start parsing emails. On the 
 
 ### IMAP Remote Messages
 
-The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `imapProvider: ImapProvider` and `result: JobResults`. The `ImapProvider` is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.
+The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credentials: Credentials.Password` and `result: JobResults`. The `Credentials.Password` is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.
 
 
 ### IMAP Logout
@@ -174,15 +186,17 @@ When you wish to sign out from a user's current account use the `logout()` funct
 
 === "Kotlin"
     ```kotlin
-    val imapProvider: ImapProvider = GmailPassword("email@blink.com", "account password")
-    client.logout(imapProvider).addOnSuccessListener {
+    val credentials: Credentials.Password = Credentials.Password.Gmail(
+        "email@microblink.com",
+        "account password"
+    )
+
+    client.logout(Credentials).addOnSuccessListener {
     
     }.addOnFailureListener {
     
     }
     ```
-
-**Note: this method requires an `ImapProvider` with credentials, such as `GmailPassword`. If an `ImapProvider` without credentials (`GmailNone`) is used, this method will throw an `IllegalArgumentException`.**
 
 
 ### IMAP Clear
@@ -196,7 +210,7 @@ In order to optimize, fetching and parsing emails, we try to not to duplicate wo
     ```
 
 ### IMAP Destroy Client
-We always want to make sure we are adhereing to any component's lifecycle. Therefore, it is very important to call destroy within the component. This will clean up any pending calls, and allocated resources.
+We always want to make sure we are adhering to any component's lifecycle. Therefore, it is very important to call destroy within the component. This will clean up any pending calls, and allocated resources.
 
 === "Kotlin"
     ```kotlin
