@@ -1,17 +1,11 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.digital.internal/ImapMessage.Builder///PointingToDeclaration/com/microblink/digital/internal/ImapMessage.Builder.html
-$dokka.location:com.microblink.digital.internal/LinkState.CloseWithResult///PointingToDeclaration/com/microblink/digital/internal/LinkState.CloseWithResult.html
-$dokka.location:com.microblink.digital.internal/LinkState.OnCookieChange///PointingToDeclaration/com/microblink/digital/internal/LinkState.OnCookieChange.html
-$dokka.location:com.microblink.digital.internal/LinkState.Redirect///PointingToDeclaration/com/microblink/digital/internal/LinkState.Redirect.html
-$dokka.location:com.microblink.digital.internal/LinkState.RemoveCookie///PointingToDeclaration/com/microblink/digital/internal/LinkState.RemoveCookie.html
-$dokka.location:com.microblink.digital.internal/LinkState.Update///PointingToDeclaration/com/microblink/digital/internal/LinkState.Update.html
-$dokka.location:com.microblink.digital.internal/LinkState.Verify///PointingToDeclaration/com/microblink/digital/internal/LinkState.Verify.html
 $dokka.location:com.microblink.digital.internal/Message.Builder///PointingToDeclaration/com/microblink/digital/internal/Message.Builder.html
 $dokka.location:com.microblink.digital.internal/PasswordCredentials.Builder///PointingToDeclaration/com/microblink/digital/internal/PasswordCredentials.Builder.html
 $dokka.location:com.microblink.digital.internal/ProviderFragmentState.Alert///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.Alert.html
 $dokka.location:com.microblink.digital.internal/ProviderFragmentState.Progress///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.Progress.html
-$dokka.location:com.microblink.digital.internal/ProviderFragmentState.ShowWebPage///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.ShowWebPage.html
+$dokka.location:com.microblink.digital.internal/ProviderFragmentState.ShowWebView///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.ShowWebView.html
 $dokka.location:com.microblink.digital/Credentials.None.Gmail///PointingToDeclaration/com/microblink/digital/Credentials.None.Gmail.html
 $dokka.location:com.microblink.digital/Credentials.None///PointingToDeclaration/com/microblink/digital/Credentials.None.html
 $dokka.location:com.microblink.digital/Credentials.Password.Aol///PointingToDeclaration/com/microblink/digital/Credentials.Password.Aol.html

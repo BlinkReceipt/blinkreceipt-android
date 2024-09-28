@@ -619,5 +619,9 @@ Blink Receipt Recognizer
 - Improvements to Last 4 CC extraction in US
 
 ## 1.8.6
+- **BREAKING CHANGE** Removed `events` constructor parameter from `PdfClient`
 - Fixed an issue where onDeviceOcr() was not returned with the correct value
+- Improvements to QTY and weight extraction in US for various retailers 
+- Improvements to date extraction in CA, US 
+- Improvements to store state extraction in the US
 - Stability fixes and improvements
