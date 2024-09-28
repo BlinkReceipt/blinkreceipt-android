@@ -263,7 +263,7 @@
 ## 1.3.9
 - Changed internal dependencies from api to implementation. Please include the following:
   - implementation "com.google.android.gms:play-services-tasks:18.0.2"
-  -  implementation( "com.microsoft.identity.client:msal:5.2.0" ) {
+  -  implementation( "com.microsoft.identity.client:msal:5.5.0" ) {
      exclude group: 'com.microsoft.device.display'
      }
 - Stability fixes and improvements
@@ -315,4 +315,11 @@
 - Stability fixes and improvements
 
 ## 1.5.4
+- Stability fixes and improvements
+
+## 1.5.5
+- **BREAKING CHANGE** Replaced `PasswordCredentials` with `Credentials` in public API surface
+- **BREAKING CHANGE** Initiate provider setup fragment with `ProviderSetupFragmentFactory`
+- **BREAKING CHANGE** Provider setup callback now returns `ProviderResults` with credentials
+- Introduced foundational support for manual Gmail authentication workflow
 - Stability fixes and improvements

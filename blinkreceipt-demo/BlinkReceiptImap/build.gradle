@@ -75,4 +75,6 @@ dependencies {
 
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+
+    implementation "com.squareup.okio:okio:${versions.okio}"
 }

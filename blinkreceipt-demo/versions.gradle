@@ -26,15 +26,16 @@ buildscript {
             'kotlin'           : '1.9.23',
             'easyPermissions'  : '3.0.0',
             'junit'            : '4.13.2',
-            "agp"              : '8.6.0',
+            "agp"              : '8.6.1',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.6.1',
-            'bom'              : '1.8.5',
+            'bom'              : '1.8.6',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
+            'okio'             : '3.9.0',
             'versionMajor'     : 1,
             'versionMinor'     : 8,
-            'versionPatch'     : 5
+            'versionPatch'     : 6
     ]
 }

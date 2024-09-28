@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>EncryptedEditor 1.5.6 API </title>
+    <title>ImapSetupDialogFragment 1.5.5 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
-    <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../../dokka-javadoc-stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
-    <script type="text/javascript" src="../../../../jquery/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../../../../jquery/jquery-migrate-3.4.0.min.js"></script>
-    <script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="../../../../search.js"></script>
-    <script async type="text/javascript" src="../../../../module-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../package-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../type-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../member-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../tag-search-index.js"></script>
+    <script type="text/javascript" src="../../../search.js"></script>
+    <script async type="text/javascript" src="../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../tag-search-index.js"></script>
 </head><body>
 <script type="text/javascript">
-var pathtoroot = "../../../../";
+var pathtoroot = "../../../";
 </script>
 <noscript>
     <div>JavaScript is disabled on your browser.</div>
@@ -36,7 +36,7 @@ var pathtoroot = "../../../../";
                     <!--   -->
                 </a>
                 <ul class="navList" title="Navigation">
-    <li><a href="../../../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -44,13 +44,13 @@ var pathtoroot = "../../../../";
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
             <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 
 <ul class="navListSearch">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core.internal</a></div>
-        <h2 title="Class EncryptedEditor" class="title">Class EncryptedEditor</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.digital</a></div>
+        <h2 title="Class ImapSetupDialogFragment" class="title">Class ImapSetupDialogFragment</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,7 +108,47 @@ var pathtoroot = "../../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>android.content.SharedPreferences.Editor</code>
+                            <code>android.content.ComponentCallbacks</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.content.DialogInterface.OnCancelListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.content.DialogInterface.OnDismissListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.View.OnCreateContextMenuListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.activity.result.ActivityResultCaller</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.HasDefaultViewModelProviderFactory</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.LifecycleOwner</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.ViewModelStoreOwner</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.savedstate.SavedStateRegistryOwner</code>
                             
                             
                         </dd>
@@ -117,10 +157,10 @@ var pathtoroot = "../../../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>EncryptedEditor</a></span>
- implements <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a>
+public final class <span class="typeNameLabel"><a href=ImapSetupDialogFragment.html>ImapSetupDialogFragment</a></span>
+extends <a href=ProviderFragment.html>ProviderFragment</a>
                     </pre>
-                    <div class="block"><p>* Shared Preferences Editor Implementation made for encrypting string values. All other functionality uses the default Android Shared Preferences Editor Implementation</p></div>
+                    <div class="block"></div>
 
                     <dl>
 
@@ -175,6 +215,42 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#mPreviousWho>mPreviousWho</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html>Lifecycle</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#lifecycle>lifecycle</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStore.html>ViewModelStore</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#viewModelStore>viewModelStore</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/viewmodel/CreationExtras.html>CreationExtras</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#defaultViewModelCreationExtras>defaultViewModelCreationExtras</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelProvider.Factory.html>ViewModelProvider.Factory</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#defaultViewModelProviderFactory>defaultViewModelProviderFactory</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final SavedStateRegistry</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#savedStateRegistry>savedStateRegistry</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -201,7 +277,7 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#EncryptedEditor(android.content.SharedPreferences.Editor,java.lang.String)">EncryptedEditor</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> editor, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> password)</code></th>
+                                                        href="#ImapSetupDialogFragment()">ImapSetupDialogFragment</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -255,81 +331,41 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putString(java.lang.String,java.lang.String)>putString</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> value) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapSetupDialogFragment.html#onCreate(android.os.Bundle)>onCreate</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putStringSet(java.lang.String,java.util.Set)>putStringSet</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; values) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapSetupDialogFragment.html#onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>onCreateView</a>(<a href=https://developer.android.com/reference/kotlin/android/view/LayoutInflater.html>LayoutInflater</a> inflater, <a href=https://developer.android.com/reference/kotlin/android/view/ViewGroup.html>ViewGroup</a> container, <a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/app/Dialog.html>Dialog</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putInt(java.lang.String,int)>putInt</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, int value) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapSetupDialogFragment.html#onCreateDialog(android.os.Bundle)>onCreateDialog</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putLong(java.lang.String,long)>putLong</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, long value) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapSetupDialogFragment.html#onDestroyView()>onDestroyView</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
+                                            <td class="colFirst"><code><a href=ImapSetupDialogFragment.html>ImapSetupDialogFragment</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putFloat(java.lang.String,float)>putFloat</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, float value) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#putBoolean(java.lang.String,boolean)>putBoolean</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, boolean value) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#remove(java.lang.String)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#clear()>clear</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i8" class="altColor">
-                                            <td class="colFirst"><code>boolean</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#commit()>commit</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i9" class="rowColor">
-                                            <td class="colFirst"><code>void</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=EncryptedEditor.html#apply()>apply</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ImapSetupDialogFragment.html#callback(com.microblink.digital.ProviderSetupCallback)>callback</a>(<a href=ProviderSetupCallback.html>ProviderSetupCallback</a> callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -339,6 +375,30 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.fragment.app.Fragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.fragment.app.Fragment</h3>
+                                            <code>dump, equals, getActivity, getAllowEnterTransitionOverlap, getAllowReturnTransitionOverlap, getArguments, getChildFragmentManager, getContext, getDefaultViewModelCreationExtras, getDefaultViewModelProviderFactory, getEnterTransition, getExitTransition, getFragmentManager, getHost, getId, getLayoutInflater, getLayoutInflater, getLifecycle, getLoaderManager, getParentFragment, getParentFragmentManager, getReenterTransition, getResources, getRetainInstance, getReturnTransition, getSavedStateRegistry, getSharedElementEnterTransition, getSharedElementReturnTransition, getString, getString, getTag, getTargetFragment, getTargetRequestCode, getText, getUserVisibleHint, getView, getViewLifecycleOwner, getViewLifecycleOwnerLiveData, getViewModelStore, hasOptionsMenu, hashCode, isAdded, isDetached, isHidden, isInLayout, isMenuVisible, isRemoving, isResumed, isStateSaved, isVisible, onActivityResult, onAttach, onAttachFragment, onConfigurationChanged, onContextItemSelected, onCreateAnimation, onCreateAnimator, onCreateContextMenu, onCreateOptionsMenu, onDestroy, onDestroyOptionsMenu, onHiddenChanged, onInflate, onInflate, onLowMemory, onMultiWindowModeChanged, onOptionsItemSelected, onOptionsMenuClosed, onPause, onPictureInPictureModeChanged, onPrepareOptionsMenu, onPrimaryNavigationFragmentChanged, onRequestPermissionsResult, onResume, onViewCreated, postponeEnterTransition, postponeEnterTransition, registerForActivityResult, registerForActivityResult, registerForContextMenu, requestPermissions, requireActivity, requireArguments, requireContext, requireFragmentManager, requireHost, requireParentFragment, requireView, setAllowEnterTransitionOverlap, setAllowReturnTransitionOverlap, setArguments, setEnterSharedElementCallback, setEnterTransition, setExitSharedElementCallback, setExitTransition, setHasOptionsMenu, setInitialSavedState, setMenuVisibility, setReenterTransition, setRetainInstance, setReturnTransition, setSharedElementEnterTransition, setSharedElementReturnTransition, setTargetFragment, setUserVisibleHint, shouldShowRequestPermissionRationale, startActivity, startActivity, startActivityForResult, startActivityForResult, startIntentSenderForResult, startPostponedEnterTransition, toString, unregisterForContextMenu</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.fragment.app.DialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.fragment.app.DialogFragment</h3>
+                                            <code>dismissNow, getDialog, getShowsDialog, getTheme, isCancelable, onActivityCreated, onAttach, onCancel, onDetach, onDismiss, onGetLayoutInflater, onSaveInstanceState, onStart, onStop, onViewStateRestored, requireComponentDialog, requireDialog, setCancelable, setShowsDialog, setStyle, show, show, showNow</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.google.android.material.bottomsheet.BottomSheetDialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.google.android.material.bottomsheet.BottomSheetDialogFragment</h3>
+                                            <code>dismiss, dismissAllowingStateLoss</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.appcompat.app.AppCompatDialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.appcompat.app.AppCompatDialogFragment</h3>
+                                            <code>setupDialog</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -365,11 +425,11 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="EncryptedEditor(android.content.SharedPreferences.Editor,java.lang.String)"></a>
+                                <a name="ImapSetupDialogFragment()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>EncryptedEditor</h4>
-                                        <pre>EncryptedEditor(<a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> editor, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> password)</pre>
+                                        <h4>ImapSetupDialogFragment</h4>
+                                        <pre>ImapSetupDialogFragment()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -388,15 +448,15 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="putString(java.lang.String,java.lang.String)">
+                                <a id="onCreate(android.os.Bundle)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>putString</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putString(java.lang.String,java.lang.String)>putString</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> value)</pre>
+                                        <h4>onCreate</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ImapSetupDialogFragment.html#onCreate(android.os.Bundle)>onCreate</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -411,15 +471,15 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                     </li>
                                 </ul>
                                 
-                                <a id="putStringSet(java.lang.String,java.util.Set)">
+                                <a id="onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>putStringSet</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putStringSet(java.lang.String,java.util.Set)>putStringSet</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; values)</pre>
+                                        <h4>onCreateView</h4>
+                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/view/View.html>View</a> <a href=ImapSetupDialogFragment.html#onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>onCreateView</a>(<a href=https://developer.android.com/reference/kotlin/android/view/LayoutInflater.html>LayoutInflater</a> inflater, <a href=https://developer.android.com/reference/kotlin/android/view/ViewGroup.html>ViewGroup</a> container, <a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -434,15 +494,15 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                     </li>
                                 </ul>
                                 
-                                <a id="putInt(java.lang.String,int)">
+                                <a id="onCreateDialog(android.os.Bundle)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>putInt</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putInt(java.lang.String,int)>putInt</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, int value)</pre>
+                                        <h4>onCreateDialog</h4>
+                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/app/Dialog.html>Dialog</a> <a href=ImapSetupDialogFragment.html#onCreateDialog(android.os.Bundle)>onCreateDialog</a>(<a href=https://developer.android.com/reference/kotlin/android/os/Bundle.html>Bundle</a> savedInstanceState)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -457,15 +517,15 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                     </li>
                                 </ul>
                                 
-                                <a id="putLong(java.lang.String,long)">
+                                <a id="onDestroyView()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>putLong</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putLong(java.lang.String,long)>putLong</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, long value)</pre>
+                                        <h4>onDestroyView</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ImapSetupDialogFragment.html#onDestroyView()>onDestroyView</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -480,130 +540,15 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                                     </li>
                                 </ul>
                                 
-                                <a id="putFloat(java.lang.String,float)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>putFloat</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putFloat(java.lang.String,float)>putFloat</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, float value)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="putBoolean(java.lang.String,boolean)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>putBoolean</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#putBoolean(java.lang.String,boolean)>putBoolean</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key, boolean value)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="remove(java.lang.String)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>remove</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#remove(java.lang.String)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> key)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="clear()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>clear</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.Editor.html>SharedPreferences.Editor</a> <a href=EncryptedEditor.html#clear()>clear</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="commit()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>commit</h4>
-                                        <pre class="methodSignature"> boolean <a href=EncryptedEditor.html#commit()>commit</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="apply()">
+                                <a id="callback(com.microblink.digital.ProviderSetupCallback)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>apply</h4>
-                                        <pre class="methodSignature"> void <a href=EncryptedEditor.html#apply()>apply</a>()</pre>
+                                        <h4>callback</h4>
+                                        <pre class="methodSignature"> <a href=ImapSetupDialogFragment.html>ImapSetupDialogFragment</a> <a href=ImapSetupDialogFragment.html#callback(com.microblink.digital.ProviderSetupCallback)>callback</a>(<a href=ProviderSetupCallback.html>ProviderSetupCallback</a> callback)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -639,7 +584,7 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
                 <!--   -->
             </a>
             <ul class="navList" title="Navigation">
-    <li><a href="../../../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -647,8 +592,8 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
         <a id="skip.navbar.bottom">
@@ -656,7 +601,7 @@ public final class <span class="typeNameLabel"><a href=EncryptedEditor.html>Encr
         </a>
         <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--

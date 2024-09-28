@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,6 @@ import com.microblink.camera.hardware.orientation.Orientation
 import com.microblink.camera.view.BaseCameraView
 import com.microblink.camera.view.CameraAspectMode
 import com.microblink.camera.view.CameraEventsListener
-import com.microblink.core.Timberland
 
 class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
@@ -42,10 +42,10 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
         callbacks.recognizerCallback {
             client.lookup(it.text()).addOnSuccessListener { product ->
                 Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener {
+            }.addOnFailureListener { e ->
                 binding.recognizer.resumeScanning(true)
 
-                Timberland.e(it)
+                Log.e(TAG, "failed in onCreate", e );
             }
         }
 
@@ -123,7 +123,7 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
     override fun onCameraPreviewStarted() {
         if (binding.recognizer.cameraViewState != BaseCameraView.CameraViewState.RESUMED) {
-            Timberland.w("Camera preview started callback received after view was paused")
+            Log.d(TAG,  "Camera preview started callback received after view was paused")
 
             return
         }
@@ -145,6 +145,10 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
     @Suppress("UNUSED_PARAMETER")
     fun onResumeScan(view: View) {
         binding.recognizer.resumeScanning(true)
+    }
+
+    private companion object {
+        const val TAG = "CameraActivity"
     }
 
 }

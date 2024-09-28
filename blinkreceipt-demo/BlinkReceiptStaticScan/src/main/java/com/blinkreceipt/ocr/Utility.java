@@ -1,12 +1,14 @@
 package com.blinkreceipt.ocr;
 
+import android.util.Log;
+
 import java.util.Collection;
 
 import androidx.annotation.NonNull;
 
-import com.microblink.core.Timberland;
-
 public class Utility {
+
+    private static final String TAG = "Utility";
 
     private Utility() {
         super();
@@ -24,7 +26,7 @@ public class Utility {
                 }
             }
         } catch ( Throwable e ) {
-            Timberland.e( e );
+            Log.e(TAG, "failure in cancel", e);
         }
     }
 

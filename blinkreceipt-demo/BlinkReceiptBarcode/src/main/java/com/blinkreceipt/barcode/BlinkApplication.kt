@@ -1,9 +1,9 @@
 package com.blinkreceipt.barcode
 
 import android.app.Application
+import android.util.Log
 import com.microblink.barcode.BlinkReceiptBarcodeSdk
 import com.microblink.core.InitializeCallback
-import com.microblink.core.Timberland
 
 class BlinkApplication : Application() {
 
@@ -13,13 +13,17 @@ class BlinkApplication : Application() {
         BlinkReceiptBarcodeSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {
-                Timberland.d("initialize complete")
+                Log.d(TAG, "initialize complete" )
             }
 
             override fun onException(e: Throwable) {
-                Timberland.d("initialize exception $e")
+                Log.e(TAG, "failed in initialize", e )
             }
 
         })
+    }
+
+    private companion object {
+        const val TAG = "BarcodeApplication"
     }
 }

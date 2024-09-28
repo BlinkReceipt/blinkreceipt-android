@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>Storage 1.5.6 API </title>
+    <title>ProviderFragment 1.5.5 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core</a></div>
-        <h2 title="Class Storage" class="title">Class Storage</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.digital</a></div>
+        <h2 title="Class ProviderFragment" class="title">Class ProviderFragment</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,14 +108,57 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
+                            <code>android.content.ComponentCallbacks</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.content.DialogInterface.OnCancelListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.content.DialogInterface.OnDismissListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.View.OnCreateContextMenuListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.activity.result.ActivityResultCaller</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.HasDefaultViewModelProviderFactory</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.LifecycleOwner</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.lifecycle.ViewModelStoreOwner</code>
+                            
+                            ,
+                            
+                            
+                            <code>androidx.savedstate.SavedStateRegistryOwner</code>
+                            
+                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a></span>
-
+public abstract class <span class="typeNameLabel"><a href=ProviderFragment.html>ProviderFragment</a></span>
+extends BottomSheetDialogFragment
                     </pre>
                     <div class="block"></div>
 
@@ -172,6 +215,42 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#mPreviousWho>mPreviousWho</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html>Lifecycle</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#lifecycle>lifecycle</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStore.html>ViewModelStore</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#viewModelStore>viewModelStore</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/viewmodel/CreationExtras.html>CreationExtras</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#defaultViewModelCreationExtras>defaultViewModelCreationExtras</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelProvider.Factory.html>ViewModelProvider.Factory</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#defaultViewModelProviderFactory>defaultViewModelProviderFactory</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final SavedStateRegistry</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#savedStateRegistry>savedStateRegistry</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -195,6 +274,12 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
 
+                                        
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#ProviderFragment()">ProviderFragment</a></span>()</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
                                         
 
                                         </tbody>
@@ -246,9 +331,9 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>static <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.html>SharedPreferences</a></code>
+                                            <td class="colFirst"><code>abstract <a href=ProviderFragment.html>ProviderFragment</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Storage.html#get(android.content.Context,java.lang.String)>get</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> name) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ProviderFragment.html#callback(com.microblink.digital.ProviderSetupCallback)>callback</a>(<a href=ProviderSetupCallback.html>ProviderSetupCallback</a> callback) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -258,6 +343,30 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.fragment.app.Fragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.fragment.app.Fragment</h3>
+                                            <code>dump, equals, getActivity, getAllowEnterTransitionOverlap, getAllowReturnTransitionOverlap, getArguments, getChildFragmentManager, getContext, getDefaultViewModelCreationExtras, getDefaultViewModelProviderFactory, getEnterTransition, getExitTransition, getFragmentManager, getHost, getId, getLayoutInflater, getLayoutInflater, getLifecycle, getLoaderManager, getParentFragment, getParentFragmentManager, getReenterTransition, getResources, getRetainInstance, getReturnTransition, getSavedStateRegistry, getSharedElementEnterTransition, getSharedElementReturnTransition, getString, getString, getTag, getTargetFragment, getTargetRequestCode, getText, getUserVisibleHint, getView, getViewLifecycleOwner, getViewLifecycleOwnerLiveData, getViewModelStore, hasOptionsMenu, hashCode, isAdded, isDetached, isHidden, isInLayout, isMenuVisible, isRemoving, isResumed, isStateSaved, isVisible, onActivityResult, onAttach, onAttachFragment, onConfigurationChanged, onContextItemSelected, onCreateAnimation, onCreateAnimator, onCreateContextMenu, onCreateOptionsMenu, onCreateView, onDestroy, onDestroyOptionsMenu, onHiddenChanged, onInflate, onInflate, onLowMemory, onMultiWindowModeChanged, onOptionsItemSelected, onOptionsMenuClosed, onPause, onPictureInPictureModeChanged, onPrepareOptionsMenu, onPrimaryNavigationFragmentChanged, onRequestPermissionsResult, onResume, onViewCreated, postponeEnterTransition, postponeEnterTransition, registerForActivityResult, registerForActivityResult, registerForContextMenu, requestPermissions, requireActivity, requireArguments, requireContext, requireFragmentManager, requireHost, requireParentFragment, requireView, setAllowEnterTransitionOverlap, setAllowReturnTransitionOverlap, setArguments, setEnterSharedElementCallback, setEnterTransition, setExitSharedElementCallback, setExitTransition, setHasOptionsMenu, setInitialSavedState, setMenuVisibility, setReenterTransition, setRetainInstance, setReturnTransition, setSharedElementEnterTransition, setSharedElementReturnTransition, setTargetFragment, setUserVisibleHint, shouldShowRequestPermissionRationale, startActivity, startActivity, startActivityForResult, startActivityForResult, startIntentSenderForResult, startPostponedEnterTransition, toString, unregisterForContextMenu</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.fragment.app.DialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.fragment.app.DialogFragment</h3>
+                                            <code>dismissNow, getDialog, getShowsDialog, getTheme, isCancelable, onActivityCreated, onAttach, onCancel, onCreate, onDestroyView, onDetach, onDismiss, onGetLayoutInflater, onSaveInstanceState, onStart, onStop, onViewStateRestored, requireComponentDialog, requireDialog, setCancelable, setShowsDialog, setStyle, show, show, showNow</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.google.android.material.bottomsheet.BottomSheetDialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.google.android.material.bottomsheet.BottomSheetDialogFragment</h3>
+                                            <code>dismiss, dismissAllowingStateLoss, onCreateDialog</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.androidx.appcompat.app.AppCompatDialogFragment">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;androidx.appcompat.app.AppCompatDialogFragment</h3>
+                                            <code>setupDialog</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -284,6 +393,16 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
+                                <a name="ProviderFragment()"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>ProviderFragment</h4>
+                                        <pre>ProviderFragment()</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
                             </li>
                         </ul>
                     </section>
@@ -297,15 +416,15 @@ public final class <span class="typeNameLabel"><a href=Storage.html>Storage</a><
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="get(android.content.Context,java.lang.String)">
+                                <a id="callback(com.microblink.digital.ProviderSetupCallback)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>get</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() static <a href=https://developer.android.com/reference/kotlin/android/content/SharedPreferences.html>SharedPreferences</a> <a href=Storage.html#get(android.content.Context,java.lang.String)>get</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> name)</pre>
+                                        <h4>callback</h4>
+                                        <pre class="methodSignature"> abstract <a href=ProviderFragment.html>ProviderFragment</a> <a href=ProviderFragment.html#callback(com.microblink.digital.ProviderSetupCallback)>callback</a>(<a href=ProviderSetupCallback.html>ProviderSetupCallback</a> callback)</pre>
                                         <div class="block"></div>
 
                                         <dl>

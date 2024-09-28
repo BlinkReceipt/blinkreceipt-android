@@ -274,8 +274,9 @@
 - Updated to target API Level 34
 - Stability fixes and improvements
 
-## 
-- **BREAKING CHANGE** Removed the following Retailers: 
+## 1.4.3
+- Verify and orders trigger an AccountLinkingException with error code 1052 for unsupported retailers
+- **BREAKING CHANGE** Removed the following Retailers:
   - KOHLS
   - STAPLES
   - MACYS
@@ -287,7 +288,7 @@
   - TJ_MAXX
   - BED_BATH_AND_BEYOND
   - STAPLES_CA
+- Stability fixes and improvements
 
-## 1.4.3
-- Verify and orders trigger an AccountLinkingException with error code 1052 for unsupported retailers
+## 1.4.4
 - Stability fixes and improvements

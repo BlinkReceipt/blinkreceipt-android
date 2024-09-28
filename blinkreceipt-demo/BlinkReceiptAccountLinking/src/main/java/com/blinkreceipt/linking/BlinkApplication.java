@@ -1,14 +1,16 @@
 package com.blinkreceipt.linking;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.microblink.core.InitializeCallback;
-import com.microblink.core.Timberland;
 import com.microblink.linking.BlinkReceiptLinkingSdk;
 
 public class BlinkApplication extends Application {
+
+    private final String TAG = "AccountLinkingApplication";
 
     @Override
     public void onCreate() {
@@ -18,12 +20,12 @@ public class BlinkApplication extends Application {
 
             @Override
             public void onComplete() {
-                Timberland.d("account linking initialization complete");
+                Log.d(TAG, "account linking initialization complete");
             }
 
             @Override
             public void onException(@NonNull Throwable throwable) {
-                Timberland.e("account linking initialization failed " + throwable.getMessage());
+                Log.e(TAG,  "failure in initialize", throwable);
             }
 
         });

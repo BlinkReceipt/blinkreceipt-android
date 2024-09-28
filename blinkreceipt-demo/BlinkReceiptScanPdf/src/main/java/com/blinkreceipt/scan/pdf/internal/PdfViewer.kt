@@ -3,14 +3,12 @@ package com.blinkreceipt.scan.pdf.internal
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
+import android.util.Log
 import androidx.collection.LruCache
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import com.microblink.core.Events
 
-internal class PdfViewer(
-    private val events: Events = Events.NONE
-) : DefaultLifecycleObserver {
+internal class PdfViewer: DefaultLifecycleObserver {
 
     private var renderer: PdfRenderer? = null
 
@@ -73,17 +71,17 @@ internal class PdfViewer(
         runCatching {
             clear()
         }.onFailure {
-            events.throwable {
-                it
-            }
+            Log.e(TAG, "failure in close", it)
         }
 
         runCatching {
             renderer?.close()
         }.onFailure {
-            events.throwable {
-                it
-            }
+            Log.e(TAG, "failure in close", it)
         }
+    }
+
+    private companion object {
+        const val TAG = "PdfViewer"
     }
 }

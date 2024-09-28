@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,7 +18,6 @@ import com.microblink.Media;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
 import com.microblink.core.ScanResults;
-import com.microblink.core.Timberland;
 
 import java.io.File;
 import java.util.Objects;
@@ -36,6 +36,8 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     private View torch;
 
     private boolean isTorchOn = false;
+
+    private final String TAG = "CameraActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,7 +153,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
             try {
                 recognizerView.destroy();
             } catch (Exception e) {
-                Timberland.e(e);
+                Log.e(TAG, "failure in onDestroy", e);
             }
         }
     }
@@ -185,12 +187,12 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-        Timberland.d("results: " + result);
+        Log.d(TAG, "results: " + result);
     }
 
     @Override
     public void onConfirmPicture(@NonNull File file) {
-        Timberland.d(file.toString());
+        Log.d(TAG, file.toString());
     }
 
     @Override
@@ -212,7 +214,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onException(@NonNull Throwable throwable) {
-        Timberland.e(throwable);
+        Log.e(TAG, "failure in onException", throwable);
 
         Toast.makeText(getApplicationContext(), throwable.toString(), Toast.LENGTH_LONG).show();
     }
