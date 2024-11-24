@@ -625,3 +625,9 @@ Blink Receipt Recognizer
 - Improvements to date extraction in CA, US 
 - Improvements to store state extraction in the US
 - Stability fixes and improvements
+
+## 1.8.7
+- Improvements to QTY extraction for various US retailers
+- Improvements Taxes extraction
+- Improvements to Full Price extraction for various US retailers
+- Added support for Returns/ Refund receipts

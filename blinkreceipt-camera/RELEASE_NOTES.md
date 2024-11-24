@@ -229,3 +229,7 @@
 
 ## 1.5.7
 - Stability fixes and improvements
+
+## 1.5.8
+- Addressed an issue where the out of the box UI incorrectly displayed the "Total" field as found, even when the returned value was 0.0
+- Stability fixes and improvements

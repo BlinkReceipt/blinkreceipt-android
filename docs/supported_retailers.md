@@ -18,7 +18,6 @@
 | **Dollar Tree**            | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#DOLLAR_TREE)
 | **Domino's Pizza**         | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#DOMINOS_PIZZA)
 | **DoorDash**               | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#DOOR_DASH)
-| **Drizly**                 | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#DRIZLY)
 | **Family Dollar**          | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#FAMILY_DOLLAR)
 | **Food 4 Less**            | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#FOOD_4_LESS)
 | **Food Lion**              | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#FOOD_LION)
