@@ -323,3 +323,8 @@
 - **BREAKING CHANGE** Provider setup callback now returns `ProviderResults` with credentials
 - Introduced foundational support for manual Gmail authentication workflow
 - Stability fixes and improvements
+
+## 1.5.6
+- Fixed an issue in `ImapClient` where calling `verify`, `messages`, `remoteMessages`, and `logout` with credentials that have matching username but mismatching password from the linked credentials causes an `AuthenticationException`.
+- Stability fixes and improvements
+

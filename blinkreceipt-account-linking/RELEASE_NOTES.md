@@ -292,3 +292,8 @@
 
 ## 1.4.4
 - Stability fixes and improvements
+
+## 1.4.5
+- **BREAKING CHANGE** Removed the following Retailers:
+  - DRIZLY
+- Stability fixes and improvements
