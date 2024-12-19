@@ -297,3 +297,7 @@
 - **BREAKING CHANGE** Removed the following Retailers:
   - DRIZLY
 - Stability fixes and improvements
+
+## 1.4.6
+- Stability fixes and improvements
+- Fixed `priceAfterCoupons` mapper logic to default to `null` if original derived value is INVALID

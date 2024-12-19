@@ -328,3 +328,6 @@
 - Fixed an issue in `ImapClient` where calling `verify`, `messages`, `remoteMessages`, and `logout` with credentials that have matching username but mismatching password from the linked credentials causes an `AuthenticationException`.
 - Stability fixes and improvements
 
+## 1.5.7
+- Stability fixes and improvements
+- Fixed `priceAfterCoupons` mapper logic to default to `null` if original derived value is INVALID
