@@ -631,3 +631,12 @@ Blink Receipt Recognizer
 - Improvements Taxes extraction
 - Improvements to Full Price extraction for various US retailers
 - Added support for Returns/ Refund receipts
+
+## 1.8.8
+- Added support for Returns/ Refund receipts
+- Fixed `priceAfterCoupons` mapper logic to default to `null` if original derived value is INVALID
+- Improving data extraction for German receipts, focusing on quantities, weights, and full price.
+- Improving basket extraction (QTY, weights) for German receipts.
+- Enhancing QTY extraction for various US retailers.
+- Improving tax extraction accuracy for various US retailers.
+- Enhancing full price extraction for US retailers and for German receipts.

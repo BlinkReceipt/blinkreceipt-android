@@ -133,3 +133,6 @@
 ## 1.3.2
 - Addressed an issue where the out of the box UI incorrectly displayed the "Total" field as found, even when the returned value was 0.0
 - Stability fixes and improvements
+
+## 1.3.3
+- Stability fixes and improvements
