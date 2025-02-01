@@ -8,3 +8,6 @@
 
 ## 1.0.2
 - Stability fixes and improvements
+
+## 1.0.3
+- Stability fixes and improvements

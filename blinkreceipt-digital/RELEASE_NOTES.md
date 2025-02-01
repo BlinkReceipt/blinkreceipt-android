@@ -331,3 +331,6 @@
 ## 1.5.7
 - Stability fixes and improvements
 - Fixed `priceAfterCoupons` mapper logic to default to `null` if original derived value is INVALID
+
+## 1.5.8
+- Stability fixes and improvements
