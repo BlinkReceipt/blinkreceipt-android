@@ -640,3 +640,11 @@ Blink Receipt Recognizer
 - Enhancing QTY extraction for various US retailers.
 - Improving tax extraction accuracy for various US retailers.
 - Enhancing full price extraction for US retailers and for German receipts.
+
+## 1.8.9
+- Fee and Bag Extraction in the US: Enhanced ability to extract fee and bag-related information from receipts in the United States, providing more accurate data extraction for these specific items
+- QTY and Product Description Extraction for ALDI, Sprouts, Jewel-Osco, and More! Better accuracy in extracting quantity (QTY) and product descriptions for popular retailers such as Alberstons retailers, ALDI, Sprouts, and more, resulting in more precise product data extraction.
+- QTY and Phone Number Extraction for German Retailers: Significant strides in extracting quantity (QTY) and phone numbers from receipts issued by German retailers
+- Date Extraction in the UK: Refined date extraction capabilities for receipts from the UK, ensuring more consistent and accurate extraction of purchase dates.
+- Total Extraction in the UK: Refined total extraction process for receipts in the UK, providing more reliable transaction data with higher accuracy in the total amounts.
+- Stability fixes and improvements

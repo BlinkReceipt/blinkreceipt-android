@@ -148,7 +148,7 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptRecognizer"
          ```diff title="build.gradle"
          dependencies {
-         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
          -  implementation("androidx.appcompat:appcompat:1.7.0")
          -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
          -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
@@ -158,12 +158,12 @@ here are the steps you need to take to migrate over to using our maven integrati
          -  implementation("com.squareup.okio:okio:3.9.0")
          -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
          -  implementation("com.google.android.gms:play-services-auth:21.2.0")
-         -  implementation("androidx.webkit:webkit:1.11.0")
-         -  implementation("androidx.work:work-runtime:2.9.1")
-         -  implementation("androidx.work:work-runtime-ktx:2.9.1")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+         -  implementation("androidx.webkit:webkit:1.12.1")
+         -  implementation("androidx.work:work-runtime:2.10.0")
+         -  implementation("androidx.work:work-runtime-ktx:2.10.0")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
          -  implementation("androidx.core:core-ktx:1.13.1")
 
          +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
@@ -176,10 +176,10 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptAccountLinking"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("androidx.core:core-ktx:1.13.1")
-        -  implementation("androidx.work:work-runtime:2.9.1")
-        -  implementation("androidx.work:work-runtime-ktx:2.9.1")
+        -  implementation("androidx.work:work-runtime:2.10.0")
+        -  implementation("androidx.work:work-runtime-ktx:2.10.0")
         -  implementation("androidx.appcompat:appcompat:1.2.0")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
@@ -188,10 +188,10 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
         -  implementation("com.squareup.okio:okio:3.9.0")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.2")
-        -  implementation("androidx.webkit:webkit:1.11.0")
+        -  implementation("androidx.webkit:webkit:1.12.1")
         -  implementation("androidx.datastore:datastore-preferences:1.1.1")
 
         +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7")
@@ -202,8 +202,8 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptDigital"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("androidx.work:work-runtime:2.9.1")
-        -  implementation("androidx.work:work-runtime-ktx:2.9.1")
+        -  implementation("androidx.work:work-runtime:2.10.0")
+        -  implementation("androidx.work:work-runtime-ktx:2.10.0")
         -  implementation( "com.microsoft.identity.client:msal:5.5.0" ) {
         -    exclude group: "com.microsoft.device.display"
         -}
@@ -217,12 +217,12 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("androidx.lifecycle:lifecycle-common-java8:2.8.3")
         -  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.5")
         -  implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3")
-        -  implementation("androidx.webkit:webkit:1.11.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+        -  implementation("androidx.webkit:webkit:1.12.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
         -  implementation("com.google.android.material:material:1.12.0")
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
@@ -260,20 +260,20 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptSurveys"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("androidx.core:core-ktx:1.13.1")
-        -  implementation("androidx.work:work-runtime:2.9.1")
-        -  implementation("androidx.work:work-runtime-ktx:2.9.1")
+        -  implementation("androidx.work:work-runtime:2.10.0")
+        -  implementation("androidx.work:work-runtime-ktx:2.10.0")
         -  implementation("com.squareup.okhttp3:okhttp:4.10.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
         -  implementation("com.squareup.okio:okio:3.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
         -  implementation("com.google.android.material:material:1.12.0")
         -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -311,11 +311,11 @@ here are the steps you need to take to migrate over to using our maven integrati
         dependencies {
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("androidx.core:core-ktx:1.13.1")
-        -  implementation("androidx.work:work-runtime:2.9.1")
-        -  implementation("androidx.work:work-runtime-ktx:2.9.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+        -  implementation("androidx.work:work-runtime:2.10.0")
+        -  implementation("androidx.work:work-runtime-ktx:2.10.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
@@ -332,10 +332,10 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptCameraUi"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("androidx.appcompat:appcompat:1.7.0")
-        -  implementation("com.google.android.material:material:1.11.0")
+        -  implementation("com.google.android.material:material:1.12.1")
         -  implementation("androidx.fragment:fragment:1.5.7")
         -  implementation("androidx.fragment:fragment-ktx:1.8.3")
         -  implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")

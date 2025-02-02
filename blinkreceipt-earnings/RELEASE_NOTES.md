@@ -259,3 +259,7 @@
 
 ## 1.5.9
 - Stability fixes and improvements
+
+## 1.6.0
+- Stability fixes and improvements
+
