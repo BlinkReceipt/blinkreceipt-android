@@ -35,7 +35,7 @@ buildscript {
             'msal'             : '5.4.0',
             'okio'             : '3.9.0',
             'versionMajor'     : 1,
-            'versionMinor'     : 8,
-            'versionPatch'     : 9
+            'versionMinor'     : 9,
+            'versionPatch'     : 0
     ]
 }
