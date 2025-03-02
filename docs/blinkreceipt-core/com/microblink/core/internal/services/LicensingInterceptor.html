@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>ProcessorUtils 1.6.0 API </title>
+    <title>LicensingInterceptor 1.6.1 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
-    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../dokka-javadoc-stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../jquery/jquery-ui.css" title="Style">
-    <script type="text/javascript" src="../../../jquery/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../../../jquery/jquery-migrate-3.4.0.min.js"></script>
-    <script type="text/javascript" src="../../../jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="../../../search.js"></script>
-    <script async type="text/javascript" src="../../../module-search-index.js"></script>
-    <script async type="text/javascript" src="../../../package-search-index.js"></script>
-    <script async type="text/javascript" src="../../../type-search-index.js"></script>
-    <script async type="text/javascript" src="../../../member-search-index.js"></script>
-    <script async type="text/javascript" src="../../../tag-search-index.js"></script>
+    <script type="text/javascript" src="../../../../../search.js"></script>
+    <script async type="text/javascript" src="../../../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../tag-search-index.js"></script>
 </head><body>
 <script type="text/javascript">
-var pathtoroot = "../../../";
+var pathtoroot = "../../../../../";
 </script>
 <noscript>
     <div>JavaScript is disabled on your browser.</div>
@@ -36,7 +36,7 @@ var pathtoroot = "../../../";
                     <!--   -->
                 </a>
                 <ul class="navList" title="Navigation">
-    <li><a href="../../../index.html">Overview</a></li>
+    <li><a href="../../../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -44,13 +44,13 @@ var pathtoroot = "../../../";
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
             <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 
 <ul class="navListSearch">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core</a></div>
-        <h2 title="Class ProcessorUtils" class="title">Class ProcessorUtils</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core.internal.services</a></div>
+        <h2 title="Class LicensingInterceptor" class="title">Class LicensingInterceptor</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,14 +108,17 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
+                            <code>okhttp3.Interceptor</code>
+                            
+                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>ProcessorUtils</a></span>
-
+public final class <span class="typeNameLabel"><a href=LicensingInterceptor.html>LicensingInterceptor</a></span>
+ implements Interceptor
                     </pre>
                     <div class="block"></div>
 
@@ -196,6 +199,12 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
                                         </tr>
 
                                         
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#LicensingInterceptor()">LicensingInterceptor</a></span>()</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
 
                                         </tbody>
                                     </table>
@@ -246,17 +255,9 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>static boolean</code>
+                                            <td class="colFirst"><code>Response</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ProcessorUtils.html#isProcessorCompatible()>isProcessorCompatible</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>static boolean</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=ProcessorUtils.html#isArm7Processor()>isArm7Processor</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=LicensingInterceptor.html#intercept(okhttp3.Interceptor.Chain)>intercept</a>(Interceptor.Chain chain) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -292,6 +293,16 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
+                                <a name="LicensingInterceptor()"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>LicensingInterceptor</h4>
+                                        <pre>LicensingInterceptor()</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
                             </li>
                         </ul>
                     </section>
@@ -305,38 +316,15 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="isProcessorCompatible()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>isProcessorCompatible</h4>
-                                        <pre class="methodSignature"> static boolean <a href=ProcessorUtils.html#isProcessorCompatible()>isProcessorCompatible</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="isArm7Processor()">
+                                <a id="intercept(okhttp3.Interceptor.Chain)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>isArm7Processor</h4>
-                                        <pre class="methodSignature"> static boolean <a href=ProcessorUtils.html#isArm7Processor()>isArm7Processor</a>()</pre>
+                                        <h4>intercept</h4>
+                                        <pre class="methodSignature"> Response <a href=LicensingInterceptor.html#intercept(okhttp3.Interceptor.Chain)>intercept</a>(Interceptor.Chain chain)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -372,7 +360,7 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
                 <!--   -->
             </a>
             <ul class="navList" title="Navigation">
-    <li><a href="../../../index.html">Overview</a></li>
+    <li><a href="../../../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -380,8 +368,8 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
         <a id="skip.navbar.bottom">
@@ -389,7 +377,7 @@ public final class <span class="typeNameLabel"><a href=ProcessorUtils.html>Proce
         </a>
         <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--

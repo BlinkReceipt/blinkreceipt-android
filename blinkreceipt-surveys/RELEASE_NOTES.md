@@ -224,3 +224,6 @@
 
 ## 1.4.8
 - Stability fixes and improvements
+
+## 1.4.9
+- Stability fixes and improvements

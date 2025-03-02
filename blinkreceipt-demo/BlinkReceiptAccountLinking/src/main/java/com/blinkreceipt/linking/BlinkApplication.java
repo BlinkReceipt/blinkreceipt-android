@@ -10,7 +10,7 @@ import com.microblink.linking.BlinkReceiptLinkingSdk;
 
 public class BlinkApplication extends Application {
 
-    private final String TAG = "AccountLinkingApplication";
+    private final String TAG = "AccountLinking";
 
     @Override
     public void onCreate() {

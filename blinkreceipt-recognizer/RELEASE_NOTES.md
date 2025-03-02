@@ -648,3 +648,10 @@ Blink Receipt Recognizer
 - Date Extraction in the UK: Refined date extraction capabilities for receipts from the UK, ensuring more consistent and accurate extraction of purchase dates.
 - Total Extraction in the UK: Refined total extraction process for receipts in the UK, providing more reliable transaction data with higher accuracy in the total amounts.
 - Stability fixes and improvements
+
+## 1.9.0
+- Remove support for armeabi-v7a
+- Remove the ability to disable networking within the SDK
+- US Market: Improved extraction of product descriptions, part numbers, and basket details for better accuracy across various retailers.
+- Germany Market: Enhanced capture of product information, including quantity and full price details for German receipts.
+- Stability fixes and improvements
