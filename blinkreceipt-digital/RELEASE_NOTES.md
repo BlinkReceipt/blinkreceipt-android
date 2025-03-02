@@ -334,3 +334,6 @@
 
 ## 1.5.8
 - Stability fixes and improvements
+
+## 1.5.9
+- Stability fixes and improvements

@@ -289,3 +289,6 @@
 
 ## 1.6.0
 - Stability fixes and improvements
+
+## 1.6.1
+- Stability fixes and improvements

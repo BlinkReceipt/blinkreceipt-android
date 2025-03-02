@@ -11,3 +11,7 @@
 
 ## 1.0.3
 - Stability fixes and improvements
+
+## 1.0.4
+- Remove support for armeabi-v7a
+- Stability fixes and improvements
