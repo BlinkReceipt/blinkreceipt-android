@@ -45,7 +45,6 @@
 | **ShopRite**                      | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#SHOPRITE)
 | **Sprouts Farmers Market**                      | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#SPROUTS)
 | **Starbucks**                      | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#STARBUCKS)
-| **Taco Bell**                      | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#TACO_BELL)
 | **Target**                      | [US](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#TARGET)
 | **Temu**                      | [UK](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#TEMU)
 | **Tesco Stores**                      | [UK](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html#TESTCO)
