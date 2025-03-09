@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blinkreceipt.barcode.databinding.ActivityCameraBinding
-import com.microblink.barcode.DefaultDecoderFactory
 import com.microblink.barcode.MetadataCallbacks
 import com.microblink.barcode.RecognizerBundle
 import com.microblink.barcode.RecognizerClient
@@ -40,12 +39,16 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
         }
 
         callbacks.recognizerCallback {
-            client.lookup(it.text()).addOnSuccessListener { product ->
-                Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener { e ->
-                binding.recognizer.resumeScanning(true)
+            it.barcodes().first()?.let { code ->
+                code.text?.let { text ->
+                    client.lookup(text).addOnSuccessListener { product ->
+                        Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG).show()
+                    }.addOnFailureListener { e ->
+                        binding.recognizer.resumeScanning(true)
 
-                Log.e(TAG, "failed in onCreate", e );
+                        Log.e(TAG, "failed in onCreate", e );
+                    }
+                }
             }
         }
 
@@ -61,8 +64,6 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
             }
 
             it.cameraEventsListener = this@CameraActivity
-
-            it.decoder(DefaultDecoderFactory())
 
             it.recognizerBundle(RecognizerBundle())
 

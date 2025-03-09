@@ -1,55 +1,64 @@
 plugins {
-  id 'com.android.application'
-  id 'kotlin-android'
+    id 'com.android.application'
+    id 'kotlin-android'
 }
 
 android {
-  compileSdkVersion versions.compileSdk
-  buildToolsVersion versions.buildTools
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
-  defaultConfig {
-    applicationId "com.blinkreceipt.survey"
-    minSdkVersion versions.minSdk
-    targetSdkVersion versions.targetSdk
-    versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
-    versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+    defaultConfig {
+        applicationId "com.blinkreceipt.survey"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
+        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
 
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-  }
-
-  signingConfigs {
-    release {
-      storeFile file("../blink-receipt-demos.jsk")
-      storePassword "${keys.storePassword}"
-      keyAlias "${keys.keyAlias}"
-      keyPassword "${keys.keyPassword}"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-  }
 
-  buildTypes {
-    release {
-      minifyEnabled true
-      shrinkResources true
-      signingConfig signingConfigs.release
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    signingConfigs {
+        release {
+            storeFile file("../blink-receipt-demos.jsk")
+            storePassword "${keys.storePassword}"
+            keyAlias "${keys.keyAlias}"
+            keyPassword "${keys.keyPassword}"
+        }
     }
-  }
 
-  buildFeatures {
-    viewBinding true
-  }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+    buildFeatures {
+        viewBinding true
+    }
 
-  kotlinOptions {
-    jvmTarget = '1.8'
-  }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
     packagingOptions {
         resources {
-            excludes += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md', 'META-INF/ASL2.0', 'META-INF/AL2.0', 'META-INF/LGPL2.1', 'META-INF/*.kotlin_module', 'META-INF/licenses/ASM']
+            excludes += [
+                    'META-INF/NOTICE.md',
+                    'META-INF/LICENSE.md',
+                    'META-INF/ASL2.0',
+                    'META-INF/AL2.0',
+                    'META-INF/LGPL2.1',
+                    'META-INF/licenses/ASM',
+                    'META-INF/DEPENDENCIES',
+            ]
         }
     }
 
@@ -58,17 +67,17 @@ android {
 }
 
 dependencies {
-  implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
-  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
-  implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
-  implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-  implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
+    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx.lifecycle}"
+    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
+    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
+    implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
 
-  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
-  implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
 
-  testImplementation "junit:junit:${versions.junit}"
+    testImplementation "junit:junit:${versions.junit}"
 
-  androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
-  androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }
