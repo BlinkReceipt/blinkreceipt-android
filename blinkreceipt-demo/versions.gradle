@@ -36,6 +36,6 @@ buildscript {
             'okio'             : '3.9.0',
             'versionMajor'     : 1,
             'versionMinor'     : 9,
-            'versionPatch'     : 0
+            'versionPatch'     : 1
     ]
 }
