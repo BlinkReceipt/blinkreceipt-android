@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>RecognizerView 1.6.2-alpha01 API </title>
+    <title>RecognizerView 1.6.2 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -324,15 +324,15 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onResume(androidx.lifecycle.LifecycleOwner)>onResume</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#decoder(com.microblink.barcode.DecoderFactory)>decoder</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=DecoderFactory.html>DecoderFactory</a> factory) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i8" class="altColor">
-                                            <td class="colFirst"><code>final void</code>
+                                            <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resume()>resume</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onResume(androidx.lifecycle.LifecycleOwner)>onResume</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -340,7 +340,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>final void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resumeScanning(boolean)>resumeScanning</a>(boolean resetState) </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resume()>resume</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -348,12 +348,20 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>final void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#pauseScanning()>pauseScanning</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resumeScanning(boolean)>resumeScanning</a>(boolean resetState) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code>final void</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=RecognizerView.html#pauseScanning()>pauseScanning</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onPause(androidx.lifecycle.LifecycleOwner)>onPause</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
@@ -361,7 +369,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>final void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#pause()>pause</a>() </code>
@@ -369,7 +377,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i13" class="rowColor">
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#onDestroy(androidx.lifecycle.LifecycleOwner)>onDestroy</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html>LifecycleOwner</a> owner) </code>
@@ -377,7 +385,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i14" class="altColor">
+                                        <tr id="i15" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#destroy()>destroy</a>() </code>
@@ -385,7 +393,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i15" class="rowColor">
+                                        <tr id="i16" class="altColor">
                                             <td class="colFirst"><code>final void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#resetRecognitionState()>resetRecognitionState</a>() </code>
@@ -393,7 +401,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i16" class="altColor">
+                                        <tr id="i17" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#isScanningPaused()>isScanningPaused</a>() </code>
@@ -401,7 +409,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i17" class="rowColor">
+                                        <tr id="i18" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#scanningRegion(com.microblink.barcode.Rectangle,boolean)>scanningRegion</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=Rectangle.html>Rectangle</a> scanningRegion, boolean rotateRegionWithDevice) </code>
@@ -409,7 +417,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i18" class="altColor">
+                                        <tr id="i19" class="rowColor">
                                             <td class="colFirst"><code>boolean</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#shouldRotateScanningRegion()>shouldRotateScanningRegion</a>() </code>
@@ -417,7 +425,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i19" class="rowColor">
+                                        <tr id="i20" class="altColor">
                                             <td class="colFirst"><code><a href=Rectangle.html>Rectangle</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#scanningRegion()>scanningRegion</a>() </code>
@@ -425,7 +433,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i20" class="altColor">
+                                        <tr id="i21" class="rowColor">
                                             <td class="colFirst"><code><a href=RecognizerBundle.html>RecognizerBundle</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#recognizerBundle()>recognizerBundle</a>() </code>
@@ -433,7 +441,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i21" class="rowColor">
+                                        <tr id="i22" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#recognizerBundle(com.microblink.barcode.RecognizerBundle)>recognizerBundle</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=RecognizerBundle.html>RecognizerBundle</a> recognizerBundle) </code>
@@ -441,7 +449,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i22" class="altColor">
+                                        <tr id="i23" class="rowColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#scanResultListener(com.microblink.barcode.ScanResultListener)>scanResultListener</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=ScanResultListener.html>ScanResultListener</a> scanResultListener) </code>
@@ -449,7 +457,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i23" class="rowColor">
+                                        <tr id="i24" class="altColor">
                                             <td class="colFirst"><code>void</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#metadataCallbacks(com.microblink.barcode.MetadataCallbacks)>metadataCallbacks</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=MetadataCallbacks.html>MetadataCallbacks</a> metadataCallbacks) </code>
@@ -457,7 +465,7 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i24" class="altColor">
+                                        <tr id="i25" class="rowColor">
                                             <td class="colFirst"><code><a href=ScanResultListener.html>ScanResultListener</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=RecognizerView.html#scanResultListener()>scanResultListener</a>() </code>
@@ -682,6 +690,29 @@ extends <a href=CameraViewGroup.html>CameraViewGroup</a> implements <a href=http
                                     <li class="blockList">
                                         <h4>stop</h4>
                                         <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() final void <a href=RecognizerView.html#stop()>stop</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="decoder(com.microblink.barcode.DecoderFactory)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>decoder</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html>MainThread</a>() void <a href=RecognizerView.html#decoder(com.microblink.barcode.DecoderFactory)>decoder</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=DecoderFactory.html>DecoderFactory</a> factory)</pre>
                                         <div class="block"></div>
 
                                         <dl>

@@ -311,15 +311,10 @@ Even though there are different ways to initialize the sdk, the recommended way 
 
 `AndroidManifest.xml`
 ```xml
- <provider
-        android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
-        android:exported="false"
-        tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
-</provider>
+<provider
+  android:name="com.microblink.BlinkRecognizerProvider"
+  android:authorities="${applicationId}.BlinkRecognizerProvider"
+  tools:node="remove" />
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -333,15 +328,10 @@ public void onCreate() {
 ```
 
 ```xml
- <provider
-        android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
-        android:exported="false"
-        tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
-</provider>
+<provider
+        android:name="com.microblink.BlinkRecognizerProvider"
+        android:authorities="${applicationId}.BlinkRecognizerProvider"
+        tools:node="remove" />
 ```
 
 ```java

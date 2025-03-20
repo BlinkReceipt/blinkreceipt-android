@@ -14,7 +14,6 @@ $dokka.location:com.microblink.internal.services.google/GooglePlacesRepository.L
 $dokka.location:com.microblink.internal.services.lookup/StoreLookupRepository.Listener///PointingToDeclaration/com/microblink/internal/services/lookup/StoreLookupRepository.Listener.html
 $dokka.location:com.microblink.internal.services.merchants/MerchantLookupProcess.Listener///PointingToDeclaration/com/microblink/internal/services/merchants/MerchantLookupProcess.Listener.html
 $dokka.location:com.microblink.internal.services.store/StoreLookUpService.Listener///PointingToDeclaration/com/microblink/internal/services/store/StoreLookUpService.Listener.html
-$dokka.location:com.microblink.internal/BarcodeDetector.Companion///PointingToDeclaration/com/microblink/internal/BarcodeDetector.Companion.html
 $dokka.location:com.microblink/EdgeDetectionConfiguration.Builder///PointingToDeclaration/com/microblink/EdgeDetectionConfiguration.Builder.html
 $dokka.location:com.microblink/FrameCharacteristics.Builder///PointingToDeclaration/com/microblink/FrameCharacteristics.Builder.html
 $dokka.location:com.microblink/FrameCharacteristics.FrameExtension///PointingToDeclaration/com/microblink/FrameCharacteristics.FrameExtension.html

@@ -3,11 +3,11 @@ $dokka.linkExtension:html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
 $dokka.location:com.microblink.core.internal/WebCookiesManager.Compat///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Compat.html
 $dokka.location:com.microblink.core.internal/WebCookiesManager.Cookie///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Cookie.html
-$dokka.location:com.microblink.core/Barcode.Builder///PointingToDeclaration/com/microblink/core/Barcode.Builder.html
 $dokka.location:com.microblink.core/DeviceStateManager.Factory///PointingToDeclaration/com/microblink/core/DeviceStateManager.Factory.html
 $dokka.location:com.microblink.core/HttpHeaders.Companion///PointingToDeclaration/com/microblink/core/HttpHeaders.Companion.html
 $dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
 $dokka.location:com.microblink.core/Product.Builder///PointingToDeclaration/com/microblink/core/Product.Builder.html
+$dokka.location:com.microblink.core/QualifiedProduct.Builder///PointingToDeclaration/com/microblink/core/QualifiedProduct.Builder.html
 $dokka.location:com.microblink.core/ScanResults.Builder///PointingToDeclaration/com/microblink/core/ScanResults.Builder.html
 $dokka.location:com.microblink.core/Shipment.Builder///PointingToDeclaration/com/microblink/core/Shipment.Builder.html
 $dokka.location:com.microblink.core/Survey.Builder///PointingToDeclaration/com/microblink/core/Survey.Builder.html
