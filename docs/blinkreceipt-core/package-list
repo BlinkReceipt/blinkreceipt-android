@@ -7,6 +7,7 @@ $dokka.location:com.microblink.core/DeviceStateManager.Factory///PointingToDecla
 $dokka.location:com.microblink.core/HttpHeaders.Companion///PointingToDeclaration/com/microblink/core/HttpHeaders.Companion.html
 $dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
 $dokka.location:com.microblink.core/Product.Builder///PointingToDeclaration/com/microblink/core/Product.Builder.html
+$dokka.location:com.microblink.core/QualifiedProduct.Builder///PointingToDeclaration/com/microblink/core/QualifiedProduct.Builder.html
 $dokka.location:com.microblink.core/ScanResults.Builder///PointingToDeclaration/com/microblink/core/ScanResults.Builder.html
 $dokka.location:com.microblink.core/Shipment.Builder///PointingToDeclaration/com/microblink/core/Shipment.Builder.html
 $dokka.location:com.microblink.core/Survey.Builder///PointingToDeclaration/com/microblink/core/Survey.Builder.html

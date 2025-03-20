@@ -308,3 +308,6 @@
 ## 1.4.8
 - Stability fixes and improvements
 - Fixed SDK Grab Orders race condition issue where sometimes, success callback pre-emptively emits `remaining = 0` value at the beginning or middle of the sequence, rather than at the end.
+
+## 1.4.9
+- Stability fixes and improvements

@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blinkreceipt.barcode.databinding.ActivityCameraBinding
-import com.microblink.barcode.DefaultDecoderFactory
 import com.microblink.barcode.MetadataCallbacks
 import com.microblink.barcode.RecognizerBundle
 import com.microblink.barcode.RecognizerClient
@@ -41,11 +40,12 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
         callbacks.recognizerCallback {
             client.lookup(it.text()).addOnSuccessListener { product ->
-                Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG)
+                    .show()
             }.addOnFailureListener { e ->
                 binding.recognizer.resumeScanning(true)
 
-                Log.e(TAG, "failed in onCreate", e );
+                Log.e(TAG, "failed in onCreate", e);
             }
         }
 
@@ -61,8 +61,6 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
             }
 
             it.cameraEventsListener = this@CameraActivity
-
-            it.decoder(DefaultDecoderFactory())
 
             it.recognizerBundle(RecognizerBundle())
 
@@ -123,14 +121,16 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
 
     override fun onCameraPreviewStarted() {
         if (binding.recognizer.cameraViewState != BaseCameraView.CameraViewState.RESUMED) {
-            Log.d(TAG,  "Camera preview started callback received after view was paused")
+            Log.d(TAG, "Camera preview started callback received after view was paused")
 
             return
         }
 
-        binding.recognizer.setMeteringAreas(arrayOf(
+        binding.recognizer.setMeteringAreas(
+            arrayOf(
                 RectF(.05f, .10f, .95f, .90f)
-        ), true)
+            ), true
+        )
     }
 
     override fun onCameraPreviewStopped() {
