@@ -655,3 +655,10 @@ Blink Receipt Recognizer
 - US Market: Improved extraction of product descriptions, part numbers, and basket details for better accuracy across various retailers.
 - Germany Market: Enhanced capture of product information, including quantity and full price details for German receipts.
 - Stability fixes and improvements
+
+## 1.9.1
+- Fuel Products: Better accuracy in fuel receipt data, including pricing and transaction details.
+- Product Descriptions: Improved accuracy for Hannaford, Meijer, Kroger, and other retailers.
+- Merchant Detection: Enhanced recognition of merchants in the US and Germany.
+- Receipt Time Capture: More precise extraction of receipt timestamps.
+- Stability fixes and improvements
