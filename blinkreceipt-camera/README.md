@@ -10,6 +10,6 @@ ARM64 is the new processor architecture that most new devices use. ARM64 process
 
 ## <a name=requirements></a> Requirements
 - AndroidX
-- Min SDK 21+
-- Compile SDK: 29+
-- Java 8+
+- Min SDK 21
+- Compile SDK: 35
+- Java 11
