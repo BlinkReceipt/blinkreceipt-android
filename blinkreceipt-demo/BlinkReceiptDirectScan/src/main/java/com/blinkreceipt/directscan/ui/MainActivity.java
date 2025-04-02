@@ -1,22 +1,23 @@
 package com.blinkreceipt.directscan.ui;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
-import android.content.ClipData;
-import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
 import android.graphics.Matrix;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.blinkreceipt.directscan.R;
 import com.blinkreceipt.directscan.ui.recyclerview.ImageAdapter;
@@ -27,12 +28,9 @@ import com.microblink.RecognizerResult;
 import com.microblink.ScanOptions;
 import com.microblink.core.ScanResults;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final int IMAGE_REQUEST_CODE = 100;
 
     private RecyclerView imageRecyclerview;
 
@@ -63,10 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
         initializeClient();
 
+        ActivityResultLauncher<String> imageRequest = registerForActivityResult(
+                new ActivityResultContracts.GetMultipleContents(),
+                (imageUris) -> {
+                    if (!imageUris.isEmpty()) {
+                        addImagesToAdapter(imageUris);
+                    }
+                }
+        );
         selectImageBtn.setOnClickListener(v -> {
-            Intent intent = createSelectImageIntent();
-
-            startActivityForResult(intent, IMAGE_REQUEST_CODE);
+            imageRequest.launch("image/*");
         });
 
         rotateImagesLeftBtn.setOnClickListener(v -> rotateBitmapsLeft());
@@ -130,19 +134,6 @@ public class MainActivity extends AppCompatActivity {
         scanImageBtn.setOnClickListener(null);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            List<Uri> imageUris = parseUrisFromIntent(data);
-
-            if (!imageUris.isEmpty()) {
-                addImagesToAdapter(imageUris);
-            }
-        }
-    }
-
     private void addImagesToAdapter(@NonNull List<Uri> uris) {
         Bitmap[] bitmaps = new Bitmap[uris.size()];
 
@@ -163,37 +154,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Nullable
+    @SuppressWarnings("deprecation")
     private Bitmap loadBitmapFromUri(@NonNull Uri uri) {
         try {
-            return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), uri);
+                return ImageDecoder.decodeBitmap(source);
+            } else {
+                return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+            }
         } catch (Exception e) {
             Log.e(TAG, "failure in loadBitmapFromUri", e);
         }
 
         return null;
-    }
-
-    @NonNull
-    private List<Uri> parseUrisFromIntent(Intent data) {
-        ClipData clipData = data != null ? data.getClipData() : null;
-        Uri uri = data != null ? data.getData() : null;
-        List<Uri> uris = new ArrayList<>();
-
-        if (clipData != null) {
-            for (int i = 0; i < clipData.getItemCount(); i++) {
-                ClipData.Item item = clipData.getItemAt(i);
-
-                Uri itemUri = item != null ? item.getUri() : null;
-
-                if (itemUri != null) {
-                    uris.add(itemUri);
-                }
-            }
-        } else if (uri != null) {
-            uris.add(uri);
-        }
-
-        return uris;
     }
 
     private boolean areBitmapsLoaded() {
@@ -242,16 +216,4 @@ public class MainActivity extends AppCompatActivity {
                 bitmap.getHeight(), rotationMatrix, true);
     }
 
-    @NonNull
-    private Intent createSelectImageIntent() {
-        Intent intent = new Intent();
-
-        intent.setType("image/*");
-
-        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-
-        return Intent.createChooser(intent, getString(R.string.select_image));
-    }
 }
