@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AccountLinkingClient client;
 
-    private final String TAG = "AccountLinkingMainActivity";
+    private final String TAG = "AccountLinking";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
