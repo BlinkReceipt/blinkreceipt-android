@@ -662,3 +662,10 @@ Blink Receipt Recognizer
 - Merchant Detection: Enhanced recognition of merchants in the US and Germany.
 - Receipt Time Capture: More precise extraction of receipt timestamps.
 - Stability fixes and improvements
+
+## 1.9.2
+- Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
+  - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
+  - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
+- Receipt Image Quality
+  - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
