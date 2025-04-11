@@ -13,7 +13,6 @@ Our features include:
 ## Requirements
 
 - AndroidX
-- Min SDK 21
-- Compile SDK: 35
-- Target SDK: 34
-- Java 11
+- Min SDK 21+
+- Compile SDK: 34+
+- Java 8+
