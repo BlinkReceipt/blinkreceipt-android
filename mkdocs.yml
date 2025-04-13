@@ -42,9 +42,6 @@ nav:
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
-        - Direct API:
-            - Getting Started: receipts/image/getting_started_image.md
-            - How to use: receipts/image/how_to_use_image.md
         - PDF Recognition:
             - Getting Started: receipts/pdf/getting_started_pdf.md
             - Configuring the Client:  receipts/pdf/configuring_client_pdf.md
