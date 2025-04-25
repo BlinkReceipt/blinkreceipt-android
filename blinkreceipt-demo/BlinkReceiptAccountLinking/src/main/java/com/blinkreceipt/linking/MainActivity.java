@@ -1,12 +1,11 @@
 package com.blinkreceipt.linking;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
 import com.microblink.linking.Account;
@@ -37,67 +36,50 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+        bindViews();
 
         client = new AccountLinkingClient(this);
 
         client.dayCutoff(2_000);
     }
 
+    private void bindViews() {
+        binding.accounts.setOnClickListener(this::onAccounts);
+        binding.link.setOnClickListener(this::onLink);
+        binding.unlink.setOnClickListener(this::onUnlinkAccount);
+        binding.resetRetailerHistory.setOnClickListener(this::onResetRetailerHistory);
+        binding.orders.setOnClickListener(this::onOrders);
+    }
+
     public void onLink(View view) {
         binding.webContainer.removeAllViews();
 
-        client.link(ACCOUNT)
-                .addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                        "Account linked " + success, Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(this, e -> Toast.makeText(getApplicationContext(),
-                        "Account linked " + e, Toast.LENGTH_SHORT).show());
-    }
+        client.link(
+                ACCOUNT, account -> {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Account linked " + account, Toast.LENGTH_SHORT
+                    ).show();
 
-    public void onVerifyAccount(View view) {
-        binding.webContainer.removeAllViews();
+                    return Unit.INSTANCE;
+                }, e -> {
+                    if (e != null) {
+                        if (e.view() != null) {
+                            binding.webContainer.removeAllViews();
 
-        client.verify(ACCOUNT.retailerId(), (verification, s) -> {
-            Log.d(TAG, "verification " + verification);
+                            binding.webContainer.addView(e.view());
+                        }
+                    }
 
-            Toast.makeText(getApplicationContext(),
-                    "verification " + verification, Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "verification exception" + e,
+                            Toast.LENGTH_LONG
+                    ).show();
 
-            return Unit.INSTANCE;
-        }, e -> {
-            if (e != null) {
-                if (e.view() != null) {
-                    binding.webContainer.removeAllViews();
-
-                    binding.webContainer.addView(e.view());
+                    return Unit.INSTANCE;
                 }
-            }
-
-            Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
-
-            return Unit.INSTANCE;
-        }, webView -> {
-            if (webView != null) {
-                binding.webContainer.removeAllViews();
-
-                binding.webContainer.addView(webView);
-            }
-
-            Log.d(TAG, "preview debug only available in development mode.");
-
-            return Unit.INSTANCE;
-        });
-    }
-
-    public void onResetHistory(View view) {
-        client.resetHistory()
-                .addOnSuccessListener(this, success -> Toast.makeText(
-                        getApplicationContext(),
-                        "reset history: " + success, Toast.LENGTH_SHORT
-                ).show())
-                .addOnFailureListener(this, e -> Toast.makeText(
-                        getApplicationContext(),
-                        "reset history exception: " + e, Toast.LENGTH_LONG
-                ).show());
+        );
     }
 
     public void onResetRetailerHistory(View view) {
@@ -114,7 +96,9 @@ public class MainActivity extends AppCompatActivity {
     public void onOrders(View view) {
         binding.webContainer.removeAllViews();
 
-        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining, uuid) -> {
+        client.orders(
+                ACCOUNT.retailerId(),
+                (retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
                             "retailer id " + retailerId + " remaining "
@@ -134,24 +118,8 @@ public class MainActivity extends AppCompatActivity {
                             "orders exception" + e, Toast.LENGTH_LONG).show();
 
                     return Unit.INSTANCE;
-                }, webView -> {
-                    if (webView != null) {
-                        binding.webContainer.removeAllViews();
-
-                        binding.webContainer.addView(webView);
-                    }
-
-                    return Unit.INSTANCE;
                 }
         );
-    }
-
-    public void onUnlinkAccounts(View view) {
-        client.unlink()
-                .addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                        "Unlink Accounts " + success, Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(this, e -> Toast.makeText(getApplicationContext(),
-                        "Unlink Accounts " + e, Toast.LENGTH_SHORT).show());
     }
 
     public void onUnlinkAccount(View view) {
