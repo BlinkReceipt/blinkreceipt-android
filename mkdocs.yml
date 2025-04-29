@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.9.3'
-    next_release: '1.9.4'
+    release: '1.9.4'
+    next_release: '1.9.5'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -20,6 +20,7 @@ theme:
 
 plugins:
   - search
+  - macros
 
 nav:
     - Overview: index.md
@@ -29,7 +30,6 @@ nav:
         - How to use: how_to_use_alp.md
         - Running in the background: alp_background.md
         - Supported Retailers: supported_retailers.md
-        - Fetch Orders from All Retailers: fetch_orders_from_all_retailers.md
         - Error codes: alp_error_codes.md
     - Digital Receipts:
         - Tasks: digital_tasks.md
@@ -38,6 +38,8 @@ nav:
         - Outlook: digital_outlook.md
         - Gmail: digital_gmail.md
         - Requirements: digital_requirements.md
+    - Background Refresh: background_refresh.md
+    - Cookie Storage and Synchronization: cookie_storage_and_synchronization.md
     - Maven migration guide: maven_migration.md
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md

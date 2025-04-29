@@ -9,15 +9,11 @@ It supports parsing digital and in-store orders from a growing list of online re
 
 === "Kotlin"
     ```kotlin
-     repositories {
-       maven { url = uri("https://maven.microblink.com") }
-     }
+      mavenCentral()
     ```
 === "Groovy"
     ```groovy
-     repositories {
-       maven { url "https://maven.microblink.com" }
-     }
+      mavenCentral()
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.
@@ -25,7 +21,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
     dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
 
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
     }
@@ -33,7 +29,7 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Groovy"
     ```groovy
     dependencies {
-    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7")
+    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}")
 
     implementation "com.microblink.blinkreceipt:blinkreceipt-account-linking"
     }

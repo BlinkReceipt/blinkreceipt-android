@@ -36,7 +36,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
         client.dayCutoff = 14
 
         val suspendResult = suspendCoroutine { continuation ->
-            client.orders(AMAZON_BETA, failure = { retailerId, exception ->
+            client.orders(AMAZON, failure = { retailerId, exception ->
                 //log exception
                 Timber.e(exception)
                 if(exception.code == VERIFICATION_NEEDED) {
@@ -77,7 +77,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
         AccountLinkingClient client = new AccountLinkingClient(this.getApplicationContext());
         //configure the client
         client.dayCutoff(14);
-        client.orders(AMAZON_BETA, (Integer retailerId, ScanResults results, Integer remaining, String uuid) -> {
+        client.orders(AMAZON, (Integer retailerId, ScanResults results, Integer remaining, String uuid) -> {
             if (results != null) {
                 //store results in database, API etc.
             }
@@ -106,7 +106,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
 
 After we're done with the Worker implementation, we need to enqueue its execution. WorkManager enables you to enqueue either [one-time](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_one-time_work) or [periodic](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_periodic_work) work.
 Depending on your specific needs, you can enqueue the execution at a specific point in your users journey.
-Preferably, you should enqueue background work after you've successfully verified an account or retrieved orders at least once in the foreground, as additional verification may be required from the end user.
+Preferably, you should enqueue background work after you've successfully linked an account or retrieved orders at least once in the foreground, as additional verification may be required from the end user.
 Here's an example on how to enqueue periodic work:
 
 === "Kotlin"
