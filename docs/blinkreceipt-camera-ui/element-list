@@ -1,6 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.camera.ui/CameraCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraCharacteristics.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraCharacteristics.Companion///PointingToDeclaration/com/microblink/camera/ui/CameraCharacteristics.Companion.html
 $dokka.location:com.microblink.camera.ui/CameraRecognizerFragment.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerFragment.Builder.html
 $dokka.location:com.microblink.camera.ui/CameraRecognizerOptions.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerOptions.Builder.html
 $dokka.location:com.microblink.camera.ui/CameraRecognizerResults.Cancelled///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerResults.Cancelled.html
