@@ -9,15 +9,11 @@ It supports parsing digital and in-store orders from a growing list of online re
 
 === "Kotlin"
     ```kotlin
-     repositories {
-       maven { url = uri("https://maven.microblink.com") }
-     }
+      mavenCentral()
     ```
 === "Groovy"
     ```groovy
-     repositories {
-       maven { url "https://maven.microblink.com" }
-     }
+      mavenCentral()
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.

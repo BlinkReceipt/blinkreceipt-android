@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"com.microblink.messaging","url":"com/microblink/messaging/package-summary.html"}, {"l":"com.microblink.messaging.internal","url":"com/microblink/messaging/internal/package-summary.html"}, {"l":"All packages","url":"index.html"}]
