@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText(
                             getApplicationContext(),
-                            "verification exception" + e,
+                            "linking exception" + e,
                             Toast.LENGTH_LONG
                     ).show();
 
