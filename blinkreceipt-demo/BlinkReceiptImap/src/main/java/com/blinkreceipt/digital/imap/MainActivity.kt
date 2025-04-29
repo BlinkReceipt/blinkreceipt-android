@@ -1,18 +1,32 @@
 package com.blinkreceipt.digital.imap
 
+import android.Manifest
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
 import com.blinkreceipt.digital.imap.databinding.CredentialsViewBinding
 import com.google.android.gms.tasks.Tasks
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.microblink.core.InitializeCallback
 import com.microblink.core.ScanResults
-import com.microblink.digital.*
+import com.microblink.digital.Credentials
+import com.microblink.digital.ImapClient
+import com.microblink.digital.JobResults
+import com.microblink.digital.JobResultsCallback
+import com.microblink.digital.MessagesCallback
+import com.microblink.digital.Provider
+import com.microblink.digital.ProviderFragment
+import com.microblink.digital.ProviderResults
+import com.microblink.digital.ProviderSetupFragmentFactory
+import com.microblink.digital.ProviderSetupResults
 import com.microblink.digital.internal.account
 
 class MainActivity : AppCompatActivity() {
@@ -100,6 +114,8 @@ class MainActivity : AppCompatActivity() {
             countryCode(COUNTRY_CODE)
             // sendersToSearch( listOf( Merchant( "Apple.com", "no_reply@email.apple.com")))
         }
+
+        requestNotificationPermission()
     }
 
     override fun onDestroy() {
@@ -473,6 +489,54 @@ class MainActivity : AppCompatActivity() {
 
     private fun accountNotLinkedAlert(){
         Toast.makeText(applicationContext, "Please login to account", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == 42) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                onNotificationPermissionGranted()
+            } else {
+                onNotificationPermissionDenied()
+            }
+        }
+    }
+
+    private fun requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    42
+                )
+            } else {
+                onNotificationPermissionGranted()
+            }
+        } else {
+            onNotificationPermissionGranted()
+        }
+    }
+
+    private fun onNotificationPermissionGranted() {
+        Toast.makeText(
+            applicationContext,
+            "Background Refresh enabled", Toast.LENGTH_LONG
+        ).show()
+    }
+
+    private fun onNotificationPermissionDenied() {
+        Toast.makeText(
+            applicationContext,
+            "Warning: Notification permission needed for Background Refresh", Toast.LENGTH_LONG
+        ).show()
     }
 
 }
