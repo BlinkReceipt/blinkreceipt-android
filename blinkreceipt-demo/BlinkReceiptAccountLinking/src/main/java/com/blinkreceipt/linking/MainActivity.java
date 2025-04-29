@@ -1,11 +1,17 @@
 package com.blinkreceipt.linking;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
 import com.microblink.linking.Account;
@@ -41,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         client = new AccountLinkingClient(this);
 
         client.dayCutoff(2_000);
+
+        requestNotificationPermission();
     }
 
     private void bindViews() {
@@ -142,6 +150,52 @@ public class MainActivity extends AppCompatActivity {
         client.close();
 
         super.onDestroy();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 42) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                onNotificationPermissionGranted();
+            } else {
+                onNotificationPermissionDenied();
+            }
+        }
+    }
+
+    private void requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{ Manifest.permission.POST_NOTIFICATIONS },
+                        42
+                );
+            } else {
+                onNotificationPermissionGranted();
+            }
+        } else {
+            onNotificationPermissionGranted();
+        }
+    }
+
+    private void onNotificationPermissionGranted() {
+        Toast.makeText(
+                getApplicationContext(),
+                "Background Refresh enabled", Toast.LENGTH_LONG
+        ).show();
+    }
+
+    private void onNotificationPermissionDenied() {
+        Toast.makeText(
+                getApplicationContext(),
+                "Warning: Notification permission needed for Background Refresh", Toast.LENGTH_LONG
+        ).show();
     }
 
 }

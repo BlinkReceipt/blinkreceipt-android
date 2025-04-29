@@ -21,6 +21,14 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="com.blinkreceipt.digital.imap.PushNotificationHandler"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <meta-data
             android:name="com.microblink.ProductIntelligence"
             android:value="" />
