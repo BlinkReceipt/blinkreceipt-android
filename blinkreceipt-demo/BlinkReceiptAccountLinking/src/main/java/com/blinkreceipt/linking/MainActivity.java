@@ -106,7 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "linking exception" + e,
+                            Toast.LENGTH_LONG
+                    ).show();
 
             return Unit.INSTANCE;
         });
