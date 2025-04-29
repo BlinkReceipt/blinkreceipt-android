@@ -1,9 +1,10 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
-$dokka.location:com.microblink.core.internal/WebCookiesManager.Compat///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Compat.html
-$dokka.location:com.microblink.core.internal/WebCookiesManager.Cookie///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Cookie.html
+$dokka.location:com.microblink.core.internal.test/RepeatRule.RepeatStatement///PointingToDeclaration/com/microblink/core/internal/test/RepeatRule.RepeatStatement.html
 $dokka.location:com.microblink.core/Barcode.Builder///PointingToDeclaration/com/microblink/core/Barcode.Builder.html
+$dokka.location:com.microblink.core/CookieStorageType.DataStore///PointingToDeclaration/com/microblink/core/CookieStorageType.DataStore.html
+$dokka.location:com.microblink.core/CookieStorageType.None///PointingToDeclaration/com/microblink/core/CookieStorageType.None.html
 $dokka.location:com.microblink.core/DeviceStateManager.Factory///PointingToDeclaration/com/microblink/core/DeviceStateManager.Factory.html
 $dokka.location:com.microblink.core/HttpHeaders.Companion///PointingToDeclaration/com/microblink/core/HttpHeaders.Companion.html
 $dokka.location:com.microblink.core/License.Builder///PointingToDeclaration/com/microblink/core/License.Builder.html
@@ -15,7 +16,9 @@ $dokka.location:com.microblink.core/Survey.Builder///PointingToDeclaration/com/
 $dokka.location:com.microblink.core/SurveyAnswer.Builder///PointingToDeclaration/com/microblink/core/SurveyAnswer.Builder.html
 $dokka.location:com.microblink.core/SurveyQuestion.Builder///PointingToDeclaration/com/microblink/core/SurveyQuestion.Builder.html
 $dokka.location:com.microblink.core/SurveyResponse.Builder///PointingToDeclaration/com/microblink/core/SurveyResponse.Builder.html
+$dokka.location:com.microblink.core/WebCookiesManager.Cookie///PointingToDeclaration/com/microblink/core/WebCookiesManager.Cookie.html
+$dokka.location:com.microblink.core/WebCookiesManagerCompat.Cookie///PointingToDeclaration/com/microblink/core/WebCookiesManagerCompat.Cookie.html
 com.microblink.core
 com.microblink.core.internal
 com.microblink.core.internal.services
-
+com.microblink.core.internal.test
