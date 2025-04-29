@@ -29,14 +29,15 @@ buildscript {
             "agp"              : '8.9.2',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.6.1',
-            'bom'              : '1.9.3',
+            'bom'              : '1.9.4-alpha01',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
             'okio'             : '3.9.0',
             'barcodeScanner'   : '17.3.0',
+            "firebaseMessaging": "24.0.3",
             'versionMajor'     : 1,
             'versionMinor'     : 9,
-            'versionPatch'     : 3
+            'versionPatch'     : 4
     ]
 }
