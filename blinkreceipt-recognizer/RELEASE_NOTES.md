@@ -669,3 +669,7 @@ Blink Receipt Recognizer
   - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
 - Receipt Image Quality
   - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
+
+## 1.9.3
+- UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
+- US Receipts - Fuel Products: Resolved an issue where fuel items were incorrectly flagged, ensuring more reliable product categorization for US-based receipts.
