@@ -35,6 +35,7 @@ buildscript {
             'msal'             : '5.4.0',
             'okio'             : '3.9.0',
             'barcodeScanner'   : '17.3.0',
+            "firebaseMessaging": "24.0.3",
             'versionMajor'     : 2,
             'versionMinor'     : 0,
             'versionPatch'     : 0
