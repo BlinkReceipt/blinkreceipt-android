@@ -79,6 +79,9 @@ dependencies {
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-messaging")
+
+    implementation("com.google.firebase:firebase-messaging:${versions.firebaseMessaging}")
 
     testImplementation "junit:junit:${versions.junit}"
 

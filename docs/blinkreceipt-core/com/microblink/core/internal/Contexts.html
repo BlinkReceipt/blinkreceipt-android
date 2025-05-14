@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>Contexts 1.6.4 API </title>
+    <title>Contexts 1.6.5-alpha01 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -174,7 +174,13 @@ public final class <span class="typeNameLabel"><a href=Contexts.html>Contexts</a
                                         
                                         <tr class="altColor">
                                             <td class="colFirst"><code>private final static <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;&lt;Error class: unknown class&gt;&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#cookieDataStore>cookieDataStore</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#cookieUrlDataStore>cookieUrlDataStore</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final static <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;<a href=https://developer.android.com/reference/kotlin/androidx/datastore/preferences/core/Preferences.html>Preferences</a>&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#cookieValueDataStore>cookieValueDataStore</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -254,12 +260,20 @@ public final class <span class="typeNameLabel"><a href=Contexts.html>Contexts</a
                                         <tr id="i0" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;&lt;Error class: unknown class&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#getCookieDataStore()>getCookieDataStore</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#getCookieUrlDataStore()>getCookieUrlDataStore</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;<a href=https://developer.android.com/reference/kotlin/androidx/datastore/preferences/core/Preferences.html>Preferences</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Contexts.html#getCookieValueDataStore()>getCookieValueDataStore</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>final static <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Contexts.html#debuggable(android.content.Context)>debuggable</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> $self) </code>
@@ -267,7 +281,7 @@ public final class <span class="typeNameLabel"><a href=Contexts.html>Contexts</a
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i2" class="altColor">
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>final static <a href=https://developer.android.com/reference/kotlin/android/content/pm/ApplicationInfo.html>ApplicationInfo</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Contexts.html#applicationInfoWithMetaData(android.content.Context)>applicationInfoWithMetaData</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> $self) </code>
@@ -275,7 +289,7 @@ public final class <span class="typeNameLabel"><a href=Contexts.html>Contexts</a
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i4" class="altColor">
                                             <td class="colFirst"><code>final static <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Contexts.html#hasInternetPermission(android.content.Context)>hasInternetPermission</a>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> $self) </code>
@@ -327,15 +341,38 @@ public final class <span class="typeNameLabel"><a href=Contexts.html>Contexts</a
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="getCookieDataStore()">
+                                <a id="getCookieUrlDataStore()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getCookieDataStore</h4>
-                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;&lt;Error class: unknown class&gt;&gt; <a href=Contexts.html#getCookieDataStore()>getCookieDataStore</a>()</pre>
+                                        <h4>getCookieUrlDataStore</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;&lt;Error class: unknown class&gt;&gt; <a href=Contexts.html#getCookieUrlDataStore()>getCookieUrlDataStore</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getCookieValueDataStore()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getCookieValueDataStore</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore.html>DataStore</a>&lt;<a href=https://developer.android.com/reference/kotlin/androidx/datastore/preferences/core/Preferences.html>Preferences</a>&gt; <a href=Contexts.html#getCookieValueDataStore()>getCookieValueDataStore</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
