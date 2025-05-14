@@ -21,3 +21,6 @@
 
 ## 1.0.6
 - Stability fixes and improvements
+
+## 1.0.7
+- Stability fixes and improvements

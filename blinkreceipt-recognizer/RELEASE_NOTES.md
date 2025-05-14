@@ -673,3 +673,11 @@ Blink Receipt Recognizer
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
 - US Receipts - Fuel Products: Resolved an issue where fuel items were incorrectly flagged, ensuring more reliable product categorization for US-based receipts.
+
+## 1.9.4
+- Added support for Priceless receipts from Sephora (DoorDash) (US)
+- Improved extraction of the Total property (US)
+- Improved support for receipt formats (general parsing improvements) (UK)
+- Enhanced detection of Gas purchases when no products are listed
+- Added support for Costco receipts, including GST handling and more (NZ)
+- Stability fixes and improvements

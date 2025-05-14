@@ -346,3 +346,6 @@
 
 ## 1.6.2
 - Stability fixes and improvements
+
+## 1.6.3
+- Stability fixes and improvements

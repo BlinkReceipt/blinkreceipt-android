@@ -317,3 +317,7 @@
 
 ## 1.5.1
 - Stability fixes and improvements
+
+## 1.5.2
+- Updated credentials handling
+- Stability fixes and improvements
