@@ -12,9 +12,7 @@ To add the sdk to your android project please follow these steps:
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
     ```groovy
-    repositories {
-      maven { url  "https://maven.microblink.com" }
-    }
+     mavenCentral()
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.
@@ -29,6 +27,7 @@ dependencies {
 
 ## <a name=requirements></a> Requirements
 - AndroidX
-- Min SDK 21+
-- Compile SDK: 29+
-- Java 8+
+- Min SDK 21
+- Compile SDK: 35
+- Target SDK: 34
+- Java 11

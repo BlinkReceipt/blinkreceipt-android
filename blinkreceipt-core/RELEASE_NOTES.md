@@ -306,20 +306,7 @@
 - Stability fixes and improvements
 
 ## 1.6.6
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
-- Stability fixes and improvements
-
-## 1.6.7
-- Stability fixes and improvements
-
-## 1.6.8
-- Stability fixes and improvements
-
-## 1.6.9
-- `ScanResults.eReceiptRawHtml()` will no longer contain the HTML tags string value as it now returns a NULL or an empty string.
-  - Instead, we've introduced new fields to store raw values:
-    - `ScanResults.rawData()`
-      - This field can be either HTML tags OR a stringified JSON string value.
-    - `ScanResults.rawDataType()`
-      - This field can be either "html" or "json" string value.
+- Improvements in handling Web Cookies
 - Stability fixes and improvements

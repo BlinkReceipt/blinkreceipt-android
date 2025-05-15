@@ -313,6 +313,8 @@
 - Stability fixes and improvements
 
 ## 1.5.0
+- **BREAKING CHANGE** Removed the following Retailer(s):
+    - TACO_BELL
 - Stability fixes and improvements
 
 ## 1.5.1
@@ -332,39 +334,14 @@
   - `AMAZON_ES_BETA` is replaced with `AMAZON_ES`
   - `AMAZON_DE_BETA` is replaced with `AMAZON_DE`
   - `AMAZON_FR_BETA` is replaced with `AMAZON_FR`
-- Stability fixes and improvements
-
-## 1.5.4
-- Stability fixes and improvements
-
-## 1.5.5
-- Stability fixes and improvements
-
-## 1.5.6
-- When performing Grab Orders where re-authentication is required (i.e. login session expired, cookies cleared, etc.), AccountLinkingClient `failure()` callback now returns AccountLinkingException with the following values:
-  - error `code` = `com.microblink.linking.VERIFICATION_NEEDED`(1004) and WebView instance
-  - Includes WebView instance to allow client apps to response to a re-authentication.
-    - This is similar to how client apps handle Verify Account process where User Input is required.
-      - Client app must respond accordingly using the error code and WebView instance received from `failure()` callback
-      - i.e.
-```kotlin
-accountLinkingClient.orders(
-    // ...
-    success = {
-      // After User Input has been provided(Re-auth), the SDK will proceed as normal(continue performing actual Grab Orders Operation).
-    },
-    failure = { retailerId, throwable ->
-      when(throwable.code) {
-        INVALID_CREDENTIALS, VERIFICATION_NEEDED -> {    // Re-auth required for this Grab Orders attempt
-          val webView: WebView? = throwable.view
-          // Show WebView to perform User Input
-        }
-        else -> {
-          // Show Error
-        }
-      }
-    },
-)
-```
-- Resolved an issue where WebView instances are created using application context which prevents autofill from working.
+- Added new Retailers:
+  - ALI EXPRESS (US)
+  - TEMU (US)
+  - SHEIN (US)
+  - THRIVE MARKET (US)
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- **BREAKING CHANGE** AccountLinkingClient Public API changes:
+  - Changed method signature ~~AccountLinkingClient.verify()~~ into `AccountLinkingClient.link()`
+  - Changed method signature of ~~AccountLinkingClient.order()~~, removing `preview: (view: View?)` parameter
+- Improvements in handling Web Cookies for Account Linking sessions
 - Stability fixes and improvements
