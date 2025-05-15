@@ -265,10 +265,10 @@
 - Stability fixes and improvements
 
 ## 1.6.2
-- **BREAKING CHANGE** removed zxing and replaced with Google MlKit
 - Stability fixes and improvements
 
 ## 1.6.3
+- **BREAKING CHANGE** removed zxing and replaced with Google MlKit
 - Stability fixes and improvements
 
 ## 1.6.4
@@ -278,11 +278,9 @@
 - Stability fixes and improvements
 
 ## 1.6.6
-- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
-- Stability fixes and improvements
-
-## 1.6.7
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
 
 ## 1.6.8
