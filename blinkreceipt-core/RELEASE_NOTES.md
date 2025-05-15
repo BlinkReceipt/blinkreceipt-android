@@ -327,6 +327,7 @@
 - Stability fixes and improvements
 
 ## 1.7.0
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - **BREAKING CHANGE** `Barcode` and `BarcodeType` models are now used by both `:blinkreceipt-barcode` and `:blinkreceipt-barcode-recognizer` modules.
 - **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules

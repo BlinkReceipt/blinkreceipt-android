@@ -667,8 +667,10 @@ Blink Receipt Recognizer
 - Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
   - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
   - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
-- Receipt Image Quality
-  - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
+-  ***Breaking Change*** Changed ScanResults barcode type from String to a List
+- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Stability fixes and improvements
 
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
@@ -752,3 +754,18 @@ Blink Receipt Recognizer
   - More reliable detection of sales tax.
 - Stability Improvements
   - Enhanced extraction behavior to support a more stable experience.
+
+## 2.0.0
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Full Price and Discount Improvements - US
+    - Improvements on Full Price extraction (price before any discounts)
+    - Enhanced detection, extraction and mapping of discounts to individual products.
+- Improvements to Australian Receipts
+    - Enhanced receipt extraction for Australian transactions.
+    - Optimized handling of GST and other tax-related fields.
+- Add support for armeabi-v7a
+- ***Breaking Change*** Changed ScanResults barcode type from String to a List
+- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- Stability fixes and improvements

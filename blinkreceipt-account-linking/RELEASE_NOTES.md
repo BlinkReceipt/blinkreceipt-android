@@ -372,6 +372,7 @@ accountLinkingClient.orders(
 - Stability fixes and improvements
 
 ## 1.5.7
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - ***BREAKING CHANGE*** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
   - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
