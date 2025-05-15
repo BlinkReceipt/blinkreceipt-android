@@ -29,9 +29,7 @@ To add sdk to your android project please follow these steps:
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
     ```groovy
-    repositories {
-      maven { url  "https://maven.microblink.com" }
-    }
+     mavenCentral()
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.
@@ -311,10 +309,15 @@ Even though there are different ways to initialize the sdk, the recommended way 
 
 `AndroidManifest.xml`
 ```xml
-<provider
-  android:name="com.microblink.BlinkRecognizerProvider"
-  android:authorities="${applicationId}.BlinkRecognizerProvider"
-  tools:node="remove" />
+ <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+   <meta-data
+           android:name="com.microblink.internal.ReceiptSdkInitializer"
+           tools:node="remove" />
+</provider>
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -328,10 +331,15 @@ public void onCreate() {
 ```
 
 ```xml
-<provider
-        android:name="com.microblink.BlinkRecognizerProvider"
-        android:authorities="${applicationId}.BlinkRecognizerProvider"
-        tools:node="remove" />
+ <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+   <meta-data
+           android:name="com.microblink.internal.ReceiptSdkInitializer"
+           tools:node="remove" />
+</provider>
 ```
 
 ```java
@@ -436,5 +444,6 @@ You can also remove multiple processor architectures by specifying `exclude` dir
 ## <a name=requirements></a> Requirements
 - AndroidX
 - Min SDK 21+
-- Compile SDK: 29+
-- Java 8+
+- Compile SDK: 35
+- Target SDK: 34
+- Java 11+

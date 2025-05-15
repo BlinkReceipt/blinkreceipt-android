@@ -667,9 +667,23 @@ Blink Receipt Recognizer
 - Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
   - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
   - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
-- Receipt Image Quality
-  - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
+-  ***Breaking Change*** Changed ScanResults barcode type from String to a List
+- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Stability fixes and improvements
 
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
 - US Receipts - Fuel Products: Resolved an issue where fuel items were incorrectly flagged, ensuring more reliable product categorization for US-based receipts.
+
+## 1.9.4
+- Added support for Priceless receipts from Sephora (DoorDash) (US)
+- Improved extraction of the Total property (US)
+- Improved support for receipt formats (general parsing improvements) (UK)
+- Enhanced detection of Gas purchases when no products are listed
+- Added support for Costco receipts, including GST handling and more (NZ)
+- Stability fixes and improvements
+
+## 2.0.0
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements

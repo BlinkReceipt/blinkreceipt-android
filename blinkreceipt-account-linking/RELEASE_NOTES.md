@@ -313,7 +313,34 @@
 - Stability fixes and improvements
 
 ## 1.5.0
+- **BREAKING CHANGE** Removed the following Retailer(s):
+    - TACO_BELL
 - Stability fixes and improvements
 
 ## 1.5.1
+- Stability fixes and improvements
+
+## 1.5.2
+- Updated credentials handling
+- Stability fixes and improvements
+
+## 1.5.3
+- **BREAKING CHANGE** Changes to the Amazon Retailer:
+    - `AMAZON_BETA` is replaced with `AMAZON`
+    - `AMAZON_UK_BETA` is replaced with `AMAZON_UK`
+    - `AMAZON_CA_BETA` is replaced with `AMAZON_CA`
+    - `AMAZON_AU_BETA` is replaced with `AMAZON_AU`
+    - `AMAZON_ES_BETA` is replaced with `AMAZON_ES`
+    - `AMAZON_DE_BETA` is replaced with `AMAZON_DE`
+    - `AMAZON_FR_BETA` is replaced with `AMAZON_FR`
+- Added new Retailers:
+    - ALI EXPRESS (US)
+    - TEMU (US)
+    - SHEIN (US)
+    - THRIVE MARKET (US)
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- **BREAKING CHANGE** AccountLinkingClient Public API changes: 
+  - Changed method signature ~~AccountLinkingClient.verify()~~ into `AccountLinkingClient.link()`
+  - Changed method signature of ~~AccountLinkingClient.order()~~, removing `preview: (view: View?)` parameter
+- Improvements in handling Web Cookies for Account Linking sessions
 - Stability fixes and improvements

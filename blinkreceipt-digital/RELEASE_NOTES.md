@@ -346,3 +346,10 @@
 
 ## 1.6.2
 - Stability fixes and improvements
+
+## 1.6.3
+- Stability fixes and improvements
+
+## 1.6.4
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements

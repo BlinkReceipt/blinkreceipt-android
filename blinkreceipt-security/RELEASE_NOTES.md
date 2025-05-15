@@ -21,3 +21,13 @@
 
 ## 1.0.6
 - Stability fixes and improvements
+
+## 1.0.7
+- Stability fixes and improvements
+
+## 1.0.8
+- Stability fixes and improvements
+
+## 1.0.9
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
