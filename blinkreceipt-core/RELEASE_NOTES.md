@@ -304,3 +304,6 @@
 
 ## 1.6.5
 - Stability fixes and improvements
+
+## 1.6.6
+- Stability fixes and improvements

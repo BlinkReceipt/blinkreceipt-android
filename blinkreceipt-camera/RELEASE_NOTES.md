@@ -253,3 +253,7 @@
 
 ## 1.6.5
 - Stability fixes and improvements
+
+## 1.6.6
+- Add support for armeabi-v7a
+- Stability fixes and improvements
