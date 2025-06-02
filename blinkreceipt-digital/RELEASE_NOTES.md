@@ -349,3 +349,7 @@
 
 ## 1.6.3
 - Stability fixes and improvements
+
+## 1.6.4
+- Fixed internal logic to include missing key fields when uploading Scan Results summary
+- Stability fixes and improvements

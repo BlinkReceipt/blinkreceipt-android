@@ -681,3 +681,13 @@ Blink Receipt Recognizer
 - Enhanced detection of Gas purchases when no products are listed
 - Added support for Costco receipts, including GST handling and more (NZ)
 - Stability fixes and improvements
+
+## 1.9.5
+- Full Price and Discount Improvements - US 
+  - Improvements on Full Price extraction (price before any discounts)
+  - Enhanced detection, extraction and mapping of discounts to individual products. 
+- Improvements to Australian Receipts
+  - Enhanced receipt extraction for Australian transactions. 
+  - Optimized handling of GST and other tax-related fields.
+- Add support for armeabi-v7a
+- Stability fixes and improvements
