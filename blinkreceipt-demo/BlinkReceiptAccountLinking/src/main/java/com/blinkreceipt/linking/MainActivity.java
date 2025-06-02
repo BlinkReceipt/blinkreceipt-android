@@ -20,7 +20,7 @@ import kotlin.Unit;
 public class MainActivity extends AppCompatActivity {
 
     private static final Account ACCOUNT = new Account(
-            RetailerIds.AMAZON_BETA,
+            RetailerIds.AMAZON,
             Credentials.None.INSTANCE
     );
 
