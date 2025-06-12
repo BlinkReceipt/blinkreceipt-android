@@ -256,4 +256,5 @@
 
 ## 1.6.6
 - Add support for armeabi-v7a
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
