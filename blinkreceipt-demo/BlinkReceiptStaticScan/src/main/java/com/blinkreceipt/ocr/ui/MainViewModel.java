@@ -20,6 +20,7 @@ public class MainViewModel extends ViewModel {
         super();
 
         scanOptions = ScanOptions.newBuilder()
+                .detectBarcodes(true)
                 .frameCharacteristics(FrameCharacteristics.newBuilder()
                         .externalStorage(false)
                         .storeFrames(true)
