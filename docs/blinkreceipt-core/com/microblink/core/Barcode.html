@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>BlinkRecognizerProvider 1.9.4 API </title>
+    <title>Barcode 1.6.6 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
-    <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../dokka-javadoc-stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../jquery/jquery-ui.css" title="Style">
-    <script type="text/javascript" src="../../jquery/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../../jquery/jquery-migrate-3.4.0.min.js"></script>
-    <script type="text/javascript" src="../../jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="../../search.js"></script>
-    <script async type="text/javascript" src="../../module-search-index.js"></script>
-    <script async type="text/javascript" src="../../package-search-index.js"></script>
-    <script async type="text/javascript" src="../../type-search-index.js"></script>
-    <script async type="text/javascript" src="../../member-search-index.js"></script>
-    <script async type="text/javascript" src="../../tag-search-index.js"></script>
+    <script type="text/javascript" src="../../../search.js"></script>
+    <script async type="text/javascript" src="../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../tag-search-index.js"></script>
 </head><body>
 <script type="text/javascript">
-var pathtoroot = "../../";
+var pathtoroot = "../../../";
 </script>
 <noscript>
     <div>JavaScript is disabled on your browser.</div>
@@ -36,7 +36,7 @@ var pathtoroot = "../../";
                     <!--   -->
                 </a>
                 <ul class="navList" title="Navigation">
-    <li><a href="../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -44,13 +44,13 @@ var pathtoroot = "../../";
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
             <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 
 <ul class="navListSearch">
@@ -88,8 +88,8 @@ var pathtoroot = "../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink</a></div>
-        <h2 title="Class BlinkRecognizerProvider" class="title">Class BlinkRecognizerProvider</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core</a></div>
+        <h2 title="Class Barcode" class="title">Class Barcode</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,12 +108,7 @@ var pathtoroot = "../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>android.content.ComponentCallbacks</code>
-                            
-                            ,
-                            
-                            
-                            <code>android.content.ComponentCallbacks2</code>
+                            <code>android.os.Parcelable</code>
                             
                             
                         </dd>
@@ -122,10 +117,10 @@ var pathtoroot = "../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=BlinkRecognizerProvider.html>BlinkRecognizerProvider</a></span>
-extends <a href=https://developer.android.com/reference/kotlin/android/content/ContentProvider.html>ContentProvider</a>
+public class <span class="typeNameLabel"><a href=Barcode.html>Barcode</a></span>
+ implements <a href=https://developer.android.com/reference/kotlin/android/os/Parcelable.html>Parcelable</a>
                     </pre>
-                    <div class="block"><p>Created by Christopher Alex Brown on 2/11/17.</p></div>
+                    <div class="block"></div>
 
                     <dl>
 
@@ -157,6 +152,13 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public class</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="Barcode.Builder.html">Barcode.Builder</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -181,44 +183,20 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_BACKGROUND>TRIM_MEMORY_BACKGROUND</a></code></th>
+                                            <td class="colFirst"><code>public final static <a href=https://developer.android.com/reference/kotlin/android/os/Parcelable.Creator.html>Parcelable.Creator</a>&lt;<a href=Barcode.html>Barcode</a>&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#CREATOR>CREATOR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
                                             <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_COMPLETE>TRIM_MEMORY_COMPLETE</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=AdditionalLine.html#CONTENTS_FILE_DESCRIPTOR>CONTENTS_FILE_DESCRIPTOR</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="altColor">
                                             <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_MODERATE>TRIM_MEMORY_MODERATE</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="rowColor">
-                                            <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_RUNNING_CRITICAL>TRIM_MEMORY_RUNNING_CRITICAL</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_RUNNING_LOW>TRIM_MEMORY_RUNNING_LOW</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="rowColor">
-                                            <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_RUNNING_MODERATE>TRIM_MEMORY_RUNNING_MODERATE</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>public final static int</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#TRIM_MEMORY_UI_HIDDEN>TRIM_MEMORY_UI_HIDDEN</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=AdditionalLine.html#PARCELABLE_WRITE_RETURN_VALUE>PARCELABLE_WRITE_RETURN_VALUE</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -248,7 +226,7 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#BlinkRecognizerProvider()">BlinkRecognizerProvider</a></span>()</code></th>
+                                                        href="#Barcode(com.microblink.core.Barcode.Builder)">Barcode</a></span>(<a href=Barcode.Builder.html>Barcode.Builder</a> builder)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -302,17 +280,17 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>boolean</code>
+                                            <td class="colFirst"><code>int</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#onCreate()>onCreate</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#describeContents()>describeContents</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/database/Cursor.html>Cursor</a></code>
+                                            <td class="colFirst"><code>void</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#query(android.net.Uri,kotlin.Array,java.lang.String,kotlin.Array,java.lang.String)>query</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; projection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> sortOrder) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#writeToParcel(android.os.Parcel,int)>writeToParcel</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -320,31 +298,47 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#getType(android.net.Uri)>getType</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#text()>text</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a></code>
+                                            <td class="colFirst"><code><a href=BarcodeType.html>BarcodeType</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#insert(android.net.Uri,android.content.ContentValues)>insert</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/content/ContentValues.html>ContentValues</a> values) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#type()>type</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code>int</code>
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#delete(android.net.Uri,java.lang.String,kotlin.Array)>delete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#toString()>toString</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code>boolean</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#equals(Object)>equals</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a> o) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>int</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BlinkRecognizerProvider.html#update(android.net.Uri,android.content.ContentValues,java.lang.String,kotlin.Array)>update</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/content/ContentValues.html>ContentValues</a> values, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#hashCode()>hashCode</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code>static <a href=Barcode.Builder.html>Barcode.Builder</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.html#newBuilder()>newBuilder</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -354,12 +348,6 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                 </div>
                                 <ul class="blockList">
                                 
-                                    <li class="blockList"><a id="methods.inherited.from.class.android.content.ContentProvider">
-                                            <!--   -->
-                                        </a>
-                                            <h3>Methods inherited from class&nbsp;android.content.ContentProvider</h3>
-                                            <code>applyBatch, attachInfo, bulkInsert, call, canonicalize, clearCallingIdentity, dump, getCallingAttributionSource, getCallingAttributionTag, getCallingPackage, getCallingPackageUnchecked, getContext, getPathPermissions, getReadPermission, getStreamTypes, getTypeAnonymous, getWritePermission, onCallingPackageChanged, onConfigurationChanged, onLowMemory, onTrimMemory, openAssetFile, openFile, openPipeHelper, openTypedAssetFile, refresh, requireContext, restoreCallingIdentity, shutdown, uncanonicalize</code></li>
-                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -386,11 +374,11 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="BlinkRecognizerProvider()"></a>
+                                <a name="Barcode(com.microblink.core.Barcode.Builder)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>BlinkRecognizerProvider</h4>
-                                        <pre>BlinkRecognizerProvider()</pre>
+                                        <h4>Barcode</h4>
+                                        <pre>Barcode(<a href=Barcode.Builder.html>Barcode.Builder</a> builder)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -409,15 +397,15 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="onCreate()">
+                                <a id="describeContents()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>onCreate</h4>
-                                        <pre class="methodSignature"> boolean <a href=BlinkRecognizerProvider.html#onCreate()>onCreate</a>()</pre>
+                                        <h4>describeContents</h4>
+                                        <pre class="methodSignature"> int <a href=Barcode.html#describeContents()>describeContents</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -432,15 +420,15 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                     </li>
                                 </ul>
                                 
-                                <a id="query(android.net.Uri,kotlin.Array,java.lang.String,kotlin.Array,java.lang.String)">
+                                <a id="writeToParcel(android.os.Parcel,int)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>query</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/database/Cursor.html>Cursor</a> <a href=BlinkRecognizerProvider.html#query(android.net.Uri,kotlin.Array,java.lang.String,kotlin.Array,java.lang.String)>query</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; projection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> sortOrder)</pre>
+                                        <h4>writeToParcel</h4>
+                                        <pre class="methodSignature"> void <a href=Barcode.html#writeToParcel(android.os.Parcel,int)>writeToParcel</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/os/Parcel.html>Parcel</a> dest, int flags)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -455,15 +443,15 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                     </li>
                                 </ul>
                                 
-                                <a id="getType(android.net.Uri)">
+                                <a id="text()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getType</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=BlinkRecognizerProvider.html#getType(android.net.Uri)>getType</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <h4>text</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=Barcode.html#text()>text</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -478,15 +466,15 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                     </li>
                                 </ul>
                                 
-                                <a id="insert(android.net.Uri,android.content.ContentValues)">
+                                <a id="type()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>insert</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> <a href=BlinkRecognizerProvider.html#insert(android.net.Uri,android.content.ContentValues)>insert</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/content/ContentValues.html>ContentValues</a> values)</pre>
+                                        <h4>type</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=BarcodeType.html>BarcodeType</a> <a href=Barcode.html#type()>type</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -501,15 +489,15 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                     </li>
                                 </ul>
                                 
-                                <a id="delete(android.net.Uri,java.lang.String,kotlin.Array)">
+                                <a id="toString()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>delete</h4>
-                                        <pre class="methodSignature"> int <a href=BlinkRecognizerProvider.html#delete(android.net.Uri,java.lang.String,kotlin.Array)>delete</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs)</pre>
+                                        <h4>toString</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=Barcode.html#toString()>toString</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -524,15 +512,61 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                                     </li>
                                 </ul>
                                 
-                                <a id="update(android.net.Uri,android.content.ContentValues,java.lang.String,kotlin.Array)">
+                                <a id="equals(Object)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>equals</h4>
+                                        <pre class="methodSignature"> boolean <a href=Barcode.html#equals(Object)>equals</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a> o)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="hashCode()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>hashCode</h4>
+                                        <pre class="methodSignature"> int <a href=Barcode.html#hashCode()>hashCode</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="newBuilder()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>update</h4>
-                                        <pre class="methodSignature"> int <a href=BlinkRecognizerProvider.html#update(android.net.Uri,android.content.ContentValues,java.lang.String,kotlin.Array)>update</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/android/content/ContentValues.html>ContentValues</a> values, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> selection, @<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; selectionArgs)</pre>
+                                        <h4>newBuilder</h4>
+                                        <pre class="methodSignature"> static <a href=Barcode.Builder.html>Barcode.Builder</a> <a href=Barcode.html#newBuilder()>newBuilder</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -568,7 +602,7 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
                 <!--   -->
             </a>
             <ul class="navList" title="Navigation">
-    <li><a href="../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -576,8 +610,8 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
         <a id="skip.navbar.bottom">
@@ -585,7 +619,7 @@ extends <a href=https://developer.android.com/reference/kotlin/android/content/C
         </a>
         <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--

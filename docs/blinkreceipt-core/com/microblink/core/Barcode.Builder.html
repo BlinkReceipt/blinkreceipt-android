@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>Decoder 1.6.5 API </title>
+    <title>Builder 1.6.6 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.barcode</a></div>
-        <h2 title="Class Decoder" class="title">Class Decoder</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core</a></div>
+        <h2 title="Class Barcode.Builder" class="title">Class Barcode.Builder</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,17 +108,14 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>com.google.zxing.ResultPointCallback</code>
-                            
-                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
- implements ResultPointCallback
+public class <span class="typeNameLabel"><a href=Barcode.Builder.html>Barcode.Builder</a></span>
+
                     </pre>
                     <div class="block"></div>
 
@@ -175,12 +172,6 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>public  <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ResultPoint&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=InvertedDecoder.html#possibleResultPoints>possibleResultPoints</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
                                     </table>
                                 </div>
                             </li>
@@ -207,7 +198,7 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#Decoder(com.google.zxing.Reader)">Decoder</a></span>(Reader reader)</code></th>
+                                                        href="#Barcode.Builder()">Barcode.Builder</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -261,25 +252,33 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ResultPoint&gt;</code>
+                                            <td class="colFirst"><code><a href=Barcode.Builder.html>Barcode.Builder</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=InvertedDecoder.html#getPossibleResultPoints()>getPossibleResultPoints</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.Builder.html#text(java.lang.String)>text</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> text) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>Result</code>
+                                            <td class="colFirst"><code><a href=Barcode.Builder.html>Barcode.Builder</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=InvertedDecoder.html#decode(com.google.zxing.LuminanceSource)>decode</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() LuminanceSource source) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.Builder.html#type(com.microblink.core.BarcodeType)>type</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BarcodeType.html>BarcodeType</a> type) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>void</code>
+                                            <td class="colFirst"><code><a href=Barcode.html>Barcode</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=InvertedDecoder.html#foundPossibleResultPoint(com.google.zxing.ResultPoint)>foundPossibleResultPoint</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() ResultPoint point) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.Builder.html#build()>build</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Barcode.Builder.html#toString()>toString</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -315,11 +314,11 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="Decoder(com.google.zxing.Reader)"></a>
+                                <a name="Barcode.Builder()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>Decoder</h4>
-                                        <pre>Decoder(Reader reader)</pre>
+                                        <h4>Barcode.Builder</h4>
+                                        <pre>Barcode.Builder()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -338,15 +337,15 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="getPossibleResultPoints()">
+                                <a id="text(java.lang.String)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getPossibleResultPoints</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;ResultPoint&gt; <a href=InvertedDecoder.html#getPossibleResultPoints()>getPossibleResultPoints</a>()</pre>
+                                        <h4>text</h4>
+                                        <pre class="methodSignature"> <a href=Barcode.Builder.html>Barcode.Builder</a> <a href=Barcode.Builder.html#text(java.lang.String)>text</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> text)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -361,15 +360,15 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                                     </li>
                                 </ul>
                                 
-                                <a id="decode(com.google.zxing.LuminanceSource)">
+                                <a id="type(com.microblink.core.BarcodeType)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>decode</h4>
-                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html>Nullable</a>() Result <a href=InvertedDecoder.html#decode(com.google.zxing.LuminanceSource)>decode</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() LuminanceSource source)</pre>
+                                        <h4>type</h4>
+                                        <pre class="methodSignature"> <a href=Barcode.Builder.html>Barcode.Builder</a> <a href=Barcode.Builder.html#type(com.microblink.core.BarcodeType)>type</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=BarcodeType.html>BarcodeType</a> type)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -384,15 +383,38 @@ public class <span class="typeNameLabel"><a href=Decoder.html>Decoder</a></span>
                                     </li>
                                 </ul>
                                 
-                                <a id="foundPossibleResultPoint(com.google.zxing.ResultPoint)">
+                                <a id="build()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>build</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=Barcode.html>Barcode</a> <a href=Barcode.Builder.html#build()>build</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="toString()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>foundPossibleResultPoint</h4>
-                                        <pre class="methodSignature"> void <a href=InvertedDecoder.html#foundPossibleResultPoint(com.google.zxing.ResultPoint)>foundPossibleResultPoint</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() ResultPoint point)</pre>
+                                        <h4>toString</h4>
+                                        <pre class="methodSignature">@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html>NonNull</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=Barcode.Builder.html#toString()>toString</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>

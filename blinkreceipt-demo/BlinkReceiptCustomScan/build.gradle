@@ -76,6 +76,7 @@ android {
 dependencies {
     implementation("com.google.android.material:material:${versions.material}")
     implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
+    implementation "com.google.mlkit:barcode-scanning:${versions.barcodeScanner}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")

@@ -36,7 +36,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
         client.dayCutoff = 14
 
         val suspendResult = suspendCoroutine { continuation ->
-            client.orders(AMAZON_BETA, failure = { retailerId, exception ->
+            client.orders(AMAZON, failure = { retailerId, exception ->
                 //log exception
                 Timber.e(exception)
                 if(exception.code == VERIFICATION_NEEDED) {
@@ -77,7 +77,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
         AccountLinkingClient client = new AccountLinkingClient(this.getApplicationContext());
         //configure the client
         client.dayCutoff(14);
-        client.orders(AMAZON_BETA, (Integer retailerId, ScanResults results, Integer remaining, String uuid) -> {
+        client.orders(AMAZON, (Integer retailerId, ScanResults results, Integer remaining, String uuid) -> {
             if (results != null) {
                 //store results in database, API etc.
             }

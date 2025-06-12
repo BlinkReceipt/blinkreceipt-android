@@ -155,18 +155,18 @@ here are the steps you need to take to migrate over to using our maven integrati
          -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
          -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
          -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
-         -  implementation("com.squareup.okio:okio:3.9.0")
+         -  implementation("com.squareup.okio:okio:3.10.2")
          -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
          -  implementation("com.google.android.gms:play-services-auth:21.2.0")
          -  implementation("androidx.webkit:webkit:1.12.1")
          -  implementation("androidx.work:work-runtime:2.10.0")
          -  implementation("androidx.work:work-runtime-ktx:2.10.0")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
+         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1")
          -  implementation("androidx.core:core-ktx:1.13.1")
 
-         +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+         +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
          +  implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
             //BlinkReceiptRecognizer doesn't depend on BlinkReceiptCameraUi, so if you want to use our default scanning UI you also have to include the following dependency
          +  implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
@@ -186,15 +186,15 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
-        -  implementation("com.squareup.okio:okio:3.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.2")
         -  implementation("androidx.webkit:webkit:1.12.1")
         -  implementation("androidx.datastore:datastore-preferences:1.1.1")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7")
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}")
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
         }
         ```
@@ -211,16 +211,16 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.sun.mail:android-activation:1.6.7")
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-        -  implementation("androidx.fragment:fragment-ktx:1.8.3")
+        -  implementation("androidx.fragment:fragment-ktx:{{ blinkreceipt.release }}")
         -  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
         -  implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.3")
         -  implementation("androidx.lifecycle:lifecycle-common-java8:2.8.3")
         -  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.5")
         -  implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3")
         -  implementation("androidx.webkit:webkit:1.12.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1")
         -  implementation("com.google.android.material:material:1.12.0")
         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("androidx.core:core-ktx:1.13.1")
@@ -231,13 +231,13 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
         -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
         -  implementation("androidx.core:core:1.3.1")
-        -  implementation("com.squareup.okio:okio:3.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
         -  implementation("com.google.apis:google-api-services-gmail:v1-rev110-1.25.0" exclude module: "httpclient")
         -  implementation("com.google.api-client:google-api-client-android:2.7.0" exclude module: "httpclient")
         -  implementation("com.google.http-client:google-http-client-gson:1.45.0" exclude module: "httpclient")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
         }
         ```
@@ -251,9 +251,9 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
-        -  implementation("com.squareup.okio:okio:3.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-earnings")
          }
         ```
@@ -270,18 +270,18 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
-        -  implementation("com.squareup.okio:okio:3.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
         -  implementation("com.google.android.material:material:1.12.0")
         -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-        -  implementation("androidx.fragment:fragment-ktx:1.8.3")
+        -  implementation("androidx.fragment:fragment-ktx:{{ blinkreceipt.release }}")
         -  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
         -  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.5")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
          }
         ```
@@ -296,12 +296,12 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:2.9.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:2.9.0")
-        -  implementation("com.squareup.okio:okio:3.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
         -  implementation("androidx.lifecycle:lifecycle-runtime:2.6.1")
         -  implementation("com.google.zxing:core:3.5.1")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-barcode")
         }
         ```
@@ -313,8 +313,8 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("androidx.work:work-runtime:2.10.0")
         -  implementation("androidx.work:work-runtime-ktx:2.10.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+        -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
@@ -322,10 +322,10 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("com.squareup.retrofit2:converter-gson:2.11.0")
         -  implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
         -  implementation("com.google.android.gms:play-services-tasks:18.2.0")
-        -  implementation("com.squareup.okio:okio:3.9.0")
+        -  implementation("com.squareup.okio:okio:3.10.2")
         -  implementation("androidx.preference:preference-ktx:1.2.1")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-core")
         }
         ```
@@ -337,10 +337,10 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("com.google.android.material:material:1.12.1")
         -  implementation("androidx.fragment:fragment:1.5.7")
-        -  implementation("androidx.fragment:fragment-ktx:1.8.3")
+        -  implementation("androidx.fragment:fragment-ktx:{{ blinkreceipt.release }}")
         -  implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
-        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        +  implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         +  implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
         }
         ```
@@ -353,7 +353,7 @@ here are the steps you need to take to migrate over to using our maven integrati
 
     ```groovy
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
         implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
         implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
         implementation("com.microblink.blinkreceipt:blinkreceipt-digital")

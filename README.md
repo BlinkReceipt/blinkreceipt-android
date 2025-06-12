@@ -311,10 +311,15 @@ Even though there are different ways to initialize the sdk, the recommended way 
 
 `AndroidManifest.xml`
 ```xml
-<provider
-  android:name="com.microblink.BlinkRecognizerProvider"
-  android:authorities="${applicationId}.BlinkRecognizerProvider"
-  tools:node="remove" />
+ <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+   <meta-data
+           android:name="com.microblink.internal.ReceiptSdkInitializer"
+           tools:node="remove" />
+</provider>
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
 
@@ -328,10 +333,15 @@ public void onCreate() {
 ```
 
 ```xml
-<provider
-        android:name="com.microblink.BlinkRecognizerProvider"
-        android:authorities="${applicationId}.BlinkRecognizerProvider"
-        tools:node="remove" />
+ <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+   <meta-data
+           android:name="com.microblink.internal.ReceiptSdkInitializer"
+           tools:node="remove" />
+</provider>
 ```
 
 ```java
@@ -345,9 +355,19 @@ public void onTerminate() {
 
 ## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
-BlinkReceipt is distributed with **ARM64** native library binaries.
+BlinkReceipt is distributed with **ARMv7** and **ARM64** native library binaries.
 
 **ARM64** is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with a single instruction.
+
+There are some issues to be considered:
+
+- ARMv7 build of the native library cannot be run on devices that do not have ARMv7 compatible processor
+- ARMv7 processors do not understand x86 instruction set
+- ARM64 processors understand ARMv7 instruction set, but ARMv7 processors do not understand ARM64 instructions.
+   - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
+- if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
+
+`LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
 
 ## <a name="reduce-size"></a> Reducing the final size of your app
 

@@ -9,9 +9,9 @@ Using this flow, the client’s host app provides a native prompt for users to p
 
 === "Kotlin"
     ```kotlin
-    // AMAZON_BETA is used just as an example
+    // AMAZON is used just as an example
     val account = Account(
-        retailerId = AMAZON_BETA,
+        retailerId = AMAZON,
         credentials = Credentials.Password(
             "amazon_username",
             "amazon_password"
@@ -27,7 +27,7 @@ Using this flow, the client’s host app provides a native prompt for users to p
 === "Java"
     ```java
     Account account = new Account(
-        AMAZON_BETA,
+        AMAZON,
         new Credentials.Password(
             "amazon_username",
             "amazon_password"
@@ -50,9 +50,9 @@ All steps needed for authentication, a user may handle in the same WebView.
 
 === "Kotlin"
     ```kotlin
-    // AMAZON_BETA is used just as an example.
+    // AMAZON is used just as an example.
     val account = Account(
-        retailerId = AMAZON_BETA,
+        retailerId = AMAZON,
         credentials = Credentials.None // No need to explicitly provide credentials
     )
 
@@ -65,7 +65,7 @@ All steps needed for authentication, a user may handle in the same WebView.
 === "Java"
     ```java
     Account account = new Account(
-        AMAZON_BETA,
+        AMAZON,
         Credentials.None.INSTANCE
         true
     );
@@ -96,7 +96,7 @@ implementation:
     val client = AcountLinkingClient(context)
     client.link(
         Account(
-            AMAZON_BETA,
+            AMAZON,
             Credentials.Password(
                 "amazon_username",
                 "amazon_password"
@@ -107,7 +107,7 @@ implementation:
 
     //retrieve and unlink account
     client.accounts().addOnSuccessListener {
-        val amazonAccount = it?.firstOrNull { it.retailerId == AMAZON_BETA }
+        val amazonAccount = it?.firstOrNull { it.retailerId == AMAZON }
         if (amazonAccount != null) {
             client.unlink(amazonAccount).addOnSuccessListener {
                 //i.e. link another Amazon account
@@ -120,7 +120,7 @@ implementation:
     AccountLinkingClient client = new AccountLinkingClient(context);
     client.link(
         new Account(
-            AMAZON_BETA,
+            AMAZON,
             new Credentials.Password(
                 "amazon_username",
                 "amazon_password"
@@ -131,7 +131,7 @@ implementation:
 
     //retrieve and unlink account
     client.accounts().addOnSuccessListener(accounts ->{
-        Optional<Account> account = accounts.stream().filter(acc -> acc.retailerId() == AMAZON_BETA).findFirst();
+        Optional<Account> account = accounts.stream().filter(acc -> acc.retailerId() == AMAZON).findFirst();
         if(account.isPresent()){
             client.unlink(account.get()).addOnSuccessListener(success -> {
                 //i.e. link another amazon account
@@ -171,7 +171,7 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
 
     val allOrders = mutableListOf<ScanResults>()
 
-    client.orders(AMAZON_BETA,
+    client.orders(AMAZON,
         success = { retailerId: Int, results: ScanResults?, remaining: Int, uuid: String ->
             if (results != null) {
                 allOrders.add(results)
@@ -196,7 +196,7 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
     AccountLinkingClient client = new AccountLinkingClient(context);
     //config the client, or link an account if you haven't linked it already
     Account account = new Account(
-        AMAZON_BETA,
+        AMAZON,
         Credentials.Password(
             "amazon_username",
             "amazon_password"
@@ -205,7 +205,7 @@ failure callback can return an exception with the code `VERIFICATION_NEEDED`, wh
 
     List<ScanResults> allResults = new ArrayList<>();
 
-    client.orders(AMAZON_BETA, (Integer retailerId, ScanResults results, Integer remaining, String uuid) ->{
+    client.orders(AMAZON, (Integer retailerId, ScanResults results, Integer remaining, String uuid) ->{
         allResults.add(results);
         if(remaining == 0){
             //process the collected orders
@@ -257,7 +257,7 @@ This is meant to be used only for debugging purposes.
     val client = AccountLinkingClient(context)
 
     val account = Account(
-        AMAZON_BETA,
+        AMAZON,
         Credentials.Password(
             "amazon_username",
             "amazon_password"
@@ -285,7 +285,7 @@ This is meant to be used only for debugging purposes.
     AccountLinkingClient client = new AccountLinkingClient(context);
 
     Account account = new Account(
-            AMAZON_BETA,
+            AMAZON,
             Credentials.Password(
                 "amazon_username",
                 "amazon_password"
@@ -326,7 +326,7 @@ which you had already retrieved before.
     ```kotlin title="Reset retailer history"
     val client = AccountLinkingClient(context)
 
-    client.resetHistory(AMAZON_BETA).addOnSuccessListener {
+    client.resetHistory(AMAZON).addOnSuccessListener {
        // e.g. link a different amazon account
     }
     ```
@@ -334,7 +334,7 @@ which you had already retrieved before.
     ```java title="Reset retailer history"
     AccountLinkingClient client = new AccountLinkingClient(context);
 
-    client.resetHistory(AMAZON_BETA).addOnSuccessListener(success -> {
+    client.resetHistory(AMAZON).addOnSuccessListener(success -> {
       // e.g. link a different amazon account
     });
     ```

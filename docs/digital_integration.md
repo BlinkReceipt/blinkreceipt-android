@@ -16,7 +16,7 @@ To add the sdk to your android project please follow these steps:
 === "Groovy"
       ```groovy
       dependencies {
-          implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3"))
+          implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
       
           implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
           implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
