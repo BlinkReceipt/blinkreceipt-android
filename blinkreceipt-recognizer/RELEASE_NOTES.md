@@ -690,4 +690,7 @@ Blink Receipt Recognizer
   - Enhanced receipt extraction for Australian transactions. 
   - Optimized handling of GST and other tax-related fields.
 - Add support for armeabi-v7a
+- ***Breaking Change*** Changed ScanResults barcode type from String to a List
+- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
 - Stability fixes and improvements

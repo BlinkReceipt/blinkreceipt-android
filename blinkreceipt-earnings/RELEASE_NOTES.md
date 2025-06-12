@@ -280,3 +280,4 @@
 
 ## 1.6.6
 - Stability fixes and improvements
+

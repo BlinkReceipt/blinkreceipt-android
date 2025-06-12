@@ -265,6 +265,7 @@
 - Stability fixes and improvements
 
 ## 1.6.2
+- **BREAKING CHANGE** removed zxing and replaced with Google MlKit
 - Stability fixes and improvements
 
 ## 1.6.3
@@ -277,4 +278,6 @@
 - Stability fixes and improvements
 
 ## 1.6.6
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
 - Stability fixes and improvements
+
