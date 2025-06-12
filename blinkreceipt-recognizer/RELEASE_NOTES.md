@@ -693,4 +693,5 @@ Blink Receipt Recognizer
 - ***Breaking Change*** Changed ScanResults barcode type from String to a List
 - Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
 - Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements

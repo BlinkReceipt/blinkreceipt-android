@@ -323,6 +323,7 @@
 - Stability fixes and improvements
 
 ## 1.5.3
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - **BREAKING CHANGE** Changes to the Amazon Retailer:
   - `AMAZON_BETA` is replaced with `AMAZON`
   - `AMAZON_UK_BETA` is replaced with `AMAZON_UK`
