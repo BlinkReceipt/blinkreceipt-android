@@ -351,7 +351,9 @@
 - Stability fixes and improvements
 
 ## 1.6.4
-- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Fixed internal logic to include missing key fields when uploading Scan Results summary
+- Stability fixes and improvements
+
+## 1.6.5
 - Stability fixes and improvements
