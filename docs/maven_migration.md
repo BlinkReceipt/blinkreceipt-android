@@ -89,7 +89,7 @@ here are the steps you need to take to migrate over to using our maven integrati
         ```
 
 2. #### Add our Maven repository to your project configuration
-   Our libraries are hosted on our own Maven server, at https://maven.microblink.com. To be able to reference our libraries, you have to add
+   Our libraries are hosted on  mavenCentral(). To be able to reference our libraries, you have to add
    our Maven server to your project configuration. There are currently two ways of doing this, either in your root `build.gradle` file or in
    your `settings.gradle` file. Older projects usually have the maven repositories declared in the root `build.gradle`, while newer ones have it in
    `settings.gradle`. To add our Maven server to your project configuration, do the following, depending on if you have the config in
@@ -101,7 +101,7 @@ here are the steps you need to take to migrate over to using our maven integrati
             allProjects {
               repositories {
                 ... // your other repositories
-            +    maven { url "https://maven.microblink.com" }
+            +    mavenCentral()
               }
             }
             ```
@@ -110,7 +110,7 @@ here are the steps you need to take to migrate over to using our maven integrati
             allProjects {
               repositories {
                 ... // your other repositories
-            +    maven { url = uri("https://maven.microblink.com") }
+            +    mavenCentral()
               }
             }
             ```
@@ -123,7 +123,7 @@ here are the steps you need to take to migrate over to using our maven integrati
                  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
                  repositories {
                    ... // your other repositories
-            +      maven { url = uri("https://maven.microblink.com") }
+            +       mavenCentral()
                  }
                }
             ```
@@ -133,7 +133,7 @@ here are the steps you need to take to migrate over to using our maven integrati
                  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
                  repositories {
                    ... // your other repositories
-            +      maven { url "https://maven.microblink.com" }
+            +      mavenCentral()
                  }
                }
             ```
@@ -148,7 +148,7 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptRecognizer"
          ```diff title="build.gradle"
          dependencies {
-         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+         -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
          -  implementation("androidx.appcompat:appcompat:1.7.0")
          -  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
          -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
@@ -176,7 +176,7 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptAccountLinking"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("androidx.work:work-runtime:2.10.0")
         -  implementation("androidx.work:work-runtime-ktx:2.10.0")
@@ -222,7 +222,7 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1")
         -  implementation("com.google.android.material:material:1.12.0")
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
@@ -260,7 +260,7 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptSurveys"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("androidx.work:work-runtime:2.10.0")
@@ -315,7 +315,7 @@ here are the steps you need to take to migrate over to using our maven integrati
         -  implementation("androidx.work:work-runtime-ktx:2.10.0")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
         -  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
         -  implementation("com.squareup.okhttp3:okhttp:4.12.0")
         -  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
         -  implementation("com.squareup.retrofit2:retrofit:2.11.0")
@@ -332,7 +332,7 @@ here are the steps you need to take to migrate over to using our maven integrati
     === "BlinkReceiptCameraUi"
         ```diff title="build.gradle"
         dependencies {
-        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
+        -  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
         -  implementation("androidx.core:core-ktx:1.13.1")
         -  implementation("androidx.appcompat:appcompat:1.7.0")
         -  implementation("com.google.android.material:material:1.12.1")
