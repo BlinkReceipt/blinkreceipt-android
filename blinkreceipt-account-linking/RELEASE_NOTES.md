@@ -333,3 +333,6 @@
   - `AMAZON_DE_BETA` is replaced with `AMAZON_DE`
   - `AMAZON_FR_BETA` is replaced with `AMAZON_FR`
 - Stability fixes and improvements
+
+## 1.5.4
+- Stability fixes and improvements
