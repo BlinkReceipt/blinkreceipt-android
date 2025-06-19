@@ -278,7 +278,10 @@
 - Stability fixes and improvements
 
 ## 1.6.6
-- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Stability fixes and improvements
+
+## 1.6.7
 - Stability fixes and improvements
 
