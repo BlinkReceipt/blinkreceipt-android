@@ -1,0 +1,19 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeClient.Companion///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeClient.Companion.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeManager.Factory///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeManager.Factory.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.CalendarEvent///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.CalendarEvent.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.ContactInfo///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.ContactInfo.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.DriverLicense///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.DriverLicense.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Email///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Email.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Geo///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Geo.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Isbn///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Isbn.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Phone///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Phone.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Product///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Product.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Sms///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Sms.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Text///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Text.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Unknown///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Unknown.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Url///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Url.html
+$dokka.location:com.microblink.barcode.recognizer/BarcodeType.Wifi///PointingToDeclaration/com/microblink/barcode/recognizer/BarcodeType.Wifi.html
+com.microblink.barcode.recognizer
+com.microblink.barcode.recognizer.internal

@@ -1,0 +1,5 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.logcat/LogcatManager.Factory///PointingToDeclaration/com/microblink/logcat/LogcatManager.Factory.html
+com.microblink.logcat
+com.microblink.logcat.internal

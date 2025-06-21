@@ -1,0 +1,1 @@
+var moduleSearchIndex = [{"l":"blinkreceipt-security","url":"index.html"}]
