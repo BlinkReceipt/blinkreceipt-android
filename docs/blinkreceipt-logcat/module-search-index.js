@@ -1,0 +1,1 @@
+var moduleSearchIndex = [{"l":"blinkreceipt-logcat","url":"index.html"}]

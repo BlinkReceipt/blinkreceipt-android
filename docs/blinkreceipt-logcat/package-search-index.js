@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"com.microblink.logcat","url":"com/microblink/logcat/package-summary.html"}, {"l":"com.microblink.logcat.internal","url":"com/microblink/logcat/internal/package-summary.html"}, {"l":"All packages","url":"index.html"}]
