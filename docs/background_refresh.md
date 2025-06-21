@@ -29,14 +29,32 @@ function that returns a Boolean indicating whether the initialization is success
 ### Initializing with license key
 You can pass in your BlinkReceipt license key as an argument to the static initializer, and statically set the `productIntelligenceKey`.
 ```kotlin
-MessagingSDK.productIntelligenceKey = <your_product_intelligence_key> // Optional: statically set Product Intelligence key
+MessagingSDK.productIntelligenceKey = "<your_product_intelligence_key>" // Optional: statically set Product Intelligence key
 val success = MessagingSDK.initialize(context, licenseKey)
 ```
 
 ### Initializing without license key
 You can also initialize `MessagingSDK` without passing in the license key as an argument, but you need to declare the license key and product intelligence key under `AndroidManifest.xml`. Otherwise, 
 the initialization will fail.
+
+- `AndroidManifest.xml`
+
+```xml
+<manifest>
+    <!-- -->
+    <application>
+        <!-- -->
+        <meta-data
+            android:name="com.microblink.ProductIntelligence"
+            android:value="<Your Product Intelligence License Key>" />
+        <!-- -->
+    </application>
+</manifest>
+```
+
+- Initialization Code
 ```kotlin
+// No need to explicitly indicate Product Intelligence License Key since it was already defined from AndroidManifest.xml
 val success = MessagingSDK.initialize(context)
 ```
 
@@ -67,8 +85,8 @@ a default scope will be created.
 ```kotlin
 val messagingClient = MessagingClient(
     applicationContext,
-    lifecycleScope // use lifecycleScope as an example
-    )
+    lifecycleScope, // use lifecycleScope as an example
+)
 
 // perform background refresh and other activities
 
@@ -83,7 +101,7 @@ open class YourMessagingService: FirebaseMessagingService() {
     
     // an instance of MessagingClient needs to be accessible here -- 
     // whichever way it is provided (singleton, via injection, etc.)
-    val messagingClient: MessagingClient = <provide_instance_here>
+    val messagingClient: MessagingClient by lazy { MessagingClient(applicationContext, scope) }
 
     override fun onMessageReceived(message: RemoteMessage) {
         messagingClient.onMessageReceived(message)
@@ -116,20 +134,22 @@ To statically register this service class, declare the below in your app's `Andr
 
 To collect results from Background Refresh, you should listen to the SharedFlow `results` provided by `MessagingClient`, which produces a stream of `MessagingResult`s:
 ```kotlin
-messagingClient.results.collect { messagingResult: MessagingResult ->
-    when (messagingResult) {
-        is MessagingResult.Linking -> {
-            val (retailerId, scanResults, remaining, uuid) = result
-            // save scanResults to disk, etc.
+lifecycleScope.launch {
+    messagingClient.results.collect { messagingResult: MessagingResult ->
+        when (messagingResult) {
+            is MessagingResult.Linking -> {
+                val (retailerId, scanResults, remaining, uuid) = result
+                // save scanResults to disk, etc.
+            }
+            is MessagingResult.Digital -> {
+                val (retailerId, jobResults) = result
+                // perform actions depending whether jobResults is successful
+            }
+            is MessagingResult.Error -> {
+                // Log error -- this does not terminate the results flow
+            }
         }
-        is MessagingResult.Digital -> {
-            val (retailerId, jobResults) = result
-            // perform actions depending whether jobResults is successful
-        }
-        is MessagingResult.Error -> {
-            // Log error -- this does not terminate the results flow
-        }
-    }
+    }   
 }
 ```
 Note that this flow normally does not terminate, so it's collection is recommended to be bound to the lifecycle of your application.
