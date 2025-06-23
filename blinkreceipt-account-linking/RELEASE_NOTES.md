@@ -109,12 +109,12 @@
 - Kroger
   - Authentication improvements
 - Amazon
-    - proguard fix to prevent crashes while linking accounts
-    - Authentication flow improvements
-    - Improved analytics
-    - Improved 2FA support
-    - Fixed bug failing to return prices of some Canadian orders
-    - Fixed bug intermittently not completing when no new orders are found
+  - proguard fix to prevent crashes while linking accounts
+  - Authentication flow improvements
+  - Improved analytics
+  - Improved 2FA support
+  - Fixed bug failing to return prices of some Canadian orders
+  - Fixed bug intermittently not completing when no new orders are found
 
 ## 1.1.5
 
@@ -149,7 +149,7 @@
   - Kroger
     - Improved order status support
       - Returning orders from related merchants (Harris Teeter, Pick 'n Save) with propeply mapped merchantName and retailerId
-  -CVS, Starbucks
+        -CVS, Starbucks
       - User authentication improvements
       - Improved logging
 
@@ -313,8 +313,6 @@
 - Stability fixes and improvements
 
 ## 1.5.0
-- **BREAKING CHANGE** Removed the following Retailer(s):
-    - TACO_BELL
 - Stability fixes and improvements
 
 ## 1.5.1
@@ -334,6 +332,23 @@
   - `AMAZON_ES_BETA` is replaced with `AMAZON_ES`
   - `AMAZON_DE_BETA` is replaced with `AMAZON_DE`
   - `AMAZON_FR_BETA` is replaced with `AMAZON_FR`
+- Stability fixes and improvements
+
+## 1.5.4
+- Stability fixes and improvements
+
+## 1.5.5
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Changes to the Amazon Retailer:
+  - `AMAZON_BETA` is replaced with `AMAZON`
+  - `AMAZON_UK_BETA` is replaced with `AMAZON_UK`
+  - `AMAZON_CA_BETA` is replaced with `AMAZON_CA`
+  - `AMAZON_AU_BETA` is replaced with `AMAZON_AU`
+  - `AMAZON_ES_BETA` is replaced with `AMAZON_ES`
+  - `AMAZON_DE_BETA` is replaced with `AMAZON_DE`
+  - `AMAZON_FR_BETA` is replaced with `AMAZON_FR`
 - Added new Retailers:
   - ALI EXPRESS (US)
   - TEMU (US)
@@ -344,4 +359,8 @@
   - Changed method signature ~~AccountLinkingClient.verify()~~ into `AccountLinkingClient.link()`
   - Changed method signature of ~~AccountLinkingClient.order()~~, removing `preview: (view: View?)` parameter
 - Improvements in handling Web Cookies for Account Linking sessions
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
 - Stability fixes and improvements
