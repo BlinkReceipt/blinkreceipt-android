@@ -1,7 +1,7 @@
 # Release Notes
 
-## 1.0.0
-- Initial release
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - New Feature (Beta): Background Refresh and blinkreceipt-messaging SDK -- We’re excited to announce
   the beta release of Background Refresh for BlinkReceipt!
 - Background Refresh allows your app to automatically fetch new orders and perform remote scrapes
@@ -22,5 +22,5 @@
     - Integrate Firebase Cloud Messaging (FCM) support if not already present.
     - Forward incoming FCM push notifications to the Messaging SDK.
 
-## 1.0.1
+## 2.0.0-beta02
 - Stability fixes and improvements

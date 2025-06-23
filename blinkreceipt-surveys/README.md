@@ -16,7 +16,9 @@ To add the sdk to your android project please follow these steps:
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
     ```groovy
-     mavenCentral()
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.

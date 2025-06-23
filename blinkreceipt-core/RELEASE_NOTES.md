@@ -33,7 +33,7 @@
 - okhttp 4.8.1
 - build tools 30.0.1
 - Androidx crypto library to encrypt local storage( required )
-    -implementation "androidx.security:security-crypto:1.1.0-alpha02"
+  -implementation "androidx.security:security-crypto:1.1.0-alpha02"
 
 ## 1.0.7
 
@@ -82,12 +82,12 @@
 
 - stability fixes and improvements
 - New Product Intelligence fields added
-    - sector
-    - department
-    - majorCategory
-    - subCategory
-    - itemType
-    - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
+  - sector
+  - department
+  - majorCategory
+  - subCategory
+  - itemType
+  - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
 
 ## 1.1.6
 
@@ -327,7 +327,6 @@
 - Stability fixes and improvements
 
 ## 1.7.0
-- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - **BREAKING CHANGE** `Barcode` and `BarcodeType` models are now used by both `:blinkreceipt-barcode` and `:blinkreceipt-barcode-recognizer` modules.
 - **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
@@ -335,4 +334,12 @@
 - Stability fixes and improvements
 
 ## 1.7.1
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Improvements in handling Web Cookies
+- Stability fixes and improvements
+
+## 2.0.0-beta02
 - Stability fixes and improvements
