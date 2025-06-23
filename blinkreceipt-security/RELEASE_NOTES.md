@@ -56,3 +56,9 @@
 
 ## 1.1.5
 - Stability fixes and improvements
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
