@@ -108,19 +108,19 @@
 ## 1.2.1
 
 Product Updates
-    - Improved memory management
-    - Updated OCR models
-    - Costco Date improvements
-    - Overall parser improvements
+- Improved memory management
+- Updated OCR models
+- Costco Date improvements
+- Overall parser improvements
 Bug Fixes
-    - Detect internal banner id
-    - E-Receipts pass description from native context
+- Detect internal banner id
+- E-Receipts pass description from native context
 Third Party Libraries
-    - Retrofit 2.6.0
-    - OkHttp 3.14.2
-    - Gmail v1-rev105-1.25.0
-    - Google Api Client 1.30.1
-    - Google Api Services 1.29.2
+- Retrofit 2.6.0
+- OkHttp 3.14.2
+- Gmail v1-rev105-1.25.0
+- Google Api Client 1.30.1
+- Google Api Services 1.29.2
 
 ## 1.2.2
 
@@ -198,9 +198,9 @@ Third Party Libraries
 ## 1.3.0
 
 Blink Receipt Recognizer
-    - fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
-    - Update Play Service Auth framework to 18.0.0
-    - Removed internal location look up services.
+- fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
+- Update Play Service Auth framework to 18.0.0
+- Removed internal location look up services.
 
 - Dependencies
     - okhttp 4.5.0
@@ -222,11 +222,11 @@ Blink Receipt Recognizer
         - pos system
         - sub merchant
 - Dependencies
-      - blink receipt Core 1.0.2
-      - blink receipt Camera 1.0.2
-      - okhttp 4.7.0
-      - okio : 2.6.0
-      - retrofit: 2.8.2
+  - blink receipt Core 1.0.2
+  - blink receipt Camera 1.0.2
+  - okhttp 4.7.0
+  - okio : 2.6.0
+  - retrofit: 2.8.2
 
 ## 1.3.2
 
@@ -482,8 +482,8 @@ Blink Receipt Recognizer
           tools:node="remove" />
     ```
 - Fixed regressions with French receipts
-  - "1X" left in the RSD in two products with bogus "8" qty because of detached 'B'
-  - We fixed an issue with tagging totals related to coupons.
+    - "1X" left in the RSD in two products with bogus "8" qty because of detached 'B'
+    - We fixed an issue with tagging totals related to coupons.
 - We fixed an issue with certain receipts missing the last four digits of the credit card.
 - We fixed an issue where Pet Supply Plus returned the incorrect date.
 
@@ -510,8 +510,8 @@ Blink Receipt Recognizer
 
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
-  - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
-  - androidx.webkit:webkit:1.4.0 -> 1.6.1
+    - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
+    - androidx.webkit:webkit:1.4.0 -> 1.6.1
 - Tag long transaction ID for Walmart
 - Stability fixes and improvements
 
@@ -557,8 +557,8 @@ Blink Receipt Recognizer
 
 ## 1.7.4
 - Physical Receipts
-  - Product QTY improvements in the US
-  - Improvements to tip extraction
+    - Product QTY improvements in the US
+    - Improvements to tip extraction
 - Stability fixes and improvements
 
 ## 1.7.5
@@ -602,27 +602,27 @@ Blink Receipt Recognizer
 
 ## 1.8.3
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to date extraction in CA, US 
-- Improvements to Last 4 CC extraction in US 
+- Improvements to date extraction in CA, US
+- Improvements to Last 4 CC extraction in US
 - Improvements to merchant detection in UK
 
 ## 1.8.4
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Merchant detection improvements in DE 
-- Improvements to sales tax extraction if sales tax exemption is found on receipt. 
+- Merchant detection improvements in DE
+- Improvements to sales tax extraction if sales tax exemption is found on receipt.
 - Improvements to QTY extraction in US for Albertsons banners and Lowe’s receipts
 - Updated to target API Level 34
 
 ## 1.8.5
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to QTY extraction in US for Albertsons banners 
+- Improvements to QTY extraction in US for Albertsons banners
 - Improvements to Last 4 CC extraction in US
 
 ## 1.8.6
 - **BREAKING CHANGE** Removed `events` constructor parameter from `PdfClient`
 - Fixed an issue where onDeviceOcr() was not returned with the correct value
-- Improvements to QTY and weight extraction in US for various retailers 
-- Improvements to date extraction in CA, US 
+- Improvements to QTY and weight extraction in US for various retailers
+- Improvements to date extraction in CA, US
 - Improvements to store state extraction in the US
 - Stability fixes and improvements
 
@@ -665,12 +665,10 @@ Blink Receipt Recognizer
 
 ## 1.9.2
 - Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
-  - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
-  - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
--  ***Breaking Change*** Changed ScanResults barcode type from String to a List
-- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
-- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
-- Stability fixes and improvements
+    - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
+    - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
+- Receipt Image Quality
+    - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
 
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
@@ -684,17 +682,30 @@ Blink Receipt Recognizer
 - Added support for Costco receipts, including GST handling and more (NZ)
 - Stability fixes and improvements
 
-## 2.0.0
-- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
-- Full Price and Discount Improvements - US 
-  - Improvements on Full Price extraction (price before any discounts)
-  - Enhanced detection, extraction and mapping of discounts to individual products. 
+## 1.9.5
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- Full Price and Discount Improvements - US
+    - Improvements on Full Price extraction (price before any discounts)
+    - Enhanced detection, extraction and mapping of discounts to individual products.
 - Improvements to Australian Receipts
-  - Enhanced receipt extraction for Australian transactions. 
-  - Optimized handling of GST and other tax-related fields.
+    - Enhanced receipt extraction for Australian transactions.
+    - Optimized handling of GST and other tax-related fields.
 - Add support for armeabi-v7a
 - ***Breaking Change*** Changed ScanResults barcode type from String to a List
 - Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
 - Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
-- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- Stability fixes and improvements
+
+## 1.9.6
+- Resolved a intermittent crash affecting certain receipt image edge cases.
+- Stability fixes and improvements
+
+## 1.9.7
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
 - Stability fixes and improvements

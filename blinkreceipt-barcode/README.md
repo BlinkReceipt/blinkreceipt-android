@@ -4,10 +4,9 @@ Blink Receipt Barcode SDK for Android is an SDK that enables you to easily add b
 
 ## <a name=requirements></a> Requirements
 - AndroidX
-- Min SDK 21
-- Compile SDK: 35
-- Target SDK: 34
-- Java 11
+- Min SDK 21+
+- Compile SDK: 29+
+- Java 8+
 
 ## <a name=intro></a> Project Integration and Initialization
 To add the sdk to your android project please follow these steps:
@@ -15,7 +14,9 @@ To add the sdk to your android project please follow these steps:
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
     ```groovy
-     mavenCentral()
+    repositories {
+      maven { url  "https://maven.microblink.com" }
+    }
     ```
 
 2. Add the following to your dependency section in your app `build.gradle`.
