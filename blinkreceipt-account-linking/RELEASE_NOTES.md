@@ -336,3 +336,6 @@
 
 ## 1.5.4
 - Stability fixes and improvements
+
+## 1.5.5
+- Stability fixes and improvements

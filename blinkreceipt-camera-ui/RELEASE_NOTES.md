@@ -161,3 +161,7 @@
 
 ## 1.4.1
 - Stability fixes and improvements
+
+## 1.4.2
+- ***Breaking Change*** Removed scanRegion option
+- Stability fixes and improvements

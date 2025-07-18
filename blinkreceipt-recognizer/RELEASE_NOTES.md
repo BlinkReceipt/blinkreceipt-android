@@ -699,3 +699,8 @@ Blink Receipt Recognizer
 ## 1.9.6
 - Resolved a intermittent crash affecting certain receipt image edge cases.
 - Stability fixes and improvements
+
+## 1.9.7
+- Accuracy improvement to priceAfterCoupon, we now return null if not applicable, rather than 0
+- ***Breaking Change*** Removed scanRegion option
+- Stability fixes and improvements
