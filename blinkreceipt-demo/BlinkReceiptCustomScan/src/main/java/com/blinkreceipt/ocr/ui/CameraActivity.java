@@ -91,8 +91,6 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
         recognizerView.recognizerCallback(this);
 
-        recognizerView.scanRegion(regionOfInterest);
-
         recognizerView.setMeteringAreas(new RectF[]{
                 regionOfInterest
         }, true);
