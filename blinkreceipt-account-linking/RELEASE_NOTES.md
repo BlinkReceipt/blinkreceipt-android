@@ -379,6 +379,9 @@ accountLinkingClient.orders(
 - Improvements in handling Web Cookies for Account Linking sessions
 - Stability fixes and improvements
 
+## 1.5.8
+- Stability fixes and improvements
+
 ## 2.0.0-beta01
 - **BREAKING CHANGE** Changes to the Amazon Retailer:
     - `AMAZON_BETA` is replaced with `AMAZON`
@@ -395,8 +398,8 @@ accountLinkingClient.orders(
     - THRIVE MARKET (US)
 - **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - **BREAKING CHANGE** AccountLinkingClient Public API changes:
-    - Changed method signature ~~AccountLinkingClient.verify()~~ into `AccountLinkingClient.link()`
-    - Changed method signature of ~~AccountLinkingClient.order()~~, removing `preview: (view: View?)` parameter
+  - Changed method signature ~~AccountLinkingClient.verify()~~ into `AccountLinkingClient.link()`
+  - Changed method signature of ~~AccountLinkingClient.order()~~, removing `preview: (view: View?)` parameter
 - Improvements in handling Web Cookies for Account Linking sessions
 - **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Stability fixes and improvements
@@ -404,5 +407,6 @@ accountLinkingClient.orders(
 ## 2.0.0-beta02
 - Stability fixes and improvements
 
-## 1.5.8
+## 2.0.0-beta03
+- Refactored Account Linking Analytics implementation, replaced with Digital API `operation_events` implementation.
 - Stability fixes and improvements
