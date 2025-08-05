@@ -379,6 +379,12 @@ accountLinkingClient.orders(
 - Improvements in handling Web Cookies for Account Linking sessions
 - Stability fixes and improvements
 
+## 1.5.8
+- Stability fixes and improvements
+
+## 1.5.9
+- Stability fixes and improvements
+
 ## 2.0.0-beta01
 - **BREAKING CHANGE** Changes to the Amazon Retailer:
     - `AMAZON_BETA` is replaced with `AMAZON`
@@ -404,8 +410,6 @@ accountLinkingClient.orders(
 ## 2.0.0-beta02
 - Stability fixes and improvements
 
-## 1.5.8
-- Stability fixes and improvements
-
-## 1.5.9
+## 2.0.0-beta03
+- Refactored Account Linking Analytics implementation, replaced with Digital API `operation_events` implementation.
 - Stability fixes and improvements
