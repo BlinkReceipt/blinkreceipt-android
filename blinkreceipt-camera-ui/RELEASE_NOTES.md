@@ -163,6 +163,10 @@
 - Stability fixes and improvements
 
 ## 1.4.2
+- ***Breaking Change*** The scanRegion option has been removed to prevent the bottom of the receipt from being cut off during scanning.
+- Stability fixes and improvements
+
+## 1.4.3
 - Stability fixes and improvements
 
 ## 2.0.0-beta01
@@ -170,4 +174,7 @@
 - Stability fixes and improvements
 
 ## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
 - Stability fixes and improvements

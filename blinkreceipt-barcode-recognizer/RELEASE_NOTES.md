@@ -10,9 +10,18 @@
 ## 1.0.2
 - Stability fixes and improvements
 
+## 1.0.3
+- Stability fixes and improvements
+
+## 1.0.4
+- Stability fixes and improvements
+
 ## 2.0.0-beta01
 - **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Stability fixes and improvements
 
 ## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
 - Stability fixes and improvements

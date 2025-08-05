@@ -359,6 +359,11 @@
 - Stability fixes and improvements
 
 ## 1.6.6
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Remote Message Job IDs are now included as part of digital analytics
+- Stability fixes and improvements
+
+## 1.6.7
 - Stability fixes and improvements
 
 ## 2.0.0-beta01
@@ -366,4 +371,8 @@
 - Stability fixes and improvements
 
 ## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Implement Digital API `operation_events` implementation.
 - Stability fixes and improvements

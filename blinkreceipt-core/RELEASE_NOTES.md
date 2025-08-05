@@ -315,10 +315,25 @@
 ## 1.6.8
 - Stability fixes and improvements
 
+## 1.6.8
+- Stability fixes and improvements
+
+## 1.6.9
+- `ScanResults.eReceiptRawHtml()` will no longer contain the HTML tags string value as it now returns a NULL or an empty string.
+  - Instead, we've introduced new fields to store raw values:
+    - `ScanResults.rawData()`
+      - This field can be either HTML tags OR a stringified JSON string value.
+    - `ScanResults.rawDataType()`
+      - This field can be either "html" or "json" string value.
+- Stability fixes and improvements
+
 ## 2.0.0-beta01
 - **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Improvements in handling Web Cookies
 - Stability fixes and improvements
 
 ## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
 - Stability fixes and improvements

@@ -701,6 +701,13 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 1.9.7
+- Accuracy improvement to priceAfterCoupon, we now return null if not applicable, rather than 0
+- ***Breaking Change*** The scanRegion option has been removed to prevent the bottom of the receipt from being cut off during scanning.
+- More accurate extraction of product quantities, even when listed in less common formats
+- Improved detection of discounts and promotions
+- Enhanced capture of the last 4 digits of credit card numbers across a wider range of receipt layouts
+
+## 1.9.8
 - Stability fixes and improvements
 
 ## 2.0.0-beta01
@@ -708,4 +715,7 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
 - Stability fixes and improvements
