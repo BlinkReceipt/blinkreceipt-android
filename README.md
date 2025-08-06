@@ -314,9 +314,10 @@ Even though there are different ways to initialize the sdk, the recommended way 
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
+        <meta-data 
+            android:name="com.microblink.internal.ReceiptSdkInitializer"
+            android:value="androidx.startup"
+            tools:node="remove" />
 </provider>
 ```
 If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
@@ -327,7 +328,7 @@ public void onCreate() {
         super.onCreate();
 
         BlinkReceiptSdk.initialize( context );
-        }
+}
 ```
 
 ```xml
@@ -336,11 +337,58 @@ public void onCreate() {
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
+        <meta-data
+            android:name="com.microblink.internal.ReceiptSdkInitializer" 
+            android:value="androidx.startup"
+            tools:node="remove" />
 </provider>
 ```
+
+If your app provides custom WorkManager configuration and initialization, you must setup your own Initializer to which the custom WorkManager configuration and initialization will take place.
+```xml
+ <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+        <meta-data
+            android:name="com.microblink.internal.ReceiptSdkInitializer" 
+            android:value="androidx.startup"
+            tools:node="remove" />
+        <!-- Remove WorkManager Initializer -->
+        <meta-data
+            android:name="androidx.work.WorkManagerInitializer"
+            android:value="androidx.startup"
+            tools:node="remove" />
+        <!-- Remove BlinkReceipt's Barcode Detector initializer -->
+        <meta-data
+            android:name="com.microblink.internal.BarcodeDetectorInitializer"
+            android:value="androidx.startup"
+            tools:node="remove"/>
+        <!-- Introduce your custom Initializer -->
+        <meta-data
+            android:name="com.custom.app.CustomAppInitializer"
+            android:value="androidx.startup"/>
+</provider>
+```
+
+```kotlin
+public class CustomAppInitializer: Initializer<Unit> {
+
+    override fun create(context: Context) {
+        val configuration = Configuration.Builder()
+            .setDefaultProcessName("com.custom.app:custom-app-process")
+            // Other Client-specific configuration(s)
+            .build()
+        WorkManager.initialize(context, configuration)
+        return
+    }
+
+    override fun dependencies(): List<Class<out Initializer<*>?>?> = emptyList()
+}
+```
+- This will ensure that the your app's WorkManager configuration and initialization will supersede and will be used across both client app and SDK's internal logic.
+
 
 ```java
 @Override
