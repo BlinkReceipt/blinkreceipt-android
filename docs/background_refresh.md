@@ -104,7 +104,14 @@ open class YourMessagingService: FirebaseMessagingService() {
     val messagingClient: MessagingClient by lazy { MessagingClient(applicationContext, scope) }
 
     override fun onMessageReceived(message: RemoteMessage) {
-        messagingClient.onMessageReceived(message)
+        // Client app may include filtering message about to be passed to MessagingClient
+        if(message.data["BlinkReceipt"]) {
+            // Messages received from BlinkReceipt are forwarded to MessagingClient
+            messagingClient.onMessageReceived(message)
+            // Collect Results here. See `Collect Results from Background` section below
+        } else {
+            // Other messages can be handled here
+        }
     }
 
     override fun onNewToken(token: String) {
@@ -138,11 +145,11 @@ lifecycleScope.launch {
     messagingClient.results.collect { messagingResult: MessagingResult ->
         when (messagingResult) {
             is MessagingResult.Linking -> {
-                val (retailerId, scanResults, remaining, uuid) = result
+                val (retailerId, scanResults, remaining, uuid) = messagingResult
                 // save scanResults to disk, etc.
             }
             is MessagingResult.Digital -> {
-                val (retailerId, jobResults) = result
+                val (retailerId, jobResults) = messagingResult
                 // perform actions depending whether jobResults is successful
             }
             is MessagingResult.Error -> {
