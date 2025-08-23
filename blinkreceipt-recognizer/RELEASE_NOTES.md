@@ -706,3 +706,12 @@ Blink Receipt Recognizer
 - More accurate extraction of product quantities, even when listed in less common formats
 - Improved detection of discounts and promotions
 - Enhanced capture of the last 4 digits of credit card numbers across a wider range of receipt layouts
+
+## 1.9.8
+- Unsupported PDF files now return a failure code instead of an empty response, enabling applications to inform the user.
+- Merchant Detection Improvements 
+  - Enhanced merchant detection models for the US, The Netherlands, and Germany, improving accuracy and consistency across regions. 
+- Stability Improvements 
+  - Addressed an issue that could cause unexpected crashes in certain scenarios, improving overall reliability 
+- Basket Data Enhancements – Germany 
+  - Improved extraction accuracy for basket-level details, including product quantities, promotions, and pricing.

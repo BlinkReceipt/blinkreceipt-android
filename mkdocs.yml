@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.9.7'
-    next_release: '1.9.8'
+    release: '1.9.8'
+    next_release: '1.9.9'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -40,6 +40,7 @@ nav:
         - Gmail: digital_gmail.md
         - Requirements: digital_requirements.md
     - Maven migration guide: maven_migration.md
+    - WorkManager Integration: workmanager_integration.md
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
