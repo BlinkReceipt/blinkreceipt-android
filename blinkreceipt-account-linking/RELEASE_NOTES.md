@@ -339,3 +339,32 @@
 
 ## 1.5.5
 - Stability fixes and improvements
+
+## 1.5.6
+- When performing Grab Orders where re-authentication is required (i.e. login session expired, cookies cleared, etc.), AccountLinkingClient `failure()` callback now returns AccountLinkingException with the following values:
+  - error `code` = `com.microblink.linking.VERIFICATION_NEEDED`(1004) and WebView instance
+  - Includes WebView instance to allow client apps to response to a re-authentication.
+    - This is similar to how client apps handle Verify Account process where User Input is required.
+      - Client app must respond accordingly using the error code and WebView instance received from `failure()` callback
+      - i.e.
+```kotlin
+accountLinkingClient.orders(
+    // ...
+    success = {
+      // After User Input has been provided(Re-auth), the SDK will proceed as normal(continue performing actual Grab Orders Operation).
+    },
+    failure = { retailerId, throwable ->
+      when(throwable.code) {
+        INVALID_CREDENTIALS, VERIFICATION_NEEDED -> {    // Re-auth required for this Grab Orders attempt
+          val webView: WebView? = throwable.view
+          // Show WebView to perform User Input
+        }
+        else -> {
+          // Show Error
+        }
+      }
+    },
+)
+```
+- Resolved an issue where WebView instances are created using application context which prevents autofill from working.
+- Stability fixes and improvements

@@ -360,3 +360,6 @@
 
 ## 1.6.6
 - Stability fixes and improvements
+
+## 1.6.7
+- Stability fixes and improvements

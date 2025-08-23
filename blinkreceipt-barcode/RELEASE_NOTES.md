@@ -288,3 +288,6 @@
 ## 1.6.8
 - Stability fixes and improvements
 
+## 1.6.9
+- Stability fixes and improvements
+
