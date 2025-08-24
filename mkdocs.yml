@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '2.0.0-beta02'
-    next_release: '2.0.0-beta03'
+    release: '2.0.0-beta04'
+    next_release: '2.0.0-beta05'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -42,6 +42,7 @@ nav:
     - Cookie Storage and Synchronization: cookie_storage_and_synchronization.md
     - Android 16(API 36) Migration Guide: android_16_migration_guide.md
     - Maven migration guide: maven_migration.md
+    - WorkManager Integration: workmanager_integration.md
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
