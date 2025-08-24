@@ -265,10 +265,10 @@
 - Stability fixes and improvements
 
 ## 1.6.2
+- **BREAKING CHANGE** removed zxing and replaced with Google MlKit
 - Stability fixes and improvements
 
 ## 1.6.3
-- **BREAKING CHANGE** removed zxing and replaced with Google MlKit
 - Stability fixes and improvements
 
 ## 1.6.4
@@ -291,7 +291,6 @@
 - Stability fixes and improvements
 
 ## 1.7.0
-- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - **BREAKING CHANGE** Refactored `Barcode` and `BarcodeType` models to instead use the ones from `com.microblink.core` package.
 - **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
@@ -304,4 +303,17 @@
 - Improved the barcode scanning logic to resolve issues on specific device camera hardware, enhancing scanning reliability and performance.
   - You may need to apply `RecognizerView.setOptimizeCameraForNearScan(true);` to improve camera focus on select devices. 
     - Enabling this setting helps capture clearer frames, leading to more accurate barcode results.
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements
