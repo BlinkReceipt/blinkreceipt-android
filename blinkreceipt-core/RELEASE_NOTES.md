@@ -315,9 +315,6 @@
 ## 1.6.8
 - Stability fixes and improvements
 
-## 1.6.8
-- Stability fixes and improvements
-
 ## 1.6.9
 - `ScanResults.eReceiptRawHtml()` will no longer contain the HTML tags string value as it now returns a NULL or an empty string.
   - Instead, we've introduced new fields to store raw values:
@@ -325,6 +322,9 @@
       - This field can be either HTML tags OR a stringified JSON string value.
     - `ScanResults.rawDataType()`
       - This field can be either "html" or "json" string value.
+- Stability fixes and improvements
+
+## 1.7.0
 - Stability fixes and improvements
 
 ## 2.0.0-beta01
@@ -336,4 +336,8 @@
 - Stability fixes and improvements
 
 ## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
+- **BREAKING CHANGES** Restricted access to `com.microblink.core.Product.imageUrl()` and `com.microblink.core.Product.productUrl()` API usage. It will now be for SDK's internal use only. If used(i.e. Lint check suppressed), it will always return `null`.
 - Stability fixes and improvements

@@ -144,12 +144,12 @@
 - Stability fixes and improvements
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
-    - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
-    - com.google.android.material:material:1.4.0 -> 1.8.0
-    - androidx.constraintlayout:constraintlayout:2.0.4 -> 2.1.4
-    - androidx.fragment:fragment-ktx:1.3.6 -> 1.5.7
-    - androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1 -> 2.6.1
-    - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0 -> 1.6.4
+  - com.google.android.material:material:1.4.0 -> 1.8.0
+  - androidx.constraintlayout:constraintlayout:2.0.4 -> 2.1.4
+  - androidx.fragment:fragment-ktx:1.3.6 -> 1.5.7
+  - androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1 -> 2.6.1
+  - androidx.lifecycle:lifecycle-runtime-ktx:2.3.1 -> 2.6.1
 
 ## 1.2.7
 - Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
@@ -241,7 +241,6 @@
 - Stability fixes and improvements
 
 ## 1.5.4
-- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
 
@@ -252,4 +251,20 @@
 - Stability fixes and improvements
 
 ## 1.5.7
+- Stability fixes and improvements
+
+## 1.5.8
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements

@@ -25,9 +25,9 @@
 ## 1.0.5
 
 - Bug fixes
-    - Summary mapping fix
-    - Camera scan activity tool tip intent fix
-    - Populate total for products
+  - Summary mapping fix
+  - Camera scan activity tool tip intent fix
+  - Populate total for products
 - Updated third part libraries ( retrofit, scandit, okio )
 - Network optimizations
 - Additional lines added to Scan Results
@@ -157,15 +157,15 @@ Third Party Libraries
 ## 1.2.7
 
 - Breaking interface changes for CameraDataListener.
-    - Removed onDebugResults callback
-    - Renamed onCameraFrameError to onCameraFrameException
-    - Renamed onEdgeDetectionResult to onEdgeDetectionResults
+  - Removed onDebugResults callback
+  - Renamed onCameraFrameError to onCameraFrameException
+  - Renamed onEdgeDetectionResult to onEdgeDetectionResults
 - Camera management thread improvements
 - Added blurry & receipt property to TakePictureResult
 - Add channel to scan results
 - Samsung camera permission issue & aspect ratio fix.
 - Gmail
-    - onSignInCancelled added for when a user cancels sign in requests
+  - onSignInCancelled added for when a user cancels sign in requests
 
 ## 1.2.8
 
@@ -178,22 +178,22 @@ Third Party Libraries
 - Modularized Recognizer SDK, which now depends on BlinkReceiptCore & BlinkReceiptCamera
 - Renamed ReceiptSdk to BlinkReceiptSdk
 - Class Repackaging
-    - Product
-        - com.microblink.Product
-        - com.microblink.core.Product
-    - ScanResults
-        - com.microblink.ScanResults
-        - com.microblink.core.ScanResults
-    - Retailer
-        - com.microblink.Retailer
-        - com.microblink.core.Retailer
+  - Product
+    - com.microblink.Product
+    - com.microblink.core.Product
+  - ScanResults
+    - com.microblink.ScanResults
+    - com.microblink.core.ScanResults
+  - Retailer
+    - com.microblink.Retailer
+    - com.microblink.core.Retailer
 - Dependencies
-    - Build Tools: 29.0.3
-    - Okhttp: 4.4.1
-    - Retrofit : 2.8.1
-    - Okio : 2.4.3
-    - Tasks : 17.0.1
-    - Timber: 4.7.1
+  - Build Tools: 29.0.3
+  - Okhttp: 4.4.1
+  - Retrofit : 2.8.1
+  - Okio : 2.4.3
+  - Tasks : 17.0.1
+  - Timber: 4.7.1
 
 ## 1.3.0
 
@@ -203,11 +203,11 @@ Blink Receipt Recognizer
 - Removed internal location look up services.
 
 - Dependencies
-    - okhttp 4.5.0
-    - Play Service Task 17.0.2
-    - Play Service Auth 18.0.0
-    - Blink Receipt Camera 1.0.1
-    - Blink Receipt Core 1.0.1
+  - okhttp 4.5.0
+  - Play Service Task 17.0.2
+  - Play Service Auth 18.0.0
+  - Blink Receipt Camera 1.0.1
+  - Blink Receipt Core 1.0.1
 
 ## 1.3.1
 
@@ -218,9 +218,9 @@ Blink Receipt Recognizer
 - process camera frames when in the resume state only.
 - improved native memory model
 - e-receipt
-    - introduced the following new properties:
-        - pos system
-        - sub merchant
+  - introduced the following new properties:
+    - pos system
+    - sub merchant
 - Dependencies
   - blink receipt Core 1.0.2
   - blink receipt Camera 1.0.2
@@ -314,10 +314,10 @@ Blink Receipt Recognizer
 - performance improvements across all non-Apple platforms (primarily newer Android phones)
 - internal serialization performance
 - AmazonManager ***Breaking Change***
-    - must call initialize before accessing orders, verify, credentials
-    - clearOrders() now returns Task<Boolean>
-    - clearCredentials() now returns Task<Boolean>
-    - storeCredentials now returns Task<Boolean>
+  - must call initialize before accessing orders, verify, credentials
+  - clearOrders() now returns Task<Boolean>
+  - clearCredentials() now returns Task<Boolean>
+  - storeCredentials now returns Task<Boolean>
 - fix incorrect handling for bad password in Amazon
 - web kit 1.4.0
 - parsing bug fixes
@@ -482,8 +482,8 @@ Blink Receipt Recognizer
           tools:node="remove" />
     ```
 - Fixed regressions with French receipts
-    - "1X" left in the RSD in two products with bogus "8" qty because of detached 'B'
-    - We fixed an issue with tagging totals related to coupons.
+  - "1X" left in the RSD in two products with bogus "8" qty because of detached 'B'
+  - We fixed an issue with tagging totals related to coupons.
 - We fixed an issue with certain receipts missing the last four digits of the credit card.
 - We fixed an issue where Pet Supply Plus returned the incorrect date.
 
@@ -510,8 +510,8 @@ Blink Receipt Recognizer
 
 - Updated to target and compile API Level 33
 - Updated the following dependencies:
-    - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
-    - androidx.webkit:webkit:1.4.0 -> 1.6.1
+  - com.google.android.gms:play-services-auth:19.2.0 -> 20.5.0
+  - androidx.webkit:webkit:1.4.0 -> 1.6.1
 - Tag long transaction ID for Walmart
 - Stability fixes and improvements
 
@@ -557,8 +557,8 @@ Blink Receipt Recognizer
 
 ## 1.7.4
 - Physical Receipts
-    - Product QTY improvements in the US
-    - Improvements to tip extraction
+  - Product QTY improvements in the US
+  - Improvements to tip extraction
 - Stability fixes and improvements
 
 ## 1.7.5
@@ -665,10 +665,10 @@ Blink Receipt Recognizer
 
 ## 1.9.2
 - Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
-    - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
-    - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
+  - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
+  - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
 - Receipt Image Quality
-    - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
+  - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
 
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
@@ -685,11 +685,11 @@ Blink Receipt Recognizer
 ## 1.9.5
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Full Price and Discount Improvements - US
-    - Improvements on Full Price extraction (price before any discounts)
-    - Enhanced detection, extraction and mapping of discounts to individual products.
+  - Improvements on Full Price extraction (price before any discounts)
+  - Enhanced detection, extraction and mapping of discounts to individual products.
 - Improvements to Australian Receipts
-    - Enhanced receipt extraction for Australian transactions.
-    - Optimized handling of GST and other tax-related fields.
+  - Enhanced receipt extraction for Australian transactions.
+  - Optimized handling of GST and other tax-related fields.
 - Add support for armeabi-v7a
 - ***Breaking Change*** Changed ScanResults barcode type from String to a List
 - Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
@@ -708,6 +708,15 @@ Blink Receipt Recognizer
 - Enhanced capture of the last 4 digits of credit card numbers across a wider range of receipt layouts
 
 ## 1.9.8
+- Unsupported PDF files now return a failure code instead of an empty response, enabling applications to inform the user.
+- Merchant Detection Improvements
+  - Enhanced merchant detection models for the US, The Netherlands, and Germany, improving accuracy and consistency across regions.
+- Stability Improvements
+  - Addressed an issue that could cause unexpected crashes in certain scenarios, improving overall reliability
+- Basket Data Enhancements – Germany
+  - Improved extraction accuracy for basket-level details, including product quantities, promotions, and pricing.
+
+## 1.9.9
 - Stability fixes and improvements
 
 ## 2.0.0-beta01
@@ -718,4 +727,7 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements
