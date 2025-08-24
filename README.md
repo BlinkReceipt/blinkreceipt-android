@@ -367,13 +367,13 @@ If your app provides custom WorkManager configuration and initialization, you mu
             tools:node="remove"/>
         <!-- Introduce your custom Initializer -->
         <meta-data
-            android:name="com.custom.app.CustomAppInitializer"
+            android:name="com.custom.app.AppInitializer"
             android:value="androidx.startup"/>
 </provider>
 ```
 
 ```kotlin
-public class CustomAppInitializer: Initializer<Unit> {
+public class AppInitializer: Initializer<Unit> {
 
     override fun create(context: Context) {
         val configuration = Configuration.Builder()
