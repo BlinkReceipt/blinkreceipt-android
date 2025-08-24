@@ -349,3 +349,7 @@
 
 ## 2.0.0-beta03
 - Stability fixes and improvements
+
+## 2.0.0-beta04
+- **BREAKING CHANGES** Restricted access to `com.microblink.core.Product.imageUrl()` and `com.microblink.core.Product.productUrl()` API usage. It will now be for SDK's internal use only. If used(i.e. Lint check suppressed), it will always return `null`.
+- Stability fixes and improvements

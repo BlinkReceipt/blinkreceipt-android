@@ -308,3 +308,15 @@
 
 ## 1.7.2
 - Stability fixes and improvements
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
+- Stability fixes and improvements

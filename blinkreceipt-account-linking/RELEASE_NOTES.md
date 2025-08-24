@@ -413,3 +413,6 @@ accountLinkingClient.orders(
 ## 2.0.0-beta03
 - Refactored Account Linking Analytics implementation, replaced with Digital API `operation_events` implementation.
 - Stability fixes and improvements
+
+## 2.0.0-beta04
+- Stability fixes and improvements

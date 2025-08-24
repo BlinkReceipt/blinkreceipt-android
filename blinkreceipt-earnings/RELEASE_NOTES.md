@@ -201,7 +201,7 @@
 
 ## 1.4.1
 - Changed internal dependencies from api to implementation. Please include the following:
-    - implementation "com.google.android.gms:play-services-tasks:18.0.2"
+  - implementation "com.google.android.gms:play-services-tasks:18.0.2"
 - Stability fixes and improvements
 
 ## 1.4.2
@@ -304,4 +304,16 @@
 - Stability fixes and improvements
 
 ## 1.7.2
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements
