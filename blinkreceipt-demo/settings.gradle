@@ -1,5 +1,4 @@
 include ':BlinkReceiptEarnings'
-include ':BlinkReceiptBarcode'
 include ':BlinkReceiptImap'
 include ':BlinkReceiptOutlook'
 include ':BlinkReceiptStaticScan'

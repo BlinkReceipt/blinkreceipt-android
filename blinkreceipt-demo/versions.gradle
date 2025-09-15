@@ -29,14 +29,14 @@ buildscript {
             "agp"              : '9.0.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
-            'bom'              : '1.9.12',
+            'bom'              : '2.1.0-beta01',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
             'okio'             : '3.9.0',
             'barcodeScanner'   : '17.3.0',
-            'versionMajor'     : 1,
-            'versionMinor'     : 9,
-            'versionPatch'     : 12
+            'versionMajor'     : 2,
+            'versionMinor'     : 1,
+            'versionPatch'     : 0
     ]
 }
