@@ -4,13 +4,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.RectF;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.ViewGroupCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.blinkreceipt.ocr.R;
+import com.blinkreceipt.ocr.databinding.ActivityCameraScanBinding;
 import com.microblink.BitmapResult;
 import com.microblink.CameraCaptureListener;
 import com.microblink.CameraRecognizerCallback;
@@ -19,15 +29,14 @@ import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
 import com.microblink.core.ScanResults;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.Objects;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import org.jetbrains.annotations.NotNull;
-
 public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback {
+
+    private ActivityCameraScanBinding binding;
 
     private RecognizerView recognizerView;
 
@@ -42,8 +51,32 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        WindowCompat.enableEdgeToEdge(this.getWindow());
 
-        setContentView(R.layout.activity_camera_scan);
+        binding = ActivityCameraScanBinding.inflate(getLayoutInflater());
+        View rootView = binding.getRoot();
+        setContentView(rootView);
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() |
+                            WindowInsetsCompat.Type.displayCutout()
+            );
+            // Apply the insets as padding to the view. Here, set all the dimensions
+            // as appropriate to your layout. You can also update the view's margin if
+            // more appropriate.
+            v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+
+            // Return CONSUMED if you don't want the window insets to keep passing down
+            // to descendant views.
+            return WindowInsetsCompat.CONSUMED;
+        });
+        ViewGroupCompat.installCompatInsetsDispatch(rootView);
+        WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView())
+                .setAppearanceLightStatusBars(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            this.getWindow().setStatusBarContrastEnforced(true);
+        }
 
         recognizerView = findViewById(R.id.recognizer);
 
