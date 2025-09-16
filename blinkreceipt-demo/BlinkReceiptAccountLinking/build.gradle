@@ -71,6 +71,8 @@ dependencies {
     implementation "com.google.android.material:material:${versions.material}"
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
 
+    implementation "androidx.core:core-ktx:${androidx.core}"
+
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
 

@@ -73,6 +73,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
 
+    implementation "androidx.core:core-ktx:${androidx.core}"
+
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")
 

@@ -78,6 +78,8 @@ dependencies {
         exclude group: 'com.microsoft.device.display'
     }
 
+    implementation "androidx.core:core-ktx:${androidx.core}"
+
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
 
