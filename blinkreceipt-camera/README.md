@@ -1,6 +1,6 @@
 # Blink Receipt Camera SDK
 
-Blink Receipt Camera SDK for Android is an SDK that enables you to easily add camera functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
+Blink Receipt Camera SDK for Android is an SDK that enables you to easily add camera functionality to your app with the purpose of scanning receipts. Internally, the SDK uses the CameraX library. With provided camera management you can easily create an app that scans receipts.
 
 ## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
