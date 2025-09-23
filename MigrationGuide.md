@@ -4,9 +4,9 @@ This guide helps you migrate your application from the existing BlinkReceipt SDK
 
 ## Key differences
 
-- **blinkreceipt-barcode is removed**: The SDK is removed and we recommend swtiching to using Google ML Kit for the same functionality. 
-- **blinkreceipt-camera**: The SDK now uses CameraX to provide frames and capture images.
-- **blinkreceipt-recognizer**: Many legacy Camera related classes are now unused and deleted, the most important changes are outlined in #Migration-guide. 
+- **blinkreceipt-barcode**: The SDK is removed and we recommend switching to using Google ML Kit for the same functionality
+- **blinkreceipt-camera**: The SDK now uses CameraX to provide frames and capture images
+- **blinkreceipt-recognizer**: Many legacy Camera related classes are now unused and deleted, the most important changes are outlined in the [Migration guide](#migration-guide) 
 
 
 ## Migration guide
@@ -82,7 +82,7 @@ public class MyCameraActivity extends AppCompatActivity implements CameraCapture
 
 #### Update Frame Results usage
 
-The `CameraFrameResult` no longer has `Bitmap frame1080p()`. Instead, since only 1080p resolution is used, the `Bitmap` is returned via existing method `Bitmap bitmap();` 
+The `CameraFrameResult` no longer has `Bitmap frame1080p()`. Instead, since only 1080p resolution is used, the `Bitmap` is returned via existing method `Bitmap bitmap()` 
 
 For the same reason, it is no longer possible to call `TakePictureResult.high()`, and you should just call `TakePictureResult.bitmap()` instead.
 
@@ -90,7 +90,7 @@ Also, it is no longer possible to set `Bitmap` in `CameraFrameResult`, as the ob
 
 #### Update any other deleted methods or classes
 
-The following methods are no longer available. They are mostly related to the old Camera framework and are now not required with the CameraX. 
+The following methods are no longer available. They are mostly related to the old Camera framework and are now not required with CameraX. 
 
 - `BlinkDeviceInfo`
 - `CameraOptions`
@@ -102,16 +102,16 @@ The following methods are no longer available. They are mostly related to the ol
 - `SimpleCameraEvents`
 - `SimpleCameraRecognizerCallback`
 - `CameraRecognizerCallback.onPreviewStopped()`
-- `TakePictureInteceptor`
-- `RecognizerView`
-    - `setVideoResolutionPreset()`
-    - `setMeteringAreas()`
-    - `setAspectMode()`
-    - `setInitialOrientation()`
-    - `changeConfiguration()`
-    - `getCameraViewState()`
-    - `onEdgeDetectionResults()`
-    - `cameraEventsListener()`
+- `TakePictureInterceptor`
+- `RecognizerView` methods:
+  - `setVideoResolutionPreset()`
+  - `setMeteringAreas()`
+  - `setAspectMode()`
+  - `setInitialOrientation()`
+  - `changeConfiguration()`
+  - `getCameraViewState()`
+  - `onEdgeDetectionResults()`
+  - `cameraEventsListener()`
 - `ImageResolution`
 - `ImageResolutionProcessor`
 - `FrameProcessor`
