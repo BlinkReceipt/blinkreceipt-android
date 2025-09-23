@@ -54,27 +54,39 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 `RecognizerView.takePicture()` no longer takes `CameraCaptureListener` as argument. Instead, the listener should be set prior to calling `takePicture()` via the following method: `RecognizerView.cameraCaptureListener(CameraCaptureListener)`
 
 ```java
-public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback, CameraCaptureListener {
+public class MyCameraActivity extends AppCompatActivity implements CameraCaptureListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Add this
         recognizerView.cameraCaptureListener(this);
 
         (...)
 
         button.setOnClickListener(v -> recognizerView.takePicture());
     }
+
+    @Override
+    public void onCaptured(@NonNull BitmapResult bitmapResult) {
+        // Add CameraCaptureListener.onCaptured implementation        
+    }
+
+    @Override
+    public void onException(@NonNull Throwable throwable) {
+        // Add CameraCaptureListener.onException implementation        
+    }
 }
 ```
 
 #### Update Frame Results usage
 
-The `CameraFrameResult` no longer has `Bitmap frame1080p()`. Instead, since only 1080p resolution is used, the bitmap is returned via existing method `Bitmap bitmap();` 
+The `CameraFrameResult` no longer has `Bitmap frame1080p()`. Instead, since only 1080p resolution is used, the `Bitmap` is returned via existing method `Bitmap bitmap();` 
+
 For the same reason, it is no longer possible to call `TakePictureResult.high()`, and you should just call `TakePictureResult.bitmap()` instead.
 
-Also, it is no longer possible to set `Bitmap` in `CameraFrameResult` from outside, as the object will be populated with the `Bitmap` from the SDK.
+Also, it is no longer possible to set `Bitmap` in `CameraFrameResult`, as the object will be automatically populated with the `Bitmap` from the SDK.
 
 #### Update any other deleted methods or classes
 
