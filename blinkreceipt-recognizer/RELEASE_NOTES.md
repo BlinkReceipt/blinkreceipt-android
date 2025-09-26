@@ -726,6 +726,7 @@ Blink Receipt Recognizer
   - Improved accuracy when identifying promotions on German receipts. 
 - General Stability 
   - Additional stability improvements across all platforms.
+- Stability fixes and improvements
 
 ## 1.9.10
 - Extraction Enhancements (United States)
