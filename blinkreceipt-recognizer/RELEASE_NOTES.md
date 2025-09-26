@@ -759,3 +759,7 @@ Blink Receipt Recognizer
 ## 1.9.12
 - Improved scan performance to reduce processing time in certain international use cases
 - Improved overall stability during receipt scanning and OCR to provide a smoother experience
+
+## 2.1.0-beta01
+- Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
+- Stability fixes and improvements
