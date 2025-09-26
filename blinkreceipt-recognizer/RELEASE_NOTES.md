@@ -769,3 +769,7 @@ Blink Receipt Recognizer
 ## 1.9.14
 - Extraction Improvements: Improved Sales Tax, Subtotal, and Promotion capture across US, France, and Germany receipts.
 - Revert fix to CPR-1233: Slow behavior of Android SDK
+
+## 2.0.0
+- Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
+- Stability fixes and improvements
