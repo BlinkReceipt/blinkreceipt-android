@@ -741,3 +741,7 @@ Blink Receipt Recognizer
 - Implemented overall extraction and stability improvements for enhanced accuracy and reliability.
 - Overall Stability Improvements 
   - General enhancements to improve reliability and performance across extraction workflows
+
+## 2.1.0-beta01
+- Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
+- Stability fixes and improvements
