@@ -252,3 +252,11 @@
 
 ## 1.5.7
 - Stability fixes and improvements
+
+## 1.5.8
+- **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Upgrade Java compilation target from version 8 to 17 across all modules
+    - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Stability fixes and improvements

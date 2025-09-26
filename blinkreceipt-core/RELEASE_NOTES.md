@@ -316,10 +316,19 @@
 - Stability fixes and improvements
 
 ## 1.6.9
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - `ScanResults.eReceiptRawHtml()` will no longer contain the HTML tags string value as it now returns a NULL or an empty string.
   - Instead, we've introduced new fields to store raw values:
     - `ScanResults.rawData()`
       - This field can be either HTML tags OR a stringified JSON string value.
     - `ScanResults.rawDataType()`
       - This field can be either "html" or "json" string value.
+- Stability fixes and improvements
+
+## 1.7.0
+- **BREAKING CHANGE** `Barcode` and `BarcodeType` models are now used by both `:blinkreceipt-barcode` and `:blinkreceipt-barcode-recognizer` modules.
+- **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - Stability fixes and improvements

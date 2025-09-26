@@ -715,3 +715,9 @@ Blink Receipt Recognizer
   - Addressed an issue that could cause unexpected crashes in certain scenarios, improving overall reliability 
 - Basket Data Enhancements – Germany 
   - Improved extraction accuracy for basket-level details, including product quantities, promotions, and pricing.
+
+## 1.9.9
+- ***Breaking Change*** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+    - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Stability fixes and improvements

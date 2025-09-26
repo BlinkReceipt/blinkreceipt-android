@@ -341,6 +341,8 @@
 - Stability fixes and improvements
 
 ## 1.5.6
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - When performing Grab Orders where re-authentication is required (i.e. login session expired, cookies cleared, etc.), AccountLinkingClient `failure()` callback now returns AccountLinkingException with the following values:
   - error `code` = `com.microblink.linking.VERIFICATION_NEEDED`(1004) and WebView instance
   - Includes WebView instance to allow client apps to response to a re-authentication.
@@ -367,4 +369,10 @@ accountLinkingClient.orders(
 )
 ```
 - Resolved an issue where WebView instances are created using application context which prevents autofill from working.
+- Stability fixes and improvements
+
+## 1.5.7
+- ***BREAKING CHANGE*** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - Stability fixes and improvements

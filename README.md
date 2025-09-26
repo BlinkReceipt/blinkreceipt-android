@@ -303,7 +303,7 @@ If you wish to include your client user id within your project add your client u
 
 ## <a name=androidos></a> Android OS Support
 
-BlinkReceipt is distributed with support for Android minSdk version 21
+BlinkReceipt is distributed with support for Android minSdk version 23
 
 ## <a name=autoConfiguration></a> Auto Configuration
 
@@ -503,6 +503,6 @@ You can also remove multiple processor architectures by specifying `exclude` dir
 
 ## <a name=requirements></a> Requirements
 - AndroidX
-- Min SDK 21+
-- Compile SDK: 29+
-- Java 8+
+- Min SDK 23+
+- Compile SDK: 36+
+- Java 17+
