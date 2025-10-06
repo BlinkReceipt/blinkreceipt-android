@@ -1,7 +1,7 @@
 - AndroidX
-- Min SDK 21+
-- Compile SDK: 29+
-- Java 8+
+- Min SDK 23+
+- Compile SDK: 36+
+- Java 17+
 
 ### Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.

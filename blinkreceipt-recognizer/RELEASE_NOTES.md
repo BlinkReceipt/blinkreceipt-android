@@ -720,4 +720,9 @@ Blink Receipt Recognizer
 - ***Breaking Change*** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
     - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
-- Stability fixes and improvements
+- French Canadian Date Support 
+  - Enhanced date recognition to support French Canadian formats in Canada. 
+- Promotion Detection in German Receipts 
+  - Improved accuracy when identifying promotions on German receipts. 
+- General Stability 
+  - Additional stability improvements across all platforms.

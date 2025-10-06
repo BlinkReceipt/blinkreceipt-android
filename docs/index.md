@@ -10,9 +10,11 @@ Our features include:
 
 ![](https://microblink.com/wp-content/uploads/2023/06/microblink-blinkreceipt-capture-extract.png)
 
-## Requirements
-
-- AndroidX
-- Min SDK 21+
-- Compile SDK: 34+
-- Java 8+
+| Requirement         | Version                |
+|---------------------|------------------------|
+| Android Min SDK     | 23+ (Android 6.0+)     |
+| Android Compile SDK | 36+                    |
+| Java                | 17+                    |
+| Architecture        | armeabi-v7a, arm64-v8a |
+| Camera              | 720+                   |
+| GPU                 |                        |

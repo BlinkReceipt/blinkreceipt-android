@@ -1,5 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
+$dokka.location:com.microblink.core.internal.proto/Retailers.Builder///PointingToDeclaration/com/microblink/core/internal/proto/Retailers.Builder.html
+$dokka.location:com.microblink.core.internal.proto/Uris.Builder///PointingToDeclaration/com/microblink/core/internal/proto/Uris.Builder.html
 $dokka.location:com.microblink.core.internal.services/LookupSearch.Builder///PointingToDeclaration/com/microblink/core/internal/services/LookupSearch.Builder.html
 $dokka.location:com.microblink.core.internal/WebCookiesManager.Compat///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Compat.html
 $dokka.location:com.microblink.core.internal/WebCookiesManager.Cookie///PointingToDeclaration/com/microblink/core/internal/WebCookiesManager.Cookie.html
@@ -17,5 +19,5 @@ $dokka.location:com.microblink.core/SurveyQuestion.Builder///PointingToDeclarati
 $dokka.location:com.microblink.core/SurveyResponse.Builder///PointingToDeclaration/com/microblink/core/SurveyResponse.Builder.html
 com.microblink.core
 com.microblink.core.internal
+com.microblink.core.internal.proto
 com.microblink.core.internal.services
-
