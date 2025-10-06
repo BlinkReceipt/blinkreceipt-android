@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.9.8'
-    next_release: '1.9.9'
+    release: '1.9.9'
+    next_release: '2.0.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -39,6 +39,7 @@ nav:
         - Outlook: digital_outlook.md
         - Gmail: digital_gmail.md
         - Requirements: digital_requirements.md
+    - Android 16(API 36) Migration Guide: android_16_migration_guide.md
     - Maven migration guide: maven_migration.md
     - WorkManager Integration: workmanager_integration.md
     - Override Labels:

@@ -22,6 +22,10 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     signingConfigs {
         release {
             storeFile file("../blink-receipt-demos.jsk")
@@ -41,12 +45,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     packagingOptions {
@@ -73,6 +77,8 @@ dependencies {
     implementation( "com.microsoft.identity.client:msal:${versions.msal}" ) {
         exclude group: 'com.microsoft.device.display'
     }
+
+    implementation "androidx.core:core-ktx:${androidx.core}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")

@@ -289,5 +289,16 @@
 - Stability fixes and improvements
 
 ## 1.6.9
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Stability fixes and improvements
+
+## 1.7.0
+- **BREAKING CHANGE** Refactored `Barcode` and `BarcodeType` models to instead use the ones from `com.microblink.core` package.
+- **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Removed ~~com.microblink.barcode.Barcode~~ and ~~com.microblink.barcode.BarcodeType~~ in favor of `com.microblink.core.Barcode` and `com.microblink.core.BarcodeType` models respectively. 
+  - `com.microblink.barcode.RecognizerResults` class now uses `com.microblink.core.Barcode` as one of its constructor params and `barcodes()` function return type.
 - Stability fixes and improvements
 

@@ -40,12 +40,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     packagingOptions {
@@ -72,6 +72,8 @@ dependencies {
     implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
     implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
     implementation "androidx.fragment:fragment-ktx:${androidx.fragment}"
+
+    implementation "androidx.core:core-ktx:${androidx.core}"
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-surveys")

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>Camera1Frame 1.9.8 API </title>
+    <title>Camera1Frame 1.9.9 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -108,6 +108,14 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
+                            <code>com.microblink.camera.hardware.camera.frame.ICameraFrame</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.microblink.camera.util.pool.PoolObject</code>
+                            
+                            
                         </dd>
                     </dl>
                     
@@ -115,7 +123,7 @@ var pathtoroot = "../../../";
                     <pre class="wrap-overflow">
 
 public class <span class="typeNameLabel"><a href=Camera1Frame.html>Camera1Frame</a></span>
-
+extends BaseCamera1PreviewFrame
                     </pre>
                     <div class="block"></div>
 
@@ -198,7 +206,7 @@ public class <span class="typeNameLabel"><a href=Camera1Frame.html>Camera1Frame<
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#Camera1Frame(com.microblink.internal.Camera,int,int,int,Camera1PreviewFramePool,Camera1Manager)">Camera1Frame</a></span>(Camera camera, int width, int height, int bufferSize, Camera1PreviewFramePool myPool, Camera1Manager camera1Manager)</code></th>
+                                                        href="#Camera1Frame(com.microblink.internal.Camera,int,int,int,com.microblink.camera.hardware.camera.camera1.frame.Camera1PreviewFramePool,com.microblink.camera.hardware.camera.camera1.Camera1Manager)">Camera1Frame</a></span>(Camera camera, int width, int height, int bufferSize, Camera1PreviewFramePool myPool, Camera1Manager camera1Manager)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -256,6 +264,18 @@ public class <span class="typeNameLabel"><a href=Camera1Frame.html>Camera1Frame<
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.camera.hardware.camera.camera1.frame.BaseCamera1PreviewFrame">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.microblink.camera.hardware.camera.camera1.frame.BaseCamera1PreviewFrame</h3>
+                                            <code>dispose, finalizePoolObject, getFormat, getFrameQuality, initializeNativePart, initializePoolObject, isPhoto, recycle</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.microblink.camera.hardware.camera.camera1.frame.Camera1AbstractFrame">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.microblink.camera.hardware.camera.camera1.frame.Camera1AbstractFrame</h3>
+                                            <code>getFrameID, getHeight, getImgBuffer, getNativeCameraFrame, getOrientation, getVisiblePart, getWidth, isDeviceMoving, isFocused, setDeviceMoving, setFocused, setFrameID, setImgBuffer, setOrientation, setVisiblePart</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -282,7 +302,7 @@ public class <span class="typeNameLabel"><a href=Camera1Frame.html>Camera1Frame<
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="Camera1Frame(com.microblink.internal.Camera,int,int,int,Camera1PreviewFramePool,Camera1Manager)"></a>
+                                <a name="Camera1Frame(com.microblink.internal.Camera,int,int,int,com.microblink.camera.hardware.camera.camera1.frame.Camera1PreviewFramePool,com.microblink.camera.hardware.camera.camera1.Camera1Manager)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>Camera1Frame</h4>

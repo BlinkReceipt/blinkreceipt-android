@@ -10,4 +10,3 @@ $dokka.location:com.microblink.camera.ui/ScanCharacteristics.Builder///PointingT
 $dokka.location:com.microblink.camera.ui/TooltipCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/TooltipCharacteristics.Builder.html
 com.microblink.camera.ui
 com.microblink.camera.ui.internal
-

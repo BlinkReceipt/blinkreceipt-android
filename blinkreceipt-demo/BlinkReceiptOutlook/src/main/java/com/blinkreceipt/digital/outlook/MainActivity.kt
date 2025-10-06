@@ -1,21 +1,55 @@
 package com.blinkreceipt.digital.outlook
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.ViewCompat
+import androidx.core.view.ViewGroupCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import com.blinkreceipt.digital.outlook.databinding.ActivityMainBinding
 import com.microblink.core.InitializeCallback
 import com.microblink.digital.OutlookClient
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var client: OutlookClient
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.enableEdgeToEdge(this.window)
 
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val rootView: View = binding.getRoot()
+        setContentView(rootView)
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+            rootView
+        ) { v: View, windowInsets: WindowInsetsCompat? ->
+            val insets = windowInsets!!.getInsets(
+                WindowInsetsCompat.Type.systemBars() or
+                        WindowInsetsCompat.Type.displayCutout()
+            )
+            // Apply the insets as padding to the view. Here, set all the dimensions
+            // as appropriate to your layout. You can also update the view's margin if
+            // more appropriate.
+            v.setPadding(insets.left, insets.top, insets.right, insets.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
+        ViewGroupCompat.installCompatInsetsDispatch(rootView)
+
+        WindowCompat.getInsetsController(
+            window,
+            window.decorView
+        ).isAppearanceLightStatusBars = true
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            @Suppress("DEPRECATION")
+            this.window.setStatusBarContrastEnforced(true)
+        }
 
         client = OutlookClient(applicationContext,
             R.raw.auth_config_single_account, object : InitializeCallback {
