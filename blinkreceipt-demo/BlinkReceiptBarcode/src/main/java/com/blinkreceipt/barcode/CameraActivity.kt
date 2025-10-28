@@ -102,6 +102,8 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
             it.aspectMode = CameraAspectMode.ASPECT_FILL
 
             it.initialOrientation = Orientation.ORIENTATION_PORTRAIT
+
+            it.setOptimizeCameraForNearScan(true)
         }
 
         binding.recognizer.create()
