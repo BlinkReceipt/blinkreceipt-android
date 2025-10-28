@@ -14,6 +14,7 @@ import androidx.core.view.ViewGroupCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.blinkreceipt.barcode.databinding.ActivityCameraBinding
+import com.google.android.material.snackbar.Snackbar
 import com.microblink.barcode.MetadataCallbacks
 import com.microblink.barcode.RecognizerBundle
 import com.microblink.barcode.RecognizerClient
@@ -70,9 +71,21 @@ class CameraActivity : AppCompatActivity(), CameraEventsListener {
         }
 
         callbacks.recognizerCallback {
-            it.barcodes().first().text()?.let { text ->
+            it.barcodes().firstOrNull()?.let { barcode ->
+                val text = barcode.text()
+                val type = barcode.type()
+
+                Snackbar.make(
+                    binding.root,
+                    "Barcode[$type]:\n$text",
+                    Snackbar.LENGTH_LONG,
+                )
+                    .setAnchorView(binding.resume)
+                    .show()
+
+                text ?: return@recognizerCallback
                 client.lookup(text).addOnSuccessListener { product ->
-                    Toast.makeText(applicationContext, "Name ${product?.name()}", Toast.LENGTH_LONG)
+                    Toast.makeText(applicationContext, "Produce Name:${product?.name()}", Toast.LENGTH_LONG)
                         .show()
                 }.addOnFailureListener { e ->
                     binding.recognizer.resumeScanning(true)
