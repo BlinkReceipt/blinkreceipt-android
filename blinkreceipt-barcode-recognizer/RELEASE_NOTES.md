@@ -23,3 +23,7 @@
 - Removed ~~com.microblink.barcode.recognizer.Barcode~~ and ~~com.microblink.barcode.recognizer.BarcodeType~~ in favor of `com.microblink.core.Barcode` and `com.microblink.core.BarcodeType` models respectively.
   - `com.microblink.barcode.recognizer.BarcodeResults` class now uses `com.microblink.core.Barcode` as its barcodes field type.
 - Stability fixes and improvements
+
+## 1.0.5
+- Fixed ML Kit's Barcode Integration producing no results caused by the original implementation where models were not downloaded/activated.
+- Stability fixes and improvements

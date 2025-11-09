@@ -299,3 +299,5 @@
   - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - Stability fixes and improvements
 
+## 1.7.1
+- Stability fixes and improvements

@@ -48,3 +48,6 @@
 - Upgrade Java compilation target from version 8 to 17 across all modules
   - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
 - Stability fixes and improvements
+
+## 1.1.4
+- Stability fixes and improvements

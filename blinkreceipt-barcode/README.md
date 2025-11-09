@@ -28,3 +28,14 @@ dependencies {
      implementation("com.microblink.blinkreceipt:blinkreceipt-barcode")
 }
 ```
+
+## Improve Barcode Results Accuracy 
+Barcode scanning performance can vary across Android devices due to differences in camera hardware. 
+Devices with less reliable autofocus, in particular, may produce less accurate results.
+
+To improve camera focus on select devices, you may need to apply:
+```java
+RecognizerView recognizerView = findViewById(R.id.recognizer);
+recognizerView.setOptimizeCameraForNearScan(true);
+```
+- Enabling this setting helps capture clearer frames, leading to more accurate barcode results.

@@ -302,3 +302,8 @@
   - `com.microblink.barcode.RecognizerResults` class now uses `com.microblink.core.Barcode` as one of its constructor params and `barcodes()` function return type.
 - Stability fixes and improvements
 
+## 1.7.1
+- Improved the barcode scanning logic to resolve issues on specific device camera hardware, enhancing scanning reliability and performance.
+  - You may need to apply `RecognizerView.setOptimizeCameraForNearScan(true);` to improve camera focus on select devices. 
+    - Enabling this setting helps capture clearer frames, leading to more accurate barcode results.
+- Stability fixes and improvements
