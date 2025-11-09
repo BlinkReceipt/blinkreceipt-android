@@ -1,30 +1,115 @@
-# Blink Receipt SDK
 
-Blink Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
+# Blink Receipt Digital SDK
 
-Using Blink Receipt in your app requires a valid license key.  After registering, you will be able to generate a license key for your app. License key is bound to package name of your app, so please make sure you enter the correct package name when asked.
+Blink Receipt Digital SDK for Android is an SDK that enables you to easily add e-receipt functionality to your app with the purpose of scanning receipts. Blink Receipt Digital SDK  supports parsing e-receipts from a growing list of retailers and a specific set of mail providers: Gmail, Outlook, Yahoo, and AOL. The procedure for integrating each of these providers is slightly different. This guide will outline the steps necessary to integrate and authenticate a user account for each mail provider, and then the common methods that you will use to invoke the e-receipt parsing functionality.
 
-See below for more information about how to integrate Blink Receipt SDK into your app.
+See below for more information about how to integrate Blink Receipt Digital SDK into your app.
 
 # Table of Contents
 
-* [Android _BlinkReceipt_ integration instructions](#intro)
-* [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/blinkreceipt-camera-ui)
-* [Recognizer View](#recognizerView)
-* [Adding Product Intelligence](#intelligence)
-* [Adding Google Places](#google)
-* [Adding Yelp](#yelp)
-* [Processor Configuration Considerations](#processorConfigurations)
-* [Android OS Support](#androidos)
-* [Auto Configuration](#autoConfiguration)
-* [Client User Id](#clientId)
-* [Requirements](#requirements)
+* [Tasks](#tasks)
+  * [Handling Results From A Task](#results)
+    * [Recommended Way](#recommended_way)
+    * [Unrecommended Way](#unrecommended_way)
+* [Project Integration and Initialization](#project_integration)
+* [IMAP](#imap_client)
+* [Outlook](#outlook)
+* [Gmail](#gmail)
 
-## AAR
-The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
 
-## <a name=intro></a> Project Integration and Initialization
-To add sdk to your android project please follow these steps:
+<br />
+
+# Tasks <a name=tasks></a>
+
+The Blink Receipt Digital Sdk heavily leverages Google's [Task](https://developers.google.com/android/guides/tasks) for result and exception handling when interfacing with the sdk. Here is a high level comprehensive guide on how to use the Task framework.
+
+The `Task<T>` object, returned by most functions in the sdk, can be thought of as a reference to a job being done either on the main thread or a background thread. The `T` represents the type of result that task is expected to return when done executing it's logic.
+
+<br />
+
+## Handling Results From A Task <a name=results></a>
+
+When you have a Task, you are able to apply different sets of listeners that will receive your result or catch your exceptions. There are 2 ways to approach this result handling
+
+<br />
+
+### First Way (Recommended) <a name=recommended_way></a>
+
+A successful callback listener, `OnSuccessListener<? super TResult>`, can be added to the task by calling `task.addOnSuccessListener(OnSuccessListener<? super TResult>)`. This listener has a single method `onSuccess(T result)` that needs to be implemented. This listener callback will be invoked upon a successful completion of a given Task.
+
+Java
+```java
+    Task<Foo> exampleTask = repository.fetchFoo();
+
+    exampleTask.addOnSuccessListener( new OnSuccessListener<Foo>() {
+        @Override
+        public void onSuccess(Foo foo) {
+            // Do something
+        }
+    } );
+```
+
+Kotlin
+```kotlin
+    val exampleTask: Task<Foo> = repository.fetchFoo();
+
+    exampleTask.addOnSuccessListener { foo -> // Do something }
+```
+
+Unfortunately, as we know all too well, things do not always go as planned. Exceptions can occur and it is important that we handle those scenarios in the event we wish to provide some sort of recourse for the user. There is a compliment listener that can be added to a `Task` for exception handling. This listener is called a `OnFailureListener`, and it can be added by calling `task.addOnFailureListener(OnFailureListener listener)`. This also has one method, `onFailure(@NonNull Exception e)`, that needs to be implemented. This callback will be invoked in the event any exception is thrown by the task itself.
+
+Java
+```java
+    Task<Foo> exampleTask = repository.fetchFoo();
+
+    exampleTask.addOnFailureListener( new OnFailureListener() {
+        @Override
+        public void onFailure(Exception exception) {
+            // Do something
+        }
+    } );
+```
+
+Kotlin
+```kotlin
+    val exampleTask: Task<Foo> = repository.fetchFoo();
+
+    exampleTask.addOnFailureListener { exception -> // Do something }
+```
+
+Result listeners can be chained for a cleaner look.
+
+```java
+     Task<Foo> exampleTask = repository.fetchFoo();
+
+    exampleTask.addOnSuccessListener( new OnSuccessListener<Foo>() {
+        @Override
+        public void onSuccess(Foo foo) {
+            // Do something
+        }
+    } ).addOnFailureListener( new OnFailureListener() {
+        @Override
+        public void onFailure(Exception exception) {
+            // Do something
+        }
+    } );
+```
+
+<br />
+
+### Second Way (Not Recommended) <a name=unrecommended_way></a>
+
+We believe it is better to separate out the two outcomes of a task, but not all share the same philosophy. This method of result and exception handling combines both eventualities into a single callback, `OnCompleteListener<TResult> listener`. This has a single abstract method which will be implemented `onComplete (Task<TResult> task)`. The invoking of this callback does not signify a successful or a failed task result. Extra logic must be added to make that determination. The `OnCompleteListener` gives you a reference to the task. It is from here that you can do status checks `task.isSuccessful()`, `task.isCompleted()`, or `task.isCanceled()`. The result of the task can be retrieved by calling `task.getResult()`. Alternatively, the thrown exception can be retrieved with a simple `task.getException()` call.
+
+**WARNING** Calling `task.getResult()` while the task is still executing or has already failed will result in a `IllegalStateException` and a `RuntimeException` respectively.
+
+<br />
+<br />
+
+## <a name=projectIntegration></a>Project Integration and Initialization
+Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
+
+To add the sdk to your android project please follow these steps:
 
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
@@ -38,471 +123,580 @@ To add sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3"))
 
-     implementation("com.microblink.blinkreceipt:blinkreceipt-core")
-     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 }
 ```
 
-## R8 / PROGUARD
+Initialize the `BlinkReceiptDigitalSdk` in your application class.
 
-Retrofit
+```kotlin
+class BlinkApplication : Application() {
 
-```proguard
-# Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
-# EnclosingMethod is required to use InnerClasses.
--keepattributes Signature, InnerClasses, EnclosingMethod
+    override fun onCreate() {
+        super.onCreate()
 
-# Retrofit does reflection on method and parameter annotations.
--keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+        BlinkReceiptDigitalSdk.initialize(this, object : InitializeCallback {
 
-# Retain service method parameters when optimizing.
--keepclassmembers,allowshrinking,allowobfuscation interface * {
- @retrofit2.http.* <methods>;}
+            override fun onComplete() {
 
-# Ignore annotation used for build tooling.
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+            }
 
-# Ignore JSR 305 annotations for embedding nullability information.
--dontwarn javax.annotation.**
+            override fun onException(e: Throwable) {
 
-# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
--dontwarn kotlin.Unit
+            }
 
-# Top-level functions that can only be used by Kotlin.
--dontwarn retrofit2.KotlinExtensions
--dontwarn retrofit2.KotlinExtensions$*
-
-# With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
-# and replaces all potential values with null. Explicitly keeping the interfaces prevents this.
--if interface * { @retrofit2.http.* <methods>; }
--keep,allowobfuscation interface <1>
-```
-
-okio
-
-```proguard
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-```
-
-okhttp
-
-```proguard
-# JSR 305 annotations are for embedding nullability information.
--dontwarn javax.annotation.**
-
-# A resource is loaded with a relative path so the package of this class must be preserved.
--keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
-
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-
-# OkHttp platform used only on JVM and when Conscrypt dependency is available.
--dontwarn okhttp3.internal.platform.ConscryptPlatform
-```
-
-## <a name=results></a>Retrieving Results
-The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
-```java
-public interface RecognizerCallback {
- // Called when scan results are compiled and saved images are processed.
-void onRecognizerDone( @NonNull ScanResults results, Media media );
-
- // Called in the case there is an exception while scanning the captured frame.
-void onRecognizerException(@NonNull Throwable e );
-
-// The callback invoked whenever a step within the scanning process is returned.
-void onRecognizerResultsChanged( @NonNull RecognizerResult result );
-}
-```
-
-```java
-public interface CameraRecognizerCallback {
-    // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
-    // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
-    //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
-    void onPreviewStopped();
-
-    void onException( @NonNull Throwable throwable );
-}
-```
-The RecognizerCallback also provides preliminary results.
-
-```java
- recognizerView.preliminaryResults();
-```
-```java
-@Override
-public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof PreliminaryResult ) {
-        PreliminaryResult results = (PreliminaryResult) result;
+        })
     }
 }
 ```
+<br />
+<br />
 
-The RecognizerCallback also provides raw results.
+## <a name=imap_client></a> IMAP
+### Android Manifest
 
-```java
-@Override
-public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof OcrRawResult ) {
-        OcrRawResult ocrRawResult = (OcrRawResult) result;
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".BlinkApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.microblink.ProductIntelligence"
+            android:value="KEY" />
+
+    </application>
+
+</manifest>
+```
+<br />
+
+### Themes & Styles
+
+IMAP authorization UI uses the material bottom sheet. This requires your theme parent to extend `Theme.MaterialComponents.*`
+
+```xml
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
+
+```
+
+<br />
+<br />
+
+### IMAP Client
+IMAP client is the main entry point which allows the SDK to connect to imap accounts. Initializing the client is asynchronous and requires the caller to wait until its complete before accessing the imap messages or account information. ***Note: if you use lazy this will cause exceptions until the client has been initialized. This is on a per instance basis.***
+
+```kotlin
+ImapClient( applicationContext, object : InitializeCallback {
+
+    override fun onComplete() {
+
+    }
+
+    override fun onException(throwable: Throwable) {
+
+    }
+  }
+)
+```
+
+<br />
+<br />
+
+## Provider Setup
+After collecting the users credentials initiate the provider setup workflow, which will walk the user through linking their account to the provider (Yahoo, AOL, Gmail).
+
+**Note: The `ProviderSetupDialogFragment` only supports the following providers Yahoo, AOL, and Gmail. Attempting to set an unsupported IMAP provider will result in an IllegalStateException.**
+
+```kotlin
+     ProviderSetupDialogFragment.newInstance(
+      ProviderSetupOptions.newBuilder(
+         PasswordCredentials.newBuilder(
+            Provider.GMAIL,
+            "email@blink.com",
+            "account password"
+         ).build()
+      ).build()
+   ).callback {
+
+   }.show(supportFragmentManager, TAG)
+```
+<br />
+<br />
+
+### IMAP Login To/Verify Account
+The `verify()` function is used to determine if the sdk has any cached credentials that can be used without explicit sign in. This can be called without any parameters or with an `Executor` and `PasswordCredentials`. The empty parameter function call will automatically attempt to fetch the cached credentials within the sdk and verify the credentials against the ImapService. This function call returns a `Task<Boolean>`. When the result emitted is a `true` value, then the credentials that were either passed in or cached in the sdk grant access to a valid account. In the event an exception is thrown, that means that the credentials, either passed in or cached, are not valid credentials to access a specific account.
+
+```kotlin
+client.verify(PasswordCredentials.newBuilder(
+   Provider.GMAIL,
+   "test@gmail.com",
+   "app password"
+).build()).addOnSuccessListener { isVerified ->
+
+}.addOnFailureListener {
+
+}
+```
+<br />
+
+### IMAP Credentials
+The `credentials()` function is used to fetch the cached account's `PasswordCredentials` on the sdk. This is usually called AFTER `verify()`, once a client can verify that there is a valid account on the sdk. This does not verify the account credentials. It only fetches them from our encrypted cache and returns them to the caller.
+
+```kotlin
+client.accounts().addOnSuccessListener { accounts ->
+
+}.addOnFailureListener {
+
+}
+```
+
+<br />
+<br />
+
+### IMAP Messages
+
+After a user has been signed in to their IMAP Account, we can now fetch their emails and find any receipts they may have stored in their email. Before we initiate a search, we want to make sure we have properly configured the `ImapClient`. All sdk email clients have properties that can be configured to optimize searching. Here is a list of the following properties
+
+| Property Name | Type                                    | Default Value | Client Function | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|---------------|-----------------------------------------|---------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  dayCutoff    | Int                                     |     14        | dayCutoff(int days) | Maximum number of days look back in a users inbox for receipts                                                                                                                                                                                                                                                                                                                                                                                  |
+| filterSensitive | Boolean                                 | false    | filterSensitive(boolean filterSensitive)| When set to true the sdk will not return product results for products deemed to be sensitive i.e. adult products                                                                                                                                                                                                                                                                                                                                |
+| subProducts   | Boolean                                 | false      | subProducts(boolean subProducts)| Enable sdk to return subproducts found on receipts under parent products i.e. "Burrito + Guacamole <- Guac is subproduct"                                                                                                                                                                                                                                                                                                                       |
+| countryCode   | String                                  |  "US"      | countryCode(String countryCode) | Helps classify products and apply internal product intelligence                                                                                                                                                                                                                                                                                                                                                                                 |
+| sendersToSearch | Map\<String, Merchant\> | null | sendersToSearch(Map\<String, Merchant\> sendersToSearch) | This allows clients to search for merchants that may have sent receipts under a different email. For example, Target may have sent an email from "receipts@uniquetarget.com". It is still a Target receipt, but under a different email. Therefore, the client can provide a Merchant like `mapOf( "receipts@uniquetarget.com" to  Merchant( "Target.com", "receipts@uniquetarget.com"))`. |
+
+Once the client is configured then we are ready to start parsing emails. On the `ImapClient` call `messages(@NonNull MessagesCallback callback)` to begin the message reading. The calling of this function completes a series of tasks internally, before potentially returning a list of `List<ScanResults>` via the `MessagesCallback` parameter. Upon a successful execution, the callback will emit a result of `List<ScanResults>` from the overriden onComplete() function. The number of `onComplete()` emissions depends on the number IMAP accounts you have credentials for. The `messages(...)` function will attempt to read messages based on the specified configuration set on the client for each account logged in. In addition to a List<ScanResults>, each emission of onComplete will give you the `PasswordCredential` of the corresponding account from which the scan results were derived from. Within the callback, there is an onException interface method. This will be triggered in the event of an error fetching messages from an account. The account e-mail retrieval process is segregated from each other. Therefore, failure to retrive messages from one account doesn't mean a failure to retrieve messages from all accounts. It is entirely possible, to receive an onException callback AND an onComplete callback within a single `messages(...)` call. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
+
+
+<br />
+**EXAMPLE IMAP READ MESSAGES**
+
+```kotlin
+    fun messages() {
+      client.messages(
+          object: MessagesCallback {
+              override fun onComplete(credential: PasswordCredentials,result: List<ScanResults>) {
+                  // do stuff with scan results
+                  // see credentials of account
+              }
+
+              override fun onException(throwable: Throwable) {
+                  Toast.makeText(getContext(), throwable.toString(), Toast.LENGTH_SHORT).show
+              }
+          }
+      )
+    }
+
+```
+<br />
+<br />
+
+### IMAP Remote Messages
+
+The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credential: PasswordCredentials` and `result: JobResults`. The password credentials is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.
+
+
+### IMAP Logout
+When you wish to sign out from a user's current account use the `logout()` function on the `ImapClient`. This takes in an optional `Boolean clearCache` parameter. The logout function will sign a user out of their account and clear the credentials cached in the sdk. By opting to set the clearCache flag, the logout function will also clear all Cookies stored. The return type is a `Task<Boolean>`. When a successful `true` result is given then it can be assumed that the client has successfully cleared all stored credentials and data for a user. If an exception is thrown then, there could have been an issue with one or more of the tasks executed to complete the logout functionality.
+
+<br />
+
+```kotlin
+ client.logout(PasswordCredentials.newBuilder(
+   Provider.GMAIL,
+   "test@gmail.com",
+   "app password"
+).build()).addOnSuccessListener {
+
+}.addOnFailureListener {
+
+}
+```
+<br />
+<br />
+
+### IMAP Clear
+In order to optimize, fetching and parsing emails, we try to not to duplicate work. One of these optimizations comes in the form of a cached last date search. This cached value allows us to keep track of the last time a search was done, so that we can optimize our search paramters and not fetch duplicate emails that we have already seen. However, there may be a scenario where the client will want to clear this cache and fetch all emails within the `dayCutoff` value. If you fall into this scenario, and wish to clear our cached date flag, then call `clearLastCheckedTime()`. Thi returns a `Task<Boolean>` and will let you know based on the boolean result whether or not we were able to successfully clear our cached date.
+<br />
+
+```kotlin
+client.clearLastCheckedTime().addOnSuccessListener {
+
+}
+```
+<br />
+<br />
+
+### IMAP Destroy Client
+We always want to make sure we are adhereing to any component's lifecycle. Therefore, it is very important to call destroy within the component. This will clean up any pending calls, and allocated resources.
+<br />
+
+```kotlin
+   override fun onDestroy() {
+       super.onDestroy()
+
+       client.close()
+   }
+```
+
+### Exception Handling
+
+The sdk will throw exceptions in the event it runs into an error while fetching emails. Here are some helpful explanations of common exception messages you may run into while using the sdk.
+
+| Function | Exception Message |    Explanation    |
+|----------|-------------------|-------------------|
+| messages() | "unable to find provider accounts" | While fetching the cached email accounts on the device, there were no accounts found in the cache. These could have been removed by the `logout()` function, or some other data clearing action. The only recourse is to readd the accounts.  |
+|  logout()  | "unable to store this provider " + provider | While attempting to logout of a provided account, the specified account was not found in the cache |
+|  verify()  | "unable to connect to imap service!" | There was an error in connecting to the IMAP client. It could be an issue with the server, or the credentials. You can try again later or have a user reinput their credentials. |
+| remoteMessages() | "Unable to encrypt credentials "+ credentials.username() | Credentials are encrypted and stored for easy access. When provided we attempt to encrypt the provided credentials. In the event of a failure this exception will be thrown informing you of the error. |
+
+## <a name=Outlook></a> Outlook
+You must register an application in the [MS Application Registration Portal](https://apps.dev.microsoft.com/), add a Native Application platform, and obtain an Application ID.
+
+### Android Manifest
+
+```xml
+<activity android:name="com.microsoft.identity.client.BrowserTabActivity">
+     <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+         <data android:host="com.blinkreceipt.development"
+          android:path="/[Signature Hash]"
+          android:scheme="msauth" />
+     </intent-filter>
+</activity>
+```
+
+### Authentication Configuration
+Outlook client will reference the authentication configuration file location in resources raw folder. Create **auth_config_single_account.json** under res/raw
+
+**Single Account**
+```json
+{
+  "client_id" : "[CLIENT ID]",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "[REDIRECT URI]",
+  "account_mode" : "SINGLE",
+  "broker_redirect_uri_registered": true,
+  "authorities" : [
+    {
+      "type": "AAD",
+  "authority_url": "https://login.microsoftonline.com/common"
+  }
+  ]
+}
+```
+### Outlook Client
+Outlook client is the main entry point which allows the SDK to connect to outlook accounts. Initializing the client is asynchronous and requires the caller to wait until its complete before accessing the outlook messages or account information. ***Note: if you use lazy this will cause exceptions until the client has been initialized. This is on a per instance basis.***
+```kotlin
+OutlookClient(applicationContext, R.raw.auth_config_single_account, object : InitializeCallback {
+
+    override fun onComplete() {
+
+    }
+
+    override fun onException(throwable: Throwable) {
+
+    }
+
+})
+```
+### Outlook Login
+```kotlin
+    client.login(this).addOnSuccessListener {
+
+   }.addOnFailureListener {
+
+   }
+```
+### Outlook Logout
+```kotlin
+client.logout().addOnSuccessListener {
+
+}.addOnFailureListener {
+
+}
+```
+
+### Outlook Messages
+Messages returns a Task, which allows you to get a list of scan results for messages found in the Outlook mailbox.
+```kotlin
+ client.messages().addOnSuccessListener {
+
+}.addOnFailureListener {
+
+}
+```
+### Outlook Destroy Client
+```kotlin
+override fun onDestroy() {
+    super.onDestroy()
+
+    client.close()
+}
+```
+
+<br />
+<br />
+<br />
+<br />
+
+## **Gmail**
+
+Blink Receipt Digital sdk allows for full Gmail Integration.
+
+## <a name=gmail></a> **Gmail Client**
+
+The `GmailClient` is the corner stone of the gmail sdk integration. It is the access point for reading and parsing emails from clients. It leverages Google's task framework to allow for seamless and clear multi-threading functionality.
+
+To instantiate the `GmailClient` you must provide the constructor 3 non-null and non-zero arguments.
+
+1. Context: `Context`. When using the client within an Android `Activity` you can pass in `this` for the argument value. If using the client within an Android `Fragment` you can pass in `requireActivity()`.
+
+2. Thread Count: `int` which determines the number of threads to use for processing `e-receipt` emails. The internal default value we use is `4`.
+
+3. Client Id: `String` which comes from  Google's api services. Please refer [here](https://developers.google.com/identity/protocols/oauth2/native-app) for more information on how to create an Android client id.
+
+<br />
+
+#### Code sample for Gmail Client Instantiation: KOTLIN
+```kotlin
+    // Activity Example
+    class GmailActivity: Activity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            val gmailClient = GmailClient(this, 4)
+        }
+
+    }
+
+    // Fragment Example
+    class GmailFragment: Fragment() {
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            val gmailClient = GmailClient(requireActivity(), 4)
+        }
+
+    }
+```
+
+<br />
+<br />
+
+### **Logging In To Gmail**
+
+Users may log in to gmail via the client's `login()` function. There is an overloaded login function which takes in an Android `Activity`, `login(Activity activity)`. Passing the `Activity` allows for our components to be lifecycle aware and not leak memory. This parameter is optional though and not required for any explicit extra functionality.
+
+The login call returns a Google `Task` of type `GoogleSignInAccount`. The `GoogleSignInAccount` is an object which contains the basic account information of the signed in Google user. The reference for GoogleSignInAccount can be found [here](https://developers.google.com/android/reference/com/google/android/gms/auth/api/signin/GoogleSignInAccount).
+
+`login()` can be called from any thread, because the return type is a `Task<GoogleSignInAccount>`. If you read the previous section of this document on the [Task](#tasks) framework you should have some familiarity with how this process works.
+
+Let's step through the different login scenario results that can occur and how to provide proper handling of each scenario.
+
+
+<br />
+
+#### **Successful Login Scenario**
+
+A successful login attemt will return a valid `GoogleSignInAccount`. This sign in account can be captured via an `OnSuccessListener` call.
+
+
+Here is an example of some happy case scenarios when calling the login() function.
+
+```kotlin
+    fun loginUser() {
+        val task: Task<GoogleSignInAccount> = gmailClient.login()
+
+        task.addOnSuccessListener {
+
+        }
+    }
+```
+
+<br />
+<br />
+
+#### **Unsuccessful Login Scenario**
+
+A login attempt can fail for a number of reasons. Google has integrated its sign in flow into the Android system. For safety reasons, calling login does not always automatically sign the default user in to your application. It is possible that Google may require extra authentication when you attempt to signIn. The Gmail Integration of the sdk provides an easy to use wrapper around Google's authentication handling. When calling login it is possible for exceptions to be thrown. We try to make exception handling as easy as possible for you. Therefore, we have created our own easy to use exceptions that will allow your app proper recourse in the event of a failure.
+
+
+GmailAuthException
+
+One of the most important exceptions to look out for is the `GmailAuthException`. This exception occurs in the event of any silent authentication exceptions. This exception is extremely important, because it could potentially contain a recourse for a user to take upon an unsuccessful sign in. The exception potentially contains an Android `Intent` this is an intent that has been provided by Google and meant to be launched by the app developer to obtain an explicit approval from the app user. The intent must be triggered with a `startActivityForResults()` call. This call is a method within Android components (Activity, Fragment). It takes in an `Intent` as well as an `int` which denotes the identifying `requestCode`. Starting this activity for result will display an overlaying window that will display the user's registered accounts on the device.
+
+Once a user has selected their desired account the overlaying screen will automatically dismiss and the `onActivityResult(int requestCode, int resultCode, Intent data)` callback overridden within your Android component (Activity or Fragment) will be invoked. There is no need to handle the result and data yourself, the gmail client provides an easy to use function to handle this. Simply call `gmailClient.onAccountAuthorizationActivityResult()`, passing in the `requestCode`, `resultCode`, and `data` respectively.
+
+The `onAccountAuthorizationActivityResult` function also returns a task of type `GoogleSignInAccount`. If the sign is successful then the Intent data passed in usually contains the desired `GoogleSignInAccount` which the client parses and returns to you in the form of a result. If the sign in is NOT successful the returned task will throw an exception notifying your app of the failed result.
+
+**NOTE** Most common cause for an exception in this scenario is the user, when presented with the Google Sign In Screen Overlay, opted not to choose any account and clicked the cancel option in the modal.
+
+**NOTE** THIS `GmailAuthException` SCENARIO WILL MOST LIKELY BE THE USER EXPERIENCE FLOW THE FIRST TIME A USER SIGNS IN TO YOUR APP
+
+<br />
+
+**EXAMPLE GMAIL LOGIN IMPLEMENTATION**
+
+```kotlin
+class GmailInboxFragment : Fragment() {
+
+    private lateinit var gmailClient: GmailClient
+
+    //...Instantiate GmailClient in one of the lifecycle methods
+
+    // Attempt to login
+    fun login() {
+        gmailClient.login()
+                .addOnSuccessListener {
+
+                }.addOnFailureListener { e ->
+                    if (e is GmailAuthException) {
+                        startActivityForResult(e.signInIntent, e.requestCode)
+                    } else {
+                        //Set error display
+                    }
+                }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        gmailClient.onAccountAuthorizationActivityResult(requestCode, resultCode, data)
+           .addOnSuccessListener { signInAccount ->
+
+        }.addOnFailureListener {
+            //Set error display
+        }
     }
 }
 ```
 
-The RecognizerCallback also provides edge results.
+Once a user has successfully signed in we are good to go! We can now move on to retrieving emails from a signed in user.
 
-```java
-@Override
-public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
-    if ( result instanceof EdgeDetectionResult ) {
-        EdgeDetectionResult edges = (EdgeDetectionResult) result;
+<br />
+<br />
+
+### **Verifying Gmail Log In And Retrieving Already Signed In Users**
+
+So as not to constantly bombard users with a typical sign in flow, we provide the `verify()` function on the `GmailClient`. The `verify()` call returns a `Task<Boolean>`. This boolean result returnes either `true` or `false`. If the result is `false` then this indicates that the sdk has no record of a signed in user. As a result you must take the user through the original sign in flow mentioned in the previous section.
+
+In the event, the result returns a `true` value, this indicates that we have an account signed in with Google. In which case, you can call `credentials()` on the `GmailClient`. The `credentials()` call returns a `Task<GoogleSignInAccount>`. This will silently fetch the signed in user's account and return it to the caller via the `Task`.
+
+<br />
+
+**EXAMPLE GMAIL VERIFY AND CREDENTIALS IMPLEMENTATION**
+
+```kotlin
+     private fun verifyUser() {
+        gmailClient.verify()
+            .addOnSuccessListener {
+
+            }.addOnFailureListener {
+
+            }
     }
+```
+
+<br />
+<br />
+
+### **Logging Out of Gmail**
+
+Users may log out of gmail via the client's `logout()` function. The logout function will return a `Task<Boolen>`. This function completes 2 objectives. First, it signs the currently signed in user out from Gmail/Google SDK. This means that the user can no longer be "silently" signed in to Google. The next time the `verify()` is called a `false` result should be returned via the `Task` return object. This also means that the `credentials()` call will not return a `GoogleSignInAccount` result, but instead throw an exception (not unlike the initial user flow for sign in we covered before). Secondly, the `logout()` call will clear any cached "date" threshold we use for email searching. You should never receive a `Boolean` result of `false` for the signout task. It will always either be true or throw an exception in the unlikely event of an error.
+
+<br />
+
+**EXAMPLE GMAIL LOGOUT IMPLEMENTATION**
+
+```kotlin
+    private fun logoutUser() {
+        gmailClient.logout().addOnSuccessListener {
+
+        }
+    }
+```
+<br />
+<br />
+
+### **Reading Messages And Getting Results**
+
+After a user has been signed in to their Gmail Account, we can now fetch their emails and find any receipts they may have stored in their email. Before we initiate a search, we want to make sure we have properly configured the `GmailClient`. All sdk email clients have properties that can be configured to optimize searching. Here is a list of the following properties
+
+| Property Name | Type | Default Value | Client Function |                           Description                           |
+|---------------|------|---------------|-----------------|-----------------------------------------------------------------|
+|  dayCutoff    | Int  |     14        | dayCutoff(int days) | Maximum number of days look back in a users inbox for receipts             |
+| filterSensitive | Boolean | false    | filterSensitive(boolean filterSensitive)| When set to true the sdk will not return product results for products deemed to be sensitive i.e. adult products |
+| subProducts   | Boolean | false      | subProducts(boolean subProducts)| Enable sdk to return subproducts found on receipts under parent products i.e. "Burrito + Guacamole <- Guac is subproduct"  |
+| countryCode   | String  |  "US"      | countryCode(String countryCode) | Helps classify products and apply internal product intelligence  |
+
+Once the client is configured then we are ready to start parsing emails. On the `GmailClient` call `messages(@NonNull Activity activity)` to begin the message reading. This call returns a `Task<List<ScanResults>>`. The calling of this function completes a series of tasks internally, before potentially returning a `List<ScanResults>`. Upon a successful execution, the task will emit a result of `List<ScanResults>`. If no results were able to be found, then the list will be empty. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.
+
+<br />
+
+**EXAMPLE GMAIL READ MESSAGES**
+
+```kotlin
+
+    fun messages() {
+      client.messages(requireActivity())
+       .addOnSuccessListener { results ->
+
+       }.addOnFailureListener {
+
+       }
+    }
+
+```
+
+<br />
+<br />
+
+### GmailClient Destroy Client
+We always want to make sure we are adhereing to any component's lifecycle. Therefore, it is very important to call destroy within the component. This will clean up any pending calls, and allocated resources.
+
+```kotlin
+override fun onDestroy() {
+    super.onDestroy()
+
+    client.close()
 }
 ```
 
-`RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
+##  Requirements
+- AndroidX
+- Min SDK 23+
+- Compile SDK: 36+
+- Java 17+
 
-The most important results for users is the `EdgeDetectionResults` and the `SearchTargetResults`.
-
-The edge detection result contains edge detection information about the latest frame processed. The result object contains a `contentPercent` indicating the percentage of the frame that the receipt contained, as well as the state of the EdgeDetection. The state is a reflection of the `EdgeDetectionConfiguration` passed in through the scan options before the scan session was created. The state contains one of the following values:
-
-`ABOVE_THRESHOLD`: The receipt in the latest frame takes up at least the minimum threshold set via the EdgeDetectionConfiguration object.
-
-`BELOW_THRESHOLD`: The receipt in the latest frame takes up less than the minimum threshold set via the EdgeDetectionConfiguration object.
-
-`CONSECUTIVE_ABOVE_THRESHOLD_LIMIT_REACHED`: N number of frames have consistently been at or above the minimum threshold. This value N is set via the EdgeDetectionConfiguration object.
-
-`CONSECUTIVE_BELOW_THRESHOLD_LIMIT_REACHED`: N number of frames have consistently been below the minimum threshold. This value N is set via the EdgeDetectionConfiguration object.
-
-The search target results contain lists of products prescribed in the ScanOptions. At least one of the products described were found in the last frame scanned, and are therefore confirmed through this result.
-
-## <a name=recognizerView></a> RecognizerView: Provide your own UI on top of Camera View
-The sdk does have an easy to use activity that can be used and customized as described above. However, the sdk has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The RecognizerView is a view that provides a camera preview for the user as well as other capabilities for the devloper. The `RecognizerView` handles its own lifecycle, but it is required that in each callback of your activity, you forward that state to the RecognizerView.
-
-```java
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        recognizerView.create();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        recognizerView.start();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        recognizerView.resume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        recognizerView.pause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        recognizerView.stop();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        recognizerView.destroy();
-    }
-```
-### Capabilities and Customizations
-
-#### Pre Scanning Configuration
-Before the RecognizerView can be used it must be initialized via the `initialize( ScanOptions scanOptions )`. Please see above for the description of the ScanOptions class.
-
-#### Scanning Capabilities
-The RecognizerView is also able to capture frames, not unlike a regular camera application. This is achieved with the `takePicture( CameraCaptureListener listener )` method. The method takes in a `CameraCaptureListener.class`. This listener provides the recognizer view a callback to pass back the resulting image. The image is returned within a `BitmapResults` object. In order to access the resulting bitmap, call bitmap(). The RecognizerView will create a copy of this bitmap, so you are free to manipulate, display, clean it up, etc... however you feel fit. Once the user confirms the picture you should call `confirmPicture( @NonNull BitmapResult results )`.
-
-In addition to the take picture functionality the `RecognizerView` provide the ability to write the frame to disk and have the set of captured frames returned to you at the end of the scan session via the `Media` object in the `onRecognizerDone()` call back a part of the `RecognizerCallback.class`.
-
-You can also cancel your current scan if it is taking longer than normal to retrieve any result callback, but it is recommended to set an appropriate Timeout within your scanOptions object so that it may be resolved internally.
-
-Terminating your scan via `terminate()` will end your session, resetting the parser and internal result calculating mechanism.
-
-#### Finishing the Scan
-When you wish to finish your scan session call `finishedScanning()`. This will begin the session ending process where results will be compiled and finalized. Results are delivered via the `onRecognizerDone( ScanResults results, Media media )` within the interface RecognizerCallback.
-
-*Note*
-All RecognizerCallback methods are executed on the main thread.
-
-#### Image Orientation [OPTIONAL]
-Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
- _________
-T         |
-O         |   CameraOrientation.ORIENTATION_LANDSCAPE_LEFT
-P_________|
-
-| TOP |
-|     |       CameraOrientation.ORIENTATION_PORTRAIT
-|_____|
-
- _________
-|         T
-|         O   CameraOrientation.ORIENTATION_LANDSCAPE_RIGHT
-|_________P
-
-_______
-|     |
-|     |       CameraOrientation.ORIENTATION_PORTRAIT_UPSIDE_DOWN
-| TOP |
-
-If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the sdk will make a best guess as to what the orientation is based on the Bitmap properties.
-
-
-## <a name=intelligence></a>Product Intelligence
+### Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
 
 `AndroidManifest.xml`
 ```xml
  <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```
-
-## <a name=google></a>Google Places
-If you wish to include Google Places functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
-
-`AndroidManifest.xml`
-```xml
- <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
-```
-
-## <a name=yelp></a>Yelp
-If you wish to include Yelp functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
-
-`AndroidManifest.xml`
-```xml
- <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
-```
-
-## <a name=clientId></a>Client User Id
-If you wish to include your client user id within your project add your client user id key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
-
-`AndroidManifest.xml`
-```xml
- <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
-```
-
-## <a name=androidos></a> Android OS Support
-
-BlinkReceipt is distributed with support for Android minSdk version 23
-
-## <a name=autoConfiguration></a> Auto Configuration
-
-Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration to disable auto configuration.
-
-`AndroidManifest.xml`
-```xml
- <provider
-        android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
-        android:exported="false"
-        tools:node="merge">
-        <meta-data 
-            android:name="com.microblink.internal.ReceiptSdkInitializer"
-            android:value="androidx.startup"
-            tools:node="remove" />
-</provider>
-```
-If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
-
-```java
-@Override
-public void onCreate() {
-        super.onCreate();
-
-        BlinkReceiptSdk.initialize( context );
-}
-```
-
-```xml
- <provider
-        android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
-        android:exported="false"
-        tools:node="merge">
-        <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer" 
-            android:value="androidx.startup"
-            tools:node="remove" />
-</provider>
-```
-
-If your app provides custom WorkManager configuration and initialization, you must setup your own Initializer to which the custom WorkManager configuration and initialization will take place.
-```xml
- <provider
-        android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
-        android:exported="false"
-        tools:node="merge">
-        <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer" 
-            android:value="androidx.startup"
-            tools:node="remove" />
-        <!-- Remove WorkManager Initializer -->
-        <meta-data
-            android:name="androidx.work.WorkManagerInitializer"
-            android:value="androidx.startup"
-            tools:node="remove" />
-        <!-- Remove BlinkReceipt's Barcode Detector initializer -->
-        <meta-data
-            android:name="com.microblink.internal.BarcodeDetectorInitializer"
-            android:value="androidx.startup"
-            tools:node="remove"/>
-        <!-- Introduce your custom Initializer -->
-        <meta-data
-            android:name="com.custom.app.AppInitializer"
-            android:value="androidx.startup"/>
-</provider>
-```
-
-```kotlin
-public class AppInitializer: Initializer<Unit> {
-
-    override fun create(context: Context) {
-        val configuration = Configuration.Builder()
-            .setDefaultProcessName("com.custom.app:custom-app-process")
-            // Other Client-specific configuration(s)
-            .build()
-        WorkManager.initialize(context, configuration)
-        return
-    }
-
-    override fun dependencies(): List<Class<out Initializer<*>?>?> = emptyList()
-}
-```
-- This will ensure that the your app's WorkManager configuration and initialization will supersede and will be used across both client app and SDK's internal logic.
-
-
-```java
-@Override
-public void onTerminate() {
-        BlinkReceiptSdk.terminate();
-
-        super.onTerminate();
-        }
-```
-
-## <a name="processorConfigurations"></a> Processor Architecture Considerations
-
-BlinkReceipt is distributed with **ARMv7** and **ARM64** native library binaries.
-
-**ARM64** is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with a single instruction.
-
-There are some issues to be considered:
-
-- ARMv7 build of the native library cannot be run on devices that do not have ARMv7 compatible processor
-- ARMv7 processors do not understand x86 instruction set
-- ARM64 processors understand ARMv7 instruction set, but ARMv7 processors do not understand ARM64 instructions.
-   - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
-- if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
-
-`LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
-
-## <a name="reduce-size"></a> Reducing the final size of your app
-
-We recommend that you distribute your app using [App Bundle](https://developer.android.com/platform/technology/app-bundle). This will defer apk generation to Google Play, allowing it to generate minimal APK for each specific device that downloads your app, including only required processor architecture support.
-
-### Using APK splits
-
-If you are unable to use App Bundle, you can create multiple flavors of your app - one flavor for each architecture. With gradle and Android studio this is very easy - just add the following code to `build.gradle` file of your app:
-
-```
-android {
-  ...
-  splits {
-    abi {
-      enable true
-      reset()
-      include 'arm64-v8a'
-      universalApk true
-    }
-  }
-}
-```
-
-With that build instructions, gradle will build two different APK files for your app. Each APK will contain only native library for one processor architecture and one APK will contain all architectures. In order for Google Play to accept multiple APKs of the same app, you need to ensure that each APK has different version code. This can easily be done by defining a version code prefix that is dependent on architecture and adding real version code number to it in following gradle script:
-
-```
-// map for the version code
-def abiVersionCodes = ['arm64-v8a':1]
-
-import com.android.build.OutputFile
-
-android.applicationVariants.all { variant ->
-    // assign different version code for each output
-    variant.outputs.each { output ->
-        def filter = output.getFilter(OutputFile.ABI)
-        if(filter != null) {
-            output.versionCodeOverride = abiVersionCodes.get(output.getFilter(OutputFile.ABI)) * 1000000 + android.defaultConfig.versionCode
-        }
-    }
-}
-```
-
-For more information about creating APK splits with gradle, check [this article from Google](https://developer.android.com/studio/build/configure-apk-splits.html#configure-abi-split).
-
-After generating multiple APK's, you need to upload them to Google Play. For tutorial and rules about uploading multiple APK's to Google Play, please read the [official Google article about multiple APKs](https://developer.android.com/google/play/publishing/multiple-apks.html).
-
-### Removing processor architecture support
-
-If you won't be distributing your app via Google Play or for some other reasons want to have single APK of smaller size, you can completely remove support for certain CPU architecture from your APK. **This is not recommended due to [consequences](#arch-consequences)**.
-
-To keep only some CPU architectures, for example `arm64-v8a`, add the following statement to your `android` block inside `build.gradle`:
-
-```
-android {
-    ...
-    ndk {
-        // Tells Gradle to package the following ABIs into your application
-        abiFilters 'arm64-v8a'
-    }
-}
-```
-
-This will remove other architecture builds for **all** native libraries used by the application.
-
-To remove support for a certain CPU architecture only for BlinkReceipt, add the following statement to your `android` block inside `build.gradle`:
-
-```
-android {
-    ...
-    packagingOptions {
-        exclude 'lib/<ABI>/libBlinkReceipt.so'
-    }
-}
-```
-
-where `<ABI>` represents the CPU architecture you want to remove:
-
-- to remove ARM64 support, use `exclude 'lib/arm64-v8a/libBlinkReceipt.so'`
-
-You can also remove multiple processor architectures by specifying `exclude` directive multiple times. Just bear in mind that removing processor architecture will have side effects on performance and stability of your app. Please read [this](#arch-consequences) for more information.
-
-### <a name="arch-consequences"></a> Consequences of removing processor architecture
-
-- Google decided that as of August 2019 all apps on Google Play that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64). This means that you cannot upload application to Google Play Console that supports only 32-bit ABI and does not support corresponding 64-bit ABI.
-
-## <a name=requirements></a> Requirements
-- AndroidX
-- Min SDK 23+
-- Compile SDK: 36+
-- Java 17+

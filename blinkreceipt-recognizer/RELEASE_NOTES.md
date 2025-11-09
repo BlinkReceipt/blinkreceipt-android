@@ -726,3 +726,17 @@ Blink Receipt Recognizer
   - Improved accuracy when identifying promotions on German receipts. 
 - General Stability 
   - Additional stability improvements across all platforms.
+
+## 1.9.10
+- Extraction Enhancements (United States)
+  - Improved handling of fuel receipts from gas and convenience retailers, increased accuracy of item and quantity extraction (including Dollar General), and overall improvements to product data consistency. 
+- Promotion Detection (Germany)
+  - Refinements to promotion matching and validation workflows to improve detection accuracy across receipt types. 
+- Sales Tax Extraction (Australia)
+  - Improved parsing of sales tax fields for better consistency.
+- Optimized `ImageClient.recognize()` implementation by removing redundant License Check call to make it faster and more reliable.
+  - This avoids race condition issues where the check would fail intermittently, hence throwing "Not Authorized" Exception.
+- Added Mobile Payment as a recognized method of payment for U.S. receipts. 
+- Implemented overall extraction and stability improvements for enhanced accuracy and reliability.
+- Overall Stability Improvements 
+  - General enhancements to improve reliability and performance across extraction workflows
