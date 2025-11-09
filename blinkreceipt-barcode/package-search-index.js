@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"com.microblink.barcode","url":"com/microblink/barcode/package-summary.html"}, {"l":"com.microblink.barcode.internal","url":"com/microblink/barcode/internal/package-summary.html"}, {"l":"com.microblink.barcode.internal.services","url":"com/microblink/barcode/internal/services/package-summary.html"}, {"l":"All packages","url":"index.html"}]
