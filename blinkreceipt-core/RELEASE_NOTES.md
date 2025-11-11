@@ -33,7 +33,7 @@
 - okhttp 4.8.1
 - build tools 30.0.1
 - Androidx crypto library to encrypt local storage( required )
-    -implementation "androidx.security:security-crypto:1.1.0-alpha02"
+  -implementation "androidx.security:security-crypto:1.1.0-alpha02"
 
 ## 1.0.7
 
@@ -82,12 +82,12 @@
 
 - stability fixes and improvements
 - New Product Intelligence fields added
-    - sector
-    - department
-    - majorCategory
-    - subCategory
-    - itemType
-    - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
+  - sector
+  - department
+  - majorCategory
+  - subCategory
+  - itemType
+  - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
 
 ## 1.1.6
 
@@ -334,4 +334,19 @@
 - Stability fixes and improvements
 
 ## 1.7.1
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Improvements in handling Web Cookies
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
+- **BREAKING CHANGES** Restricted access to `com.microblink.core.Product.imageUrl()` and `com.microblink.core.Product.productUrl()` API usage. It will now be for SDK's internal use only. If used(i.e. Lint check suppressed), it will always return `null`.
 - Stability fixes and improvements

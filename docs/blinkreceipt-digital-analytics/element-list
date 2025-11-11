@@ -1,0 +1,27 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.digital.analytics.internal.network.responses/PostLinkResponse.LinkedAccount///PointingToDeclaration/com/microblink/digital/analytics/internal/network/responses/PostLinkResponse.LinkedAccount.html
+$dokka.location:com.microblink.digital.analytics.internal.network.responses/PostLinkResponse.UserLinkedAccount///PointingToDeclaration/com/microblink/digital/analytics/internal/network/responses/PostLinkResponse.UserLinkedAccount.html
+$dokka.location:com.microblink.digital.analytics/DigitalClientManager.Factory///PointingToDeclaration/com/microblink/digital/analytics/DigitalClientManager.Factory.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.Error///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.Error.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation.Create///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.Create.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation.StoreOrders///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.StoreOrders.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation.SyncOperation///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.SyncOperation.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation.SyncOrders///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.SyncOrders.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation.Update///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.Update.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.GrabOrdersOperation///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.GrabOrdersOperation.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.OperationEvent.Sync///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.OperationEvent.Sync.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.OperationEvent.Track///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.OperationEvent.Track.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.OperationEvent///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.OperationEvent.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.UserLinkedAccount.ExpireRetailerAuth///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.UserLinkedAccount.ExpireRetailerAuth.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.UserLinkedAccount.Link///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.UserLinkedAccount.Link.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.UserLinkedAccount.Sync///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.UserLinkedAccount.Sync.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.UserLinkedAccount.Unlink///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.UserLinkedAccount.Unlink.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.UserLinkedAccount///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.UserLinkedAccount.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.VerifyAccountOperation.Create///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.VerifyAccountOperation.Create.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.VerifyAccountOperation.SyncOperation///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.VerifyAccountOperation.SyncOperation.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.VerifyAccountOperation.Update///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.VerifyAccountOperation.Update.html
+$dokka.location:com.microblink.digital.analytics/DigitalEvents.VerifyAccountOperation///PointingToDeclaration/com/microblink/digital/analytics/DigitalEvents.VerifyAccountOperation.html
+com.microblink.digital.analytics
+com.microblink.digital.analytics.internal
+com.microblink.digital.analytics.internal.network.responses

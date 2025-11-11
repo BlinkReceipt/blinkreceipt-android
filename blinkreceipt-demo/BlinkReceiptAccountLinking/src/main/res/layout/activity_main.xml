@@ -6,11 +6,19 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/accounts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/linking_accounts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:onClick="onLink"
         android:text="@string/linking_link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accounts" />
@@ -20,70 +28,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:onClick="onUnlinkAccount"
         android:text="@string/linking_unlink"
-        app:layout_constraintStart_toEndOf="@+id/accounts"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/accounts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onAccounts"
-        android:text="@string/linking_accounts"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/unlinkAccounts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onUnlinkAccounts"
-        android:text="@string/linking_unlink_all"
-        app:layout_constraintStart_toEndOf="@+id/unlink"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/verifyAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onVerifyAccount"
-        android:text="@string/linking_verify"
         app:layout_constraintStart_toEndOf="@+id/link"
-        app:layout_constraintTop_toBottomOf="@+id/unlink" />
-
-    <Button
-        android:id="@+id/orders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onOrders"
-        android:text="@string/linking_orders"
-        app:layout_constraintStart_toEndOf="@+id/verifyAccount"
-        app:layout_constraintTop_toBottomOf="@+id/unlinkAccounts" />
-
-    <Button
-        android:id="@+id/resetHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="onResetHistory"
-        android:text="@string/linking_reset_history"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link" />
+        app:layout_constraintTop_toBottomOf="@+id/accounts" />
 
     <Button
         android:id="@+id/resetRetailerHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:onClick="onResetRetailerHistory"
         android:text="@string/linking_reset_retailer_history"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/link" />
+
+    <Button
+        android:id="@+id/orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/linking_orders"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetRetailerHistory" />
 
     <FrameLayout
         android:id="@+id/webContainer"
@@ -93,6 +58,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetRetailerHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/orders" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

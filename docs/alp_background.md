@@ -106,7 +106,7 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
 
 After we're done with the Worker implementation, we need to enqueue its execution. WorkManager enables you to enqueue either [one-time](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_one-time_work) or [periodic](https://developer.android.com/guide/background/persistent/getting-started/define-work#schedule_periodic_work) work.
 Depending on your specific needs, you can enqueue the execution at a specific point in your users journey.
-Preferably, you should enqueue background work after you've successfully verified an account or retrieved orders at least once in the foreground, as additional verification may be required from the end user.
+Preferably, you should enqueue background work after you've successfully linked an account or retrieved orders at least once in the foreground, as additional verification may be required from the end user.
 Here's an example on how to enqueue periodic work:
 
 === "Kotlin"

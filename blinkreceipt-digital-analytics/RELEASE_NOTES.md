@@ -32,10 +32,10 @@
 - Stability fixes and improvements
 
 ## 1.1.0
-- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
 
 ## 1.1.1
+- Remote Message Job IDs are now included as part of digital analytics
 - Stability fixes and improvements
 
 ## 1.1.2
@@ -50,4 +50,19 @@
 - Stability fixes and improvements
 
 ## 1.1.4
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Optimize database usage by storing orders.raw_data payload in a separate file storage to avoid possible OOM issues and better overall performance.
+- Refactored Account Linking Analytics implementation, replaced with Digital API `operation_events` implementation.
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements

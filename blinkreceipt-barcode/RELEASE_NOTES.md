@@ -278,11 +278,8 @@
 - Stability fixes and improvements
 
 ## 1.6.6
-- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
-- Stability fixes and improvements
-
-## 1.6.7
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
 
 ## 1.6.8
@@ -306,4 +303,17 @@
 - Improved the barcode scanning logic to resolve issues on specific device camera hardware, enhancing scanning reliability and performance.
   - You may need to apply `RecognizerView.setOptimizeCameraForNearScan(true);` to improve camera focus on select devices. 
     - Enabling this setting helps capture clearer frames, leading to more accurate barcode results.
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements

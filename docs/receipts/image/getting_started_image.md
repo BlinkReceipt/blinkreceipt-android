@@ -7,13 +7,13 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
      repositories {
-       maven { url = uri("https://maven.microblink.com") }
+        mavenCentral()
      }
     ```
 === "Groovy"
     ```groovy
      repositories {
-       maven { url "https://maven.microblink.com" }
+       mavenCentral()
      }
     ```
 
