@@ -78,8 +78,6 @@ class CameraScanViewModel @Inject constructor(
             p1: Media
         ) {
             viewModelScope.launch {
-                savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
-
                 runCatching {
                     val blinkreceiptId = p0.blinkReceiptId()
                     productItemsFileService.store(
@@ -96,6 +94,8 @@ class CameraScanViewModel @Inject constructor(
                         CameraScanEvent.OnFinishScanError
                     )
                 }
+
+                savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
             }
         }
 
