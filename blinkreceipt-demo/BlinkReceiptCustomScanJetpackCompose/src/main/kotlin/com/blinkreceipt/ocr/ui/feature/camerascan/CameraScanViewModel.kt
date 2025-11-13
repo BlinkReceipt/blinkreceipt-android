@@ -80,8 +80,8 @@ class CameraScanViewModel @Inject constructor(
             viewModelScope.launch {
                 savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
 
-                val blinkreceiptId = p0.blinkReceiptId()
                 runCatching {
+                    val blinkreceiptId = p0.blinkReceiptId()
                     productItemsFileService.store(
                         blinkReceiptId = blinkreceiptId,
                         productItems = p0.toProductItems(),
@@ -112,7 +112,7 @@ class CameraScanViewModel @Inject constructor(
 
     val takePictureCallback = object: CameraCaptureListener {
         override fun onCaptured(p0: BitmapResult) {
-            // TODO::
+            //
         }
 
         override fun onException(p0: Throwable) {
