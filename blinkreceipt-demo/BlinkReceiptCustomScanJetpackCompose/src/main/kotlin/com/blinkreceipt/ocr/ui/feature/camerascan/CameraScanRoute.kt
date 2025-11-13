@@ -71,6 +71,9 @@ fun CameraScanRoute(
                 is CameraScanEvent.OnTakePictureError -> {
                     displayTakePictureErrorDialogPrompt = true
                 }
+                is CameraScanEvent.OnTakePictureCaptured -> {
+                    recognizerViewInstance?.confirmPicture(event.result)
+                }
                 is CameraScanEvent.OnFinishScanError -> {
                     displayFinishScanErrorDialogPrompt = true
                 }
