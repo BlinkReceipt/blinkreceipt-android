@@ -28,8 +28,8 @@ internal class ProductItemsFileServiceImpl @Inject constructor(
             val path = Files.createDirectories(File(filesDir, RESULTS_DIR).toPath())
             val file = File(path.toFile(), "${blinkReceiptId}.json")
             
-            require(file.createNewFile()) {
-                "Failed to create the file."
+            if(!file.exists()) {
+                file.createNewFile()
             }
 
             withContext(Dispatchers.IO) {
