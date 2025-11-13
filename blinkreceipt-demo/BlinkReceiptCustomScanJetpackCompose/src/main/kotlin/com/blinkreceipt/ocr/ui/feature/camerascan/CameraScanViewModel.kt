@@ -103,6 +103,8 @@ class CameraScanViewModel @Inject constructor(
             viewModelScope.launch {
                 _events.emit(CameraScanEvent.OnFinishScanError)
             }
+
+            savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
         }
 
         override fun onRecognizerResultsChanged(p0: RecognizerResult) {
@@ -112,13 +114,16 @@ class CameraScanViewModel @Inject constructor(
 
     val takePictureCallback = object: CameraCaptureListener {
         override fun onCaptured(p0: BitmapResult) {
-            //
+            viewModelScope.launch {
+                _events.emit(CameraScanEvent.OnTakePictureCaptured(p0))
+            }
         }
 
         override fun onException(p0: Throwable) {
             viewModelScope.launch {
                 _events.emit(CameraScanEvent.OnTakePictureError)
             }
+            savedStateHandle[KEY_IS_CAPTURING_PICTURE] = false
         }
     }
 
