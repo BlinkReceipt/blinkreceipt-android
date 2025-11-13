@@ -133,7 +133,7 @@ fun HomeRoute(
                     )
                 },
                 text = {
-                    Text(text = stringResource(R.string.home_permission_denied_dialog_message, displayVersion ?: ""))
+                    Text(text = stringResource(R.string.home_permission_denied_dialog_message))
                 }
             )
         }
