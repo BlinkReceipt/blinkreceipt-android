@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.plugin.compose'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.devtools.ksp'
     id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
@@ -27,7 +30,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        compose true
     }
 
     signingConfigs {
@@ -76,19 +79,38 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.material:material:${versions.material}")
-    implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
-    implementation "com.google.mlkit:barcode-scanning:${versions.barcodeScanner}"
-
     implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
+    implementation "androidx.activity:activity-compose:${androidx.activity}"
+    implementation platform("androidx.compose:compose-bom:${androidx.compose}")
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material3:material3-adaptive-navigation-suite'
+
+    implementation("pub.devrel:easypermissions:${versions.easyPermissions}")
 
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
 
-    testImplementation "junit:junit:${versions.junit}"
+    // Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    implementation "androidx.hilt:hilt-navigation-compose:${androidx.hilt}"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel-compose:${androidx.hilt}"
 
+    ksp "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+    ksp "org.jetbrains.kotlinx:kotlinx-metadata-jvm:${versions.kotlinxMetadata}"
+    ksp "androidx.hilt:hilt-compiler:${versions.hiltCompiler}"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlinxSerialization}"
+
+    testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
-    androidTestImplementation "androidx.test:runner:${versions.androidTestRunner}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation platform("androidx.compose:compose-bom:${androidx.compose}")
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
 }
