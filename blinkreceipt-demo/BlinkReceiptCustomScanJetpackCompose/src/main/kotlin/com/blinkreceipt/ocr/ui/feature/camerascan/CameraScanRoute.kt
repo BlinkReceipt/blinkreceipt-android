@@ -27,6 +27,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.viewinterop.AndroidView
@@ -162,13 +163,14 @@ internal fun CameraScanContent(
     Box(
         modifier = modifier.fillMaxSize(),
     ) {
+        val context = LocalContext.current
+        val recognizerView = remember {
+            RecognizerView(context).apply(onInitializeRecognizerView)
+        }
+
         @Suppress("COMPOSE_APPLIER_CALL_MISMATCH")
         AndroidView(
-            factory = { context ->
-                RecognizerView(context).also {
-                    onInitializeRecognizerView(it)
-                }
-            },
+            factory = { recognizerView },
             modifier = modifier.fillMaxSize(),
             onRelease = { view ->
                 view.terminate()
