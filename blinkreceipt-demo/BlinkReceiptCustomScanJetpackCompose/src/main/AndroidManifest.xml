@@ -29,11 +29,11 @@
 
         <meta-data
             android:name="com.microblink.ProductIntelligence"
-            android:value="sB3QUEyOz0mKBrzWLJvpTQvKcUbcaXbhXPQH5U4JfvE" />
+            android:value="" />
 
         <meta-data
             android:name="com.microblink.LicenseKey"
-            android:value="sRwAAAAUY29tLmJsaW5rcmVjZWlwdC5vY3L7sc450aElcQC0pvadScx0Ve78rr9UyaaCi+b9P7hoGvXITorVUF/085OyX0YuED2abxTp/jgoCAdWUjVCA26ILDgR1XOmfsS3NEdc7sDG0Gud73tdCoOEs7mTH67aYmub8foZ3Eeosn0p8TgCNAaLfinASIAYs2x17AwBpMauaF0ryf2hbQ==" />
+            android:value="" />
 
     </application>
 
