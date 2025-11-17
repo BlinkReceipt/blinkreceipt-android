@@ -65,12 +65,14 @@ internal class ProductItemsFileServiceImpl @Inject constructor(
         }
     }
 
-    override fun delete(blinkReceiptId: String) {
+    override suspend fun delete(blinkReceiptId: String) {
         val filesDir = context.applicationContext.filesDir
         val file = File(filesDir, "${RESULTS_DIR}/${blinkReceiptId}.json")
         runCatching {
-            require(file.delete()) {
-                "Failed to delete the file."
+            withContext(Dispatchers.IO) {
+                require(file.delete()) {
+                    "Failed to delete the file."
+                }
             }
         }.onFailure {
             it.printStackTrace()
