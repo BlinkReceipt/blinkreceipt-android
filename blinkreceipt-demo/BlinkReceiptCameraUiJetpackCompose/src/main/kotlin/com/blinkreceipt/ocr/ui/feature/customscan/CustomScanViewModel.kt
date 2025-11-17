@@ -49,9 +49,7 @@ class CustomScanViewModel @Inject constructor(
     val events: SharedFlow<CustomScanEvent> = _events.asSharedFlow()
 
     val recognizerCallback = object: CameraRecognizerCallback {
-        override fun onConfirmPicture(p0: File) {
-            // ...
-        }
+        override fun onConfirmPicture(p0: File) {}
 
         override fun onPermissionDenied() {
             viewModelScope.launch {
@@ -59,13 +57,9 @@ class CustomScanViewModel @Inject constructor(
             }
         }
 
-        override fun onPreviewStarted() {
-            // ...
-        }
+        override fun onPreviewStarted() {}
 
-        override fun onPreviewStopped() {
-            // ...
-        }
+        override fun onPreviewStopped() {}
 
         override fun onException(p0: Throwable) {
             viewModelScope.launch {
@@ -108,14 +102,12 @@ class CustomScanViewModel @Inject constructor(
         override fun onRecognizerException(p0: Throwable) {
             viewModelScope.launch {
                 _events.emit(CustomScanEvent.OnFinishScanError)
+
+                savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
             }
-
-            savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
         }
 
-        override fun onRecognizerResultsChanged(p0: RecognizerResult) {
-            // ...
-        }
+        override fun onRecognizerResultsChanged(p0: RecognizerResult) {}
     }
 
     val takePictureCallback = object: CameraCaptureListener {
@@ -128,8 +120,9 @@ class CustomScanViewModel @Inject constructor(
         override fun onException(p0: Throwable) {
             viewModelScope.launch {
                 _events.emit(CustomScanEvent.OnTakePictureError)
+
+                savedStateHandle[KEY_IS_CAPTURING_PICTURE] = false
             }
-            savedStateHandle[KEY_IS_CAPTURING_PICTURE] = false
         }
     }
 
