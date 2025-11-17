@@ -7,7 +7,10 @@ sealed class MainDestinations {
     data object Home: MainDestinations()
 
     @Serializable
-    data object CameraScan: MainDestinations()
+    data object CustomScan: MainDestinations()
+
+    @Serializable
+    data object OobCameraScan: MainDestinations()
 
     @Serializable
     data class Results(

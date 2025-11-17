@@ -1,4 +1,4 @@
-package com.blinkreceipt.ocr.ui.feature.camerascan
+package com.blinkreceipt.ocr.ui.feature.customscan
 
 import android.graphics.RectF
 import androidx.compose.foundation.clickable
@@ -23,6 +23,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
@@ -41,22 +42,26 @@ import com.microblink.camera.view.CameraAspectMode
 import com.blinkreceipt.ocr.R
 import com.blinkreceipt.ocr.ui.theme.BlinkReceiptDemoTheme
 
-internal val LocalCameraScanAction = staticCompositionLocalOf<(CameraScanAction) -> Unit> { {} }
+internal val LocalCustomScanAction = staticCompositionLocalOf<(CustomScanAction) -> Unit> { {} }
 
 @Composable
-fun CameraScanRoute(
+fun CustomScanRoute(
     modifier: Modifier,
-    viewModel: CameraScanViewModel = hiltViewModel(),
+    viewModel: CustomScanViewModel = hiltViewModel(),
     onScanResults: ((String) -> Unit),
 ) {
     val lifecycleOwner = LocalLifecycleOwner.current
-    val uiState: CameraScanUiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState: CustomScanUiState by viewModel.uiState.collectAsStateWithLifecycle()
 
-    var displayTakePictureErrorDialogPrompt by remember {
+    var displayTakePictureErrorDialogPrompt by rememberSaveable {
         mutableStateOf(false)
     }
 
-    var displayFinishScanErrorDialogPrompt by remember {
+    var displayFinishingScanProgressDialogPrompt by rememberSaveable {
+        mutableStateOf(false)
+    }
+
+    var displayFinishScanErrorDialogPrompt by rememberSaveable {
         mutableStateOf(false)
     }
 
@@ -68,16 +73,21 @@ fun CameraScanRoute(
     LaunchedEffect(viewModel, lifecycleOwner) {
         viewModel.events.collect { event ->
             when (event) {
-                is CameraScanEvent.OnTakePictureError -> {
+                is CustomScanEvent.OnTakePictureError -> {
                     displayTakePictureErrorDialogPrompt = true
                 }
-                is CameraScanEvent.OnTakePictureCaptured -> {
+                is CustomScanEvent.OnTakePictureCaptured -> {
                     recognizerViewInstance?.confirmPicture(event.result)
                 }
-                is CameraScanEvent.OnFinishScanError -> {
-                    displayFinishScanErrorDialogPrompt = true
+                is CustomScanEvent.OnFinishingScan -> {
+                    displayFinishingScanProgressDialogPrompt = true
                 }
-                is CameraScanEvent.OnFinishScanCompleted -> {
+                is CustomScanEvent.OnFinishScanError -> {
+                    displayFinishScanErrorDialogPrompt = true
+                    displayFinishingScanProgressDialogPrompt = false
+                }
+                is CustomScanEvent.OnFinishScanCompleted -> {
+                    displayFinishingScanProgressDialogPrompt = false
                     onScanResults(event.blinkreceiptId)
                 }
             }
@@ -85,10 +95,10 @@ fun CameraScanRoute(
     }
 
     CompositionLocalProvider(
-        LocalCameraScanAction provides { viewModel.handleAction(it) }
+        LocalCustomScanAction provides { viewModel.handleAction(it) }
     ) {
-        val action = LocalCameraScanAction.current
-        CameraScanContent(
+        val action = LocalCustomScanAction.current
+        CustomScanContent(
             modifier = modifier.windowInsetsPadding(WindowInsets.systemBars),
             uiState = uiState,
             onInitializeRecognizerView = { recognizerView ->
@@ -109,11 +119,11 @@ fun CameraScanRoute(
             },
             onClickTakePicture = {
                 recognizerViewInstance?.takePicture(viewModel.takePictureCallback)
-                action(CameraScanAction.TakePicture)
+                action(CustomScanAction.TakePicture)
             },
             onClickFinishScan = {
                 recognizerViewInstance?.finishedScanning()
-                action(CameraScanAction.FinishScan)
+                action(CustomScanAction.FinishScan)
             },
         )
 
@@ -130,7 +140,25 @@ fun CameraScanRoute(
                     )
                 },
                 text = {
-                    Text(text = stringResource(R.string.camera_scan_dialog_take_picture_error_msg))
+                    Text(text = stringResource(R.string.custom_scan_dialog_take_picture_error_msg))
+                }
+            )
+        }
+
+        if(displayFinishingScanProgressDialogPrompt) {
+            val onDismiss = { displayFinishingScanProgressDialogPrompt = false }
+            AlertDialog(
+                onDismissRequest = onDismiss,
+                confirmButton = {
+                    Text(
+                        text = stringResource(android.R.string.ok),
+                        modifier = Modifier.clickable(
+                            onClick = onDismiss,
+                        )
+                    )
+                },
+                text = {
+                    Text(text = stringResource(R.string.custom_scan_dialog_finishing_scan_msg))
                 }
             )
         }
@@ -148,7 +176,7 @@ fun CameraScanRoute(
                     )
                 },
                 text = {
-                    Text(text = stringResource(R.string.camera_scan_dialog_scan_results_error_msg))
+                    Text(text = stringResource(R.string.custom_scan_dialog_scan_results_error_msg))
                 }
             )
         }
@@ -156,9 +184,9 @@ fun CameraScanRoute(
 }
 
 @Composable
-internal fun CameraScanContent(
+internal fun CustomScanContent(
     modifier: Modifier,
-    uiState: CameraScanUiState,
+    uiState: CustomScanUiState,
     onInitializeRecognizerView: (RecognizerView) -> Unit,
     onClickTakePicture: (() -> Unit) = {},
     onClickFinishScan: (() -> Unit) = {},
@@ -194,7 +222,7 @@ internal fun CameraScanContent(
                 enabled = !uiState.isCapturingPicture,
                 onClick = onClickTakePicture,
             ) {
-                Text(stringResource(R.string.camera_scan_btn_take_picture))
+                Text(stringResource(R.string.custom_scan_btn_take_picture))
             }
 
             ElevatedButton(
@@ -205,7 +233,7 @@ internal fun CameraScanContent(
                 enabled = !uiState.isProcessingScanResults,
                 onClick = onClickFinishScan,
             ) {
-                Text(stringResource(R.string.camera_scan_btn_finish_scan))
+                Text(stringResource(R.string.custom_scan_btn_finish_scan))
             }
         }
     }
@@ -214,12 +242,12 @@ internal fun CameraScanContent(
 
 @PreviewScreenSizes
 @Composable
-internal fun CameraScanContent_Preview() {
+internal fun CustomScanContent_Preview() {
     BlinkReceiptDemoTheme {
         Surface {
-            CameraScanContent(
+            CustomScanContent(
                 modifier = Modifier.fillMaxSize(),
-                uiState = CameraScanUiState(
+                uiState = CustomScanUiState(
                     isCapturingPicture = false,
                     isProcessingScanResults = false,
                 ),

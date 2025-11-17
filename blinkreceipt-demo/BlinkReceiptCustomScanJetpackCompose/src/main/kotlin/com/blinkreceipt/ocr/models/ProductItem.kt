@@ -1,4 +1,4 @@
-package com.blinkreceipt.ocr.ui.feature.results.models
+package com.blinkreceipt.ocr.models
 
 import com.microblink.core.Product
 import com.microblink.core.ScanResults

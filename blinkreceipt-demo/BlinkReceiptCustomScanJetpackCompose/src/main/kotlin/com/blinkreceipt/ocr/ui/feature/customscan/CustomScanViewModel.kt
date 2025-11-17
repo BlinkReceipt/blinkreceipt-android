@@ -1,10 +1,10 @@
-package com.blinkreceipt.ocr.ui.feature.camerascan
+package com.blinkreceipt.ocr.ui.feature.customscan
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.blinkreceipt.ocr.ui.feature.home.data.ProductItemsFileService
-import com.blinkreceipt.ocr.ui.feature.results.models.toProductItems
+import com.blinkreceipt.ocr.models.toProductItems
 import com.microblink.BitmapResult
 import com.microblink.CameraCaptureListener
 import com.microblink.CameraRecognizerCallback
@@ -23,7 +23,7 @@ import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
-class CameraScanViewModel @Inject constructor(
+class CustomScanViewModel @Inject constructor(
     private val productItemsFileService: ProductItemsFileService,
     private val savedStateHandle: SavedStateHandle,
 ): ViewModel() {
@@ -35,18 +35,18 @@ class CameraScanViewModel @Inject constructor(
         _isCapturingPicture,
         _isProcessingScanResults,
     ) { isCapturingPicture, isProcessingScanResults ->
-        CameraScanUiState(
+        CustomScanUiState(
             isCapturingPicture = isCapturingPicture,
             isProcessingScanResults = isProcessingScanResults,
         )
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5_000),
-        initialValue = CameraScanUiState(),
+        initialValue = CustomScanUiState(),
     )
 
-    private val _events = MutableSharedFlow<CameraScanEvent>()
-    val events: SharedFlow<CameraScanEvent> = _events.asSharedFlow()
+    private val _events = MutableSharedFlow<CustomScanEvent>()
+    val events: SharedFlow<CustomScanEvent> = _events.asSharedFlow()
 
     val recognizerCallback = object: CameraRecognizerCallback {
         override fun onConfirmPicture(p0: File) {
@@ -55,7 +55,7 @@ class CameraScanViewModel @Inject constructor(
 
         override fun onPermissionDenied() {
             viewModelScope.launch {
-                _events.emit(CameraScanEvent.OnTakePictureError)
+                _events.emit(CustomScanEvent.OnTakePictureError)
             }
         }
 
@@ -69,7 +69,13 @@ class CameraScanViewModel @Inject constructor(
 
         override fun onException(p0: Throwable) {
             viewModelScope.launch {
-                _events.emit(CameraScanEvent.OnTakePictureError)
+                _events.emit(CustomScanEvent.OnTakePictureError)
+            }
+        }
+
+        override fun onRecognizerFinishing() {
+            viewModelScope.launch {
+                _events.emit(CustomScanEvent.OnFinishingScan)
             }
         }
 
@@ -86,12 +92,12 @@ class CameraScanViewModel @Inject constructor(
                     )
 
                     _events.emit(
-                        CameraScanEvent.OnFinishScanCompleted(blinkreceiptId)
+                        CustomScanEvent.OnFinishScanCompleted(blinkreceiptId)
                     )
                 }.onFailure {
                     it.printStackTrace()
                     _events.emit(
-                        CameraScanEvent.OnFinishScanError
+                        CustomScanEvent.OnFinishScanError
                     )
                 }
 
@@ -101,7 +107,7 @@ class CameraScanViewModel @Inject constructor(
 
         override fun onRecognizerException(p0: Throwable) {
             viewModelScope.launch {
-                _events.emit(CameraScanEvent.OnFinishScanError)
+                _events.emit(CustomScanEvent.OnFinishScanError)
             }
 
             savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = false
@@ -115,25 +121,25 @@ class CameraScanViewModel @Inject constructor(
     val takePictureCallback = object: CameraCaptureListener {
         override fun onCaptured(p0: BitmapResult) {
             viewModelScope.launch {
-                _events.emit(CameraScanEvent.OnTakePictureCaptured(p0))
+                _events.emit(CustomScanEvent.OnTakePictureCaptured(p0))
             }
         }
 
         override fun onException(p0: Throwable) {
             viewModelScope.launch {
-                _events.emit(CameraScanEvent.OnTakePictureError)
+                _events.emit(CustomScanEvent.OnTakePictureError)
             }
             savedStateHandle[KEY_IS_CAPTURING_PICTURE] = false
         }
     }
 
-    fun handleAction(action: CameraScanAction) {
+    fun handleAction(action: CustomScanAction) {
         viewModelScope.launch {
             when(action) {
-                is CameraScanAction.TakePicture -> {
+                is CustomScanAction.TakePicture -> {
                     savedStateHandle[KEY_IS_CAPTURING_PICTURE] = true
                 }
-                is CameraScanAction.FinishScan -> {
+                is CustomScanAction.FinishScan -> {
                     savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = true
                 }
             }
