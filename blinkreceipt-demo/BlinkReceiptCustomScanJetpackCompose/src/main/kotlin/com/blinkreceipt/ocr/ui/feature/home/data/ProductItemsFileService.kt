@@ -1,7 +1,6 @@
 package com.blinkreceipt.ocr.ui.feature.home.data
 
-import com.blinkreceipt.ocr.ui.feature.results.models.ProductItem
-import com.microblink.core.ScanResults
+import com.blinkreceipt.ocr.models.ProductItem
 
 interface ProductItemsFileService {
 

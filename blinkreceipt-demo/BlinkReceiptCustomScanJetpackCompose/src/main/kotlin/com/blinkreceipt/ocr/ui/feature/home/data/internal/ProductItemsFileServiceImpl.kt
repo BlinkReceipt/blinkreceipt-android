@@ -2,7 +2,7 @@ package com.blinkreceipt.ocr.ui.feature.home.data.internal
 
 import android.content.Context
 import com.blinkreceipt.ocr.ui.feature.home.data.ProductItemsFileService
-import com.blinkreceipt.ocr.ui.feature.results.models.ProductItem
+import com.blinkreceipt.ocr.models.ProductItem
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -10,9 +10,7 @@ import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import java.io.File
 import java.nio.file.Files
-import java.nio.file.Path
 import javax.inject.Inject
-import kotlin.io.path.Path
 
 internal class ProductItemsFileServiceImpl @Inject constructor(
     @param:ApplicationContext private val context: Context,

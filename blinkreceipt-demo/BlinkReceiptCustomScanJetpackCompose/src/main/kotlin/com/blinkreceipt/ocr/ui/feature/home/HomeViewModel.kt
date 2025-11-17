@@ -44,8 +44,11 @@ class HomeViewModel @Inject constructor(
     fun handleAction(action: HomeAction) {
         viewModelScope.launch {
             when (action) {
-                is HomeAction.StartCamera -> {
-                    _events.emit(HomeEvent.OnStartCamera)
+                is HomeAction.StartCustomScan -> {
+                    _events.emit(HomeEvent.OnStartCustomScan)
+                }
+                is HomeAction.StartOobCameraScan -> {
+                    _events.emit(HomeEvent.OnStartOobCameraScan)
                 }
                 is HomeAction.DisplayVersion -> {
                     _events.emit(

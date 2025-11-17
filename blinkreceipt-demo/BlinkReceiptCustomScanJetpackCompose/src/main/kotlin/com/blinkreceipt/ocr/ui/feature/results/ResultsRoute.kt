@@ -39,7 +39,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.blinkreceipt.ocr.R
 import com.blinkreceipt.ocr.ui.feature.results.components.ProductItemView
-import com.blinkreceipt.ocr.ui.feature.results.models.ProductItem
+import com.blinkreceipt.ocr.models.ProductItem
 import com.blinkreceipt.ocr.ui.theme.BlinkReceiptDemoTheme
 
 private val LocalResultsAction = staticCompositionLocalOf<(ResultsAction) -> Unit> { {} }
