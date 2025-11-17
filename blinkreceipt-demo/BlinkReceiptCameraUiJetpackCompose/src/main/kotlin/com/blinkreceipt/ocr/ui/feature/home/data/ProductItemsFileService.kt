@@ -13,7 +13,7 @@ interface ProductItemsFileService {
         blinkReceiptId: String,
     ): List<ProductItem>
 
-    fun delete(
+    suspend fun delete(
         blinkReceiptId: String,
     )
 
