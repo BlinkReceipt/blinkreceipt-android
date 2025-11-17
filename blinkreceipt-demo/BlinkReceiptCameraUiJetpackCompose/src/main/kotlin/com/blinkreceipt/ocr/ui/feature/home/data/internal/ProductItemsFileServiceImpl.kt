@@ -23,14 +23,14 @@ internal class ProductItemsFileServiceImpl @Inject constructor(
     ) {
         val filesDir = context.applicationContext.filesDir
         runCatching {
-            val path = Files.createDirectories(File(filesDir, RESULTS_DIR).toPath())
-            val file = File(path.toFile(), "${blinkReceiptId}.json")
-            
-            if(!file.exists()) {
-                file.createNewFile()
-            }
-
             withContext(Dispatchers.IO) {
+                val path = Files.createDirectories(File(filesDir, RESULTS_DIR).toPath())
+                val file = File(path.toFile(), "${blinkReceiptId}.json")
+
+                if(!file.exists()) {
+                    file.createNewFile()
+                }
+
                 file.writeText(
                     json.encodeToString(
                         ListSerializer(ProductItem.serializer()),
@@ -50,11 +50,11 @@ internal class ProductItemsFileServiceImpl @Inject constructor(
         val file = File(filesDir, "${RESULTS_DIR}/${blinkReceiptId}.json")
 
         return runCatching {
-            require(file.exists()) {
-                "File does not exist."
-            }
-
             withContext(Dispatchers.IO) {
+                require(file.exists()) {
+                    "File does not exist."
+                }
+
                 val stringContent = file.readText()
                 json.decodeFromString<List<ProductItem>>(stringContent)
             }
