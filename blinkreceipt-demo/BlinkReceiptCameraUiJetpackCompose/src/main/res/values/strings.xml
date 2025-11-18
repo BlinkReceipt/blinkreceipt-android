@@ -17,7 +17,6 @@
     <string name="custom_scan_btn_finish_scan">Finish Scan</string>
 
     <string name="oob_camera_scan_dialog_error_msg">Camera scan failed. Please try again…</string>
-    <string name="oob_camera_scan_dialog_finishing_msg">Finishing scan…</string>
 
     <string name="results_topappbar_title">Scan Results</string>
     <string name="results_product_item_upc" formatted="true">UPC: %s</string>
