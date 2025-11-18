@@ -46,10 +46,6 @@ fun OobCameraRoute(
 ) {
     val lifecycleOwner = LocalLifecycleOwner.current
 
-    var displayFinishingScanProgressDialogPrompt by rememberSaveable {
-        mutableStateOf(false)
-    }
-
     var displayFinishScanErrorDialogPrompt by rememberSaveable {
         mutableStateOf(false)
     }
@@ -66,10 +62,6 @@ fun OobCameraRoute(
                         displayFinishScanErrorDialogPrompt = true
                     }
 
-                    is OobCameraEvent.OnFinishing -> {
-                        displayFinishingScanProgressDialogPrompt = true
-                    }
-
                     is OobCameraEvent.OnSuccess -> {
                         onScanResults(event.blinkreceiptId)
                     }
@@ -83,24 +75,6 @@ fun OobCameraRoute(
         OobCameraContent(
             modifier = modifier.windowInsetsPadding(WindowInsets.systemBars),
         )
-
-        if (displayFinishingScanProgressDialogPrompt) {
-            val onDismiss = { displayFinishingScanProgressDialogPrompt = false }
-            AlertDialog(
-                onDismissRequest = onDismiss,
-                confirmButton = {
-                    Text(
-                        text = stringResource(android.R.string.ok),
-                        modifier = Modifier.clickable(
-                            onClick = onDismiss,
-                        )
-                    )
-                },
-                text = {
-                    Text(text = stringResource(R.string.oob_camera_scan_dialog_finishing_msg))
-                }
-            )
-        }
 
         if (displayFinishScanErrorDialogPrompt) {
             val onDismiss = { displayFinishScanErrorDialogPrompt = false }

@@ -25,9 +25,6 @@ class OobCameraViewModel @Inject constructor(
             when (action) {
                 is OobCameraAction.ReceiveRecognizerResults -> {
                     when (val results = action.results) {
-                        is CameraRecognizerResults.Finishing -> {
-                            _events.emit(OobCameraEvent.OnFinishing)
-                        }
                         is CameraRecognizerResults.Success -> {
                             runCatching {
                                 val scanResults = requireNotNull(results.results) {

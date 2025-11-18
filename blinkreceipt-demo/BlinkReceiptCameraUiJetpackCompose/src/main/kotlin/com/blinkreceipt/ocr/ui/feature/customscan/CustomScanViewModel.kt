@@ -67,12 +67,6 @@ class CustomScanViewModel @Inject constructor(
             }
         }
 
-        override fun onRecognizerFinishing() {
-            viewModelScope.launch {
-                _events.emit(CustomScanEvent.OnFinishingScan)
-            }
-        }
-
         override fun onRecognizerDone(
             p0: ScanResults,
             p1: Media
@@ -134,6 +128,7 @@ class CustomScanViewModel @Inject constructor(
                 }
                 is CustomScanAction.FinishScan -> {
                     savedStateHandle[KEY_IS_PROCESSING_SCAN_RESULTS] = true
+                    _events.emit(CustomScanEvent.OnFinishingScan)
                 }
             }
         }
