@@ -1,0 +1,12 @@
+name: AI Label Validate
+
+on:
+  pull_request:
+    types: [opened, reopened, labeled, unlabeled]
+
+jobs:
+  ai-label-validate:
+    uses: BlinkReceipt/github-workflows/.github/workflows/ai-label-validate.yaml@main
+    secrets: inherit
+    with:
+      issue_number: ${{ github.event.pull_request.number }}
