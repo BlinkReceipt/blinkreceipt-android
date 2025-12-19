@@ -1,0 +1,7 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.messaging/MessagingResults.Digital///PointingToDeclaration/com/microblink/messaging/MessagingResults.Digital.html
+$dokka.location:com.microblink.messaging/MessagingResults.Error///PointingToDeclaration/com/microblink/messaging/MessagingResults.Error.html
+$dokka.location:com.microblink.messaging/MessagingResults.Linking///PointingToDeclaration/com/microblink/messaging/MessagingResults.Linking.html
+com.microblink.messaging
+com.microblink.messaging.internal

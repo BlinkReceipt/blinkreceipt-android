@@ -1,0 +1,1 @@
+var moduleSearchIndex = [{"l":"blinkreceipt-digital-analytics","url":"index.html"}]

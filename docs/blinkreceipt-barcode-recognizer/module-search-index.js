@@ -1,0 +1,1 @@
+var moduleSearchIndex = [{"l":"blinkreceipt-barcode-recognizer","url":"index.html"}]

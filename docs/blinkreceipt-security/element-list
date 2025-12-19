@@ -1,0 +1,9 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.security/CryptoStateManager.Factory///PointingToDeclaration/com/microblink/security/CryptoStateManager.Factory.html
+$dokka.location:com.microblink.security/LicenseStateManager.Factory///PointingToDeclaration/com/microblink/security/LicenseStateManager.Factory.html
+$dokka.location:com.microblink.security/LicenseType.V1///PointingToDeclaration/com/microblink/security/LicenseType.V1.html
+$dokka.location:com.microblink.security/LicenseType.V2///PointingToDeclaration/com/microblink/security/LicenseType.V2.html
+$dokka.location:com.microblink.security/SecureStorageManager.Factory///PointingToDeclaration/com/microblink/security/SecureStorageManager.Factory.html
+com.microblink.security
+com.microblink.security.internal
