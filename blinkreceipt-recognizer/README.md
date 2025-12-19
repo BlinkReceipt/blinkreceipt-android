@@ -177,7 +177,7 @@ The edge detection result contains edge detection information about the latest f
 The search target results contain lists of products prescribed in the ScanOptions. At least one of the products described were found in the last frame scanned, and are therefore confirmed through this result.
 
 ## <a name=recognizerView></a> RecognizerView: Provide your own UI on top of Camera View
-The sdk does have an easy to use activity that can be used and customized as described above. However, the sdk has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The RecognizerView is a view that provides a camera preview for the user as well as other capabilities for the devloper. The `RecognizerView` handles its own lifecycle, but it is required that in each callback of your activity, you forward that state to the RecognizerView.
+The sdk does have an easy to use activity that can be used and customized as described above. However, the sdk has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The RecognizerView is a view that provides a camera preview for the user as well as other capabilities for the developer. The `RecognizerView` handles its own lifecycle, but it is required that in each callback of your activity, you forward that state to the RecognizerView.
 
 ```java
     @Override
@@ -265,6 +265,56 @@ _______
 If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the sdk will make a best guess as to what the orientation is based on the Bitmap properties.
 
 **NOTE The recognizer client is not a threadsafe mechanism. Though the function `recognize` is not blocking only ONE scan session can be ran at a time. Attempting to call `recognize` multiple times while previous scans have not finished could potentially lead to unexpected behavior including fatal crashes**
+
+### Using Jetpack Compose
+To integrate the `RecognizerView` with Jetpack Compose, use the `AndroidView` composable. This allows you to embed a traditional Android View within your Compose UI. It's important to manage the lifecycle of the `RecognizerView` by creating it in the `factory` lambda of `AndroidView` and handling its lifecycle events.
+
+Here is an example of how to set up the `RecognizerView` in a Composable function:
+
+```kotlin
+@Composable
+fun RecognizerViewComposable(
+    modifier: Modifier,
+    // ...
+) {
+  val context = LocalContext.current
+  val lifecycleOwner = LocalLifecycleOwner.current
+
+  // This is to ensure to avoid RecognizerView instance from being unnecessarily re-created on recomposition.
+  val recognizerView = remember {
+      RecognizerView(context).apply {
+        setMeteringAreas(arrayOf(RectF(0f, 0f, 1f, 1f)), true)
+        initialOrientation = Orientation.ORIENTATION_PORTRAIT
+        aspectMode = CameraAspectMode.ASPECT_FILL
+
+        // Observe Recognizer Callback
+        recognizerCallback(object: CameraRecognizerCallback {
+          // ...
+        })
+
+        // Initialize with ScanOptions
+        initialize(
+          ScanOptions
+            .newBuilder()
+            // ...
+            .build()
+        )
+        
+        // Attach Lifecycle Owner
+        lifecycle(lifecycleOwner)
+      }
+  }
+
+  AndroidView(
+      factory = { recognizerView },
+      modifier = modifier,
+      onRelease = { view ->
+          view.terminate()
+      }
+  )
+  
+}
+```
 
 ## <a name=intelligence></a>Product Intelligence
 If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.

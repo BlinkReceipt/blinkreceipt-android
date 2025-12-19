@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.9.10'
-    next_release: '1.9.11'
+    release: '1.9.11'
+    next_release: '1.9.12'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -45,8 +45,9 @@ nav:
     - Override Labels:
       - Camera UI: override_labels_camera_ui.md
     - Receipt Scanning:
+        - Camera UI + Jetpack Compose Integration Guide: receipts/camera_ui_jetpack_compose_integration_guide.md
         - Barcode:
-            - Improve Barcode Scanning Accuracy: receipts/barcode/improve_barcode_scanning_accuracy.md
+            - Updating Your Barcode Scanning Integration (v1.9.5+): receipts/barcode/updating_your_barcode_scanning_integration.md
         - PDF Recognition:
             - Getting Started: receipts/pdf/getting_started_pdf.md
             - Configuring the Client:  receipts/pdf/configuring_client_pdf.md

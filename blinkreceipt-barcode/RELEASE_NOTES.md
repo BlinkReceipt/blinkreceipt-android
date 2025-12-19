@@ -307,3 +307,6 @@
   - You may need to apply `RecognizerView.setOptimizeCameraForNearScan(true);` to improve camera focus on select devices. 
     - Enabling this setting helps capture clearer frames, leading to more accurate barcode results.
 - Stability fixes and improvements
+
+## 1.7.2
+- Stability fixes and improvements

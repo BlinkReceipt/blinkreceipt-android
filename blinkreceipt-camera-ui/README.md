@@ -99,6 +99,126 @@ The fragment approach is also a typical implementation of the Android Fragment. 
 ```
 Your host activity or host fragment, is able to listen to the results of the scan session via a FragmentResultListener. This is an android implementation, that allows users to commmunicate between fragments through a layer of abstraction. The method takes in a `KEY` which indicates the results you are listening for. In our case, you want to listen for the `CameraRecognizerFragment.SCAN_SESSION_RESULTS_KEY` key. The callback function passes a `Bundle`, and to unwrap the results in the bundle you must call `bundle.getParcelable<CameraRecognizerResults>(CameraRecognizerFragment.SCAN_RESULTS_KEY)`. This will provide you the results of the scan session.
 
+### Jetpack Compose
+
+Integrating the camera recognizer with Jetpack Compose offers a modern and flexible way to build your UI. There are two primary approaches to accomplish this, each catering to different architectural needs. You can either embed the `CameraRecognizerFragment` directly into your composable UI for a tightly integrated experience, or launch the camera as a separate activity using a `CameraRecognizerContract` for a more decoupled flow.
+
+#### 1. Wrap `CameraRecognizerFragment` with `AndroidFragment` composable
+This method involves embedding the `CameraRecognizerFragment` within a composable using the `AndroidFragment` composable from the `fragment-compose` library. It's an excellent choice if your app already utilizes a Fragment-based architecture or if you want to place the camera view as a specific component within a larger composable screen. This approach allows you to manage the camera's lifecycle and handle results directly within the composable's context.
+
+```groovy
+// build.gradle
+implementation "androidx.fragment:fragment-compose:1.8.9"
+```
+```kotlin
+import androidx.fragment.app.FragmentActivity
+
+class MainActivity : FragmentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            OobCameraContent(
+                modifier = Modifier,
+                onScanResults = { results: CameraRecognizerResults ->
+                    // Process CameraRecognizerResults here...
+                }
+            )
+        }
+    }
+}
+```
+```kotlin
+@Composable
+internal fun CameraRecognizerContent(
+    modifier: Modifier,
+    onScanResults: ((CameraRecognizerResults) -> Unit),
+) {
+    val lifecycleOwner = LocalLifecycleOwner.current
+
+    AndroidFragment<CameraRecognizerFragment>(
+        modifier = modifier.fillMaxSize(),
+        arguments = bundleOf(
+            CameraRecognizerFragment.OPTIONS to ScanOptions
+                .newBuilder()
+                // Define your own ScanOptions configuration here...
+                .build(),
+            CameraRecognizerFragment.CAMERA_CHARACTERISTICS to CameraCharacteristics.Builder()
+                .scanCharacteristics(
+                    ScanCharacteristics.Builder()
+                        // Define your own ScanCharacteristics configuration here...
+                        .build()
+                )
+                .tooltipCharacteristics(
+                    TooltipCharacteristics.Builder()
+                        // Define your own TooltipCharacteristics configuration here...
+                        .build()
+                )
+                // Define other CameraCharacteristics configuration here...
+                .build(),
+        ),
+    ) { fragment ->
+        fragment.parentFragmentManager
+            .setFragmentResultListener(
+                CameraRecognizerFragment.SCAN_SESSION_RESULTS_KEY,
+                lifecycleOwner,
+            ) { _, bundle ->
+                bundle.parcelable<CameraRecognizerResults>(CameraRecognizerFragment.SCAN_RESULTS_KEY)
+                    ?.let { results ->
+                        // Retrieve CameraRecognizerResults here...
+                        onScanResults(results)
+                    }
+            }
+    }
+}
+```
+
+#### 2. Launch as an Activity using `CameraRecognizerContract`
+This approach leverages the modern Android Activity Result APIs. By using `rememberLauncherForActivityResult` with the `CameraRecognizerContract`, you can launch the camera recognizer as a separate activity and receive the results back in a callback. This method is ideal for a more decoupled architecture where the camera scanning process is a distinct step in a user flow. It simplifies state management as the camera UI is entirely separate from your calling composable.
+
+```kotlin
+@Composable
+internal fun CameraRecognizerContent(
+    modifier: Modifier,
+    onScanResults: ((CameraRecognizerResults) -> Unit),
+) {
+    val launcher = rememberLauncherForActivityResult(
+        CameraRecognizerContract()
+    ) { results: CameraRecognizerResults ->
+        onScanResults(results)
+    }
+
+    // Launch the camera recognizer when this composable enters the composition
+    LaunchedEffect(Unit) {
+        launcher.launch(
+            CameraRecognizerOptions.Builder()
+                .options(
+                    ScanOptions
+                        .newBuilder()
+                        // Define your own ScanOptions configuration here...
+                        .build()
+                )
+                .characteristics(
+                    CameraCharacteristics.Builder()
+                        // Define other CameraCharacteristics configuration here...
+                        .scanCharacteristics(
+                            ScanCharacteristics.Builder()
+                                // Define your own ScanCharacteristics configuration here...
+                                .build()
+                        )
+                        .tooltipCharacteristics(
+                            TooltipCharacteristics.Builder()
+                                // Define your own TooltipCharacteristics configuration here...
+                                .build()
+                        )
+                        .build()
+                )
+                .build()
+        )
+    }
+}
+```
+
 ##  <a name=configure></a> Configuring Your Scan
 
 ### CameraCharacteristics
