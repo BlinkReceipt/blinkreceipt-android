@@ -52,3 +52,6 @@
 
 ## 1.1.4
 - Stability fixes and improvements
+
+## 1.1.5
+- Stability fixes and improvements

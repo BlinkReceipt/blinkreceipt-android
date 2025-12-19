@@ -27,3 +27,6 @@
 ## 1.0.5
 - Fixed ML Kit's Barcode Integration producing no results caused by the original implementation where models were not downloaded/activated.
 - Stability fixes and improvements
+
+## 1.0.6
+- Stability fixes and improvements
