@@ -1,0 +1,12 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.camera.ui/CameraCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraCharacteristics.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraRecognizerFragment.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerFragment.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraRecognizerOptions.Builder///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerOptions.Builder.html
+$dokka.location:com.microblink.camera.ui/CameraRecognizerResults.Cancelled///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerResults.Cancelled.html
+$dokka.location:com.microblink.camera.ui/CameraRecognizerResults.Exception///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerResults.Exception.html
+$dokka.location:com.microblink.camera.ui/CameraRecognizerResults.Success///PointingToDeclaration/com/microblink/camera/ui/CameraRecognizerResults.Success.html
+$dokka.location:com.microblink.camera.ui/ScanCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/ScanCharacteristics.Builder.html
+$dokka.location:com.microblink.camera.ui/TooltipCharacteristics.Builder///PointingToDeclaration/com/microblink/camera/ui/TooltipCharacteristics.Builder.html
+com.microblink.camera.ui
+com.microblink.camera.ui.internal

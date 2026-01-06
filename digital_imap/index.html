@@ -1,0 +1,1952 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A collection of libraries for scanning physical and digital receipts">
+      
+      
+        <meta name="author" content="Microblink">
+      
+      
+        <link rel="canonical" href="https://microblink.github.io/blinkreceipt-android/digital_imap/">
+      
+      
+        <link rel="prev" href="../digital_integration/">
+      
+      
+        <link rel="next" href="../digital_outlook/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../mkdocs/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>IMAP - BlinkReceipt</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#android-manifest" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BlinkReceipt" class="md-header__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BlinkReceipt
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IMAP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BlinkReceipt" class="md-nav__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    BlinkReceipt
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Account Linking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Account Linking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_alp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuring_client_alp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_alp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running in the background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported_retailers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Retailers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fetch_orders_from_all_retailers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fetch Orders from All Retailers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_error_codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Receipts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Receipts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Integration and Instantiation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMAP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#android-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Manifest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes &amp; Styles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imap-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provider Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imap-login-toverify-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Login To/Verify Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-remote-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Remote Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-destroy-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Destroy Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_outlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_gmail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gmail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android_16_migration_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android 16(API 36) Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maven_migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maven migration guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workmanager_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorkManager Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Override Labels
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Override Labels
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../override_labels_camera_ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Receipt Scanning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Receipt Scanning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/camera_ui_jetpack_compose_integration_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera UI + Jetpack Compose Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barcode
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Barcode
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/barcode/updating_your_barcode_scanning_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Your Barcode Scanning Integration (v1.9.5+)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDF Recognition
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PDF Recognition
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/getting_started_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/configuring_client_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/how_to_use_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javadoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Javadoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#android-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Manifest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes &amp; Styles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imap-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provider Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imap-login-toverify-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Login To/Verify Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-remote-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Remote Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap-destroy-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMAP Destroy Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>IMAP</h1>
+
+<h3 id="android-manifest">Android Manifest<a class="headerlink" href="#android-manifest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;manifest</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;application</span>
+<span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;.BlinkApplication&quot;</span>
+<span class="w">        </span><span class="na">android:allowBackup=</span><span class="s">&quot;false&quot;</span>
+<span class="w">        </span><span class="na">android:icon=</span><span class="s">&quot;@mipmap/ic_launcher&quot;</span>
+<span class="w">        </span><span class="na">android:supportsRtl=</span><span class="s">&quot;true&quot;</span>
+<span class="w">        </span><span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;meta-data</span>
+<span class="w">            </span><span class="na">android:name=</span><span class="s">&quot;com.microblink.ProductIntelligence&quot;</span>
+<span class="w">            </span><span class="na">android:value=</span><span class="s">&quot;KEY&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/application&gt;</span>
+
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>
+<h3 id="themes-styles">Themes &amp; Styles<a class="headerlink" href="#themes-styles" title="Permanent link">&para;</a></h3>
+<p>IMAP authorization UI uses the material bottom sheet. This requires your theme parent to extend <code>Theme.MaterialComponents.*</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;resources&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Base application theme. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;AppTheme&quot;</span><span class="w"> </span><span class="na">parent=</span><span class="s">&quot;Theme.MaterialComponents.Light.NoActionBar&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- Customize your theme here. --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;colorPrimary&quot;</span><span class="nt">&gt;</span>@color/colorPrimary<span class="nt">&lt;/item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;colorPrimaryDark&quot;</span><span class="nt">&gt;</span>@color/colorPrimaryDark<span class="nt">&lt;/item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;colorAccent&quot;</span><span class="nt">&gt;</span>@color/colorAccent<span class="nt">&lt;/item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre></div>
+<h3 id="imap-client">IMAP Client<a class="headerlink" href="#imap-client" title="Permanent link">&para;</a></h3>
+<p>IMAP client is the main entry point which allows the SDK to connect to imap accounts. Initializing the client is asynchronous and requires the caller to wait until its complete before accessing the imap messages or account information. <strong><em>Note: if you use lazy this will cause exceptions until the client has been initialized. This is on a per instance basis.</em></strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">ImapClient</span><span class="p">(</span><span class="w"> </span><span class="n">applicationContext</span><span class="p">,</span><span class="w"> </span><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">InitializeCallback</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onComplete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onException</span><span class="p">(</span><span class="n">throwable</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<p>A <code>Credentials</code> object defines the credentials being used to login to a specific IMAP provider. <code>Credentials</code> is a sealed class that contains 2 subtypes: <code>None</code> and <code>Password</code>, each of which contains a collection of subtypes corresponding to the IMAP provider.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Credentials</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">None</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Gmail</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">appPassword</span><span class="p">:</span><span class="w"> </span><span class="n">AppPassword</span><span class="p">)</span><span class="w">  </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Password</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Gmail</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">username</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">password</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="w">            </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Yahoo</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">username</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">password</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="w">            </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Aol</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">username</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">password</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><code>Credentials.Password</code> accepts username and password inputs from the application UI. <code>Credentials.None</code> allows for IMAP web authentication (where the user inputs credentials via the provider&rsquo;s WebView login page), which is functionally analogous to the BlinkReceipt Account Linking SDK where Retailer Web Auth is enabled using <code>Credentials.NONE</code>. The <code>AppPassword</code> enum parameter in <code>None</code> is used to specify whether the user has to manually input a Gmail app password name during the authentication process (<code>AppPassword.MANUAL</code>) or the Gmail app password name should be automatically injected using your application&rsquo;s name (<code>AppPassword.AUTOMATIC</code>). If this enum flag is not specified, <code>AppPassword.AUTOMATIC</code> will be used by default.</p>
+<p><strong>Note: <code>Credentials</code> replaces <code>PasswordCredentials</code> in the IMAP public API surface starting from version 1.8.6.</strong></p>
+<p><strong>Note: Linking with <code>Credentials.None.Gmail</code> will cause a <code>Credentials.Password.Gmail</code> to be saved to disk if login is successful. The saved <code>Credentials.Password.Gmail</code> object can be retrieved for other operations.</strong></p>
+<h2 id="provider-setup">Provider Setup<a class="headerlink" href="#provider-setup" title="Permanent link">&para;</a></h2>
+<p>To start the IMAP account linking process, we first create a <code>Credentials</code> object, then call <code>ProviderSetupFragmentFactory.create(credentials)</code> that returns a <code>ProviderFragment</code>. The fragment accepts a callback that receives a <code>ProviderResults</code> object containing a <code>Credentials</code> and a <code>ProviderSetupResults</code> enum. The callback will be invoked after the authentication process is finished.</p>
+<p>Example: Gmail (web authentication) workflow</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentials</span><span class="p">:</span><span class="w"> </span><span class="n">Credentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">None</span><span class="p">.</span><span class="na">Gmail</span><span class="p">()</span>
+
+<span class="n">ProviderSetupFragmentFactory</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">credentials</span><span class="p">).</span><span class="na">callback</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">result</span><span class="p">:</span><span class="w"> </span><span class="n">ProviderResult</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">    </span><span class="c1">// do something upon receiving provider result</span>
+<span class="p">}.</span><span class="na">show</span><span class="p">(</span><span class="n">supportFragmentManager</span><span class="p">,</span><span class="w"> </span><span class="n">TAG</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Example: Gmail (traditional) authentication workflow</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentials</span><span class="p">:</span><span class="w"> </span><span class="n">Credentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">.</span><span class="na">Gmail</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;email@microblink.com&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="s">&quot;account password&quot;</span>
+<span class="p">)</span>
+
+<span class="n">ProviderSetupFragmentFactory</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">credentials</span><span class="p">).</span><span class="na">callback</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">result</span><span class="p">:</span><span class="w"> </span><span class="n">ProviderResult</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">    </span><span class="c1">// do something upon receiving provider result</span>
+<span class="p">}.</span><span class="na">show</span><span class="p">(</span><span class="n">supportFragmentManager</span><span class="p">,</span><span class="w"> </span><span class="n">TAG</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note: <code>ProviderSetupDialogFragment.newInstance(provider)</code> is no longer supported since version 1.8.6.</strong></p>
+<p><strong>Note: The <code>ProviderResults</code> callback result will only contain valid and authenticated credentials if <code>ProviderSetupResults</code> is <code>CREATED_APP_PASSWORD</code>. Otherwise, <code>ProviderResults</code> contains the original credentials you created.</strong></p>
+<p><strong>Note: <code>Credentials.None</code> should only be used here at account login, and not at any other public API.</strong></p>
+<h3 id="imap-login-toverify-account">IMAP Login To/Verify Account<a class="headerlink" href="#imap-login-toverify-account" title="Permanent link">&para;</a></h3>
+<p>The <code>verify()</code> function is used to determine if the sdk has any cached <code>Credentials.Password</code> that can be used without explicit sign in. This can be called without any parameters or with an <code>Executor</code> and <code>Credentials.Password</code>. The empty parameter function call will automatically attempt to fetch the cached <code>Credentials.Password</code> within the sdk and verify it against the ImapService. This function call returns a <code>Task&lt;Boolean&gt;</code>. When the result emitted is a <code>true</code> value, then the <code>Credentials.Password</code> that were either passed in or cached in the sdk grant access to a valid account. In the event an exception is thrown, that means that the <code>Credentials.Password</code>, either passed in or cached, are not valid to access a specific account.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentials</span><span class="p">:</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">.</span><span class="na">Gmail</span><span class="p">(</span><span class="s">&quot;email@microblink.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;account password&quot;</span><span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">credentials</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">isVerified</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">-&gt;</span>
+
+<span class="p">}.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="imap-credentials">IMAP Credentials<a class="headerlink" href="#imap-credentials" title="Permanent link">&para;</a></h3>
+<p>The <code>accounts()</code> function is used to fetch the cached account&rsquo;s <code>Credentials.Password</code> on the sdk. This is usually called AFTER <code>verify()</code>, once a client can verify that there is a valid account on the sdk. This does not verify the account credentials. It only fetches them from our encrypted cache and returns them to the caller.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="na">accounts</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">accounts</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-&gt;</span>
+
+<span class="p">}.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="imap-messages">IMAP Messages<a class="headerlink" href="#imap-messages" title="Permanent link">&para;</a></h3>
+<p>After a user has been signed in to their IMAP Account, we can now fetch their emails and find any receipts they may have stored in their email. Before we initiate a search, we want to make sure we have properly configured the <code>ImapClient</code>. All sdk email clients have properties that can be configured to optimize searching. Here is a list of the following properties</p>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Client Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dayCutoff</td>
+<td>Int</td>
+<td>14</td>
+<td>dayCutoff(int days)</td>
+<td>Maximum number of days look back in a users inbox for receipts</td>
+</tr>
+<tr>
+<td>filterSensitive</td>
+<td>Boolean</td>
+<td>false</td>
+<td>filterSensitive(boolean filterSensitive)</td>
+<td>When set to true the sdk will not return product results for products deemed to be sensitive i.e. adult products</td>
+</tr>
+<tr>
+<td>subProducts</td>
+<td>Boolean</td>
+<td>false</td>
+<td>subProducts(boolean subProducts)</td>
+<td>Enable sdk to return subproducts found on receipts under parent products i.e. &ldquo;Burrito + Guacamole &lt;- Guac is subproduct&rdquo;</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>String</td>
+<td>&ldquo;US&rdquo;</td>
+<td>countryCode(String countryCode)</td>
+<td>Helps classify products and apply internal product intelligence</td>
+</tr>
+<tr>
+<td>sendersToSearch</td>
+<td>Map\&lt;String, Merchant&gt;</td>
+<td>null</td>
+<td>sendersToSearch(Map\&lt;String, Merchant&gt; sendersToSearch)</td>
+<td>This allows clients to search for merchants that may have sent receipts under a different email. For example, Target may have sent an email from &ldquo;<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#101;&#99;&#101;&#105;&#112;&#116;&#115;&#64;&#117;&#110;&#105;&#113;&#117;&#101;&#116;&#97;&#114;&#103;&#101;&#116;&#46;&#99;&#111;&#109;">&#114;&#101;&#99;&#101;&#105;&#112;&#116;&#115;&#64;&#117;&#110;&#105;&#113;&#117;&#101;&#116;&#97;&#114;&#103;&#101;&#116;&#46;&#99;&#111;&#109;</a>&rdquo;. It is still a Target receipt, but under a different email. Therefore, the client can provide a Merchant like <code>mapOf( "receipts@uniquetarget.com" to  Merchant( "Target.com", "receipts@uniquetarget.com"))</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Once the client is configured then we are ready to start parsing emails. On the <code>ImapClient</code> call <code>messages(@NonNull MessagesCallback callback)</code> to begin the message reading. The calling of this function completes a series of tasks internally, before potentially returning a list of <code>List&lt;ScanResults&gt;</code> via the <code>MessagesCallback</code> parameter. Upon a successful execution, the callback will emit a result of <code>List&lt;ScanResults&gt;</code> from the overriden onComplete() function. The number of <code>onComplete()</code> emissions depends on the number IMAP accounts you have credentials for. The <code>messages(...)</code> function will attempt to read messages based on the specified configuration set on the client for each account logged in. In addition to a List<ScanResults>, each emission of onComplete will give you the <code>Credentials.Password</code> of the corresponding account from which the scan results were derived from. Within the callback, there is an onException interface method. This will be triggered in the event of an error fetching messages from an account. The account e-mail retrieval process is segregated from each other. Therefore, failure to retrive messages from one account doesn&rsquo;t mean a failure to retrieve messages from all accounts. It is entirely possible, to receive an onException callback AND an onComplete callback within a single <code>messages(...)</code> call. If results were found then each item in the list will represent a successfully scanned receipt. Please use the ScanResults data to display information to users or use for internal use.</p>
+<p><strong>EXAMPLE IMAP READ MESSAGES</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">messages</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">client</span><span class="p">.</span><span class="na">messages</span><span class="p">(</span>
+<span class="w">          </span><span class="n">object</span><span class="p">:</span><span class="w"> </span><span class="n">MessagesCallback</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onComplete</span><span class="p">(</span><span class="n">credentials</span><span class="p">:</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ScanResults</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="c1">// do stuff with scan results</span>
+<span class="w">                  </span><span class="c1">// see credentials of account</span>
+<span class="w">              </span><span class="p">}</span>
+
+<span class="w">              </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onException</span><span class="p">(</span><span class="n">throwable</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span><span class="n">getContext</span><span class="p">(),</span><span class="w"> </span><span class="n">throwable</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">).</span><span class="na">show</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="imap-remote-messages">IMAP Remote Messages<a class="headerlink" href="#imap-remote-messages" title="Permanent link">&para;</a></h3>
+<p>The <code>messages()</code> function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have <code>remoteMessages(@NonNull JobResultsCallback callback)</code>. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(&hellip;) function will trigger upon a completed operation. Within the callback users will receive <code>credentials: Credentials.Password</code> and <code>result: JobResults</code>. The <code>Credentials.Password</code> is covered in other parts of the documentation. The <code>JobResults</code> parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.</p>
+<h3 id="imap-logout">IMAP Logout<a class="headerlink" href="#imap-logout" title="Permanent link">&para;</a></h3>
+<p>When you wish to sign out from a user&rsquo;s current account use the <code>logout()</code> function on the <code>ImapClient</code>. The logout function will sign a user out of their account and clear the credentials cached in the sdk. The return type is a <code>Task&lt;Boolean&gt;</code>. When a successful <code>true</code> result is given then it can be assumed that the client has successfully cleared all stored credentials and data for a user. If an exception is thrown then, there could have been an issue with one or more of the tasks executed to complete the logout functionality.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentials</span><span class="p">:</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">.</span><span class="na">Gmail</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;email@microblink.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;account password&quot;</span>
+<span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">logout</span><span class="p">(</span><span class="n">Credentials</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="imap-clear">IMAP Clear<a class="headerlink" href="#imap-clear" title="Permanent link">&para;</a></h3>
+<p>In order to optimize, fetching and parsing emails, we try to not to duplicate work. One of these optimizations comes in the form of a cached last date search. This cached value allows us to keep track of the last time a search was done, so that we can optimize our search paramters and not fetch duplicate emails that we have already seen. However, there may be a scenario where the client will want to clear this cache and fetch all emails within the <code>dayCutoff</code> value. If you fall into this scenario, and wish to clear our cached date flag, then call <code>clearLastCheckedTime()</code>. Thi returns a <code>Task&lt;Boolean&gt;</code> and will let you know based on the boolean result whether or not we were able to successfully clear our cached date.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="na">clearLastCheckedTime</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="imap-destroy-client">IMAP Destroy Client<a class="headerlink" href="#imap-destroy-client" title="Permanent link">&para;</a></h3>
+<p>We always want to make sure we are adhering to any component&rsquo;s lifecycle. Therefore, it is very important to call destroy within the component. This will clean up any pending calls, and allocated resources.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Kotlin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="k">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">()</span>
+
+<span class="w">       </span><span class="n">client</span><span class="p">.</span><span class="na">close</span><span class="p">()</span>
+<span class="w">   </span><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="exception-handling">Exception Handling<a class="headerlink" href="#exception-handling" title="Permanent link">&para;</a></h3>
+<p>The sdk will throw exceptions in the event it runs into an error while fetching emails. Here are some helpful explanations of common exception messages you may run into while using the sdk.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Exception Message</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messages()</td>
+<td>&ldquo;unable to find provider accounts&rdquo;</td>
+<td>While fetching the cached email accounts on the device, there were no accounts found in the cache. These could have been removed by the <code>logout()</code> function, or some other data clearing action. The only recourse is to readd the accounts.</td>
+</tr>
+<tr>
+<td>logout()</td>
+<td>&ldquo;unable to store this provider &rdquo; + provider</td>
+<td>While attempting to logout of a provided account, the specified account was not found in the cache</td>
+</tr>
+<tr>
+<td>verify()</td>
+<td>&ldquo;unable to connect to imap service!&rdquo;</td>
+<td>There was an error in connecting to the IMAP client. It could be an issue with the server, or the credentials. You can try again later or have a user reinput their credentials.</td>
+</tr>
+<tr>
+<td>remoteMessages()</td>
+<td>&ldquo;Unable to encrypt credentials &ldquo;+ credentials.username()</td>
+<td>Credentials are encrypted and stored for easy access. When provided we attempt to encrypt the provided credentials. In the event of a failure this exception will be thrown informing you of the error.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
