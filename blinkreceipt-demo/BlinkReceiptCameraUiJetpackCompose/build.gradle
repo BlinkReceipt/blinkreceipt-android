@@ -1,0 +1,118 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.devtools.ksp'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.blinkreceipt.ocr"
+
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
+        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //noinspection ChromeOsAbiSupport
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        compose true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../blink-receipt-demos.jsk")
+            storePassword "${keys.storePassword}"
+            keyAlias "${keys.keyAlias}"
+            keyPassword "${keys.keyPassword}"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    packagingOptions {
+        resources {
+            excludes += [
+                    'META-INF/NOTICE.md',
+                    'META-INF/LICENSE.md',
+                    'META-INF/ASL2.0',
+                    'META-INF/AL2.0',
+                    'META-INF/LGPL2.1',
+                    'META-INF/licenses/ASM',
+                    'META-INF/DEPENDENCIES',
+            ]
+        }
+    }
+
+    namespace 'com.blinkreceipt.ocr'
+
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
+    implementation "androidx.activity:activity-compose:${androidx.activity}"
+    implementation platform("androidx.compose:compose-bom:${androidx.compose}")
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3-adaptive-navigation-suite'
+
+    implementation "androidx.compose.material3:material3:${versions.material3}"
+
+    implementation "androidx.fragment:fragment-compose:${androidx.fragmentCompose}"
+
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
+
+    // Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    implementation "androidx.hilt:hilt-navigation-compose:${androidx.hilt}"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel-compose:${androidx.hilt}"
+
+    ksp "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+    ksp "org.jetbrains.kotlinx:kotlinx-metadata-jvm:${versions.kotlinxMetadata}"
+    ksp "androidx.hilt:hilt-compiler:${versions.hiltCompiler}"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlinxSerialization}"
+
+    testImplementation "junit:junit:${versions.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation platform("androidx.compose:compose-bom:${androidx.compose}")
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}
