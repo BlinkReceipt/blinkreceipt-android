@@ -37,6 +37,6 @@ buildscript {
             'barcodeScanner'   : '17.3.0',
             'versionMajor'     : 1,
             'versionMinor'     : 9,
-            'versionPatch'     : 11
+            'versionPatch'     : 12
     ]
 }
