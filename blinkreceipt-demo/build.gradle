@@ -23,7 +23,6 @@ allprojects {
         google()
         mavenCentral()
         mavenLocal()
-        maven { url "https://maven.microblink.com" }
     }
 }
 
