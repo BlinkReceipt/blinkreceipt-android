@@ -16,6 +16,7 @@
 - Stability fixes and improvements
 
 ## 1.0.4
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - **BREAKING CHANGE** Refactored `Barcode` and `BarcodeType` models to instead use the ones from `com.microblink.core` package.
 - **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
@@ -29,4 +30,16 @@
 - Stability fixes and improvements
 
 ## 1.0.6
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements

@@ -201,7 +201,7 @@
 
 ## 1.4.1
 - Changed internal dependencies from api to implementation. Please include the following:
-    - implementation "com.google.android.gms:play-services-tasks:18.0.2"
+  - implementation "com.google.android.gms:play-services-tasks:18.0.2"
 - Stability fixes and improvements
 
 ## 1.4.2
@@ -279,6 +279,7 @@
 - Stability fixes and improvements
 
 ## 1.6.6
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
 - Stability fixes and improvements
 
@@ -303,4 +304,16 @@
 - Stability fixes and improvements
 
 ## 1.7.2
+- Stability fixes and improvements
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
 - Stability fixes and improvements

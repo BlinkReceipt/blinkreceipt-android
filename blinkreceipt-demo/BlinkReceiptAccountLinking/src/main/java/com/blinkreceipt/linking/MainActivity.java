@@ -1,18 +1,23 @@
 package com.blinkreceipt.linking;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewGroupCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.ViewGroupCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
 import com.microblink.linking.Account;
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View rootView = binding.getRoot();
         setContentView(rootView);
+        bindViews();
 
         ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, windowInsets) -> {
             Insets insets = windowInsets.getInsets(
@@ -69,22 +75,22 @@ public class MainActivity extends AppCompatActivity {
         client = new AccountLinkingClient(this);
 
         client.dayCutoff(2_000);
+
+        requestNotificationPermission();
+    }
+
+    private void bindViews() {
+        binding.accounts.setOnClickListener(this::onAccounts);
+        binding.link.setOnClickListener(this::onLink);
+        binding.unlink.setOnClickListener(this::onUnlinkAccount);
+        binding.resetRetailerHistory.setOnClickListener(this::onResetRetailerHistory);
+        binding.orders.setOnClickListener(this::onOrders);
     }
 
     public void onLink(View view) {
         binding.webContainer.removeAllViews();
 
-        client.link(ACCOUNT)
-                .addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                        "Account linked " + success, Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(this, e -> Toast.makeText(getApplicationContext(),
-                        "Account linked " + e, Toast.LENGTH_SHORT).show());
-    }
-
-    public void onVerifyAccount(View view) {
-        binding.webContainer.removeAllViews();
-
-        client.verify(ACCOUNT.retailerId(), (verification, s) -> {
+        client.link(ACCOUNT, (verification) -> {
             Log.d(TAG, "verification " + verification);
 
             Toast.makeText(getApplicationContext(),
@@ -100,32 +106,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            Toast.makeText(getApplicationContext(), "verification exception" + e, Toast.LENGTH_LONG).show();
-
-            return Unit.INSTANCE;
-        }, webView -> {
-            if (webView != null) {
-                binding.webContainer.removeAllViews();
-
-                binding.webContainer.addView(webView);
-            }
-
-            Log.d(TAG, "preview debug only available in development mode.");
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "linking exception" + e,
+                            Toast.LENGTH_LONG
+                    ).show();
 
             return Unit.INSTANCE;
         });
-    }
-
-    public void onResetHistory(View view) {
-        client.resetHistory()
-                .addOnSuccessListener(this, success -> Toast.makeText(
-                        getApplicationContext(),
-                        "reset history: " + success, Toast.LENGTH_SHORT
-                ).show())
-                .addOnFailureListener(this, e -> Toast.makeText(
-                        getApplicationContext(),
-                        "reset history exception: " + e, Toast.LENGTH_LONG
-                ).show());
     }
 
     public void onResetRetailerHistory(View view) {
@@ -142,7 +130,9 @@ public class MainActivity extends AppCompatActivity {
     public void onOrders(View view) {
         binding.webContainer.removeAllViews();
 
-        client.orders(ACCOUNT.retailerId(), (retailerId, scanResults, remaining, uuid) -> {
+        client.orders(
+                ACCOUNT.retailerId(),
+                (retailerId, scanResults, remaining, uuid) -> {
                     Toast.makeText(
                             getApplicationContext(),
                             "retailer id " + retailerId + " remaining "
@@ -162,24 +152,8 @@ public class MainActivity extends AppCompatActivity {
                             "orders exception" + e, Toast.LENGTH_LONG).show();
 
                     return Unit.INSTANCE;
-                }, webView -> {
-                    if (webView != null) {
-                        binding.webContainer.removeAllViews();
-
-                        binding.webContainer.addView(webView);
-                    }
-
-                    return Unit.INSTANCE;
                 }
         );
-    }
-
-    public void onUnlinkAccounts(View view) {
-        client.unlink()
-                .addOnSuccessListener(this, success -> Toast.makeText(getApplicationContext(),
-                        "Unlink Accounts " + success, Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(this, e -> Toast.makeText(getApplicationContext(),
-                        "Unlink Accounts " + e, Toast.LENGTH_SHORT).show());
     }
 
     public void onUnlinkAccount(View view) {
@@ -202,6 +176,52 @@ public class MainActivity extends AppCompatActivity {
         client.close();
 
         super.onDestroy();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 42) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                onNotificationPermissionGranted();
+            } else {
+                onNotificationPermissionDenied();
+            }
+        }
+    }
+
+    private void requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{ Manifest.permission.POST_NOTIFICATIONS },
+                        42
+                );
+            } else {
+                onNotificationPermissionGranted();
+            }
+        } else {
+            onNotificationPermissionGranted();
+        }
+    }
+
+    private void onNotificationPermissionGranted() {
+        Toast.makeText(
+                getApplicationContext(),
+                "Background Refresh enabled", Toast.LENGTH_LONG
+        ).show();
+    }
+
+    private void onNotificationPermissionDenied() {
+        Toast.makeText(
+                getApplicationContext(),
+                "Warning: Notification permission needed for Background Refresh", Toast.LENGTH_LONG
+        ).show();
     }
 
 }

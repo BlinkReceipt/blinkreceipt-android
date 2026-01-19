@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>WebCookiesImpl 1.7.2 API </title>
+    <title>Cookie 1.6.6-beta01 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
-    <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../../dokka-javadoc-stylesheet.css" title="Style">
-    <link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
-    <script type="text/javascript" src="../../../../jquery/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../../../../jquery/jquery-migrate-3.4.0.min.js"></script>
-    <script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../../../jquery/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="../../../../search.js"></script>
-    <script async type="text/javascript" src="../../../../module-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../package-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../type-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../member-search-index.js"></script>
-    <script async type="text/javascript" src="../../../../tag-search-index.js"></script>
+    <script type="text/javascript" src="../../../search.js"></script>
+    <script async type="text/javascript" src="../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../tag-search-index.js"></script>
 </head><body>
 <script type="text/javascript">
-var pathtoroot = "../../../../";
+var pathtoroot = "../../../";
 </script>
 <noscript>
     <div>JavaScript is disabled on your browser.</div>
@@ -36,7 +36,7 @@ var pathtoroot = "../../../../";
                     <!--   -->
                 </a>
                 <ul class="navList" title="Navigation">
-    <li><a href="../../../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -44,13 +44,13 @@ var pathtoroot = "../../../../";
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
             <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 
 <ul class="navListSearch">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core.internal</a></div>
-        <h2 title="Class WebCookiesImpl" class="title">Class WebCookiesImpl</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.microblink.core</a></div>
+        <h2 title="Class WebCookiesManagerCompat.Cookie" class="title">Class WebCookiesManagerCompat.Cookie</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,7 +108,12 @@ var pathtoroot = "../../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>com.microblink.core.internal.WebCookiesManager.Cookie</code>
+                            <code>java.io.Closeable</code>
+                            
+                            ,
+                            
+                            
+                            <code>java.lang.AutoCloseable</code>
                             
                             
                         </dd>
@@ -116,9 +121,9 @@ var pathtoroot = "../../../../";
                     
                     <hr>
                     <pre class="wrap-overflow">
-
-public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCookiesImpl</a></span>
- implements <a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a>
+@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.html>RestrictTo</a>(value = {<a href=https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.Scope.LIBRARY_GROUP.html>RestrictTo.Scope.LIBRARY_GROUP</a>}) 
+public final class <span class="typeNameLabel"><a href=WebCookiesManagerCompat.Cookie.html>WebCookiesManagerCompat.Cookie</a></span>
+ implements <a href=https://developer.android.com/reference/kotlin/java/io/Closeable.html>Closeable</a>
                     </pre>
                     <div class="block"></div>
 
@@ -201,7 +206,13 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#WebCookiesImpl(android.webkit.CookieManager,com.microblink.core.internal.CookieStorage,com.microblink.logcat.LogEvent)">WebCookiesImpl</a></span>(<a href=https://developer.android.com/reference/kotlin/android/webkit/CookieManager.html>CookieManager</a> manager, <a href=CookieStorage.html>CookieStorage</a> storage, LogEvent events)</code></th>
+                                                        href="#WebCookiesManagerCompat.Cookie(com.microblink.core.WebCookiesManager.Cookie,com.microblink.core.internal.CloseableCoroutineScope)">WebCookiesManagerCompat.Cookie</a></span>(<a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> cookie, <a href=internal/CloseableCoroutineScope.html>CloseableCoroutineScope</a> coroutineScope)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="rowColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#WebCookiesManagerCompat.Cookie(com.microblink.core.WebCookiesManager.Cookie)">WebCookiesManagerCompat.Cookie</a></span>(<a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> cookie)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -255,57 +266,73 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
+                                            <td class="colFirst"><code>final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#flush()>flush</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#flush()>flush</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code>Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
+                                            <td class="colFirst"><code>final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#remove(java.lang.String,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;&gt; additionalCookiesToRemove) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#remove(java.lang.String,java.lang.Boolean,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> flush, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; additionalUrls) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code>Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
+                                            <td class="colFirst"><code>final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#removeAll()>removeAll</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#removeAll()>removeAll</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#sync(java.lang.String)>sync</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=WebCookiesImpl.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> retailer, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            <th class="colSecond" scope="row"><code><a href=WebCookiesManagerCompat.Cookie.html#close()>close</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -341,11 +368,21 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="WebCookiesImpl(android.webkit.CookieManager,com.microblink.core.internal.CookieStorage,com.microblink.logcat.LogEvent)"></a>
+                                <a name="WebCookiesManagerCompat.Cookie(com.microblink.core.WebCookiesManager.Cookie,com.microblink.core.internal.CloseableCoroutineScope)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>WebCookiesImpl</h4>
-                                        <pre>WebCookiesImpl(<a href=https://developer.android.com/reference/kotlin/android/webkit/CookieManager.html>CookieManager</a> manager, <a href=CookieStorage.html>CookieStorage</a> storage, LogEvent events)</pre>
+                                        <h4>WebCookiesManagerCompat.Cookie</h4>
+                                        <pre>WebCookiesManagerCompat.Cookie(<a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> cookie, <a href=internal/CloseableCoroutineScope.html>CloseableCoroutineScope</a> coroutineScope)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="WebCookiesManagerCompat.Cookie(com.microblink.core.WebCookiesManager.Cookie)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>WebCookiesManagerCompat.Cookie</h4>
+                                        <pre>WebCookiesManagerCompat.Cookie(<a href=WebCookiesManager.Cookie.html>WebCookiesManager.Cookie</a> cookie)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -372,7 +409,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>cookie</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesImpl.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies)</pre>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManagerCompat.Cookie.html#cookie(java.lang.String,android.net.Uri,java.util.List)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; cookies)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -395,7 +432,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>cookie</h4>
-                                        <pre class="methodSignature"> Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesImpl.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie)</pre>
+                                        <pre class="methodSignature"> final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManagerCompat.Cookie.html#cookie(java.lang.String,android.net.Uri,java.lang.String)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> cookie)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -418,7 +455,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>cookie</h4>
-                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=WebCookiesImpl.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> key)</pre>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> <a href=WebCookiesManagerCompat.Cookie.html#cookie(android.net.Uri)>cookie</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -441,7 +478,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>flush</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesImpl.html#flush()>flush</a>()</pre>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManagerCompat.Cookie.html#flush()>flush</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -456,7 +493,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                     </li>
                                 </ul>
                                 
-                                <a id="remove(java.lang.String,java.util.Set,java.util.List)">
+                                <a id="remove(java.lang.String,java.lang.Boolean,java.util.Set,java.util.List)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -464,7 +501,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>remove</h4>
-                                        <pre class="methodSignature"> Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesImpl.html#remove(java.lang.String,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt;&gt; additionalCookiesToRemove)</pre>
+                                        <pre class="methodSignature"> final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManagerCompat.Cookie.html#remove(java.lang.String,java.lang.Boolean,java.util.Set,java.util.List)>remove</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> flush, <a href=https://developer.android.com/reference/kotlin/java/util/Set.html>Set</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; urisToSkip, <a href=https://developer.android.com/reference/kotlin/java/util/List.html>List</a>&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a>&gt; additionalUrls)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -487,7 +524,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                           >
                                     <li class="blockList">
                                         <h4>removeAll</h4>
-                                        <pre class="methodSignature"> Flow&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesImpl.html#removeAll()>removeAll</a>()</pre>
+                                        <pre class="methodSignature"> final Task&lt;<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a>&gt; <a href=WebCookiesManagerCompat.Cookie.html#removeAll()>removeAll</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -506,11 +543,57 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>add</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesImpl.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> retailer, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManagerCompat.Cookie.html#add(java.lang.String,android.net.Uri)>add</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain, <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="sync(java.lang.String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>sync</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManagerCompat.Cookie.html#sync(java.lang.String)>sync</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> domain)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="close()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>close</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html>Unit</a> <a href=WebCookiesManagerCompat.Cookie.html#close()>close</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -546,7 +629,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
                 <!--   -->
             </a>
             <ul class="navList" title="Navigation">
-    <li><a href="../../../../index.html">Overview</a></li>
+    <li><a href="../../../index.html">Overview</a></li>
     
     <li><a href="package-summary.html">Package</a></li>
     
@@ -554,8 +637,8 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
     
     <li><a href="package-tree.html">Tree</a></li>
     
-    <li><a href="../../../../deprecated.html">Deprecated</a></li>
-    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li><a href="../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../index-files/index-1.html">Index</a></li>
     <li>Help</li>
 </ul></div>
         <a id="skip.navbar.bottom">
@@ -563,7 +646,7 @@ public final class <span class="typeNameLabel"><a href=WebCookiesImpl.html>WebCo
         </a>
         <div class="subNav">
 <ul class="navList" id="allclasses_navbar_top" style="display: block;">
-    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+    <li><a href="../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--

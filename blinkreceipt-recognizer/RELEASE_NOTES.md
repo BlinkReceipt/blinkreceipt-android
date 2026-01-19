@@ -25,9 +25,9 @@
 ## 1.0.5
 
 - Bug fixes
-    - Summary mapping fix
-    - Camera scan activity tool tip intent fix
-    - Populate total for products
+  - Summary mapping fix
+  - Camera scan activity tool tip intent fix
+  - Populate total for products
 - Updated third part libraries ( retrofit, scandit, okio )
 - Network optimizations
 - Additional lines added to Scan Results
@@ -108,19 +108,19 @@
 ## 1.2.1
 
 Product Updates
-    - Improved memory management
-    - Updated OCR models
-    - Costco Date improvements
-    - Overall parser improvements
+- Improved memory management
+- Updated OCR models
+- Costco Date improvements
+- Overall parser improvements
 Bug Fixes
-    - Detect internal banner id
-    - E-Receipts pass description from native context
+- Detect internal banner id
+- E-Receipts pass description from native context
 Third Party Libraries
-    - Retrofit 2.6.0
-    - OkHttp 3.14.2
-    - Gmail v1-rev105-1.25.0
-    - Google Api Client 1.30.1
-    - Google Api Services 1.29.2
+- Retrofit 2.6.0
+- OkHttp 3.14.2
+- Gmail v1-rev105-1.25.0
+- Google Api Client 1.30.1
+- Google Api Services 1.29.2
 
 ## 1.2.2
 
@@ -157,15 +157,15 @@ Third Party Libraries
 ## 1.2.7
 
 - Breaking interface changes for CameraDataListener.
-    - Removed onDebugResults callback
-    - Renamed onCameraFrameError to onCameraFrameException
-    - Renamed onEdgeDetectionResult to onEdgeDetectionResults
+  - Removed onDebugResults callback
+  - Renamed onCameraFrameError to onCameraFrameException
+  - Renamed onEdgeDetectionResult to onEdgeDetectionResults
 - Camera management thread improvements
 - Added blurry & receipt property to TakePictureResult
 - Add channel to scan results
 - Samsung camera permission issue & aspect ratio fix.
 - Gmail
-    - onSignInCancelled added for when a user cancels sign in requests
+  - onSignInCancelled added for when a user cancels sign in requests
 
 ## 1.2.8
 
@@ -178,36 +178,36 @@ Third Party Libraries
 - Modularized Recognizer SDK, which now depends on BlinkReceiptCore & BlinkReceiptCamera
 - Renamed ReceiptSdk to BlinkReceiptSdk
 - Class Repackaging
-    - Product
-        - com.microblink.Product
-        - com.microblink.core.Product
-    - ScanResults
-        - com.microblink.ScanResults
-        - com.microblink.core.ScanResults
-    - Retailer
-        - com.microblink.Retailer
-        - com.microblink.core.Retailer
+  - Product
+    - com.microblink.Product
+    - com.microblink.core.Product
+  - ScanResults
+    - com.microblink.ScanResults
+    - com.microblink.core.ScanResults
+  - Retailer
+    - com.microblink.Retailer
+    - com.microblink.core.Retailer
 - Dependencies
-    - Build Tools: 29.0.3
-    - Okhttp: 4.4.1
-    - Retrofit : 2.8.1
-    - Okio : 2.4.3
-    - Tasks : 17.0.1
-    - Timber: 4.7.1
+  - Build Tools: 29.0.3
+  - Okhttp: 4.4.1
+  - Retrofit : 2.8.1
+  - Okio : 2.4.3
+  - Tasks : 17.0.1
+  - Timber: 4.7.1
 
 ## 1.3.0
 
 Blink Receipt Recognizer
-    - fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
-    - Update Play Service Auth framework to 18.0.0
-    - Removed internal location look up services.
+- fix silent crash on Gmail for invalid parsing of merchant dates when loading inbox on api < 24
+- Update Play Service Auth framework to 18.0.0
+- Removed internal location look up services.
 
 - Dependencies
-    - okhttp 4.5.0
-    - Play Service Task 17.0.2
-    - Play Service Auth 18.0.0
-    - Blink Receipt Camera 1.0.1
-    - Blink Receipt Core 1.0.1
+  - okhttp 4.5.0
+  - Play Service Task 17.0.2
+  - Play Service Auth 18.0.0
+  - Blink Receipt Camera 1.0.1
+  - Blink Receipt Core 1.0.1
 
 ## 1.3.1
 
@@ -218,15 +218,15 @@ Blink Receipt Recognizer
 - process camera frames when in the resume state only.
 - improved native memory model
 - e-receipt
-    - introduced the following new properties:
-        - pos system
-        - sub merchant
+  - introduced the following new properties:
+    - pos system
+    - sub merchant
 - Dependencies
-      - blink receipt Core 1.0.2
-      - blink receipt Camera 1.0.2
-      - okhttp 4.7.0
-      - okio : 2.6.0
-      - retrofit: 2.8.2
+  - blink receipt Core 1.0.2
+  - blink receipt Camera 1.0.2
+  - okhttp 4.7.0
+  - okio : 2.6.0
+  - retrofit: 2.8.2
 
 ## 1.3.2
 
@@ -314,10 +314,10 @@ Blink Receipt Recognizer
 - performance improvements across all non-Apple platforms (primarily newer Android phones)
 - internal serialization performance
 - AmazonManager ***Breaking Change***
-    - must call initialize before accessing orders, verify, credentials
-    - clearOrders() now returns Task<Boolean>
-    - clearCredentials() now returns Task<Boolean>
-    - storeCredentials now returns Task<Boolean>
+  - must call initialize before accessing orders, verify, credentials
+  - clearOrders() now returns Task<Boolean>
+  - clearCredentials() now returns Task<Boolean>
+  - storeCredentials now returns Task<Boolean>
 - fix incorrect handling for bad password in Amazon
 - web kit 1.4.0
 - parsing bug fixes
@@ -602,27 +602,27 @@ Blink Receipt Recognizer
 
 ## 1.8.3
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to date extraction in CA, US 
-- Improvements to Last 4 CC extraction in US 
+- Improvements to date extraction in CA, US
+- Improvements to Last 4 CC extraction in US
 - Improvements to merchant detection in UK
 
 ## 1.8.4
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Merchant detection improvements in DE 
-- Improvements to sales tax extraction if sales tax exemption is found on receipt. 
+- Merchant detection improvements in DE
+- Improvements to sales tax extraction if sales tax exemption is found on receipt.
 - Improvements to QTY extraction in US for Albertsons banners and Lowe’s receipts
 - Updated to target API Level 34
 
 ## 1.8.5
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to QTY extraction in US for Albertsons banners 
+- Improvements to QTY extraction in US for Albertsons banners
 - Improvements to Last 4 CC extraction in US
 
 ## 1.8.6
 - **BREAKING CHANGE** Removed `events` constructor parameter from `PdfClient`
 - Fixed an issue where onDeviceOcr() was not returned with the correct value
-- Improvements to QTY and weight extraction in US for various retailers 
-- Improvements to date extraction in CA, US 
+- Improvements to QTY and weight extraction in US for various retailers
+- Improvements to date extraction in CA, US
 - Improvements to store state extraction in the US
 - Stability fixes and improvements
 
@@ -667,8 +667,10 @@ Blink Receipt Recognizer
 - Improvements- UK Merchants: Enhanced product description, quantity (QTY), and price extraction for improved accuracy.
   - Phone Extraction: Improved phone number extraction capabilities for receipts from both Germany and the UK.
   - US Receipts: Enhanced accuracy in capturing transaction IDs and taxes for US-based receipts.
-- Receipt Image Quality
-  - We've improved how we detect receipts taken from a screen, reducing false positives for more accurate results.
+-  ***Breaking Change*** Changed ScanResults barcode type from String to a List
+- Auto configuration has been replaced with Androidx Startup. For details on how to disable auto initialization, please refer to the README.
+- Integrated ML Kit's Barcode Scanning API to detect and extract barcode information from receipt images. This enables users to quickly capture and process receipts.
+- Stability fixes and improvements
 
 ## 1.9.3
 - UK Merchants: Improved extraction of product descriptions, quantities (QTY), and dates for enhanced accuracy across top UK retailers.
@@ -717,6 +719,7 @@ Blink Receipt Recognizer
   - Improved extraction accuracy for basket-level details, including product quantities, promotions, and pricing.
 
 ## 1.9.9
+- **BREAKING CHANGE** Relocated SDK distribution from https://maven.microblink.com to Maven Central.
 - ***Breaking Change*** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
     - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
@@ -752,3 +755,15 @@ Blink Receipt Recognizer
   - More reliable detection of sales tax.
 - Stability Improvements
   - Enhanced extraction behavior to support a more stable experience.
+
+## 2.0.0-beta01
+- Stability fixes and improvements
+
+## 2.0.0-beta02
+- Stability fixes and improvements
+
+## 2.0.0-beta03
+- Stability fixes and improvements
+
+## 2.0.0-beta04
+- Stability fixes and improvements
