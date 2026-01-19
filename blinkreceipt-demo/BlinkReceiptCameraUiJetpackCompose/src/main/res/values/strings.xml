@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">BlinkReceiptCustomScanJetpackCompose</string>
+
+    <string name="home_topappbar_title">BlinkReceipt Camera UI</string>
+    <string name="home_fab_custom_scan">Custom Scan</string>
+    <string name="home_fab_oob_camera">OOB Camera Scan</string>
+    <string name="home_fab_close_menu">Close menu</string>
+    <string name="home_topappbar_menu_sdk_version">SDK Version</string>
+
+    <string name="home_sdk_version_dialog_message" formatted="true">SDK Version: %s</string>
+    <string name="home_permission_denied_dialog_message">Camera Permission Denied...</string>
+
+    <string name="custom_scan_dialog_take_picture_error_msg">Failed taking picture. Please try again…</string>
+    <string name="custom_scan_dialog_finishing_scan_msg">Finishing scan…</string>
+    <string name="custom_scan_dialog_scan_results_error_msg">Failed processing Scan Results. Please try again…</string>
+    <string name="custom_scan_btn_take_picture">Take Picture</string>
+    <string name="custom_scan_btn_finish_scan">Finish Scan</string>
+
+    <string name="oob_camera_scan_dialog_error_msg">Camera scan failed. Please try again…</string>
+
+    <string name="results_topappbar_title">Scan Results</string>
+    <string name="results_product_item_upc" formatted="true">UPC: %s</string>
+    <string name="results_product_item_name">Name: %s</string>
+    <string name="results_product_item_product_number">Product #: %s</string>
+    <string name="results_product_item_brand">Brand: %s</string>
+    <string name="results_product_item_category">Category: %s</string>
+    <string name="results_product_item_price">Price: %s</string>
+</resources>
