@@ -304,3 +304,6 @@
 
 ## 1.7.2
 - Stability fixes and improvements
+
+## 1.7.3
+- Stability fixes and improvements

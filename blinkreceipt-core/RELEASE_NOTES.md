@@ -334,7 +334,11 @@
 - Stability fixes and improvements
 
 ## 1.7.1
+- Override User-Agent header value for `[POST] /api/licensees` API calls
 - Stability fixes and improvements
 
 ## 1.7.2
+- Stability fixes and improvements
+
+## 1.7.3
 - Stability fixes and improvements

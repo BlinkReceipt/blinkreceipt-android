@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
 }
 
 android {
@@ -44,10 +43,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-
     packagingOptions {
         resources {
             excludes += [
@@ -64,6 +59,10 @@ android {
 
     namespace 'com.blinkreceipt.surveys'
 
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
