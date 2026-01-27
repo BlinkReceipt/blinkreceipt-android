@@ -742,6 +742,7 @@ Blink Receipt Recognizer
   - General enhancements to improve reliability and performance across extraction workflows
 
 ## 1.9.11
+- Extraction Enhancements (United States, Germany, France)
 - Germany
   - Improved how German addresses are recognized and formatted. 
   - Better detection of taxes and discounts on German and French receipts. 
@@ -751,4 +752,9 @@ Blink Receipt Recognizer
   - Better handling of fuel purchases within the receipt basket.
   - More reliable detection of sales tax.
 - Stability Improvements
-  - Enhanced extraction behavior to support a more stable experience.
+- Enhanced extraction behavior to support a more stable experience.
+- Stability fixes and improvements
+
+## 1.9.12
+- Improved scan performance to reduce processing time in certain international use cases
+- Improved overall stability during receipt scanning and OCR to provide a smoother experience
