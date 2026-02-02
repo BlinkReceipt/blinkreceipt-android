@@ -11,7 +11,7 @@ buildscript {
             'constraints'   : '2.1.4',
             'junit'         : '1.2.1',
             'lifecycle'     : '2.8.3',
-            'core'          : '1.17.0-beta01',
+            'core'          : '1.17.0',
             'recyclerview'  : '1.3.2',
             'fragment'      : '1.8.1',
     ]
@@ -22,21 +22,21 @@ buildscript {
             'targetSdk'        : 36,
             'androidTestRunner': '1.6.2',
             'buildTools'       : '35.0.0',
-            'material'         : '1.12.0',
+            'material'         : '1.13.0',
             'kotlin'           : '2.1.10',
             'easyPermissions'  : '3.0.0',
             'junit'            : '4.13.2',
             "agp"              : '9.0.0',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
-            'bom'              : '2.1.0-beta01',
+            'bom'              : '2.0.0',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
             'okio'             : '3.9.0',
             'barcodeScanner'   : '17.3.0',
             'versionMajor'     : 2,
-            'versionMinor'     : 1,
+            'versionMinor'     : 0,
             'versionPatch'     : 0
     ]
 }
