@@ -21,7 +21,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Requirements](#requirements)
 
 ## <a name=intro></a> Project Integration and Initialization
-To add the sdk to your android project please follow these steps:
+To add SDK to your android project please follow these steps:
 
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
@@ -35,9 +35,9 @@ To add the sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3"))
+     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.1.0"))
 
-    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
 }
 ```
 
@@ -100,31 +100,34 @@ okhttp
 ```
 
 ## <a name=results></a>Retrieving Results
-The RecognizerCallback interface is the way to retrieve results and statuses on the scanning progress.
+The `RecognizerCallback` interface is the way to retrieve results and statuses on the scanning progress.
 ```java
 public interface RecognizerCallback {
- // Called when scan results are compiled and saved images are processed.
-void onRecognizerDone( @NonNull ScanResults results, Media media );
+    // Called when scan results are compiled and saved images are processed.
+    void onRecognizerDone( @NonNull ScanResults results, Media media );
 
- // Called in the case there is an exception while scanning the captured frame.
-void onRecognizerException(@NonNull Throwable e );
+    // Called in the case there is an exception while scanning the captured frame.
+    void onRecognizerException(@NonNull Throwable e );
 
-// The callback invoked whenever a step within the scanning process is returned.
-void onRecognizerResultsChanged( @NonNull RecognizerResult result );
+    // The callback invoked whenever a step within the scanning process is returned.
+    void onRecognizerResultsChanged( @NonNull RecognizerResult result );
 }
 ```
 
 ```java
-public interface CameraRecognizerCallback {
-    // The callback invoked if while utilizing the RecognizerView the confirm frame is called saving the image. This callback provides the location of the saved frame. void onConfirmPicture( @NonNull File file );
-    // As of Android Marshmallow (API 24) Runtime permissions are required to access hardware features like the camera. This callback will be invoked if proper permissions have not been granted for camera use. void onPermissionDenied();
-    //Notifying the user of any issue while using camera preview as well as when preview is started and ended. void onPreviewStarted();
-    void onPreviewStopped();
+public interface CameraRecognizerCallback extends RecognizerCallback {
 
-    void onException( @NonNull Throwable throwable );
+    void onConfirmPicture(@NonNull File file);
+
+    void onPermissionDenied();
+
+    void onPreviewStarted();
+
+    void onException(@NonNull Throwable throwable);
+
 }
 ```
-The RecognizerCallback also provides preliminary results.
+The `RecognizerCallback` also provides preliminary results.
 
 ```java
  recognizerView.preliminaryResults();
@@ -138,7 +141,7 @@ public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
 }
 ```
 
-The RecognizerCallback also provides raw results.
+The `RecognizerCallback` also provides raw results.
 
 ```java
 @Override
@@ -149,7 +152,7 @@ public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
 }
 ```
 
-The RecognizerCallback also provides edge results.
+The `RecognizerCallback` also provides edge results.
 
 ```java
 @Override
@@ -160,86 +163,52 @@ public void onRecognizerResultsChanged(@NonNull RecognizerResult result) {
 }
 ```
 
-`RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the onRecognizerResultsChanged( RecognizerResult result ) is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
+`RecognizerResult` is an interface that encapsulates any result of any step in our scanning process. When the `onRecognizerResultsChanged(RecognizerResult result)` is invoked by callback listener it is important to check the type of result that it may be. We recommend doing that with a simple `instanceOf` check. There are a variety of results that can be passed through this callback.
 
 The most important results for users is the `EdgeDetectionResults` and the `SearchTargetResults`.
 
-The edge detection result contains edge detection information about the latest frame processed. The result object contains a `contentPercent` indicating the percentage of the frame that the receipt contained, as well as the state of the EdgeDetection. The state is a reflection of the `EdgeDetectionConfiguration` passed in through the scan options before the scan session was created. The state contains one of the following values:
+The edge detection result contains edge detection information about the latest frame processed. The result object contains a `contentPercent` indicating the percentage of the frame that the receipt contained, as well as the state of the `EdgeDetection`. The state is a reflection of the `EdgeDetectionConfiguration` passed in through the scan options before the scan session was created. The state contains one of the following values:
 
-`ABOVE_THRESHOLD`: The receipt in the latest frame takes up at least the minimum threshold set via the EdgeDetectionConfiguration object.
+`ABOVE_THRESHOLD`: The receipt in the latest frame takes up at least the minimum threshold set via the `EdgeDetectionConfiguration` object.
 
-`BELOW_THRESHOLD`: The receipt in the latest frame takes up less than the minimum threshold set via the EdgeDetectionConfiguration object.
+`BELOW_THRESHOLD`: The receipt in the latest frame takes up less than the minimum threshold set via the `EdgeDetectionConfiguration` object.
 
-`CONSECUTIVE_ABOVE_THRESHOLD_LIMIT_REACHED`: N number of frames have consistently been at or above the minimum threshold. This value N is set via the EdgeDetectionConfiguration object.
+`CONSECUTIVE_ABOVE_THRESHOLD_LIMIT_REACHED`: `N` number of frames have consistently been at or above the minimum threshold. This value N is set via the `EdgeDetectionConfiguration` object.
 
-`CONSECUTIVE_BELOW_THRESHOLD_LIMIT_REACHED`: N number of frames have consistently been below the minimum threshold. This value N is set via the EdgeDetectionConfiguration object.
+`CONSECUTIVE_BELOW_THRESHOLD_LIMIT_REACHED`: `N` number of frames have consistently been below the minimum threshold. This value N is set via the `EdgeDetectionConfiguration` object.
 
-The search target results contain lists of products prescribed in the ScanOptions. At least one of the products described were found in the last frame scanned, and are therefore confirmed through this result.
+The search target results contain lists of products prescribed in the `ScanOptions`. At least one of the products described were found in the last frame scanned, and are therefore confirmed through this result.
 
 ## <a name=recognizerView></a> RecognizerView: Provide your own UI on top of Camera View
-The sdk does have an easy to use activity that can be used and customized as described above. However, the sdk has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The RecognizerView is a view that provides a camera preview for the user as well as other capabilities for the developer. The `RecognizerView` handles its own lifecycle, but it is required that in each callback of your activity, you forward that state to the RecognizerView.
+The SDK does have an easy to use activity that can be used and customized as described above. However, the SDK has decoupled components that give you the ability to build your own ui on top of the camera view. That view is called the `RecognizerView`.  If your project wants to have a custom UI, add the `RecognizerView` to your layout for the camera portion of your UI. The `RecognizerView` is a view that provides a camera preview for the user as well as other capabilities for the developer. The `RecognizerView` handles its own lifecycle, but you need to set `LifecycleOwner` in order for it to work properly. This is done by calling `lifecycle(@NonNull LifecycleOwner lifecycleOwner)`.
 
 ```java
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        recognizerView.create();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        recognizerView.start();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        recognizerView.resume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        recognizerView.pause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        recognizerView.stop();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        recognizerView.destroy();
+        recognizerView.lifecycle(this);
     }
 ```
 ### Capabilities and Customizations
 
 #### Pre Scanning Configuration
-Before the RecognizerView can be used it must be initialized via the `initialize( ScanOptions scanOptions )`. Please see above for the description of the ScanOptions class.
+Before the RecognizerView can be used it must be initialized via the `initialize(ScanOptions scanOptions)`. Please see above for the description of the `ScanOptions` class.
 
 #### Scanning Capabilities
-The RecognizerView is also able to capture frames, not unlike a regular camera application. This is achieved with the `takePicture( CameraCaptureListener listener )` method. The method takes in a `CameraCaptureListener.class`. This listener provides the recognizer view a callback to pass back the resulting image. The image is returned within a `BitmapResults` object. In order to access the resulting bitmap, call bitmap(). The RecognizerView will create a copy of this bitmap, so you are free to manipulate, display, clean it up, etc... however you feel fit. Once the user confirms the picture you should call `confirmPicture( @NonNull BitmapResult results )`.
+The `RecognizerView` is also able to capture frames, not unlike a regular camera application. This is achieved with the `takePicture()` method. Before calling `takePicture()` make sure to set `CameraCaptureListener` via `cameraCaptureListener(CameraCaptureListener listener)`. This listener provides the `RecognizerView` a callback to pass back the resulting image. The image is returned within a `BitmapResults` object. In order to access the resulting bitmap, call `bitmap()`. The `RecognizerView` will create a copy of this Bitmap, so you are free to manipulate, display, clean it up, etc... however you feel fit. Once the user confirms the picture you should call `confirmPicture(@NonNull BitmapResult results)`.
 
 In addition to the take picture functionality the `RecognizerView` provide the ability to write the frame to disk and have the set of captured frames returned to you at the end of the scan session via the `Media` object in the `onRecognizerDone()` call back a part of the `RecognizerCallback.class`.
 
-You can also cancel your current scan if it is taking longer than normal to retrieve any result callback, but it is recommended to set an appropriate Timeout within your scanOptions object so that it may be resolved internally.
+You can also cancel your current scan if it is taking longer than normal to retrieve any result callback, but it is recommended to set an appropriate Timeout within your `scanOptions` object so that it may be resolved internally.
 
 Terminating your scan via `terminate()` will end your session, resetting the parser and internal result calculating mechanism.
 
 #### Finishing the Scan
-When you wish to finish your scan session call `finishedScanning()`. This will begin the session ending process where results will be compiled and finalized. Results are delivered via the `onRecognizerDone( ScanResults results, Media media )` within the interface RecognizerCallback.
+When you wish to finish your scan session call `finishedScanning()`. This will begin the session ending process where results will be compiled and finalized. Results are delivered via the `onRecognizerDone(ScanResults results, Media media)` within the interface `RecognizerCallback`.
 
 *Note*
-All RecognizerCallback methods are executed on the main thread.
+All `RecognizerCallback` methods are executed on the main thread.
 
 #### Image Orientation [OPTIONAL]
 Now image recognition does require image orientation in order to get the most accurate results. Though this field is not required there is an overloaded `recognize` function that allows you to pass in the orientation of the images you are passing. There are 4 orientations to choose from.
@@ -262,7 +231,7 @@ _______
 |     |       CameraOrientation.ORIENTATION_PORTRAIT_UPSIDE_DOWN
 | TOP |
 
-If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the sdk will make a best guess as to what the orientation is based on the Bitmap properties.
+If you give the user the ability to rotate images or define the orientation, then we can ensure the most accurate results. If no orientation is provided the SDK will make a best guess as to what the orientation is based on the Bitmap properties.
 
 **NOTE The recognizer client is not a threadsafe mechanism. Though the function `recognize` is not blocking only ONE scan session can be ran at a time. Attempting to call `recognize` multiple times while previous scans have not finished could potentially lead to unexpected behavior including fatal crashes**
 
@@ -317,7 +286,7 @@ fun RecognizerViewComposable(
 ```
 
 ## <a name=intelligence></a>Product Intelligence
-If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+If you wish to include product intelligence functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this SDK.
 
 `AndroidManifest.xml`
 ```xml
@@ -325,7 +294,7 @@ If you wish to include product intelligence functionality within your project ad
 ```
 
 ## <a name=google></a>Google Places
-If you wish to include Google Places functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+If you wish to include Google Places functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this SDK.
 
 `AndroidManifest.xml`
 ```xml
@@ -333,7 +302,7 @@ If you wish to include Google Places functionality within your project add your 
 ```
 
 ## <a name=yelp></a>Yelp
-If you wish to include Yelp functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+If you wish to include Yelp functionality within your project add your license key to the `AndroidManifest.xml` file, similar to the setup for this SDK.
 
 `AndroidManifest.xml`
 ```xml
@@ -341,7 +310,7 @@ If you wish to include Yelp functionality within your project add your license k
 ```
 
 ## <a name=clientId></a>Client User Id
-If you wish to include your client user id within your project add your client user id key to the `AndroidManifest.xml` file, similar to the setup for this sdk.
+If you wish to include your client user id within your project add your client user id key to the `AndroidManifest.xml` file, similar to the setup for this SDK.
 
 `AndroidManifest.xml`
 ```xml
@@ -354,7 +323,7 @@ BlinkReceipt is distributed with support for Android minSdk version 23
 
 ## <a name=autoConfiguration></a> Auto Configuration
 
-Even though there are different ways to initialize the sdk, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration to disable auto configuration.
+Even though there are different ways to initialize the SDK, the recommended way would be through the `AndroidManifest.xml` file. Within this file add the following configuration to disable auto configuration.
 
 `AndroidManifest.xml`
 ```xml
@@ -363,19 +332,19 @@ Even though there are different ways to initialize the sdk, the recommended way 
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
+        <meta-data 
+            android:name="com.microblink.internal.ReceiptSdkInitializer"
+            tools:node="remove" />
 </provider>
 ```
-If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the sdk.
+If you manually initialize the SDK you should disable auto configuration in your manifest and within your projects Application class please add the following code to initialize the SDK.
 
 ```java
 @Override
 public void onCreate() {
-    super.onCreate();
+        super.onCreate();
 
-    BlinkReceiptSdk.initialize( context );
+        BlinkReceiptSdk.initialize( context );
 }
 ```
 
@@ -385,18 +354,18 @@ public void onCreate() {
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-   <meta-data
-           android:name="com.microblink.internal.ReceiptSdkInitializer"
-           tools:node="remove" />
+        <meta-data
+            android:name="com.microblink.internal.ReceiptSdkInitializer" 
+            tools:node="remove" />
 </provider>
 ```
 
 ```java
 @Override
 public void onTerminate() {
-    BlinkReceiptSdk.terminate();
+        BlinkReceiptSdk.terminate();
 
-    super.onTerminate();
+        super.onTerminate();
 }
 ```
 

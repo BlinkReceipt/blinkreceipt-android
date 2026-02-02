@@ -11,10 +11,10 @@
 
 ## <a name=intro></a> Intro
 
-The Blink Camera UI SDK is a wrapper implementation of the existing `RecognizerView`. This sdk provides a plug and play solution for those who wish to leverage a prebaked implementation of the Recgonizer Experience. Though the UI is predefined, there are many options available that enable you to make this experience uniquely yours!
+The Blink Camera UI SDK is a wrapper implementation of the existing `RecognizerView`. This SDK provides a plug and play solution for those who wish to leverage a prebaked implementation of the Recognizer Experience. Though the UI is predefined, there are many options available that enable you to make this experience uniquely yours!
 
 ## <a name=setup></a> The Setup
-To add the sdk to your android project please follow these steps:
+To add the SDK to your android project please follow these steps:
 
 1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
 
@@ -28,13 +28,13 @@ To add the sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.3"))
+     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.1.0"))
 
      implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
 }
 ```
 
-Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
+Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/blinkreceipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer SDK.
 
 ## <a name=start_camera_scan></a> How to start a Camera Scan
 
@@ -42,7 +42,7 @@ There are 2 ways to start a camera scan.
 
 ### Activity
 
-The Activity approach utilizes the common `startActivityForResults` approach in Android. However, this sdk utilizes the new activity for results api, known as [Activity Contracts](https://developer.android.com/training/basics/intents/result#custom). You have to register your `launcher` at the class level. **NOT WITHIN A FUNCTION IN YOUR ACTIVITY/FRAGMENT**
+The Activity approach utilizes the common `startActivityForResults` approach in Android. However, this SDK utilizes the new activity for results api, known as [Activity Contracts](https://developer.android.com/training/basics/intents/result#custom). You have to register your `launcher` at the class level. **NOT WITHIN A FUNCTION IN YOUR ACTIVITY/FRAGMENT**
 
 ```java
     private final ActivityResultLauncher<CameraRecognizerOptions> launcher = registerForActivityResult(new CameraRecognizerContract(), result -> {
@@ -222,9 +222,9 @@ internal fun CameraRecognizerContent(
 ##  <a name=configure></a> Configuring Your Scan
 
 ### CameraCharacteristics
-As previously mentioned, the sdk allows you to define many things within the UI implementation, to make the experience uniquely yours. This is done by providing the `CameraCharacteristics` as part of your argument set, whether it is in the `CameraRecognizerOptions` of the activity contract or the `CameraRecognizerFragment.Builder` argument.
+As previously mentioned, the SDK allows you to define many things within the UI implementation, to make the experience uniquely yours. This is done by providing the `CameraCharacteristics` as part of your argument set, whether it is in the `CameraRecognizerOptions` of the activity contract or the `CameraRecognizerFragment.Builder` argument.
 
-`CameraCharacteristics` is new to the sdk. This provides an easy to use controller for the ux/ui of the scanning experience. The following is a list of configurable options and how to use them.
+`CameraCharacteristics` is new to the SDK. This provides an easy to use controller for the ux/ui of the scanning experience. The following is a list of configurable options and how to use them.
 
 ```java
    previousFrameOverlayPercentage(decimalOverlap)
@@ -236,7 +236,7 @@ Part of the user experience when capturing a frame is the ability to "save" that
     cameraPermission(true)
 ```
 
-Since this experience does use the camera of hardware devices; in certain versions of android we must request permission at runtime. If you wish for the sdk to handle the permission asking, then simply turn this value to `true`. If you wish to handle asking permissions yourself, then you can set it to `false`.
+Since this experience does use the camera of hardware devices; in certain versions of android we must request permission at runtime. If you wish for the SDK to handle the permission asking, then simply turn this value to `true`. If you wish to handle asking permissions yourself, then you can set it to `false`.
 
 ```java
     style(R.style.BlinkRecognizerStyle)
