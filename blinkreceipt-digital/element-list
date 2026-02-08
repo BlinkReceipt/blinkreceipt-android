@@ -1,0 +1,18 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.digital.internal/ImapMessage.Builder///PointingToDeclaration/com/microblink/digital/internal/ImapMessage.Builder.html
+$dokka.location:com.microblink.digital.internal/Message.Builder///PointingToDeclaration/com/microblink/digital/internal/Message.Builder.html
+$dokka.location:com.microblink.digital.internal/PasswordCredentials.Builder///PointingToDeclaration/com/microblink/digital/internal/PasswordCredentials.Builder.html
+$dokka.location:com.microblink.digital.internal/ProviderFragmentState.Alert///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.Alert.html
+$dokka.location:com.microblink.digital.internal/ProviderFragmentState.Progress///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.Progress.html
+$dokka.location:com.microblink.digital.internal/ProviderFragmentState.ShowWebView///PointingToDeclaration/com/microblink/digital/internal/ProviderFragmentState.ShowWebView.html
+$dokka.location:com.microblink.digital/Credentials.None.Gmail///PointingToDeclaration/com/microblink/digital/Credentials.None.Gmail.html
+$dokka.location:com.microblink.digital/Credentials.None///PointingToDeclaration/com/microblink/digital/Credentials.None.html
+$dokka.location:com.microblink.digital/Credentials.Password.Aol///PointingToDeclaration/com/microblink/digital/Credentials.Password.Aol.html
+$dokka.location:com.microblink.digital/Credentials.Password.Gmail///PointingToDeclaration/com/microblink/digital/Credentials.Password.Gmail.html
+$dokka.location:com.microblink.digital/Credentials.Password.Outlook///PointingToDeclaration/com/microblink/digital/Credentials.Password.Outlook.html
+$dokka.location:com.microblink.digital/Credentials.Password.Yahoo///PointingToDeclaration/com/microblink/digital/Credentials.Password.Yahoo.html
+$dokka.location:com.microblink.digital/Credentials.Password///PointingToDeclaration/com/microblink/digital/Credentials.Password.html
+com.microblink.digital
+com.microblink.digital.internal
+com.microblink.digital.internal.services

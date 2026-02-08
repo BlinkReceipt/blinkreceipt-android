@@ -1,0 +1,8 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.microblink.barcode.internal/NativeRecognizerWrapper.ErrorCallback///PointingToDeclaration/com/microblink/barcode/internal/NativeRecognizerWrapper.ErrorCallback.html
+$dokka.location:com.microblink.barcode.internal/NativeRecognizerWrapper.RecognitionCallback///PointingToDeclaration/com/microblink/barcode/internal/NativeRecognizerWrapper.RecognitionCallback.html
+$dokka.location:com.microblink.barcode/CameraViewGroup.LayoutParams///PointingToDeclaration/com/microblink/barcode/CameraViewGroup.LayoutParams.html
+com.microblink.barcode
+com.microblink.barcode.internal
+com.microblink.barcode.internal.services

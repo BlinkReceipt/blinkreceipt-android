@@ -1,0 +1,1954 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A collection of libraries for scanning physical and digital receipts">
+      
+      
+        <meta name="author" content="Microblink">
+      
+      
+        <link rel="canonical" href="https://microblink.github.io/blinkreceipt-android/how_to_use_alp/">
+      
+      
+        <link rel="prev" href="../configuring_client_alp/">
+      
+      
+        <link rel="next" href="../alp_background/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../mkdocs/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>How to use - BlinkReceipt</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linking-accounts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BlinkReceipt" class="md-header__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BlinkReceipt
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to use
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BlinkReceipt" class="md-nav__button md-logo" aria-label="BlinkReceipt" data-md-component="logo">
+      
+  <img src="../mkdocs/images/logo.png" alt="logo">
+
+    </a>
+    BlinkReceipt
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BlinkReceipt/blinkreceipt-android" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BlinkReceipt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Account Linking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Account Linking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_alp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuring_client_alp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linking-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linking Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-host-app-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Host App Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retailer-web-view-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retailer Web View Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grabbing-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grabbing Orders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grabbing Orders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grabbing-orders-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grabbing Orders Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-accounts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Accounts (optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verifying Accounts (optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verification-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resetting-retailer-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resetting retailer history
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running in the background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported_retailers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Retailers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fetch_orders_from_all_retailers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fetch Orders from All Retailers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alp_error_codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Receipts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Receipts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Integration and Instantiation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_imap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_outlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_gmail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gmail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital_requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android_16_migration_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android 16(API 36) Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maven_migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maven migration guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workmanager_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorkManager Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Override Labels
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Override Labels
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../override_labels_camera_ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Receipt Scanning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Receipt Scanning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/camera_ui_jetpack_compose_integration_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera UI + Jetpack Compose Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barcode
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Barcode
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/barcode/updating_your_barcode_scanning_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Your Barcode Scanning Integration (v1.9.5+)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDF Recognition
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PDF Recognition
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/getting_started_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/configuring_client_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../receipts/pdf/how_to_use_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javadoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Javadoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linking-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linking Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-host-app-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Host App Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retailer-web-view-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retailer Web View Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grabbing-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grabbing Orders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grabbing Orders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grabbing-orders-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grabbing Orders Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-accounts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Accounts (optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verifying Accounts (optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verification-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resetting-retailer-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resetting retailer history
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>How to use</h1>
+
+<h3 id="linking-accounts">Linking Accounts<a class="headerlink" href="#linking-accounts" title="Permanent link">&para;</a></h3>
+<p>Before you can start retrieving orders, you have to link and verify an account. To link an account to the SDK,
+you have to instantiate an <code>Account</code> object and call the <code>link</code> method on an instance of the <code>AccountLinkingClient</code> class.</p>
+<p>Account Linking offers two UI/UX experiences when linking and verifying a retailer’s connection. Depending on your app needs you can choose:</p>
+<h4 id="1-host-app-authentication">1. Host App Authentication<a class="headerlink" href="#1-host-app-authentication" title="Permanent link">&para;</a></h4>
+<p>Using this flow, the client’s host app provides a native prompt for users to populate credentials. All other interactions with the merchant are done with the webview hidden in the background with exception when 2FA, Captcha or other required user input.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Kotlin</label><label for="__tabbed_1_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// AMAZON is used just as an example</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">retailerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">credentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//move on to the next step, verifying the account or retrieving orders</span>
+<span class="p">}.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//linking shouldn&#39;t fail, as the API forbids you from using an invalid retailer ID.</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">Account</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//move on to the next step, verifying the account or retrieving orders</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//linking shouldn&#39;t fail, as the API forbids you from using an invalid retailer ID.</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>Collect the user’s credentials for a given retailer using your own UI</li>
+</ul>
+<h4 id="2-retailer-web-view-authentication">2. Retailer Web View Authentication<a class="headerlink" href="#2-retailer-web-view-authentication" title="Permanent link">&para;</a></h4>
+<p>Using this flow the host app doesn’t need to provide any native functionality to collect credentials but instead present a WebView with retailer’s webpage pre-populated.
+All steps needed for authentication, a user may handle in the same WebView.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Kotlin</label><label for="__tabbed_2_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// AMAZON is used just as an example.</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">retailerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">credentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">None</span><span class="w"> </span><span class="c1">// No need to explicitly provide credentials</span>
+<span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//move on to the next step, verifying the account or retrieving orders</span>
+<span class="p">}.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//linking shouldn&#39;t fail, as the API forbids you from using an invalid retailer ID.</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">Account</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Credentials</span><span class="p">.</span><span class="na">None</span><span class="p">.</span><span class="na">INSTANCE</span>
+<span class="w">    </span><span class="kc">true</span>
+<span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//move on to the next step, verifying the account or retrieving orders</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="na">addOnFailureListener</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//linking shouldn&#39;t fail, as the API forbids you from using an invalid retailer ID.</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>Already linked connections can be switched back and forward by invoking again <code>AccountLinkingClient.link()</code>, passing an updated <code>Account</code> instance.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">The <code>link</code> method takes in a <code>vararg</code> of <code>Account</code>, so you can link multiple accounts (for different retailers) at once if needed</p>
+</div>
+<p>By linking the account, the details of that account (e.g. <code>retailerId</code>, <code>credentials</code> field values) is cached locally and encrypted for future use and can be retrieved using the <code>accounts</code> method.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only one account can be linked per retailer at once. E.g. you can only link one Walmart account.
+If you try to link another Walmart account, the old account will be removed and the new account will be linked.</p>
+</div>
+<p>Similarly, accounts can be unlinked, by which they are removed from the device cache. Here&rsquo;s an example of a flow you might have in your
+implementation:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Kotlin</label><label for="__tabbed_3_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AcountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">        </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1">//do some work, verify, grab orders, etc...</span>
+
+<span class="c1">//retrieve and unlink account</span>
+<span class="n">client</span><span class="p">.</span><span class="na">accounts</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">amazonAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="o">?.</span><span class="na">firstOrNull</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">retailerId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AMAZON</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">amazonAccount</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">client</span><span class="p">.</span><span class="na">unlink</span><span class="p">(</span><span class="n">amazonAccount</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//i.e. link another Amazon account</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">AccountLinkingClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">        </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//do some work, verify, grab orders, etc...</span>
+
+<span class="c1">//retrieve and unlink account</span>
+<span class="n">client</span><span class="p">.</span><span class="na">accounts</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">accounts</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accounts</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">acc</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">acc</span><span class="p">.</span><span class="na">retailerId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AMAZON</span><span class="p">).</span><span class="na">findFirst</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">isPresent</span><span class="p">()){</span>
+<span class="w">        </span><span class="n">client</span><span class="p">.</span><span class="na">unlink</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">get</span><span class="p">()).</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//i.e. link another amazon account</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>To see the full list of supported retailers and their ids, check out
+the <a href="https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/RetailerIds.html">documentation</a>
+.</p>
+<h3 id="grabbing-orders">Grabbing Orders<a class="headerlink" href="#grabbing-orders" title="Permanent link">&para;</a></h3>
+<p>When grabbing orders, you can decide to either grab orders for all linked accounts or to grab orders for only a specific retailer.
+Depending on your use case, you can call the necessary <code>orders</code> function on the <code>AccountLinkingClient</code> instance.</p>
+<p>The method takes in a success and failure callback.</p>
+<p>The success callback will be called multiple times during one order retrieving session. The callback will be invoked once for every order that has
+been found, from the most recent to the oldest order.
+The callback provides the retailer ID, the retrieved order, the session UUID as well as the number of remaining orders which are expected to be
+returned.</p>
+<div class="admonition info">
+<p class="admonition-title">If the linked account hasn&rsquo;t already been verified, the <code>orders</code> call will try to verify it before retrieving any orders.</p>
+</div>
+<p>The failure callback returns an <code>AccountLinkingException</code> as well as the retailer ID for which the failure occurred.
+If user was logged out since the last <code>verify</code> or <code>orders</code> call or some additional action is required from the user, the
+failure callback can return an exception with the code <code>VERIFICATION_NEEDED</code>, which means you&rsquo;ll have to handle it like described in the <a href="#verifying-accounts-optional">Verifying Accounts</a> section.</p>
+<h4 id="grabbing-orders-example">Grabbing Orders Example<a class="headerlink" href="#grabbing-orders-example" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Kotlin</label><label for="__tabbed_4_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="c1">//config the client, or link an account if you haven&#39;t linked it already</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">allOrders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="o">&lt;</span><span class="n">ScanResults</span><span class="o">&gt;</span><span class="p">()</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">orders</span><span class="p">(</span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">retailerId</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">results</span><span class="p">:</span><span class="w"> </span><span class="n">ScanResults?,</span><span class="w"> </span><span class="n">remaining</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">uuid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">results</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">allOrders</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">remaining</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//process the collected orders</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="n">failure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">retailerId</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">exception</span><span class="p">:</span><span class="w"> </span><span class="n">AccountLinkingException</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VERIFICATION_NEEDED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//in this case, the exception.view will be != null, so you can show it in your app</span>
+<span class="w">            </span><span class="c1">//and the user can resolve the needed verification, i.e.:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">binding</span><span class="p">.</span><span class="na">webViewContainer</span><span class="p">.</span><span class="na">addView</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">)</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">AccountLinkingClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="c1">//config the client, or link an account if you haven&#39;t linked it already</span>
+<span class="n">Account</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">ScanResults</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">orders</span><span class="p">(</span><span class="n">AMAZON</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">retailerId</span><span class="p">,</span><span class="w"> </span><span class="n">ScanResults</span><span class="w"> </span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">remaining</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">uuid</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="n">allResults</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">results</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">remaining</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        </span><span class="c1">//process the collected orders</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Unit</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">retailerId</span><span class="p">,</span><span class="w"> </span><span class="n">AccountLinkingException</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">code</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VERIFICATION_NEEDED</span><span class="p">){</span>
+<span class="w">        </span><span class="c1">//in this case, the exception.view() will be != null, so you can show it in your app</span>
+<span class="w">        </span><span class="c1">//and the user can resolve the needed verification, i.e.:</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+<span class="w">            </span><span class="n">binding</span><span class="p">.</span><span class="na">webViewContainer</span><span class="p">.</span><span class="na">addView</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">())</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Unit</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you call the <code>orders</code> function which collects orders for all your linked accounts, you will have to keep track of which retailers
+  finished or failed manually to be sure that the <code>orders</code> session is over.</p>
+</div>
+<h3 id="verifying-accounts-optional">Verifying Accounts (optional)<a class="headerlink" href="#verifying-accounts-optional" title="Permanent link">&para;</a></h3>
+<p>After you&rsquo;ve linked an account, you can verify it before retrieving orders. This will ensure that the linked account is valid before you try to retrieve orders.
+To verify an account, you have to call the <code>verify</code> method of the <code>AccountLinkingClient</code>.
+The <code>verify</code> method takes in the id of the retailer for which you want to verify the linked account, and then also three callbacks.</p>
+<p>The first one is a success callback, which will be called if the verification process was successful. The callback returns a boolean value that tells
+you if your account was verified, as well as a UUID for tracking purposes.
+If you find any issues while verifying or retrieving orders, you can send us the UUID of the session and we can check the logs to see what happened.</p>
+<p>The second callback you need to pass in is an error callback, which is called whenever the verification process runs into an issue. It returns
+an <a href="https://htmlpreview.github.io?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/com/microblink/linking/AccountLinkingException.html">AccountLinkingException</a>
+, which contains an error code, a UUID of the session, a reference to an underlying exception, and, depending on the error type, a reference to a
+WebView.
+It&rsquo;s possible that while verifying your account, additional actions are needed from the end user, like entering a 2FA code, solving a captcha, or
+similar. This is recognized by the error code in the returned exception <code>VERIFICATION_NEEDED</code>.
+In this case, you have to display the returned WebView. For more information, see the example below.</p>
+<p>The third callback is a preview callback, which will return the <code>WebView</code> which will run the verification session, but only if
+the <code>BlinkReceiptLinkingSdk.debug</code> property is set to <code>true</code>.
+This is meant to be used only for debugging purposes.</p>
+<h4 id="verification-example">Verification Example<a class="headerlink" href="#verification-example" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Kotlin</label><label for="__tabbed_5_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">    </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">retailerId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">success</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">uuid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="c1">// grab orders, etc...</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="n">failure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">exception</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VERIFICATION_NEEDED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//in this case, the exception.view will be != null, so you can show it in your app</span>
+<span class="w">                </span><span class="c1">//and the user can resolve the needed verification, i.e.:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">binding</span><span class="p">.</span><span class="na">webViewContainer</span><span class="p">.</span><span class="na">addView</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">)</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">AccountLinkingClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
+<span class="n">Account</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span>
+<span class="w">        </span><span class="n">AMAZON</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Credentials</span><span class="p">.</span><span class="na">Password</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;amazon_username&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;amazon_password&quot;</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">link</span><span class="p">(</span><span class="n">account</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">retailerId</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="n">Boolean</span><span class="w"> </span><span class="n">isSuccess</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">uuid</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//grab orders, etc...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Unit</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">(</span><span class="n">AccountLinkingException</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">code</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VERIFICATION_NEEDED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//in this case, the exception.view will be != null, so you can show it in your app</span>
+<span class="w">            </span><span class="c1">//and the user can resolve the needed verification, i.e.:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">binding</span><span class="p">.</span><span class="na">webViewContainer</span><span class="p">.</span><span class="na">addView</span><span class="p">(</span><span class="n">exception</span><span class="p">.</span><span class="na">view</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Unit</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Do not link verify or order calls to any lifecycle methods, like <code>onCreate</code> or <code>onStart</code>, as this can lead to creating multiple sessions at once and memory leaks.</p>
+</div>
+<h3 id="closing-the-client">Closing the client<a class="headerlink" href="#closing-the-client" title="Permanent link">&para;</a></h3>
+<p>After you&rsquo;re finished with the client, i.e. you&rsquo;ve verified the accounts you wanted to verify or retrieved orders, you must call the <code>close</code> method of
+the <code>AccountLinkingClient</code> to reclaim resources and prevent memory leaks.</p>
+<h3 id="resetting-retailer-history">Resetting retailer history<a class="headerlink" href="#resetting-retailer-history" title="Permanent link">&para;</a></h3>
+<p>If you want to clear the history of a specific retailer, you can call the <code>resetHistory</code> and pass in the specific retailer ID.
+You should do this when you want to link a different account for the same retailer you already had linked, or if you want to retrieve older orders
+which you had already retrieved before.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Kotlin</label><label for="__tabbed_6_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Reset retailer history</span><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">resetHistory</span><span class="p">(</span><span class="n">AMAZON</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// e.g. link a different amazon account</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Reset retailer history</span><pre><span></span><code><span class="n">AccountLinkingClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">resetHistory</span><span class="p">(</span><span class="n">AMAZON</span><span class="p">).</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">success</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// e.g. link a different amazon account</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, you can reset the history for all retailers, by calling the <code>resetHistory</code> method which takes in no parameters.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Kotlin</label><label for="__tabbed_7_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Reset all retailers history</span><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">resetHistory</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Reset all retailers history</span><pre><span></span><code><span class="n">AccountLinkingClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountLinkingClient</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">resetHistory</span><span class="p">().</span><span class="na">addOnSuccessListener</span><span class="p">(</span><span class="n">sucess</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
