@@ -758,3 +758,9 @@ Blink Receipt Recognizer
 ## 1.9.12
 - Improved scan performance to reduce processing time in certain international use cases
 - Improved overall stability during receipt scanning and OCR to provide a smoother experience
+
+## 1.9.13
+- time_seconds
+  - Returns the purchase time in seconds for reporting and analysis. 
+- purchase_country 
+  - Indicates the country where the purchase occurred.

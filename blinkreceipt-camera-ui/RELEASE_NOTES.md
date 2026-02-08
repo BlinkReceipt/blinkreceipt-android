@@ -186,3 +186,6 @@
 ## 1.4.7
 - **BREAKING CHANGE** Fixed Parcelable implementation issues in `CameraRecognizerResults`. The `Exception` state now exposes a specific `CameraException` instead of a generic `Throwable` to ensure safe serialization used by the Camera Contract.
 - Stability fixes and improvements
+
+## 1.4.8
+- Stability fixes and improvements
