@@ -314,3 +314,6 @@
 ## 1.7.3
 - Fix `RecognizerView.resumeScanning()` causing ANR issue on continuous barcode scan.
 - Stability fixes and improvements
+
+## 1.7.4
+- Stability fixes and improvements

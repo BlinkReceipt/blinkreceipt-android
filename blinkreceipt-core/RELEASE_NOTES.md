@@ -342,3 +342,7 @@
 
 ## 1.7.3
 - Stability fixes and improvements
+
+## 1.7.4
+- Update Prod Intel Lookup API POST request format
+- Stability fixes and improvements
