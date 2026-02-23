@@ -389,3 +389,6 @@ accountLinkingClient.orders(
 ## 1.6.1
 - Fixed issue on `AccountLinkingClient` where Delivered/Online Purchases were not subjected to Prod Intel Lookup API calls 
 - Stability fixes and improvements
+
+## 1.6.2
+- Stability fixes and improvements
