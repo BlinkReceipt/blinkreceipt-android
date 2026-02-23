@@ -346,3 +346,8 @@
 ## 1.7.4
 - Update Prod Intel Lookup API POST request format
 - Stability fixes and improvements
+
+## 1.7.5
+- **BREAKING CHANGE** `ScanResults` loyaltyProgram property changed from boolean to Boolean
+- Added support for new properties: `aid` and `authCode`
+- Stability fixes and improvements

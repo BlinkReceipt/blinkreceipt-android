@@ -764,3 +764,7 @@ Blink Receipt Recognizer
   - Returns the purchase time in seconds for reporting and analysis. 
 - purchase_country 
   - Indicates the country where the purchase occurred.
+
+## 1.9.14
+- Extraction Improvements: Improved Sales Tax, Subtotal, and Promotion capture across US, France, and Germany receipts.
+- Revert fix to CPR-1233: Slow behavior of Android SDK
