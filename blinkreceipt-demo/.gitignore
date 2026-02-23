@@ -83,3 +83,4 @@ freeline_project_description.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+/gradle/gradle-daemon-jvm.properties
