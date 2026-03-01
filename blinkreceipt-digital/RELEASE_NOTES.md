@@ -386,3 +386,6 @@
 
 ## 1.7.3
 - Stability fixes and improvements
+
+## 2.0.0
+- Stability fixes and improvements

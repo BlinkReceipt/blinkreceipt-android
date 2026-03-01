@@ -1,3 +1,6 @@
+# Module blinkreceipt-surveys
+
+# Package com.microblink.surveys
 
 # Blink Survey SDK
 
@@ -264,3 +267,5 @@ Once an answer has been recorded calling `client.nextQuestion()` will provide th
 
 ### Survey Completion
 When calling `nextQuestion()`, if the `SurveyQuestion` returned is null, then check if the survey is over by calling `client.surveyOver()` which returns a boolean. Odds are if null is being returned then the survey is over and there are no more questions to display to the user. In this scenario, then call `client.submit()`. There is no callback for the submit() as the client and sdk handles failure, retry, and success scenarios.
+
+# Package com.microblink.surveys

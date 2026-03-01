@@ -351,3 +351,6 @@
 - **BREAKING CHANGE** `ScanResults` loyaltyProgram property changed from boolean to Boolean
 - Added support for new properties: `aid` and `authCode`
 - Stability fixes and improvements
+
+## 2.0.0
+- Stability fixes and improvements

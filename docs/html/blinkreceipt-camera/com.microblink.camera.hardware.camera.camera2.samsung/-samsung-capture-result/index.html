@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>SamsungCaptureResult</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-camera/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-camera/release" data-filter=":blinkreceipt-camera/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-camera::com.microblink.camera.hardware.camera.camera2.samsung/SamsungCaptureResult///PointingToDeclaration//-1314995494">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-camera</a><span class="delimiter">/</span><a href="../index.html">com.microblink.camera.hardware.camera.camera2.samsung</a><span class="delimiter">/</span><span class="current">SamsungCaptureResult</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Samsung</span><wbr><span>Capture</span><wbr><span><span>Result</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">SamsungCaptureResult</a> : <a href="../-samsung-camera-metadata/index.html">SamsungCameraMetadata</a></div><p class="paragraph">Contains additional capture result keys available on Samsung Galaxy devices.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1976378201%2FConstructors%2F-1314995494" anchor-label="SamsungCaptureResult" id="-1976378201%2FConstructors%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-samsung-capture-result.html"><span>Samsung</span><wbr><span>Capture</span><wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1976378201%2FConstructors%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1935487783%2FProperties%2F-1314995494" anchor-label="LENS_OPTICAL_STABILIZATION_OPERATION_MODE" id="1935487783%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e.html"><span>LENS_</span><wbr><span>OPTICAL_</span><wbr><span>STABILIZATION_</span><wbr><span>OPERATION_</span><wbr><span>MODE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1935487783%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">val </span><a href="-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e.html">LENS_OPTICAL_STABILIZATION_OPERATION_MODE</a><span class="token operator">: </span><span data-unresolved-link="android.hardware.camera2/CaptureResult.Key///PointingToDeclaration/">CaptureResult.Key</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1574064885%2FProperties%2F-1314995494" anchor-label="LENS_OPTICAL_STABILIZATION_OPERATION_MODE_PICTURE" id="1574064885%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e_-p-i-c-t-u-r-e.html"><span>LENS_</span><wbr><span>OPTICAL_</span><wbr><span>STABILIZATION_</span><wbr><span>OPERATION_</span><wbr><span>MODE_</span><wbr><span>PICTURE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1574064885%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e_-p-i-c-t-u-r-e.html">LENS_OPTICAL_STABILIZATION_OPERATION_MODE_PICTURE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="650490776%2FProperties%2F-1314995494" anchor-label="LENS_OPTICAL_STABILIZATION_OPERATION_MODE_VIDEO" id="650490776%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e_-v-i-d-e-o.html"><span>LENS_</span><wbr><span>OPTICAL_</span><wbr><span>STABILIZATION_</span><wbr><span>OPERATION_</span><wbr><span>MODE_</span><wbr><span>VIDEO</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="650490776%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-l-e-n-s_-o-p-t-i-c-a-l_-s-t-a-b-i-l-i-z-a-t-i-o-n_-o-p-e-r-a-t-i-o-n_-m-o-d-e_-v-i-d-e-o.html">LENS_OPTICAL_STABILIZATION_OPERATION_MODE_VIDEO</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1263831745%2FProperties%2F-1314995494" anchor-label="METERING_MODE" id="1263831745%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-e-t-e-r-i-n-g_-m-o-d-e.html"><span>METERING_</span><wbr><span>MODE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1263831745%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">val </span><a href="-m-e-t-e-r-i-n-g_-m-o-d-e.html">METERING_MODE</a><span class="token operator">: </span><span data-unresolved-link="android.hardware.camera2/CaptureResult.Key///PointingToDeclaration/">CaptureResult.Key</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="701696408%2FProperties%2F-1314995494" anchor-label="METERING_MODE_CENTER" id="701696408%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-c-e-n-t-e-r.html"><span>METERING_</span><wbr><span>MODE_</span><wbr><span>CENTER</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="701696408%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-c-e-n-t-e-r.html">METERING_MODE_CENTER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-122880185%2FProperties%2F-1314995494" anchor-label="METERING_MODE_MANUAL" id="-122880185%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-m-a-n-u-a-l.html"><span>METERING_</span><wbr><span>MODE_</span><wbr><span>MANUAL</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-122880185%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-m-a-n-u-a-l.html">METERING_MODE_MANUAL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">3</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-19812436%2FProperties%2F-1314995494" anchor-label="METERING_MODE_MATRIX" id="-19812436%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-m-a-t-r-i-x.html"><span>METERING_</span><wbr><span>MODE_</span><wbr><span>MATRIX</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-19812436%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-m-a-t-r-i-x.html">METERING_MODE_MATRIX</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">2</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-480319093%2FProperties%2F-1314995494" anchor-label="METERING_MODE_SPOT" id="-480319093%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-s-p-o-t.html"><span>METERING_</span><wbr><span>MODE_</span><wbr><span>SPOT</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-480319093%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-m-e-t-e-r-i-n-g_-m-o-d-e_-s-p-o-t.html">METERING_MODE_SPOT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1610503313%2FProperties%2F-1314995494" anchor-label="PHASE_AF_MODE" id="1610503313%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-h-a-s-e_-a-f_-m-o-d-e.html"><span>PHASE_</span><wbr><span>AF_</span><wbr><span>MODE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1610503313%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">val </span><a href="-p-h-a-s-e_-a-f_-m-o-d-e.html">PHASE_AF_MODE</a><span class="token operator">: </span><span data-unresolved-link="android.hardware.camera2/CaptureResult.Key///PointingToDeclaration/">CaptureResult.Key</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1179789170%2FProperties%2F-1314995494" anchor-label="PHASE_AF_MODE_OFF" id="-1179789170%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-p-h-a-s-e_-a-f_-m-o-d-e_-o-f-f.html"><span>PHASE_</span><wbr><span>AF_</span><wbr><span>MODE_</span><wbr><span>OFF</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1179789170%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-p-h-a-s-e_-a-f_-m-o-d-e_-o-f-f.html">PHASE_AF_MODE_OFF</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1451531134%2FProperties%2F-1314995494" anchor-label="PHASE_AF_MODE_ON" id="1451531134%2FProperties%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-samsung-camera-metadata/-p-h-a-s-e_-a-f_-m-o-d-e_-o-n.html"><span>PHASE_</span><wbr><span>AF_</span><wbr><span>MODE_</span><wbr><span>ON</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1451531134%2FProperties%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-samsung-camera-metadata/-p-h-a-s-e_-a-f_-m-o-d-e_-o-n.html">PHASE_AF_MODE_ON</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

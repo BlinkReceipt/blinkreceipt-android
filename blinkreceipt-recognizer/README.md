@@ -1,3 +1,7 @@
+# Module blinkreceipt-recognizer
+
+# Package com.microblink.recognizer
+
 # Blink Receipt SDK
 
 Blink Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
@@ -283,10 +287,6 @@ fun RecognizerViewComposable(
   // This is to ensure to avoid RecognizerView instance from being unnecessarily re-created on recomposition.
   val recognizerView = remember {
       RecognizerView(context).apply {
-        setMeteringAreas(arrayOf(RectF(0f, 0f, 1f, 1f)), true)
-        initialOrientation = Orientation.ORIENTATION_PORTRAIT
-        aspectMode = CameraAspectMode.ASPECT_FILL
-
         // Observe Recognizer Callback
         recognizerCallback(object: CameraRecognizerCallback {
           // ...
@@ -299,7 +299,7 @@ fun RecognizerViewComposable(
             // ...
             .build()
         )
-        
+
         // Attach Lifecycle Owner
         lifecycle(lifecycleOwner)
       }
@@ -312,7 +312,7 @@ fun RecognizerViewComposable(
           view.terminate()
       }
   )
-  
+
 }
 ```
 
@@ -495,3 +495,5 @@ You can also remove multiple processor architectures by specifying `exclude` dir
 - Min SDK 23+
 - Compile SDK: 36+
 - Java 17+
+
+# Package com.microblink.recognizer

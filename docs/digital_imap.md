@@ -48,13 +48,13 @@ IMAP client is the main entry point which allows the SDK to connect to imap acco
 === "Kotlin"
     ```kotlin
     ImapClient( applicationContext, object : InitializeCallback {
-    
+
         override fun onComplete() {
-    
+
         }
-    
+
         override fun onException(throwable: Throwable) {
-    
+
         }
       }
     )
@@ -66,7 +66,7 @@ A `Credentials` object defines the credentials being used to login to a specific
     ```kotlin
         sealed class Credentials {
             sealed class None {
-                data class Gmail(val appPassword: AppPassword)  
+                data class Gmail(val appPassword: AppPassword)
             }
             sealed class Password {
                 data class Gmail(val username: String, val password: String)
@@ -101,7 +101,7 @@ Example: Gmail (traditional) authentication workflow
 === "Kotlin"
     ```kotlin
     val credentials: Credentials = Credentials.Password.Gmail(
-        "email@microblink.com", 
+        "email@microblink.com",
         "account password"
     )
 
@@ -122,11 +122,11 @@ The `verify()` function is used to determine if the sdk has any cached `Credenti
 === "Kotlin"
     ```kotlin
     val credentials: Credentials.Password = Credentials.Password.Gmail("email@microblink.com", "account password")
-    
+
     client.verify(credentials).addOnSuccessListener { isVerified: Boolean ->
-    
+
     }.addOnFailureListener {
-    
+
     }
     ```
 
@@ -136,9 +136,9 @@ The `accounts()` function is used to fetch the cached account's `Credentials.Pas
 === "Kotlin"
     ```kotlin
     client.accounts().addOnSuccessListener { accounts: List<Credentials.Password> ->
-    
+
     }.addOnFailureListener {
-    
+
     }
     ```
 
@@ -167,7 +167,7 @@ Once the client is configured then we are ready to start parsing emails. On the 
                       // do stuff with scan results
                       // see credentials of account
                   }
-    
+
                   override fun onException(throwable: Throwable) {
                       Toast.makeText(getContext(), throwable.toString(), Toast.LENGTH_SHORT).show
                   }
@@ -192,9 +192,9 @@ When you wish to sign out from a user's current account use the `logout()` funct
     )
 
     client.logout(Credentials).addOnSuccessListener {
-    
+
     }.addOnFailureListener {
-    
+
     }
     ```
 
@@ -205,7 +205,7 @@ In order to optimize, fetching and parsing emails, we try to not to duplicate wo
 === "Kotlin"
     ```kotlin
     client.clearLastCheckedTime().addOnSuccessListener {
-    
+
     }
     ```
 
@@ -216,7 +216,7 @@ We always want to make sure we are adhering to any component's lifecycle. Theref
     ```kotlin
        override fun onDestroy() {
            super.onDestroy()
-    
+
            client.close()
        }
     ```

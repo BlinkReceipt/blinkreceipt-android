@@ -1,9 +1,15 @@
 # Updating Your Barcode Scanning Integration (v1.9.5+)
 
+---
+> [!WARNING]
+> This guide only applies to [BlinkReceipt SDK 1.9.5](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.5) until [BlinkReceipt SDK 1.9.12](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.12).
+> Starting from [BlinkReceipt SDK 2.0.0](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/2.0.0) onwards, ~~`:blinkreceipt-barcode`~~ is removed. Please see [CameraX migration guide](../../camerax_migration_guide.md) for more info.
+---
+
 > Who is this guide for? This guide is for developers using [BlinkReceipt SDK 1.9.5](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.5) or newer, we already migrated to [Google MLKit Barcode](https://developers.google.com/ml-kit/vision/barcode-scanning). 
 > If you are implementing barcode scanning for the first time or upgrading from an older version, please read this carefully.
 
-Due to a migration to Google's MLKit for barcode scanning in SDK v1.9.5, there is a fundamental behavioral change in how [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html) 
+Due to a migration to Google's MLKit for barcode scanning in SDK v1.9.5, there is a fundamental behavioral change in how [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html)
 handles a scanning session. This guide explains the change and how to adapt your implementation.
 
 ## TL;DR: The Quick Summary
@@ -20,13 +26,13 @@ when you are ready to scan again.
 To build a robust implementation, it's important to understand what is happening behind the scenes.
 
 - **Cause**: We now use Google's MLKit, which begins analyzing frames from the camera immediately upon initialization.
- 
-- **Effect**: As soon as [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html) 
+
+- **Effect**: As soon as [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html)
 starts, it analyzes the camera view. Because the user hasn't yet aimed at a barcode, it quickly produces a result: "no barcodes found."
 
-- **The Problem**: The SDK is designed to pause the scanning session after every result to allow your app to process it. 
-This means the initial *"empty"* result immediately PAUSES the scanner. 
-By the time the user aims their camera at a barcode, the [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html) 
+- **The Problem**: The SDK is designed to pause the scanning session after every result to allow your app to process it.
+This means the initial *"empty"* result immediately PAUSES the scanner.
+By the time the user aims their camera at a barcode, the [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html)
 is in a **PAUSED** state and won't detect anything further.
 
 ---
@@ -53,15 +59,15 @@ recognizerView.metadataCallbacks(
             if (results.barcodes().isNotEmpty()) {
                 // SUCCESS: A barcode was found!
                 // The scanner is now PAUSED automatically.
-                
+
                 // Get your barcode data and Process the result (e.g., close this screen, show data)
                 // You DO NOT need to call resumeScanning() here if you're done.
-                // showResultAndFinish(barcodeText) 
+                // showResultAndFinish(barcodeText)
             }
             // If the result is empty, do nothing and let the scanner continue.
             // The resumeScanning() call in scanResultListener will handle restarting it.
         }
-        
+
         failedDetectionCallback {
             // Optional: Handle cases where a barcode-like object was detected but failed to be parsed.
             // You can provide user feedback here, like "Hold the camera steady."
@@ -83,7 +89,7 @@ recognizerView.scanResultListener {
 
 *Use this for applications like inventory management, where a user might scan multiple barcodes one after another without closing the scanner.*
 
-The logic is similar to the single-scan scenario, but you will call [recognizerView.resumeScanning(true)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html#resumeScanning(boolean)) 
+The logic is similar to the single-scan scenario, but you will call [recognizerView.resumeScanning(true)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html#resumeScanning(boolean))
 after you have successfully processed a barcode.
 
 ```kotlin
@@ -96,7 +102,7 @@ recognizerView.metadataCallbacks(
             if (results.barcodeResults().isNotEmpty()) {
                 // SUCCESS: A barcode was found!
                 // The scanner is now PAUSED automatically.
-                
+
                 // 1. Add the result to your list or process it.
                 // 2. Provide feedback to the user (e.g., a "beep" sound or vibration).
                 // 3. The scanner is now PAUSED. The scanResultListener below will resume it.

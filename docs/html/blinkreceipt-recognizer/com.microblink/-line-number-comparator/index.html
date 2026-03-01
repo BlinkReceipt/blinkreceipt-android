@@ -1,0 +1,355 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LineNumberComparator</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-recognizer/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-recognizer/release" data-filter=":blinkreceipt-recognizer/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-recognizer::com.microblink/LineNumberComparator///PointingToDeclaration//70082555">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-recognizer</a><span class="delimiter">/</span><a href="../index.html">com.microblink</a><span class="delimiter">/</span><span class="current">LineNumberComparator</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Line</span><wbr><span>Number</span><wbr><span><span>Comparator</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">LineNumberComparator</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="../../../blinkreceipt-core/com.microblink.core/-product/index.html">Product</a><span class="token operator">&gt; </span></div><p class="paragraph">Created by nawilliams on 2/2/18.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="1565824696%2FConstructors%2F70082555" anchor-label="LineNumberComparator" id="1565824696%2FConstructors%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-line-number-comparator.html"><span>Line</span><wbr><span>Number</span><wbr><span><span>Comparator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1565824696%2FConstructors%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-508419223%2FFunctions%2F70082555" anchor-label="compare" id="-508419223%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="compare.html"><span><span>compare</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-508419223%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="compare.html"><span class="token function">compare</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>o1<span class="token operator">: </span><a href="../../../blinkreceipt-core/com.microblink.core/-product/index.html">Product</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>o2<span class="token operator">: </span><a href="../../../blinkreceipt-core/com.microblink.core/-product/index.html">Product</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1666741532%2FFunctions%2F70082555" anchor-label="comparing" id="-1666741532%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1666741532%2FFunctions%2F70082555"><span><span>comparing</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1666741532%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#-1666741532%2FFunctions%2F70082555">T</a><span class="token punctuation">, </span><a href="index.html#-1666741532%2FFunctions%2F70082555">U</a><span class="token operator">&gt; </span><a href="index.html#-1666741532%2FFunctions%2F70082555"><span class="token function">comparing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword">in </span><a href="index.html#-1666741532%2FFunctions%2F70082555">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword">out </span><a href="index.html#-1666741532%2FFunctions%2F70082555">U</a><span class="token punctuation">, </span></span><span class="parameter ">keyComparator<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#-1666741532%2FFunctions%2F70082555">U</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#-1666741532%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1303451408%2FFunctions%2F70082555" anchor-label="comparingDouble" id="1303451408%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1303451408%2FFunctions%2F70082555"><span>comparing</span><wbr><span><span>Double</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1303451408%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#1303451408%2FFunctions%2F70082555">T</a><span class="token operator">&gt; </span><a href="index.html#1303451408%2FFunctions%2F70082555"><span class="token function">comparingDouble</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToDoubleFunction.html">ToDoubleFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#1303451408%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#1303451408%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="922328436%2FFunctions%2F70082555" anchor-label="comparingInt" id="922328436%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#922328436%2FFunctions%2F70082555"><span>comparing</span><wbr><span><span>Int</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="922328436%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#922328436%2FFunctions%2F70082555">T</a><span class="token operator">&gt; </span><a href="index.html#922328436%2FFunctions%2F70082555"><span class="token function">comparingInt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToIntFunction.html">ToIntFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#922328436%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#922328436%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1685732816%2FFunctions%2F70082555" anchor-label="comparingLong" id="-1685732816%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1685732816%2FFunctions%2F70082555"><span>comparing</span><wbr><span><span>Long</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1685732816%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#-1685732816%2FFunctions%2F70082555">T</a><span class="token operator">&gt; </span><a href="index.html#-1685732816%2FFunctions%2F70082555"><span class="token function">comparingLong</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToLongFunction.html">ToLongFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#-1685732816%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#-1685732816%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1375967232%2FFunctions%2F70082555" anchor-label="naturalOrder" id="-1375967232%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1375967232%2FFunctions%2F70082555"><span>natural</span><wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1375967232%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#-1375967232%2FFunctions%2F70082555">T</a><span class="token operator"> : </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#-1375967232%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt; </span><a href="index.html#-1375967232%2FFunctions%2F70082555"><span class="token function">naturalOrder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#-1375967232%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2032659275%2FFunctions%2F70082555" anchor-label="nullsFirst" id="2032659275%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2032659275%2FFunctions%2F70082555"><span>nulls</span><wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2032659275%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#2032659275%2FFunctions%2F70082555">T</a><span class="token operator">&gt; </span><a href="index.html#2032659275%2FFunctions%2F70082555"><span class="token function">nullsFirst</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">comparator<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#2032659275%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#2032659275%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1132760807%2FFunctions%2F70082555" anchor-label="nullsLast" id="-1132760807%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1132760807%2FFunctions%2F70082555"><span>nulls</span><wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1132760807%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#-1132760807%2FFunctions%2F70082555">T</a><span class="token operator">&gt; </span><a href="index.html#-1132760807%2FFunctions%2F70082555"><span class="token function">nullsLast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">comparator<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#-1132760807%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#-1132760807%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="208665987%2FFunctions%2F70082555" anchor-label="reversed" id="208665987%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#208665987%2FFunctions%2F70082555"><span><span>reversed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="208665987%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#208665987%2FFunctions%2F70082555"><span class="token function">reversed</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-900409095%2FFunctions%2F70082555" anchor-label="reverseOrder" id="-900409095%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-900409095%2FFunctions%2F70082555"><span>reverse</span><wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-900409095%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="index.html#-900409095%2FFunctions%2F70082555">T</a><span class="token operator"> : </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html#-900409095%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt; </span><a href="index.html#-900409095%2FFunctions%2F70082555"><span class="token function">reverseOrder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="index.html#-900409095%2FFunctions%2F70082555">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-550841764%2FFunctions%2F70082555" anchor-label="thenComparing" id="-550841764%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-550841764%2FFunctions%2F70082555"><span>then</span><wbr><span><span>Comparing</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-550841764%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#-550841764%2FFunctions%2F70082555"><span class="token function">thenComparing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1235555955%2FFunctions%2F70082555" anchor-label="thenComparingDouble" id="-1235555955%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1235555955%2FFunctions%2F70082555"><span>then</span><wbr><span>Comparing</span><wbr><span><span>Double</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1235555955%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#-1235555955%2FFunctions%2F70082555"><span class="token function">thenComparingDouble</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToDoubleFunction.html">ToDoubleFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="236868017%2FFunctions%2F70082555" anchor-label="thenComparingInt" id="236868017%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#236868017%2FFunctions%2F70082555"><span>then</span><wbr><span>Comparing</span><wbr><span><span>Int</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="236868017%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#236868017%2FFunctions%2F70082555"><span class="token function">thenComparingInt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToIntFunction.html">ToIntFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1011768109%2FFunctions%2F70082555" anchor-label="thenComparingLong" id="1011768109%2FFunctions%2F70082555" data-filterable-set=":blinkreceipt-recognizer/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-recognizer/release" data-filterable-set=":blinkreceipt-recognizer/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1011768109%2FFunctions%2F70082555"><span>then</span><wbr><span>Comparing</span><wbr><span><span>Long</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1011768109%2FFunctions%2F70082555"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-recognizer/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#1011768109%2FFunctions%2F70082555"><span class="token function">thenComparingLong</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyExtractor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/ToLongFunction.html">ToLongFunction</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

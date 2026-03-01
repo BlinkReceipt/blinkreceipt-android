@@ -17,7 +17,7 @@ To add the sdk to your android project please follow these steps:
       ```groovy
       dependencies {
           implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
-      
+
           implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
           implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
       }
@@ -28,20 +28,20 @@ Initialize the `BlinkReceiptDigitalSdk` in your application class.
 === "Kotlin"
       ```kotlin
       class BlinkApplication : Application() {
-      
+
           override fun onCreate() {
               super.onCreate()
-      
+
               BlinkReceiptDigitalSdk.initialize(this, object : InitializeCallback {
-      
+
                   override fun onComplete() {
-      
+
                   }
-      
+
                   override fun onException(e: Throwable) {
-      
+
                   }
-      
+
               })
           }
       }

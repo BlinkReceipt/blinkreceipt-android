@@ -602,27 +602,27 @@ Blink Receipt Recognizer
 
 ## 1.8.3
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to date extraction in CA, US 
-- Improvements to Last 4 CC extraction in US 
+- Improvements to date extraction in CA, US
+- Improvements to Last 4 CC extraction in US
 - Improvements to merchant detection in UK
 
 ## 1.8.4
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Merchant detection improvements in DE 
-- Improvements to sales tax extraction if sales tax exemption is found on receipt. 
+- Merchant detection improvements in DE
+- Improvements to sales tax extraction if sales tax exemption is found on receipt.
 - Improvements to QTY extraction in US for Albertsons banners and Lowe’s receipts
 - Updated to target API Level 34
 
 ## 1.8.5
 - Improvements to basket/product extraction for Loblaws Banners in Canada (CA)
-- Improvements to QTY extraction in US for Albertsons banners 
+- Improvements to QTY extraction in US for Albertsons banners
 - Improvements to Last 4 CC extraction in US
 
 ## 1.8.6
 - **BREAKING CHANGE** Removed `events` constructor parameter from `PdfClient`
 - Fixed an issue where onDeviceOcr() was not returned with the correct value
-- Improvements to QTY and weight extraction in US for various retailers 
-- Improvements to date extraction in CA, US 
+- Improvements to QTY and weight extraction in US for various retailers
+- Improvements to date extraction in CA, US
 - Improvements to store state extraction in the US
 - Stability fixes and improvements
 
@@ -684,11 +684,11 @@ Blink Receipt Recognizer
 
 ## 1.9.5
 - Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
-- Full Price and Discount Improvements - US 
+- Full Price and Discount Improvements - US
   - Improvements on Full Price extraction (price before any discounts)
-  - Enhanced detection, extraction and mapping of discounts to individual products. 
+  - Enhanced detection, extraction and mapping of discounts to individual products.
 - Improvements to Australian Receipts
-  - Enhanced receipt extraction for Australian transactions. 
+  - Enhanced receipt extraction for Australian transactions.
   - Optimized handling of GST and other tax-related fields.
 - Add support for armeabi-v7a
 - ***Breaking Change*** Changed ScanResults barcode type from String to a List
@@ -709,43 +709,43 @@ Blink Receipt Recognizer
 
 ## 1.9.8
 - Unsupported PDF files now return a failure code instead of an empty response, enabling applications to inform the user.
-- Merchant Detection Improvements 
-  - Enhanced merchant detection models for the US, The Netherlands, and Germany, improving accuracy and consistency across regions. 
-- Stability Improvements 
-  - Addressed an issue that could cause unexpected crashes in certain scenarios, improving overall reliability 
-- Basket Data Enhancements – Germany 
+- Merchant Detection Improvements
+  - Enhanced merchant detection models for the US, The Netherlands, and Germany, improving accuracy and consistency across regions.
+- Stability Improvements
+  - Addressed an issue that could cause unexpected crashes in certain scenarios, improving overall reliability
+- Basket Data Enhancements – Germany
   - Improved extraction accuracy for basket-level details, including product quantities, promotions, and pricing.
 
 ## 1.9.9
 - ***Breaking Change*** minSDK set to 23 | targetSDK set to 36
 - Upgrade Java compilation target from version 8 to 17 across all modules
     - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
-- French Canadian Date Support 
-  - Enhanced date recognition to support French Canadian formats in Canada. 
-- Promotion Detection in German Receipts 
-  - Improved accuracy when identifying promotions on German receipts. 
-- General Stability 
+- French Canadian Date Support
+  - Enhanced date recognition to support French Canadian formats in Canada.
+- Promotion Detection in German Receipts
+  - Improved accuracy when identifying promotions on German receipts.
+- General Stability
   - Additional stability improvements across all platforms.
 
 ## 1.9.10
 - Extraction Enhancements (United States)
-  - Improved handling of fuel receipts from gas and convenience retailers, increased accuracy of item and quantity extraction (including Dollar General), and overall improvements to product data consistency. 
+  - Improved handling of fuel receipts from gas and convenience retailers, increased accuracy of item and quantity extraction (including Dollar General), and overall improvements to product data consistency.
 - Promotion Detection (Germany)
-  - Refinements to promotion matching and validation workflows to improve detection accuracy across receipt types. 
+  - Refinements to promotion matching and validation workflows to improve detection accuracy across receipt types.
 - Sales Tax Extraction (Australia)
   - Improved parsing of sales tax fields for better consistency.
 - Optimized `ImageClient.recognize()` implementation by removing redundant License Check call to make it faster and more reliable.
   - This avoids race condition issues where the check would fail intermittently, hence throwing "Not Authorized" Exception.
-- Added Mobile Payment as a recognized method of payment for U.S. receipts. 
+- Added Mobile Payment as a recognized method of payment for U.S. receipts.
 - Implemented overall extraction and stability improvements for enhanced accuracy and reliability.
-- Overall Stability Improvements 
+- Overall Stability Improvements
   - General enhancements to improve reliability and performance across extraction workflows
 
 ## 1.9.11
 - Extraction Enhancements (United States, Germany, France)
 - Germany
-  - Improved how German addresses are recognized and formatted. 
-  - Better detection of taxes and discounts on German and French receipts. 
+  - Improved how German addresses are recognized and formatted.
+  - Better detection of taxes and discounts on German and French receipts.
   - Added support for identifying fuel products.
 - United States & Canada
   - United States & Canada
@@ -767,4 +767,8 @@ Blink Receipt Recognizer
 
 ## 1.9.14
 - Extraction Improvements: Improved Sales Tax, Subtotal, and Promotion capture across US, France, and Germany receipts.
+## 2.0.0
+- **BREAKING CHANGE** Removed all classes related to the old Camera framework in favor of the new CameraX integration
+- **BREAKING CHANGE** Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
 - Revert fix to CPR-1233: Slow behavior of Android SDK
+- Stability fixes and improvements

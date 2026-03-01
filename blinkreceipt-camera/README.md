@@ -1,3 +1,7 @@
+# Module blinkreceipt-camera
+
+# Package com.microblink.camera
+
 # Blink Receipt Camera SDK
 
 Blink Receipt Camera SDK for Android is an SDK that enables you to easily add camera functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
@@ -13,3 +17,5 @@ ARM64 is the new processor architecture that most new devices use. ARM64 process
 - Min SDK 23+
 - Compile SDK: 36+
 - Java 17+
+
+# Package com.microblink.camera

@@ -1,29 +1,35 @@
 String resource mapping
 
-| string key                                         | English(Default)                                                          | Preview
-|----------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| `recognizer_receipt_edge`                          | R\ne\nc\ne\ni\np\nt\n\nE\nd\ng\ne                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `scan_characteristics_option_date`                 | Date                                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `scan_characteristics_option_total`                | Total                                                                     | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `scan_characteristics_option_merchant`             | Merchant                                                                  | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `scan_characteristics_option_subtotal`             | Subtotal                                                                  |                                                                                  |
-| `scan_characteristics_option_taxes`                | Taxes                                                                  |                                                                                  |
-| `scan_characteristics_option_time`                 | Time                                                                  |                                                                                  |
-| `scan_characteristics_option_store_address`        | Store Address                                                                  |                                                                                  |
-| `scan_characteristics_option_store_city`           | Store City                                                                  |                                                                                  |
-| `scan_characteristics_option_store_country`        | Store Country                                                                  |                                                                                  |
-| `scan_characteristics_option_store_state`          | Store State                                                                  |                                                                                  |
-| `scan_characteristics_option_store_zip`            | Store Zip                                                                  |                                                                                  |
-| `scan_characteristics_option_store_phone`          | Store Phone                                                                  |                                                                                  |
-| `recognizer_camera_long_receipt_add_photos_hint`   | Long receipt? Add Photos.                                                 | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_4.png){ width="300" } |
-| `recognizer_camera_initial_instruction`            | Align left and right receipt edge.<br/>Long receipt? Take multiple photos |                                                                                  |
-| `recognizer_align_image_hint`                      | Start next photo here.                                                    | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_6.png){ width="300" } |
-| `recognizer_blurry_image_tooltip`                  | Image seems blurry. You can<br/>try again and tap to focus.               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
-| `recognizer_missing_data_tooltip`                  | Data missing? You can still hit<br/>checkmark to finish scan              |                                                                                  |
-| `recognizer_blurry_image_btn`                      | Dismiss                                                                   |                                                                                  |
-| `recognizer_move_closer_suggestion`                | Move Closer                                                               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_5.png){ width="300" } |
-| `recognizer_move_further_suggestion`               | Move Further                                                              |                                                                                  |
-| `confirm`                                          | confirm                                                                   |                                                                                  |
+| string key                                                           | English(Default)                                                          | Preview                                                                          
+|----------------------------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| `recognizer_receipt_edge`                                            | R\ne\nc\ne\ni\np\nt\n\nE\nd\ng\ne                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_date`                                   | Date                                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_total`                                  | Total                                                                     | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_merchant`                               | Merchant                                                                  | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `scan_characteristics_option_subtotal`                               | Subtotal                                                                  |                                                                                  |
+| `scan_characteristics_option_taxes`                                  | Taxes                                                                     |                                                                                  |
+| `scan_characteristics_option_time`                                   | Time                                                                      |                                                                                  |
+| `scan_characteristics_option_store_address`                          | Store Address                                                             |                                                                                  |
+| `scan_characteristics_option_store_city`                             | Store City                                                                |                                                                                  |
+| `scan_characteristics_option_store_country`                          | Store Country                                                             |                                                                                  |
+| `scan_characteristics_option_store_state`                            | Store State                                                               |                                                                                  |
+| `scan_characteristics_option_store_zip`                              | Store Zip                                                                 |                                                                                  |
+| `scan_characteristics_option_store_phone`                            | Store Phone                                                               |                                                                                  |
+| `recognizer_camera_long_receipt_add_photos_hint`                     | Long receipt? Add Photos.                                                 | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_4.png){ width="300" } |
+| `recognizer_camera_initial_instruction`                              | Align left and right receipt edge.<br/>Long receipt? Take multiple photos |                                                                                  |
+| `recognizer_align_image_hint`                                        | Start next photo here.                                                    | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_6.png){ width="300" } |
+| `recognizer_blurry_image_tooltip`                                    | Image seems blurry. You can<br/>try again and tap to focus.               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
+| `recognizer_missing_data_tooltip`                                    | Data missing? You can still hit<br/>checkmark to finish scan              |                                                                                  |
+| `recognizer_blurry_image_btn`                                        | Dismiss                                                                   |                                                                                  |
+| `recognizer_move_closer_suggestion`                                  | Move Closer                                                               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_5.png){ width="300" } |
+| `recognizer_move_further_suggestion`                                 | Move Further                                                              |                                                                                  |
+| `recognizer_permission_dialog_title`                                 | Camera access needed                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_7.png){ width="300" } |
+| `recognizer_permission_dialog_message`                               | This app needs access to your camera to continue.                         |                                                                                  |
+| `recognizer_grant_access`                                            | Grant Access                                                              |                                                                                  |
+| `recognizer_permission_dialog_title_permanently_denied`              | Camera permission required                                                | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_8.png){ width="300" } |
+| `recognizer_permission_dialog_message_permanently_denied`            | Camera access is currently disabled. Enable it in Settings to continue.   |                                                                                  |
+| `recognizer_permission_dialog_positive_button_permanently_denied`    | Go to Settings                                                            |                                                                                  |
+| `recognizer_permission_dialog_negative_button`                       | Cancel                                                                    |                                                                                  |
 
 
 You can apply your own translation on each string entry. This can be done by doing the following steps:
@@ -59,7 +65,14 @@ You can apply your own translation on each string entry. This can be done by doi
     <string name="recognizer_blurry_image_btn">Zurückweisen</string>
     <string name="recognizer_move_closer_suggestion">Komm näher</string>
     <string name="recognizer_move_further_suggestion">Bewegen Sie sich weiter</string>
-    <string name="confirm">bestätigen</string>
+    <string name="recognizer_permission_dialog_title_permanently_denied">Kameraerlaubnis erforderlich</string>
+    <string name="recognizer_permission_dialog_message_permanently_denied">Der Kamerazugriff ist derzeit deaktiviert. Aktivieren Sie ihn in den Einstellungen, um fortzufahren.</string>
+    <string name="recognizer_permission_dialog_positive_button_permanently_denied">Gehen Sie zu Einstellungen</string>
+    <string name="recognizer_permission_dialog_title">Kamerazugriff erforderlich</string>
+    <string name="recognizer_permission_dialog_message">Diese App benötigt Zugriff auf Ihre Kamera, um fortzufahren.</string>
+    <string name="recognizer_permission_dialog_negative_button">Abbrechen</string>
+    <string name="recognizer_grant_access">Zugriff gewähren</string>
+    
 </resources>
 ```
 

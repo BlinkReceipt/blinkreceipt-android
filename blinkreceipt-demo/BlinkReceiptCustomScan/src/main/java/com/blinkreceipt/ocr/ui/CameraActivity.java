@@ -34,7 +34,12 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.Objects;
 
-public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import kotlin.Unit;
+
+public class CameraActivity extends AppCompatActivity implements CameraRecognizerCallback, CameraCaptureListener {
 
     private ActivityCameraScanBinding binding;
 
@@ -100,33 +105,16 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
             if (success) {
                 isTorchOn = !isTorchOn;
             }
+
+            return Unit.INSTANCE;
         }));
 
         final Button captureFrame = findViewById(R.id.capture_photo);
 
-        captureFrame.setOnClickListener(v -> recognizerView.takePicture(new CameraCaptureListener() {
-
-            @Override
-            public void onCaptured(@NonNull BitmapResult results) {
-                recognizerView.confirmPicture(results);
-
-                Toast.makeText(getApplicationContext(), R.string.captured_photo, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onException(@NonNull Throwable e) {
-                Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-            }
-
-        }));
-
-        RectF regionOfInterest = new RectF(.05f, .10f, .95f, .90f);
+        captureFrame.setOnClickListener(v -> recognizerView.takePicture());
 
         recognizerView.recognizerCallback(this);
-
-        recognizerView.setMeteringAreas(new RectF[]{
-                regionOfInterest
-        }, true);
+        recognizerView.cameraCaptureListener(this);
 
         try {
             recognizerView.initialize(Objects.requireNonNull(getIntent()
@@ -137,65 +125,7 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
             finish();
         }
 
-        recognizerView.create();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        if (recognizerView != null) {
-            recognizerView.start();
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if (recognizerView != null) {
-            recognizerView.resume();
-        }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        if (recognizerView != null) {
-            recognizerView.pause();
-        }
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        if (recognizerView != null) {
-            recognizerView.stop();
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        if (recognizerView != null) {
-            try {
-                recognizerView.destroy();
-            } catch (Exception e) {
-                Log.e(TAG, "failure in onDestroy", e);
-            }
-        }
-    }
-
-    @Override
-    public void onConfigurationChanged(@NotNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        if (recognizerView != null) {
-            recognizerView.changeConfiguration(newConfig);
-        }
+        recognizerView.lifecycle(this);
     }
 
     @Override
@@ -240,7 +170,10 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     }
 
     @Override
-    public void onPreviewStopped() {
+    public void onCaptured(@NonNull BitmapResult bitmapResult) {
+        recognizerView.confirmPicture(bitmapResult);
+
+        Toast.makeText(getApplicationContext(), R.string.captured_photo, Toast.LENGTH_SHORT).show();
     }
 
     @Override

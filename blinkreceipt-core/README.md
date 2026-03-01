@@ -1,3 +1,7 @@
+# Module blinkreceipt-core
+
+# Package com.microblink.core
+
 # Blink Receipt Core SDK
 
 Blink Receipt Core SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
@@ -32,3 +36,5 @@ dependencies {
 - Min SDK 23+
 - Compile SDK: 36+
 - Java 17+
+
+# Package com.microblink.core

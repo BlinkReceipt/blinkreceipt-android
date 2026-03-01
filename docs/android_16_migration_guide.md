@@ -4,19 +4,19 @@ This guide provides essential steps for updating your app to target Android 16 (
 
 With the release of Android 16, Google has introduced several changes to enhance privacy, security, and user experience. To comply with Google Play's requirements and leverage the latest platform features, you must update your app's `targetSdkVersion` to 36.
 
-Our latest SDK version, `{{ blinkreceipt.release }}`, is fully compatible with Android 16. Please update to this version before proceeding.
+Since BlinkReceipt SDK version [1.9.9](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.9), our SDK is already fully compatible with Android 16. Please update to this version or newer.
 
 ## Notes
-**Min SDK 23:** 
+**Min SDK 23:**
 Apps running on devices below API 23 can still use your existing app, but they won’t be able to upgrade once the new version ships.
 
-**Target API 36:** 
+**Target API 36:**
 You only need to compile against it; there’s no risk unless our SDK starts using API 36 features (which it doesn’t today).
 
-**Java 17:** 
-Our upcoming SDK (`{{ blinkreceipt.release }}`) targets JVM 17, but this won’t break client apps as long as you’re using reasonably up-to-date build tools.
+**Java 17:**
+Starting from BlinkReceipt SDK version [1.9.9](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.9), the SDK now targets JVM 17, but this won’t break client apps as long as you’re using reasonably up-to-date build tools.
 
-**React Native:** 
+**React Native:**
 Android 16 support requires the latest RN version, but that’s separate from our SDK upgrade.
 
 ## Prerequisites
@@ -27,12 +27,12 @@ Before you begin, please ensure you have the following:
 2. Update the **Android Gradle Plugin** to the version recommended for targeting API 36.
     * See the [Android Gradle plugin](https://developer.android.com/build/releases/gradle-plugin#updating-gradle) official documentation to see what required plugin versions you'll use.
 
-3. Update our SDK in your `build.gradle` or `build.gradle.kts` file:
+3. Update our SDK to version [1.9.9](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.9) or newer in your `build.gradle` or `build.gradle.kts` file:
 ```groovy
 // build.gradle
 dependencies {
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
-    
+
     implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     // ...

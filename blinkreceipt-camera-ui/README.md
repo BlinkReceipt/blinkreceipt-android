@@ -1,4 +1,10 @@
+# Module blinkreceipt-camera-ui
+
+# Package com.microblink.camera.ui
+
 # Blink Camera UI SDK
+
+The Blink Camera UI SDK provides a Customizable Out-of-the-Box Camera Experience for capturing receipt images.
 
 ## Table Of Contents
 
@@ -349,3 +355,5 @@ In the previous section we mentioned how users could define their own theme and 
         <item name="tooltip_placement">start</item>
     </style>
 ```
+
+# Package com.microblink.camera.ui
