@@ -192,6 +192,7 @@
 
 ## 1.4.9
 - Stability fixes and improvements
+
 ## 2.0.0
 - Migrated to Android CameraX to improve camera stability and reliability during receipt capture
 - More consistent camera behavior across a wide range of Android devices and OS versions
