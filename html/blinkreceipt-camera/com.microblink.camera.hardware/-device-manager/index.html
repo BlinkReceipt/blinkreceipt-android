@@ -1,0 +1,531 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>DeviceManager</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-camera/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-camera/release" data-filter=":blinkreceipt-camera/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-camera::com.microblink.camera.hardware/DeviceManager///PointingToDeclaration//-1314995494">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-camera</a><span class="delimiter">/</span><a href="../index.html">com.microblink.camera.hardware</a><span class="delimiter">/</span><span class="current">DeviceManager</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Device</span><wbr><span><span>Manager</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">DeviceManager</a></div><p class="paragraph">Class responsible for providing information about current user's device </p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">cerovec</p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="101186092%2FFunctions%2F-1314995494" anchor-label="adjustZoomLevel" id="101186092%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="adjust-zoom-level.html"><span>adjust</span><wbr><span>Zoom</span><wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="101186092%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="adjust-zoom-level.html"><span class="token function">adjustZoomLevel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">originalZoomLevel<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="78354323%2FFunctions%2F-1314995494" anchor-label="deviceHasCamera" id="78354323%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="device-has-camera.html"><span>device</span><wbr><span>Has</span><wbr><span><span>Camera</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="78354323%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="device-has-camera.html"><span class="token function">deviceHasCamera</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Checks if device has a camera</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="95663246%2FFunctions%2F-1314995494" anchor-label="getAndroidRelease" id="95663246%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-android-release.html"><span>get</span><wbr><span>Android</span><wbr><span><span>Release</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="95663246%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-android-release.html"><span class="token function">getAndroidRelease</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="brief ">Obtains android release version.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="516365533%2FFunctions%2F-1314995494" anchor-label="getAndroidVersion" id="516365533%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-android-version.html"><span>get</span><wbr><span>Android</span><wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="516365533%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-android-version.html"><span class="token function">getAndroidVersion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-version/index.html">Version</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1376180102%2FFunctions%2F-1314995494" anchor-label="getCameraInitDelay" id="1376180102%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-camera-init-delay.html"><span>get</span><wbr><span>Camera</span><wbr><span>Init</span><wbr><span><span>Delay</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1376180102%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-camera-init-delay.html"><span class="token function">getCameraInitDelay</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1261182811%2FFunctions%2F-1314995494" anchor-label="getContext" id="-1261182811%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-context.html"><span>get</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1261182811%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-context.html"><span class="token function">getContext</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span></div><div class="brief ">Context getter</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2056003696%2FFunctions%2F-1314995494" anchor-label="getDevice" id="-2056003696%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-device.html"><span>get</span><wbr><span><span>Device</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2056003696%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-device.html"><span class="token function">getDevice</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="brief ">Obtains the device name</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2019768062%2FFunctions%2F-1314995494" anchor-label="getDeviceInfo" id="-2019768062%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-device-info.html"><span>get</span><wbr><span>Device</span><wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2019768062%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-device-info.html"><span class="token function">getDeviceInfo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-device-info/index.html">DeviceInfo</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="549382129%2FFunctions%2F-1314995494" anchor-label="getInstance" id="549382129%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-instance.html"><span>get</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="549382129%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-instance.html"><span class="token function">getInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">DeviceManager</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-605816907%2FFunctions%2F-1314995494" anchor-label="getManufacturer" id="-605816907%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-manufacturer.html"><span>get</span><wbr><span><span>Manufacturer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-605816907%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-manufacturer.html"><span class="token function">getManufacturer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="brief ">Obtains manufacturer of device</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1589362524%2FFunctions%2F-1314995494" anchor-label="getMaxCPUFrequency" id="1589362524%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-max-c-p-u-frequency.html"><span>get</span><wbr><span>Max</span><wbr><span><span>CPUFrequency</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1589362524%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-max-c-p-u-frequency.html"><span class="token function">getMaxCPUFrequency</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-780477909%2FFunctions%2F-1314995494" anchor-label="getModel" id="-780477909%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-model.html"><span>get</span><wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-780477909%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-model.html"><span class="token function">getModel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="brief ">Obtains the device model</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-610668768%2FFunctions%2F-1314995494" anchor-label="getNumberOfCores" id="-610668768%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-number-of-cores.html"><span>get</span><wbr><span>Number</span><wbr><span>Of</span><wbr><span><span>Cores</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-610668768%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-number-of-cores.html"><span class="token function">getNumberOfCores</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="187205120%2FFunctions%2F-1314995494" anchor-label="getOptimalBackFacingPreviewSize" id="187205120%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-optimal-back-facing-preview-size.html"><span>get</span><wbr><span>Optimal</span><wbr><span>Back</span><wbr><span>Facing</span><wbr><span>Preview</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="187205120%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-optimal-back-facing-preview-size.html"><span class="token function">getOptimalBackFacingPreviewSize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.microblink.camera.hardware.camera.camera1.strategy/-camera-strategy/-preview-size/index.html">CameraStrategy.PreviewSize</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="436340876%2FFunctions%2F-1314995494" anchor-label="getOptimalFrontFacingPreviewSize" id="436340876%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-optimal-front-facing-preview-size.html"><span>get</span><wbr><span>Optimal</span><wbr><span>Front</span><wbr><span>Facing</span><wbr><span>Preview</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="436340876%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-optimal-front-facing-preview-size.html"><span class="token function">getOptimalFrontFacingPreviewSize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.microblink.camera.hardware.camera.camera1.strategy/-camera-strategy/-preview-size/index.html">CameraStrategy.PreviewSize</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1802542928%2FFunctions%2F-1314995494" anchor-label="getProcessorABI" id="-1802542928%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-processor-a-b-i.html"><span>get</span><wbr><span>Processor</span><wbr><span><span>ABI</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1802542928%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-processor-a-b-i.html"><span class="token function">getProcessorABI</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="brief ">Returns the processor ABI version of the user's device</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="351490856%2FFunctions%2F-1314995494" anchor-label="getSdkVersion" id="351490856%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-sdk-version.html"><span>get</span><wbr><span>Sdk</span><wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="351490856%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-sdk-version.html"><span class="token function">getSdkVersion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief ">Returns the API version of the OS that user's device runs</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1460660%2FFunctions%2F-1314995494" anchor-label="hasDeviceListsLoaded" id="1460660%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-device-lists-loaded.html"><span>has</span><wbr><span>Device</span><wbr><span>Lists</span><wbr><span><span>Loaded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1460660%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="has-device-lists-loaded.html"><span class="token function">hasDeviceListsLoaded</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="659896436%2FFunctions%2F-1314995494" anchor-label="isDeviceLandscapeLeftTablet" id="659896436%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-device-landscape-left-tablet.html"><span>is</span><wbr><span>Device</span><wbr><span>Landscape</span><wbr><span>Left</span><wbr><span><span>Tablet</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="659896436%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-device-landscape-left-tablet.html"><span class="token function">isDeviceLandscapeLeftTablet</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="419885998%2FFunctions%2F-1314995494" anchor-label="isDeviceSupported" id="419885998%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-device-supported.html"><span>is</span><wbr><span>Device</span><wbr><span><span>Supported</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="419885998%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-device-supported.html"><span class="token function">isDeviceSupported</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Method finds out if this device is supported</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1693246904%2FFunctions%2F-1314995494" anchor-label="isDisplayOrientationBlacklisted" id="1693246904%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-display-orientation-blacklisted.html"><span>is</span><wbr><span>Display</span><wbr><span>Orientation</span><wbr><span><span>Blacklisted</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1693246904%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-display-orientation-blacklisted.html"><span class="token function">isDisplayOrientationBlacklisted</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Checks if the current device has blacklisted setDisplayOrientation method.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-719916177%2FFunctions%2F-1314995494" anchor-label="isFocusCallbackUntrusty" id="-719916177%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-focus-callback-untrusty.html"><span>is</span><wbr><span>Focus</span><wbr><span>Callback</span><wbr><span><span>Untrusty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-719916177%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-focus-callback-untrusty.html"><span class="token function">isFocusCallbackUntrusty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Checks if the current device has untrusty autofocus callback, i.e.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1373171722%2FFunctions%2F-1314995494" anchor-label="isForceUseLegacyCameraAPI" id="-1373171722%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-force-use-legacy-camera-a-p-i.html"><span>is</span><wbr><span>Force</span><wbr><span>Use</span><wbr><span>Legacy</span><wbr><span>Camera</span><wbr><span><span>API</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1373171722%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-force-use-legacy-camera-a-p-i.html"><span class="token function">isForceUseLegacyCameraAPI</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1654216518%2FFunctions%2F-1314995494" anchor-label="isMeteringAreaBuggy" id="1654216518%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-metering-area-buggy.html"><span>is</span><wbr><span>Metering</span><wbr><span>Area</span><wbr><span><span>Buggy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1654216518%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-metering-area-buggy.html"><span class="token function">isMeteringAreaBuggy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1143450514%2FFunctions%2F-1314995494" anchor-label="isPhaseAutofocusBuggy" id="-1143450514%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-phase-autofocus-buggy.html"><span>is</span><wbr><span>Phase</span><wbr><span>Autofocus</span><wbr><span><span>Buggy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1143450514%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-phase-autofocus-buggy.html"><span class="token function">isPhaseAutofocusBuggy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="434753554%2FFunctions%2F-1314995494" anchor-label="setup" id="434753554%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="setup.html"><span><span>setup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="434753554%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="setup.html"><span class="token function">setup</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span></span><span class="parameter ">assetsRootFolder<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="42729215%2FFunctions%2F-1314995494" anchor-label="shouldPreferTextureView" id="42729215%2FFunctions%2F-1314995494" data-filterable-set=":blinkreceipt-camera/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-camera/release" data-filterable-set=":blinkreceipt-camera/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="should-prefer-texture-view.html"><span>should</span><wbr><span>Prefer</span><wbr><span>Texture</span><wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="42729215%2FFunctions%2F-1314995494"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-camera/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="should-prefer-texture-view.html"><span class="token function">shouldPreferTextureView</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

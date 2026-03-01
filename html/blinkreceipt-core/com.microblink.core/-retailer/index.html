@@ -1,0 +1,1529 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Retailer</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-core/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-core/release" data-filter=":blinkreceipt-core/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-core::com.microblink.core/Retailer///PointingToDeclaration//1111006752">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-core</a><span class="delimiter">/</span><a href="../index.html">com.microblink.core</a><span class="delimiter">/</span><span class="current">Retailer</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Retailer</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">Retailer</a> : <span data-unresolved-link="android.os/Parcelable///PointingToDeclaration/">Parcelable</span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="ENTRY">
+        <h2 class="tableheader">Entries</h2>
+        <div class="table"><a data-name="-1030101083%2FClasslikes%2F1111006752" anchor-label="ACME" id="-1030101083%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-c-m-e/index.html">ACME</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1030101083%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-c-m-e/index.html">ACME</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="304115836%2FClasslikes%2F1111006752" anchor-label="ALBERTSONS" id="304115836%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-b-e-r-t-s-o-n-s/index.html">ALBERTSONS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="304115836%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-l-b-e-r-t-s-o-n-s/index.html">ALBERTSONS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-608827730%2FClasslikes%2F1111006752" anchor-label="ALBERTSONS_1" id="-608827730%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-b-e-r-t-s-o-n-s_1/index.html">ALBERTSONS_1</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-608827730%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-l-b-e-r-t-s-o-n-s_1/index.html">ALBERTSONS_1</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1321403119%2FClasslikes%2F1111006752" anchor-label="ALBERTSONS_2" id="1321403119%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-b-e-r-t-s-o-n-s_2/index.html">ALBERTSONS_2</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1321403119%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-l-b-e-r-t-s-o-n-s_2/index.html">ALBERTSONS_2</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1043333328%2FClasslikes%2F1111006752" anchor-label="ALBERTSONS_3" id="-1043333328%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-b-e-r-t-s-o-n-s_3/index.html">ALBERTSONS_3</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1043333328%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-l-b-e-r-t-s-o-n-s_3/index.html">ALBERTSONS_3</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1915707089%2FClasslikes%2F1111006752" anchor-label="AMAZON" id="-1915707089%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n/index.html">AMAZON</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1915707089%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-a-m-a-z-o-n/index.html">AMAZON</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-228648973%2FClasslikes%2F1111006752" anchor-label="BABIES_R_US" id="-228648973%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-a-b-i-e-s_-r_-u-s/index.html">BABIES_R_US</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-228648973%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-b-a-b-i-e-s_-r_-u-s/index.html">BABIES_R_US</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-310740804%2FClasslikes%2F1111006752" anchor-label="BED_BATH" id="-310740804%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-e-d_-b-a-t-h/index.html">BED_BATH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-310740804%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-b-e-d_-b-a-t-h/index.html">BED_BATH</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="605752927%2FClasslikes%2F1111006752" anchor-label="BESTBUY" id="605752927%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-e-s-t-b-u-y/index.html">BESTBUY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="605752927%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-b-e-s-t-b-u-y/index.html">BESTBUY</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2118923321%2FClasslikes%2F1111006752" anchor-label="BJS_WHOLESALE" id="-2118923321%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-j-s_-w-h-o-l-e-s-a-l-e/index.html">BJS_WHOLESALE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2118923321%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-b-j-s_-w-h-o-l-e-s-a-l-e/index.html">BJS_WHOLESALE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1416855742%2FClasslikes%2F1111006752" anchor-label="BURGER_KING" id="1416855742%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-u-r-g-e-r_-k-i-n-g/index.html">BURGER_KING</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1416855742%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-b-u-r-g-e-r_-k-i-n-g/index.html">BURGER_KING</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-697204380%2FClasslikes%2F1111006752" anchor-label="COSTCO" id="-697204380%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-s-t-c-o/index.html">COSTCO</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-697204380%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-c-o-s-t-c-o/index.html">COSTCO</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-339394915%2FClasslikes%2F1111006752" anchor-label="CVS" id="-339394915%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-v-s/index.html">CVS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-339394915%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-c-v-s/index.html">CVS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1226587180%2FClasslikes%2F1111006752" anchor-label="DUANE_READE" id="-1226587180%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-u-a-n-e_-r-e-a-d-e/index.html">DUANE_READE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1226587180%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-u-a-n-e_-r-e-a-d-e/index.html">DUANE_READE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1723561172%2FClasslikes%2F1111006752" anchor-label="FAMILY_DOLLAR" id="1723561172%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-a-m-i-l-y_-d-o-l-l-a-r/index.html">FAMILY_DOLLAR</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1723561172%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-f-a-m-i-l-y_-d-o-l-l-a-r/index.html">FAMILY_DOLLAR</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2042954619%2FClasslikes%2F1111006752" anchor-label="FRED_MEYER" id="-2042954619%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-r-e-d_-m-e-y-e-r/index.html">FRED_MEYER</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2042954619%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-f-r-e-d_-m-e-y-e-r/index.html">FRED_MEYER</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2029625937%2FClasslikes%2F1111006752" anchor-label="FRYS" id="2029625937%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-r-y-s/index.html">FRYS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2029625937%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-f-r-y-s/index.html">FRYS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-126476030%2FClasslikes%2F1111006752" anchor-label="GIANT" id="-126476030%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-i-a-n-t/index.html">GIANT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-126476030%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-g-i-a-n-t/index.html">GIANT</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="306823878%2FClasslikes%2F1111006752" anchor-label="HARRIS_TEETER" id="306823878%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-a-r-r-i-s_-t-e-e-t-e-r/index.html">HARRIS_TEETER</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="306823878%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-h-a-r-r-i-s_-t-e-e-t-e-r/index.html">HARRIS_TEETER</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-488119166%2FClasslikes%2F1111006752" anchor-label="HEB" id="-488119166%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-e-b/index.html">HEB</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-488119166%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-h-e-b/index.html">HEB</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-209277345%2FClasslikes%2F1111006752" anchor-label="HOME_DEPOT" id="-209277345%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-o-m-e_-d-e-p-o-t/index.html">HOME_DEPOT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-209277345%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-h-o-m-e_-d-e-p-o-t/index.html">HOME_DEPOT</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1209396190%2FClasslikes%2F1111006752" anchor-label="HYVEE" id="-1209396190%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-y-v-e-e/index.html">HYVEE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1209396190%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-h-y-v-e-e/index.html">HYVEE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="903046551%2FClasslikes%2F1111006752" anchor-label="JEWEL_OSCO" id="903046551%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-j-e-w-e-l_-o-s-c-o/index.html">JEWEL_OSCO</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="903046551%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-j-e-w-e-l_-o-s-c-o/index.html">JEWEL_OSCO</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-834708%2FClasslikes%2F1111006752" anchor-label="KING_SOOPERS" id="-834708%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-i-n-g_-s-o-o-p-e-r-s/index.html">KING_SOOPERS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-834708%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-k-i-n-g_-s-o-o-p-e-r-s/index.html">KING_SOOPERS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1035444226%2FClasslikes%2F1111006752" anchor-label="KMART" id="-1035444226%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-m-a-r-t/index.html">KMART</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1035444226%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-k-m-a-r-t/index.html">KMART</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="440585416%2FClasslikes%2F1111006752" anchor-label="KOHLS" id="440585416%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-o-h-l-s/index.html">KOHLS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="440585416%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-k-o-h-l-s/index.html">KOHLS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1068768151%2FClasslikes%2F1111006752" anchor-label="KROGER" id="1068768151%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-r-o-g-e-r/index.html">KROGER</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1068768151%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-k-r-o-g-e-r/index.html">KROGER</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-600572545%2FClasslikes%2F1111006752" anchor-label="LOWES" id="-600572545%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-o-w-e-s/index.html">LOWES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-600572545%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-l-o-w-e-s/index.html">LOWES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1966326554%2FClasslikes%2F1111006752" anchor-label="MACYS" id="-1966326554%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-a-c-y-s/index.html">MACYS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1966326554%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-m-a-c-y-s/index.html">MACYS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1606994018%2FClasslikes%2F1111006752" anchor-label="MARSHALLS" id="1606994018%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-a-r-s-h-a-l-l-s/index.html">MARSHALLS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1606994018%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-m-a-r-s-h-a-l-l-s/index.html">MARSHALLS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1451700945%2FClasslikes%2F1111006752" anchor-label="MEIJER" id="1451700945%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-e-i-j-e-r/index.html">MEIJER</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1451700945%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-m-e-i-j-e-r/index.html">MEIJER</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-969686182%2FClasslikes%2F1111006752" anchor-label="MILITARY_COMMISSARY" id="-969686182%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-i-l-i-t-a-r-y_-c-o-m-m-i-s-s-a-r-y/index.html">MILITARY_COMMISSARY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-969686182%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-m-i-l-i-t-a-r-y_-c-o-m-m-i-s-s-a-r-y/index.html">MILITARY_COMMISSARY</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-395082756%2FClasslikes%2F1111006752" anchor-label="OFFICE_DEPOT" id="-395082756%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-o-f-f-i-c-e_-d-e-p-o-t/index.html">OFFICE_DEPOT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-395082756%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-o-f-f-i-c-e_-d-e-p-o-t/index.html">OFFICE_DEPOT</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-283759572%2FClasslikes%2F1111006752" anchor-label="OFFICE_MAX" id="-283759572%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-o-f-f-i-c-e_-m-a-x/index.html">OFFICE_MAX</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-283759572%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-o-f-f-i-c-e_-m-a-x/index.html">OFFICE_MAX</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2104709768%2FClasslikes%2F1111006752" anchor-label="PETCO" id="2104709768%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-e-t-c-o/index.html">PETCO</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2104709768%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-p-e-t-c-o/index.html">PETCO</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2080536309%2FClasslikes%2F1111006752" anchor-label="PETSMART" id="2080536309%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-e-t-s-m-a-r-t/index.html">PETSMART</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2080536309%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-p-e-t-s-m-a-r-t/index.html">PETSMART</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1869266608%2FClasslikes%2F1111006752" anchor-label="POPEYES" id="1869266608%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-o-p-e-y-e-s/index.html">POPEYES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1869266608%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-p-o-p-e-y-e-s/index.html">POPEYES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1815772119%2FClasslikes%2F1111006752" anchor-label="PUBLIX" id="-1815772119%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-u-b-l-i-x/index.html">PUBLIX</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1815772119%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-p-u-b-l-i-x/index.html">PUBLIX</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-363795329%2FClasslikes%2F1111006752" anchor-label="SAFEWAY" id="-363795329%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-f-e-w-a-y/index.html">SAFEWAY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-363795329%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-a-f-e-w-a-y/index.html">SAFEWAY</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1773637105%2FClasslikes%2F1111006752" anchor-label="SAFEWAY_1" id="1773637105%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-f-e-w-a-y_1/index.html">SAFEWAY_1</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1773637105%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-a-f-e-w-a-y_1/index.html">SAFEWAY_1</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-591099342%2FClasslikes%2F1111006752" anchor-label="SAFEWAY_2" id="-591099342%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-f-e-w-a-y_2/index.html">SAFEWAY_2</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-591099342%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-a-f-e-w-a-y_2/index.html">SAFEWAY_2</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1781344386%2FClasslikes%2F1111006752" anchor-label="SAMS_CLUB" id="-1781344386%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-m-s_-c-l-u-b/index.html">SAMS_CLUB</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1781344386%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-a-m-s_-c-l-u-b/index.html">SAMS_CLUB</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1852543867%2FClasslikes%2F1111006752" anchor-label="SHAWS" id="-1852543867%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-w-s/index.html">SHAWS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1852543867%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-h-a-w-s/index.html">SHAWS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="744128717%2FClasslikes%2F1111006752" anchor-label="SEARS" id="744128717%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-a-r-s/index.html">SEARS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="744128717%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-e-a-r-s/index.html">SEARS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1282935095%2FClasslikes%2F1111006752" anchor-label="SHOPRITE" id="-1282935095%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-o-p-r-i-t-e/index.html">SHOPRITE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1282935095%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-h-o-p-r-i-t-e/index.html">SHOPRITE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="746449659%2FClasslikes%2F1111006752" anchor-label="SMITHS" id="746449659%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-i-t-h-s/index.html">SMITHS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="746449659%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-m-i-t-h-s/index.html">SMITHS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1394846633%2FClasslikes%2F1111006752" anchor-label="SPROUTS" id="-1394846633%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-p-r-o-u-t-s/index.html">SPROUTS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1394846633%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-p-r-o-u-t-s/index.html">SPROUTS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1087983447%2FClasslikes%2F1111006752" anchor-label="STAPES" id="-1087983447%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-p-e-s/index.html">STAPES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1087983447%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-t-a-p-e-s/index.html">STAPES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="853640294%2FClasslikes%2F1111006752" anchor-label="STAR_MARKET" id="853640294%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-r_-m-a-r-k-e-t/index.html">STAR_MARKET</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="853640294%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-t-a-r_-m-a-r-k-e-t/index.html">STAR_MARKET</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1792404353%2FClasslikes%2F1111006752" anchor-label="STOP_N_SHOP" id="1792404353%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-o-p_-n_-s-h-o-p/index.html">STOP_N_SHOP</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1792404353%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-t-o-p_-n_-s-h-o-p/index.html">STOP_N_SHOP</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1135655932%2FClasslikes%2F1111006752" anchor-label="TARGET" id="1135655932%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-a-r-g-e-t/index.html">TARGET</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1135655932%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-t-a-r-g-e-t/index.html">TARGET</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1468110770%2FClasslikes%2F1111006752" anchor-label="TOYS_R_US" id="1468110770%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-o-y-s_-r_-u-s/index.html">TOYS_R_US</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1468110770%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-t-o-y-s_-r_-u-s/index.html">TOYS_R_US</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1679513377%2FClasslikes%2F1111006752" anchor-label="TRADER_JOES" id="1679513377%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-r-a-d-e-r_-j-o-e-s/index.html">TRADER_JOES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1679513377%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-t-r-a-d-e-r_-j-o-e-s/index.html">TRADER_JOES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1452120785%2FClasslikes%2F1111006752" anchor-label="WALGREENS" id="-1452120785%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-g-r-e-e-n-s/index.html">WALGREENS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1452120785%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-a-l-g-r-e-e-n-s/index.html">WALGREENS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1530986101%2FClasslikes%2F1111006752" anchor-label="WALMART" id="1530986101%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-m-a-r-t/index.html">WALMART</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1530986101%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-a-l-m-a-r-t/index.html">WALMART</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="97164613%2FClasslikes%2F1111006752" anchor-label="WINCO" id="97164613%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-c-o/index.html">WINCO</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="97164613%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-i-n-c-o/index.html">WINCO</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1591178022%2FClasslikes%2F1111006752" anchor-label="WINNDIXIE" id="-1591178022%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-n-d-i-x-i-e/index.html">WINNDIXIE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1591178022%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-i-n-n-d-i-x-i-e/index.html">WINNDIXIE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1584848529%2FClasslikes%2F1111006752" anchor-label="WEGMANS" id="-1584848529%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-e-g-m-a-n-s/index.html">WEGMANS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1584848529%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-e-g-m-a-n-s/index.html">WEGMANS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1346411094%2FClasslikes%2F1111006752" anchor-label="WHOLE_FOODS" id="-1346411094%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-h-o-l-e_-f-o-o-d-s/index.html">WHOLE_FOODS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1346411094%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-h-o-l-e_-f-o-o-d-s/index.html">WHOLE_FOODS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="83830739%2FClasslikes%2F1111006752" anchor-label="WALMART_QR" id="83830739%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-m-a-r-t_-q-r/index.html">WALMART_QR</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="83830739%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-a-l-m-a-r-t_-q-r/index.html">WALMART_QR</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1258233672%2FClasslikes%2F1111006752" anchor-label="INSTACART" id="-1258233672%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-s-t-a-c-a-r-t/index.html">INSTACART</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1258233672%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-i-n-s-t-a-c-a-r-t/index.html">INSTACART</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1349583709%2FClasslikes%2F1111006752" anchor-label="WALMART_GROCERY" id="-1349583709%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-m-a-r-t_-g-r-o-c-e-r-y/index.html">WALMART_GROCERY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1349583709%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-a-l-m-a-r-t_-g-r-o-c-e-r-y/index.html">WALMART_GROCERY</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1998349373%2FClasslikes%2F1111006752" anchor-label="STARBUCKS" id="-1998349373%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-r-b-u-c-k-s/index.html">STARBUCKS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1998349373%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-t-a-r-b-u-c-k-s/index.html">STARBUCKS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1667820107%2FClasslikes%2F1111006752" anchor-label="SHIPT" id="-1667820107%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-i-p-t/index.html">SHIPT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1667820107%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-h-i-p-t/index.html">SHIPT</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="390453137%2FClasslikes%2F1111006752" anchor-label="SEPHORA" id="390453137%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-p-h-o-r-a/index.html">SEPHORA</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="390453137%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-e-p-h-o-r-a/index.html">SEPHORA</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-693184001%2FClasslikes%2F1111006752" anchor-label="CHEWY" id="-693184001%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-h-e-w-y/index.html">CHEWY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-693184001%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-c-h-e-w-y/index.html">CHEWY</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2066392071%2FClasslikes%2F1111006752" anchor-label="STAPLES" id="2066392071%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-p-l-e-s/index.html">STAPLES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2066392071%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-t-a-p-l-e-s/index.html">STAPLES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1070573626%2FClasslikes%2F1111006752" anchor-label="GRUBHUB" id="1070573626%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-r-u-b-h-u-b/index.html">GRUBHUB</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1070573626%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-g-r-u-b-h-u-b/index.html">GRUBHUB</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1850075312%2FClasslikes%2F1111006752" anchor-label="DOLLAR_GENERAL" id="1850075312%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-l-l-a-r_-g-e-n-e-r-a-l/index.html">DOLLAR_GENERAL</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1850075312%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-o-l-l-a-r_-g-e-n-e-r-a-l/index.html">DOLLAR_GENERAL</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1693341918%2FClasslikes%2F1111006752" anchor-label="DOLLAR_TREE" id="1693341918%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-l-l-a-r_-t-r-e-e/index.html">DOLLAR_TREE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1693341918%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-o-l-l-a-r_-t-r-e-e/index.html">DOLLAR_TREE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1083111482%2FClasslikes%2F1111006752" anchor-label="FOOD_LION" id="1083111482%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-o-o-d_-l-i-o-n/index.html">FOOD_LION</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1083111482%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-f-o-o-d_-l-i-o-n/index.html">FOOD_LION</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1111680817%2FClasslikes%2F1111006752" anchor-label="DOMINOS_PIZZA" id="1111680817%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-m-i-n-o-s_-p-i-z-z-a/index.html">DOMINOS_PIZZA</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1111680817%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-o-m-i-n-o-s_-p-i-z-z-a/index.html">DOMINOS_PIZZA</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-37292602%2FClasslikes%2F1111006752" anchor-label="TACO_BELL" id="-37292602%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-a-c-o_-b-e-l-l/index.html">TACO_BELL</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-37292602%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-t-a-c-o_-b-e-l-l/index.html">TACO_BELL</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1363532832%2FClasslikes%2F1111006752" anchor-label="DOOR_DASH" id="-1363532832%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-o-r_-d-a-s-h/index.html">DOOR_DASH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1363532832%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-o-o-r_-d-a-s-h/index.html">DOOR_DASH</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="399627431%2FClasslikes%2F1111006752" anchor-label="GIANT_EAGLE" id="399627431%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-i-a-n-t_-e-a-g-l-e/index.html">GIANT_EAGLE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="399627431%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-g-i-a-n-t_-e-a-g-l-e/index.html">GIANT_EAGLE</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="339213931%2FClasslikes%2F1111006752" anchor-label="POSTMATES" id="339213931%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-o-s-t-m-a-t-e-s/index.html">POSTMATES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="339213931%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-p-o-s-t-m-a-t-e-s/index.html">POSTMATES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1452144849%2FClasslikes%2F1111006752" anchor-label="MAKRO" id="1452144849%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-a-k-r-o/index.html">MAKRO</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1452144849%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-m-a-k-r-o/index.html">MAKRO</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1524294741%2FClasslikes%2F1111006752" anchor-label="COLES" id="-1524294741%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-l-e-s/index.html">COLES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1524294741%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-c-o-l-e-s/index.html">COLES</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="728044585%2FClasslikes%2F1111006752" anchor-label="DICKS_SPORTING_GOODS" id="728044585%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-i-c-k-s_-s-p-o-r-t-i-n-g_-g-o-o-d-s/index.html">DICKS_SPORTING_GOODS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="728044585%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-d-i-c-k-s_-s-p-o-r-t-i-n-g_-g-o-o-d-s/index.html">DICKS_SPORTING_GOODS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1616124222%2FClasslikes%2F1111006752" anchor-label="SEAMLESS" id="-1616124222%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-a-m-l-e-s-s/index.html">SEAMLESS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1616124222%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-s-e-a-m-l-e-s-s/index.html">SEAMLESS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-300852515%2FClasslikes%2F1111006752" anchor-label="UBER_EATS" id="-300852515%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-b-e-r_-e-a-t-s/index.html">UBER_EATS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-300852515%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-u-b-e-r_-e-a-t-s/index.html">UBER_EATS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1886089069%2FClasslikes%2F1111006752" anchor-label="GAP" id="-1886089069%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-a-p/index.html">GAP</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1886089069%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-g-a-p/index.html">GAP</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="277576751%2FClasslikes%2F1111006752" anchor-label="ULTA" id="277576751%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-l-t-a/index.html">ULTA</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="277576751%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-u-l-t-a/index.html">ULTA</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1036410309%2FClasslikes%2F1111006752" anchor-label="WOOLWORTHS" id="1036410309%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-o-o-l-w-o-r-t-h-s/index.html">WOOLWORTHS</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1036410309%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-w-o-o-l-w-o-r-t-h-s/index.html">WOOLWORTHS</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-992430457%2FClasslikes%2F1111006752" anchor-label="UNKNOWN" id="-992430457%2FClasslikes%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-n-k-n-o-w-n/index.html">UNKNOWN</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-992430457%2FClasslikes%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><a href="-u-n-k-n-o-w-n/index.html">UNKNOWN</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="722003785%2FProperties%2F1111006752" anchor-label="CREATOR" id="722003785%2FProperties%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-r-e-a-t-o-r.html"><span><span>CREATOR</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="722003785%2FProperties%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">val </span><a href="-c-r-e-a-t-o-r.html">CREATOR</a><span class="token operator">: </span><span data-unresolved-link="android.os/Parcelable.Creator///PointingToDeclaration/">Parcelable.Creator</span><span class="token operator">&lt;</span><a href="index.html">Retailer</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-833511138%2FFunctions%2F1111006752" anchor-label="bannerId" id="-833511138%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="banner-id.html"><span>banner</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-833511138%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="banner-id.html"><span class="token function">bannerId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1427249472%2FFunctions%2F1111006752" anchor-label="describeContents" id="1427249472%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="describe-contents.html"><span>describe</span><wbr><span><span>Contents</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1427249472%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="describe-contents.html"><span class="token function">describeContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="221623775%2FFunctions%2F1111006752" anchor-label="fromBannerId" id="221623775%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="from-banner-id.html"><span>from</span><wbr><span>Banner</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="221623775%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="from-banner-id.html"><span class="token function">fromBannerId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bannerId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Retailer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-53337622%2FFunctions%2F1111006752" anchor-label="id" id="-53337622%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="id.html"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-53337622%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="id.html"><span class="token function">id</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="87398312%2FFunctions%2F1111006752" anchor-label="valueOf" id="87398312%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="value-of.html"><span>value</span><wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="87398312%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="value-of.html"><span class="token function">valueOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Retailer</a></div><div class="brief "><p class="paragraph">Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-561896509%2FFunctions%2F1111006752" anchor-label="values" id="-561896509%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="values.html"><span><span>values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-561896509%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="values.html"><span class="token function">values</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="index.html">Retailer</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns an array containing the constants of this enum type, in the order they're declared. This method may be used to iterate over the constants.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-132432048%2FFunctions%2F1111006752" anchor-label="writeToParcel" id="-132432048%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="write-to-parcel.html"><span>write</span><wbr><span>To</span><wbr><span><span>Parcel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-132432048%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="write-to-parcel.html"><span class="token function">writeToParcel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>dest<span class="token operator">: </span><span data-unresolved-link="android.os/Parcel///PointingToDeclaration/">Parcel</span><span class="token punctuation">, </span></span><span class="parameter ">flags<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
