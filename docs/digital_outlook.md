@@ -43,15 +43,15 @@ Outlook client is the main entry point which allows the SDK to connect to outloo
 === "Kotlin"
     ```kotlin
     OutlookClient(applicationContext, R.raw.auth_config_single_account, object : InitializeCallback {
-    
+
         override fun onComplete() {
-    
+
         }
-    
+
         override fun onException(throwable: Throwable) {
-    
+
         }
-    
+
     })
     ```
 
@@ -59,18 +59,18 @@ Outlook client is the main entry point which allows the SDK to connect to outloo
 === "Kotlin"
     ```kotlin
         client.login(this).addOnSuccessListener {
-    
+
        }.addOnFailureListener {
-    
+
        }
     ```
 ### Outlook Logout
 === "Kotlin"
     ```kotlin
     client.logout().addOnSuccessListener {
-    
+
     }.addOnFailureListener {
-    
+
     }
     ```
 
@@ -79,9 +79,9 @@ Messages returns a Task, which allows you to get a list of scan results for mess
 === "Kotlin"
     ```kotlin
      client.messages().addOnSuccessListener {
-    
+
     }.addOnFailureListener {
-    
+
     }
     ```
 ### Outlook Destroy Client
@@ -89,7 +89,7 @@ Messages returns a Task, which allows you to get a list of scan results for mess
     ```kotlin
     override fun onDestroy() {
         super.onDestroy()
-    
+
         client.close()
     }
     ```

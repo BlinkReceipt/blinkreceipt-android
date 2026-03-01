@@ -18,10 +18,6 @@ fun RecognizerViewComposable(
   // Use remember to prevent the RecognizerView from being re-created on every recomposition.
   val recognizerView = remember {
       RecognizerView(context).apply {
-        setMeteringAreas(arrayOf(RectF(0f, 0f, 1f, 1f)), true)
-        initialOrientation = Orientation.ORIENTATION_PORTRAIT
-        aspectMode = CameraAspectMode.ASPECT_FILL
-
         // Observe Recognizer Callback
         recognizerCallback(object: CameraRecognizerCallback {
           // ...
@@ -34,7 +30,7 @@ fun RecognizerViewComposable(
             // ...
             .build()
         )
-        
+
         // Attach Lifecycle Owner
         lifecycle(lifecycleOwner)
       }
@@ -138,7 +134,7 @@ internal fun CameraRecognizerContent(
     ) { results: CameraRecognizerResults ->
         onScanResults(results)
     }
-    
+
     // Launch the camera recognizer when this composable enters the composition
     LaunchedEffect(Unit) {
         launcher.launch(

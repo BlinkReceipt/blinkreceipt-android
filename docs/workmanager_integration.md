@@ -24,7 +24,7 @@ depdendencies {
             tools:node="merge">
             <!-- Remove BlinkReceipt SDK's default initializer -->
             <meta-data
-                android:name="com.microblink.internal.ReceiptSdkInitializer" 
+                android:name="com.microblink.internal.ReceiptSdkInitializer"
                 android:value="androidx.startup"
                 tools:node="remove" />
             <!-- Remove WorkManager Initializer -->

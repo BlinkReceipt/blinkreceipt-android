@@ -19,20 +19,20 @@ To instantiate the `GmailClient` you must provide the constructor 3 non-null and
     ```kotlin
         // Activity Example
         class GmailActivity: Activity() {
-    
+
             override fun onCreate(savedInstanceState: Bundle?) {
                 val gmailClient = GmailClient(this, 4)
             }
-    
+
         }
-    
+
         // Fragment Example
         class GmailFragment: Fragment() {
-    
+
             override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                 val gmailClient = GmailClient(requireActivity(), 4)
             }
-    
+
         }
     ```
 
@@ -62,9 +62,9 @@ Here is an example of some happy case scenarios when calling the login() functio
     ```kotlin
         fun loginUser() {
             val task: Task<GoogleSignInAccount> = gmailClient.login()
-    
+
             task.addOnSuccessListener {
-    
+
             }
         }
     ```
@@ -93,16 +93,16 @@ The `onAccountAuthorizationActivityResult` function also returns a task of type 
 === "Kotlin"
     ```kotlin
     class GmailInboxFragment : Fragment() {
-    
+
         private lateinit var gmailClient: GmailClient
-    
+
         //...Instantiate GmailClient in one of the lifecycle methods
-    
+
         // Attempt to login
         fun login() {
             gmailClient.login()
                     .addOnSuccessListener {
-    
+
                     }.addOnFailureListener { e ->
                         if (e is GmailAuthException) {
                             startActivityForResult(e.signInIntent, e.requestCode)
@@ -111,13 +111,13 @@ The `onAccountAuthorizationActivityResult` function also returns a task of type 
                         }
                     }
         }
-    
+
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             super.onActivityResult(requestCode, resultCode, data)
-    
+
             gmailClient.onAccountAuthorizationActivityResult(requestCode, resultCode, data)
                .addOnSuccessListener { signInAccount ->
-    
+
             }.addOnFailureListener {
                 //Set error display
             }
@@ -142,9 +142,9 @@ In the event, the result returns a `true` value, this indicates that we have an 
          private fun verifyUser() {
             gmailClient.verify()
                 .addOnSuccessListener {
-    
+
                 }.addOnFailureListener {
-    
+
                 }
         }
     ```
@@ -161,7 +161,7 @@ Users may log out of gmail via the client's `logout()` function. The logout func
     ```kotlin
         private fun logoutUser() {
             gmailClient.logout().addOnSuccessListener {
-    
+
             }
         }
     ```
@@ -187,13 +187,13 @@ Once the client is configured then we are ready to start parsing emails. On the 
 
 === "Kotlin"
     ```kotlin
-    
+
         fun messages() {
           client.messages(requireActivity())
            .addOnSuccessListener { results ->
-    
+
            }.addOnFailureListener {
-    
+
            }
         }
     ```
@@ -205,7 +205,7 @@ We always want to make sure we are adhereing to any component's lifecycle. There
     ```kotlin
     override fun onDestroy() {
         super.onDestroy()
-    
+
         client.close()
     }
     ```

@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '1.9.14'
-    next_release: '2.0.0'
+    release: '2.0.0'
+    next_release: '2.1.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -24,6 +24,9 @@ plugins:
 
 nav:
     - Overview: index.md
+    - BlinkReceipt 2.0.0 - Major Changes:
+        - Deprecating Barcode Scanning Feature: barcode_deprecation_migration_guide.md
+        - CameraX Migration Guide: camerax_migration_guide.md
     - Account Linking:
         - Getting Started: getting_started_alp.md
         - Configuring the Client: configuring_client_alp.md
@@ -52,7 +55,7 @@ nav:
             - Getting Started: receipts/pdf/getting_started_pdf.md
             - Configuring the Client:  receipts/pdf/configuring_client_pdf.md
             - How to use: receipts/pdf/how_to_use_pdf.md
-    - Javadoc: javadoc.md
+    - API documentation: html/index.html
 
 extra_css:
   - stylesheets/extra.css
@@ -76,6 +79,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.snippets
+  - pymdownx.tilde
   - tables
   - admonition
   - attr_list

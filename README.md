@@ -316,7 +316,7 @@ Even though there are different ways to initialize the sdk, the recommended way 
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-        <meta-data 
+        <meta-data
             android:name="com.microblink.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
@@ -340,7 +340,7 @@ public void onCreate() {
         android:exported="false"
         tools:node="merge">
         <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer" 
+            android:name="com.microblink.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
 </provider>
@@ -354,7 +354,7 @@ If your app provides custom WorkManager configuration and initialization, you mu
         android:exported="false"
         tools:node="merge">
         <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer" 
+            android:name="com.microblink.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
         <!-- Remove WorkManager Initializer -->

@@ -14,7 +14,7 @@ A successful callback listener, `OnSuccessListener<? super TResult>`, can be add
 === "Java"
     ```java
         Task<Foo> exampleTask = repository.fetchFoo();
-    
+
         exampleTask.addOnSuccessListener( new OnSuccessListener<Foo>() {
             @Override
             public void onSuccess(Foo foo) {
@@ -25,7 +25,7 @@ A successful callback listener, `OnSuccessListener<? super TResult>`, can be add
 === "Kotlin"
     ```kotlin
         val exampleTask: Task<Foo> = repository.fetchFoo();
-    
+
         exampleTask.addOnSuccessListener { foo -> // Do something }
     ```
 
@@ -34,7 +34,7 @@ Unfortunately, as we know all too well, things do not always go as planned. Exce
 === "Java"
     ```java
         Task<Foo> exampleTask = repository.fetchFoo();
-    
+
         exampleTask.addOnFailureListener( new OnFailureListener() {
             @Override
             public void onFailure(Exception exception) {
@@ -45,7 +45,7 @@ Unfortunately, as we know all too well, things do not always go as planned. Exce
 === "Kotlin"
     ```kotlin
         val exampleTask: Task<Foo> = repository.fetchFoo();
-    
+
         exampleTask.addOnFailureListener { exception -> // Do something }
     ```
 
@@ -54,7 +54,7 @@ Result listeners can be chained for a cleaner look.
 === "Java"
     ```java
         Task<Foo> exampleTask = repository.fetchFoo();
-    
+
         exampleTask.addOnSuccessListener( new OnSuccessListener<Foo>() {
             @Override
             public void onSuccess(Foo foo) {

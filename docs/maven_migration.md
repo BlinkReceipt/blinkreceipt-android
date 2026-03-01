@@ -1,4 +1,4 @@
-### Effective From: Sep 1, 2025 
+### Effective From: Sep 1, 2025
 
 Microblink is moving its Android SDK distribution from a custom Maven repository ([Microblink Maven](https://maven.microblink.com/)) to **Maven Central** ([Maven Central: Search](https://central.sonatype.com/search?q=com.microblink.blinkreceipt)).
 

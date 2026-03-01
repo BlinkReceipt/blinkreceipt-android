@@ -1,3 +1,6 @@
+# Module blinkreceipt-digital
+
+# Package com.microblink.digital
 
 # Blink Receipt Digital SDK
 
@@ -700,3 +703,5 @@ If you wish to include product intelligence functionality within your project ad
 ```xml
  <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```
+
+# Package com.microblink.digital

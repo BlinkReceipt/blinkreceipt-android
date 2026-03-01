@@ -48,7 +48,7 @@ Bitmap[] receiptImagesToProcess = new Bitmap[]{
 ScanOptions scanOptions = ScanOptions.newBuilder().build()
 
 client.recognize(
-    scanOptions, 
+    scanOptions,
     new RecognizerCallback() {
         @Override
         public void onRecognizerDone(@NonNull ScanResults scanResults, @NonNull Media media) {
@@ -64,7 +64,7 @@ client.recognize(
         public void onRecognizerResultsChanged(@NonNull RecognizerResult recognizerResult) {
             // Observe Direct API Results Changes while Direct API is processing the results.
         }
-    }, 
+    },
     receiptImagesToProcess
 );
 ```
