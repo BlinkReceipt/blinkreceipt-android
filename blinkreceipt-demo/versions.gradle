@@ -16,6 +16,8 @@ buildscript {
             'fragment'      : '1.8.1',
             'activityCompose' : '1.13.0',
             'compose'       : '2026.03.00',
+            'lifecycleViewModelNav3' : '2.10.0',
+            'nav3Core'          : '1.0.1',
     ]
 
     ext.versions = [
