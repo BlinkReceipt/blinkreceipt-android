@@ -67,19 +67,21 @@ kotlin {
 
 dependencies {
     implementation "androidx.core:core-ktx:${androidx.core}"
-    implementation(platform("androidx.compose:compose-bom:2024.10.01"))
-    implementation "androidx.activity:activity-compose:1.10.1"
+    implementation "androidx.activity:activity-compose:${androidx.activityCompose}"
+    implementation(platform("androidx.compose:compose-bom:${androidx.compose}"))
     implementation "androidx.compose.material3:material3"
     implementation "androidx.compose.ui:ui"
     implementation "androidx.compose.ui:ui-tooling-preview"
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+
+    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
+    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+    implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
 
     testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
-    androidTestImplementation platform("androidx.compose:compose-bom:2024.10.01")
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
-
-    debugImplementation "androidx.compose.ui:ui-tooling"
-    debugImplementation "androidx.compose.ui:ui-test-manifest"
 }
