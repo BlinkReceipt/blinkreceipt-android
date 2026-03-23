@@ -37,7 +37,7 @@ buildscript {
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
-            'okio'             : '3.9.0',
+            'okio'             : '3.10.2',
             'barcodeScanner'   : '17.3.0',
             'versionMajor'     : 2,
             'versionMinor'     : 1,
