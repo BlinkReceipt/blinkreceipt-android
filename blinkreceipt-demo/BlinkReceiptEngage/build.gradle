@@ -80,6 +80,10 @@ dependencies {
     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
     implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
 
+    implementation "androidx.navigation3:navigation3-runtime:${androidx.nav3Core}"
+    implementation "androidx.navigation3:navigation3-ui:${androidx.nav3Core}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-navigation3:${androidx.lifecycleViewModelNav3}"
+
     testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
