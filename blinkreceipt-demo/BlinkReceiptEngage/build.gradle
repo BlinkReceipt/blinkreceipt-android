@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+android {
+    namespace 'com.blinkreceipt.engage'
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.blinkreceipt.engage"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
+        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../blink-receipt-demos.jsk")
+            storePassword "${keys.storePassword}"
+            keyAlias "${keys.keyAlias}"
+            keyPassword "${keys.keyPassword}"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packagingOptions {
+        resources {
+            excludes += [
+                    'META-INF/NOTICE.md',
+                    'META-INF/LICENSE.md',
+                    'META-INF/ASL2.0',
+                    'META-INF/AL2.0',
+                    'META-INF/LGPL2.1',
+                    'META-INF/licenses/ASM',
+                    'META-INF/DEPENDENCIES',
+            ]
+        }
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation(platform("androidx.compose:compose-bom:2024.10.01"))
+    implementation "androidx.activity:activity-compose:1.10.1"
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+
+    testImplementation "junit:junit:${versions.junit}"
+
+    androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation platform("androidx.compose:compose-bom:2024.10.01")
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+}
