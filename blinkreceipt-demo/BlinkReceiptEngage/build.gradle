@@ -84,6 +84,8 @@ dependencies {
     implementation "androidx.navigation3:navigation3-ui:${androidx.nav3Core}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-navigation3:${androidx.lifecycleViewModelNav3}"
 
+    implementation "com.squareup.okio:okio:${versions.okio}"
+
     testImplementation "junit:junit:${versions.junit}"
 
     androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
