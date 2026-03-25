@@ -1,7 +1,6 @@
 package com.actualplatform.android.activation.development
 
 import android.content.Intent
-import android.hardware.camera2.CameraCharacteristics
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity

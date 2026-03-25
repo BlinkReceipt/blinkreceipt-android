@@ -17,7 +17,6 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.actualplatform.android.Rewards
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
@@ -25,14 +24,16 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.activity.compose.rememberLauncherForActivityResult
-import com.actualplatform.android.EngageClient
-import com.actualplatform.android.OffersWall
+import com.actualplatform.activation.ActivationClient
+import com.actualplatform.activation.OffersWall
+import com.actualplatform.activation.Rewards
+import com.actualplatform.activation.ScanReward
 import com.microblink.camera.ui.CameraRecognizerContract
 import com.microblink.camera.ui.CameraRecognizerOptions
 import com.microblink.camera.ui.CameraRecognizerResults
-import com.actualplatform.android.models.PlacementLayout
-import com.actualplatform.android.networking.HttpEnvironment
-import com.actualplatform.android.networking.TestOptions
+import com.actualplatform.activation.models.PlacementLayout
+import com.actualplatform.activation.networking.HttpEnvironment
+import com.actualplatform.activation.networking.TestOptions
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 import com.microblink.camera.ui.internal.parcelable
@@ -67,7 +68,7 @@ internal class ActivationsActivity : ComponentActivity() {
                 val rewardEvents = remember { mutableStateListOf<Rewards>() }
 
                 LaunchedEffect(Unit) {
-                    EngageClient.instance.rewards.collect { reward ->
+                    ActivationClient.instance.rewards.collect { reward ->
                         LogcatManager.event().debug(TAG) { "Reward received: type=${reward::class.simpleName}, amount=${reward.amount}, totalBefore=$totalRewardsEarned, totalAfter=${totalRewardsEarned + reward.amount}, eventCount=${rewardEvents.size + 1}" }
                         totalRewardsEarned += reward.amount
                         rewardEvents.add(reward)
@@ -119,8 +120,7 @@ internal class ActivationsActivity : ComponentActivity() {
                                         CameraRecognizerOptions.Builder()
                                             .options(scanOptions)
                                             .characteristics(cameraCharacteristics)
-                                            .engage(true)
-                                            .scanRewards(prefs.getInt(PREF_SCAN_REWARD, 0))
+                                            .activation(true)
                                             .build()
                                     )
                                 },
@@ -202,8 +202,9 @@ internal class ActivationsActivity : ComponentActivity() {
             rewardPayoutPercentage: Double,
             rewardIconBase64: String?,
             receiptMaxAgeDays: Int,
+            scanReward: Int,
         ) {
-            with(EngageClient.instance) {
+            with(ActivationClient.instance) {
                 environment = when (envName) {
                     "Development" -> HttpEnvironment.Development
                     "Staging" -> HttpEnvironment.Staging
@@ -241,6 +242,7 @@ internal class ActivationsActivity : ComponentActivity() {
                     runCatching { Base64.decode(it, Base64.DEFAULT) }.getOrNull()
                 }
                 this.receiptMaxAgeDays = receiptMaxAgeDays
+                this.scanReward = ScanReward(scanReward)
             }
         }
 
@@ -257,7 +259,8 @@ internal class ActivationsActivity : ComponentActivity() {
                 rewardCurrencyName = prefs.getString(PREF_REWARD_CURRENCY_NAME, DEFAULT_CURRENCY_NAME) ?: DEFAULT_CURRENCY_NAME,
                 rewardPayoutPercentage = prefs.getFloat(PREF_REWARD_PAYOUT_PERCENTAGE, DEFAULT_PAYOUT_PERCENTAGE.toFloat()).toDouble(),
                 rewardIconBase64 = prefs.getString(PREF_REWARD_ICON_BASE64, null),
-                receiptMaxAgeDays = prefs.getInt(PREF_RECEIPT_MAX_AGE_DAYS, EngageClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
+                receiptMaxAgeDays = prefs.getInt(PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
+                scanReward = prefs.getInt(PREF_SCAN_REWARD, 0),
             )
         }
     }

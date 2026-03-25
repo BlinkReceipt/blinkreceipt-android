@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import com.actualplatform.android.R
+import com.actualplatform.android.activation.development.R
 import com.google.gson.GsonBuilder
 import com.microblink.core.ScanResults
 import kotlinx.coroutines.Dispatchers

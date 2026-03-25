@@ -13,7 +13,7 @@ class ActualActivationsApplication: Application() {
 
         BlinkReceiptSdk.initialize(this, object : InitializeCallback {
             override fun onComplete() {
-                ActivationsActivity.Companion.applySettings(this@ActualActivationsApplication)
+                ActivationsActivity.applySettings(this@ActualActivationsApplication)
             }
 
             override fun onException(throwable: Throwable) {

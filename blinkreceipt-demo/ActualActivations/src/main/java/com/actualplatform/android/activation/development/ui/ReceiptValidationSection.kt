@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.actualplatform.android.EngageClient
-import com.actualplatform.android.R
+import com.actualplatform.activation.ActivationClient
+import com.actualplatform.android.activation.development.R
 
 @Composable
 internal fun ReceiptValidationSection(
@@ -41,7 +41,7 @@ internal fun ReceiptValidationSection(
         )
         Spacer(modifier = Modifier.width(8.dp))
         TextButton(
-            onClick = { onReceiptMaxAgeDaysChange(EngageClient.DEFAULT_RECEIPT_MAX_AGE_DAYS.toString()) },
+            onClick = { onReceiptMaxAgeDaysChange(ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS.toString()) },
         ) {
             Text(stringResource(R.string.engage_button_reset))
         }
