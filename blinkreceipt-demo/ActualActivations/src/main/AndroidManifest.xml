@@ -24,6 +24,11 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <meta-data
+            android:name="com.microblink.LicenseKey"
+            android:value="" />
+
     </application>
 
 </manifest>
