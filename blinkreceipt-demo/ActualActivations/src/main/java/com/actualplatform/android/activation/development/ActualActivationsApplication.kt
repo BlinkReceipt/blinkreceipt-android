@@ -6,14 +6,14 @@ import com.microblink.BlinkReceiptSdk
 import com.microblink.core.InitializeCallback
 import com.microblink.logcat.LogcatManager
 
-class BlinkReceiptApplication: Application() {
+class ActualActivationsApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
 
         BlinkReceiptSdk.initialize(this, object : InitializeCallback {
             override fun onComplete() {
-                ActivationsActivity.Companion.applySettings(this@BlinkReceiptApplication)
+                ActivationsActivity.Companion.applySettings(this@ActualActivationsApplication)
             }
 
             override fun onException(throwable: Throwable) {
