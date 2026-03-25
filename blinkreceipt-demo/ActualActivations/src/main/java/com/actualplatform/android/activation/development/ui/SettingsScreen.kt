@@ -30,8 +30,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.android.EngageClient
-import com.actualplatform.android.R
+import com.actualplatform.activation.ActivationClient
+import com.actualplatform.android.activation.development.R
 
 @Stable
 internal data class SettingsData(
@@ -56,7 +56,7 @@ internal data class SettingsData(
             testMode = prefs.getBoolean(ActivationsActivity.PREF_TEST_MODE, true),
             currencyName = prefs.getString(ActivationsActivity.PREF_REWARD_CURRENCY_NAME, ActivationsActivity.DEFAULT_CURRENCY_NAME) ?: ActivationsActivity.DEFAULT_CURRENCY_NAME,
             scanReward = prefs.getInt(ActivationsActivity.PREF_SCAN_REWARD, 0),
-            receiptMaxAgeDays = prefs.getInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, EngageClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
+            receiptMaxAgeDays = prefs.getInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
             forcePlacements = prefs.getStringSet(ActivationsActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
         )
     }
@@ -283,7 +283,7 @@ private fun EditModeContent(
                     .putBoolean(ActivationsActivity.PREF_SHOW_HEADER, showHeader)
                     .putStringSet(ActivationsActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
                     .putInt(ActivationsActivity.PREF_SCAN_REWARD, scanReward.toIntOrNull() ?: 0)
-                    .putInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: EngageClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
+                    .putInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
                     .putString(ActivationsActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
                     .putFloat(ActivationsActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull() ?: ActivationsActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
                     .putString(ActivationsActivity.PREF_REWARD_ICON_BASE64, rewardIconBase64)

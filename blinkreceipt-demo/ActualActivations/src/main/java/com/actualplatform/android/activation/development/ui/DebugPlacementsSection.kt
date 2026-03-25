@@ -12,8 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.android.models.PlacementLayout
-import com.actualplatform.android.R
+import com.actualplatform.activation.models.PlacementLayout
+import com.actualplatform.android.activation.development.R
 
 @Composable
 internal fun DebugPlacementsSection(

@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.android.Rewards
-import com.actualplatform.android.R
+import com.actualplatform.activation.Rewards
+import com.actualplatform.android.activation.development.R
 import com.microblink.core.ScanResults
 import java.util.Locale
 
