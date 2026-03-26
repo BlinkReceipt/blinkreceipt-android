@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import android.graphics.BitmapFactory
 import android.util.Base64
@@ -25,7 +25,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.blinkreceipt.engage.R
+import com.actualplatform.android.R
 
 @Composable
 internal fun RewardCurrencySection(

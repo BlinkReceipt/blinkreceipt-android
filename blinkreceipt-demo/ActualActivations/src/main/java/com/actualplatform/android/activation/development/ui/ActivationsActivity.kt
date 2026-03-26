@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -17,7 +17,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.actualplatform.engage.Rewards
+import com.actualplatform.android.Rewards
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
@@ -25,14 +25,14 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.activity.compose.rememberLauncherForActivityResult
-import com.actualplatform.engage.EngageClient
-import com.actualplatform.engage.OffersWall
+import com.actualplatform.android.EngageClient
+import com.actualplatform.android.OffersWall
 import com.microblink.camera.ui.CameraRecognizerContract
 import com.microblink.camera.ui.CameraRecognizerOptions
 import com.microblink.camera.ui.CameraRecognizerResults
-import com.actualplatform.engage.models.PlacementLayout
-import com.actualplatform.engage.networking.HttpEnvironment
-import com.actualplatform.engage.networking.TestOptions
+import com.actualplatform.android.models.PlacementLayout
+import com.actualplatform.android.networking.HttpEnvironment
+import com.actualplatform.android.networking.TestOptions
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 import com.microblink.camera.ui.internal.parcelable

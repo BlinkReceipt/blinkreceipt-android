@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.engage.Rewards
-import com.blinkreceipt.engage.R
+import com.actualplatform.android.Rewards
+import com.actualplatform.android.R
 import com.microblink.core.ScanResults
 import java.util.Locale
 

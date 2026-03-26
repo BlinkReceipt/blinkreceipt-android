@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.blinkreceipt.engage.R
+import com.actualplatform.android.R
 
 @Composable
 internal fun UserIdentitySection(
