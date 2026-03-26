@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import android.content.SharedPreferences
 import android.util.Patterns
@@ -30,8 +30,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.engage.EngageClient
-import com.blinkreceipt.engage.R
+import com.actualplatform.android.EngageClient
+import com.actualplatform.android.R
 
 @Stable
 internal data class SettingsData(

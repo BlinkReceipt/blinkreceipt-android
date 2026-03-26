@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.actualplatform.engage.EngageClient
-import com.blinkreceipt.engage.R
+import com.actualplatform.android.EngageClient
+import com.actualplatform.android.R
 
 @Composable
 internal fun ReceiptValidationSection(

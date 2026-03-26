@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace 'com.blinkreceipt.engage'
+    namespace 'com.actualplatform.android.activation.development'
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "com.blinkreceipt.engage"
+        applicationId "com.actualplatform.android.activation.development"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
 

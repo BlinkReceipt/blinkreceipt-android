@@ -1,4 +1,4 @@
-package com.blinkreceipt.engage.ui
+package com.actualplatform.android.activation.development.ui
 
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
