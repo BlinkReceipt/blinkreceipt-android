@@ -793,3 +793,6 @@ Blink Receipt Recognizer
 - Improved total extraction accuracy 
 - Added support for Fuel products in Germany
 - Stability fixes and improvements
+
+## 2.1.0
+- Stability fixes and improvements
