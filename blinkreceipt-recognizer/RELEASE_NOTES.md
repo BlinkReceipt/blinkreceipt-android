@@ -779,3 +779,6 @@ Blink Receipt Recognizer
 - Enhanced consistency and accuracy across core receipt fields.
 - Fixed an issue that could cause the product array to return empty in some cases.
 - Improvements to Date extraction in Canada
+
+## 2.1.0
+- Stability fixes and improvements
