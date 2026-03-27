@@ -772,3 +772,10 @@ Blink Receipt Recognizer
 - **BREAKING CHANGE** Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
 - Revert fix to CPR-1233: Slow behavior of Android SDK
 - Stability fixes and improvements
+
+## 2.0.1
+- United States - Improved extraction of multiple payment methods. 
+- France & Germany - Improved basket-level and trip-level extraction. 
+- Enhanced consistency and accuracy across core receipt fields.
+- Fixed an issue that could cause the product array to return empty in some cases.
+- Improvements to Date extraction in Canada
