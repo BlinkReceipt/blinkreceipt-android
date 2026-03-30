@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Actual Activations</string>
+    <string name="app_name">Actual Activation</string>
 
-    <string name="activations_title">Activations</string>
+    <string name="activation_title">Activation</string>
     <string name="engage_settings_title">Settings</string>
     <string name="main_engage_editText_hint_email">Email Address</string>
     <string name="main_engage_editText_hint_phone">Phone Number</string>

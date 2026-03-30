@@ -43,7 +43,7 @@ internal fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.activations_title)) },
+                title = { Text(stringResource(R.string.activation_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

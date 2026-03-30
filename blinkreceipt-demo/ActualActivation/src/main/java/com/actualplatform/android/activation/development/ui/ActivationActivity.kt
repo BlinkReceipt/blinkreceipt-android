@@ -41,7 +41,7 @@ import com.microblink.core.ScanResults
 import com.microblink.logcat.LogcatManager
 import okio.ByteString.Companion.encodeUtf8
 
-internal class ActivationsActivity : ComponentActivity() {
+internal class ActivationActivity : ComponentActivity() {
 
     private val scanOptions: ScanOptions by lazy {
         intent.parcelable(OPTIONS_KEY) ?: ScanOptions.newBuilder().build()
@@ -58,7 +58,7 @@ internal class ActivationsActivity : ComponentActivity() {
 
         setContent {
             MaterialTheme {
-                val backStack = rememberNavBackStack(ActivationsRoute.Home)
+                val backStack = rememberNavBackStack(ActivationRoute.Home)
                 var refreshKey by remember { mutableIntStateOf(0) }
 
                 var lastScanResults by remember { mutableStateOf<ScanResults?>(null) }
@@ -85,7 +85,7 @@ internal class ActivationsActivity : ComponentActivity() {
                     transitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
                     popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
                     entryProvider = entryProvider {
-                        entry<ActivationsRoute.OffersWall> { _ ->
+                        entry<ActivationRoute.OffersWall> { _ ->
                             val launcher = rememberLauncherForActivityResult(
                                 contract = CameraRecognizerContract(),
                             ) { result ->
@@ -133,7 +133,7 @@ internal class ActivationsActivity : ComponentActivity() {
                             )
                         }
 
-                        entry<ActivationsRoute.SettingsEditor> { _ ->
+                        entry<ActivationRoute.SettingsEditor> { _ ->
                             SettingsEditorScreen(
                                 prefs = prefs,
                                 onBack = {
@@ -143,7 +143,7 @@ internal class ActivationsActivity : ComponentActivity() {
                             )
                         }
 
-                        entry<ActivationsRoute.Home> { _ ->
+                        entry<ActivationRoute.Home> { _ ->
                             val settings = remember(refreshKey) { SettingsData.Companion.from(prefs) }
 
                             HomeScreen(
@@ -158,10 +158,10 @@ internal class ActivationsActivity : ComponentActivity() {
                                     totalRewardsEarned = 0f
                                     rewardEvents.clear()
                                     val route: NavKey =
-                                        if (settings.email.isEmpty() && settings.phone.isEmpty()) ActivationsRoute.SettingsEditor else ActivationsRoute.OffersWall
+                                        if (settings.email.isEmpty() && settings.phone.isEmpty()) ActivationRoute.SettingsEditor else ActivationRoute.OffersWall
                                     backStack.add(route)
                                 },
-                                onSettingsClick = { backStack.add(ActivationsRoute.SettingsEditor) },
+                                onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
                                 onBack = { finish() },
                             )
                         }

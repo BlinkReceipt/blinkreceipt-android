@@ -48,16 +48,16 @@ internal data class SettingsData(
 ) {
     companion object {
         fun from(prefs: SharedPreferences): SettingsData = SettingsData(
-            email = prefs.getString(ActivationsActivity.PREF_EMAIL, "") ?: "",
-            phone = prefs.getString(ActivationsActivity.PREF_PHONE, "") ?: "",
-            environment = prefs.getString(ActivationsActivity.PREF_ENVIRONMENT, "Production") ?: "Production",
-            showHeader = prefs.getBoolean(ActivationsActivity.PREF_SHOW_HEADER, true),
-            testAds = prefs.getBoolean(ActivationsActivity.PREF_TEST_ADS, true),
-            testMode = prefs.getBoolean(ActivationsActivity.PREF_TEST_MODE, true),
-            currencyName = prefs.getString(ActivationsActivity.PREF_REWARD_CURRENCY_NAME, ActivationsActivity.DEFAULT_CURRENCY_NAME) ?: ActivationsActivity.DEFAULT_CURRENCY_NAME,
-            scanReward = prefs.getInt(ActivationsActivity.PREF_SCAN_REWARD, 0),
-            receiptMaxAgeDays = prefs.getInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
-            forcePlacements = prefs.getStringSet(ActivationsActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
+            email = prefs.getString(ActivationActivity.PREF_EMAIL, "") ?: "",
+            phone = prefs.getString(ActivationActivity.PREF_PHONE, "") ?: "",
+            environment = prefs.getString(ActivationActivity.PREF_ENVIRONMENT, "Production") ?: "Production",
+            showHeader = prefs.getBoolean(ActivationActivity.PREF_SHOW_HEADER, true),
+            testAds = prefs.getBoolean(ActivationActivity.PREF_TEST_ADS, true),
+            testMode = prefs.getBoolean(ActivationActivity.PREF_TEST_MODE, true),
+            currencyName = prefs.getString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, ActivationActivity.DEFAULT_CURRENCY_NAME) ?: ActivationActivity.DEFAULT_CURRENCY_NAME,
+            scanReward = prefs.getInt(ActivationActivity.PREF_SCAN_REWARD, 0),
+            receiptMaxAgeDays = prefs.getInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
+            forcePlacements = prefs.getStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
         )
     }
 }
@@ -181,12 +181,12 @@ private fun EditModeContent(
     var rewardCurrencyName by remember { mutableStateOf(initial.currencyName) }
     var rewardPayoutPercentage by remember {
         mutableStateOf(
-            prefs.getFloat(ActivationsActivity.PREF_REWARD_PAYOUT_PERCENTAGE, ActivationsActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
-                .let { if (it == ActivationsActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat()) "" else it.toString() }
+            prefs.getFloat(ActivationActivity.PREF_REWARD_PAYOUT_PERCENTAGE, ActivationActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
+                .let { if (it == ActivationActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat()) "" else it.toString() }
         )
     }
     var rewardIconBase64 by remember {
-        mutableStateOf(prefs.getString(ActivationsActivity.PREF_REWARD_ICON_BASE64, null))
+        mutableStateOf(prefs.getString(ActivationActivity.PREF_REWARD_ICON_BASE64, null))
     }
 
     val invalidEmailErrorLabel = stringResource(R.string.engage_error_invalid_email)
@@ -275,22 +275,22 @@ private fun EditModeContent(
                 emailError = null
 
                 prefs.edit()
-                    .putString(ActivationsActivity.PREF_EMAIL, trimmedEmail)
-                    .putString(ActivationsActivity.PREF_PHONE, phone.trim())
-                    .putString(ActivationsActivity.PREF_ENVIRONMENT, environment)
-                    .putBoolean(ActivationsActivity.PREF_TEST_ADS, testAds)
-                    .putBoolean(ActivationsActivity.PREF_TEST_MODE, testMode)
-                    .putBoolean(ActivationsActivity.PREF_SHOW_HEADER, showHeader)
-                    .putStringSet(ActivationsActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
-                    .putInt(ActivationsActivity.PREF_SCAN_REWARD, scanReward.toIntOrNull() ?: 0)
-                    .putInt(ActivationsActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
-                    .putString(ActivationsActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
-                    .putFloat(ActivationsActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull() ?: ActivationsActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
-                    .putString(ActivationsActivity.PREF_REWARD_ICON_BASE64, rewardIconBase64)
+                    .putString(ActivationActivity.PREF_EMAIL, trimmedEmail)
+                    .putString(ActivationActivity.PREF_PHONE, phone.trim())
+                    .putString(ActivationActivity.PREF_ENVIRONMENT, environment)
+                    .putBoolean(ActivationActivity.PREF_TEST_ADS, testAds)
+                    .putBoolean(ActivationActivity.PREF_TEST_MODE, testMode)
+                    .putBoolean(ActivationActivity.PREF_SHOW_HEADER, showHeader)
+                    .putStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
+                    .putInt(ActivationActivity.PREF_SCAN_REWARD, scanReward.toIntOrNull() ?: 0)
+                    .putInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
+                    .putString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
+                    .putFloat(ActivationActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull() ?: ActivationActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
+                    .putString(ActivationActivity.PREF_REWARD_ICON_BASE64, rewardIconBase64)
                     .apply()
 
                 try {
-                    ActivationsActivity.applySettings(context)
+                    ActivationActivity.applySettings(context)
                     Toast.makeText(context, R.string.engage_toast_settings_saved, Toast.LENGTH_SHORT).show()
                     onBack()
                 } catch (e: IllegalArgumentException) {

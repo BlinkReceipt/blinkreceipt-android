@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.actualplatform.android.activation.development.ui.ActivationsActivity
+import com.actualplatform.android.activation.development.ui.ActivationActivity
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 
@@ -38,15 +38,15 @@ private fun EngageHomeScreen() {
         Button(
             onClick = {
                 activity?.let {
-                    val intent = Intent(context, ActivationsActivity::class.java).apply {
+                    val intent = Intent(context, ActivationActivity::class.java).apply {
                         putExtra(
-                            ActivationsActivity.Companion.OPTIONS_KEY,
+                            ActivationActivity.Companion.OPTIONS_KEY,
                             ScanOptions.Builder()
                                 .detectDuplicates(true)
                                 .build(),
                         )
                         putExtra(
-                            ActivationsActivity.Companion.CAMERA_CHARACTERISTICS,
+                            ActivationActivity.Companion.CAMERA_CHARACTERISTICS,
                             CameraCharacteristics.Builder()
                                 .cameraPermission(true)
                                 .build(),
@@ -57,7 +57,7 @@ private fun EngageHomeScreen() {
                 }
             }
         ) {
-            Text(text = stringResource(R.string.activations_title))
+            Text(text = stringResource(R.string.activation_title))
         }
     }
 }
