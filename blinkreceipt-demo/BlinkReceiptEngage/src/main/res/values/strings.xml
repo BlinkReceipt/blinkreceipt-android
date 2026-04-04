@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Blink Receipt Engage</string>
+
+    <string name="activations_title">Activations</string>
+    <string name="engage_settings_title">Settings</string>
+    <string name="main_engage_editText_hint_email">Email Address</string>
+    <string name="main_engage_editText_hint_phone">Phone Number</string>
+    <string name="engage_section_user_identity">User Identity</string>
+    <string name="engage_section_environment">Environment</string>
+    <string name="engage_section_test_options">Test Options</string>
+    <string name="engage_label_test_ads">Test Ads</string>
+    <string name="engage_label_test_mode">Test Mode</string>
+    <string name="engage_section_debug_placements">Debug Force Placements</string>
+    <string name="engage_section_receipt_validation">Receipt Validation</string>
+    <string name="engage_label_receipt_max_age">Receipt Max Age (days)</string>
+    <string name="engage_section_scan_reward">Scan Reward</string>
+    <string name="engage_label_reward_points">Reward Points</string>
+    <string name="engage_button_save">Save</string>
+    <string name="engage_nav_back">Back</string>
+    <string name="engage_error_invalid_email">Please enter a valid email address</string>
+    <string name="engage_toast_settings_saved">Settings saved</string>
+    <string name="engage_offers_chooser_subtitle">Choose how the offer wall handles receipt scanning.</string>
+    <string name="engage_offers_browser_button">Promotions</string>
+    <string name="engage_section_ui">UI</string>
+    <string name="engage_offers_show_header">Show Header</string>
+    <string name="engage_section_current_settings">Current Settings</string>
+    <string name="engage_section_reward_currency">Reward Currency</string>
+    <string name="engage_section_rewards">Rewards Earned</string>
+    <string name="engage_label_total_rewards">Total</string>
+    <string name="engage_label_currency_name">Currency Name</string>
+    <string name="engage_label_payout_percentage">Payout Percentage</string>
+    <string name="engage_label_reward_icon">Reward Icon</string>
+    <string name="engage_action_pick_icon">Pick Icon</string>
+    <string name="engage_action_clear_icon">Clear</string>
+    <string name="engage_scan_results_title">Scan Results</string>
+    <string name="engage_scan_results_reward">Reward</string>
+    <string name="engage_scan_results_receipt_id">Receipt ID</string>
+    <string name="engage_scan_results_retailer">Retailer</string>
+    <string name="engage_scan_results_total">Total</string>
+    <string name="engage_scan_results_subtotal">Subtotal</string>
+    <string name="engage_scan_results_date">Date</string>
+    <string name="engage_scan_results_products">Products</string>
+    <string name="engage_button_reset">Reset</string>
+    <string name="engage_label_force_placements">Placements</string>
+</resources>
