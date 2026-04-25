@@ -767,6 +767,7 @@ Blink Receipt Recognizer
 
 ## 1.9.14
 - Extraction Improvements: Improved Sales Tax, Subtotal, and Promotion capture across US, France, and Germany receipts.
+
 ## 2.0.0
 - **BREAKING CHANGE** Removed all classes related to the old Camera framework in favor of the new CameraX integration
 - **BREAKING CHANGE** Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
@@ -774,8 +775,14 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 2.0.1
-- United States - Improved extraction of multiple payment methods. 
-- France & Germany - Improved basket-level and trip-level extraction. 
+- United States - Improved extraction of multiple payment methods.
+- France & Germany - Improved basket-level and trip-level extraction.
 - Enhanced consistency and accuracy across core receipt fields.
 - Fixed an issue that could cause the product array to return empty in some cases.
 - Improvements to Date extraction in Canada
+
+## 2.0.2
+- Extraction and duplicate detection accuracy improvements
+- Overall extraction improvements 
+- Resolved an issue where Walmart Fuel receipts may have been flagged as fraudulent
+- Stability fixes and improvements
