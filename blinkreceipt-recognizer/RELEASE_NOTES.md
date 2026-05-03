@@ -786,3 +786,10 @@ Blink Receipt Recognizer
 - Overall extraction improvements 
 - Resolved an issue where Walmart Fuel receipts may have been flagged as fraudulent
 - Stability fixes and improvements
+
+## 2.0.3
+- Overall improvements to barcode extraction 
+- Enhanced payment detail extraction 
+- Improved total extraction accuracy 
+- Added support for Fuel products in Germany
+- Stability fixes and improvements
