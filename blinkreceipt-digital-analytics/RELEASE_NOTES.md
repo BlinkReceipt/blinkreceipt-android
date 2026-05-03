@@ -72,3 +72,6 @@
 
 ## 2.0.2
 - Stability fixes and improvements
+
+## 2.0.3
+- Stability fixes and improvements

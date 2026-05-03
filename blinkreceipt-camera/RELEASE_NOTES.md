@@ -297,8 +297,12 @@
 - Provides a more robust foundation for ongoing performance and camera enhancements
 - Stability fixes and improvements
 
+
 ## 2.0.1
 - Stability fixes and improvements
 
 ## 2.0.2
+- Stability fixes and improvements
+
+## 2.0.3
 - Stability fixes and improvements
