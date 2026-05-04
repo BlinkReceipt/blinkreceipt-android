@@ -37,7 +37,6 @@ internal fun HomeScreen(
     totalRewardsEarned: Float,
     rewardEvents: List<Rewards>,
     onOffersWallClick: () -> Unit,
-    onScanReceiptClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onBack: () -> Unit,
 ) {
@@ -77,13 +76,6 @@ internal fun HomeScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(stringResource(R.string.activation_offers_browser_button))
-            }
-            Spacer(modifier = Modifier.height(12.dp))
-            Button(
-                onClick = onScanReceiptClick,
-                modifier = Modifier.fillMaxWidth(),
-            ) {
-                Text(stringResource(R.string.activation_scan_receipt))
             }
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedButton(onClick = onSettingsClick, modifier = Modifier.fillMaxWidth()) {
