@@ -186,7 +186,6 @@ internal class ActivationActivity : ComponentActivity() {
         internal const val PREF_REWARD_PAYOUT_PERCENTAGE = "engage_reward_payout_percentage"
         internal const val PREF_REWARD_ICON_BASE64 = "engage_reward_icon_base64"
         internal const val PREF_SHOW_HEADER = "engage_show_header"
-        internal const val PREF_RECEIPT_MAX_AGE_DAYS = "engage_receipt_max_age_days"
         internal const val DEFAULT_CURRENCY_NAME = "Points"
         internal const val DEFAULT_PAYOUT_PERCENTAGE = 100.0
         private const val TAG = "ActivationsActivity"
@@ -201,7 +200,6 @@ internal class ActivationActivity : ComponentActivity() {
             rewardCurrencyName: String,
             rewardPayoutPercentage: Double,
             rewardIconBase64: String?,
-            receiptMaxAgeDays: Int,
             scanReward: Int,
         ) {
             with(ActivationClient.instance) {
@@ -241,7 +239,6 @@ internal class ActivationActivity : ComponentActivity() {
                 this.rewardIcon = rewardIconBase64?.takeIf { it.isNotEmpty() }?.let {
                     runCatching { Base64.decode(it, Base64.DEFAULT) }.getOrNull()
                 }
-                this.receiptMaxAgeDays = receiptMaxAgeDays
                 this.scanReward = ScanReward(scanReward)
             }
         }
@@ -259,7 +256,6 @@ internal class ActivationActivity : ComponentActivity() {
                 rewardCurrencyName = prefs.getString(PREF_REWARD_CURRENCY_NAME, DEFAULT_CURRENCY_NAME) ?: DEFAULT_CURRENCY_NAME,
                 rewardPayoutPercentage = prefs.getFloat(PREF_REWARD_PAYOUT_PERCENTAGE, DEFAULT_PAYOUT_PERCENTAGE.toFloat()).toDouble(),
                 rewardIconBase64 = prefs.getString(PREF_REWARD_ICON_BASE64, null),
-                receiptMaxAgeDays = prefs.getInt(PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
                 scanReward = prefs.getInt(PREF_SCAN_REWARD, 0),
             )
         }

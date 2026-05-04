@@ -12,7 +12,6 @@
     <string name="activation_label_test_mode">Test Mode</string>
     <string name="activation_section_debug_placements">Debug Force Placements</string>
     <string name="activation_section_receipt_validation">Receipt Validation</string>
-    <string name="activation_label_receipt_max_age">Receipt Max Age (days)</string>
     <string name="activation_section_scan_reward">Scan Reward</string>
     <string name="activation_label_reward_points">Reward Points</string>
     <string name="activation_button_save">Save</string>

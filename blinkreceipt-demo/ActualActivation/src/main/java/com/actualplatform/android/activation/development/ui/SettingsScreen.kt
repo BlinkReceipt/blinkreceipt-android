@@ -30,7 +30,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.activation.ActivationClient
 import com.actualplatform.android.activation.development.R
 
 @Stable
@@ -43,7 +42,6 @@ internal data class SettingsData(
     val testMode: Boolean,
     val currencyName: String,
     val scanReward: Int,
-    val receiptMaxAgeDays: Int,
     val forcePlacements: Set<String>,
 ) {
     companion object {
@@ -56,7 +54,6 @@ internal data class SettingsData(
             testMode = prefs.getBoolean(ActivationActivity.PREF_TEST_MODE, true),
             currencyName = prefs.getString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, ActivationActivity.DEFAULT_CURRENCY_NAME) ?: ActivationActivity.DEFAULT_CURRENCY_NAME,
             scanReward = prefs.getInt(ActivationActivity.PREF_SCAN_REWARD, 0),
-            receiptMaxAgeDays = prefs.getInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
             forcePlacements = prefs.getStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
         )
     }
@@ -109,10 +106,6 @@ internal fun SettingsSummary(
         }
 
         SectionHeader(stringResource(R.string.activation_section_receipt_validation))
-        SettingsSummaryRow(
-            stringResource(R.string.activation_label_receipt_max_age),
-            "${settings.receiptMaxAgeDays} days"
-        )
 
         SectionHeader(stringResource(R.string.activation_section_ui))
         SettingsSummaryRow(
@@ -177,7 +170,6 @@ private fun EditModeContent(
     var scanReward by remember {
         mutableStateOf(initial.scanReward.let { if (it == 0) "" else it.toString() })
     }
-    var receiptMaxAgeDays by remember { mutableStateOf(initial.receiptMaxAgeDays.toString()) }
     var rewardCurrencyName by remember { mutableStateOf(initial.currencyName) }
     var rewardPayoutPercentage by remember {
         mutableStateOf(
@@ -222,13 +214,6 @@ private fun EditModeContent(
             onTestAdsChange = { testAds = it },
             testMode = testMode,
             onTestModeChange = { testMode = it },
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        ReceiptValidationSection(
-            receiptMaxAgeDays = receiptMaxAgeDays,
-            onReceiptMaxAgeDaysChange = { receiptMaxAgeDays = it },
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -283,7 +268,6 @@ private fun EditModeContent(
                     .putBoolean(ActivationActivity.PREF_SHOW_HEADER, showHeader)
                     .putStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
                     .putInt(ActivationActivity.PREF_SCAN_REWARD, scanReward.toIntOrNull() ?: 0)
-                    .putInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
                     .putString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
                     .putFloat(ActivationActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull() ?: ActivationActivity.DEFAULT_PAYOUT_PERCENTAGE.toFloat())
                     .putString(ActivationActivity.PREF_REWARD_ICON_BASE64, rewardIconBase64)
