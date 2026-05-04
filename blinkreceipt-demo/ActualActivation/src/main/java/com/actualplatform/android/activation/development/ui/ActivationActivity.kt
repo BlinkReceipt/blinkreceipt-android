@@ -144,7 +144,30 @@ internal class ActivationActivity : ComponentActivity() {
                         }
 
                         entry<ActivationRoute.Home> { _ ->
-                            val settings = remember(refreshKey) { SettingsData.Companion.from(prefs) }
+                            val settings = remember(refreshKey) { SettingsData.from(prefs) }
+
+                            val scanLauncher = rememberLauncherForActivityResult(
+                                contract = CameraRecognizerContract(),
+                            ) { result ->
+                                LogcatManager.event().debug(TAG) { "ScanReceipt::launcher callback -> $result" }
+                                when (result) {
+                                    is CameraRecognizerResults.Success -> {
+                                        LogcatManager.event().debug(TAG) { "ScanReceipt::onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
+                                        lastScanResults = result.results
+                                        lastScanError = null
+                                    }
+                                    is CameraRecognizerResults.Exception -> {
+                                        LogcatManager.event().debug(TAG) { "ScanReceipt::onScanResult -> Exception: ${result.exception}" }
+                                        lastScanError = result.exception.message ?: "Unknown error"
+                                        lastScanResults = null
+
+                                        backStack.add(ActivationRoute.OffersWall)
+                                    }
+                                    CameraRecognizerResults.Cancelled -> {
+                                        LogcatManager.event().debug(TAG) { "ScanReceipt::onScanResult -> Cancelled" }
+                                    }
+                                }
+                            }
 
                             HomeScreen(
                                 settings = settings,
@@ -160,6 +183,24 @@ internal class ActivationActivity : ComponentActivity() {
                                     val route: NavKey =
                                         if (settings.email.isEmpty() && settings.phone.isEmpty()) ActivationRoute.SettingsEditor else ActivationRoute.OffersWall
                                     backStack.add(route)
+                                },
+                                onScanReceiptClick = {
+                                    if (settings.email.isEmpty() && settings.phone.isEmpty()) {
+                                        backStack.add(ActivationRoute.SettingsEditor)
+                                    } else {
+                                        LogcatManager.event().debug(TAG) { "ScanReceipt -> launching camera with activation=true" }
+                                        lastScanResults = null
+                                        lastScanError = null
+                                        totalRewardsEarned = 0f
+                                        rewardEvents.clear()
+                                        scanLauncher.launch(
+                                            CameraRecognizerOptions.Builder()
+                                                .options(scanOptions)
+                                                .characteristics(cameraCharacteristics)
+                                                .activation(true)
+                                                .build()
+                                        )
+                                    }
                                 },
                                 onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
                                 onBack = { finish() },

@@ -20,6 +20,7 @@
     <string name="activation_toast_settings_saved">Settings saved</string>
     <string name="activation_offers_chooser_subtitle">Choose how the offer wall handles receipt scanning.</string>
     <string name="activation_offers_browser_button">Promotions</string>
+    <string name="activation_scan_receipt">Scan Receipt</string>
     <string name="activation_section_ui">UI</string>
     <string name="activation_offers_show_header">Show Header</string>
     <string name="activation_section_current_settings">Current Settings</string>
