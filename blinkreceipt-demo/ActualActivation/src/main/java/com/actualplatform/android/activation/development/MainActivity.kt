@@ -22,13 +22,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EngageHomeScreen()
+            ActivationHomeScreen()
         }
     }
 }
 
 @Composable
-private fun EngageHomeScreen() {
+private fun ActivationHomeScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center

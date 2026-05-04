@@ -24,7 +24,7 @@ internal fun ReceiptValidationSection(
     receiptMaxAgeDays: String,
     onReceiptMaxAgeDaysChange: (String) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_receipt_validation), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activations_section_receipt_validation), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     Row(
@@ -34,7 +34,7 @@ internal fun ReceiptValidationSection(
         OutlinedTextField(
             value = receiptMaxAgeDays,
             onValueChange = { onReceiptMaxAgeDaysChange(it.filter { c -> c.isDigit() }) },
-            label = { Text(stringResource(R.string.engage_label_receipt_max_age)) },
+            label = { Text(stringResource(R.string.activations_label_receipt_max_age)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             singleLine = true,
             modifier = Modifier.weight(1f),
@@ -43,7 +43,7 @@ internal fun ReceiptValidationSection(
         TextButton(
             onClick = { onReceiptMaxAgeDaysChange(ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS.toString()) },
         ) {
-            Text(stringResource(R.string.engage_button_reset))
+            Text(stringResource(R.string.activations_button_reset))
         }
     }
 }

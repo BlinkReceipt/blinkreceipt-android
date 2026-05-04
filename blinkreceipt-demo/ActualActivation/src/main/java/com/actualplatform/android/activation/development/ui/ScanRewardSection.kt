@@ -19,13 +19,13 @@ internal fun ScanRewardSection(
     scanReward: String,
     onScanRewardChange: (String) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_scan_reward), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activations_section_scan_reward), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     OutlinedTextField(
         value = scanReward,
         onValueChange = { onScanRewardChange(it.filter { c -> c.isDigit() }) },
-        label = { Text(stringResource(R.string.engage_label_reward_points)) },
+        label = { Text(stringResource(R.string.activations_label_reward_points)) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),

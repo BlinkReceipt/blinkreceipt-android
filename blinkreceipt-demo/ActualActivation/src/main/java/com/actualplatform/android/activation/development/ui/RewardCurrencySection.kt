@@ -48,13 +48,13 @@ internal fun RewardCurrencySection(
         }
     }
 
-    Text(stringResource(R.string.engage_section_reward_currency), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activations_section_reward_currency), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     OutlinedTextField(
         value = currencyName,
         onValueChange = onCurrencyNameChange,
-        label = { Text(stringResource(R.string.engage_label_currency_name)) },
+        label = { Text(stringResource(R.string.activations_label_currency_name)) },
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),
     )
@@ -64,7 +64,7 @@ internal fun RewardCurrencySection(
     OutlinedTextField(
         value = payoutPercentage,
         onValueChange = { onPayoutPercentageChange(it.filter { c -> c.isDigit() || c == '.' }) },
-        label = { Text(stringResource(R.string.engage_label_payout_percentage)) },
+        label = { Text(stringResource(R.string.activations_label_payout_percentage)) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),
@@ -72,7 +72,7 @@ internal fun RewardCurrencySection(
 
     Spacer(modifier = Modifier.height(8.dp))
 
-    Text(stringResource(R.string.engage_label_reward_icon), style = MaterialTheme.typography.bodyMedium)
+    Text(stringResource(R.string.activations_label_reward_icon), style = MaterialTheme.typography.bodyMedium)
     Spacer(modifier = Modifier.height(4.dp))
 
     Row(
@@ -86,7 +86,7 @@ internal fun RewardCurrencySection(
             }.getOrNull()?.let { bitmap ->
                 Image(
                     bitmap = bitmap.asImageBitmap(),
-                    contentDescription = stringResource(R.string.engage_label_reward_icon),
+                    contentDescription = stringResource(R.string.activations_label_reward_icon),
                     modifier = Modifier.size(48.dp),
                 )
                 Spacer(modifier = Modifier.padding(start = 8.dp))
@@ -94,12 +94,12 @@ internal fun RewardCurrencySection(
         }
 
         OutlinedButton(onClick = { iconPickerLauncher.launch("image/*") }) {
-            Text(stringResource(R.string.engage_action_pick_icon))
+            Text(stringResource(R.string.activations_action_pick_icon))
         }
 
         if (iconBase64 != null) {
             TextButton(onClick = { onIconBase64Change(null) }) {
-                Text(stringResource(R.string.engage_action_clear_icon))
+                Text(stringResource(R.string.activations_action_clear_icon))
             }
         }
     }
