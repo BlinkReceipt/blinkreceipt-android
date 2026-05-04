@@ -21,14 +21,14 @@ internal fun TestOptionsSection(
     testMode: Boolean,
     onTestModeChange: (Boolean) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_test_options), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activation_section_test_options), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Text(stringResource(R.string.engage_label_test_ads), modifier = Modifier.weight(1f))
+        Text(stringResource(R.string.activation_label_test_ads), modifier = Modifier.weight(1f))
         Switch(
             checked = testAds,
             onCheckedChange = onTestAdsChange,
@@ -41,7 +41,7 @@ internal fun TestOptionsSection(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Text(stringResource(R.string.engage_label_test_mode), modifier = Modifier.weight(1f))
+        Text(stringResource(R.string.activation_label_test_mode), modifier = Modifier.weight(1f))
         Switch(
             checked = testMode,
             onCheckedChange = onTestModeChange,

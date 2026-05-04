@@ -20,7 +20,7 @@ internal fun DebugPlacementsSection(
     forcePlacements: Set<String>,
     onForcePlacementsChange: (Set<String>) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_debug_placements), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activation_section_debug_placements), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     PlacementLayout.entries.forEach { layout ->

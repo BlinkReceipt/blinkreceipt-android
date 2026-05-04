@@ -22,13 +22,13 @@ internal fun UserIdentitySection(
     onPhoneChange: (String) -> Unit,
     emailError: String?,
 ) {
-    Text(stringResource(R.string.engage_section_user_identity), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activation_section_user_identity), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     OutlinedTextField(
         value = email,
         onValueChange = onEmailChange,
-        label = { Text(stringResource(R.string.main_engage_editText_hint_email)) },
+        label = { Text(stringResource(R.string.main_activation_editText_hint_email)) },
         isError = emailError != null,
         supportingText = emailError?.let { error -> { Text(error) } },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -41,7 +41,7 @@ internal fun UserIdentitySection(
     OutlinedTextField(
         value = phone,
         onValueChange = onPhoneChange,
-        label = { Text(stringResource(R.string.main_engage_editText_hint_phone)) },
+        label = { Text(stringResource(R.string.main_activation_editText_hint_phone)) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),

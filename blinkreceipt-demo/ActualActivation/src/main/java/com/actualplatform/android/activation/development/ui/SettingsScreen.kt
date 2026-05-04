@@ -70,64 +70,64 @@ internal fun SettingsSummary(
 ) {
     Column(modifier = modifier) {
         Text(
-            text = stringResource(R.string.engage_settings_title),
+            text = stringResource(R.string.activation_settings_title),
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 8.dp),
         )
 
-        SectionHeader(stringResource(R.string.engage_section_user_identity))
+        SectionHeader(stringResource(R.string.activation_section_user_identity))
         SettingsSummaryRow(
-            stringResource(R.string.main_engage_editText_hint_email),
+            stringResource(R.string.main_activation_editText_hint_email),
             settings.email.ifEmpty { "—" })
         SettingsSummaryRow(
-            stringResource(R.string.main_engage_editText_hint_phone),
+            stringResource(R.string.main_activation_editText_hint_phone),
             settings.phone.ifEmpty { "—" })
 
-        SectionHeader(stringResource(R.string.engage_section_environment))
+        SectionHeader(stringResource(R.string.activation_section_environment))
         SettingsSummaryRow(
-            stringResource(R.string.engage_section_environment),
+            stringResource(R.string.activation_section_environment),
             settings.environment
         )
 
-        SectionHeader(stringResource(R.string.engage_section_test_options))
+        SectionHeader(stringResource(R.string.activation_section_test_options))
         SettingsSummaryRow(
-            stringResource(R.string.engage_label_test_ads),
+            stringResource(R.string.activation_label_test_ads),
             if (settings.testAds) "On" else "Off"
         )
         SettingsSummaryRow(
-            stringResource(R.string.engage_label_test_mode),
+            stringResource(R.string.activation_label_test_mode),
             if (settings.testMode) "On" else "Off"
         )
 
         // Debug Placements
         if (settings.forcePlacements.isNotEmpty()) {
-            SectionHeader(stringResource(R.string.engage_section_debug_placements))
+            SectionHeader(stringResource(R.string.activation_section_debug_placements))
             SettingsSummaryRow(
-                stringResource(R.string.engage_label_force_placements),
+                stringResource(R.string.activation_label_force_placements),
                 settings.forcePlacements.joinToString(", ")
             )
         }
 
-        SectionHeader(stringResource(R.string.engage_section_receipt_validation))
+        SectionHeader(stringResource(R.string.activation_section_receipt_validation))
         SettingsSummaryRow(
-            stringResource(R.string.engage_label_receipt_max_age),
+            stringResource(R.string.activation_label_receipt_max_age),
             "${settings.receiptMaxAgeDays} days"
         )
 
-        SectionHeader(stringResource(R.string.engage_section_ui))
+        SectionHeader(stringResource(R.string.activation_section_ui))
         SettingsSummaryRow(
-            stringResource(R.string.engage_offers_show_header),
+            stringResource(R.string.activation_offers_show_header),
             if (settings.showHeader) "On" else "Off"
         )
 
-        SectionHeader(stringResource(R.string.engage_section_reward_currency))
+        SectionHeader(stringResource(R.string.activation_section_reward_currency))
         SettingsSummaryRow(
-            stringResource(R.string.engage_label_currency_name),
+            stringResource(R.string.activation_label_currency_name),
             settings.currencyName
         )
         if (settings.scanReward > 0) {
             SettingsSummaryRow(
-                stringResource(R.string.engage_label_reward_points),
+                stringResource(R.string.activation_label_reward_points),
                 settings.scanReward.toString()
             )
         }
@@ -144,10 +144,10 @@ internal fun SettingsEditorScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.engage_settings_title)) },
+                title = { Text(stringResource(R.string.activation_settings_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = stringResource(R.string.engage_nav_back))
+                        Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = stringResource(R.string.activation_nav_back))
                     }
                 },
             )
@@ -189,7 +189,7 @@ private fun EditModeContent(
         mutableStateOf(prefs.getString(ActivationActivity.PREF_REWARD_ICON_BASE64, null))
     }
 
-    val invalidEmailErrorLabel = stringResource(R.string.engage_error_invalid_email)
+    val invalidEmailErrorLabel = stringResource(R.string.activation_error_invalid_email)
 
     Column(
         modifier = modifier
@@ -291,7 +291,7 @@ private fun EditModeContent(
 
                 try {
                     ActivationActivity.applySettings(context)
-                    Toast.makeText(context, R.string.engage_toast_settings_saved, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.activation_toast_settings_saved, Toast.LENGTH_SHORT).show()
                     onBack()
                 } catch (e: IllegalArgumentException) {
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
@@ -299,7 +299,7 @@ private fun EditModeContent(
             },
             modifier = Modifier.fillMaxWidth(),
         ) {
-            Text(stringResource(R.string.engage_button_save))
+            Text(stringResource(R.string.activation_button_save))
         }
     }
 }

@@ -19,14 +19,14 @@ internal fun UiSettingsSection(
     showHeader: Boolean,
     onShowHeaderChange: (Boolean) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_ui), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activation_section_ui), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Text(stringResource(R.string.engage_offers_show_header), modifier = Modifier.weight(1f))
+        Text(stringResource(R.string.activation_offers_show_header), modifier = Modifier.weight(1f))
         Switch(
             checked = showHeader,
             onCheckedChange = onShowHeaderChange,

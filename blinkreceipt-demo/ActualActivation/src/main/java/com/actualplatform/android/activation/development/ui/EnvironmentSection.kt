@@ -19,7 +19,7 @@ internal fun EnvironmentSection(
     environment: String,
     onEnvironmentChange: (String) -> Unit,
 ) {
-    Text(stringResource(R.string.engage_section_environment), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activation_section_environment), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     listOf("Production", "Staging", "Development").forEach { env ->

@@ -49,7 +49,7 @@ internal fun HomeScreen(
                         Icon(
                             painter = painterResource(R.drawable.ic_arrow_back),
                             contentDescription = stringResource(
-                            R.string.engage_nav_back),
+                            R.string.activation_nav_back),
                         )
                     }
                 },
@@ -75,18 +75,18 @@ internal fun HomeScreen(
                 onClick = onOffersWallClick,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text(stringResource(R.string.engage_offers_browser_button))
+                Text(stringResource(R.string.activation_offers_browser_button))
             }
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedButton(onClick = onSettingsClick, modifier = Modifier.fillMaxWidth()) {
-                Text(stringResource(R.string.engage_settings_title))
+                Text(stringResource(R.string.activation_settings_title))
             }
 
             // Rewards Earned
             if (rewardEvents.isNotEmpty()) {
-                SectionHeader(stringResource(R.string.engage_section_rewards))
+                SectionHeader(stringResource(R.string.activation_section_rewards))
                 SettingsSummaryRow(
-                    stringResource(R.string.engage_label_total_rewards),
+                    stringResource(R.string.activation_label_total_rewards),
                     String.format(Locale.US, "%.2f %s", totalRewardsEarned, settings.currencyName),
                 )
                 rewardEvents.forEachIndexed { index, reward ->

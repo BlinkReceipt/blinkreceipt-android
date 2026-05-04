@@ -65,7 +65,7 @@ internal fun ScanResultsPanel(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = stringResource(R.string.engage_scan_results_title),
+                text = stringResource(R.string.activation_scan_results_title),
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
             )
