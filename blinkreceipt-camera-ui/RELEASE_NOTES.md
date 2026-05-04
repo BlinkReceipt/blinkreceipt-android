@@ -178,6 +178,30 @@
 - Stability fixes and improvements
 
 ## 1.4.5
+- This version introduces a significant overhaul of the theming and styling system for the Camera UI. The primary goal is to make customization simpler and more robust by moving away from deeply nested styles and toward a more streamlined set of attributes on the main theme.
+  - ***Breaking Changes***: Simplified Theming API
+    - To streamline customization, some nested widget style attributes are now ignored in favor of new, more specific attributes. You will need to update your custom styles to use the new attributes.
+      1. Top-Level Theme (BlinkRecognizerStyle)
+         - Deprecated & Ignored: ~~`tooltipTextColor`~~, ~~`android:enforceStatusBarContrast`~~, ~~`android:enforceNavigationBarContrast`~~, ~~`android:navigationBarColor`~~, ~~`android:statusBarColor`~~. 
+           - These attributes were often redundant or better handled by the application's base theme.
+      2. Tooltip Style (blinkTooltipStyle)
+         - Deprecated & Ignored: ~~`tooltipDirection`~~ and ~~`tooltipPlacement`~~.
+           - These are now controlled internally for a more consistent UI.
+      3. General Button Styles (`torchButtonStyle`, `cancelButtonStyle`, `finishButtonStyle`, `retakeButtonStyle`, `captureButtonStyle`, & `confirmButtonStyle`)
+        - ~~`android:background`~~ is deprecated across all buttons.
+          - **REPLACEMENT**: Use the new, more specific color attributes to control button states: `android:colorAccent` (default state), `android:colorPressedHighlight` (pressed state), and `android:colorActivatedHighlight` (activated/selected state).
+        - ~~`android:src`~~ is deprecated for `torchButtonStyle`.
+          - **REPLACEMENT**: Use the new `torchOnSrc` and `torchOffSrc` attributes for more explicit control over the flashlight icons.
+        - ~~`android:adjustViewBounds`~~ and ~~`android:scaleType`~~ are deprecated for `cancelButtonStyle` as they are now managed internally.
+  - ***New Additions & Improvements***
+    - New attributes have been added to provide more granular control over UI elements:
+      1. For All Buttons (`torchButtonStyle`, `cancelButtonStyle`, `finishButtonStyle`, `retakeButtonStyle`, `captureButtonStyle`, & `confirmButtonStyle`):
+         - `android:padding`: Provides direct control over the padding within each button.
+         - `android:contentDescription`: Allows setting a custom content description for accessibility. 
+         - For the torch button, use `torchOnContentDescription` and `torchOffContentDescription`.
+      2. For the Torch Button (`torchButtonStyle`):
+           - `torchOnSrc` / `torchOffSrc`: Set distinct drawables for the torch's on and off states.
+           - `torchOnContentDescription` / `torchOffContentDescription`: Set distinct accessibility strings for each state.
 - Stability fixes and improvements
 
 ## 1.4.6
@@ -192,6 +216,7 @@
 
 ## 1.4.9
 - Stability fixes and improvements
+
 ## 2.0.0
 - Migrated to Android CameraX to improve camera stability and reliability during receipt capture
 - More consistent camera behavior across a wide range of Android devices and OS versions
@@ -199,4 +224,14 @@
 - Stability fixes and improvements
 
 ## 2.0.1
+- Stability fixes and improvements
+
+## 2.0.2
+- Stability fixes and improvements
+
+## 2.0.3
+- Stability fixes and improvements
+
+## 2.1.0
+- We’ve increased the minimum supported Android SDK version from API 23 (Android 6.0 Marshmallow) to API 24 (Android 7.0 Nougat). This allows us to take advantage of newer platform capabilities and improve overall app quality.
 - Stability fixes and improvements
