@@ -501,16 +501,6 @@ You can also remove multiple processor architectures by specifying `exclude` dir
 
 - Google decided that as of August 2019 all apps on Google Play that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64). This means that you cannot upload application to Google Play Console that supports only 32-bit ABI and does not support corresponding 64-bit ABI.
 
-### Development Mode
-
-System Environments
-
-```shell
-ENGAGE_MONETIZATION_DEVELOPMENT=true # or false
-ENGAGE_SDK_BUILD_ROOT=/path/to/include/root/path/for/your/local/engage/project # i.e. /Users/macbook.pro/engage-kemp
-```
-
-
 ## <a name=requirements></a> Requirements
 - AndroidX
 - Min SDK 23+
