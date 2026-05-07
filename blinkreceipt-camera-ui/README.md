@@ -103,7 +103,7 @@ The fragment approach is also a typical implementation of the Android Fragment. 
     }
 
 ```
-Your host activity or host fragment, is able to listen to the results of the scan session via a FragmentResultListener. This is an android implementation, that allows users to commmunicate between fragments through a layer of abstraction. The method takes in a `KEY` which indicates the results you are listening for. In our case, you want to listen for the `CameraRecognizerFragment.SCAN_SESSION_RESULTS_KEY` key. The callback function passes a `Bundle`, and to unwrap the results in the bundle you must call `bundle.getParcelable<CameraRecognizerResults>(CameraRecognizerFragment.SCAN_RESULTS_KEY)`. This will provide you the results of the scan session.
+Your host activity or host fragment, is able to listen to the results of the scan session via a FragmentResultListener. This is an android implementation, that allows users to communicate between fragments through a layer of abstraction. The method takes in a `KEY` which indicates the results you are listening for. In our case, you want to listen for the `CameraRecognizerFragment.SCAN_SESSION_RESULTS_KEY` key. The callback function passes a `Bundle`, and to unwrap the results in the bundle you must call `bundle.getParcelable<CameraRecognizerResults>(CameraRecognizerFragment.SCAN_RESULTS_KEY)`. This will provide you the results of the scan session.
 
 ### Jetpack Compose
 
@@ -319,41 +319,147 @@ In the previous section we mentioned how users could define their own theme and 
 ```xml
     <!-- Style that defines the entire scan experience -->
     <style name="BlinkRecognizerStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/blink_blue</item>
-        <item name="colorPrimaryVariant">@color/blink_blue_tapped</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue_variant</item>
         <item name="colorSecondary">@color/light_grey</item>
         <item name="colorSecondaryVariant">@color/dark_grey</item>
         <item name="colorOnPrimary">@android:color/white</item>
-        <!-- Background of buttons cancel and torch-->
-        <item name="secondary_button_background">@drawable/default_secondary_button_background</item>
-        <!-- Background of buttons retake and finish-->
-        <item name="secondary_action_button_background">@drawable/tooltip_secondary_action_button_selector</item>
-        <!-- Define the background of the primary buttons on the center of the screen-->
-        <item name="capture_button_background">@drawable/primary_secondary_color_selector</item>
-        <item name="confirm_action_button_background">@drawable/primary_secondary_color_selector</item>
-        <item name="viewport_bounds_color">@color/see_through_black</item>
-        <item name="viewport_bounds_color_captured">@color/black</item>
-        <item name="capture_photo_icon_color">@android:color/white</item>
-        <item name="captured_photo_icon_color">@android:color/white</item>
-        <item name="finish_scan_icon_color">@android:color/white</item>
-        <item name="retake_photo_icon_color">@android:color/white</item>
-        <item name="torch_icon_color">@android:color/white</item>
-        <item name="exit_icon_color">@android:color/white</item>
-        <item name="tooltip_style">@style/BlinkRecognizerStyle.Tooltip</item>
-        <item name="tooltip_text_color">@android:color/white</item>
-        <item name="guideline_hint_view_background">?attr/colorPrimary</item>
-        <item name="progress_bar_color">?attr/colorPrimary</item>
+        <item name="blinkTooltipStyle">@style/BlinkRecognizerStyle.CustomTooltip</item>
+        <item name="guidelineHintViewBackground">?attr/colorPrimary</item>
+        <item name="progressBarColor">?attr/colorPrimary</item>
+        <item name="torchButtonStyle">@style/Widget.AppCompat.ImageButton.TorchButtonStyle.CustomAppStyle</item>
+        <item name="cancelButtonStyle">@style/Widget.AppCompat.ImageButton.CancelButtonStyle.CustomAppStyle</item>
+        <item name="retakeButtonStyle">@style/Widget.AppCompat.ImageButton.RetakeButtonStyle.CustomAppStyle</item>
+        <item name="finishButtonStyle">@style/Widget.AppCompat.ImageButton.FinishButtonStyle.CustomAppStyle</item>
+        <item name="captureButtonStyle">@style/Widget.AppCompat.ImageButton.CaptureButtonStyle.CustomAppStyle</item>
+        <item name="confirmButtonStyle">@style/Widget.AppCompat.ImageButton.ConfirmButtonStyle.CustomAppStyle</item>
     </style>
 
     <!-- Define the style of the tooltips that appear when defined as part of CameraCharacteristics-->
-    <style name="BlinkRecognizerStyle.Tooltip">
+    <style name="BlinkRecognizerStyle.CustomTooltip">
         <item name="tooltip_point_height">8dp</item>
         <item name="tooltip_box_radius">6dp</item>
         <item name="tooltip_color">?attr/colorPrimary</item>
         <item name="tooltip_text_color">?attr/colorOnPrimary</item>
-        <item name="tooltip_direction">none</item>
-        <item name="tooltip_placement">start</item>
     </style>
+
+    <!-- Define the style of the Torch Button -->
+    <style name="Widget.AppCompat.ImageButton.TorchButtonStyle.CustomAppStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent' and 'android:colorPressedHighlight' instead for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/default_secondary_button_background</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+
+        <item name="torchOnContentDescription">@string/cd_torch_button_on</item>
+        <item name="torchOffContentDescription">@string/cd_torch_button_off</item>
+    
+        <!-- Torch Button Padding -->
+        <item name="android:padding">0dp</item>
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'torchOnSrc' and 'torchOffSrc' instead for a more fine-grained drawable source. -->
+        <item name="android:src">@drawable/ic_torch_selector</item>
+        <!-- Torch Button Icon (ON) -->
+        <item name="torchOnSrc">@drawable/ic_torch_on</item>
+        <!-- Torch Button Icon (OFF) -->
+        <item name="torchOffSrc">@drawable/ic_torch</item>
+        <!-- Torch Icon Tint -->
+        <item name="tint">@android:color/holo_orange_dark</item>
+    </style>
+
+    <!-- Define the style of the Cancel Button -->
+    <style name="Widget.AppCompat.ImageButton.CancelButtonStyle.CustomAppStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent' and 'android:colorPressedHighlight' instead for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/default_secondary_button_background</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+        
+        <item name="android:contentDescription">"@null"</item>
+        <!-- Cancel Button Padding -->
+        <item name="android:padding">12dp</item>
+        <!-- Cancel Icon -->
+        <item name="android:src">@drawable/ic_exit</item>
+        <!-- Cancel Icon Tint -->
+        <item name="tint">@android:color/holo_blue_bright</item>
+    </style>
+
+    <!-- Define the style of the Finish Button -->
+    <style name="Widget.AppCompat.ImageButton.FinishButtonStyle.CustomAppStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
+            for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/tooltip_secondary_action_button_selector</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>    
+    
+        <!-- Finish Button Padding -->
+        <item name="android:padding">0dp</item>
+        <!-- Finish Icon -->
+        <item name="android:src">@drawable/ic_confirm</item>
+        <!-- Finish Icon Tint -->
+        <item name="tint">@android:color/holo_blue_dark</item>
+    </style>
+
+    <!-- Define the style of the Retake Button -->
+    <style name="Widget.AppCompat.ImageButton.RetakeButtonStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
+            for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/tooltip_secondary_action_button_selector</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>
+
+        <item name="android:contentDescription">"@null"</item>
+        <!-- Retake Button Padding -->
+        <item name="android:padding">0dp</item>
+        <!-- Retake Button Icon -->
+        <item name="android:src">@drawable/ic_retake</item>
+        <!-- Retake Button Tint -->
+        <item name="tint">@android:color/white</item>
+    </style>
+
+    <!-- Define the style of the Capture Button -->
+    <style name="Widget.AppCompat.ImageButton.CaptureButtonStyle.CustomAppStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
+            for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/primary_secondary_color_selector</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>
+
+        <item name="android:contentDescription">"@null"</item>
+        <!-- Capture Button Padding -->
+        <item name="android:padding">0dp</item>
+        <!-- Capture Icon -->
+        <item name="android:src">@drawable/ic_camera_capture</item>
+        <!-- Capture Icon Tint -->
+        <item name="tint">@android:color/white</item>
+    </style>
+
+    <!-- Define the style of the Confirm Button -->
+    <style name="Widget.AppCompat.ImageButton.ConfirmButtonStyle.CustomAppStyle">
+        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+            Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
+            for a more fine-grained color attribute. -->
+        <item name="android:background">@drawable/primary_secondary_color_selector</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
+        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>
+
+        <item name="android:contentDescription">"@null"</item>
+        <!-- Confirm Button Padding -->
+        <item name="android:padding">0dp</item>
+        <!-- Confirm Icon -->
+        <item name="android:src">@drawable/ic_add</item>
+        <!-- Confirm Icon Tint -->
+        <item name="tint">@android:color/white</item>
+    </style>
+
+
 ```
 
 # Package com.microblink.camera.ui
