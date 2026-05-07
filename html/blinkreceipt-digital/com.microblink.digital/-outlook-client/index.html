@@ -1,0 +1,430 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>OutlookClient</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-digital/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-digital/release" data-filter=":blinkreceipt-digital/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-digital::com.microblink.digital/OutlookClient///PointingToDeclaration//1161413559">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-digital</a><span class="delimiter">/</span><a href="../index.html">com.microblink.digital</a><span class="delimiter">/</span><span class="current">OutlookClient</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Outlook</span><wbr><span><span>Client</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">OutlookClient</a> : <a href="../-client/index.html">Client</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1103759643%2FConstructors%2F1161413559" anchor-label="OutlookClient" id="-1103759643%2FConstructors%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-outlook-client.html"><span>Outlook</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1103759643%2FConstructors%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/RawRes///PointingToDeclaration/"><span class="token annotation builtin">RawRes</span></span>&nbsp;</span>configuration<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>callback<span class="token operator">: </span><a href="../../../blinkreceipt-core/com.microblink.core/-initialize-callback/index.html">InitializeCallback</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1284150612%2FFunctions%2F1161413559" anchor-label="accounts" id="-1284150612%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/accounts.html"><span><span>accounts</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1284150612%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/accounts.html"><span class="token function">accounts</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../-credentials/-password/index.html">Credentials.Password</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/accounts.html"><span class="token function">accounts</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../-credentials/-password/index.html">Credentials.Password</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1606096378%2FFunctions%2F1161413559" anchor-label="clearLastCheckedTime" id="1606096378%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-last-checked-time.html"><span>clear</span><wbr><span>Last</span><wbr><span>Checked</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1606096378%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="clear-last-checked-time.html"><span class="token function">clearLastCheckedTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="clear-last-checked-time.html"><span class="token function">clearLastCheckedTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-34268164%2FFunctions%2F1161413559" anchor-label="close" id="-34268164%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close.html"><span><span>close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-34268164%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="554236203%2FFunctions%2F1161413559" anchor-label="countryCode" id="554236203%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/country-code.html"><span>country</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="554236203%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/country-code.html"><span class="token function">countryCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/country-code.html"><span class="token function">countryCode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>countryCode<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1635858398%2FFunctions%2F1161413559" anchor-label="dateCutoff" id="1635858398%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/date-cutoff.html"><span>date</span><wbr><span><span>Cutoff</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1635858398%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/date-cutoff.html"><span class="token function">dateCutoff</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/date-cutoff.html"><span class="token function">dateCutoff</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>dateCutoff<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1189339599%2FFunctions%2F1161413559" anchor-label="dayCutoff" id="1189339599%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/day-cutoff.html"><span>day</span><wbr><span><span>Cutoff</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1189339599%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/day-cutoff.html"><span class="token function">dayCutoff</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/day-cutoff.html"><span class="token function">dayCutoff</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dayCutoff<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1291432032%2FFunctions%2F1161413559" anchor-label="filterSensitive" id="-1291432032%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/filter-sensitive.html"><span>filter</span><wbr><span><span>Sensitive</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1291432032%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/filter-sensitive.html"><span class="token function">filterSensitive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/filter-sensitive.html"><span class="token function">filterSensitive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">filterSensitive<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1845971664%2FFunctions%2F1161413559" anchor-label="login" id="1845971664%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="login.html"><span><span>login</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1845971664%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>activity<span class="token operator">: </span><span data-unresolved-link="android.app/Activity///PointingToDeclaration/">Activity</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="../-token-credentials/index.html">TokenCredentials</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-719090580%2FFunctions%2F1161413559" anchor-label="logout" id="-719090580%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="logout.html"><span><span>logout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-719090580%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-621135323%2FFunctions%2F1161413559" anchor-label="messages" id="-621135323%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/messages.html"><span><span>messages</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-621135323%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/messages.html"><span class="token function">messages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>provider<span class="token operator">: </span><a href="../-provider/index.html">Provider</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>sender<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>html<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../../blinkreceipt-core/com.microblink.core/-scan-results/index.html">ScanResults</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/messages.html"><span class="token function">messages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>provider<span class="token operator">: </span><a href="../-provider/index.html">Provider</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>sender<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>html<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../../blinkreceipt-core/com.microblink.core/-scan-results/index.html">ScanResults</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief ">For debugging the parsing of e-receipt HTML</div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="messages.html"><span class="token function">messages</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../../blinkreceipt-core/com.microblink.core/-scan-results/index.html">ScanResults</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="messages.html"><span class="token function">messages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../../blinkreceipt-core/com.microblink.core/-scan-results/index.html">ScanResults</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-196528898%2FFunctions%2F1161413559" anchor-label="overrideDate" id="-196528898%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/override-date.html"><span>override</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-196528898%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-date.html"><span class="token function">overrideDate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-date.html"><span class="token function">overrideDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>date<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="379111740%2FFunctions%2F1161413559" anchor-label="overrideDateTime" id="379111740%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/override-date-time.html"><span>override</span><wbr><span>Date</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="379111740%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-date-time.html"><span class="token function">overrideDateTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-date-time.html"><span class="token function">overrideDateTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>milliseconds<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="150440199%2FFunctions%2F1161413559" anchor-label="overrideEndpoint" id="150440199%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/override-endpoint.html"><span>override</span><wbr><span><span>Endpoint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="150440199%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-endpoint.html"><span class="token function">overrideEndpoint</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/override-endpoint.html"><span class="token function">overrideEndpoint</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>endpoint<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="474125507%2FFunctions%2F1161413559" anchor-label="remoteMessages" id="474125507%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remote-messages.html"><span>remote</span><wbr><span><span>Messages</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="474125507%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remote-messages.html"><span class="token function">remoteMessages</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="../-job-results/index.html">JobResults</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remote-messages.html"><span class="token function">remoteMessages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="../-job-results/index.html">JobResults</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remote-messages.html"><span class="token function">remoteMessages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>email<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>eml<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="../-job-results/index.html">JobResults</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remote-messages.html"><span class="token function">remoteMessages</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>email<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>eml<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><a href="../-job-results/index.html">JobResults</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1430786716%2FFunctions%2F1161413559" anchor-label="searchUntil" id="1430786716%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/search-until.html"><span>search</span><wbr><span><span>Until</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1430786716%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/search-until.html"><span class="token function">searchUntil</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/search-until.html"><span class="token function">searchUntil</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>searchUntil<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2075411920%2FFunctions%2F1161413559" anchor-label="sendersToSearch" id="2075411920%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/senders-to-search.html"><span>senders</span><wbr><span>To</span><wbr><span><span>Search</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2075411920%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/senders-to-search.html"><span class="token function">sendersToSearch</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="../-merchant/index.html">Merchant</a><span class="token operator">&gt;</span></div><br><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/senders-to-search.html"><span class="token function">sendersToSearch</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>senders<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="../-merchant/index.html">Merchant</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief ">If populated, only senders in this list will be searched for e-receipts.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1141893364%2FFunctions%2F1161413559" anchor-label="signedInAccount" id="-1141893364%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="signed-in-account.html"><span>signed</span><wbr><span>In</span><wbr><span><span>Account</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1141893364%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="signed-in-account.html"><span class="token function">signedInAccount</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><span data-unresolved-link="com.microsoft.identity.client/IAccount///PointingToDeclaration/">IAccount</span><span class="token operator">&gt;</span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="signed-in-account.html"><span class="token function">signedInAccount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>executor<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executor.html">Executor</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.gms.tasks/Task///PointingToDeclaration/">Task</span><span class="token operator">&lt;</span><span data-unresolved-link="com.microsoft.identity.client/IAccount///PointingToDeclaration/">IAccount</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1403610964%2FFunctions%2F1161413559" anchor-label="subProducts" id="-1403610964%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/sub-products.html"><span>sub</span><wbr><span><span>Products</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1403610964%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/sub-products.html"><span class="token function">subProducts</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/sub-products.html"><span class="token function">subProducts</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">subProducts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-54623922%2FFunctions%2F1161413559" anchor-label="useAggregation" id="-54623922%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-client/use-aggregation.html"><span>use</span><wbr><span><span>Aggregation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-54623922%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/use-aggregation.html"><span class="token function">useAggregation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-client/use-aggregation.html"><span class="token function">useAggregation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">useAggregation<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

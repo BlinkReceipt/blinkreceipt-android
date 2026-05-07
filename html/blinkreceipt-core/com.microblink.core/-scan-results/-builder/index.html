@@ -1,0 +1,1405 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Builder</title>
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-core/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-core/release" data-filter=":blinkreceipt-core/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-core::com.microblink.core/ScanResults.Builder///PointingToDeclaration//1111006752">
+  <div class="breadcrumbs"><a href="../../../index.html">blinkreceipt-core</a><span class="delimiter">/</span><a href="../../index.html">com.microblink.core</a><span class="delimiter">/</span><a href="../index.html">ScanResults</a><span class="delimiter">/</span><span class="current">Builder</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Builder</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Builder</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-2006414894%2FConstructors%2F1111006752" anchor-label="Builder" id="-2006414894%2FConstructors%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-builder.html"><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2006414894%2FConstructors%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1404850784%2FFunctions%2F1111006752" anchor-label="aid" id="-1404850784%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="aid.html"><span><span>aid</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1404850784%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="aid.html"><span class="token function">aid</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>aid<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1250517671%2FFunctions%2F1111006752" anchor-label="authCode" id="1250517671%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="auth-code.html"><span>auth</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1250517671%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="auth-code.html"><span class="token function">authCode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>authCode<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="587221468%2FFunctions%2F1111006752" anchor-label="barcode" id="587221468%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="barcode.html"><span><span>barcode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="587221468%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="barcode.html"><span class="token function">barcode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>barcode<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1447493862%2FFunctions%2F1111006752" anchor-label="barcodes" id="1447493862%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="barcodes.html"><span><span>barcodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1447493862%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="barcodes.html"><span class="token function">barcodes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>barcodes<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-barcode/index.html">Barcode</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1397928719%2FFunctions%2F1111006752" anchor-label="blinkReceiptId" id="-1397928719%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="blink-receipt-id.html"><span>blink</span><wbr><span>Receipt</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1397928719%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="blink-receipt-id.html"><span class="token function">blinkReceiptId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>blinkReceiptId<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="469401151%2FFunctions%2F1111006752" anchor-label="build" id="469401151%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build.html"><span><span>build</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="469401151%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="build.html"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">ScanResults</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="289623123%2FFunctions%2F1111006752" anchor-label="cashback" id="289623123%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cashback.html"><span><span>cashback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="289623123%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="cashback.html"><span class="token function">cashback</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cashback<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="214604126%2FFunctions%2F1111006752" anchor-label="cashierId" id="214604126%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cashier-id.html"><span>cashier</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="214604126%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="cashier-id.html"><span class="token function">cashierId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>cashierId<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1020748295%2FFunctions%2F1111006752" anchor-label="channel" id="-1020748295%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="channel.html"><span><span>channel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1020748295%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="channel.html"><span class="token function">channel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>channel<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1544108438%2FFunctions%2F1111006752" anchor-label="clientMerchantName" id="-1544108438%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="client-merchant-name.html"><span>client</span><wbr><span>Merchant</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1544108438%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="client-merchant-name.html"><span class="token function">clientMerchantName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>name<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-494878292%2FFunctions%2F1111006752" anchor-label="combinedRawText" id="-494878292%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="combined-raw-text.html"><span>combined</span><wbr><span>Raw</span><wbr><span><span>Text</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-494878292%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="combined-raw-text.html"><span class="token function">combinedRawText</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>combinedRawText<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-462039924%2FFunctions%2F1111006752" anchor-label="coupons" id="-462039924%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="coupons.html"><span><span>coupons</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-462039924%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="coupons.html"><span class="token function">coupons</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>coupons<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-coupon/index.html">Coupon</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-610534230%2FFunctions%2F1111006752" anchor-label="currencyCode" id="-610534230%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="currency-code.html"><span>currency</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-610534230%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="currency-code.html"><span class="token function">currencyCode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>currencyCode<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-821685352%2FFunctions%2F1111006752" anchor-label="duplicate" id="-821685352%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="duplicate.html"><span><span>duplicate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-821685352%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="duplicate.html"><span class="token function">duplicate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">duplicate<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1394572641%2FFunctions%2F1111006752" anchor-label="duplicateBlinkReceiptIds" id="1394572641%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="duplicate-blink-receipt-ids.html"><span>duplicate</span><wbr><span>Blink</span><wbr><span>Receipt</span><wbr><span><span>Ids</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1394572641%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="duplicate-blink-receipt-ids.html"><span class="token function">duplicateBlinkReceiptIds</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>ids<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1921816832%2FFunctions%2F1111006752" anchor-label="eReceipt" id="1921816832%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt.html"><span>e</span><wbr><span><span>Receipt</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1921816832%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt.html"><span class="token function">eReceipt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">eReceipt<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1984014772%2FFunctions%2F1111006752" anchor-label="eReceiptAdditionalFees" id="1984014772%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-additional-fees.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Additional</span><wbr><span><span>Fees</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1984014772%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-additional-fees.html"><span class="token function">eReceiptAdditionalFees</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>eReceiptAdditionalFees<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1407346537%2FFunctions%2F1111006752" anchor-label="eReceiptAuthenticated" id="1407346537%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-authenticated.html"><span>e</span><wbr><span>Receipt</span><wbr><span><span>Authenticated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1407346537%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-authenticated.html"><span class="token function">eReceiptAuthenticated</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">authenticated<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1615798931%2FFunctions%2F1111006752" anchor-label="eReceiptComponentEmails" id="-1615798931%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-component-emails.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Component</span><wbr><span><span>Emails</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1615798931%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-component-emails.html"><span class="token function">eReceiptComponentEmails</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>results<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../index.html">ScanResults</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1542951204%2FFunctions%2F1111006752" anchor-label="eReceiptEmailId" id="1542951204%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-email-id.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Email</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1542951204%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-email-id.html"><span class="token function">eReceiptEmailId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>email<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="875825102%2FFunctions%2F1111006752" anchor-label="eReceiptEmailProvider" id="875825102%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-email-provider.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Email</span><wbr><span><span>Provider</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="875825102%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-email-provider.html"><span class="token function">eReceiptEmailProvider</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>provider<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2095353787%2FFunctions%2F1111006752" anchor-label="eReceiptEmailSubject" id="-2095353787%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-email-subject.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Email</span><wbr><span><span>Subject</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2095353787%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-email-subject.html"><span class="token function">eReceiptEmailSubject</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>eReceiptEmailSubject<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1390160517%2FFunctions%2F1111006752" anchor-label="eReceiptFulfilledBy" id="1390160517%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-fulfilled-by.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Fulfilled</span><wbr><span><span>By</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1390160517%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-fulfilled-by.html"><span class="token function">eReceiptFulfilledBy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>fulfilledBy<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1315895641%2FFunctions%2F1111006752" anchor-label="eReceiptMerchantEmail" id="-1315895641%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-merchant-email.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Merchant</span><wbr><span><span>Email</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1315895641%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-merchant-email.html"><span class="token function">eReceiptMerchantEmail</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>eReceiptMerchantEmail<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-731933372%2FFunctions%2F1111006752" anchor-label="eReceiptOrderNumber" id="-731933372%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-order-number.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Order</span><wbr><span><span>Number</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-731933372%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-order-number.html"><span class="token function">eReceiptOrderNumber</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>orderNumber<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="920466107%2FFunctions%2F1111006752" anchor-label="eReceiptOrderStatus" id="920466107%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-order-status.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Order</span><wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="920466107%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-order-status.html"><span class="token function">eReceiptOrderStatus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>status<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1467164136%2FFunctions%2F1111006752" anchor-label="eReceiptPOSSystem" id="-1467164136%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-p-o-s-system.html"><span>e</span><wbr><span>Receipt</span><wbr><span><span>POSSystem</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1467164136%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-p-o-s-system.html"><span class="token function">eReceiptPOSSystem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>system<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1523949192%2FFunctions%2F1111006752" anchor-label="eReceiptRawHtml" id="1523949192%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-raw-html.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Raw</span><wbr><span><span>Html</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1523949192%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-raw-html.html"><span class="token function">eReceiptRawHtml</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawHtml<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="558617205%2FFunctions%2F1111006752" anchor-label="eReceiptShippingAddress" id="558617205%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-shipping-address.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Shipping</span><wbr><span><span>Address</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="558617205%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-shipping-address.html"><span class="token function">eReceiptShippingAddress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>address<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1610447362%2FFunctions%2F1111006752" anchor-label="eReceiptShippingCosts" id="-1610447362%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-shipping-costs.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Shipping</span><wbr><span><span>Costs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1610447362%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-shipping-costs.html"><span class="token function">eReceiptShippingCosts</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">eReceiptShippingCosts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1818950069%2FFunctions%2F1111006752" anchor-label="eReceiptShippingStatus" id="1818950069%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-shipping-status.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Shipping</span><wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1818950069%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-shipping-status.html"><span class="token function">eReceiptShippingStatus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>status<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1605101683%2FFunctions%2F1111006752" anchor-label="eReceiptSubMerchant" id="1605101683%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="e-receipt-sub-merchant.html"><span>e</span><wbr><span>Receipt</span><wbr><span>Sub</span><wbr><span><span>Merchant</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1605101683%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="e-receipt-sub-merchant.html"><span class="token function">eReceiptSubMerchant</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>merchant<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="571298857%2FFunctions%2F1111006752" anchor-label="extendedFields" id="571298857%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="extended-fields.html"><span>extended</span><wbr><span><span>Fields</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="571298857%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="extended-fields.html"><span class="token function">extendedFields</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>extendedFields<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="23500343%2FFunctions%2F1111006752" anchor-label="foundBottomEdge" id="23500343%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="found-bottom-edge.html"><span>found</span><wbr><span>Bottom</span><wbr><span><span>Edge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="23500343%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="found-bottom-edge.html"><span class="token function">foundBottomEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">foundBottomEdge<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-761894467%2FFunctions%2F1111006752" anchor-label="foundTopEdge" id="-761894467%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="found-top-edge.html"><span>found</span><wbr><span>Top</span><wbr><span><span>Edge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-761894467%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="found-top-edge.html"><span class="token function">foundTopEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">foundTopEdge<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1611181565%2FFunctions%2F1111006752" anchor-label="fraudulent" id="1611181565%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fraudulent.html"><span><span>fraudulent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1611181565%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="fraudulent.html"><span class="token function">fraudulent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fraudulent<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="361209945%2FFunctions%2F1111006752" anchor-label="instacartShopper" id="361209945%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="instacart-shopper.html"><span>instacart</span><wbr><span><span>Shopper</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="361209945%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="instacart-shopper.html"><span class="token function">instacartShopper</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">instacartShopper<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="802365176%2FFunctions%2F1111006752" anchor-label="last4Digits" id="802365176%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last4-digits.html"><span><span>last4Digits</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="802365176%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="last4-digits.html"><span class="token function">last4Digits</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>last4Digits<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-641847745%2FFunctions%2F1111006752" anchor-label="longTransactionId" id="-641847745%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="long-transaction-id.html"><span>long</span><wbr><span>Transaction</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-641847745%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="long-transaction-id.html"><span class="token function">longTransactionId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>longTransactionId<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1633779044%2FFunctions%2F1111006752" anchor-label="loyaltyForBanner" id="-1633779044%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="loyalty-for-banner.html"><span>loyalty</span><wbr><span>For</span><wbr><span><span>Banner</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1633779044%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="loyalty-for-banner.html"><span class="token function">loyaltyForBanner</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">loyaltyForBanner<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1713321441%2FFunctions%2F1111006752" anchor-label="loyaltyProgram" id="-1713321441%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="loyalty-program.html"><span>loyalty</span><wbr><span><span>Program</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1713321441%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="loyalty-program.html"><span class="token function">loyaltyProgram</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>loyaltyProgram<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1177427875%2FFunctions%2F1111006752" anchor-label="mallName" id="-1177427875%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mall-name.html"><span>mall</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1177427875%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="mall-name.html"><span class="token function">mallName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>mallName<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="840314213%2FFunctions%2F1111006752" anchor-label="memberNumber" id="840314213%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="member-number.html"><span>member</span><wbr><span><span>Number</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="840314213%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="member-number.html"><span class="token function">memberNumber</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>memberNumber<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-425640510%2FFunctions%2F1111006752" anchor-label="merchantMatchGuess" id="-425640510%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merchant-match-guess.html"><span>merchant</span><wbr><span>Match</span><wbr><span><span>Guess</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-425640510%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="merchant-match-guess.html"><span class="token function">merchantMatchGuess</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>matchGuess<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1993518039%2FFunctions%2F1111006752" anchor-label="merchantName" id="-1993518039%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merchant-name.html"><span>merchant</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1993518039%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="merchant-name.html"><span class="token function">merchantName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>merchantName<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-780879899%2FFunctions%2F1111006752" anchor-label="merchantSource" id="-780879899%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merchant-source.html"><span>merchant</span><wbr><span><span>Source</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-780879899%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="merchant-source.html"><span class="token function">merchantSource</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>merchantSource<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-355464941%2FFunctions%2F1111006752" anchor-label="merchantSources" id="-355464941%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merchant-sources.html"><span>merchant</span><wbr><span><span>Sources</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-355464941%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="merchant-sources.html"><span class="token function">merchantSources</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>merchantSources<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-581804255%2FFunctions%2F1111006752" anchor-label="ocrConfidence" id="-581804255%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ocr-confidence.html"><span>ocr</span><wbr><span><span>Confidence</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-581804255%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="ocr-confidence.html"><span class="token function">ocrConfidence</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">confidence<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1814942906%2FFunctions%2F1111006752" anchor-label="paymentMethods" id="-1814942906%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="payment-methods.html"><span>payment</span><wbr><span><span>Methods</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1814942906%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="payment-methods.html"><span class="token function">paymentMethods</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>paymentMethods<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-payment-method/index.html">PaymentMethod</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1521281441%2FFunctions%2F1111006752" anchor-label="paymentTerminalId" id="-1521281441%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="payment-terminal-id.html"><span>payment</span><wbr><span>Terminal</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1521281441%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="payment-terminal-id.html"><span class="token function">paymentTerminalId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>id<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1821166697%2FFunctions%2F1111006752" anchor-label="paymentTransactionId" id="1821166697%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="payment-transaction-id.html"><span>payment</span><wbr><span>Transaction</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1821166697%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="payment-transaction-id.html"><span class="token function">paymentTransactionId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>id<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="327469382%2FFunctions%2F1111006752" anchor-label="products" id="327469382%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="products.html"><span><span>products</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="327469382%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="products.html"><span class="token function">products</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>products<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-product/index.html">Product</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2038009427%2FFunctions%2F1111006752" anchor-label="productsPendingLookup" id="2038009427%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="products-pending-lookup.html"><span>products</span><wbr><span>Pending</span><wbr><span><span>Lookup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2038009427%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="products-pending-lookup.html"><span class="token function">productsPendingLookup</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">count<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="274550067%2FFunctions%2F1111006752" anchor-label="purchaseCountry" id="274550067%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="purchase-country.html"><span>purchase</span><wbr><span><span>Country</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="274550067%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="purchase-country.html"><span class="token function">purchaseCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>country<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="347509697%2FFunctions%2F1111006752" anchor-label="purchaseType" id="347509697%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="purchase-type.html"><span>purchase</span><wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="347509697%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="purchase-type.html"><span class="token function">purchaseType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>purchaseType<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1952160222%2FFunctions%2F1111006752" anchor-label="qualifiedPromotions" id="-1952160222%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="qualified-promotions.html"><span>qualified</span><wbr><span><span>Promotions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1952160222%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="qualified-promotions.html"><span class="token function">qualifiedPromotions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>promotions<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-promotion/index.html">Promotion</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="450406992%2FFunctions%2F1111006752" anchor-label="qualifiedSurveys" id="450406992%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="qualified-surveys.html"><span>qualified</span><wbr><span><span>Surveys</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="450406992%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="qualified-surveys.html"><span class="token function">qualifiedSurveys</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>qualifiedSurveys<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-survey/index.html">Survey</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="689319066%2FFunctions%2F1111006752" anchor-label="rawBasket" id="689319066%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-basket.html"><span>raw</span><wbr><span><span>Basket</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="689319066%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="raw-basket.html"><span class="token function">rawBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawBasket<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="623886646%2FFunctions%2F1111006752" anchor-label="rawData" id="623886646%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-data.html"><span>raw</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="623886646%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="raw-data.html"><span class="token function">rawData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawData<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-534979556%2FFunctions%2F1111006752" anchor-label="rawDataType" id="-534979556%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-data-type.html"><span>raw</span><wbr><span>Data</span><wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-534979556%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="raw-data-type.html"><span class="token function">rawDataType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawDataType<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1987954304%2FFunctions%2F1111006752" anchor-label="rawTripFooter" id="-1987954304%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-trip-footer.html"><span>raw</span><wbr><span>Trip</span><wbr><span><span>Footer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1987954304%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="raw-trip-footer.html"><span class="token function">rawTripFooter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawTripFooter<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1841707826%2FFunctions%2F1111006752" anchor-label="rawTripHeader" id="-1841707826%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-trip-header.html"><span>raw</span><wbr><span>Trip</span><wbr><span><span>Header</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1841707826%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="raw-trip-header.html"><span class="token function">rawTripHeader</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>rawTripHeader<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-158899818%2FFunctions%2F1111006752" anchor-label="receiptDate" id="-158899818%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="receipt-date.html"><span>receipt</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-158899818%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="receipt-date.html"><span class="token function">receiptDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>receiptDate<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-319241876%2FFunctions%2F1111006752" anchor-label="receiptDateTime" id="-319241876%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="receipt-date-time.html"><span>receipt</span><wbr><span>Date</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-319241876%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="receipt-date-time.html"><span class="token function">receiptDateTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>date<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html">Date</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1648404375%2FFunctions%2F1111006752" anchor-label="receiptTime" id="1648404375%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="receipt-time.html"><span>receipt</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1648404375%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="receipt-time.html"><span class="token function">receiptTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>receiptTime<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1901616414%2FFunctions%2F1111006752" anchor-label="registerId" id="1901616414%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="register-id.html"><span>register</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1901616414%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="register-id.html"><span class="token function">registerId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>registerId<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2103368332%2FFunctions%2F1111006752" anchor-label="retailerId" id="2103368332%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="retailer-id.html"><span>retailer</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2103368332%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="retailer-id.html"><span class="token function">retailerId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span>&nbsp;</span>retailerId<span class="token operator">: </span><a href="../../-retailer/index.html">Retailer</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1687883700%2FFunctions%2F1111006752" anchor-label="shipments" id="1687883700%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="shipments.html"><span><span>shipments</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1687883700%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="shipments.html"><span class="token function">shipments</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>shipments<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-shipment/index.html">Shipment</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-615223095%2FFunctions%2F1111006752" anchor-label="storeAddress" id="-615223095%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-address.html"><span>store</span><wbr><span><span>Address</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-615223095%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-address.html"><span class="token function">storeAddress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeAddress<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="585649904%2FFunctions%2F1111006752" anchor-label="storeCity" id="585649904%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-city.html"><span>store</span><wbr><span><span>City</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="585649904%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-city.html"><span class="token function">storeCity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeCity<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1306445543%2FFunctions%2F1111006752" anchor-label="storeCountry" id="1306445543%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-country.html"><span>store</span><wbr><span><span>Country</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1306445543%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-country.html"><span class="token function">storeCountry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeCountry<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1095771026%2FFunctions%2F1111006752" anchor-label="storeNumber" id="1095771026%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-number.html"><span>store</span><wbr><span><span>Number</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1095771026%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-number.html"><span class="token function">storeNumber</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeNumber<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-378306993%2FFunctions%2F1111006752" anchor-label="storePhone" id="-378306993%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-phone.html"><span>store</span><wbr><span><span>Phone</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-378306993%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-phone.html"><span class="token function">storePhone</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storePhone<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-259691572%2FFunctions%2F1111006752" anchor-label="storeState" id="-259691572%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-state.html"><span>store</span><wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-259691572%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-state.html"><span class="token function">storeState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeState<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-534243460%2FFunctions%2F1111006752" anchor-label="storeZip" id="-534243460%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="store-zip.html"><span>store</span><wbr><span><span>Zip</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-534243460%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="store-zip.html"><span class="token function">storeZip</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>storeZip<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-120853111%2FFunctions%2F1111006752" anchor-label="subTotal" id="-120853111%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sub-total.html"><span>sub</span><wbr><span><span>Total</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-120853111%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="sub-total.html"><span class="token function">subTotal</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>subtotal<span class="token operator">: </span><a href="../../-float-type/index.html">FloatType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2060776932%2FFunctions%2F1111006752" anchor-label="subtotalMatches" id="-2060776932%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="subtotal-matches.html"><span>subtotal</span><wbr><span><span>Matches</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2060776932%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="subtotal-matches.html"><span class="token function">subtotalMatches</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">subtotalMatches<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="99411998%2FFunctions%2F1111006752" anchor-label="taxes" id="99411998%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="taxes.html"><span><span>taxes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="99411998%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="taxes.html"><span class="token function">taxes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>taxes<span class="token operator">: </span><a href="../../-float-type/index.html">FloatType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1984876918%2FFunctions%2F1111006752" anchor-label="taxId" id="1984876918%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tax-id.html"><span>tax</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1984876918%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="tax-id.html"><span class="token function">taxId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>taxId<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2035155754%2FFunctions%2F1111006752" anchor-label="timeSeconds" id="2035155754%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="time-seconds.html"><span>time</span><wbr><span><span>Seconds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2035155754%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="time-seconds.html"><span class="token function">timeSeconds</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>seconds<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1699051936%2FFunctions%2F1111006752" anchor-label="tip" id="1699051936%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tip.html"><span><span>tip</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1699051936%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="tip.html"><span class="token function">tip</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>tip<span class="token operator">: </span><a href="../../-float-type/index.html">FloatType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-26450039%2FFunctions%2F1111006752" anchor-label="total" id="-26450039%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="total.html"><span><span>total</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-26450039%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="total.html"><span class="token function">total</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>total<span class="token operator">: </span><a href="../../-float-type/index.html">FloatType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="831687075%2FFunctions%2F1111006752" anchor-label="transactionId" id="831687075%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="transaction-id.html"><span>transaction</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="831687075%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="transaction-id.html"><span class="token function">transactionId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>transactionId<span class="token operator">: </span><a href="../../-string-type/index.html">StringType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1989707383%2FFunctions%2F1111006752" anchor-label="unQualifiedPromotions" id="-1989707383%2FFunctions%2F1111006752" data-filterable-set=":blinkreceipt-core/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-core/release" data-filterable-set=":blinkreceipt-core/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="un-qualified-promotions.html"><span>un</span><wbr><span>Qualified</span><wbr><span><span>Promotions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1989707383%2FFunctions%2F1111006752"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-core/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/NonNull///PointingToDeclaration/"><span class="token annotation builtin">NonNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword">fun </span><a href="un-qualified-promotions.html"><span class="token function">unQualifiedPromotions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="androidx.annotation/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span>&nbsp;</span>promotions<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../../-promotion/index.html">Promotion</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ScanResults.Builder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

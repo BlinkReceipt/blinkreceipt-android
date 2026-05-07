@@ -1,0 +1,605 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.microblink.digital</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-digital/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-digital/release" data-filter=":blinkreceipt-digital/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageids="blinkreceipt-digital::com.microblink.digital////PointingToDeclaration//1161413559">
+  <div class="breadcrumbs"><a href="../index.html">blinkreceipt-digital</a><span class="delimiter">/</span><span class="current">com.microblink.digital</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="946909927%2FClasslikes%2F1161413559" anchor-label="AolWebNavigation" id="946909927%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-aol-web-navigation/index.html"><span>Aol</span><wbr><span>Web</span><wbr><span><span>Navigation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="946909927%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-aol-web-navigation/index.html">AolWebNavigation</a> : <a href="-web-navigation/index.html">WebNavigation</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1199441205%2FClasslikes%2F1161413559" anchor-label="AppPassword" id="1199441205%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-app-password/index.html"><span>App</span><wbr><span><span>Password</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1199441205%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-app-password/index.html">AppPassword</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-app-password/index.html">AppPassword</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2044582726%2FClasslikes%2F1161413559" anchor-label="AuthenticationException" id="-2044582726%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-authentication-exception/index.html"><span>Authentication</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2044582726%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-authentication-exception/index.html">AuthenticationException</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-918323917%2FClasslikes%2F1161413559" anchor-label="BlinkReceiptDigitalSdk" id="-918323917%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-blink-receipt-digital-sdk/index.html"><span>Blink</span><wbr><span>Receipt</span><wbr><span>Digital</span><wbr><span><span>Sdk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-918323917%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-blink-receipt-digital-sdk/index.html">BlinkReceiptDigitalSdk</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="395331942%2FClasslikes%2F1161413559" anchor-label="Client" id="395331942%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-client/index.html"><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="395331942%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-client/index.html">Client</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html">Closeable</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1091931669%2FClasslikes%2F1161413559" anchor-label="Credentials" id="1091931669%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-credentials/index.html"><span><span>Credentials</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1091931669%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-credentials/index.html">Credentials</a> : <span data-unresolved-link="android.os/Parcelable///PointingToDeclaration/">Parcelable</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1734330728%2FClasslikes%2F1161413559" anchor-label="GmailAuthException" id="1734330728%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-auth-exception/index.html"><span>Gmail</span><wbr><span>Auth</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1734330728%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-gmail-auth-exception/index.html">GmailAuthException</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-115303000%2FClasslikes%2F1161413559" anchor-label="GmailClient" id="-115303000%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-client/index.html"><span>Gmail</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-115303000%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-gmail-client/index.html">GmailClient</a> : <a href="-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1397291168%2FClasslikes%2F1161413559" anchor-label="GmailException" id="1397291168%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-exception/index.html"><span>Gmail</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1397291168%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-gmail-exception/index.html">GmailException</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1637153519%2FClasslikes%2F1161413559" anchor-label="GmailMessagesCallable" id="1637153519%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-messages-callable/index.html"><span>Gmail</span><wbr><span>Messages</span><wbr><span><span>Callable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1637153519%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-gmail-messages-callable/index.html">GmailMessagesCallable</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html">Callable</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span data-unresolved-link="com.microblink.digital.internal/Message///PointingToDeclaration/">Message</span><span class="token operator">&gt;</span><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-265972857%2FClasslikes%2F1161413559" anchor-label="GmailWebNavigation" id="-265972857%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-web-navigation/index.html"><span>Gmail</span><wbr><span>Web</span><wbr><span><span>Navigation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-265972857%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-gmail-web-navigation/index.html">GmailWebNavigation</a> : <a href="-web-navigation/index.html">WebNavigation</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2047025589%2FClasslikes%2F1161413559" anchor-label="GmailWebViewClient" id="-2047025589%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gmail-web-view-client/index.html"><span>Gmail</span><wbr><span>Web</span><wbr><span>View</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2047025589%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-gmail-web-view-client/index.html">GmailWebViewClient</a> : <a href="../../blinkreceipt-digital/com.microblink.digital/-web-client-compat/index.html">WebClientCompat</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1742787113%2FClasslikes%2F1161413559" anchor-label="Host" id="1742787113%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-host/index.html"><span><span>Host</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1742787113%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-host/index.html">Host</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1797306733%2FClasslikes%2F1161413559" anchor-label="ImapClient" id="-1797306733%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-imap-client/index.html"><span>Imap</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1797306733%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-imap-client/index.html">ImapClient</a> : <a href="-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1952272497%2FClasslikes%2F1161413559" anchor-label="ImapSetupDialogFragment" id="-1952272497%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-imap-setup-dialog-fragment/index.html"><span>Imap</span><wbr><span>Setup</span><wbr><span>Dialog</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1952272497%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-imap-setup-dialog-fragment/index.html">ImapSetupDialogFragment</a> : <a href="-provider-fragment/index.html">ProviderFragment</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1521609864%2FClasslikes%2F1161413559" anchor-label="JobResults" id="-1521609864%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-job-results/index.html"><span>Job</span><wbr><span><span>Results</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1521609864%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-job-results/index.html">JobResults</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>success<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>code<span class="token operator">: </span><a href="-job-status-code/index.html">JobStatusCode</a><span class="token operator">?</span><span class="token operator"> = </span>JobStatusCode.NONE<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-604003405%2FClasslikes%2F1161413559" anchor-label="JobResultsCallback" id="-604003405%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-job-results-callback/index.html"><span>Job</span><wbr><span>Results</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-604003405%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-job-results-callback/index.html">JobResultsCallback</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1436390517%2FClasslikes%2F1161413559" anchor-label="JobStatusCode" id="1436390517%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-job-status-code/index.html"><span>Job</span><wbr><span>Status</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1436390517%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-job-status-code/index.html">JobStatusCode</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-job-status-code/index.html">JobStatusCode</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-776105463%2FClasslikes%2F1161413559" anchor-label="Merchant" id="-776105463%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-merchant/index.html"><span><span>Merchant</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-776105463%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-merchant/index.html">Merchant</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="103074368%2FClasslikes%2F1161413559" anchor-label="MessagesCallback" id="103074368%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-messages-callback/index.html"><span>Messages</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="103074368%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-messages-callback/index.html">MessagesCallback</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-928393351%2FClasslikes%2F1161413559" anchor-label="OutlookClient" id="-928393351%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-outlook-client/index.html"><span>Outlook</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-928393351%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-outlook-client/index.html">OutlookClient</a> : <a href="-client/index.html">Client</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-133880320%2FClasslikes%2F1161413559" anchor-label="Provider" id="-133880320%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider/index.html"><span><span>Provider</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-133880320%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-provider/index.html">Provider</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-938623344%2FClasslikes%2F1161413559" anchor-label="ProviderFragment" id="-938623344%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-fragment/index.html"><span>Provider</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-938623344%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-provider-fragment/index.html">ProviderFragment</a> : <span data-unresolved-link="com.google.android.material.bottomsheet/BottomSheetDialogFragment///PointingToDeclaration/">BottomSheetDialogFragment</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1059653524%2FClasslikes%2F1161413559" anchor-label="ProviderResults" id="-1059653524%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-results/index.html"><span>Provider</span><wbr><span><span>Results</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1059653524%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-provider-results/index.html">ProviderResults</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>results<span class="token operator">: </span><a href="-provider-setup-results/index.html">ProviderSetupResults</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>credentials<span class="token operator">: </span><a href="-credentials/index.html">Credentials</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-36967616%2FClasslikes%2F1161413559" anchor-label="ProviderSetupCallback" id="-36967616%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-setup-callback/index.html"><span>Provider</span><wbr><span>Setup</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-36967616%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-provider-setup-callback/index.html">ProviderSetupCallback</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1216294957%2FClasslikes%2F1161413559" anchor-label="ProviderSetupDialogFragment" id="1216294957%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-setup-dialog-fragment/index.html"><span>Provider</span><wbr><span>Setup</span><wbr><span>Dialog</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1216294957%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-provider-setup-dialog-fragment/index.html">ProviderSetupDialogFragment</a> : <a href="-provider-fragment/index.html">ProviderFragment</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="95406755%2FClasslikes%2F1161413559" anchor-label="ProviderSetupFragmentFactory" id="95406755%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-setup-fragment-factory/index.html"><span>Provider</span><wbr><span>Setup</span><wbr><span>Fragment</span><wbr><span><span>Factory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="95406755%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-provider-setup-fragment-factory/index.html">ProviderSetupFragmentFactory</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1214478649%2FClasslikes%2F1161413559" anchor-label="ProviderSetupResults" id="-1214478649%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-setup-results/index.html"><span>Provider</span><wbr><span>Setup</span><wbr><span><span>Results</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1214478649%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-provider-setup-results/index.html">ProviderSetupResults</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="466734073%2FClasslikes%2F1161413559" anchor-label="ProviderSetupViewModel" id="466734073%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-provider-setup-view-model/index.html"><span>Provider</span><wbr><span>Setup</span><wbr><span>View</span><wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="466734073%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-provider-setup-view-model/index.html">ProviderSetupViewModel</a> : <span data-unresolved-link="androidx.lifecycle/AndroidViewModel///PointingToDeclaration/">AndroidViewModel</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1937442047%2FClasslikes%2F1161413559" anchor-label="SearchMessageException" id="-1937442047%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-search-message-exception/index.html"><span>Search</span><wbr><span>Message</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1937442047%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-search-message-exception/index.html">SearchMessageException</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-274300690%2FClasslikes%2F1161413559" anchor-label="TokenCredentials" id="-274300690%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-token-credentials/index.html"><span>Token</span><wbr><span><span>Credentials</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-274300690%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-token-credentials/index.html">TokenCredentials</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="149870089%2FClasslikes%2F1161413559" anchor-label="WebNavigation" id="149870089%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-web-navigation/index.html"><span>Web</span><wbr><span><span>Navigation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="149870089%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-web-navigation/index.html">WebNavigation</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
