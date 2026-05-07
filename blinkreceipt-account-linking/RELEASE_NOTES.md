@@ -404,3 +404,7 @@ accountLinkingClient.orders(
 
 ## 2.0.3
 - Stability fixes and improvements
+
+## 2.1.0
+- We’ve increased the minimum supported Android SDK version from API 23 (Android 6.0 Marshmallow) to API 24 (Android 7.0 Nougat). This allows us to take advantage of newer platform capabilities and improve overall app quality.
+- Stability fixes and improvements
