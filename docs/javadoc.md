@@ -1,7 +1,0 @@
-- [BlinkReceiptAccountLinking](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-account-linking/index.html)
-- [BlinkReceipt Recognizer](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-recognizer/index.html)
-- [BlinkReceipt Core](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-core/index.html)
-- [BlinkReceipt Camera](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-camera/index.html)
-- [BlinkReceipt Camera UI](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-camera-ui/index.html)
-- [BlinkReceipt Digital](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-digital/index.html)
-- [BlinkReceipt Earnings](https://htmlpreview.github.io/?https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/docs/blinkreceipt-earnings/index.html)
