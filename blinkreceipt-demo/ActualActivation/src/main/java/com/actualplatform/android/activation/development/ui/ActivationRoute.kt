@@ -12,4 +12,7 @@ internal sealed interface ActivationRoute : NavKey {
 
     @Serializable
     data object SettingsEditor : ActivationRoute
+
+    @Serializable
+    data object ThemesAndAppearanceEditor : ActivationRoute
 }

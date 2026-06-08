@@ -19,14 +19,21 @@ internal fun ScanRewardSection(
     scanReward: String,
     onScanRewardChange: (String) -> Unit,
 ) {
-    Text(stringResource(R.string.activation_section_scan_reward), style = MaterialTheme.typography.titleMedium)
+    Text(stringResource(R.string.activations_section_scan_reward), style = MaterialTheme.typography.titleMedium)
     Spacer(modifier = Modifier.height(8.dp))
 
     OutlinedTextField(
         value = scanReward,
-        onValueChange = { onScanRewardChange(it.filter { c -> c.isDigit() }) },
-        label = { Text(stringResource(R.string.activation_label_reward_points)) },
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        onValueChange = { input ->
+            // Scan reward is a decimal (RewardPoint); keep the decimal point and allow at most one
+            // so values like "10.0" survive editing instead of collapsing to "100".
+            val filtered = input.filter { c -> c.isDigit() || c == '.' }
+            if (filtered.count { it == '.' } <= 1) {
+                onScanRewardChange(filtered)
+            }
+        },
+        label = { Text(stringResource(R.string.activations_label_reward_points)) },
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),
     )

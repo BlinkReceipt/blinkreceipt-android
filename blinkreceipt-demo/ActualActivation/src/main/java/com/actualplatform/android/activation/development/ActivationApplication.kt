@@ -1,6 +1,7 @@
 package com.actualplatform.android.activation.development
 
 import android.app.Application
+import com.actualplatform.activation.ActivationClient.Companion.instance
 import com.actualplatform.android.activation.development.ui.ActivationActivity
 import com.microblink.BlinkReceiptSdk
 import com.microblink.core.InitializeCallback
@@ -20,6 +21,13 @@ class ActivationApplication: Application() {
                 LogcatManager.event().exception { throwable }
             }
         })
+    }
+
+    override fun onTerminate() {
+        BlinkReceiptSdk.terminate()
+        instance.close()
+
+        super.onTerminate()
     }
 
 }
