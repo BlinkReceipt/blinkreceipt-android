@@ -41,13 +41,11 @@ private fun HomeScreen() {
                 activity?.let {
                     val intent = Intent(context, ActivationActivity::class.java).apply {
                         putExtra(
-                            ActivationActivity.Companion.OPTIONS_KEY,
-                            ScanOptions.Builder()
-                                .detectDuplicates(true)
-                                .build(),
+                            ActivationActivity.OPTIONS_KEY,
+                            ScanOptions.newBuilder().activation(true).build(),
                         )
                         putExtra(
-                            ActivationActivity.Companion.CAMERA_CHARACTERISTICS,
+                            ActivationActivity.CAMERA_CHARACTERISTICS,
                             CameraCharacteristics.Builder()
                                 .cameraPermission(true)
                                 .build(),
