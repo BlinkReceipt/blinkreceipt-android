@@ -21,6 +21,7 @@ import com.microblink.camera.ui.CameraCharacteristics
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ActivationActivity.applySettings(this)
         setContent {
             HomeScreen()
         }
