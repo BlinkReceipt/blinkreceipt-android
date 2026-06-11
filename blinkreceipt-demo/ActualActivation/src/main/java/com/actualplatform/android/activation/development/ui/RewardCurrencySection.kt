@@ -94,7 +94,7 @@ internal fun RewardCurrencySection(
 
     Spacer(modifier = Modifier.height(12.dp))
 
-    EnumSegmentedButtonRow(
+    SegmentedButtonsRow(
         label = stringResource(R.string.activations_label_currency_code_position),
         entries = RewardCurrencyCodePosition.entries,
         selected = currencyCodePosition,
@@ -104,7 +104,7 @@ internal fun RewardCurrencySection(
 
     Spacer(modifier = Modifier.height(12.dp))
 
-    EnumSegmentedButtonRow(
+    SegmentedButtonsRow(
         label = stringResource(R.string.activations_label_reward_label_style),
         entries = RewardCurrencyLabelStyle.entries,
         selected = rewardCurrencyLabelStyle,
@@ -114,7 +114,7 @@ internal fun RewardCurrencySection(
 
     Spacer(modifier = Modifier.height(12.dp))
 
-    EnumSegmentedButtonRow(
+    SegmentedButtonsRow(
         label = stringResource(R.string.activations_label_reward_messaging_style),
         entries = RewardCurrencyMessagingTextStyle.entries,
         selected = rewardCurrencyMessagingStyle,
@@ -124,7 +124,7 @@ internal fun RewardCurrencySection(
 
     Spacer(modifier = Modifier.height(12.dp))
 
-    EnumSegmentedButtonRow(
+    SegmentedButtonsRow(
         label = stringResource(R.string.activations_label_reward_rounding),
         entries = RewardCurrencyRounding.entries,
         selected = rewardRounding,

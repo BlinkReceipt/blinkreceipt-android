@@ -1,5 +1,7 @@
 package com.actualplatform.android.activation.development.ui
 
+import androidx.compose.foundation.MarqueeSpacing
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -55,7 +57,7 @@ internal fun SettingsSummaryRow(label: String, value: String) {
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun <T> EnumSegmentedButtonRow(
+internal fun <T> SegmentedButtonsRow(
     label: String,
     entries: List<T>,
     selected: T,
@@ -77,7 +79,15 @@ internal fun <T> EnumSegmentedButtonRow(
                     onClick = { onSelected(entry) },
                     shape = SegmentedButtonDefaults.itemShape(index = index, count = entries.size),
                 ) {
-                    Text(labelFor(entry))
+                    Text(
+                        text = labelFor(entry),
+                        maxLines = 1,
+                        modifier = Modifier.basicMarquee(
+                            iterations = Int.MAX_VALUE,
+                            initialDelayMillis = 1_000,
+                            spacing = MarqueeSpacing(8.dp),
+                        )
+                    )
                 }
             }
         }
