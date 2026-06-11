@@ -25,6 +25,7 @@ public class MainViewModel extends ViewModel {
                         .externalStorage(false)
                         .storeFrames(true)
                         .build())
+                .detectDuplicates(true)
                 .edgeDetectionConfiguration(EdgeDetectionConfiguration.newBuilder().build())
                 .build();
     }
