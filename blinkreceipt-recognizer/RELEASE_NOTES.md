@@ -797,3 +797,8 @@ Blink Receipt Recognizer
 ## 2.1.0
 - We’ve increased the minimum supported Android SDK version from API 23 (Android 6.0 Marshmallow) to API 24 (Android 7.0 Nougat). This allows us to take advantage of newer platform capabilities and improve overall app quality.
 - Stability fixes and improvements
+
+## 2.1.1
+- Enhanced barcode extraction to improve barcode recognition and reliability across supported receipt formats.
+- Improved duplicate detection accuracy to better identify duplicate submissions while reducing false positives.
+- Stability fixes and improvements
