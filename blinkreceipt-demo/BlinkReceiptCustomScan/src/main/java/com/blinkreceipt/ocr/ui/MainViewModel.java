@@ -21,6 +21,7 @@ public class MainViewModel extends ViewModel {
         super();
 
         scanOptions = ScanOptions.newBuilder()
+                .detectDuplicates(true)
                 .frameCharacteristics(FrameCharacteristics.newBuilder()
                         .externalStorage(false)
                         .build())
