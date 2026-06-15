@@ -27,6 +27,7 @@ nav:
     - Activation:
         - Android Integration Guide: internal/activation/activation_integration.md
         - React Native Integration Guide: internal/activation/activation_react_native_integration.md
+        - Style and Theme Integration Guide: internal/activation/activation_style_theme_integration.md
     - BlinkReceipt 2.0.0 - Major Changes:
         - Deprecating Barcode Scanning Feature: barcode_deprecation_migration_guide.md
         - CameraX Migration Guide: camerax_migration_guide.md

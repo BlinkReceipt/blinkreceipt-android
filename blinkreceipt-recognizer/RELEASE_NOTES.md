@@ -802,3 +802,6 @@ Blink Receipt Recognizer
 - Enhanced barcode extraction to improve barcode recognition and reliability across supported receipt formats.
 - Improved duplicate detection accuracy to better identify duplicate submissions while reducing false positives.
 - Stability fixes and improvements
+
+## 2.2.0
+- Stability fixes and improvements
