@@ -45,6 +45,7 @@ import com.actualplatform.activation.networking.TestOptions
 import com.actualplatform.android.activation.development.R
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndIconsStorage
+import com.microblink.FrameCharacteristics
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 import com.microblink.camera.ui.CameraRecognizerContract
@@ -77,7 +78,15 @@ internal class ActivationActivity : ComponentActivity() {
         // This is the Activation demo, so the defensive fallback enables activation. Since MON-1124
         // moved the flag into ScanOptions, a missing OPTIONS_KEY would otherwise default activation()
         // to false and silently skip the post-scan activation flow.
-        intent.parcelable(OPTIONS_KEY) ?: ScanOptions.newBuilder().activation(true).build()
+        intent.parcelable(OPTIONS_KEY) ?: ScanOptions.newBuilder()
+            .activation(true)
+            // Persist captured receipt frames so the post-scan summary can display them.
+            .frameCharacteristics(
+                FrameCharacteristics.newBuilder()
+                    .storeFrames(true)
+                    .build(),
+            )
+            .build()
     }
 
     private val cameraCharacteristics: CameraCharacteristics by lazy {
