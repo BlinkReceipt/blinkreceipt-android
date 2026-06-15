@@ -48,6 +48,6 @@ buildscript {
             'colorPicker'      : '1.1.2',
             'versionMajor'     : 2,
             'versionMinor'     : 1,
-            'versionPatch'     : 0
+            'versionPatch'     : 1
     ]
 }

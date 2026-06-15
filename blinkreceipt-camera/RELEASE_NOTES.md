@@ -309,3 +309,9 @@
 ## 2.1.0
 - We’ve increased the minimum supported Android SDK version from API 23 (Android 6.0 Marshmallow) to API 24 (Android 7.0 Nougat). This allows us to take advantage of newer platform capabilities and improve overall app quality.
 - Stability fixes and improvements
+
+## 2.1.1
+- Fixed an issue where receipt photos captured with the torch enabled appeared dark or underexposed, particularly on Samsung devices (S21, S23, S24+)
+- Switched receipt capture to CameraX's MAXIMIZE_QUALITY mode so that the still runs a proper pre-capture metering sequence instead of inheriting the preview's torch-adapted exposure
+- Upgraded the underlying Android CameraX dependency from 1.5.2 to 1.6.1, which migrates to the new CameraPipe backend for better device compatibility and stability
+- Stability fixes and improvements
