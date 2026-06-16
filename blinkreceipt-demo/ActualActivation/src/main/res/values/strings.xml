@@ -13,8 +13,6 @@
     <string name="activations_label_test_ads">Test Ads</string>
     <string name="activations_label_test_mode">Test Mode</string>
     <string name="activations_section_debug_placements">Debug Force Placements</string>
-    <string name="activations_section_receipt_validation">Receipt Validation</string>
-    <string name="activations_label_receipt_max_age">Receipt Max Age (days)</string>
     <string name="activations_section_scan_reward">Scan Reward</string>
     <string name="activations_label_reward_points">Reward Points</string>
     <string name="activations_button_save">Save</string>
@@ -48,7 +46,6 @@
     <string name="activations_scan_results_subtotal">Subtotal</string>
     <string name="activations_scan_results_date">Date</string>
     <string name="activations_scan_results_products">Products</string>
-    <string name="activations_button_reset">Reset</string>
     <string name="activations_label_force_placements">Placements</string>
     <string name="activations_button_themes">Themes and Icons</string>
     <string name="activations_themes_title">Themes &amp; Icons</string>
