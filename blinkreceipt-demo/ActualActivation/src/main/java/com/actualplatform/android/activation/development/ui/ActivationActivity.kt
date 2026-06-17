@@ -386,7 +386,6 @@ internal class ActivationActivity : ComponentActivity() {
         internal const val PREF_REWARD_ROUNDING = "activation_reward_rounding"
         internal const val PREF_REWARD_CURRENCY_IMAGE_LOCATIONS = "activation_reward_currency_image_locations"
         internal const val PREF_SHOW_HEADER = "activation_show_header"
-        internal const val PREF_RECEIPT_MAX_AGE_DAYS = "activation_receipt_max_age_days"
 
         internal const val DEFAULT_CURRENCY_NAME = "Points"
         // Reward defaults mirror RewardCurrency.default() so a fresh install matches the SDK baseline.
@@ -420,7 +419,6 @@ internal class ActivationActivity : ComponentActivity() {
             rewardCurrencyMessagingStyle: RewardCurrencyMessagingTextStyle,
             rewardRounding: RewardCurrencyRounding,
             rewardCurrencyImageLocations: Set<RewardCurrencyImageLocation>,
-            receiptMaxAgeDays: Int,
             scanRewardPoints: RewardPoint,
         ) {
             with(ActivationClient.instance) {
@@ -470,7 +468,6 @@ internal class ActivationActivity : ComponentActivity() {
                     rewardRounding = rewardRounding,
                     currencyImageLocations = rewardCurrencyImageLocations,
                 )
-                this.receiptMaxAgeDays = receiptMaxAgeDays
                 this.scanReward =
                     if (!scanRewardPoints.isZero()) ScanReward(scanRewardPoints) else null
                 LogcatManager.event().debug(TAG) { "scanReward = ${scanRewardPoints.value}" }
@@ -517,10 +514,6 @@ internal class ActivationActivity : ComponentActivity() {
                 rewardCurrencyImageLocations = prefs.getEnumSet(
                     PREF_REWARD_CURRENCY_IMAGE_LOCATIONS,
                     DEFAULT_CURRENCY_IMAGE_LOCATIONS
-                ),
-                receiptMaxAgeDays = prefs.getInt(
-                    PREF_RECEIPT_MAX_AGE_DAYS,
-                    ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS
                 ),
                 scanRewardPoints = RewardPoint(prefs.getNumberAsFloat(PREF_SCAN_REWARD, SettingsData.DEFAULT_SCAN_REWARD).toDouble()),
             )

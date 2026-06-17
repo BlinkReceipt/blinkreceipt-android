@@ -31,7 +31,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.actualplatform.activation.ActivationClient
 import com.actualplatform.activation.RewardCurrency
 import com.actualplatform.activation.RewardCurrencyCodePosition
 import com.actualplatform.activation.RewardCurrencyImageLocation
@@ -68,7 +67,6 @@ internal data class SettingsData(
     val rewardRounding: RewardCurrencyRounding,
     val currencyImageLocations: Set<RewardCurrencyImageLocation>,
     val scanReward: Double,
-    val receiptMaxAgeDays: Int,
     val forcePlacements: Set<String>,
 ) {
     companion object {
@@ -91,7 +89,6 @@ internal data class SettingsData(
             rewardRounding = prefs.getEnum(ActivationActivity.PREF_REWARD_ROUNDING, ActivationActivity.DEFAULT_REWARD_ROUNDING),
             currencyImageLocations = prefs.getEnumSet(ActivationActivity.PREF_REWARD_CURRENCY_IMAGE_LOCATIONS, ActivationActivity.DEFAULT_CURRENCY_IMAGE_LOCATIONS),
             scanReward = prefs.getNumberAsFloat(ActivationActivity.PREF_SCAN_REWARD, DEFAULT_SCAN_REWARD).toDouble(),
-            receiptMaxAgeDays = prefs.getInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS),
             forcePlacements = prefs.getStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
         )
     }
@@ -126,9 +123,6 @@ internal fun SettingsSummary(
             SectionHeader(stringResource(R.string.activations_section_debug_placements))
             SettingsSummaryRow(stringResource(R.string.activations_label_force_placements), settings.forcePlacements.joinToString(", "))
         }
-
-        SectionHeader(stringResource(R.string.activations_section_receipt_validation))
-        SettingsSummaryRow(stringResource(R.string.activations_label_receipt_max_age), "${settings.receiptMaxAgeDays} days")
 
         SectionHeader(stringResource(R.string.activations_section_ui))
         SettingsSummaryRow(stringResource(R.string.activations_offers_show_header), if (settings.showHeader) "On" else "Off")
@@ -196,7 +190,6 @@ private fun EditModeContent(
     var scanReward by remember {
         mutableStateOf(ScanRewardFormat.format(initial.scanReward))
     }
-    var receiptMaxAgeDays by remember { mutableStateOf(initial.receiptMaxAgeDays.toString()) }
     var rewardCurrencyName by remember { mutableStateOf(initial.currencyName) }
     var rewardPayoutPercentage by remember {
         mutableStateOf(
@@ -248,13 +241,6 @@ private fun EditModeContent(
             onTestAdsChange = { testAds = it },
             testMode = testMode,
             onTestModeChange = { testMode = it },
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        ReceiptValidationSection(
-            receiptMaxAgeDays = receiptMaxAgeDays,
-            onReceiptMaxAgeDaysChange = { receiptMaxAgeDays = it },
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -322,7 +308,6 @@ private fun EditModeContent(
                     .putBoolean(ActivationActivity.PREF_SHOW_HEADER, showHeader)
                     .putStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
                     .putFloat(ActivationActivity.PREF_SCAN_REWARD, scanReward.toFloatOrNull() ?: SettingsData.DEFAULT_SCAN_REWARD)
-                    .putInt(ActivationActivity.PREF_RECEIPT_MAX_AGE_DAYS, receiptMaxAgeDays.toIntOrNull() ?: ActivationClient.DEFAULT_RECEIPT_MAX_AGE_DAYS)
                     .putString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
                     .putString(ActivationActivity.PREF_REWARD_CURRENCY_CODE, rewardCurrencyCode.trim())
                     .putFloat(ActivationActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull()?.coerceIn(
