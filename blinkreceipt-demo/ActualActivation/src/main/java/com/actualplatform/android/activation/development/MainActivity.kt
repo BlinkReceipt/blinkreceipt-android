@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.actualplatform.android.activation.development.ui.ActivationActivity
+import com.microblink.FrameCharacteristics
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 
@@ -42,7 +43,16 @@ private fun HomeScreen() {
                     val intent = Intent(context, ActivationActivity::class.java).apply {
                         putExtra(
                             ActivationActivity.OPTIONS_KEY,
-                            ScanOptions.newBuilder().activation(true).build(),
+                            ScanOptions.newBuilder()
+                                .activation(true)
+                                // Persist captured receipt frames so the post-scan
+                                // summary screen can display them.
+                                .frameCharacteristics(
+                                    FrameCharacteristics.newBuilder()
+                                        .storeFrames(true)
+                                        .build(),
+                                )
+                                .build(),
                         )
                         putExtra(
                             ActivationActivity.CAMERA_CHARACTERISTICS,
