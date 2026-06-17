@@ -41,6 +41,7 @@ internal fun HomeScreen(
     onScanReceiptClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onThemesClick: () -> Unit,
+    onCustomizeAppearanceClick: () -> Unit,
     onClearRewards: () -> Unit,
     onBack: () -> Unit,
 ) {
@@ -91,6 +92,10 @@ internal fun HomeScreen(
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedButton(onClick = onThemesClick, modifier = Modifier.fillMaxWidth()) {
                 Text(stringResource(R.string.activations_button_themes))
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+            OutlinedButton(onClick = onCustomizeAppearanceClick, modifier = Modifier.fillMaxWidth()) {
+                Text(stringResource(R.string.activations_button_customize_appearance))
             }
 
             // Rewards Earned

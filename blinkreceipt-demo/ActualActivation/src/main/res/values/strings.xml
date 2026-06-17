@@ -76,4 +76,6 @@
     <string name="activations_themes_reset_dialog_dismiss">Cancel</string>
     <string name="activations_themes_icon_vector_set">Vector icon set</string>
     <string name="activations_toast_themes_applied">Themes &amp; Icons applied</string>
+    <string name="activations_button_customize_appearance">Customize Appearance</string>
+    <string name="activations_toast_appearance_applied">Appearance applied</string>
 </resources>

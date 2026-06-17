@@ -44,7 +44,7 @@ import com.actualplatform.activation.networking.HttpEnvironment
 import com.actualplatform.activation.networking.TestOptions
 import com.actualplatform.android.activation.development.R
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
-import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndIconsStorage
+import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
 import com.microblink.FrameCharacteristics
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
@@ -141,7 +141,7 @@ internal class ActivationActivity : ComponentActivity() {
     }
 
     private val themeStorage by lazy {
-        ThemesAndIconsStorage(themeDatastore)
+        ThemesAndAppearanceStorage(themeDatastore)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -157,6 +157,13 @@ internal class ActivationActivity : ComponentActivity() {
                 .distinctUntilChanged()
                 .flowWithLifecycle(lifecycle)
                 .collect { Activation.theme = it }
+        }
+
+        lifecycleScope.launch {
+            themeStorage.appearance()
+                .distinctUntilChanged()
+                .flowWithLifecycle(lifecycle)
+                .collect { Activation.appearance = it }
         }
 
         setContent {
@@ -278,7 +285,29 @@ internal class ActivationActivity : ComponentActivity() {
                                     // Clear DataStore and restore SDK defaults immediately. The
                                     // storage flow will also re-emit the baseline theme when the
                                     // backing preferences change.
-                                    lifecycleScope.launch { themeStorage.clear() }
+                                    lifecycleScope.launch { themeStorage.clearTheme() }
+                                },
+                                onBack = { backStack.removeLastOrNull() },
+                            )
+                        }
+
+                        entry<ActivationRoute.CustomizeAppearance> { _ ->
+                            CustomizeAppearanceScreen(
+                                onApply = { appearance ->
+                                    lifecycleScope.launch(Dispatchers.IO) {
+                                        themeStorage.save(appearance)
+                                    }
+
+                                    Toast.makeText(
+                                        applicationContext,
+                                        R.string.activations_toast_appearance_applied,
+                                        Toast.LENGTH_SHORT,
+                                    ).show()
+
+                                    backStack.removeLastOrNull()
+                                },
+                                onReset = {
+                                    lifecycleScope.launch { themeStorage.clearAppearance() }
                                 },
                                 onBack = { backStack.removeLastOrNull() },
                             )
@@ -351,6 +380,7 @@ internal class ActivationActivity : ComponentActivity() {
                                 },
                                 onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
                                 onThemesClick = { backStack.add(ActivationRoute.ThemesAndAppearanceEditor) },
+                                onCustomizeAppearanceClick = { backStack.add(ActivationRoute.CustomizeAppearance) },
                                 onClearRewards = {
                                     LogcatManager.event().debug { "onClearRewards()" }
                                     rewardsPref.edit(true) { clear() }
