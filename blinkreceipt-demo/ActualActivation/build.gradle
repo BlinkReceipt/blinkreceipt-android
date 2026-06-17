@@ -85,9 +85,6 @@ dependencies {
 
     implementation(platform("com.actualplatform:activation-bom:${versions.activation}"))
     implementation("com.actualplatform:activation")
-    // On-device barcode scanner for the post-scan missed-earnings product editor.
-    // Without it the editor falls back to manual barcode entry.
-    implementation("com.actualplatform:activation-barcode")
 
     implementation "androidx.work:work-runtime:${androidx.workermanager}"
     implementation "androidx.work:work-runtime-ktx:${androidx.workermanager}"
