@@ -375,25 +375,24 @@ private val themePresets =
     listOf(
         ThemePreset("Default") { ActivationTheme() },
         ThemePreset("Magenta + Lime") {
-            ActivationTheme(
-                lightColors =
-                    ActivationTheme.Colors(
-                        primary = 0xFFFF0080,
-                        secondary = 0xFFFF8000,
-                        background = 0xFF9400D3,
-                        surface = 0xFFFFE4E1,
-                        surfaceAccent = 0xFFFFD700,
-                        surfaceInverse = 0xFF8B0000,
-                        textPrimary = 0xFF4B0082,
-                        textSecondary = 0xFF800080,
-                        textAccent = 0xFFFF1493,
-                        textInverse = 0xFFFFFF00,
-                        success = 0xFFFF00FF,
-                        error = 0xFF00FF00,
-                        warning = 0xFF00BFFF,
-                        border = 0xFFFF6347,
-                    )
-            )
+            val colors =
+                ActivationTheme.Colors(
+                    primary = 0xFFFF0080,
+                    secondary = 0xFFFF8000,
+                    background = 0xFF9400D3,
+                    surface = 0xFFFFE4E1,
+                    surfaceAccent = 0xFFFFD700,
+                    surfaceInverse = 0xFF8B0000,
+                    textPrimary = 0xFF4B0082,
+                    textSecondary = 0xFF800080,
+                    textAccent = 0xFFFF1493,
+                    textInverse = 0xFFFFFF00,
+                    success = 0xFFFF00FF,
+                    error = 0xFF00FF00,
+                    warning = 0xFF00BFFF,
+                    border = 0xFFFF6347,
+                )
+            ActivationTheme(lightColors = colors, darkColors = colors)
         },
         ThemePreset("Cyan + Neon Dark") {
             ActivationTheme(
