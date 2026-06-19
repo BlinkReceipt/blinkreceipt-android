@@ -804,7 +804,7 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 2.2.0
-- Add internal restricted method for session-level receipt validity determination from confirmed frames (MON-1234)
+- Add internal restricted method for session-level receipt validity determination from confirmed frames
 - Fuel Extraction Improvements 
   - Improved fuel grade extraction accuracy and reliability 
 - Stability Improvements 
