@@ -15,12 +15,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.actualplatform.android.activation.development.ui.ActivationActivity
+import com.microblink.FrameCharacteristics
 import com.microblink.ScanOptions
 import com.microblink.camera.ui.CameraCharacteristics
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ActivationActivity.applySettings(this)
         setContent {
             HomeScreen()
         }
@@ -40,13 +42,20 @@ private fun HomeScreen() {
                 activity?.let {
                     val intent = Intent(context, ActivationActivity::class.java).apply {
                         putExtra(
-                            ActivationActivity.Companion.OPTIONS_KEY,
-                            ScanOptions.Builder()
-                                .detectDuplicates(true)
+                            ActivationActivity.OPTIONS_KEY,
+                            ScanOptions.newBuilder()
+                                .activation(true)
+                                // Persist captured receipt frames so the post-scan
+                                // summary screen can display them.
+                                .frameCharacteristics(
+                                    FrameCharacteristics.newBuilder()
+                                        .storeFrames(true)
+                                        .build(),
+                                )
                                 .build(),
                         )
                         putExtra(
-                            ActivationActivity.Companion.CAMERA_CHARACTERISTICS,
+                            ActivationActivity.CAMERA_CHARACTERISTICS,
                             CameraCharacteristics.Builder()
                                 .cameraPermission(true)
                                 .build(),

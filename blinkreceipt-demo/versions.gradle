@@ -18,6 +18,8 @@ buildscript {
             'compose'       : '2026.03.00',
             'lifecycleViewModelNav3' : '2.10.0',
             'nav3Core'          : '1.0.1',
+            'datastore'         : '1.1.1',
+            'workermanager'     : '2.10.0',
     ]
 
     ext.versions = [
@@ -33,8 +35,8 @@ buildscript {
             "agp"              : '9.2.1',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
-            'bom'              : '2.1.1',
-            'activation'       : '1.0.0',
+            'bom'              : '2.2.0',
+            'activation'       : '1.1.0',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
@@ -42,8 +44,10 @@ buildscript {
             'gson'             : '2.13.2',
             "kotlinxSerialization" : "1.10.0",
             'barcodeScanner'   : '17.3.0',
+            'coil'             : '3.4.0',
+            'colorPicker'      : '1.1.2',
             'versionMajor'     : 2,
-            'versionMinor'     : 1,
-            'versionPatch'     : 1
+            'versionMinor'     : 2,
+            'versionPatch'     : 0
     ]
 }

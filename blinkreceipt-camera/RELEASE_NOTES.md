@@ -315,3 +315,6 @@
 - Switched receipt capture to CameraX's MAXIMIZE_QUALITY mode so that the still runs a proper pre-capture metering sequence instead of inheriting the preview's torch-adapted exposure
 - Upgraded the underlying Android CameraX dependency from 1.5.2 to 1.6.1, which migrates to the new CameraPipe backend for better device compatibility and stability
 - Stability fixes and improvements
+
+## 2.2.0
+- Stability fixes and improvements

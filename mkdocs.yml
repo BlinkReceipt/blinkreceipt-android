@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '2.1.1'
-    next_release: '2.2.0'
+    release: '2.2.0'
+    next_release: '2.3.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -27,6 +27,7 @@ nav:
     - Activation:
         - Android Integration Guide: internal/activation/activation_integration.md
         - React Native Integration Guide: internal/activation/activation_react_native_integration.md
+        - Style and Theme Integration Guide: internal/activation/activation_style_theme_integration.md
     - BlinkReceipt 2.0.0 - Major Changes:
         - Deprecating Barcode Scanning Feature: barcode_deprecation_migration_guide.md
         - CameraX Migration Guide: camerax_migration_guide.md

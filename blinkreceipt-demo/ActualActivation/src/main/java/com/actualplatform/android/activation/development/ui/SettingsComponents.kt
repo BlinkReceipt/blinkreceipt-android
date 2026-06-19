@@ -1,12 +1,19 @@
 package com.actualplatform.android.activation.development.ui
 
+import androidx.compose.foundation.MarqueeSpacing
+import androidx.compose.foundation.basicMarquee
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -40,5 +47,49 @@ internal fun SettingsSummaryRow(label: String, value: String) {
             text = value,
             style = MaterialTheme.typography.bodyMedium,
         )
+    }
+}
+
+/**
+ * Single-choice segmented control over the values of an enum (or any list).
+ * Ported from the engage-kmp settings dev-app; renders one segment per [entries] value
+ * with the active [selected] value highlighted.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+internal fun <T> SegmentedButtonsRow(
+    label: String,
+    entries: List<T>,
+    selected: T,
+    onSelected: (T) -> Unit,
+    labelFor: (T) -> String,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier.fillMaxWidth()) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+            entries.forEachIndexed { index, entry ->
+                SegmentedButton(
+                    selected = entry == selected,
+                    onClick = { onSelected(entry) },
+                    shape = SegmentedButtonDefaults.itemShape(index = index, count = entries.size),
+                ) {
+                    Text(
+                        text = labelFor(entry),
+                        maxLines = 1,
+                        modifier = Modifier.basicMarquee(
+                            iterations = Int.MAX_VALUE,
+                            initialDelayMillis = 1_000,
+                            spacing = MarqueeSpacing(8.dp),
+                        )
+                    )
+                }
+            }
+        }
     }
 }
