@@ -23,13 +23,17 @@ import kotlinx.serialization.json.Json
  * @property dataStore An optional [DataStore] instance used to persist preferences. If null,
  *   persistence is disabled.
  */
-internal class ThemesAndAppearanceStorage(private val dataStore: DataStore<Preferences>? = null) {
-    private val json = Json {
-        ignoreUnknownKeys = true
-        encodeDefaults = true
-        isLenient = true
-    }
+/**
+ * The exact [Json] configuration the storage persists with — file-level so tests can encode/decode
+ * fixtures against the production configuration.
+ */
+internal val themeStorageJson = Json {
+    ignoreUnknownKeys = true
+    encodeDefaults = true
+    isLenient = true
+}
 
+internal class ThemesAndAppearanceStorage(private val dataStore: DataStore<Preferences>? = null) {
     init {
         Logger.d(TAG) {
             val persisted = dataStore != null
@@ -62,7 +66,7 @@ internal class ThemesAndAppearanceStorage(private val dataStore: DataStore<Prefe
             Logger.d(TAG) { "save: no DataStore, no-op" }
             return
         }
-        dataStore.edit { prefs -> prefs[KEY_ACTIVATION_THEME] = json.encodeToString(theme.toLocal()) }
+        dataStore.edit { prefs -> prefs[KEY_ACTIVATION_THEME] = themeStorageJson.encodeToString(theme.toLocal()) }
         Logger.d(TAG) { "save: persisted theme" }
     }
 
@@ -71,7 +75,7 @@ internal class ThemesAndAppearanceStorage(private val dataStore: DataStore<Prefe
             Logger.d(TAG) { "save: no DataStore, no-op" }
             return
         }
-        dataStore.edit { prefs -> prefs[KEY_ACTIVATION_APPEARANCE] = json.encodeToString(appearance.toLocal()) }
+        dataStore.edit { prefs -> prefs[KEY_ACTIVATION_APPEARANCE] = themeStorageJson.encodeToString(appearance.toLocal()) }
         Logger.d(TAG) { "save: persisted appearance" }
     }
 
@@ -103,14 +107,14 @@ internal class ThemesAndAppearanceStorage(private val dataStore: DataStore<Prefe
     }
 
     private fun String.decodeThemeOrNull(): ActivationTheme? =
-        runCatching { json.decodeFromString<com.actualplatform.android.activation.development.ui.themes.local.ActivationTheme>(this).toModel() }
+        runCatching { themeStorageJson.decodeFromString<com.actualplatform.android.activation.development.ui.themes.local.ActivationTheme>(this).toModel() }
             .onFailure { e ->
                 Logger.d(TAG) { "decodeThemeOrNull: failed to decode theme JSON — $e" }
             }
             .getOrNull()
 
     private fun String.decodeAppearanceOrNull(): ActivationAppearance? =
-        runCatching { json.decodeFromString<com.actualplatform.android.activation.development.ui.themes.local.ActivationAppearance>(this).toModel() }
+        runCatching { themeStorageJson.decodeFromString<com.actualplatform.android.activation.development.ui.themes.local.ActivationAppearance>(this).toModel() }
             .onFailure { e ->
                 Logger.d(TAG) { "decodeAppearanceOrNull: failed to decode appearance JSON — $e" }
             }

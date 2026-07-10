@@ -88,6 +88,40 @@ internal fun IconsTabContent(theme: ActivationTheme, onThemeChange: (ActivationT
             IconPickerRow("niceScanIcon", theme.icons.niceScanIcon) {
                 onThemeChange(theme.copy(icons = theme.icons.copy(niceScanIcon = it)))
             }
+            IconPickerRow("infoIcon", theme.icons.infoIcon) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(infoIcon = it)))
+            }
+        }
+
+        CollapsibleSection(
+            title = stringResource(R.string.activations_themes_section_missed_earnings),
+        ) {
+            IconPickerRow("editMissedEarning", theme.icons.editMissedEarning) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(editMissedEarning = it)))
+            }
+            IconPickerRow("submitMissedEarnings", theme.icons.submitMissedEarnings) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(submitMissedEarnings = it)))
+            }
+            IconPickerRow("addMissedEarnings", theme.icons.addMissedEarnings) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(addMissedEarnings = it)))
+            }
+            IconPickerRow("reportMissedEarnings", theme.icons.reportMissedEarnings) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(reportMissedEarnings = it)))
+            }
+            IconPickerRow("calendarMissedEarnings", theme.icons.calendarMissedEarnings) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(calendarMissedEarnings = it)))
+            }
+            IconPickerRow(
+                "submitMissedEarningsSuccess",
+                theme.icons.submitMissedEarningsSuccess,
+            ) {
+                onThemeChange(
+                    theme.copy(icons = theme.icons.copy(submitMissedEarningsSuccess = it)),
+                )
+            }
+            IconPickerRow("submitMissedEarningsError", theme.icons.submitMissedEarningsError) {
+                onThemeChange(theme.copy(icons = theme.icons.copy(submitMissedEarningsError = it)))
+            }
         }
     }
 }
@@ -127,10 +161,10 @@ private fun IconPresetGrid(
                         onClick = { presetIcons?.let(onIconsChange) },
                         shape = RoundedCornerShape(active.shapes.sm),
                         colors =
-                            ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (selected) primary else surfaceAccent,
-                                contentColor = if (selected) textInverse else textPrimary,
-                            ),
+                        ButtonDefaults.filledTonalButtonColors(
+                            containerColor = if (selected) primary else surfaceAccent,
+                            contentColor = if (selected) textInverse else textPrimary,
+                        ),
                     ) {
                         Text(text = preset.label, style = active.typography.labelLarge)
                     }
@@ -143,7 +177,7 @@ private fun IconPresetGrid(
 
 private fun buildPresetIcons(seed: Long, poolBytes: List<ByteArray?>): ActivationTheme.Icons? {
     val rng = Random(seed)
-    val picks = List(13) { poolBytes[rng.nextInt(poolBytes.size)] ?: return null }
+    val picks = List(21) { poolBytes[rng.nextInt(poolBytes.size)] ?: return null }
     fun ic(i: Int) = ActivationIcon.Bytes(picks[i])
     return ActivationTheme.Icons(
         rewardIcon = ic(0),
@@ -159,5 +193,13 @@ private fun buildPresetIcons(seed: Long, poolBytes: List<ByteArray?>): Activatio
         missedEarningsIcon = ic(10),
         boostIcon = ic(11),
         niceScanIcon = ic(12),
+        editMissedEarning = ic(13),
+        submitMissedEarnings = ic(14),
+        addMissedEarnings = ic(15),
+        reportMissedEarnings = ic(16),
+        calendarMissedEarnings = ic(17),
+        submitMissedEarningsSuccess = ic(18),
+        submitMissedEarningsError = ic(19),
+        infoIcon = ic(20),
     )
 }

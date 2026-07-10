@@ -41,7 +41,13 @@ import com.github.skydoves.colorpicker.compose.HsvColorPicker
 import com.github.skydoves.colorpicker.compose.rememberColorPickerController
 
 @Composable
-internal fun ColorPickerRow(label: String, color: Long, onColorChange: (Long) -> Unit) {
+internal fun ColorPickerRow(
+    label: String,
+    color: Long,
+    isDefault: Boolean = false,
+    trailingContent: (@Composable () -> Unit)? = null,
+    onColorChange: (Long) -> Unit,
+) {
     val theme = draftTheme()
     val textPrimary = theme.colors.textPrimary.toComposeColor()
     val textSecondary = theme.colors.textSecondary.toComposeColor()
@@ -56,16 +62,21 @@ internal fun ColorPickerRow(label: String, color: Long, onColorChange: (Long) ->
         val swatchShape = RoundedCornerShape(4.dp)
         Box(
             modifier =
-                Modifier.size(28.dp)
-                    .clip(swatchShape)
-                    .background(Color(color.toInt()))
-                    .border(width = 1.dp, color = border, shape = swatchShape)
+            Modifier.size(28.dp)
+                .clip(swatchShape)
+                .background(Color(color.toInt()))
+                .border(width = 1.dp, color = border, shape = swatchShape),
         )
         Spacer(modifier = Modifier.width(12.dp))
         Column(modifier = Modifier.weight(1f)) {
             Text(text = label, style = theme.typography.bodyMedium, color = textPrimary)
-            Text(text = formatHex(color), style = theme.typography.bodySmall, color = textSecondary)
+            Text(
+                text = if (isDefault) "${formatHex(color)} (default)" else formatHex(color),
+                style = theme.typography.bodySmall,
+                color = textSecondary,
+            )
         }
+        trailingContent?.invoke()
     }
 
     if (dialogOpen) {
@@ -145,10 +156,10 @@ internal fun ColorPickerDialog(
                     val swatchShape = RoundedCornerShape(4.dp)
                     Box(
                         modifier =
-                            Modifier.size(36.dp)
-                                .clip(swatchShape)
-                                .background(Color(currentColor.toInt()))
-                                .border(width = 1.dp, color = border, shape = swatchShape)
+                        Modifier.size(36.dp)
+                            .clip(swatchShape)
+                            .background(Color(currentColor.toInt()))
+                            .border(width = 1.dp, color = border, shape = swatchShape),
                     )
                     Spacer(modifier = Modifier.width(12.dp))
                     OutlinedTextField(
@@ -177,23 +188,23 @@ internal fun ColorPickerDialog(
                         singleLine = true,
                         modifier = Modifier.weight(1f),
                         keyboardOptions =
-                            androidx.compose.foundation.text.KeyboardOptions(
-                                capitalization = KeyboardCapitalization.Characters
-                            ),
+                        androidx.compose.foundation.text.KeyboardOptions(
+                            capitalization = KeyboardCapitalization.Characters,
+                        ),
                         shape = RoundedCornerShape(theme.shapes.sm),
                         colors =
-                            OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = primary,
-                                unfocusedBorderColor = border,
-                                focusedLabelColor = primary,
-                                unfocusedLabelColor = textSecondary,
-                                cursorColor = primary,
-                                focusedTextColor = textPrimary,
-                                unfocusedTextColor = textPrimary,
-                                errorBorderColor = errorColor,
-                                errorLabelColor = errorColor,
-                                errorTextColor = textPrimary,
-                            ),
+                        OutlinedTextFieldDefaults.colors(
+                            focusedBorderColor = primary,
+                            unfocusedBorderColor = border,
+                            focusedLabelColor = primary,
+                            unfocusedLabelColor = textSecondary,
+                            cursorColor = primary,
+                            focusedTextColor = textPrimary,
+                            unfocusedTextColor = textPrimary,
+                            errorBorderColor = errorColor,
+                            errorLabelColor = errorColor,
+                            errorTextColor = textPrimary,
+                        ),
                     )
                 }
             }
@@ -208,8 +219,8 @@ internal fun parseHex(input: String): Long? {
     val cleaned = input.trim().removePrefix("#")
     if (cleaned.length != 6 && cleaned.length != 8) return null
     return runCatching {
-            val parsed = cleaned.toLong(16)
-            if (cleaned.length == 6) 0xFF000000L or parsed else parsed
-        }
+        val parsed = cleaned.toLong(16)
+        if (cleaned.length == 6) 0xFF000000L or parsed else parsed
+    }
         .getOrNull()
 }

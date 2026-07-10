@@ -79,6 +79,7 @@ internal fun ThemesAndIconEditorScreen(
         val textPrimary = theme.colors.textPrimary.toComposeColor()
         val textSecondary = theme.colors.textSecondary.toComposeColor()
         val textInverse = theme.colors.textInverse.toComposeColor()
+        val textOnPrimary = theme.colors.textOnPrimary.toComposeColor()
         val surfaceInverse = theme.colors.surfaceInverse.toComposeColor()
 
         Scaffold(
@@ -113,12 +114,12 @@ internal fun ThemesAndIconEditorScreen(
                         }
                     },
                     colors =
-                        TopAppBarDefaults.topAppBarColors(
-                            containerColor = surface,
-                            titleContentColor = textPrimary,
-                            navigationIconContentColor = textPrimary,
-                            actionIconContentColor = textSecondary,
-                        ),
+                    TopAppBarDefaults.topAppBarColors(
+                        containerColor = surface,
+                        titleContentColor = textPrimary,
+                        navigationIconContentColor = textPrimary,
+                        actionIconContentColor = textSecondary,
+                    ),
                 )
             },
             bottomBar = {
@@ -128,10 +129,10 @@ internal fun ThemesAndIconEditorScreen(
                             onClick = { onApply(draftTheme) },
                             modifier = Modifier.fillMaxWidth(),
                             colors =
-                                ButtonDefaults.buttonColors(
-                                    containerColor = primary,
-                                    contentColor = textInverse,
-                                ),
+                            ButtonDefaults.buttonColors(
+                                containerColor = primary,
+                                contentColor = textOnPrimary,
+                            ),
                             shape = RoundedCornerShape(theme.shapes.sm),
                         ) {
                             Text(
@@ -187,7 +188,7 @@ internal fun ThemesAndIconEditorScreen(
                     0 ->
                         Column(
                             modifier =
-                                Modifier.fillMaxSize().verticalScroll(themesScroll).padding(16.dp)
+                            Modifier.fillMaxSize().verticalScroll(themesScroll).padding(16.dp),
                         ) {
                             ThemesTabContent(
                                 theme = draftTheme,
@@ -197,9 +198,9 @@ internal fun ThemesAndIconEditorScreen(
                     1 ->
                         Column(
                             modifier =
-                                Modifier.fillMaxSize()
-                                    .verticalScroll(iconsScroll)
-                                    .padding(16.dp)
+                            Modifier.fillMaxSize()
+                                .verticalScroll(iconsScroll)
+                                .padding(16.dp),
                         ) {
                             IconsTabContent(theme = draftTheme, onThemeChange = { draftTheme = it })
                         }

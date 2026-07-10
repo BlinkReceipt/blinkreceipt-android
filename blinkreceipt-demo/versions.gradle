@@ -24,10 +24,10 @@ buildscript {
 
     ext.versions = [
             'minSdk'           : 24,
-            'compileSdk'       : 36,
+            'compileSdk'       : 37,
             'targetSdk'        : 36,
             'androidTestRunner': '1.6.2',
-            'buildTools'       : '36.0.0',
+            'buildTools'       : '37.0.0',
             'material'         : '1.13.0',
             'kotlin'           : '2.2.21',
             'easyPermissions'  : '3.0.0',

@@ -64,6 +64,7 @@
     <string name="activations_themes_section_loading">Loading</string>
     <string name="activations_themes_section_error_modal">Error Modal</string>
     <string name="activations_themes_section_receipt_summary">Receipt Summary</string>
+    <string name="activations_themes_section_missed_earnings">Missed Earnings</string>
     <string name="activations_themes_label_light">Light</string>
     <string name="activations_themes_label_dark">Dark</string>
     <string name="activations_themes_label_override_dark">Override dark colors</string>

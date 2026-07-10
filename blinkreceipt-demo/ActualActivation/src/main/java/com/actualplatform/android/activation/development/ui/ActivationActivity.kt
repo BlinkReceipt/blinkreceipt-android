@@ -51,6 +51,7 @@ import com.microblink.camera.ui.CameraCharacteristics
 import com.microblink.camera.ui.CameraRecognizerContract
 import com.microblink.camera.ui.CameraRecognizerOptions
 import com.microblink.camera.ui.CameraRecognizerResults
+import com.microblink.camera.ui.internal.parcelable
 import com.microblink.logcat.LogcatManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
