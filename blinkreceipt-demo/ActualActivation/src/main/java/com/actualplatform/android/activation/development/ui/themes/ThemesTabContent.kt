@@ -58,6 +58,7 @@ internal fun ThemesTabContent(theme: ActivationTheme, onThemeChange: (Activation
     val textPrimary = active.colors.textPrimary.toComposeColor()
     val textSecondary = active.colors.textSecondary.toComposeColor()
     val textInverse = active.colors.textInverse.toComposeColor()
+    val textOnPrimary = active.colors.textOnPrimary.toComposeColor()
     val surface = active.colors.surface.toComposeColor()
     val border = active.colors.border.toComposeColor()
 
@@ -88,19 +89,19 @@ internal fun ThemesTabContent(theme: ActivationTheme, onThemeChange: (Activation
                     onThemeChange(
                         theme.copy(
                             darkColors =
-                                if (enabled) ActivationColorDefaults.darkColors() else theme.lightColors
-                        )
+                            if (enabled) ActivationColorDefaults.darkColors() else theme.lightColors,
+                        ),
                     )
                 },
                 colors =
-                    SwitchDefaults.colors(
-                        checkedThumbColor = textInverse,
-                        checkedTrackColor = primary,
-                        checkedBorderColor = primary,
-                        uncheckedThumbColor = textInverse,
-                        uncheckedTrackColor = textSecondary,
-                        uncheckedBorderColor = textSecondary,
-                    ),
+                SwitchDefaults.colors(
+                    checkedThumbColor = textInverse,
+                    checkedTrackColor = primary,
+                    checkedBorderColor = primary,
+                    uncheckedThumbColor = textInverse,
+                    uncheckedTrackColor = textSecondary,
+                    uncheckedBorderColor = textSecondary,
+                ),
             )
         }
 
@@ -110,7 +111,7 @@ internal fun ThemesTabContent(theme: ActivationTheme, onThemeChange: (Activation
                 val segmentColors =
                     SegmentedButtonDefaults.colors(
                         activeContainerColor = primary,
-                        activeContentColor = textInverse,
+                        activeContentColor = textOnPrimary,
                         activeBorderColor = primary,
                         inactiveContainerColor = surface,
                         inactiveContentColor = textPrimary,
@@ -148,8 +149,11 @@ internal fun ThemesTabContent(theme: ActivationTheme, onThemeChange: (Activation
             colors = editingColors,
             onColorsChange = { updated ->
                 onThemeChange(
-                    if (editingDark) theme.copy(darkColors = updated)
-                    else theme.copy(lightColors = updated)
+                    if (editingDark) {
+                        theme.copy(darkColors = updated)
+                    } else {
+                        theme.copy(lightColors = updated)
+                    },
                 )
             },
         )
@@ -173,6 +177,7 @@ private fun ColorsEditor(
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
         ColorPickerRow("primary", colors.primary) { onColorsChange(colors.copy(primary = it)) }
+        ColorPickerRow("accent", colors.accent) { onColorsChange(colors.copy(accent = it)) }
         ColorPickerRow("secondary", colors.secondary) {
             onColorsChange(colors.copy(secondary = it))
         }
@@ -182,6 +187,9 @@ private fun ColorsEditor(
         ColorPickerRow("surface", colors.surface) { onColorsChange(colors.copy(surface = it)) }
         ColorPickerRow("surfaceAccent", colors.surfaceAccent) {
             onColorsChange(colors.copy(surfaceAccent = it))
+        }
+        ColorPickerRow("surfaceBrand", colors.surfaceBrand) {
+            onColorsChange(colors.copy(surfaceBrand = it))
         }
         ColorPickerRow("surfaceInverse", colors.surfaceInverse) {
             onColorsChange(colors.copy(surfaceInverse = it))
@@ -198,10 +206,20 @@ private fun ColorsEditor(
         ColorPickerRow("textInverse", colors.textInverse) {
             onColorsChange(colors.copy(textInverse = it))
         }
+        ColorPickerRow("textOnPrimary", colors.textOnPrimary) {
+            onColorsChange(colors.copy(textOnPrimary = it))
+        }
+        ColorPickerRow("textOnSecondary", colors.textOnSecondary) {
+            onColorsChange(colors.copy(textOnSecondary = it))
+        }
         ColorPickerRow("success", colors.success) { onColorsChange(colors.copy(success = it)) }
         ColorPickerRow("error", colors.error) { onColorsChange(colors.copy(error = it)) }
         ColorPickerRow("warning", colors.warning) { onColorsChange(colors.copy(warning = it)) }
         ColorPickerRow("border", colors.border) { onColorsChange(colors.copy(border = it)) }
+        ColorPickerRow("tagSurface", colors.tagSurface) {
+            onColorsChange(colors.copy(tagSurface = it))
+        }
+        ColorPickerRow("tagText", colors.tagText) { onColorsChange(colors.copy(tagText = it)) }
     }
 }
 
@@ -230,11 +248,11 @@ private fun ShapesEditor(
             valueRange = 0f..32f,
             steps = 31,
             colors =
-                SliderDefaults.colors(
-                    thumbColor = primary,
-                    activeTrackColor = primary,
-                    inactiveTrackColor = primary.copy(alpha = 0.24f),
-                ),
+            SliderDefaults.colors(
+                thumbColor = primary,
+                activeTrackColor = primary,
+                inactiveTrackColor = primary.copy(alpha = 0.24f),
+            ),
         )
         Text(
             text = stringResource(R.string.activations_themes_section_shapes_instruction),
@@ -262,15 +280,15 @@ private fun ShapesEditor(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(theme.shapes.sm),
             colors =
-                OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = primary,
-                    unfocusedBorderColor = border,
-                    focusedLabelColor = primary,
-                    unfocusedLabelColor = textSecondary,
-                    cursorColor = primary,
-                    focusedTextColor = textPrimary,
-                    unfocusedTextColor = textPrimary,
-                ),
+            OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = primary,
+                unfocusedBorderColor = border,
+                focusedLabelColor = primary,
+                unfocusedLabelColor = textSecondary,
+                cursorColor = primary,
+                focusedTextColor = textPrimary,
+                unfocusedTextColor = textPrimary,
+            ),
         )
     }
 }
@@ -294,8 +312,11 @@ private fun ShapePreviewRow(shapes: ActivationTheme.Shapes) {
         steps.forEach { step ->
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 val shape =
-                    if (step.isPill) CircleShape
-                    else RoundedCornerShape((shapes.unit * step.multiplier).dp)
+                    if (step.isPill) {
+                        CircleShape
+                    } else {
+                        RoundedCornerShape((shapes.unit * step.multiplier).dp)
+                    }
                 Box(modifier = Modifier.size(48.dp).background(primary, shape))
                 Spacer(Modifier.height(4.dp))
                 Text(text = step.label, style = theme.typography.labelSmall, color = textSecondary)
@@ -324,11 +345,11 @@ private fun TypographyEditor(
             valueRange = 0.6f..1.6f,
             steps = 19,
             colors =
-                SliderDefaults.colors(
-                    thumbColor = primary,
-                    activeTrackColor = primary,
-                    inactiveTrackColor = primary.copy(alpha = 0.24f),
-                ),
+            SliderDefaults.colors(
+                thumbColor = primary,
+                activeTrackColor = primary,
+                inactiveTrackColor = primary.copy(alpha = 0.24f),
+            ),
         )
         Text(
             text = "Multiplied into every text style's font size. 1.0 = design defaults.",
@@ -347,21 +368,21 @@ private fun TypographyRampPreview() {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(theme.shapes.md),
         colors =
-            CardDefaults.cardColors(
-                containerColor = theme.colors.surfaceAccent.toComposeColor(),
-                contentColor = theme.colors.textSecondary.toComposeColor(),
-            ),
+        CardDefaults.cardColors(
+            containerColor = theme.colors.surfaceAccent.toComposeColor(),
+            contentColor = theme.colors.textSecondary.toComposeColor(),
+        ),
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
             typographyRamp.forEach { sample ->
                 Text(
                     text = "${sample.name} — The quick brown fox",
                     style =
-                        theme.typography.bodyLarge.copy(
-                            fontSize = (sample.baseSize * scale).sp,
-                            lineHeight = (sample.baseLine * scale).sp,
-                            fontWeight = sample.weight,
-                        ),
+                    theme.typography.bodyLarge.copy(
+                        fontSize = (sample.baseSize * scale).sp,
+                        lineHeight = (sample.baseLine * scale).sp,
+                        fontWeight = sample.weight,
+                    ),
                 )
                 Spacer(Modifier.height(2.dp))
             }
@@ -376,7 +397,7 @@ private val themePresets =
         ThemePreset("Default") { ActivationTheme() },
         ThemePreset("Magenta + Lime") {
             val colors =
-                ActivationTheme.Colors(
+                ActivationColorDefaults.lightColors(
                     primary = 0xFFFF0080,
                     secondary = 0xFFFF8000,
                     background = 0xFF9400D3,
@@ -397,39 +418,39 @@ private val themePresets =
         ThemePreset("Cyan + Neon Dark") {
             ActivationTheme(
                 lightColors =
-                    ActivationTheme.Colors(
-                        primary = 0xFF00CED1,
-                        secondary = 0xFFFFD700,
-                        background = 0xFF2F4F4F,
-                        surface = 0xFFFFFACD,
-                        surfaceAccent = 0xFFAFEEEE,
-                        surfaceInverse = 0xFF800080,
-                        textPrimary = 0xFF8B4513,
-                        textSecondary = 0xFFD2691E,
-                        textAccent = 0xFFFF4500,
-                        textInverse = 0xFFADFF2F,
-                        success = 0xFFFF1493,
-                        error = 0xFF00FFFF,
-                        warning = 0xFFBA55D3,
-                        border = 0xFF8A2BE2,
-                    ),
+                ActivationColorDefaults.lightColors(
+                    primary = 0xFF00CED1,
+                    secondary = 0xFFFFD700,
+                    background = 0xFF2F4F4F,
+                    surface = 0xFFFFFACD,
+                    surfaceAccent = 0xFFAFEEEE,
+                    surfaceInverse = 0xFF800080,
+                    textPrimary = 0xFF8B4513,
+                    textSecondary = 0xFFD2691E,
+                    textAccent = 0xFFFF4500,
+                    textInverse = 0xFFADFF2F,
+                    success = 0xFFFF1493,
+                    error = 0xFF00FFFF,
+                    warning = 0xFFBA55D3,
+                    border = 0xFF8A2BE2,
+                ),
                 darkColors =
-                    ActivationTheme.Colors(
-                        primary = 0xFF00FF7F,
-                        secondary = 0xFFFF00FF,
-                        background = 0xFF000000,
-                        surface = 0xFF1A0033,
-                        surfaceAccent = 0xFF330066,
-                        surfaceInverse = 0xFFFFE4B5,
-                        textPrimary = 0xFFFFD700,
-                        textSecondary = 0xFF7FFFD4,
-                        textAccent = 0xFFFFA500,
-                        textInverse = 0xFF4B0082,
-                        success = 0xFFFF6347,
-                        error = 0xFF40E0D0,
-                        warning = 0xFF9370DB,
-                        border = 0xFFADFF2F,
-                    ),
+                ActivationColorDefaults.darkColors(
+                    primary = 0xFF00FF7F,
+                    secondary = 0xFFFF00FF,
+                    background = 0xFF000000,
+                    surface = 0xFF1A0033,
+                    surfaceAccent = 0xFF330066,
+                    surfaceInverse = 0xFFFFE4B5,
+                    textPrimary = 0xFFFFD700,
+                    textSecondary = 0xFF7FFFD4,
+                    textAccent = 0xFFFFA500,
+                    textInverse = 0xFF4B0082,
+                    success = 0xFFFF6347,
+                    error = 0xFF40E0D0,
+                    warning = 0xFF9370DB,
+                    border = 0xFFADFF2F,
+                ),
             )
         },
     )
@@ -438,7 +459,7 @@ private val themePresets =
 private fun ThemePresetGrid(theme: ActivationTheme, onThemeChange: (ActivationTheme) -> Unit) {
     val active = draftTheme()
     val primary = active.colors.primary.toComposeColor()
-    val textInverse = active.colors.textInverse.toComposeColor()
+    val textOnPrimary = active.colors.textOnPrimary.toComposeColor()
     val textPrimary = active.colors.textPrimary.toComposeColor()
     val surfaceAccent = active.colors.surfaceAccent.toComposeColor()
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -455,10 +476,10 @@ private fun ThemePresetGrid(theme: ActivationTheme, onThemeChange: (ActivationTh
                         onClick = { onThemeChange(presetTheme) },
                         shape = RoundedCornerShape(active.shapes.sm),
                         colors =
-                            ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (selected) primary else surfaceAccent,
-                                contentColor = if (selected) textInverse else textPrimary,
-                            ),
+                        ButtonDefaults.filledTonalButtonColors(
+                            containerColor = if (selected) primary else surfaceAccent,
+                            contentColor = if (selected) textOnPrimary else textPrimary,
+                        ),
                     ) {
                         Text(text = preset.label, style = active.typography.labelLarge)
                     }
@@ -484,7 +505,7 @@ private val themeFontOptions =
 private fun ThemeFontPicker(theme: ActivationTheme, onThemeChange: (ActivationTheme) -> Unit) {
     val active = draftTheme()
     val primary = active.colors.primary.toComposeColor()
-    val textInverse = active.colors.textInverse.toComposeColor()
+    val textOnPrimary = active.colors.textOnPrimary.toComposeColor()
     val textPrimary = active.colors.textPrimary.toComposeColor()
     val surfaceAccent = active.colors.surfaceAccent.toComposeColor()
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -501,16 +522,16 @@ private fun ThemeFontPicker(theme: ActivationTheme, onThemeChange: (ActivationTh
                         onClick = {
                             onThemeChange(
                                 theme.copy(
-                                    typography = theme.typography.copy(fontFamily = option.family)
-                                )
+                                    typography = theme.typography.copy(fontFamily = option.family),
+                                ),
                             )
                         },
                         shape = RoundedCornerShape(active.shapes.sm),
                         colors =
-                            ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (selected) primary else surfaceAccent,
-                                contentColor = if (selected) textInverse else textPrimary,
-                            ),
+                        ButtonDefaults.filledTonalButtonColors(
+                            containerColor = if (selected) primary else surfaceAccent,
+                            contentColor = if (selected) textOnPrimary else textPrimary,
+                        ),
                     ) {
                         Text(text = option.label, style = active.typography.labelLarge)
                     }

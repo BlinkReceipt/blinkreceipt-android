@@ -32,6 +32,15 @@ internal data class ActivationTheme(
         val error: Long = 0xFFF43F5EL,
         val warning: Long = 0xFFFCA355L,
         val border: Long = 0xFFE5E7EBL,
+        // New tokens default to their parent token (mirroring ActivationColorDefaults' cascade)
+        // so payloads persisted before these fields existed decode with the values the SDK
+        // would derive rather than resetting to a literal.
+        val accent: Long = primary,
+        val surfaceBrand: Long = primary,
+        val textOnPrimary: Long = textInverse,
+        val textOnSecondary: Long = textInverse,
+        val tagSurface: Long = surfaceAccent,
+        val tagText: Long = textAccent,
     )
 
     @Serializable
@@ -61,6 +70,14 @@ internal data class ActivationTheme(
         val missedEarningsIcon: ActivationIcon? = null,
         val boostIcon: ActivationIcon? = null,
         val niceScanIcon: ActivationIcon? = null,
+        val editMissedEarning: ActivationIcon? = null,
+        val submitMissedEarnings: ActivationIcon? = null,
+        val addMissedEarnings: ActivationIcon? = null,
+        val reportMissedEarnings: ActivationIcon? = null,
+        val calendarMissedEarnings: ActivationIcon? = null,
+        val submitMissedEarningsSuccess: ActivationIcon? = null,
+        val submitMissedEarningsError: ActivationIcon? = null,
+        val infoIcon: ActivationIcon? = null,
     )
 }
 
@@ -80,6 +97,12 @@ private fun ActivationThemeModel.Colors.toLocal(): ActivationTheme.Colors =
         error = error,
         warning = warning,
         border = border,
+        accent = accent,
+        surfaceBrand = surfaceBrand,
+        textOnPrimary = textOnPrimary,
+        textOnSecondary = textOnSecondary,
+        tagSurface = tagSurface,
+        tagText = tagText,
     )
 
 private fun ActivationTheme.Colors.toModel(): ActivationThemeModel.Colors =
@@ -98,6 +121,12 @@ private fun ActivationTheme.Colors.toModel(): ActivationThemeModel.Colors =
         error = error,
         warning = warning,
         border = border,
+        accent = accent,
+        surfaceBrand = surfaceBrand,
+        textOnPrimary = textOnPrimary,
+        textOnSecondary = textOnSecondary,
+        tagSurface = tagSurface,
+        tagText = tagText,
     )
 
 private fun ActivationThemeModel.Shapes.toLocal(): ActivationTheme.Shapes =
@@ -109,13 +138,13 @@ private fun ActivationTheme.Shapes.toModel(): ActivationThemeModel.Shapes =
 private fun ActivationThemeModel.Typography.toLocal(): ActivationTheme.Typography =
     ActivationTheme.Typography(
         sizeScaleFactor = sizeScaleFactor,
-        fontFamily = fontFamily?.toString()
+        fontFamily = fontFamily?.toString(),
     )
 
 private fun ActivationTheme.Typography.toModel(): ActivationThemeModel.Typography =
     ActivationThemeModel.Typography(
         sizeScaleFactor = sizeScaleFactor,
-        fontFamily = fontFamily?.decodeFontFamilyOrNull()
+        fontFamily = fontFamily?.decodeFontFamilyOrNull(),
     )
 
 private fun String.decodeFontFamilyOrNull(): FontFamily? =
@@ -148,6 +177,14 @@ internal fun ActivationThemeModel.toLocal(): ActivationTheme =
             missedEarningsIcon = icons.missedEarningsIcon?.toLocal(),
             boostIcon = icons.boostIcon?.toLocal(),
             niceScanIcon = icons.niceScanIcon?.toLocal(),
+            editMissedEarning = icons.editMissedEarning?.toLocal(),
+            submitMissedEarnings = icons.submitMissedEarnings?.toLocal(),
+            addMissedEarnings = icons.addMissedEarnings?.toLocal(),
+            reportMissedEarnings = icons.reportMissedEarnings?.toLocal(),
+            calendarMissedEarnings = icons.calendarMissedEarnings?.toLocal(),
+            submitMissedEarningsSuccess = icons.submitMissedEarningsSuccess?.toLocal(),
+            submitMissedEarningsError = icons.submitMissedEarningsError?.toLocal(),
+            infoIcon = icons.infoIcon?.toLocal(),
         ),
     )
 
@@ -171,6 +208,14 @@ internal fun ActivationTheme.toModel(): ActivationThemeModel =
             missedEarningsIcon = icons.missedEarningsIcon?.toModel(),
             boostIcon = icons.boostIcon?.toModel(),
             niceScanIcon = icons.niceScanIcon?.toModel(),
+            editMissedEarning = icons.editMissedEarning?.toModel(),
+            submitMissedEarnings = icons.submitMissedEarnings?.toModel(),
+            addMissedEarnings = icons.addMissedEarnings?.toModel(),
+            reportMissedEarnings = icons.reportMissedEarnings?.toModel(),
+            calendarMissedEarnings = icons.calendarMissedEarnings?.toModel(),
+            submitMissedEarningsSuccess = icons.submitMissedEarningsSuccess?.toModel(),
+            submitMissedEarningsError = icons.submitMissedEarningsError?.toModel(),
+            infoIcon = icons.infoIcon?.toModel(),
         ),
     )
 

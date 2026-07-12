@@ -24,10 +24,10 @@ buildscript {
 
     ext.versions = [
             'minSdk'           : 24,
-            'compileSdk'       : 36,
+            'compileSdk'       : 37,
             'targetSdk'        : 36,
             'androidTestRunner': '1.6.2',
-            'buildTools'       : '36.0.0',
+            'buildTools'       : '37.0.0',
             'material'         : '1.13.0',
             'kotlin'           : '2.2.21',
             'easyPermissions'  : '3.0.0',
@@ -35,8 +35,8 @@ buildscript {
             "agp"              : '9.2.1',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
-            'bom'              : '2.2.0',
-            'activation'       : '1.1.0',
+            'bom'              : '2.2.1',
+            'activation'       : '1.1.1',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
@@ -48,6 +48,6 @@ buildscript {
             'colorPicker'      : '1.1.2',
             'versionMajor'     : 2,
             'versionMinor'     : 2,
-            'versionPatch'     : 0
+            'versionPatch'     : 1
     ]
 }
