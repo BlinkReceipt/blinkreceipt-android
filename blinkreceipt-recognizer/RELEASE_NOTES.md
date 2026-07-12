@@ -810,3 +810,6 @@ Blink Receipt Recognizer
 - Stability Improvements 
   - Resolved a crash that could occur when processing specific receipt formats. 
   - General performance and stability enhancements.
+
+## 2.2.1
+- Stability fixes and improvements

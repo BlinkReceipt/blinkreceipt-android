@@ -414,3 +414,6 @@ accountLinkingClient.orders(
 
 ## 2.2.0
 - Stability fixes and improvements
+
+## 2.2.1
+- Stability fixes and improvements
