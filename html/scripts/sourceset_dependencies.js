@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":blinkreceipt-digital/release":[],":blinkreceipt-recognizer/release":[],":blinkreceipt-account-linking/release":[],":blinkreceipt-camera/release":[],":blinkreceipt-surveys/release":[],":blinkreceipt-camera-ui/release":[],":blinkreceipt-core/release":[],":blinkreceipt-earnings/release":[]}'

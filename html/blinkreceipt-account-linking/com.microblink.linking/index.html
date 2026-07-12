@@ -1,0 +1,1419 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.microblink.linking</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-account-linking/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-account-linking/release" data-filter=":blinkreceipt-account-linking/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageids="blinkreceipt-account-linking::com.microblink.linking////PointingToDeclaration//1705293255">
+  <div class="breadcrumbs"><a href="../index.html">blinkreceipt-account-linking</a><span class="delimiter">/</span><span class="current">com.microblink.linking</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="1945997940%2FClasslikes%2F1705293255" anchor-label="Account" id="1945997940%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-account/index.html"><span><span>Account</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1945997940%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-account/index.html">Account</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>retailerId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>credentials<span class="token operator">: </span><a href="-credentials/index.html">Credentials</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1083651771%2FClasslikes%2F1705293255" anchor-label="AccountLinkingClient" id="1083651771%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-account-linking-client/index.html"><span>Account</span><wbr><span>Linking</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1083651771%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-account-linking-client/index.html">AccountLinkingClient</a> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html">Closeable</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1594769383%2FClasslikes%2F1705293255" anchor-label="AccountLinkingCode" id="-1594769383%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-account-linking-code/index.html"><span>Account</span><wbr><span>Linking</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1594769383%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-account-linking-code/index.html">AccountLinkingCode</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1784126803%2FClasslikes%2F1705293255" anchor-label="AccountLinkingException" id="-1784126803%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-account-linking-exception/index.html"><span>Account</span><wbr><span>Linking</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1784126803%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-account-linking-exception/index.html">AccountLinkingException</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>code<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span><span class="token string">""</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>uuid<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>view<span class="token operator">: </span><span data-unresolved-link="android.webkit/WebView///PointingToDeclaration/">WebView</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1184455597%2FClasslikes%2F1705293255" anchor-label="BlinkReceiptLinkingSdk" id="-1184455597%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-blink-receipt-linking-sdk/index.html"><span>Blink</span><wbr><span>Receipt</span><wbr><span>Linking</span><wbr><span><span>Sdk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1184455597%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-blink-receipt-linking-sdk/index.html">BlinkReceiptLinkingSdk</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="899926149%2FClasslikes%2F1705293255" anchor-label="Credentials" id="899926149%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-credentials/index.html"><span><span>Credentials</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="899926149%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-credentials/index.html">Credentials</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1760458169%2FClasslikes%2F1705293255" anchor-label="Host" id="1760458169%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-host/index.html"><span><span>Host</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1760458169%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-host/index.html">Host</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2048690432%2FClasslikes%2F1705293255" anchor-label="Port" id="2048690432%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-port/index.html"><span><span>Port</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2048690432%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-port/index.html">Port</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>address<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1948861802%2FClasslikes%2F1705293255" anchor-label="RetailerId" id="-1948861802%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-retailer-id/index.html"><span>Retailer</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1948861802%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-retailer-id/index.html">RetailerId</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="590716967%2FClasslikes%2F1705293255" anchor-label="WebProxy" id="590716967%2FClasslikes%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-web-proxy/index.html"><span>Web</span><wbr><span><span>Proxy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="590716967%2FClasslikes%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-web-proxy/index.html">WebProxy</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>host<span class="token operator">: </span><a href="-host/index.html">Host</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>port<span class="token operator">: </span><a href="-port/index.html">Port</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="256602444%2FProperties%2F1705293255" anchor-label="ACME_MARKETS" id="256602444%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-c-m-e_-m-a-r-k-e-t-s.html"><span>ACME_</span><wbr><span>MARKETS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="256602444%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-c-m-e_-m-a-r-k-e-t-s.html">ACME_MARKETS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">17</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="521470573%2FProperties%2F1705293255" anchor-label="ALBERTSONS" id="521470573%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-b-e-r-t-s-o-n-s.html"><span><span>ALBERTSONS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="521470573%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-l-b-e-r-t-s-o-n-s.html">ALBERTSONS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">20</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-985412083%2FProperties%2F1705293255" anchor-label="ALI_EXPRESS" id="-985412083%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-l-i_-e-x-p-r-e-s-s.html"><span>ALI_</span><wbr><span>EXPRESS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-985412083%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-l-i_-e-x-p-r-e-s-s.html">ALI_EXPRESS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12849</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="826987994%2FProperties%2F1705293255" anchor-label="AMAZON" id="826987994%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n.html"><span><span>AMAZON</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="826987994%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n.html">AMAZON</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8643</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="412874509%2FProperties%2F1705293255" anchor-label="AMAZON_AU" id="412874509%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-a-u.html"><span>AMAZON_</span><wbr><span>AU</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="412874509%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-a-u.html">AMAZON_AU</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12948</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1715706403%2FProperties%2F1705293255" anchor-label="AMAZON_CA" id="1715706403%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-c-a.html"><span>AMAZON_</span><wbr><span>CA</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1715706403%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-c-a.html">AMAZON_CA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12099</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1493567648%2FProperties%2F1705293255" anchor-label="AMAZON_DE" id="-1493567648%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-d-e.html"><span>AMAZON_</span><wbr><span>DE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1493567648%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-d-e.html">AMAZON_DE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12687</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-97676333%2FProperties%2F1705293255" anchor-label="AMAZON_ES" id="-97676333%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-e-s.html"><span>AMAZON_</span><wbr><span>ES</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-97676333%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-e-s.html">AMAZON_ES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12686</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="832917877%2FProperties%2F1705293255" anchor-label="AMAZON_FR" id="832917877%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-f-r.html"><span>AMAZON_</span><wbr><span>FR</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="832917877%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-f-r.html">AMAZON_FR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12688</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2139879701%2FProperties%2F1705293255" anchor-label="AMAZON_UK" id="-2139879701%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-m-a-z-o-n_-u-k.html"><span>AMAZON_</span><wbr><span>UK</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2139879701%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-m-a-z-o-n_-u-k.html">AMAZON_UK</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10078</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="754560591%2FProperties%2F1705293255" anchor-label="ASDA" id="754560591%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-s-d-a.html"><span><span>ASDA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="754560591%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-s-d-a.html">ASDA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6036</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1898013818%2FProperties%2F1705293255" anchor-label="BESTBUY" id="1898013818%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-e-s-t-b-u-y.html"><span><span>BESTBUY</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1898013818%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-e-s-t-b-u-y.html">BESTBUY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">177</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1567266834%2FProperties%2F1705293255" anchor-label="BJS_WHOLESALE" id="1567266834%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-j-s_-w-h-o-l-e-s-a-l-e.html"><span>BJS_</span><wbr><span>WHOLESALE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1567266834%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-j-s_-w-h-o-l-e-s-a-l-e.html">BJS_WHOLESALE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">45</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1260748542%2FProperties%2F1705293255" anchor-label="CARREFOUR_ES" id="1260748542%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-a-r-r-e-f-o-u-r_-e-s.html"><span>CARREFOUR_</span><wbr><span>ES</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1260748542%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-a-r-r-e-f-o-u-r_-e-s.html">CARREFOUR_ES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6059</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1204302118%2FProperties%2F1705293255" anchor-label="CHEWY" id="-1204302118%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-h-e-w-y.html"><span><span>CHEWY</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1204302118%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-h-e-w-y.html">CHEWY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">9947</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1548951982%2FProperties%2F1705293255" anchor-label="COLES" id="1548951982%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-l-e-s.html"><span><span>COLES</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1548951982%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-o-l-e-s.html">COLES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">7610</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-247845755%2FProperties%2F1705293255" anchor-label="COSTCO" id="-247845755%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-s-t-c-o.html"><span><span>COSTCO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-247845755%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-o-s-t-c-o.html">COSTCO</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">2</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="324681624%2FProperties%2F1705293255" anchor-label="COSTCO_CA" id="324681624%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-s-t-c-o_-c-a.html"><span>COSTCO_</span><wbr><span>CA</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="324681624%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-o-s-t-c-o_-c-a.html">COSTCO_CA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">5718</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1894683004%2FProperties%2F1705293255" anchor-label="CVS" id="1894683004%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-v-s.html"><span><span>CVS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1894683004%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-v-s.html">CVS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">3</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-775107424%2FProperties%2F1705293255" anchor-label="DICKS_SPORTING_GOODS" id="-775107424%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-i-c-k-s_-s-p-o-r-t-i-n-g_-g-o-o-d-s.html"><span>DICKS_</span><wbr><span>SPORTING_</span><wbr><span>GOODS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-775107424%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-i-c-k-s_-s-p-o-r-t-i-n-g_-g-o-o-d-s.html">DICKS_SPORTING_GOODS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6162</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-701973063%2FProperties%2F1705293255" anchor-label="DOLLAR_GENERAL" id="-701973063%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-l-l-a-r_-g-e-n-e-r-a-l.html"><span>DOLLAR_</span><wbr><span>GENERAL</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-701973063%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-o-l-l-a-r_-g-e-n-e-r-a-l.html">DOLLAR_GENERAL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">4</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1941708443%2FProperties%2F1705293255" anchor-label="DOLLAR_TREE" id="1941708443%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-l-l-a-r_-t-r-e-e.html"><span>DOLLAR_</span><wbr><span>TREE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1941708443%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-o-l-l-a-r_-t-r-e-e.html">DOLLAR_TREE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">5</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-188020120%2FProperties%2F1705293255" anchor-label="DOMINOS_PIZZA" id="-188020120%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-m-i-n-o-s_-p-i-z-z-a.html"><span>DOMINOS_</span><wbr><span>PIZZA</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-188020120%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-o-m-i-n-o-s_-p-i-z-z-a.html">DOMINOS_PIZZA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8366</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1143022503%2FProperties%2F1705293255" anchor-label="DOOR_DASH" id="-1143022503%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-o-o-r_-d-a-s-h.html"><span>DOOR_</span><wbr><span>DASH</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1143022503%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-o-o-r_-d-a-s-h.html">DOOR_DASH</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10241</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="410967781%2FProperties%2F1705293255" anchor-label="FAMILY_DOLLAR" id="410967781%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-a-m-i-l-y_-d-o-l-l-a-r.html"><span>FAMILY_</span><wbr><span>DOLLAR</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="410967781%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-f-a-m-i-l-y_-d-o-l-l-a-r.html">FAMILY_DOLLAR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">165</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1584460439%2FProperties%2F1705293255" anchor-label="FOOD_4_LESS" id="1584460439%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-o-o-d_4_-l-e-s-s.html"><span>FOOD_</span><wbr><span>4_</span><wbr><span>LESS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1584460439%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-f-o-o-d_4_-l-e-s-s.html">FOOD_4_LESS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">31</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="138313663%2FProperties%2F1705293255" anchor-label="FOOD_LION" id="138313663%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-o-o-d_-l-i-o-n.html"><span>FOOD_</span><wbr><span>LION</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="138313663%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-f-o-o-d_-l-i-o-n.html">FOOD_LION</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">142</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1399281468%2FProperties%2F1705293255" anchor-label="FRED_MEYER" id="-1399281468%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-r-e-d_-m-e-y-e-r.html"><span>FRED_</span><wbr><span>MEYER</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1399281468%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-f-r-e-d_-m-e-y-e-r.html">FRED_MEYER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">53</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2063619526%2FProperties%2F1705293255" anchor-label="GAP" id="2063619526%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-a-p.html"><span><span>GAP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2063619526%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-a-p.html">GAP</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6457</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1107310145%2FProperties%2F1705293255" anchor-label="GRUBHUB" id="-1107310145%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-r-u-b-h-u-b.html"><span><span>GRUBHUB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1107310145%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-u-b-h-u-b.html">GRUBHUB</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10208</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1510192717%2FProperties%2F1705293255" anchor-label="HARRIS_TEETER" id="-1510192717%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-a-r-r-i-s_-t-e-e-t-e-r.html"><span>HARRIS_</span><wbr><span>TEETER</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1510192717%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-h-a-r-r-i-s_-t-e-e-t-e-r.html">HARRIS_TEETER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">33</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-45416790%2FProperties%2F1705293255" anchor-label="HOME_DEPOT" id="-45416790%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-o-m-e_-d-e-p-o-t.html"><span>HOME_</span><wbr><span>DEPOT</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-45416790%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-h-o-m-e_-d-e-p-o-t.html">HOME_DEPOT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">15</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1502304385%2FProperties%2F1705293255" anchor-label="INSTACART" id="1502304385%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-s-t-a-c-a-r-t.html"><span><span>INSTACART</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1502304385%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-i-n-s-t-a-c-a-r-t.html">INSTACART</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8652</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-82464968%2FProperties%2F1705293255" anchor-label="INTERNAL_ERROR" id="-82464968%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-t-e-r-n-a-l_-e-r-r-o-r.html"><span>INTERNAL_</span><wbr><span>ERROR</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-82464968%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-i-n-t-e-r-n-a-l_-e-r-r-o-r.html">INTERNAL_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1009</span></div><div class="brief "><p class="paragraph">An unexpected error occurred during login or parsing</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1749199928%2FProperties%2F1705293255" anchor-label="INVALID_CREDENTIALS" id="-1749199928%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-v-a-l-i-d_-c-r-e-d-e-n-t-i-a-l-s.html"><span>INVALID_</span><wbr><span><span>CREDENTIALS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1749199928%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-i-n-v-a-l-i-d_-c-r-e-d-e-n-t-i-a-l-s.html">INVALID_CREDENTIALS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1051</span></div><div class="brief "><p class="paragraph">Login failed on the merchant’s site due to invalid credentials</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1918761870%2FProperties%2F1705293255" anchor-label="JEWEL_OSCO" id="-1918761870%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-j-e-w-e-l_-o-s-c-o.html"><span>JEWEL_</span><wbr><span>OSCO</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1918761870%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-j-e-w-e-l_-o-s-c-o.html">JEWEL_OSCO</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">23</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="618492867%2FProperties%2F1705293255" anchor-label="JS_CORE_LOAD_FAILURE" id="618492867%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-j-s_-c-o-r-e_-l-o-a-d_-f-a-i-l-u-r-e.html"><span>JS_</span><wbr><span>CORE_</span><wbr><span>LOAD_</span><wbr><span>FAILURE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="618492867%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-j-s_-c-o-r-e_-l-o-a-d_-f-a-i-l-u-r-e.html">JS_CORE_LOAD_FAILURE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1007</span></div><div class="brief "><p class="paragraph">An unexpected error occurred during login or parsing</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-735266316%2FProperties%2F1705293255" anchor-label="JS_INVALID_DATA" id="-735266316%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-j-s_-i-n-v-a-l-i-d_-d-a-t-a.html"><span>JS_</span><wbr><span>INVALID_</span><wbr><span>DATA</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-735266316%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-j-s_-i-n-v-a-l-i-d_-d-a-t-a.html">JS_INVALID_DATA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1005</span></div><div class="brief "><p class="paragraph">The structure of the merchant’s website or data feed that was encountered during parsing was unexpected</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="852990578%2FProperties%2F1705293255" anchor-label="KROGER" id="852990578%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-r-o-g-e-r.html"><span><span>KROGER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="852990578%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-k-r-o-g-e-r.html">KROGER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1151304870%2FProperties%2F1705293255" anchor-label="LOWES" id="-1151304870%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-o-w-e-s.html"><span><span>LOWES</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1151304870%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-o-w-e-s.html">LOWES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="779628280%2FProperties%2F1705293255" anchor-label="MEIJER" id="779628280%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-e-i-j-e-r.html"><span><span>MEIJER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="779628280%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-m-e-i-j-e-r.html">MEIJER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">19</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="31329721%2FProperties%2F1705293255" anchor-label="MISSING_CREDENTIALS" id="31329721%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-i-s-s-i-n-g_-c-r-e-d-e-n-t-i-a-l-s.html"><span>MISSING_</span><wbr><span><span>CREDENTIALS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="31329721%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-m-i-s-s-i-n-g_-c-r-e-d-e-n-t-i-a-l-s.html">MISSING_CREDENTIALS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1003</span></div><div class="brief "><p class="paragraph">No linked account was found for the specific retailer when attempting to fetch orders or verify the account</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1554003231%2FProperties%2F1705293255" anchor-label="PARSING_FAILURE" id="-1554003231%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-a-r-s-i-n-g_-f-a-i-l-u-r-e.html"><span>PARSING_</span><wbr><span>FAILURE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1554003231%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-a-r-s-i-n-g_-f-a-i-l-u-r-e.html">PARSING_FAILURE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1050</span></div><div class="brief "><p class="paragraph">The structure of the merchant’s website or data feed that was encountered during parsing was unexpected</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-290680545%2FProperties%2F1705293255" anchor-label="PCEXPRESS" id="-290680545%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-c-e-x-p-r-e-s-s.html"><span><span>PCEXPRESS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-290680545%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-c-e-x-p-r-e-s-s.html">PCEXPRESS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12749</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="759567086%2FProperties%2F1705293255" anchor-label="POSTMATES" id="759567086%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-o-s-t-m-a-t-e-s.html"><span><span>POSTMATES</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="759567086%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-o-s-t-m-a-t-e-s.html">POSTMATES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">19671</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="684476064%2FProperties%2F1705293255" anchor-label="PUBLIX" id="684476064%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-u-b-l-i-x.html"><span><span>PUBLIX</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="684476064%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-u-b-l-i-x.html">PUBLIX</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">7</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1660143840%2FProperties%2F1705293255" anchor-label="RALPHS" id="1660143840%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-a-l-p-h-s.html"><span><span>RALPHS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1660143840%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-a-l-p-h-s.html">RALPHS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">40</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-82857382%2FProperties%2F1705293255" anchor-label="SAFEWAY" id="-82857382%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-f-e-w-a-y.html"><span><span>SAFEWAY</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-82857382%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-a-f-e-w-a-y.html">SAFEWAY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-680226141%2FProperties%2F1705293255" anchor-label="SAINSBURY_UK" id="-680226141%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-i-n-s-b-u-r-y_-u-k.html"><span>SAINSBURY_</span><wbr><span>UK</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-680226141%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-a-i-n-s-b-u-r-y_-u-k.html">SAINSBURY_UK</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6048</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="179107323%2FProperties%2F1705293255" anchor-label="SAMS_CLUB" id="179107323%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-a-m-s_-c-l-u-b.html"><span>SAMS_</span><wbr><span>CLUB</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="179107323%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-a-m-s_-c-l-u-b.html">SAMS_CLUB</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">9</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-341789081%2FProperties%2F1705293255" anchor-label="SEAMLESS" id="-341789081%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-a-m-l-e-s-s.html"><span><span>SEAMLESS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-341789081%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-a-m-l-e-s-s.html">SEAMLESS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10068</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-321172472%2FProperties%2F1705293255" anchor-label="SEPHORA" id="-321172472%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-p-h-o-r-a.html"><span><span>SEPHORA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-321172472%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-p-h-o-r-a.html">SEPHORA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">171</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1942156313%2FProperties%2F1705293255" anchor-label="SHEIN" id="-1942156313%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-e-i-n.html"><span><span>SHEIN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1942156313%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-h-e-i-n.html">SHEIN</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12882</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2056095398%2FProperties%2F1705293255" anchor-label="SHEIN_ES" id="2056095398%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-e-i-n_-e-s.html"><span>SHEIN_</span><wbr><span>ES</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2056095398%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-h-e-i-n_-e-s.html">SHEIN_ES</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12691</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="13892030%2FProperties%2F1705293255" anchor-label="SHEIN_UK" id="13892030%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-e-i-n_-u-k.html"><span>SHEIN_</span><wbr><span>UK</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="13892030%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-h-e-i-n_-u-k.html">SHEIN_UK</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12848</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-338652828%2FProperties%2F1705293255" anchor-label="SHIPT" id="-338652828%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-i-p-t.html"><span><span>SHIPT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-338652828%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-h-i-p-t.html">SHIPT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">9016</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2054919680%2FProperties%2F1705293255" anchor-label="SHOPRITE" id="-2054919680%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-o-p-r-i-t-e.html"><span><span>SHOPRITE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2054919680%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-h-o-p-r-i-t-e.html">SHOPRITE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">22</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="775201666%2FProperties%2F1705293255" anchor-label="SPROUTS" id="775201666%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-p-r-o-u-t-s.html"><span><span>SPROUTS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="775201666%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-p-r-o-u-t-s.html">SPROUTS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">54</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="696082070%2FProperties%2F1705293255" anchor-label="STARBUCKS" id="696082070%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-r-b-u-c-k-s.html"><span><span>STARBUCKS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="696082070%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-t-a-r-b-u-c-k-s.html">STARBUCKS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6677</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-236737869%2FProperties%2F1705293255" anchor-label="TACO_BELL" id="-236737869%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-a-c-o_-b-e-l-l.html"><span>TACO_</span><wbr><span>BELL</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-236737869%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-t-a-c-o_-b-e-l-l.html">TACO_BELL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8598</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1664193261%2FProperties%2F1705293255" anchor-label="TARGET" id="1664193261%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-a-r-g-e-t.html"><span><span>TARGET</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1664193261%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-t-a-r-g-e-t.html">TARGET</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="994922981%2FProperties%2F1705293255" anchor-label="TEMU" id="994922981%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-e-m-u.html"><span><span>TEMU</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="994922981%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-t-e-m-u.html">TEMU</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12819</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1307624608%2FProperties%2F1705293255" anchor-label="TESTCO" id="1307624608%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-e-s-t-c-o.html"><span><span>TESTCO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1307624608%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-t-e-s-t-c-o.html">TESTCO</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6051</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1944363204%2FProperties%2F1705293255" anchor-label="UBER_EATS" id="-1944363204%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-b-e-r_-e-a-t-s.html"><span>UBER_</span><wbr><span>EATS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1944363204%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-b-e-r_-e-a-t-s.html">UBER_EATS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">9137</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1307088311%2FProperties%2F1705293255" anchor-label="UBER_EATS_UK" id="-1307088311%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-b-e-r_-e-a-t-s_-u-k.html"><span>UBER_</span><wbr><span>EATS_</span><wbr><span>UK</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1307088311%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-b-e-r_-e-a-t-s_-u-k.html">UBER_EATS_UK</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">12850</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1720803546%2FProperties%2F1705293255" anchor-label="ULTA" id="1720803546%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-l-t-a.html"><span><span>ULTA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1720803546%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-l-t-a.html">ULTA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8662</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1540790361%2FProperties%2F1705293255" anchor-label="UNKNOWN_RETAILER" id="1540790361%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-n-k-n-o-w-n_-r-e-t-a-i-l-e-r.html"><span>UNKNOWN_</span><wbr><span>RETAILER</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1540790361%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-n-k-n-o-w-n_-r-e-t-a-i-l-e-r.html">UNKNOWN_RETAILER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="427410180%2FProperties%2F1705293255" anchor-label="UNSUPPORTED_RETAILER" id="427410180%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-n-s-u-p-p-o-r-t-e-d_-r-e-t-a-i-l-e-r.html"><span>UNSUPPORTED_</span><wbr><span>RETAILER</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="427410180%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-n-s-u-p-p-o-r-t-e-d_-r-e-t-a-i-l-e-r.html">UNSUPPORTED_RETAILER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1052</span></div><div class="brief "><p class="paragraph">This retailer is not currently supported</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-400101252%2FProperties%2F1705293255" anchor-label="USER_INPUT_COMPLETED" id="-400101252%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-s-e-r_-i-n-p-u-t_-c-o-m-p-l-e-t-e-d.html"><span>USER_</span><wbr><span>INPUT_</span><wbr><span>COMPLETED</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-400101252%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-s-e-r_-i-n-p-u-t_-c-o-m-p-l-e-t-e-d.html">USER_INPUT_COMPLETED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1008</span></div><div class="brief "><p class="paragraph">After VERIFICATION_NEEDED was returned and the WebView was shown to the user, the user completed the necessary action and the WebView can be removed</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1351294589%2FProperties%2F1705293255" anchor-label="VERIFICATION_NEEDED" id="-1351294589%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v-e-r-i-f-i-c-a-t-i-o-n_-n-e-e-d-e-d.html"><span>VERIFICATION_</span><wbr><span>NEEDED</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1351294589%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-v-e-r-i-f-i-c-a-t-i-o-n_-n-e-e-d-e-d.html">VERIFICATION_NEEDED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1004</span></div><div class="brief "><p class="paragraph">Login encountered a scenario requiring manual user intervention (CAPTCHA, 2FA, etc)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="733335328%2FProperties%2F1705293255" anchor-label="VONS" id="733335328%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v-o-n-s.html"><span><span>VONS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="733335328%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-v-o-n-s.html">VONS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">63</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1100131926%2FProperties%2F1705293255" anchor-label="WALGREENS" id="-1100131926%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-g-r-e-e-n-s.html"><span><span>WALGREENS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1100131926%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-w-a-l-g-r-e-e-n-s.html">WALGREENS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2106111652%2FProperties%2F1705293255" anchor-label="WALMART" id="2106111652%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-m-a-r-t.html"><span><span>WALMART</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2106111652%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-w-a-l-m-a-r-t.html">WALMART</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">11</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1156215527%2FProperties%2F1705293255" anchor-label="WALMART_CA" id="-1156215527%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-m-a-r-t_-c-a.html"><span>WALMART_</span><wbr><span>CA</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1156215527%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-w-a-l-m-a-r-t_-c-a.html">WALMART_CA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">5849</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-424745110%2FProperties%2F1705293255" anchor-label="WEGMANS" id="-424745110%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-e-g-m-a-n-s.html"><span><span>WEGMANS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-424745110%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-w-e-g-m-a-n-s.html">WEGMANS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">52</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1650884484%2FProperties%2F1705293255" anchor-label="WOOLWORTHS" id="1650884484%2FProperties%2F1705293255" data-filterable-set=":blinkreceipt-account-linking/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-account-linking/release" data-filterable-set=":blinkreceipt-account-linking/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-o-o-l-w-o-r-t-h-s.html"><span><span>WOOLWORTHS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1650884484%2FProperties%2F1705293255"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-account-linking/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-w-o-o-l-w-o-r-t-h-s.html">WOOLWORTHS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8646</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
