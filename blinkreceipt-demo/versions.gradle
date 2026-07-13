@@ -35,8 +35,8 @@ buildscript {
             "agp"              : '9.2.1',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
-            'bom'              : '2.2.1',
-            'activation'       : '1.1.1',
+            'bom'              : '2.2.2',
+            'activation'       : '1.1.2',
             'tasks'            : '18.2.0',
             'logcat'           : '0.1',
             'msal'             : '5.4.0',
@@ -48,6 +48,6 @@ buildscript {
             'colorPicker'      : '1.1.2',
             'versionMajor'     : 2,
             'versionMinor'     : 2,
-            'versionPatch'     : 1
+            'versionPatch'     : 2
     ]
 }
