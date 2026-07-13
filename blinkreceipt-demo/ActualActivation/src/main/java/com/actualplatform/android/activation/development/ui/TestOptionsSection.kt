@@ -16,25 +16,10 @@ import com.actualplatform.android.activation.development.R
 
 @Composable
 internal fun TestOptionsSection(
-    testAds: Boolean,
-    onTestAdsChange: (Boolean) -> Unit,
     testMode: Boolean,
     onTestModeChange: (Boolean) -> Unit,
 ) {
     Text(stringResource(R.string.activations_section_test_options), style = MaterialTheme.typography.titleMedium)
-    Spacer(modifier = Modifier.height(8.dp))
-
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Text(stringResource(R.string.activations_label_test_ads), modifier = Modifier.weight(1f))
-        Switch(
-            checked = testAds,
-            onCheckedChange = onTestAdsChange,
-        )
-    }
-
     Spacer(modifier = Modifier.height(8.dp))
 
     Row(
