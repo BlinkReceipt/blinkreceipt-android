@@ -1,18 +1,21 @@
+# Deprecated: old BlinkReceipt docs site (https://blinkreceipt.github.io/blinkreceipt-android/).
+# Current docs: https://docs.actualplatform.com/docs/category/android-1/
+# Push-to-master deploy removed; job kept disabled so this file stays a valid workflow.
 name: BlinkReceipt Docs CI
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+
 jobs:
   mkdocs:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Source Code Checkout
         uses: actions/checkout@v3
         with:
-          submodules: 'false'
+          submodules: "false"
           token: ${{ secrets.GITHUB_TOKEN }}
-          lfs: 'false'
+          lfs: "false"
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
