@@ -11,11 +11,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.view.WindowCompat
-import androidx.lifecycle.LiveData
-import androidx.work.ExistingWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkInfo
-import androidx.work.WorkManager
 import com.google.android.gms.tasks.Tasks
 import com.microblink.core.InitializeCallback
 import com.microblink.core.ScanResults
@@ -51,10 +46,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var client: ImapClient
 
     private var uiState by mutableStateOf(ImapUiState())
-
-    // The WorkInfo stream for the most recently enqueued auto-scrape request, kept so its observer
-    // can be detached when the next request replaces it. See onAutoScrapeNow.
-    private var autoScrapeWorkInfo: LiveData<WorkInfo?>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,7 +131,6 @@ class MainActivity : AppCompatActivity() {
             ImapAction.MULTIPLE_REMOTE -> onMultipleRemoteMessages()
             ImapAction.MULTIPLE_MESSAGES -> onMultipleMessages()
             ImapAction.SINGLE_LOGOUT -> onSingleLogout()
-            ImapAction.AUTO_SCRAPE -> onAutoScrapeNow()
         }
     }
 
@@ -485,37 +475,6 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             }.show(supportFragmentManager, TAG)
-        }
-    }
-
-    private fun onAutoScrapeNow() {
-        val request = OneTimeWorkRequestBuilder<AutoScrapeWorker>().build()
-
-        results("Auto-scrape enqueued: ${request.id}")
-
-        val workManager = WorkManager.getInstance(applicationContext)
-
-        // Detach the previous request's observer before enqueueing. LiveData.observe(owner) only
-        // detaches when the owner is destroyed, so observers would otherwise accumulate one per
-        // tap; and because ExistingWorkPolicy.REPLACE cancels the previous request, that request's
-        // CANCELLED emission would reach its still-attached observer and overwrite the results
-        // line after this newer request had already reported progress.
-        autoScrapeWorkInfo?.removeObservers(this)
-
-        workManager.enqueueUniqueWork(
-            "com.microblink.digital.auto-scrape.qa",
-            ExistingWorkPolicy.REPLACE,
-            request
-        )
-
-        val workInfo = workManager.getWorkInfoByIdLiveData(request.id)
-
-        autoScrapeWorkInfo = workInfo
-
-        workInfo.observe(this) { info ->
-            if (info != null) {
-                results("Auto-scrape ${request.id}: ${info.state}")
-            }
         }
     }
 

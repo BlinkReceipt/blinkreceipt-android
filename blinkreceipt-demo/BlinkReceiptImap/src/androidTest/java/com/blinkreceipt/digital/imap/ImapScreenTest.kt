@@ -70,7 +70,7 @@ class ImapScreenTest {
             .performScrollTo()
             .assertIsEnabled()
 
-        composeTestRule.onNodeWithTag(ImapAction.AUTO_SCRAPE.label)
+        composeTestRule.onNodeWithTag(ImapAction.SINGLE_LOGOUT.label)
             .performScrollTo()
             .assertIsNotEnabled()
     }
@@ -84,11 +84,11 @@ class ImapScreenTest {
             onAction = { clicked = it },
         )
 
-        composeTestRule.onNodeWithTag(ImapAction.AUTO_SCRAPE.label)
+        composeTestRule.onNodeWithTag(ImapAction.SINGLE_LOGOUT.label)
             .performScrollTo()
             .performClick()
 
-        assertEquals(ImapAction.AUTO_SCRAPE, clicked)
+        assertEquals(ImapAction.SINGLE_LOGOUT, clicked)
     }
 
     @Test
