@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -49,8 +50,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var client: ImapClient
 
-    private lateinit var autoScrapeClient: AutoScrapeClient
-
     private var uiState by mutableStateOf(ImapUiState())
 
     // The WorkInfo stream for the most recently enqueued auto-scrape request, kept so its observer
@@ -72,6 +71,16 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             ImapTheme {
+                // Auto-scrape is armed process-wide in BlinkApplication, because close() cancels
+                // the periodic schedule and so the client has to outlive this Activity. Its
+                // results therefore arrive outside this Activity's state; fold each new one into
+                // the results line.
+                val autoScrape = AutoScrapeResults.latest
+
+                LaunchedEffect(autoScrape) {
+                    autoScrape?.let { results(it) }
+                }
+
                 ImapScreen(
                     state = uiState,
                     onAction = ::onAction,
@@ -111,31 +120,10 @@ class MainActivity : AppCompatActivity() {
             countryCode(COUNTRY_CODE)
             // sendersToSearch( listOf( Merchant( "Apple.com", "no_reply@email.apple.com")))
         }
-
-        // Host owns the auto-scrape client and passes its callbacks straight into begin(), mirroring
-        // AccountLinkingClient. begin() arms auto-scrape and registers the callbacks; the periodic
-        // work (default 24h cadence) runs only while a Gmail IMAP account is linked — it starts on
-        // sign-in and is cancelled on sign-out. The client is closed in onDestroy.
-        autoScrapeClient = AutoScrapeClient(applicationContext)
-
-        autoScrapeClient.begin(
-            success = { credentials, result ->
-                runOnUiThread {
-                    results("Auto-scrape ${credentials.username}: $result")
-                }
-            },
-            failure = { throwable ->
-                runOnUiThread {
-                    results("Auto-scrape failure: $throwable")
-                }
-            }
-        )
     }
 
     override fun onDestroy() {
         super.onDestroy()
-
-        autoScrapeClient.close()
 
         client.close()
     }
