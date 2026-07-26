@@ -321,3 +321,9 @@
 
 ## 2.2.1
 - Stability fixes and improvements
+
+## 2.2.2
+- Stability fixes and improvements
+
+## 2.3.0
+- Stability fixes and improvements

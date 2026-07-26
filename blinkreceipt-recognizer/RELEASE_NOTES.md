@@ -813,3 +813,15 @@ Blink Receipt Recognizer
 
 ## 2.2.1
 - Stability fixes and improvements
+
+## 2.2.2
+- Stability fixes and improvements
+
+## 2.3.0
+- Resolved an issue where `ScanResults.retailerId` could disagree with `ScanResults.merchantName` when the merchant was identified late in the scan. The retailer id now reflects the final detected merchant, and merchant-dependent results (products, promotions, loyalty, duplicate detection, and trip/item confidence) are consistent with it.
+- Improved merchant detection consistency by waiting for all merchant lookups to finish before the winning merchant is selected, making repeat scans of the same receipt more deterministic.
+- Resolved a `RecognizerNotInitializedException` crash in `RecognizerView.preliminaryResults()` that could occur when a stale `RecognizerView` terminated the shared recognizer session while a scan was still in flight, such as on screen re-entry. An empty preliminary result is now delivered instead of throwing, matching the existing behavior when finishing a scan.
+- Added `RecognizerView.initialized()` so integrators can check whether a view's recognizer session is still live before calling `takePicture()`, `confirmPicture()`, `preliminaryResults()` or `finishedScanning()`, instead of relying on catching exceptions.
+- `RecognizerView.confirmPicture()` now reports a terminated session through `CameraRecognizerCallback.onException()` rather than throwing, so a capture callback that arrives after teardown no longer crashes.
+- `RecognizerView.terminate()` now clears the view's scan options, so calls made on a terminated view fail consistently instead of depending on shared session state that another view instance may have already changed.
+- Stability fixes and improvements

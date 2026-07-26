@@ -53,9 +53,7 @@ private val ScanRewardFormat = DecimalFormat("0.00######", DecimalFormatSymbols(
 internal data class SettingsData(
     val email: String,
     val phone: String,
-    val environment: String,
     val showHeader: Boolean,
-    val testAds: Boolean,
     val testMode: Boolean,
     val currencyName: String,
     val currencyCode: String,
@@ -75,9 +73,7 @@ internal data class SettingsData(
         fun from(prefs: SharedPreferences): SettingsData = SettingsData(
             email = prefs.getString(ActivationActivity.PREF_EMAIL, "") ?: "",
             phone = prefs.getString(ActivationActivity.PREF_PHONE, "") ?: "",
-            environment = prefs.getString(ActivationActivity.PREF_ENVIRONMENT, "Production") ?: "Production",
             showHeader = prefs.getBoolean(ActivationActivity.PREF_SHOW_HEADER, true),
-            testAds = prefs.getBoolean(ActivationActivity.PREF_TEST_ADS, true),
             testMode = prefs.getBoolean(ActivationActivity.PREF_TEST_MODE, true),
             currencyName = prefs.getString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, ActivationActivity.DEFAULT_CURRENCY_NAME) ?: ActivationActivity.DEFAULT_CURRENCY_NAME,
             currencyCode = prefs.getString(ActivationActivity.PREF_REWARD_CURRENCY_CODE, "") ?: "",
@@ -111,11 +107,7 @@ internal fun SettingsSummary(
         SettingsSummaryRow(stringResource(R.string.activations_editText_hint_email), settings.email.ifEmpty { "—" })
         SettingsSummaryRow(stringResource(R.string.activations_editText_hint_phone), settings.phone.ifEmpty { "—" })
 
-        SectionHeader(stringResource(R.string.activations_section_environment))
-        SettingsSummaryRow(stringResource(R.string.activations_section_environment), settings.environment)
-
         SectionHeader(stringResource(R.string.activations_section_test_options))
-        SettingsSummaryRow(stringResource(R.string.activations_label_test_ads), if (settings.testAds) "On" else "Off")
         SettingsSummaryRow(stringResource(R.string.activations_label_test_mode), if (settings.testMode) "On" else "Off")
 
         // Debug Placements
@@ -181,8 +173,6 @@ private fun EditModeContent(
     var email by remember { mutableStateOf(initial.email) }
     var phone by remember { mutableStateOf(initial.phone) }
     var emailError by remember { mutableStateOf<String?>(null) }
-    var environment by remember { mutableStateOf(initial.environment) }
-    var testAds by remember { mutableStateOf(initial.testAds) }
     var testMode by remember { mutableStateOf(initial.testMode) }
     var showHeader by remember { mutableStateOf(initial.showHeader) }
 
@@ -227,18 +217,12 @@ private fun EditModeContent(
             emailError = emailError,
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
-
-        EnvironmentSection(
-            environment = environment,
-            onEnvironmentChange = { environment = it },
-        )
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // DO NOT SHOW Environment selection. It is NOT intended for public usage.
+        // DO NOT SHOW TestOptions.TestAds. It is no longer recommended.
         TestOptionsSection(
-            testAds = testAds,
-            onTestAdsChange = { testAds = it },
             testMode = testMode,
             onTestModeChange = { testMode = it },
         )
@@ -302,8 +286,6 @@ private fun EditModeContent(
                 prefs.edit()
                     .putString(ActivationActivity.PREF_EMAIL, trimmedEmail)
                     .putString(ActivationActivity.PREF_PHONE, phone.trim())
-                    .putString(ActivationActivity.PREF_ENVIRONMENT, environment)
-                    .putBoolean(ActivationActivity.PREF_TEST_ADS, testAds)
                     .putBoolean(ActivationActivity.PREF_TEST_MODE, testMode)
                     .putBoolean(ActivationActivity.PREF_SHOW_HEADER, showHeader)
                     .putStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, forcePlacements)

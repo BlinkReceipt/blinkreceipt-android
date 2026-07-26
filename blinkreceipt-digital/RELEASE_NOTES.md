@@ -411,3 +411,17 @@
 
 ## 2.2.1
 - Stability fixes and improvements
+
+## 2.2.2
+- Stability fixes and improvements
+
+## 2.3.0
+- **New: Automated Scrape (`AutoScrapeClient`)** — keep a linked inbox producing receipts without the user reopening your app. Arm the feature once per launch and the SDK schedules a periodic background scrape for you; each run submits the user's linked accounts through the same server-side path as `ImapClient.remoteMessages()`, and the backend parses the receipts and POSTs them to your configured client endpoint.
+  - **Two-line integration.** Create an `AutoScrapeClient` in your `Application` and call `begin(success, failure)` with the callbacks you want the results delivered to — the same `Credentials.Password` + `JobResults` pair the manual remote scrape delivers. No new manifest entries, permissions, or R8/ProGuard rules; WorkManager is bundled and configured by the SDK.
+  - **Opt-in and off by default.** Nothing is scheduled until you call `begin()`. Consent is intentionally not persisted by the SDK, so re-arm from `Application.onCreate()` (gated on your own user preference) — scheduled runs that find no armed client are skipped without disturbing the cadence.
+  - **Scheduling follows the user's sign-in state.** The periodic work starts when an in-scope account is linked and is cancelled when the last one signs out, so a signed-out user's timer never keeps ticking. All scheduling funnels through a single unique work name, so overlapping runs are impossible no matter how often you arm or reconfigure.
+  - **Configurable cadence and overrides.** `intervalHours` defaults to 24 hours with a 12-hour floor and no upper limit; `overrideEndpoint`, `overrideDateTime`, and `countryCode` mirror their `ImapClient` counterparts and are re-applied to the schedule the moment you change them.
+  - **Predictable teardown.** `cancel()` unsubscribes your callbacks and stops the schedule while leaving the client re-armable; `close()` releases it for good. Scope the client to your `Application` — closing it cancels the schedule.
+  - **Initial provider scope:** Gmail IMAP accounts with a non-empty username. Check any account with `AutoScrapeClient.isAutoScrapeAccount(credentials)`.
+  - See the [Automated Scrape](https://microblink.github.io/blinkreceipt-android/digital_auto_scrape/) guide for setup, Kotlin and Java samples, best practices, and troubleshooting.
+- Stability fixes and improvements

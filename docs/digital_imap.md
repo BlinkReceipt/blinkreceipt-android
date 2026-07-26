@@ -180,6 +180,8 @@ Once the client is configured then we are ready to start parsing emails. On the 
 
 The `messages()` function is responsible for fetching emails and parsing those emails on the device. This is the normal behavior of the sdk. However, we now have `remoteMessages(@NonNull JobResultsCallback callback)`. This function is similar to messages, but instead of parsing the emails on the device, it will parse the emails on the server. The JobResultsCallback.onComplete(...) function will trigger upon a completed operation. Within the callback users will receive `credentials: Credentials.Password` and `result: JobResults`. The `Credentials.Password` is covered in other parts of the documentation. The `JobResults` parameter will give you a reference to the server job. In addition to the server job id, it will also let you know if the job was successful, or if there were any errors with your request.
 
+To run this same remote scrape on a background schedule — without the user reopening your app — see [Automated Scrape](digital_auto_scrape.md).
+
 
 ### IMAP Logout
 When you wish to sign out from a user's current account use the `logout()` function on the `ImapClient`. The logout function will sign a user out of their account and clear the credentials cached in the sdk. The return type is a `Task<Boolean>`. When a successful `true` result is given then it can be assumed that the client has successfully cleared all stored credentials and data for a user. If an exception is thrown then, there could have been an issue with one or more of the tasks executed to complete the logout functionality.

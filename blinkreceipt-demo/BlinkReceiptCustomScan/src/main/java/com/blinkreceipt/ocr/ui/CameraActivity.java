@@ -18,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewGroupCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Lifecycle;
 
 import com.blinkreceipt.ocr.R;
 import com.blinkreceipt.ocr.databinding.ActivityCameraScanBinding;
@@ -25,6 +26,7 @@ import com.microblink.BitmapResult;
 import com.microblink.CameraCaptureListener;
 import com.microblink.CameraRecognizerCallback;
 import com.microblink.Media;
+import com.microblink.RecognizerException;
 import com.microblink.RecognizerResult;
 import com.microblink.RecognizerView;
 import com.microblink.core.ScanResults;
@@ -50,6 +52,10 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
     private View torch;
 
     private boolean isTorchOn = false;
+
+    // Fallback only (SDK < 2.2.2): client-managed session flag used in place of
+    // RecognizerView.initialized(). Set true after a successful initialize(), cleared in onDestroy().
+    // private boolean sessionActive = false;
 
     private final String TAG = "CameraActivity";
 
@@ -119,6 +125,8 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
         try {
             recognizerView.initialize(Objects.requireNonNull(getIntent()
                     .getParcelableExtra(MainActivity.SCAN_OPTIONS_EXTRA)));
+
+            // sessionActive = true;   // fallback only (SDK < 2.2.2)
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
 
@@ -171,7 +179,19 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
     @Override
     public void onCaptured(@NonNull BitmapResult bitmapResult) {
-        recognizerView.confirmPicture(bitmapResult);
+        if (!isRecognizerSessionActive()) {
+            Log.d(TAG, "onCaptured ignored, recognizer session is no longer active");
+
+            return;
+        }
+
+        try {
+            recognizerView.confirmPicture(bitmapResult);
+        } catch (RecognizerException | IllegalStateException e) {
+            Log.e(TAG, "failure in confirmPicture", e);
+
+            return;
+        }
 
         Toast.makeText(getApplicationContext(), R.string.captured_photo, Toast.LENGTH_SHORT).show();
     }
@@ -182,5 +202,37 @@ public class CameraActivity extends AppCompatActivity implements CameraRecognize
 
         Toast.makeText(getApplicationContext(), throwable.toString(), Toast.LENGTH_LONG).show();
     }
+
+    /**
+     * Guards re-entering {@link #recognizerView} from the async capture callback: the callback
+     * can still fire after the screen has started tearing down or after the shared recognizer
+     * session has been terminated (e.g. by a stale reference on screen re-entry), in which case
+     * touching the view would throw.
+     */
+    // --- Primary: SDK >= 2.2.2 (public RecognizerView.initialized() available) ---
+    private boolean isRecognizerSessionActive() {
+        return getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)
+                && recognizerView.initialized();
+    }
+
+    // --- Fallback: SDK < 2.2.2 (no public initialized() API) ---
+    // Uses a client-managed session flag instead of the SDK state query. The try/catch in
+    // onCaptured remains the real backstop; this flag just avoids most doomed re-entries.
+    // Requires the `sessionActive` field, `sessionActive = true;` after a successful initialize(),
+    // and `sessionActive = false;` in onDestroy().
+    //
+    // private boolean isRecognizerSessionActive() {
+    //     return getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)
+    //             && sessionActive;
+    // }
+
+    // Fallback only (SDK < 2.2.2): clears the client-managed session flag on teardown.
+    //
+    // @Override
+    // protected void onDestroy() {
+    //     sessionActive = false;
+    //
+    //     super.onDestroy();
+    // }
 
 }
