@@ -9,8 +9,13 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -19,9 +24,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -54,10 +61,23 @@ data class ImapUiState(
 
 const val ResultsTestTag: String = "results"
 
+const val IntervalSelectorTestTag: String = "interval-selector"
+
+const val IntervalClampNoticeTestTag: String = "interval-clamp-notice"
+
+/**
+ * Cadences the selector offers, in hours. 6 is deliberately below the SDK's 12h floor so the demo
+ * can show the clamp taking effect rather than only describing it.
+ */
+val IntervalChoices: List<Int> = listOf(6, 12, 24, 48, 72)
+
 @Composable
 fun ImapScreen(
     state: ImapUiState,
+    requestedIntervalHours: Int,
+    effectiveIntervalHours: Int,
     onAction: (ImapAction) -> Unit,
+    onIntervalSelected: (Int) -> Unit,
     onCredentialsConfirmed: () -> Unit,
     onCredentialsDismissed: () -> Unit,
     modifier: Modifier = Modifier,
@@ -72,6 +92,12 @@ fun ImapScreen(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            IntervalSelector(
+                requestedHours = requestedIntervalHours,
+                effectiveHours = effectiveIntervalHours,
+                onSelected = onIntervalSelected,
+            )
+
             ImapAction.entries.forEach { action ->
                 Button(
                     onClick = { onAction(action) },
@@ -96,6 +122,67 @@ fun ImapScreen(
             onConfirmed = onCredentialsConfirmed,
             onDismissed = onCredentialsDismissed,
         )
+    }
+}
+
+/**
+ * Picks the auto-scrape cadence that gets pushed into `AutoScrapeClient.intervalHours`.
+ *
+ * [requestedHours] is what the user chose; [effectiveHours] is what the SDK will actually run after
+ * its own clamping. When they differ the notice explains why, which is the whole point of offering
+ * a sub-floor choice.
+ */
+@Composable
+private fun IntervalSelector(
+    requestedHours: Int,
+    effectiveHours: Int,
+    onSelected: (Int) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    var expanded by remember { mutableStateOf(false) }
+
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Box {
+            OutlinedButton(
+                onClick = { expanded = true },
+                modifier = Modifier.testTag(IntervalSelectorTestTag),
+            ) {
+                Text(text = "Auto-scrape every $requestedHours h")
+            }
+
+            DropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false },
+            ) {
+                IntervalChoices.forEach { hours ->
+                    DropdownMenuItem(
+                        text = { Text(text = "$hours hours") },
+                        onClick = {
+                            expanded = false
+
+                            onSelected(hours)
+                        },
+                    )
+                }
+            }
+        }
+
+        if (effectiveHours != requestedHours) {
+            Text(
+                text = "$requestedHours h is below the SDK minimum — it will run every " +
+                    "$effectiveHours h",
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .testTag(IntervalClampNoticeTestTag),
+                color = MaterialTheme.colorScheme.error,
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.bodySmall,
+            )
+        }
     }
 }
 
@@ -148,7 +235,10 @@ private fun ImapScreenReadyPreview() {
                 results = "ScanResults Size: 3",
                 enabledActions = ImapAction.entries.toSet(),
             ),
+            requestedIntervalHours = 24,
+            effectiveIntervalHours = 24,
             onAction = {},
+            onIntervalSelected = {},
             onCredentialsConfirmed = {},
             onCredentialsDismissed = {},
         )
@@ -161,7 +251,10 @@ private fun ImapScreenInitializingPreview() {
     ImapTheme {
         ImapScreen(
             state = ImapUiState(),
+            requestedIntervalHours = 24,
+            effectiveIntervalHours = 24,
             onAction = {},
+            onIntervalSelected = {},
             onCredentialsConfirmed = {},
             onCredentialsDismissed = {},
         )
@@ -178,7 +271,26 @@ private fun ImapScreenCredentialsPreview() {
                 enabledActions = ImapAction.entries.toSet(),
                 credentialsVisible = true,
             ),
+            requestedIntervalHours = 24,
+            effectiveIntervalHours = 24,
             onAction = {},
+            onIntervalSelected = {},
+            onCredentialsConfirmed = {},
+            onCredentialsDismissed = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun ImapScreenClampedIntervalPreview() {
+    ImapTheme {
+        ImapScreen(
+            state = ImapUiState(enabledActions = ImapAction.entries.toSet()),
+            requestedIntervalHours = 6,
+            effectiveIntervalHours = 12,
+            onAction = {},
+            onIntervalSelected = {},
             onCredentialsConfirmed = {},
             onCredentialsDismissed = {},
         )

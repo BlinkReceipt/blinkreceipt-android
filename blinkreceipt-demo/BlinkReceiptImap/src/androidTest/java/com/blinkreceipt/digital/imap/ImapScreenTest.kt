@@ -24,7 +24,10 @@ class ImapScreenTest {
 
     private fun setScreen(
         state: ImapUiState,
+        requestedIntervalHours: Int = 24,
+        effectiveIntervalHours: Int = 24,
         onAction: (ImapAction) -> Unit = {},
+        onIntervalSelected: (Int) -> Unit = {},
         onCredentialsConfirmed: () -> Unit = {},
         onCredentialsDismissed: () -> Unit = {},
     ) {
@@ -32,7 +35,10 @@ class ImapScreenTest {
             ImapTheme {
                 ImapScreen(
                     state = state,
+                    requestedIntervalHours = requestedIntervalHours,
+                    effectiveIntervalHours = effectiveIntervalHours,
                     onAction = onAction,
+                    onIntervalSelected = onIntervalSelected,
                     onCredentialsConfirmed = onCredentialsConfirmed,
                     onCredentialsDismissed = onCredentialsDismissed,
                 )
@@ -63,7 +69,7 @@ class ImapScreenTest {
     }
 
     @Test
-    fun onlyTheEnabledSubsetIsClickableAfterAnInitFailure() {
+    fun onlyTheEnabledSubsetIsClickable() {
         setScreen(ImapUiState(enabledActions = setOf(ImapAction.CLEAR, ImapAction.LOGIN)))
 
         composeTestRule.onNodeWithTag(ImapAction.CLEAR.label)
@@ -126,5 +132,80 @@ class ImapScreenTest {
 
         composeTestRule.onNodeWithText("Ok").performClick()
         assertTrue(confirmed)
+    }
+
+    @Test
+    fun intervalSelectorShowsTheCurrentCadence() {
+        setScreen(
+            state = ImapUiState(),
+            requestedIntervalHours = 48,
+            effectiveIntervalHours = 48,
+        )
+
+        composeTestRule.onNodeWithTag(IntervalSelectorTestTag)
+            .performScrollTo()
+            .assertTextEquals("Auto-scrape every 48 h")
+    }
+
+    @Test
+    fun pickingAnIntervalReportsTheChosenHours() {
+        var selected: Int? = null
+
+        setScreen(
+            state = ImapUiState(),
+            onIntervalSelected = { selected = it },
+        )
+
+        composeTestRule.onNodeWithTag(IntervalSelectorTestTag)
+            .performScrollTo()
+            .performClick()
+
+        composeTestRule.onNodeWithText("48 hours").performClick()
+
+        assertEquals(48, selected)
+    }
+
+    @Test
+    fun everyOfferedIntervalIsSelectable() {
+        val selected = mutableListOf<Int>()
+
+        setScreen(
+            state = ImapUiState(),
+            onIntervalSelected = { selected += it },
+        )
+
+        IntervalChoices.forEach { hours ->
+            composeTestRule.onNodeWithTag(IntervalSelectorTestTag)
+                .performScrollTo()
+                .performClick()
+
+            composeTestRule.onNodeWithText("$hours hours").performClick()
+        }
+
+        assertEquals(IntervalChoices, selected)
+    }
+
+    @Test
+    fun noClampNoticeWhenTheChoiceIsAtOrAboveTheFloor() {
+        setScreen(
+            state = ImapUiState(),
+            requestedIntervalHours = 12,
+            effectiveIntervalHours = 12,
+        )
+
+        composeTestRule.onNodeWithTag(IntervalClampNoticeTestTag).assertDoesNotExist()
+    }
+
+    @Test
+    fun clampNoticeExplainsASubFloorChoice() {
+        setScreen(
+            state = ImapUiState(),
+            requestedIntervalHours = 6,
+            effectiveIntervalHours = 12,
+        )
+
+        composeTestRule.onNodeWithTag(IntervalClampNoticeTestTag)
+            .performScrollTo()
+            .assertTextEquals("6 h is below the SDK minimum — it will run every 12 h")
     }
 }

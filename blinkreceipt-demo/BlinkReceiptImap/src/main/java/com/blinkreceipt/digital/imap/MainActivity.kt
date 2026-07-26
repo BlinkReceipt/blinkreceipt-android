@@ -30,17 +30,6 @@ class MainActivity : AppCompatActivity() {
         var tester: Credentials.Password? = null
 
         const val LOG_TAG = "ImapMainActivity"
-
-        // The actions that still make sense when the IMAP client failed to initialize — the same
-        // subset the XML layout used to re-enable from InitializeCallback.onException.
-        val INIT_FAILURE_ACTIONS: Set<ImapAction> = setOf(
-            ImapAction.CLEAR,
-            ImapAction.LOGIN,
-            ImapAction.LOGOUT,
-            ImapAction.MESSAGES,
-            ImapAction.VERIFY,
-            ImapAction.DEBUG,
-        )
     }
 
     private lateinit var client: ImapClient
@@ -64,9 +53,9 @@ class MainActivity : AppCompatActivity() {
             ImapTheme {
                 // Auto-scrape is armed process-wide in BlinkApplication, because close() cancels
                 // the periodic schedule and so the client has to outlive this Activity. Its
-                // results therefore arrive outside this Activity's state; fold each new one into
-                // the results line.
-                val autoScrape = AutoScrapeResults.latest
+                // results and its interval therefore live in AutoScrapeController rather than in
+                // this Activity's state; fold each new result into the results line.
+                val autoScrape = AutoScrapeController.latestResult
 
                 LaunchedEffect(autoScrape) {
                     autoScrape?.let { results(it) }
@@ -74,7 +63,10 @@ class MainActivity : AppCompatActivity() {
 
                 ImapScreen(
                     state = uiState,
+                    requestedIntervalHours = AutoScrapeController.requestedIntervalHours,
+                    effectiveIntervalHours = AutoScrapeController.effectiveIntervalHours,
                     onAction = ::onAction,
+                    onIntervalSelected = { AutoScrapeController.select(this, it) },
                     onCredentialsConfirmed = ::onCredentialsConfirmed,
                     onCredentialsDismissed = { credentialsVisible(false) }
                 )
@@ -100,9 +92,11 @@ class MainActivity : AppCompatActivity() {
                         throwable.toString(), Toast.LENGTH_SHORT
                     ).show()
 
+                    // Nothing on this screen works without an initialized ImapClient, so every
+                    // action stays greyed out and the failure is reported in the results line.
                     uiState = uiState.copy(
                         results = throwable.toString(),
-                        enabledActions = INIT_FAILURE_ACTIONS
+                        enabledActions = emptySet()
                     )
                 }
             }
