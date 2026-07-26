@@ -43,7 +43,7 @@ enum class ImapAction(val label: String) {
     MULTIPLE_REMOTE("Multiple Remote"),
     MULTIPLE_MESSAGES("Multiple Messages"),
     SINGLE_LOGOUT("Single Logout"),
-    AUTO_SCRAPE("Auto-Scrape Now (QA)"),
+    AUTO_SCRAPE("Auto-Scrape Now"),
 }
 
 @Immutable
