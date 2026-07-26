@@ -32,7 +32,7 @@ buildscript {
             'kotlin'           : '2.2.21',
             'easyPermissions'  : '3.0.0',
             'junit'            : '4.13.2',
-            "agp"              : '9.2.1',
+            "agp"              : '9.3.1',
             'testRunner'       : '1.4.0',
             'espresso'         : '3.7.0',
             'bom'              : '2.2.1',
@@ -47,7 +47,7 @@ buildscript {
             'coil'             : '3.4.0',
             'colorPicker'      : '1.1.2',
             'versionMajor'     : 2,
-            'versionMinor'     : 2,
-            'versionPatch'     : 1
+            'versionMinor'     : 3,
+            'versionPatch'     : 0
     ]
 }
