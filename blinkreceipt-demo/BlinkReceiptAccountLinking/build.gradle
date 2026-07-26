@@ -1,18 +1,22 @@
 plugins {
-    id 'com.android.application'
+    alias(libs.plugins.android.application)
 }
 
+def versionMajor = libs.versions.versionMajor.get().toInteger()
+def versionMinor = libs.versions.versionMinor.get().toInteger()
+def versionPatch = libs.versions.versionPatch.get().toInteger()
+
 android {
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.buildTools
+    compileSdkVersion libs.versions.compileSdk.get().toInteger()
+    buildToolsVersion libs.versions.buildTools.get()
 
     defaultConfig {
         applicationId "com.blinkreceipt.linking"
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+        minSdkVersion libs.versions.minSdk.get().toInteger()
+        targetSdkVersion libs.versions.targetSdk.get().toInteger()
 
-        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
-        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,9 +28,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../blink-receipt-demos.jsk")
-            storePassword "${keys.storePassword}"
-            keyAlias "${keys.keyAlias}"
-            keyPassword "${keys.keyPassword}"
+            storePassword providers.gradleProperty('demoStorePassword').get()
+            keyAlias providers.gradleProperty('demoKeyAlias').get()
+            keyPassword providers.gradleProperty('demoKeyPassword').get()
         }
     }
 
@@ -66,17 +70,17 @@ kotlin {
 }
 
 dependencies {
-    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraints}"
-    implementation "com.google.android.material:material:${versions.material}"
-    implementation "com.google.android.gms:play-services-tasks:${versions.tasks}"
+    implementation libs.androidx.constraintlayout
+    implementation libs.material
+    implementation libs.play.services.tasks
 
-    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation libs.androidx.core.ktx
 
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
-    implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
+    implementation platform(libs.blinkreceipt.bom)
+    implementation libs.blinkreceipt.account.linking
 
-    testImplementation "junit:junit:${versions.junit}"
+    testImplementation libs.junit
 
-    androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
 }

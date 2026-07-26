@@ -1,21 +1,25 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.plugin.compose'
-    id 'org.jetbrains.kotlin.plugin.serialization'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
+
+def versionMajor = libs.versions.versionMajor.get().toInteger()
+def versionMinor = libs.versions.versionMinor.get().toInteger()
+def versionPatch = libs.versions.versionPatch.get().toInteger()
 
 android {
     namespace 'com.actualplatform.android.activation.development'
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.buildTools
+    compileSdkVersion libs.versions.compileSdk.get().toInteger()
+    buildToolsVersion libs.versions.buildTools.get()
 
     defaultConfig {
         applicationId "com.actualplatform.android.activation.development"
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+        minSdkVersion libs.versions.minSdk.get().toInteger()
+        targetSdkVersion libs.versions.targetSdk.get().toInteger()
 
-        versionCode versions.versionMajor * 10000 + versions.versionMinor * 1000 + versions.versionPatch * 100
-        versionName "${versions.versionMajor}.${versions.versionMinor}.${versions.versionPatch}"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,9 +31,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../blink-receipt-demos.jsk")
-            storePassword "${keys.storePassword}"
-            keyAlias "${keys.keyAlias}"
-            keyPassword "${keys.keyPassword}"
+            storePassword providers.gradleProperty('demoStorePassword').get()
+            keyAlias providers.gradleProperty('demoKeyAlias').get()
+            keyPassword providers.gradleProperty('demoKeyPassword').get()
         }
     }
 
@@ -67,44 +71,44 @@ kotlin {
 }
 
 dependencies {
-    implementation "androidx.core:core-ktx:${androidx.core}"
-    implementation "androidx.activity:activity-compose:${androidx.activityCompose}"
-    implementation(platform("androidx.compose:compose-bom:${androidx.compose}"))
-    implementation "androidx.compose.material3:material3"
-    implementation "androidx.compose.ui:ui"
-    implementation "androidx.compose.ui:ui-tooling-preview"
-    implementation "androidx.compose.material:material-icons-core"
-    debugImplementation "androidx.compose.ui:ui-tooling"
-    debugImplementation "androidx.compose.ui:ui-test-manifest"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.activity.compose
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.compose.material3
+    implementation libs.androidx.compose.ui
+    implementation libs.androidx.compose.ui.tooling.preview
+    implementation libs.androidx.compose.material.icons.core
+    debugImplementation libs.androidx.compose.ui.tooling
+    debugImplementation libs.androidx.compose.ui.test.manifest
+    androidTestImplementation libs.androidx.compose.ui.test.junit4
 
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:${versions.bom}"))
-    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
-    implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
-    implementation("com.microblink.blinkreceipt:blinkreceipt-logcat")
+    implementation platform(libs.blinkreceipt.bom)
+    implementation libs.blinkreceipt.recognizer
+    implementation libs.blinkreceipt.camera.ui
+    implementation libs.blinkreceipt.logcat
 
-    implementation(platform("com.actualplatform:activation-bom:${versions.activation}"))
-    implementation("com.actualplatform:activation")
+    implementation platform(libs.activation.bom)
+    implementation libs.activation
 
-    implementation "androidx.work:work-runtime:${androidx.workermanager}"
-    implementation "androidx.work:work-runtime-ktx:${androidx.workermanager}"
+    implementation libs.androidx.work.runtime
+    implementation libs.androidx.work.runtime.ktx
 
-    implementation "androidx.navigation3:navigation3-runtime:${androidx.nav3Core}"
-    implementation "androidx.navigation3:navigation3-ui:${androidx.nav3Core}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-navigation3:${androidx.lifecycleViewModelNav3}"
+    implementation libs.androidx.navigation3.runtime
+    implementation libs.androidx.navigation3.ui
+    implementation libs.androidx.lifecycle.viewmodel.navigation3
 
     // Activation theming editor (DataStore persistence, color picker dialog, icon thumbnails)
-    implementation "androidx.datastore:datastore-preferences:${androidx.datastore}"
-    implementation "com.github.skydoves:colorpicker-compose:${versions.colorPicker}"
-    implementation "io.coil-kt.coil3:coil-compose:${versions.coil}"
+    implementation libs.androidx.datastore.preferences
+    implementation libs.colorpicker.compose
+    implementation libs.coil.compose
 
-    implementation "com.squareup.okio:okio:${versions.okio}"
-    implementation "com.google.code.gson:gson:${versions.gson}"
+    implementation libs.okio
+    implementation libs.gson
 
-    testImplementation "junit:junit:${versions.junit}"
+    testImplementation libs.junit
 
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlinxSerialization}"
+    implementation libs.kotlinx.serialization.json
 
-    androidTestImplementation "androidx.test.ext:junit:${androidx.junit}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
 }
