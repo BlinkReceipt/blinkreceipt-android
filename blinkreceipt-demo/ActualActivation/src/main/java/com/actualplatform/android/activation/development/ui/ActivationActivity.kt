@@ -11,6 +11,7 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.togetherWith
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -42,6 +43,7 @@ import com.actualplatform.activation.ScanReward
 import com.actualplatform.activation.models.PlacementLayout
 import com.actualplatform.activation.networking.HttpEnvironment
 import com.actualplatform.activation.networking.TestOptions
+import com.actualplatform.activation.theming.LocalActivationDarkTheme
 import com.actualplatform.android.activation.development.R
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
@@ -317,35 +319,6 @@ internal class ActivationActivity : ComponentActivity() {
                         entry<ActivationRoute.Home> { _ ->
                             val settings = remember(refreshKey) { SettingsData.from(prefs) }
 
-                            val scanLauncher = rememberLauncherForActivityResult(
-                                contract = CameraRecognizerContract(),
-                            ) { result ->
-                                LogcatManager.event()
-                                    .debug(TAG) { "ScanReceipt::launcher callback -> $result" }
-                                when (result) {
-                                    is CameraRecognizerResults.Success -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "ScanReceipt::onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
-                                        lastScanResults = result.results
-                                        lastScanError = null
-                                    }
-
-                                    is CameraRecognizerResults.Exception -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "ScanReceipt::onScanResult -> Exception: ${result.exception}" }
-                                        lastScanError = result.exception.message ?: "Unknown error"
-                                        lastScanResults = null
-
-                                        backStack.add(ActivationRoute.OffersWall)
-                                    }
-
-                                    CameraRecognizerResults.Cancelled -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "ScanReceipt::onScanResult -> Cancelled" }
-                                    }
-                                }
-                            }
-
                             HomeScreen(
                                 settings = settings,
                                 lastScanResults = lastScanResults,
@@ -360,23 +333,6 @@ internal class ActivationActivity : ComponentActivity() {
                                         backStack.add(ActivationRoute.SettingsEditor)
                                     } else {
                                         backStack.add(ActivationRoute.OffersWall)
-                                    }
-                                },
-                                onScanReceiptClick = {
-                                    if (settings.email.isEmpty() && settings.phone.isEmpty()) {
-                                        backStack.add(ActivationRoute.SettingsEditor)
-                                    } else {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "ScanReceipt -> launching camera with activation=true" }
-                                        lastScanResults = null
-                                        lastScanError = null
-
-                                        scanLauncher.launch(
-                                            CameraRecognizerOptions.Builder()
-                                                .options(scanOptions)
-                                                .characteristics(cameraCharacteristics)
-                                                .build()
-                                        )
                                     }
                                 },
                                 onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
@@ -400,8 +356,6 @@ internal class ActivationActivity : ComponentActivity() {
         internal const val CAMERA_CHARACTERISTICS: String = "CAMERA_CHARACTERISTICS"
         internal const val PREFS_NAME = "activation_prefs"
         internal const val PREFS_THEME_NAME = "activation_themes_prefs"
-        internal const val PREF_ENVIRONMENT = "activation_environment"
-        internal const val PREF_TEST_ADS = "activation_test_ads"
         internal const val PREF_TEST_MODE = "activation_test_mode"
         internal const val PREF_EMAIL = "email_address"
         internal const val PREF_PHONE = "phone_number"
@@ -435,8 +389,6 @@ internal class ActivationActivity : ComponentActivity() {
         private const val TAG = "ActivationsActivity"
 
         private fun applyToClient(
-            envName: String,
-            testAds: Boolean,
             testMode: Boolean,
             email: String,
             phone: String,
@@ -453,14 +405,9 @@ internal class ActivationActivity : ComponentActivity() {
             scanRewardPoints: RewardPoint,
         ) {
             with(ActivationClient.instance) {
-                environment = when (envName) {
-                    "Development" -> HttpEnvironment.Development
-                    "Staging" -> HttpEnvironment.Staging
-                    else -> HttpEnvironment.Production
-                }
+                environment = HttpEnvironment.Production
 
                 testOptions = buildSet {
-                    if (testAds) add(TestOptions.Ads)
                     if (testMode) add(TestOptions.Test)
                 }
 
@@ -509,8 +456,6 @@ internal class ActivationActivity : ComponentActivity() {
         fun applySettings(context: Context) {
             val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             applyToClient(
-                envName = prefs.getString(PREF_ENVIRONMENT, "Production") ?: "Production",
-                testAds = prefs.getBoolean(PREF_TEST_ADS, true),
                 testMode = prefs.getBoolean(PREF_TEST_MODE, true),
                 email = prefs.getString(PREF_EMAIL, "") ?: "",
                 phone = prefs.getString(PREF_PHONE, "") ?: "",
