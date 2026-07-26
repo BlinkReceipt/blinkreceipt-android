@@ -1,5 +1,10 @@
 package com.actualplatform.android.activation.development.ui.themes
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -73,90 +78,74 @@ internal fun ThemesTabContent(theme: ActivationTheme, onThemeChange: (Activation
 
         SubSectionHeader(stringResource(R.string.activations_themes_section_colors))
 
-        val darkEnabled = theme.darkColors != theme.lightColors
-        var editingDark by remember(darkEnabled) { mutableStateOf(false) }
+        var editingDark by remember { mutableStateOf(false) }
 
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-            Text(
-                text = stringResource(R.string.activations_themes_label_override_dark),
-                style = active.typography.bodyLarge,
-                color = textPrimary,
-                modifier = Modifier.weight(1f),
-            )
-            Switch(
-                checked = darkEnabled,
-                onCheckedChange = { enabled ->
-                    onThemeChange(
-                        theme.copy(
-                            darkColors =
-                            if (enabled) ActivationColorDefaults.darkColors() else theme.lightColors,
-                        ),
-                    )
-                },
-                colors =
-                SwitchDefaults.colors(
-                    checkedThumbColor = textInverse,
-                    checkedTrackColor = primary,
-                    checkedBorderColor = primary,
-                    uncheckedThumbColor = textInverse,
-                    uncheckedTrackColor = textSecondary,
-                    uncheckedBorderColor = textSecondary,
-                ),
-            )
-        }
-
-        if (darkEnabled) {
-            Spacer(modifier = Modifier.height(8.dp))
-            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                val segmentColors =
-                    SegmentedButtonDefaults.colors(
-                        activeContainerColor = primary,
-                        activeContentColor = textOnPrimary,
-                        activeBorderColor = primary,
-                        inactiveContainerColor = surface,
-                        inactiveContentColor = textPrimary,
-                        inactiveBorderColor = border,
-                    )
-                SegmentedButton(
-                    selected = !editingDark,
-                    onClick = { editingDark = false },
-                    shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2),
-                    colors = segmentColors,
-                ) {
-                    Text(
-                        text = stringResource(R.string.activations_themes_label_light),
-                        style = active.typography.labelLarge,
-                    )
-                }
-                SegmentedButton(
-                    selected = editingDark,
-                    onClick = { editingDark = true },
-                    shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2),
-                    colors = segmentColors,
-                ) {
-                    Text(
-                        text = stringResource(R.string.activations_themes_label_dark),
-                        style = active.typography.labelLarge,
-                    )
-                }
+        SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+            val segmentColors =
+                SegmentedButtonDefaults.colors(
+                    activeContainerColor = primary,
+                    activeContentColor = textOnPrimary,
+                    activeBorderColor = primary,
+                    inactiveContainerColor = surface,
+                    inactiveContentColor = textPrimary,
+                    inactiveBorderColor = border,
+                )
+            SegmentedButton(
+                selected = !editingDark,
+                onClick = { editingDark = false },
+                shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2),
+                colors = segmentColors,
+            ) {
+                Text(
+                    text = stringResource(R.string.activations_themes_label_light),
+                    style = active.typography.labelLarge,
+                )
+            }
+            SegmentedButton(
+                selected = editingDark,
+                onClick = { editingDark = true },
+                shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2),
+                colors = segmentColors,
+            ) {
+                Text(
+                    text = stringResource(R.string.activations_themes_label_dark),
+                    style = active.typography.labelLarge,
+                )
             }
         }
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        val editingColors = if (editingDark) theme.darkColors else theme.lightColors
-        ColorsEditor(
-            colors = editingColors,
-            onColorsChange = { updated ->
-                onThemeChange(
-                    if (editingDark) {
-                        theme.copy(darkColors = updated)
-                    } else {
-                        theme.copy(lightColors = updated)
-                    },
-                )
+        // Light and dark palettes each get their own ColorsEditor with an independent
+        // onColorsChange, so editing one never bleeds into the other. The segmented control above
+        // selects which palette is shown and AnimatedContent slides between them — the dark palette
+        // defaults to the SDK dark colors until edited. AnimatedContent (not HorizontalPager) so
+        // the
+        // editor wraps its own height inside the parent verticalScroll.
+        AnimatedContent(
+            targetState = editingDark,
+            transitionSpec = {
+                // Both palettes share the same row layout, so slide toward the newly selected tab.
+                val towards =
+                    if (targetState) AnimatedContentTransitionScope.SlideDirection.Start
+                    else AnimatedContentTransitionScope.SlideDirection.End
+                (slideIntoContainer(towards) + fadeIn()) togetherWith
+                        (slideOutOfContainer(towards) + fadeOut())
             },
-        )
+            label = "ColorsEditorPalette",
+        ) { isDark ->
+            if (isDark) {
+                ColorsEditor(
+                    colors = theme.darkColors,
+                    onColorsChange = { onThemeChange(theme.copy(darkColors = it)) },
+                )
+            } else {
+                ColorsEditor(
+                    colors = theme.lightColors,
+                    onColorsChange = { onThemeChange(theme.copy(lightColors = it)) },
+                )
+            }
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
         SubSectionHeader(stringResource(R.string.activations_themes_section_shapes))
@@ -395,6 +384,18 @@ private data class ThemePreset(val label: String, val build: () -> ActivationThe
 private val themePresets =
     listOf(
         ThemePreset("Default") { ActivationTheme() },
+        ThemePreset("Light Only") {
+            ActivationTheme(
+                lightColors = ActivationColorDefaults.lightColors(),
+                darkColors = ActivationColorDefaults.lightColors(),
+            )
+        },
+        ThemePreset("Dark Only") {
+            ActivationTheme(
+                lightColors = ActivationColorDefaults.darkColors(),
+                darkColors = ActivationColorDefaults.darkColors(),
+            )
+        },
         ThemePreset("Magenta + Lime") {
             val colors =
                 ActivationColorDefaults.lightColors(
@@ -418,39 +419,39 @@ private val themePresets =
         ThemePreset("Cyan + Neon Dark") {
             ActivationTheme(
                 lightColors =
-                ActivationColorDefaults.lightColors(
-                    primary = 0xFF00CED1,
-                    secondary = 0xFFFFD700,
-                    background = 0xFF2F4F4F,
-                    surface = 0xFFFFFACD,
-                    surfaceAccent = 0xFFAFEEEE,
-                    surfaceInverse = 0xFF800080,
-                    textPrimary = 0xFF8B4513,
-                    textSecondary = 0xFFD2691E,
-                    textAccent = 0xFFFF4500,
-                    textInverse = 0xFFADFF2F,
-                    success = 0xFFFF1493,
-                    error = 0xFF00FFFF,
-                    warning = 0xFFBA55D3,
-                    border = 0xFF8A2BE2,
-                ),
+                    ActivationColorDefaults.lightColors(
+                        primary = 0xFF00CED1,
+                        secondary = 0xFFFFD700,
+                        background = 0xFF2F4F4F,
+                        surface = 0xFFFFFACD,
+                        surfaceAccent = 0xFFAFEEEE,
+                        surfaceInverse = 0xFF800080,
+                        textPrimary = 0xFF8B4513,
+                        textSecondary = 0xFFD2691E,
+                        textAccent = 0xFFFF4500,
+                        textInverse = 0xFFADFF2F,
+                        success = 0xFFFF1493,
+                        error = 0xFF00FFFF,
+                        warning = 0xFFBA55D3,
+                        border = 0xFF8A2BE2,
+                    ),
                 darkColors =
-                ActivationColorDefaults.darkColors(
-                    primary = 0xFF00FF7F,
-                    secondary = 0xFFFF00FF,
-                    background = 0xFF000000,
-                    surface = 0xFF1A0033,
-                    surfaceAccent = 0xFF330066,
-                    surfaceInverse = 0xFFFFE4B5,
-                    textPrimary = 0xFFFFD700,
-                    textSecondary = 0xFF7FFFD4,
-                    textAccent = 0xFFFFA500,
-                    textInverse = 0xFF4B0082,
-                    success = 0xFFFF6347,
-                    error = 0xFF40E0D0,
-                    warning = 0xFF9370DB,
-                    border = 0xFFADFF2F,
-                ),
+                    ActivationColorDefaults.darkColors(
+                        primary = 0xFF00FF7F,
+                        secondary = 0xFFFF00FF,
+                        background = 0xFF000000,
+                        surface = 0xFF1A0033,
+                        surfaceAccent = 0xFF330066,
+                        surfaceInverse = 0xFFFFE4B5,
+                        textPrimary = 0xFFFFD700,
+                        textSecondary = 0xFF7FFFD4,
+                        textAccent = 0xFFFFA500,
+                        textInverse = 0xFF4B0082,
+                        success = 0xFFFF6347,
+                        error = 0xFF40E0D0,
+                        warning = 0xFF9370DB,
+                        border = 0xFFADFF2F,
+                    ),
             )
         },
     )

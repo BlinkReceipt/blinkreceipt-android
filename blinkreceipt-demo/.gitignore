@@ -84,3 +84,6 @@ freeline_project_description.json
 ehthumbs.db
 Thumbs.db
 /gradle/gradle-daemon-jvm.properties
+
+# Claude Code worktrees
+.claude/worktrees/
