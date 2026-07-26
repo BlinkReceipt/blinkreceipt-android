@@ -1,0 +1,318 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AutoScrapeClient</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    BlinkReceipt SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":blinkreceipt-digital/release">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":blinkreceipt-digital/release" data-filter=":blinkreceipt-digital/release">
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    BlinkReceipt SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="blinkreceipt-digital::com.microblink.digital/AutoScrapeClient///PointingToDeclaration//1161413559">
+  <div class="breadcrumbs"><a href="../../index.html">blinkreceipt-digital</a><span class="delimiter">/</span><a href="../index.html">com.microblink.digital</a><span class="delimiter">/</span><span class="current">AutoScrapeClient</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Auto</span><wbr><span>Scrape</span><wbr><span><span>Client</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">AutoScrapeClient</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span></span></span><span class="token punctuation">)</span> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html">Closeable</a></div><p class="paragraph">Automated e-receipt scrape client: schedules a periodic background scrape of the linked Gmail IMAP accounts (the initial provider scope, see <a href="-companion/is-auto-scrape-account.html">isAutoScrapeAccount</a>) through the existing <a href="../../../blinkreceipt-digital/com.microblink.digital/-imap-client/remote-messages.html">ImapClient.remoteMessages</a> path — the same backend job the manual remote scrape creates — and delivers each account's <a href="../-job-results/index.html">JobResults</a> to the callbacks supplied to <a href="begin.html">begin</a>. Receipts themselves are parsed server-side and posted to the configured client endpoint, exactly like a manual remote scrape; the callbacks carry the job handle, not scan results.</p><p class="paragraph">Mirrors com.microblink.linking.AccountLinkingClient: the host owns the instance and passes its result/error callbacks straight into <a href="begin.html">begin</a>. The callbacks are held only by a collector coroutine in this client's own scope — nothing is registered statically — and the worker reaches them by emitting into a stateless per-process event stream (<a href="../../../blinkreceipt-digital/com.microblink.digital/-auto-scrape-client/-companion/events.html">events</a>) that the collector consumes. Off until <a href="begin.html">begin</a> is called, and the arm state lives in memory only, so hosts re-create the client and call <a href="begin.html">begin</a> at launch (e.g. in <code class="lang-kotlin">Application.onCreate</code>) to re-arm it before any scheduled run fires.</p><p class="paragraph">The background schedule itself follows the signed-in state (<a href="../../../blinkreceipt-digital/com.microblink.digital/-auto-scrape-scheduler/index.html">AutoScrapeScheduler</a>): while armed, the periodic work exists only when an in-scope account is linked — it starts when such an account signs in and is cancelled when the last one signs out. All scheduling funnels through the one unique-work name, so there is never more than one worker ticking regardless of how many times (or from how many clients) auto-scrape is armed.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="1971447705%2FConstructors%2F1161413559" anchor-label="AutoScrapeClient" id="1971447705%2FConstructors%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-auto-scrape-client.html"><span>Auto</span><wbr><span>Scrape</span><wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1971447705%2FConstructors%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="484211116%2FClasslikes%2F1161413559" anchor-label="AccountOutcome" id="484211116%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-account-outcome/index.html"><span>Account</span><wbr><span><span>Outcome</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="484211116%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-account-outcome/index.html">AccountOutcome</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>username<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>jobId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>failed<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="752910437%2FClasslikes%2F1161413559" anchor-label="Companion" id="752910437%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="752910437%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-232409579%2FClasslikes%2F1161413559" anchor-label="Decision" id="-232409579%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-decision/index.html"><span><span>Decision</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-232409579%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-decision/index.html">Decision</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-decision/index.html">AutoScrapeClient.Decision</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1456680203%2FClasslikes%2F1161413559" anchor-label="Summary" id="1456680203%2FClasslikes%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-summary/index.html"><span><span>Summary</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1456680203%2FClasslikes%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-summary/index.html">Summary</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accounts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>failures<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>jobs<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1883916699%2FProperties%2F1161413559" anchor-label="countryCode" id="1883916699%2FProperties%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="country-code.html"><span>country</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1883916699%2FProperties%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@get:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"countryCode"</span></span></span><wbr><span class="token punctuation">)</span></div><div class="block"><span class="token annotation builtin">@set:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"countryCode"</span></span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">var </span><a href="country-code.html">countryCode</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional ISO 2-character country code hint for parsing automated-scrape results — the auto-scrape counterpart of the manual client's <code class="lang-kotlin">countryCode</code>. <code class="lang-kotlin">null</code> (the default) keeps the SDK default (<code class="lang-kotlin">US</code>). Applied to every scheduled run; changing it while armed re-applies immediately.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-428959596%2FProperties%2F1161413559" anchor-label="intervalHours" id="-428959596%2FProperties%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="interval-hours.html"><span>interval</span><wbr><span><span>Hours</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-428959596%2FProperties%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@get:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"intervalHours"</span></span></span><wbr><span class="token punctuation">)</span></div><div class="block"><span class="token annotation builtin">@set:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"intervalHours"</span></span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">var </span><a href="interval-hours.html">intervalHours</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">The cadence, in hours, of the automated scrape — the public override for the default <a href="-companion/-d-e-f-a-u-l-t_-i-n-t-e-r-v-a-l_-h-o-u-r-s.html">DEFAULT_INTERVAL_HOURS</a> (24h) refresh. The only limitation is the <a href="-companion/-m-i-n_-i-n-t-e-r-v-a-l_-h-o-u-r-s.html">MIN_INTERVAL_HOURS</a> (12h) floor: values below it (including zero and negatives) fall back to 12, and anything at or above it is used as-is with no upper cap. Changing it while the client is armed reschedules the periodic work so the new cadence takes effect immediately (mirrors iOS's <code class="lang-kotlin">autoScrapeInterval</code> setter); otherwise the value applies the next time the client is armed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="750341013%2FProperties%2F1161413559" anchor-label="overrideDateTime" id="750341013%2FProperties%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="override-date-time.html"><span>override</span><wbr><span>Date</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="750341013%2FProperties%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@get:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"overrideDateTime"</span></span></span><wbr><span class="token punctuation">)</span></div><div class="block"><span class="token annotation builtin">@set:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"overrideDateTime"</span></span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">var </span><a href="override-date-time.html">overrideDateTime</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional date-cutoff override for the automated scrape, in epoch milliseconds — the auto-scrape counterpart of the manual client's <code class="lang-kotlin">overrideDateTime</code> (iOS: <code class="lang-kotlin">remoteScrapeUserDateCutoff</code>). <code class="lang-kotlin">null</code> (the default) keeps the backend's own cutoff. Applied to every scheduled run; changing it while armed re-applies immediately.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-27448613%2FProperties%2F1161413559" anchor-label="overrideEndpoint" id="-27448613%2FProperties%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="override-endpoint.html"><span>override</span><wbr><span><span>Endpoint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-27448613%2FProperties%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@get:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"overrideEndpoint"</span></span></span><wbr><span class="token punctuation">)</span></div><div class="block"><span class="token annotation builtin">@set:</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-name/index.html"><span class="token annotation builtin">JvmName</span></a><span class="token punctuation">(</span><span>name<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"overrideEndpoint"</span></span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">var </span><a href="override-endpoint.html">overrideEndpoint</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional override for the endpoint the backend POSTs automated-scrape results to — the auto-scrape counterpart of the manual client's <code class="lang-kotlin">overrideEndpoint</code> (iOS: <code class="lang-kotlin">remoteScrapeClientEndpoint</code>). <code class="lang-kotlin">null</code> (the default) keeps the endpoint configured server side. Applied to every scheduled run; changing it while armed re-applies immediately.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="2020880458%2FFunctions%2F1161413559" anchor-label="begin" id="2020880458%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="begin.html"><span><span>begin</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2020880458%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-synchronized/index.html"><span class="token annotation builtin">Synchronized</span></a></div></div><span class="token keyword">fun </span><a href="begin.html"><span class="token function">begin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">success<span class="token operator">: </span><span class="token punctuation">(</span>credentials<span class="token operator">: </span><a href="../-credentials/-password/index.html">Credentials.Password</a><span class="token punctuation">, </span>result<span class="token operator">: </span><a href="../-job-results/index.html">JobResults</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter ">failure<span class="token operator">: </span><span class="token punctuation">(</span>throwable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Arms the automated scrape and subscribes <a href="begin.html">success</a> / <a href="begin.html">failure</a> to the per-account job results each run emits — the same parameters the manual <a href="../../../blinkreceipt-digital/com.microblink.digital/-imap-client/remote-messages.html">ImapClient.remoteMessages</a> delivery (<a href="../-job-results-callback/index.html">JobResultsCallback</a>) uses, invoked on a background thread. The callbacks live only in the collector launched here, so <a href="cancel.html">cancel</a> / <a href="close.html">close</a> unsubscribes them; nothing is retained after that.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-651662654%2FFunctions%2F1161413559" anchor-label="cancel" id="-651662654%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel.html"><span><span>cancel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651662654%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-synchronized/index.html"><span class="token annotation builtin">Synchronized</span></a></div></div><span class="token keyword">fun </span><a href="cancel.html"><span class="token function">cancel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Cancels the automated scrape and unsubscribes the callbacks; the client can be re-armed via <a href="begin.html">begin</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="661639334%2FFunctions%2F1161413559" anchor-label="close" id="661639334%2FFunctions%2F1161413559" data-filterable-set=":blinkreceipt-digital/release"></a>
+          <div class="table-row table-row_content" data-filterable-current=":blinkreceipt-digital/release" data-filterable-set=":blinkreceipt-digital/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close.html"><span><span>close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="661639334%2FFunctions%2F1161413559"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":blinkreceipt-digital/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Releases the client for good: cancels the scope (and any collector) and the scheduled work.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

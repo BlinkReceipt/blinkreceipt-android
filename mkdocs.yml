@@ -1,7 +1,7 @@
 extra:
   blinkreceipt:
-    release: '2.2.1'
-    next_release: '2.3.0'
+    release: '2.3.0'
+    next_release: '2.4.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
 repo_name: BlinkReceipt
@@ -43,6 +43,7 @@ nav:
         - Tasks: digital_tasks.md
         - Project Integration and Instantiation: digital_integration.md
         - IMAP: digital_imap.md
+        - Automated Scrape: digital_auto_scrape.md
         - Outlook: digital_outlook.md
         - Gmail: digital_gmail.md
         - Requirements: digital_requirements.md
