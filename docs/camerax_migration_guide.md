@@ -1,6 +1,6 @@
 # CameraX Migration Guide
 
-This guide helps you migrate your application to **BlinkReceipt SDK 2.x.x and newer**. 
+This guide helps you migrate your application to **BlinkReceipt SDK 2.x.x and newer**.
 
 The updated SDK improves performance, reliability, and device compatibility by leveraging Google’s CameraX framework, while maintaining existing SDK functionality.
 
@@ -20,7 +20,7 @@ Before you begin, please ensure you have the following:
     // build.gradle
     dependencies {
         implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.0.0"))
-        
+
         implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
         implementation("com.microblink.blinkreceipt:blinkreceipt-camera")
         implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
@@ -58,7 +58,7 @@ With the transition to CameraX, there are **minimal but important API changes**.
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            
+
             recognizerView.lifecycle(this);
         }
     ```
@@ -72,15 +72,15 @@ With the transition to CameraX, there are **minimal but important API changes**.
           recognizerView.cameraCaptureListener(new CameraCaptureListener() {
               @Override
               public void onCaptured(@NonNull BitmapResult bitmapResult) {
-                  // Add CameraCaptureListener.onCaptured implementation        
+                  // Add CameraCaptureListener.onCaptured implementation
               }
-    
+
               @Override
               public void onException(@NonNull Throwable throwable) {
-                  // Add CameraCaptureListener.onException implementation        
+                  // Add CameraCaptureListener.onException implementation
               }
           });
-    
+
           // e.g., Trigger capture
           recognizerView.takePicture();
       ```
@@ -129,7 +129,7 @@ These APIs were tied to the legacy camera framework and are no longer required w
 
 ## Behavioral Changes
 
-The switch to CameraX improves overall stability and performance across a wider range of devices. 
+The switch to CameraX improves overall stability and performance across a wider range of devices.
 
 However, you may notice the following differences:
 
