@@ -182,7 +182,7 @@
   - ***Breaking Changes***: Simplified Theming API
     - To streamline customization, some nested widget style attributes are now ignored in favor of new, more specific attributes. You will need to update your custom styles to use the new attributes.
       1. Top-Level Theme (BlinkRecognizerStyle)
-         - Deprecated & Ignored: ~~`tooltipTextColor`~~, ~~`android:enforceStatusBarContrast`~~, ~~`android:enforceNavigationBarContrast`~~, ~~`android:navigationBarColor`~~, ~~`android:statusBarColor`~~. 
+         - Deprecated & Ignored: ~~`tooltipTextColor`~~, ~~`android:enforceStatusBarContrast`~~, ~~`android:enforceNavigationBarContrast`~~, ~~`android:navigationBarColor`~~, ~~`android:statusBarColor`~~.
            - These attributes were often redundant or better handled by the application's base theme.
       2. Tooltip Style (blinkTooltipStyle)
          - Deprecated & Ignored: ~~`tooltipDirection`~~ and ~~`tooltipPlacement`~~.
@@ -197,7 +197,7 @@
     - New attributes have been added to provide more granular control over UI elements:
       1. For All Buttons (`torchButtonStyle`, `cancelButtonStyle`, `finishButtonStyle`, `retakeButtonStyle`, `captureButtonStyle`, & `confirmButtonStyle`):
          - `android:padding`: Provides direct control over the padding within each button.
-         - `android:contentDescription`: Allows setting a custom content description for accessibility. 
+         - `android:contentDescription`: Allows setting a custom content description for accessibility.
          - For the torch button, use `torchOnContentDescription` and `torchOffContentDescription`.
       2. For the Torch Button (`torchButtonStyle`):
            - `torchOnSrc` / `torchOffSrc`: Set distinct drawables for the torch's on and off states.
@@ -249,4 +249,7 @@
 - Stability fixes and improvements
 
 ## 2.3.0
+- Stability fixes and improvements
+
+## 2.3.1
 - Stability fixes and improvements

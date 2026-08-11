@@ -1,8 +1,7 @@
 String resource mapping
 
-| string key                                                           | English(Default)                                                          | Preview                                                                          
+| string key                                                           | English(Default)                                                          | Preview
 |----------------------------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| `recognizer_receipt_edge`                                            | R\ne\nc\ne\ni\np\nt\n\nE\nd\ng\ne                                         | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
 | `scan_characteristics_option_date`                                   | Date                                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
 | `scan_characteristics_option_total`                                  | Total                                                                     | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
 | `scan_characteristics_option_merchant`                               | Merchant                                                                  | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
@@ -16,13 +15,10 @@ String resource mapping
 | `scan_characteristics_option_store_zip`                              | Store Zip                                                                 |                                                                                  |
 | `scan_characteristics_option_store_phone`                            | Store Phone                                                               |                                                                                  |
 | `recognizer_camera_long_receipt_add_photos_hint`                     | Long receipt? Add Photos.                                                 | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_4.png){ width="300" } |
-| `recognizer_camera_initial_instruction`                              | Align left and right receipt edge.<br/>Long receipt? Take multiple photos |                                                                                  |
 | `recognizer_align_image_hint`                                        | Start next photo here.                                                    | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_6.png){ width="300" } |
 | `recognizer_blurry_image_tooltip`                                    | Image seems blurry. You can<br/>try again and tap to focus.               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_3.png){ width="300" } |
 | `recognizer_missing_data_tooltip`                                    | Data missing? You can still hit<br/>checkmark to finish scan              |                                                                                  |
 | `recognizer_blurry_image_btn`                                        | Dismiss                                                                   |                                                                                  |
-| `recognizer_move_closer_suggestion`                                  | Move Closer                                                               | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_5.png){ width="300" } |
-| `recognizer_move_further_suggestion`                                 | Move Further                                                              |                                                                                  |
 | `recognizer_permission_dialog_title`                                 | Camera access needed                                                      | ![](./mkdocs/images/override_labels_blinkreceipt_camera_ui_7.png){ width="300" } |
 | `recognizer_permission_dialog_message`                               | This app needs access to your camera to continue.                         |                                                                                  |
 | `recognizer_grant_access`                                            | Grant Access                                                              |                                                                                  |
@@ -43,7 +39,6 @@ You can apply your own translation on each string entry. This can be done by doi
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- You can override the following labels(German) -->
-    <string name="recognizer_receipt_edge">Q\nu\ni\nt\nt\nu\nn\ng\n\nR\na\nn\nd</string>
     <string name="scan_characteristics_option_date">Datum</string>
     <string name="scan_characteristics_option_total">Gesamt</string>
     <string name="scan_characteristics_option_merchant">Händler</string>
@@ -58,13 +53,10 @@ You can apply your own translation on each string entry. This can be done by doi
     <string name="scan_characteristics_option_store_phone">Telefon des Geschäfts</string>
 
     <string name="recognizer_camera_long_receipt_add_photos_hint">Lange Quittung? Fotos hinzufügen.</string>
-    <string name="recognizer_camera_initial_instruction">Richten Sie die linke und rechte Bonkante aus.\nLange Quittung? Machen Sie mehrere Fotos</string>
     <string name="recognizer_align_image_hint">Beginnen Sie hier mit dem nächsten Foto.</string>
     <string name="recognizer_blurry_image_tooltip">Das Bild scheint verschwommen zu sein. Du kannst\nVersuchen Sie es erneut und tippen Sie, um zu fokussieren.</string>
     <string name="recognizer_missing_data_tooltip">Daten fehlen? Du kannst immer noch zuschlagen\nMarkieren Sie das Häkchen, um den Scanvorgang abzuschließen</string>
     <string name="recognizer_blurry_image_btn">Zurückweisen</string>
-    <string name="recognizer_move_closer_suggestion">Komm näher</string>
-    <string name="recognizer_move_further_suggestion">Bewegen Sie sich weiter</string>
     <string name="recognizer_permission_dialog_title_permanently_denied">Kameraerlaubnis erforderlich</string>
     <string name="recognizer_permission_dialog_message_permanently_denied">Der Kamerazugriff ist derzeit deaktiviert. Aktivieren Sie ihn in den Einstellungen, um fortzufahren.</string>
     <string name="recognizer_permission_dialog_positive_button_permanently_denied">Gehen Sie zu Einstellungen</string>
@@ -72,7 +64,7 @@ You can apply your own translation on each string entry. This can be done by doi
     <string name="recognizer_permission_dialog_message">Diese App benötigt Zugriff auf Ihre Kamera, um fortzufahren.</string>
     <string name="recognizer_permission_dialog_negative_button">Abbrechen</string>
     <string name="recognizer_grant_access">Zugriff gewähren</string>
-    
+
 </resources>
 ```
 

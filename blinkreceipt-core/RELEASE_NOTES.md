@@ -382,3 +382,8 @@
 
 ## 2.3.0
 - Stability fixes and improvements
+
+## 2.3.1
+- Updated Gson to 2.14.0. It is now declared explicitly by this module rather than inherited transitively, so the version no longer depends on another library's dependency graph.
+- Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
+- Stability fixes and improvements

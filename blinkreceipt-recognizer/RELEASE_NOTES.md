@@ -761,8 +761,8 @@ Blink Receipt Recognizer
 
 ## 1.9.13
 - time_seconds
-  - Returns the purchase time in seconds for reporting and analysis. 
-- purchase_country 
+  - Returns the purchase time in seconds for reporting and analysis.
+- purchase_country
   - Indicates the country where the purchase occurred.
 
 ## 1.9.14
@@ -783,14 +783,14 @@ Blink Receipt Recognizer
 
 ## 2.0.2
 - Extraction and duplicate detection accuracy improvements
-- Overall extraction improvements 
+- Overall extraction improvements
 - Resolved an issue where Walmart Fuel receipts may have been flagged as fraudulent
 - Stability fixes and improvements
 
 ## 2.0.3
-- Overall improvements to barcode extraction 
-- Enhanced payment detail extraction 
-- Improved total extraction accuracy 
+- Overall improvements to barcode extraction
+- Enhanced payment detail extraction
+- Improved total extraction accuracy
 - Added support for Fuel products in Germany
 - Stability fixes and improvements
 
@@ -805,10 +805,10 @@ Blink Receipt Recognizer
 
 ## 2.2.0
 - Add internal restricted method for session-level receipt validity determination from confirmed frames
-- Fuel Extraction Improvements 
-  - Improved fuel grade extraction accuracy and reliability 
-- Stability Improvements 
-  - Resolved a crash that could occur when processing specific receipt formats. 
+- Fuel Extraction Improvements
+  - Improved fuel grade extraction accuracy and reliability
+- Stability Improvements
+  - Resolved a crash that could occur when processing specific receipt formats.
   - General performance and stability enhancements.
 
 ## 2.2.1
@@ -824,4 +824,9 @@ Blink Receipt Recognizer
 - Added `RecognizerView.initialized()` so integrators can check whether a view's recognizer session is still live before calling `takePicture()`, `confirmPicture()`, `preliminaryResults()` or `finishedScanning()`, instead of relying on catching exceptions.
 - `RecognizerView.confirmPicture()` now reports a terminated session through `CameraRecognizerCallback.onException()` rather than throwing, so a capture callback that arrives after teardown no longer crashes.
 - `RecognizerView.terminate()` now clears the view's scan options, so calls made on a terminated view fail consistently instead of depending on shared session state that another view instance may have already changed.
+- Stability fixes and improvements
+
+## 2.3.1
+- Updated Gson to 2.14.0. It is now declared explicitly by this module rather than inherited transitively, so the version no longer depends on another library's dependency graph.
+- Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
 - Stability fixes and improvements
