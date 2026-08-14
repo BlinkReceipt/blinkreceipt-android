@@ -11,7 +11,6 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.togetherWith
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -43,7 +42,6 @@ import com.actualplatform.activation.ScanReward
 import com.actualplatform.activation.models.PlacementLayout
 import com.actualplatform.activation.networking.HttpEnvironment
 import com.actualplatform.activation.networking.TestOptions
-import com.actualplatform.activation.theming.LocalActivationDarkTheme
 import com.actualplatform.android.activation.development.R
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
@@ -509,6 +507,8 @@ private data class RewardsData(
         ScanFinished,
         Promo,
         Boost,
+        BoostCreditEarned,
+        BoostCreditApplied,
     }
 }
 
@@ -519,6 +519,8 @@ private fun Rewards.toData(): RewardsData =
             is Rewards.ScanFinished -> RewardsData.Type.ScanFinished
             is Rewards.Promotion -> RewardsData.Type.Promo
             is Rewards.Boost -> RewardsData.Type.Boost
+            is Rewards.BoostCreditEarned -> RewardsData.Type.BoostCreditEarned
+            is Rewards.BoostCreditApplied -> RewardsData.Type.BoostCreditApplied
         },
         amount = this.amount.value,
         blinkReceiptId = this.blinkReceiptId,
@@ -530,6 +532,8 @@ private fun RewardsData.toModel(): Rewards =
         RewardsData.Type.ScanFinished -> Rewards.ScanFinished(this.blinkReceiptId, RewardPoint(this.amount))
         RewardsData.Type.Promo -> Rewards.Promotion(this.blinkReceiptId, RewardPoint(this.amount))
         RewardsData.Type.Boost -> Rewards.Boost(this.blinkReceiptId, RewardPoint(this.amount))
+        RewardsData.Type.BoostCreditEarned -> Rewards.BoostCreditEarned(this.blinkReceiptId, RewardPoint(this.amount))
+        RewardsData.Type.BoostCreditApplied -> Rewards.BoostCreditApplied(this.blinkReceiptId, RewardPoint(this.amount))
     }
 
 /** Reads an enum pref stored by [Enum.name], falling back to [default] for missing/unknown values. */

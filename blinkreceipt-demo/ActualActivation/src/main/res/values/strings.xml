@@ -8,7 +8,6 @@
     <string name="activations_editText_hint_phone">Phone Number</string>
     <string name="activations_section_user_identity">User Identity</string>
     <string name="activations_section_test_options">Test Options</string>
-    <string name="activations_label_test_ads">Test Ads</string>
     <string name="activations_label_test_mode">Test Mode</string>
     <string name="activations_section_debug_placements">Debug Force Placements</string>
     <string name="activations_section_scan_reward">Scan Reward</string>

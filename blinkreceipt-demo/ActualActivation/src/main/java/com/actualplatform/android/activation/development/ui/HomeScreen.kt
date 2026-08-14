@@ -66,6 +66,8 @@ internal fun HomeScreen(
             // Read-only settings summary
             SettingsSummary(settings = settings)
 
+            RegistrationStateBanner()
+
             Spacer(modifier = Modifier.height(16.dp))
             HorizontalDivider()
             Spacer(modifier = Modifier.height(16.dp))
@@ -107,6 +109,8 @@ internal fun HomeScreen(
                         is Rewards.ScanFinished -> "Scan"
                         is Rewards.Promotion -> "Promotion"
                         is Rewards.Boost -> "Boost"
+                        is Rewards.BoostCreditEarned -> "Credit Earned"
+                        is Rewards.BoostCreditApplied -> "Credit Applied"
                     }
                     Text(
                         text = "${index + 1}. $label: +${String.format(java.util.Locale.US, "%.2f", reward.amount.value)}\t${reward.blinkReceiptId}",
