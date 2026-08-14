@@ -95,3 +95,7 @@
 
 ## 2.3.0
 - Stability fixes and improvements
+
+## 2.3.1
+- Hardened the published R8/ProGuard rules so the `LogEvent` companion object keeps its name in the release AAR, matching the field that references it. Nothing was reachable through this in 2.3.0 — `LogEvent.NONE` is a `@JvmField` member resolved on the outer class — so no integration changes are required.
+- Stability fixes and improvements

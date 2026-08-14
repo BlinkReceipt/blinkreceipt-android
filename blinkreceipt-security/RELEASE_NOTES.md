@@ -95,3 +95,7 @@
 
 ## 2.3.0
 - Stability fixes and improvements
+
+## 2.3.1
+- Hardened the published R8/ProGuard rules so the `Crypto` and `License` companion objects keep their names in the release AAR, matching the field that references them. Nothing was reachable through this in 2.3.0 — `Crypto.NONE` and `License.NONE` are `@JvmField` members resolved on the outer class — so no integration changes are required.
+- Stability fixes and improvements

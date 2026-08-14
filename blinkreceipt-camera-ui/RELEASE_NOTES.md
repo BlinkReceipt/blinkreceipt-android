@@ -250,3 +250,6 @@
 
 ## 2.3.0
 - Stability fixes and improvements
+
+## 2.3.1
+- Stability fixes and improvements
