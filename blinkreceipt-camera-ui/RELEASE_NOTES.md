@@ -252,4 +252,6 @@
 - Stability fixes and improvements
 
 ## 2.3.1
+- Refreshed the Camera Preview UI/UX with a new one-time fullscreen guide shown before the camera opens on first launch, a new hint button with a "How to scan a receipt" dialog, and a refreshed default accent color, tooltip, and button styling.
+  - **BREAKING CHANGE**: Several resources behind the previous camera UI were removed as part of the redesign — `recognizer_receipt_edge`, `recognizer_camera_initial_instruction`, `recognizer_move_closer_suggestion`, and `recognizer_move_further_suggestion` strings; the `default_secondary_button_background`, `ic_torch_selector`, `primary_secondary_color_selector`, and `tooltip_secondary_action_button_selector` drawables; and the `BlinkTooltip` `declare-styleable` (its attributes are now top-level `<attr>` elements, so `R.styleable.BlinkTooltip` no longer exists). Overrides of the removed strings/drawables no longer take effect, and direct references to the removed drawables or styleable will not compile.
 - Stability fixes and improvements
