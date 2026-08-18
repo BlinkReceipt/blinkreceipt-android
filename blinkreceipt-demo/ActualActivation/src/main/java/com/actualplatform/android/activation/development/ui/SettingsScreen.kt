@@ -221,7 +221,8 @@ private fun EditModeContent(
         Spacer(modifier = Modifier.height(24.dp))
 
         // DO NOT SHOW Environment selection. It is NOT intended for public usage.
-        // DO NOT SHOW TestOptions.TestAds. It is no longer recommended.
+        // The Test Ads option is gone: TestOptions no longer declares an Ads value as of
+        // Activation 1.1.x, so Test Mode is the only test option left to surface.
         TestOptionsSection(
             testMode = testMode,
             onTestModeChange = { testMode = it },
