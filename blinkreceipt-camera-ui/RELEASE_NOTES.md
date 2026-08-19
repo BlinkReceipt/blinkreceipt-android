@@ -182,7 +182,7 @@
   - ***Breaking Changes***: Simplified Theming API
     - To streamline customization, some nested widget style attributes are now ignored in favor of new, more specific attributes. You will need to update your custom styles to use the new attributes.
       1. Top-Level Theme (BlinkRecognizerStyle)
-         - Deprecated & Ignored: ~~`tooltipTextColor`~~, ~~`android:enforceStatusBarContrast`~~, ~~`android:enforceNavigationBarContrast`~~, ~~`android:navigationBarColor`~~, ~~`android:statusBarColor`~~. 
+         - Deprecated & Ignored: ~~`tooltipTextColor`~~, ~~`android:enforceStatusBarContrast`~~, ~~`android:enforceNavigationBarContrast`~~, ~~`android:navigationBarColor`~~, ~~`android:statusBarColor`~~.
            - These attributes were often redundant or better handled by the application's base theme.
       2. Tooltip Style (blinkTooltipStyle)
          - Deprecated & Ignored: ~~`tooltipDirection`~~ and ~~`tooltipPlacement`~~.
@@ -197,7 +197,7 @@
     - New attributes have been added to provide more granular control over UI elements:
       1. For All Buttons (`torchButtonStyle`, `cancelButtonStyle`, `finishButtonStyle`, `retakeButtonStyle`, `captureButtonStyle`, & `confirmButtonStyle`):
          - `android:padding`: Provides direct control over the padding within each button.
-         - `android:contentDescription`: Allows setting a custom content description for accessibility. 
+         - `android:contentDescription`: Allows setting a custom content description for accessibility.
          - For the torch button, use `torchOnContentDescription` and `torchOffContentDescription`.
       2. For the Torch Button (`torchButtonStyle`):
            - `torchOnSrc` / `torchOffSrc`: Set distinct drawables for the torch's on and off states.
@@ -249,4 +249,9 @@
 - Stability fixes and improvements
 
 ## 2.3.0
+- Stability fixes and improvements
+
+## 2.3.1
+- Refreshed the Camera Preview UI/UX with a new one-time fullscreen guide shown before the camera opens on first launch, a new hint button with a "How to scan a receipt" dialog, and a refreshed default accent color, tooltip, and button styling.
+  - **BREAKING CHANGE**: Several resources behind the previous camera UI were removed as part of the redesign — `recognizer_receipt_edge`, `recognizer_camera_initial_instruction`, `recognizer_move_closer_suggestion`, and `recognizer_move_further_suggestion` strings; the `default_secondary_button_background`, `ic_torch_selector`, `primary_secondary_color_selector`, and `tooltip_secondary_action_button_selector` drawables; and the `BlinkTooltip` `declare-styleable` (its attributes are now top-level `<attr>` elements, so `R.styleable.BlinkTooltip` no longer exists). Overrides of the removed strings/drawables no longer take effect, and direct references to the removed drawables or styleable will not compile.
 - Stability fixes and improvements

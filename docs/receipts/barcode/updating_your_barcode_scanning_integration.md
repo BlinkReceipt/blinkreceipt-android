@@ -6,7 +6,7 @@
 > Starting from [BlinkReceipt SDK 2.0.0](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/2.0.0) onwards, ~~`:blinkreceipt-barcode`~~ is removed. Please see [CameraX migration guide](../../camerax_migration_guide.md) for more info.
 ---
 
-> Who is this guide for? This guide is for developers using [BlinkReceipt SDK 1.9.5](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.5) or newer, we already migrated to [Google MLKit Barcode](https://developers.google.com/ml-kit/vision/barcode-scanning). 
+> Who is this guide for? This guide is for developers using [BlinkReceipt SDK 1.9.5](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.5) or newer, we already migrated to [Google MLKit Barcode](https://developers.google.com/ml-kit/vision/barcode-scanning).
 > If you are implementing barcode scanning for the first time or upgrading from an older version, please read this carefully.
 
 Due to a migration to Google's MLKit for barcode scanning in SDK v1.9.5, there is a fundamental behavioral change in how [RecognizerView](https://htmlpreview.github.io/?https://raw.githubusercontent.com/BlinkReceipt/blinkreceipt-android/master/docs/blinkreceipt-barcode/com/microblink/barcode/RecognizerView.html)

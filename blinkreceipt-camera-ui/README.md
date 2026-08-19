@@ -353,7 +353,7 @@ In the previous section we mentioned how users could define their own theme and 
 
         <item name="torchOnContentDescription">@string/cd_torch_button_on</item>
         <item name="torchOffContentDescription">@string/cd_torch_button_off</item>
-    
+
         <!-- Torch Button Padding -->
         <item name="android:padding">0dp</item>
         <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
@@ -374,7 +374,7 @@ In the previous section we mentioned how users could define their own theme and 
         <item name="android:background">@drawable/default_secondary_button_background</item>
         <item name="android:colorAccent">?attr/colorSecondary</item>
         <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
-        
+
         <item name="android:contentDescription">"@null"</item>
         <!-- Cancel Button Padding -->
         <item name="android:padding">12dp</item>
@@ -392,8 +392,8 @@ In the previous section we mentioned how users could define their own theme and 
         <item name="android:background">@drawable/tooltip_secondary_action_button_selector</item>
         <item name="android:colorAccent">?attr/colorSecondary</item>
         <item name="android:colorPressedHighlight">?attr/colorSecondaryVariant</item>
-        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>    
-    
+        <item name="android:colorActivatedHighlight">?attr/colorPrimary</item>
+
         <!-- Finish Button Padding -->
         <item name="android:padding">0dp</item>
         <!-- Finish Icon -->

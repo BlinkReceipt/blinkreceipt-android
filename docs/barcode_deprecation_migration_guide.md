@@ -2,7 +2,7 @@
 
 This guide explains the deprecation of the **barcode scanning feature** in the BlinkReceipt Android SDK **2.0.0 and newer** and how to migrate if your application currently relies on it.
 
-## Who this applies to 
+## Who this applies to
 This change applies only to Android applications that:
 
 - Use the `blinkreceipt-barcode` module
@@ -54,7 +54,7 @@ dependencies {
     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.0.0"))
     implementation("com.microblink.blinkreceipt:blinkreceipt-core")
     // ...
-    
+
     implementation 'com.google.mlkit:barcode-scanning:17.2.0'
 }
 ```
@@ -72,7 +72,7 @@ When implementing your new barcode scanner, consider the following:
 -   **Feedback:** Provide feedback when a barcode is detected (e.g., a vibration or a sound).
 
 ### 4. Is ML Kit a 1:1 Replacement?
-Google ML Kit provides all the functionality that was available in the `:blinkreceipt-barcode` module, and more. It supports a wider range of barcode formats and offers better performance and accuracy. There are no known feature gaps. 
+Google ML Kit provides all the functionality that was available in the `:blinkreceipt-barcode` module, and more. It supports a wider range of barcode formats and offers better performance and accuracy. There are no known feature gaps.
 
 ### 5. Testing Checklist
 - ✅ Verify that the new barcode scanning dependency has been added correctly and the project builds without errors.
