@@ -34,8 +34,8 @@ androidxTestRunner = "1.6.2"
 junit = "4.13.2"
 
 # BlinkReceipt / Actual Platform
-blinkreceiptBom = "2.3.1"
-activationBom = "1.1.2"
+blinkreceiptBom = "2.4.0"
+activationBom = "1.2.0"
 
 # Third party
 barcodeScanning = "17.3.0"
