@@ -330,3 +330,9 @@
 
 ## 2.3.1
 - Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Stability fixes and improvements

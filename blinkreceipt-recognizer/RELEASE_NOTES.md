@@ -830,3 +830,15 @@ Blink Receipt Recognizer
 - Updated Gson to 2.14.0. It is now declared explicitly by this module rather than inherited transitively, so the version no longer depends on another library's dependency graph.
 - Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
 - Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Resolved an issue where text from a previous scan could carry into the next one, producing duplicated or merged content in `ScanResults`. The OCR parser reset is now a consume-once signal spent at the OCR call itself — and handed back if that call fails or returns no result — rather than being inferred from the frame index, which could advance on frames that never reached OCR (recognizer not yet initialized, an unusable bitmap, or a side lookup throwing).
+- Scan sessions are now generation-tracked, so a frame still queued from a superseded session can no longer consume or restore the parser reset belonging to the session that replaced it. This most commonly affected re-entry into the camera screen while a scan was still in flight.
+- Merchant logo detection failures no longer discard the frame they occurred on. Logo detection is a side lookup, so an exception there is now logged and the frame continues on to OCR instead of being dropped.
+- `BitmapUtils.copy()` now falls back to `ARGB_8888` when the source bitmap is `HARDWARE`-config or reports no config, instead of throwing. Callers passing their own bitmaps in through `ImageClient` previously lost the frame outright, either from `Bitmap.copy()` rejecting a mutable `HARDWARE` copy or from the later pixel read failing.
+- Added `BitmapFrame.resetParser()` and `BitmapFrame.resetParser(boolean)` to make the parser-reset decision explicit. When it is never set, the previous `frameIndex() <= 0` behavior still applies, so existing integrations are unaffected.
+- `Recognizer.initialize()` now logs a debug warning when it is called while a previous session is still active and its in-progress receipt is about to be discarded.
+- Stability fixes and improvements

@@ -255,3 +255,11 @@
 - Refreshed the Camera Preview UI/UX with a new one-time fullscreen guide shown before the camera opens on first launch, a new hint button with a "How to scan a receipt" dialog, and a refreshed default accent color, tooltip, and button styling.
   - **BREAKING CHANGE**: Several resources behind the previous camera UI were removed as part of the redesign — `recognizer_receipt_edge`, `recognizer_camera_initial_instruction`, `recognizer_move_closer_suggestion`, and `recognizer_move_further_suggestion` strings; the `default_secondary_button_background`, `ic_torch_selector`, `primary_secondary_color_selector`, and `tooltip_secondary_action_button_selector` drawables; and the `BlinkTooltip` `declare-styleable` (its attributes are now top-level `<attr>` elements, so `R.styleable.BlinkTooltip` no longer exists). Overrides of the removed strings/drawables no longer take effect, and direct references to the removed drawables or styleable will not compile.
 - Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Resolved an issue where returning to the camera screen from the background re-requested the camera permission and re-ran scan initialization on a scan already in progress. The permission is now requested once per camera screen rather than on every foreground resume.
+- Hardened scan observer registration so repeated initialization can no longer stack duplicate collectors on the same underlying flows, which could cause scan state and captured-frame updates to be handled more than once.
+- Stability fixes and improvements
