@@ -7,8 +7,8 @@ buildTools = "37.0.0"
 
 # Demo app version (versionCode / versionName are derived from these)
 versionMajor = "2"
-versionMinor = "3"
-versionPatch = "1"
+versionMinor = "4"
+versionPatch = "0"
 
 # Build tooling
 agp = "9.3.1"
