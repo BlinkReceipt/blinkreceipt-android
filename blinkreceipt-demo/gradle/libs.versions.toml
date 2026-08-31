@@ -11,7 +11,7 @@ versionMinor = "4"
 versionPatch = "0"
 
 # Build tooling
-agp = "9.3.2"
+agp = "9.3.1"
 kotlin = "2.2.21"
 
 # AndroidX
