@@ -431,3 +431,9 @@
 - **Fixed: calling an `AutoScrapeClient` companion member from Kotlin threw `NoSuchFieldError` at runtime.** In the 2.3.0 AAR the companion object had been renamed while the field referencing it kept its original name, so `AutoScrapeClient.clampInterval()`, `isAutoScrapeAccount()`, `decide()` and `aggregate()` compiled cleanly and then failed the first time they ran. The `DEFAULT_INTERVAL_HOURS` and `MIN_INTERVAL_HOURS` constants were unaffected (the compiler inlines them), as were Java callers. No integration changes are required, the example in the [Automated Scrape](https://microblink.github.io/blinkreceipt-android/digital_auto_scrape/) guide now works as written, and any local workaround that re-implemented the interval clamp can be replaced with the SDK call again.
 - Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
 - Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Stability fixes and improvements

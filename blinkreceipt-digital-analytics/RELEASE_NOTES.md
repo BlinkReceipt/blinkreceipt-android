@@ -100,3 +100,9 @@
 - Hardened the published R8/ProGuard rules so the `WorkerService` companion object keeps its name in the release AAR, matching the field that references it. Nothing was reachable through this in 2.3.0, so no integration changes are required.
 - Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
 - Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Stability fixes and improvements
