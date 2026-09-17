@@ -317,3 +317,6 @@
 
 ## 2.4.0
 - Stability fixes and improvements
+
+## 2.4.1
+- Stability fixes and improvements
