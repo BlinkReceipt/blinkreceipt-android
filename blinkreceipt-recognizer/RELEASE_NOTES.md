@@ -842,3 +842,7 @@ Blink Receipt Recognizer
 - Added `BitmapFrame.resetParser()` and `BitmapFrame.resetParser(boolean)` to make the parser-reset decision explicit. When it is never set, the previous `frameIndex() <= 0` behavior still applies, so existing integrations are unaffected.
 - `Recognizer.initialize()` now logs a debug warning when it is called while a previous session is still active and its in-progress receipt is about to be discarded.
 - Stability fixes and improvements
+
+## 2.4.1
+- Resolved an out-of-memory crash that could occur at the end of a scan while identifying the merchant from the receipt text.
+- Stability fixes and improvements

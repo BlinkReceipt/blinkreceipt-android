@@ -263,3 +263,6 @@
 - Resolved an issue where returning to the camera screen from the background re-requested the camera permission and re-ran scan initialization on a scan already in progress. The permission is now requested once per camera screen rather than on every foreground resume.
 - Hardened scan observer registration so repeated initialization can no longer stack duplicate collectors on the same underlying flows, which could cause scan state and captured-frame updates to be handled more than once.
 - Stability fixes and improvements
+
+## 2.4.1
+- Stability fixes and improvements
