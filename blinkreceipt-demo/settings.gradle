@@ -1,9 +1,14 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
-        mavenLocal()
+        gradlePluginPortal()
     }
 }
 
@@ -12,10 +17,33 @@ plugins {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
-        google()
+        // Locally published SDK builds (publishToMavenLocal) take precedence.
+        mavenLocal {
+            content {
+                includeGroupAndSubgroups("com.microblink.blinkreceipt")
+                includeGroupAndSubgroups("com.actualplatform")
+            }
+        }
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        // -SNAPSHOT builds of the BlinkReceipt and Activation SDKs published to Maven Central.
+        maven {
+            name = "mavenCentralSnapshots"
+            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+            mavenContent {
+                snapshotsOnly()
+                includeGroupAndSubgroups("com.microblink.blinkreceipt")
+                includeGroupAndSubgroups("com.actualplatform")
+            }
+        }
         mavenCentral()
-        mavenLocal()
     }
 }
 

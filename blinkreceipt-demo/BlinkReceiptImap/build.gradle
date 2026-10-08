@@ -79,6 +79,7 @@ kotlin {
 dependencies {
     implementation libs.material
     implementation libs.play.services.tasks
+    implementation libs.okio
 
     implementation libs.androidx.core.ktx
 
@@ -89,6 +90,4 @@ dependencies {
 
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.androidx.test.espresso.core
-
-    implementation libs.okio
 }
