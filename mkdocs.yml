@@ -1,6 +1,6 @@
 extra:
   blinkreceipt:
-    release: '2.4.1'
+    release: '2.5.0'
     next_release: '2.5.0'
 site_name: "BlinkReceipt"
 site_url: https://microblink.github.io/blinkreceipt-android/
