@@ -266,3 +266,9 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- Line-item names are no longer garbled by frames picked up while the user reviews a captured photo; the camera UI now keeps frame analysis paused during review.
+- In the activation flow, a scan that still has no merchant runs Trip Resolution before it is handed to the Activation SDK, adding about 3 seconds (at most 8).
+- Activation scans now start their scan session once activation becomes ready, even after the camera has opened, and a scan left without a session ends with an error. Adds the overridable `activation_scan_session_missing` string and rewords `activation_sdk_not_initialized`.
+- Stability fixes and improvements

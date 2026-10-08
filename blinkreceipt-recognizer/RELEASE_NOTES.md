@@ -846,3 +846,17 @@ Blink Receipt Recognizer
 ## 2.4.1
 - Resolved an out-of-memory crash that could occur at the end of a scan while identifying the merchant from the receipt text.
 - Stability fixes and improvements
+
+## 2.5.0
+- Requires activation SDK 1.3.0. Hosts using activations call `ActivationClient.initialize(privacy)` in `Application.onCreate()`, in either order with `BlinkReceiptSdk.initialize()`; until they do, activation features stay off and one error is logged instead of the SDK crashing.
+- Frames captured after the user has taken a photo no longer reach the OCR parser. Because the parser accumulates text across the frames of a session and resolves each line item by cross-frame vote, motion-blurred frames picked up while the user reviewed a capture could outvote the capture itself and corrupt line-item names.
+- Added `RecognizerView.holdFrameAnalysisAfterCapture(boolean)`, off by default. `takePicture()` pauses analysis frames at the shutter and resumes them once the photo is delivered, so existing integrations need no change. A host that shows the captured photo for review can turn this on to keep frames paused until `resumeFrameAnalysis()`, protecting line-item text from frames picked up during review. The bundled camera UI does this.
+- A capture that fails, including one the camera delivers but that cannot then be processed, is now reported through `CameraRecognizerCallback.onException()` instead of being dropped silently.
+- A captured photo is no longer discarded by the frame queue when a sharper preview frame is already held, and a queued capture is no longer displaced by a later preview frame.
+- Camera frames are no longer handed out while still referencing the buffer the next frame is converted into, which could overwrite a frame already queued for OCR and halves per-frame bitmap allocation at the same time.
+- Added Trip Resolution as a last-resort merchant lookup: when a US scan ends with no merchant, the SDK queries the Trip Resolution API for up to 4 seconds and fills `merchantName` with `merchantSource` `TRIP_RESOLUTION`. Apps that allow-list outbound traffic must allow `api.actualplatform.com`.
+- Added `RecognizerView.preliminaryResults(boolean tripResolution)`, which requests a preliminary snapshot that also runs Trip Resolution; such snapshots report `PreliminaryResult.tripResolutionRequested()`.
+- Merchant-detection signals are now passed to the Activation SDK through `ScanResults.merchantDetection`.
+- The `merchant_detection` payload sent with the summary and duplicate-search requests now keeps the receipt's phone number (the match source moved to `phone_match_source`) and includes `longtail_match`.
+- With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
+- Stability fixes and improvements

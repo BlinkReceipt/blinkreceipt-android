@@ -339,3 +339,10 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- `CameraView.captureImage()` now suspends analysis-frame delivery at the shutter. `onImageCaptured()` is unaffected and the camera stays bound. `RecognizerView` resumes delivery once the photo is delivered, so integrations using it need no change; a host that subclasses `CameraView` itself resumes with `resumeFrameAnalysis()`. A capture that fails resumes delivery and is reported through `onError()`; a subclass that receives `onImageCaptured()` but cannot use the frame should call `onCaptureFailed()` so the same happens.
+- Added `CameraView.suspendFrameAnalysis()`, `CameraView.resumeFrameAnalysis()`, and the protected `CameraView.isFrameAnalysisSuspended()` and `CameraView.onCaptureFailed()`.
+- `CameraView.captureImage()` no longer throws when called before the camera has bound; it reports the failure through `onError()` instead.
+- The camera now opens on Android 7.0–9 when only `CAMERA` is granted; `WRITE_EXTERNAL_STORAGE` is no longer required on any API level.
+- Stability fixes and improvements
