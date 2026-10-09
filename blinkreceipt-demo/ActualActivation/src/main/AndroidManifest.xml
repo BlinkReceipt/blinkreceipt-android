@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:name=".ActivationApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:label="@string/app_name"
@@ -28,6 +29,11 @@
         <meta-data
             android:name="com.microblink.LicenseKey"
             android:value="" />
+
+        <!-- App ID for GAM integration -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8446599816504132~2717343467"/>
 
     </application>
 

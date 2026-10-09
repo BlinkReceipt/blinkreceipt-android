@@ -9,6 +9,17 @@
     <string name="activations_section_user_identity">User Identity</string>
     <string name="activations_section_test_options">Test Options</string>
     <string name="activations_label_test_mode">Test Mode</string>
+    <string name="activations_section_privacy">Ad Consent</string>
+    <string name="activations_privacy_help">What a host app reports for the current user. UNKNOWN is an answer, not a gap: it restricts like OPTED_OUT. Applied to the activation client on Save and on every launch.</string>
+    <string name="activations_label_data_sale_or_sharing">Data sale or sharing</string>
+    <string name="activations_label_ad_personalization">Ad personalization</string>
+    <string name="activations_label_rdp_owner">gad_rdp owner (PUBLISHER: the SDK leaves it to the host, and this app never sets it; ACTUAL: the SDK writes it)</string>
+    <string name="activations_label_disclosure_version">Disclosure version</string>
+    <string name="activations_disclosure_version_help">ISO date of the privacy notice the user saw, e.g. 2026-07-30. Empty means no notice.</string>
+    <string name="activations_error_disclosure_version">Use an ISO date such as 2026-07-30, or leave it empty.</string>
+    <string name="activations_error_privacy_rejected">The activation SDK rejected these privacy values. Nothing was saved.</string>
+    <string name="activations_error_settings_rejected">The activation SDK rejected these settings. They were stored but not fully applied.</string>
+    <string name="activations_error_privacy_stored_rejected">The activation SDK rejects the stored privacy values, so the client is running on the defaults. Save corrected values.</string>
     <string name="activations_section_debug_placements">Debug Force Placements</string>
     <string name="activations_section_scan_reward">Scan Reward</string>
     <string name="activations_label_reward_points">Reward Points</string>

@@ -29,6 +29,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.actualplatform.activation.Activation
 import com.actualplatform.activation.ActivationClient
+import com.actualplatform.activation.BlinkPrivacy
 import com.actualplatform.activation.OffersWall
 import com.actualplatform.activation.RewardCurrency
 import com.actualplatform.activation.RewardCurrencyCodePosition
@@ -53,6 +54,7 @@ import com.microblink.camera.ui.CameraRecognizerOptions
 import com.microblink.camera.ui.CameraRecognizerResults
 import com.microblink.camera.ui.internal.parcelable
 import com.microblink.logcat.LogcatManager
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -203,6 +205,14 @@ internal class ActivationActivity : ComponentActivity() {
                     popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
                     entryProvider = entryProvider {
                         entry<ActivationRoute.OffersWall> { _ ->
+                            // OffersWall opens the scan session before onScanReceipt and
+                            // closes it when the callback returns, so the callback must suspend
+                            // for the whole scan experience. The launcher fires and returns
+                            // instantly; this deferred bridges the gap — created per launch,
+                            // completed by the launcher callback below.
+                            var scanCompletion by remember {
+                                mutableStateOf<CompletableDeferred<Unit>?>(null)
+                            }
                             val launcher = rememberLauncherForActivityResult(
                                 contract = CameraRecognizerContract(),
                             ) { result ->
@@ -228,6 +238,8 @@ internal class ActivationActivity : ComponentActivity() {
                                             .debug(TAG) { "OffersWall::onScanResult -> Cancelled" }
                                     }
                                 }
+                                scanCompletion?.complete(Unit)
+                                scanCompletion = null
                             }
 
                             val showHeader = prefs.getBoolean(PREF_SHOW_HEADER, true)
@@ -238,12 +250,18 @@ internal class ActivationActivity : ComponentActivity() {
                                         .debug(TAG) { "OffersWall::onScanReceipt -> launching camera" }
                                     lastScanResults = null
                                     lastScanError = null
+                                    val completion = CompletableDeferred<Unit>()
+                                    scanCompletion = completion
                                     launcher.launch(
                                         CameraRecognizerOptions.Builder()
                                             .options(scanOptions)
                                             .characteristics(cameraCharacteristics)
                                             .build()
                                     )
+                                    // Suspend until the camera round-trip delivers: returning
+                                    // early would end the scan session while the scan is still
+                                    // running and orphan the receipt it produces.
+                                    completion.await()
                                 },
                                 onDismiss = if (showHeader) {
                                     {
@@ -369,6 +387,10 @@ internal class ActivationActivity : ComponentActivity() {
         internal const val PREF_REWARD_ROUNDING = "activation_reward_rounding"
         internal const val PREF_REWARD_CURRENCY_IMAGE_LOCATIONS = "activation_reward_currency_image_locations"
         internal const val PREF_SHOW_HEADER = "activation_show_header"
+        internal const val PREF_PRIVACY_SELL_OR_SHARE_STATUS = "activation_privacy_sell_or_share_status"
+        internal const val PREF_PRIVACY_PERSONALIZATION_STATUS = "activation_privacy_personalization_status"
+        internal const val PREF_PRIVACY_DISCLOSURE_VERSION = "activation_privacy_disclosure_version"
+        internal const val PREF_PRIVACY_RDP_OWNER = "activation_privacy_rdp_owner"
 
         internal const val DEFAULT_CURRENCY_NAME = "Points"
         // Reward defaults mirror RewardCurrency.default() so a fresh install matches the SDK baseline.
@@ -401,8 +423,11 @@ internal class ActivationActivity : ComponentActivity() {
             rewardRounding: RewardCurrencyRounding,
             rewardCurrencyImageLocations: Set<RewardCurrencyImageLocation>,
             scanRewardPoints: RewardPoint,
+            privacy: BlinkPrivacy,
         ) {
             with(ActivationClient.instance) {
+                // First: the next ad request reads these, whatever else is being changed.
+                this.privacy = privacy
                 environment = HttpEnvironment.Production
 
                 testOptions = buildSet {
@@ -450,6 +475,48 @@ internal class ActivationActivity : ComponentActivity() {
             }
         }
 
+        /**
+         * Initializes the activation client with the privacy values saved in Settings, or the
+         * unresolved defaults on a fresh install. Since Activation 1.3.0 this is the only way to
+         * start the SDK: [ActivationClient.instance] throws until it has run, so it is called from
+         * `Application.onCreate()`.
+         *
+         * Only the value is guarded, by [privacyOrDefault]. [ActivationClient.initialize]
+         * publishes the client before finishing its setup, so a failure inside it is the client's,
+         * not the value's, and retrying it would land on a half-built instance.
+         */
+        @JvmStatic
+        fun initializeActivationClient(context: Context) {
+            val stored = PrivacySettings.from(context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE))
+            ActivationClient.initialize(privacyOrDefault(stored, PrivacySettings::toBlinkPrivacy))
+        }
+
+        /**
+         * The privacy values to give the client: [stored], or the unresolved defaults when
+         * [toPrivacy] rejects it. Settings asks the SDK before storing a value, so a rejection
+         * here means the value was stored before the SDK gained the precondition, or the
+         * precondition depends on the date; Settings shows the rejection while it lasts. A stored
+         * value is replayed on every launch and every save, so it must not take the app down and
+         * leave Settings, where it gets corrected, unreachable, nor keep the other settings from
+         * being applied. The defaults being rejected too means the SDK itself is broken, which
+         * propagates.
+         */
+        internal fun privacyOrDefault(
+            stored: PrivacySettings,
+            toPrivacy: (PrivacySettings) -> BlinkPrivacy,
+        ): BlinkPrivacy =
+            try {
+                toPrivacy(stored)
+            } catch (e: IllegalArgumentException) {
+                LogcatManager.event().exception {
+                    IllegalStateException(
+                        "Stored privacy $stored rejected; using ${PrivacySettings.DEFAULT}",
+                        e,
+                    )
+                }
+                toPrivacy(PrivacySettings.DEFAULT)
+            }
+
         @JvmStatic
         fun applySettings(context: Context) {
             val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -490,6 +557,7 @@ internal class ActivationActivity : ComponentActivity() {
                     DEFAULT_CURRENCY_IMAGE_LOCATIONS
                 ),
                 scanRewardPoints = RewardPoint(prefs.getNumberAsFloat(PREF_SCAN_REWARD, SettingsData.DEFAULT_SCAN_REWARD).toDouble()),
+                privacy = privacyOrDefault(PrivacySettings.from(prefs), PrivacySettings::toBlinkPrivacy),
             )
         }
 
