@@ -30,11 +30,6 @@
             android:name="com.microblink.LicenseKey"
             android:value="" />
 
-        <!-- App ID for GAM integration -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8446599816504132~2717343467"/>
-
     </application>
 
 </manifest>
