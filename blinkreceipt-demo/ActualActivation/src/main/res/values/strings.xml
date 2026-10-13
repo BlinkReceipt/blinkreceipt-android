@@ -29,6 +29,20 @@
     <string name="activations_toast_settings_saved">Settings saved</string>
     <string name="activations_offers_chooser_subtitle">Choose how the offer wall handles receipt scanning.</string>
     <string name="activations_offers_browser_button">Promotions</string>
+    <string name="activations_offer_feed_button">Custom Offer Feed</string>
+    <string name="activations_offer_feed_title">Offer Feed (host)</string>
+    <string name="activations_offer_feed_refresh">Refresh feed</string>
+    <string name="activations_offer_feed_loading">Loading feed…</string>
+    <string name="activations_offer_feed_not_loaded">Feed not loaded yet (offerFeed is null).</string>
+    <string name="activations_offer_feed_empty">Feed loaded — no groups to show (empty feed).</string>
+    <string name="activations_offer_feed_open_wall">Open offer wall (no destination)</string>
+    <string name="activations_offer_feed_open_stale_offer">Open unavailable offer (stale id)</string>
+    <string name="activations_offer_feed_group_header">%1$s (id=%2$d)</string>
+    <string name="activations_offer_feed_see_all">See all</string>
+    <string name="activations_offer_feed_badge_buy">BUY %1$d</string>
+    <string name="activations_offer_feed_badge_spend">SPEND %1$s</string>
+    <string name="activations_offer_feed_badge_clipped">CLIPPED</string>
+    <string name="activations_offer_feed_badge_clip">CLIP</string>
     <string name="activations_section_ui">UI</string>
     <string name="activations_offers_show_header">Show Header</string>
     <string name="activations_section_current_settings">Current Settings</string>
