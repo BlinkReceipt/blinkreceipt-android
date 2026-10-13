@@ -38,6 +38,7 @@ internal fun HomeScreen(
     totalRewardsEarned: Double,
     rewardEvents: List<Rewards>,
     onOffersWallClick: () -> Unit,
+    onOfferFeedClick: () -> Unit,
     onSettingsClick: () -> Unit,
     onThemesClick: () -> Unit,
     onCustomizeAppearanceClick: () -> Unit,
@@ -78,6 +79,10 @@ internal fun HomeScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(stringResource(R.string.activations_offers_browser_button))
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+            OutlinedButton(onClick = onOfferFeedClick, modifier = Modifier.fillMaxWidth()) {
+                Text(stringResource(R.string.activations_offer_feed_button))
             }
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedButton(onClick = onSettingsClick, modifier = Modifier.fillMaxWidth()) {
