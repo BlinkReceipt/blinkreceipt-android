@@ -853,3 +853,14 @@ Blink Receipt Recognizer
 - Added `RecognizerView.preliminaryResults(boolean tripResolution)`, which requests a preliminary snapshot that also runs Trip Resolution; such snapshots report `PreliminaryResult.tripResolutionRequested()`.
 - Improved receipt data extraction: Ongoing updates help capture merchant, date, total, and product details more accurately.
 - Stability fixes and improvements
+
+## 2.6.0
+- Requires activation SDK 1.3.0. Hosts using activations call `ActivationClient.initialize(privacy)` in `Application.onCreate()`, in either order with `BlinkReceiptSdk.initialize()`; until they do, activation features stay off and one error is logged instead of the SDK crashing.
+- Frames captured after the user has taken a photo no longer reach the OCR parser. Because the parser accumulates text across the frames of a session and resolves each line item by cross-frame vote, motion-blurred frames picked up while the user reviewed a capture could outvote the capture itself and corrupt line-item names.
+- Added `RecognizerView.holdFrameAnalysisAfterCapture(boolean)`, off by default. `takePicture()` pauses analysis frames at the shutter and resumes them once the photo is delivered, so existing integrations need no change. A host that shows the captured photo for review can turn this on to keep frames paused until `resumeFrameAnalysis()`, protecting line-item text from frames picked up during review. The bundled camera UI does this.
+- A capture that fails, including one the camera delivers but that cannot then be processed, is now reported through `CameraRecognizerCallback.onException()` instead of being dropped silently.
+- A captured photo is no longer discarded by the frame queue when a sharper preview frame is already held, and a queued capture is no longer displaced by a later preview frame.
+- Camera frames are no longer handed out while still referencing the buffer the next frame is converted into, which could overwrite a frame already queued for OCR and halves per-frame bitmap allocation at the same time.
+- Merchant-detection signals are now passed to the Activation SDK through `ScanResults.merchantDetection`.
+- With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
+- Stability fixes and improvements
