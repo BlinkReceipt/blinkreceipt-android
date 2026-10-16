@@ -38,6 +38,7 @@ import com.actualplatform.activation.RewardCurrencyLabelStyle
 import com.actualplatform.activation.RewardCurrencyMessagingTextStyle
 import com.actualplatform.activation.RewardCurrencyRounding
 import com.actualplatform.android.activation.development.R
+import com.microblink.logcat.LogcatManager
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.Locale
@@ -66,6 +67,7 @@ internal data class SettingsData(
     val currencyImageLocations: Set<RewardCurrencyImageLocation>,
     val scanReward: Double,
     val forcePlacements: Set<String>,
+    val privacy: PrivacySettings,
 ) {
     companion object {
         const val DEFAULT_SCAN_REWARD = 10.0f
@@ -86,9 +88,14 @@ internal data class SettingsData(
             currencyImageLocations = prefs.getEnumSet(ActivationActivity.PREF_REWARD_CURRENCY_IMAGE_LOCATIONS, ActivationActivity.DEFAULT_CURRENCY_IMAGE_LOCATIONS),
             scanReward = prefs.getNumberAsFloat(ActivationActivity.PREF_SCAN_REWARD, DEFAULT_SCAN_REWARD).toDouble(),
             forcePlacements = prefs.getStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, emptySet()) ?: emptySet(),
+            privacy = PrivacySettings.from(prefs),
         )
     }
 }
+
+/** [label], then the SDK's reason for [rejected] on its own line when it gave one. */
+internal fun withReason(label: String, rejected: IllegalArgumentException): String =
+    rejected.message?.takeUnless { it.isBlank() }?.let { reason -> "$label\n$reason" } ?: label
 
 /** Read-only settings summary — not a route, used inline on the home screen. */
 @Composable
@@ -115,6 +122,12 @@ internal fun SettingsSummary(
             SectionHeader(stringResource(R.string.activations_section_debug_placements))
             SettingsSummaryRow(stringResource(R.string.activations_label_force_placements), settings.forcePlacements.joinToString(", "))
         }
+
+        SectionHeader(stringResource(R.string.activations_section_privacy))
+        SettingsSummaryRow(stringResource(R.string.activations_label_data_sale_or_sharing), settings.privacy.sellOrShareStatus.name)
+        SettingsSummaryRow(stringResource(R.string.activations_label_ad_personalization), settings.privacy.personalizationStatus.name)
+        SettingsSummaryRow(stringResource(R.string.activations_label_rdp_owner), settings.privacy.rdpOwner.name)
+        SettingsSummaryRow(stringResource(R.string.activations_label_disclosure_version), settings.privacy.disclosureVersion ?: "—")
 
         SectionHeader(stringResource(R.string.activations_section_ui))
         SettingsSummaryRow(stringResource(R.string.activations_offers_show_header), if (settings.showHeader) "On" else "Off")
@@ -170,6 +183,12 @@ private fun EditModeContent(
     val context = LocalContext.current
     val initial = remember { SettingsData.from(prefs) }
 
+    // Judged on the stored values, as the client received them at launch, not on the edits in
+    // progress: while the SDK rejects them the client runs on the defaults, and only a save of
+    // values it accepts changes that. Cleared once such a save is stored.
+    var storedPrivacyRejection by remember { mutableStateOf(initial.privacy.rejection()) }
+    val storedPrivacyRejectedLabel = stringResource(R.string.activations_error_privacy_stored_rejected)
+
     var email by remember { mutableStateOf(initial.email) }
     var phone by remember { mutableStateOf(initial.phone) }
     var emailError by remember { mutableStateOf<String?>(null) }
@@ -180,6 +199,11 @@ private fun EditModeContent(
     var scanReward by remember {
         mutableStateOf(ScanRewardFormat.format(initial.scanReward))
     }
+    var sellOrShareStatus by remember { mutableStateOf(initial.privacy.sellOrShareStatus) }
+    var personalizationStatus by remember { mutableStateOf(initial.privacy.personalizationStatus) }
+    var rdpOwner by remember { mutableStateOf(initial.privacy.rdpOwner) }
+    var disclosureVersion by remember { mutableStateOf(initial.privacy.disclosureVersion ?: "") }
+    var disclosureVersionError by remember { mutableStateOf<String?>(null) }
     var rewardCurrencyName by remember { mutableStateOf(initial.currencyName) }
     var rewardPayoutPercentage by remember {
         mutableStateOf(
@@ -230,6 +254,24 @@ private fun EditModeContent(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        PrivacySection(
+            sellOrShareStatus = sellOrShareStatus,
+            onDataSaleOrSharingChange = { sellOrShareStatus = it },
+            personalizationStatus = personalizationStatus,
+            onAdPersonalizationChange = { personalizationStatus = it },
+            disclosureVersion = disclosureVersion,
+            onDisclosureVersionChange = {
+                disclosureVersion = it
+                disclosureVersionError = null
+            },
+            disclosureVersionError = disclosureVersionError,
+            storedRejection = storedPrivacyRejection?.let { withReason(storedPrivacyRejectedLabel, it) },
+            rdpOwner = rdpOwner,
+            onRdpOwnerChange = { rdpOwner = it },
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
         UiSettingsSection(
             showHeader = showHeader,
             onShowHeaderChange = { showHeader = it },
@@ -275,6 +317,9 @@ private fun EditModeContent(
         Spacer(modifier = Modifier.height(24.dp))
 
         val emailErrorLabel = stringResource(R.string.activations_error_invalid_email)
+        val disclosureVersionErrorLabel = stringResource(R.string.activations_error_disclosure_version)
+        val privacyRejectedLabel = stringResource(R.string.activations_error_privacy_rejected)
+        val settingsRejectedLabel = stringResource(R.string.activations_error_settings_rejected)
         Button(
             onClick = {
                 val trimmedEmail = email.trim()
@@ -284,6 +329,31 @@ private fun EditModeContent(
                 }
                 emailError = null
 
+                // Everything the SDK would reject is checked here, before a single value is
+                // written: a setting that reaches preferences is re-applied on every launch, so
+                // storing one that cannot be applied breaks the app until it is corrected.
+                if (!PrivacySettings.isValidDisclosureVersion(disclosureVersion)) {
+                    disclosureVersionError = disclosureVersionErrorLabel
+                    return@Button
+                }
+                disclosureVersionError = null
+
+                // Judged as the values will be read back from preferences, so what the SDK
+                // accepts here is exactly what it is given on the next launch.
+                val pendingPrivacy = PrivacySettings.fromStored(
+                    sellOrShareStatus = sellOrShareStatus.name,
+                    personalizationStatus = personalizationStatus.name,
+                    disclosureVersion = disclosureVersion,
+                    rdpOwner = rdpOwner.name,
+                )
+                pendingPrivacy.rejection()?.let { rejected ->
+                    LogcatManager.event().exception {
+                        IllegalStateException("Privacy $pendingPrivacy rejected on save; nothing stored", rejected)
+                    }
+                    Toast.makeText(context, withReason(privacyRejectedLabel, rejected), Toast.LENGTH_LONG).show()
+                    return@Button
+                }
+
                 prefs.edit()
                     .putString(ActivationActivity.PREF_EMAIL, trimmedEmail)
                     .putString(ActivationActivity.PREF_PHONE, phone.trim())
@@ -291,6 +361,10 @@ private fun EditModeContent(
                     .putBoolean(ActivationActivity.PREF_SHOW_HEADER, showHeader)
                     .putStringSet(ActivationActivity.PREF_FORCE_PLACEMENTS, forcePlacements)
                     .putFloat(ActivationActivity.PREF_SCAN_REWARD, scanReward.toFloatOrNull() ?: SettingsData.DEFAULT_SCAN_REWARD)
+                    .putString(ActivationActivity.PREF_PRIVACY_SELL_OR_SHARE_STATUS, sellOrShareStatus.name)
+                    .putString(ActivationActivity.PREF_PRIVACY_PERSONALIZATION_STATUS, personalizationStatus.name)
+                    .putString(ActivationActivity.PREF_PRIVACY_RDP_OWNER, rdpOwner.name)
+                    .putString(ActivationActivity.PREF_PRIVACY_DISCLOSURE_VERSION, disclosureVersion.trim())
                     .putString(ActivationActivity.PREF_REWARD_CURRENCY_NAME, rewardCurrencyName.trim())
                     .putString(ActivationActivity.PREF_REWARD_CURRENCY_CODE, rewardCurrencyCode.trim())
                     .putFloat(ActivationActivity.PREF_REWARD_PAYOUT_PERCENTAGE, rewardPayoutPercentage.toFloatOrNull()?.coerceIn(
@@ -305,12 +379,19 @@ private fun EditModeContent(
                     .putStringSet(ActivationActivity.PREF_REWARD_CURRENCY_IMAGE_LOCATIONS, currencyImageLocations.map { it.name }.toSet())
                     .apply()
 
+                // The stored privacy is now pendingPrivacy, which the SDK accepted above.
+                storedPrivacyRejection = null
+
                 try {
                     ActivationActivity.applySettings(context)
                     Toast.makeText(context, R.string.activations_toast_settings_saved, Toast.LENGTH_SHORT).show()
                     onBack()
                 } catch (e: IllegalArgumentException) {
-                    Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+                    // Defensive: the checks above cover everything the SDK rejects today. Reaching
+                    // here means a new precondition was added without one, so surface it rather
+                    // than leave the screen looking like the save worked.
+                    LogcatManager.event().exception { e }
+                    Toast.makeText(context, withReason(settingsRejectedLabel, e), Toast.LENGTH_LONG).show()
                 }
             },
             modifier = Modifier.fillMaxWidth(),
