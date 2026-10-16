@@ -108,3 +108,6 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- Stability fixes and improvements

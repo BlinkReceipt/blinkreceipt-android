@@ -339,3 +339,7 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- The camera now opens on Android 7.0–9 when only `CAMERA` is granted; `WRITE_EXTERNAL_STORAGE` is no longer required on any API level.
+- Stability fixes and improvements
