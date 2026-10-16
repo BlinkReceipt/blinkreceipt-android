@@ -1,9 +1,8 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
-        mavenLocal()
+        gradlePluginPortal()
     }
 }
 
@@ -12,10 +11,21 @@ plugins {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
-        google()
-        mavenCentral()
+        // Locally published SDK builds (publishToMavenLocal) take precedence.
         mavenLocal()
+        google()
+        maven {
+            name = "mavenCentralSnapshots"
+            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+            mavenContent {
+                snapshotsOnly()
+                includeGroupAndSubgroups("com.microblink.blinkreceipt")
+                includeGroupAndSubgroups("com.actualplatform")
+            }
+        }
+        mavenCentral()
     }
 }
 

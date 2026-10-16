@@ -396,3 +396,7 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- Added `ScanResults.merchantDetection`, carrying the merchant-detection signals (phone, logo, text, tax ID, CSV, product-search, long-tail and Trip Resolution matches) behind the scan's merchant; `null` when no detector produced one.
+- Stability fixes and improvements

@@ -11,6 +11,7 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.togetherWith
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -29,6 +30,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.actualplatform.activation.Activation
 import com.actualplatform.activation.ActivationClient
+import com.actualplatform.activation.BlinkPrivacy
 import com.actualplatform.activation.OffersWall
 import com.actualplatform.activation.RewardCurrency
 import com.actualplatform.activation.RewardCurrencyCodePosition
@@ -43,6 +45,7 @@ import com.actualplatform.activation.models.PlacementLayout
 import com.actualplatform.activation.networking.HttpEnvironment
 import com.actualplatform.activation.networking.TestOptions
 import com.actualplatform.android.activation.development.R
+import com.actualplatform.android.activation.development.ui.feed.OfferFeedHostScreen
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
 import com.microblink.FrameCharacteristics
@@ -53,6 +56,7 @@ import com.microblink.camera.ui.CameraRecognizerOptions
 import com.microblink.camera.ui.CameraRecognizerResults
 import com.microblink.camera.ui.internal.parcelable
 import com.microblink.logcat.LogcatManager
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -182,6 +186,35 @@ internal class ActivationActivity : ComponentActivity() {
                 }
                 var lastScanError by remember { mutableStateOf<String?>(null) }
 
+                val clearScanState = {
+                    lastScanResults = null
+                    lastScanError = null
+                }
+
+                // Shared by every OffersWall this activity hosts, so a scan started from the
+                // Promotions wall or from the Custom Offer Feed lands on the Home screen the same way.
+                val onScanResult: (CameraRecognizerResults) -> Unit = { result ->
+                    when (result) {
+                        is CameraRecognizerResults.Success -> {
+                            LogcatManager.event()
+                                .debug(TAG) { "onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
+                            lastScanResults = result.results
+                            lastScanError = null
+                        }
+
+                        is CameraRecognizerResults.Exception -> {
+                            LogcatManager.event()
+                                .debug(TAG) { "onScanResult -> Exception: ${result.exception}" }
+                            lastScanError = result.exception.message ?: "Unknown error"
+                            lastScanResults = null
+                        }
+
+                        CameraRecognizerResults.Cancelled -> {
+                            LogcatManager.event().debug(TAG) { "onScanResult -> Cancelled" }
+                        }
+                    }
+                }
+
                 LaunchedEffect(Unit) {
                     ActivationClient.instance.rewards.collect { reward ->
                         LogcatManager.event()
@@ -203,54 +236,36 @@ internal class ActivationActivity : ComponentActivity() {
                     popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
                     entryProvider = entryProvider {
                         entry<ActivationRoute.OffersWall> { _ ->
-                            val launcher = rememberLauncherForActivityResult(
-                                contract = CameraRecognizerContract(),
-                            ) { result ->
-                                LogcatManager.event()
-                                    .debug(TAG) { "OffersWall::launcher callback -> $result" }
-                                when (result) {
-                                    is CameraRecognizerResults.Success -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
-                                        lastScanResults = result.results
-                                        lastScanError = null
-                                    }
-
-                                    is CameraRecognizerResults.Exception -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Exception: ${result.exception}" }
-                                        lastScanError = result.exception.message ?: "Unknown error"
-                                        lastScanResults = null
-                                    }
-
-                                    CameraRecognizerResults.Cancelled -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Cancelled" }
-                                    }
-                                }
-                            }
+                            val onScanReceipt = rememberScanReceipt(
+                                logTag = "OffersWall",
+                                onLaunch = clearScanState,
+                                onScanResult = onScanResult,
+                            )
 
                             val showHeader = prefs.getBoolean(PREF_SHOW_HEADER, true)
 
                             OffersWall(
-                                onScanReceipt = {
-                                    LogcatManager.event()
-                                        .debug(TAG) { "OffersWall::onScanReceipt -> launching camera" }
-                                    lastScanResults = null
-                                    lastScanError = null
-                                    launcher.launch(
-                                        CameraRecognizerOptions.Builder()
-                                            .options(scanOptions)
-                                            .characteristics(cameraCharacteristics)
-                                            .build()
-                                    )
-                                },
+                                onScanReceipt = onScanReceipt,
                                 onDismiss = if (showHeader) {
                                     {
                                         LogcatManager.event().debug(TAG) { "OffersWall::onDismiss" }
                                         backStack.removeLastOrNull()
                                     }
                                 } else null,
+                            )
+                        }
+
+                        entry<ActivationRoute.OfferFeedHost> { _ ->
+                            // The launcher lives in this entry, which stays composed while the
+                            // feed screen shows its own OffersWall, so a scan started from that
+                            // wall survives the camera round-trip.
+                            OfferFeedHostScreen(
+                                onBack = { backStack.removeLastOrNull() },
+                                onScanReceipt = rememberScanReceipt(
+                                    logTag = "OfferFeedHost",
+                                    onLaunch = clearScanState,
+                                    onScanResult = onScanResult,
+                                ),
                             )
                         }
 
@@ -324,13 +339,23 @@ internal class ActivationActivity : ComponentActivity() {
                                 totalRewardsEarned = totalRewardsEarned,
                                 rewardEvents = rewardEvents,
                                 onOffersWallClick = {
-                                    lastScanResults = null
-                                    lastScanError = null
+                                    clearScanState()
 
                                     if (settings.email.isEmpty() && settings.phone.isEmpty()) {
                                         backStack.add(ActivationRoute.SettingsEditor)
                                     } else {
                                         backStack.add(ActivationRoute.OffersWall)
+                                    }
+                                },
+                                onOfferFeedClick = {
+                                    clearScanState()
+
+                                    // An unregistered client answers refreshOfferFeed() with
+                                    // NOT_REGISTERED, so ask for an identity first, as Promotions does.
+                                    if (settings.email.isEmpty() && settings.phone.isEmpty()) {
+                                        backStack.add(ActivationRoute.SettingsEditor)
+                                    } else {
+                                        backStack.add(ActivationRoute.OfferFeedHost)
                                     }
                                 },
                                 onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
@@ -346,6 +371,50 @@ internal class ActivationActivity : ComponentActivity() {
                     },
                 )
             }
+        }
+    }
+
+    /**
+     * The camera bridge for an [OffersWall]'s `onScanReceipt`.
+     *
+     * OffersWall opens the scan session before onScanReceipt and closes it when the callback
+     * returns, so the callback must suspend for the whole scan experience. The launcher fires and
+     * returns instantly; a deferred bridges the gap — created per launch, completed by the launcher
+     * callback once the camera round-trip delivers.
+     *
+     * Call it from the nav entry that hosts the wall: the launcher and the pending deferred are
+     * remembered there, and must outlive the camera activity sitting on top.
+     */
+    @Composable
+    private fun rememberScanReceipt(
+        logTag: String,
+        onLaunch: () -> Unit,
+        onScanResult: (CameraRecognizerResults) -> Unit,
+    ): suspend () -> Unit {
+        var scanCompletion by remember { mutableStateOf<CompletableDeferred<Unit>?>(null) }
+        val launcher = rememberLauncherForActivityResult(
+            contract = CameraRecognizerContract(),
+        ) { result ->
+            LogcatManager.event().debug(TAG) { "$logTag::launcher callback -> $result" }
+            onScanResult(result)
+            scanCompletion?.complete(Unit)
+            scanCompletion = null
+        }
+
+        return {
+            LogcatManager.event().debug(TAG) { "$logTag::onScanReceipt -> launching camera" }
+            onLaunch()
+            val completion = CompletableDeferred<Unit>()
+            scanCompletion = completion
+            launcher.launch(
+                CameraRecognizerOptions.Builder()
+                    .options(scanOptions)
+                    .characteristics(cameraCharacteristics)
+                    .build()
+            )
+            // Suspend until the camera round-trip delivers: returning early would end the scan
+            // session while the scan is still running and orphan the receipt it produces.
+            completion.await()
         }
     }
 
@@ -369,6 +438,10 @@ internal class ActivationActivity : ComponentActivity() {
         internal const val PREF_REWARD_ROUNDING = "activation_reward_rounding"
         internal const val PREF_REWARD_CURRENCY_IMAGE_LOCATIONS = "activation_reward_currency_image_locations"
         internal const val PREF_SHOW_HEADER = "activation_show_header"
+        internal const val PREF_PRIVACY_SELL_OR_SHARE_STATUS = "activation_privacy_sell_or_share_status"
+        internal const val PREF_PRIVACY_PERSONALIZATION_STATUS = "activation_privacy_personalization_status"
+        internal const val PREF_PRIVACY_DISCLOSURE_VERSION = "activation_privacy_disclosure_version"
+        internal const val PREF_PRIVACY_RDP_OWNER = "activation_privacy_rdp_owner"
 
         internal const val DEFAULT_CURRENCY_NAME = "Points"
         // Reward defaults mirror RewardCurrency.default() so a fresh install matches the SDK baseline.
@@ -401,8 +474,11 @@ internal class ActivationActivity : ComponentActivity() {
             rewardRounding: RewardCurrencyRounding,
             rewardCurrencyImageLocations: Set<RewardCurrencyImageLocation>,
             scanRewardPoints: RewardPoint,
+            privacy: BlinkPrivacy,
         ) {
             with(ActivationClient.instance) {
+                // First: the next ad request reads these, whatever else is being changed.
+                this.privacy = privacy
                 environment = HttpEnvironment.Production
 
                 testOptions = buildSet {
@@ -450,6 +526,48 @@ internal class ActivationActivity : ComponentActivity() {
             }
         }
 
+        /**
+         * Initializes the activation client with the privacy values saved in Settings, or the
+         * unresolved defaults on a fresh install. Since Activation 1.3.0 this is the only way to
+         * start the SDK: [ActivationClient.instance] throws until it has run, so it is called from
+         * `Application.onCreate()`.
+         *
+         * Only the value is guarded, by [privacyOrDefault]. [ActivationClient.initialize]
+         * publishes the client before finishing its setup, so a failure inside it is the client's,
+         * not the value's, and retrying it would land on a half-built instance.
+         */
+        @JvmStatic
+        fun initializeActivationClient(context: Context) {
+            val stored = PrivacySettings.from(context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE))
+            ActivationClient.initialize(privacyOrDefault(stored, PrivacySettings::toBlinkPrivacy))
+        }
+
+        /**
+         * The privacy values to give the client: [stored], or the unresolved defaults when
+         * [toPrivacy] rejects it. Settings asks the SDK before storing a value, so a rejection
+         * here means the value was stored before the SDK gained the precondition, or the
+         * precondition depends on the date; Settings shows the rejection while it lasts. A stored
+         * value is replayed on every launch and every save, so it must not take the app down and
+         * leave Settings, where it gets corrected, unreachable, nor keep the other settings from
+         * being applied. The defaults being rejected too means the SDK itself is broken, which
+         * propagates.
+         */
+        internal fun privacyOrDefault(
+            stored: PrivacySettings,
+            toPrivacy: (PrivacySettings) -> BlinkPrivacy,
+        ): BlinkPrivacy =
+            try {
+                toPrivacy(stored)
+            } catch (e: IllegalArgumentException) {
+                LogcatManager.event().exception {
+                    IllegalStateException(
+                        "Stored privacy $stored rejected; using ${PrivacySettings.DEFAULT}",
+                        e,
+                    )
+                }
+                toPrivacy(PrivacySettings.DEFAULT)
+            }
+
         @JvmStatic
         fun applySettings(context: Context) {
             val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -490,6 +608,7 @@ internal class ActivationActivity : ComponentActivity() {
                     DEFAULT_CURRENCY_IMAGE_LOCATIONS
                 ),
                 scanRewardPoints = RewardPoint(prefs.getNumberAsFloat(PREF_SCAN_REWARD, SettingsData.DEFAULT_SCAN_REWARD).toDouble()),
+                privacy = privacyOrDefault(PrivacySettings.from(prefs), PrivacySettings::toBlinkPrivacy),
             )
         }
 

@@ -111,7 +111,7 @@ Product Updates
     - Improved memory management
     - Updated OCR models
     - Costco Date improvements
-    - Overall parser improvements
+    - Overall receipt recognition improvements
 Bug Fixes
     - Detect internal banner id
     - E-Receipts pass description from native context
@@ -134,7 +134,7 @@ Third Party Libraries
 - Merchant detection fixes
 - Amazon improvements
 - Support for purchase type
-- Parser improvements
+- Receipt recognition improvements
 
 ## 1.2.4
 
@@ -771,7 +771,7 @@ Blink Receipt Recognizer
 ## 2.0.0
 - **BREAKING CHANGE** Removed all classes related to the old Camera framework in favor of the new CameraX integration
 - **BREAKING CHANGE** Removed `:blinkreceipt-barcode-recognizer` module since it is redundant and moved all of its classes within this module.
-- Revert fix to CPR-1233: Slow behavior of Android SDK
+- Reverted an earlier change that addressed slow SDK performance
 - Stability fixes and improvements
 
 ## 2.0.1
@@ -835,14 +835,32 @@ Blink Receipt Recognizer
 - Stability fixes and improvements
 
 ## 2.4.0
-- Resolved an issue where text from a previous scan could carry into the next one, producing duplicated or merged content in `ScanResults`. The OCR parser reset is now a consume-once signal spent at the OCR call itself — and handed back if that call fails or returns no result — rather than being inferred from the frame index, which could advance on frames that never reached OCR (recognizer not yet initialized, an unusable bitmap, or a side lookup throwing).
-- Scan sessions are now generation-tracked, so a frame still queued from a superseded session can no longer consume or restore the parser reset belonging to the session that replaced it. This most commonly affected re-entry into the camera screen while a scan was still in flight.
+- Resolved an issue where text from a previous scan could carry into the next one, producing duplicated or merged content in `ScanResults`. The reset that starts a new scan's text from scratch is now a consume-once signal spent at the OCR call itself — and handed back if that call fails or returns no result — rather than being inferred from the frame index, which could advance on frames that never reached OCR (recognizer not yet initialized, an unusable bitmap, or a side lookup throwing).
+- Scan sessions are now generation-tracked, so a frame still queued from a superseded session can no longer consume or restore the text reset belonging to the session that replaced it. This most commonly affected re-entry into the camera screen while a scan was still in flight.
 - Merchant logo detection failures no longer discard the frame they occurred on. Logo detection is a side lookup, so an exception there is now logged and the frame continues on to OCR instead of being dropped.
 - `BitmapUtils.copy()` now falls back to `ARGB_8888` when the source bitmap is `HARDWARE`-config or reports no config, instead of throwing. Callers passing their own bitmaps in through `ImageClient` previously lost the frame outright, either from `Bitmap.copy()` rejecting a mutable `HARDWARE` copy or from the later pixel read failing.
-- Added `BitmapFrame.resetParser()` and `BitmapFrame.resetParser(boolean)` to make the parser-reset decision explicit. When it is never set, the previous `frameIndex() <= 0` behavior still applies, so existing integrations are unaffected.
+- Added `BitmapFrame.resetParser()` and `BitmapFrame.resetParser(boolean)` to control explicitly whether a frame starts the scan's text from scratch. When it is never set, the previous `frameIndex() <= 0` behavior still applies, so existing integrations are unaffected.
 - `Recognizer.initialize()` now logs a debug warning when it is called while a previous session is still active and its in-progress receipt is about to be discarded.
 - Stability fixes and improvements
 
 ## 2.4.1
 - Resolved an out-of-memory crash that could occur at the end of a scan while identifying the merchant from the receipt text.
+- Stability fixes and improvements
+
+## 2.5.0
+- Added Trip Resolution as a last-resort merchant lookup: when a US scan ends with no merchant, the SDK queries the Trip Resolution API for up to 4 seconds and fills `merchantName` with `merchantSource` `TRIP_RESOLUTION`. Apps that allow-list outbound traffic must allow `api.actualplatform.com`.
+- The `merchant_detection` payload sent with the summary and duplicate-search requests now keeps the receipt's phone number (the match source moved to `phone_match_source`) and includes `longtail_match`.
+- Added `RecognizerView.preliminaryResults(boolean tripResolution)`, which requests a preliminary snapshot that also runs Trip Resolution; such snapshots report `PreliminaryResult.tripResolutionRequested()`.
+- Improved receipt data extraction: Ongoing updates help capture merchant, date, total, and product details more accurately.
+- Stability fixes and improvements
+
+## 2.6.0
+- Requires activation SDK 1.3.0. Hosts using activations call `ActivationClient.initialize(privacy)` in `Application.onCreate()`, in either order with `BlinkReceiptSdk.initialize()`; until they do, activation features stay off and one error is logged instead of the SDK crashing.
+- Frames captured after the user has taken a photo no longer reach the OCR parser. Because the parser accumulates text across the frames of a session and resolves each line item by cross-frame vote, motion-blurred frames picked up while the user reviewed a capture could outvote the capture itself and corrupt line-item names.
+- Added `RecognizerView.holdFrameAnalysisAfterCapture(boolean)`, off by default. `takePicture()` pauses analysis frames at the shutter and resumes them once the photo is delivered, so existing integrations need no change. A host that shows the captured photo for review can turn this on to keep frames paused until `resumeFrameAnalysis()`, protecting line-item text from frames picked up during review. The bundled camera UI does this.
+- A capture that fails, including one the camera delivers but that cannot then be processed, is now reported through `CameraRecognizerCallback.onException()` instead of being dropped silently.
+- A captured photo is no longer discarded by the frame queue when a sharper preview frame is already held, and a queued capture is no longer displaced by a later preview frame.
+- Camera frames are no longer handed out while still referencing the buffer the next frame is converted into, which could overwrite a frame already queued for OCR and halves per-frame bitmap allocation at the same time.
+- Merchant-detection signals are now passed to the Activation SDK through `ScanResults.merchantDetection`.
+- With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
 - Stability fixes and improvements
