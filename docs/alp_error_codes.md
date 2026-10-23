@@ -11,3 +11,4 @@ Codes which are returned via the Account Linking SDK callbacks when calling `ver
 |INVALID_CREDENTIALS| 1051  | Login failed on the retailer’s site due to invalid credentials                                                 |
 |INTERNAL_ERROR| 1009  | An unexpected error occurred during login or parsing                                                           |
 |UNSUPPORTED_RETAILER| 1052  | This retailer is not currently supported                                                           |
+|REAUTHENTICATION_REQUIRED| 1010  | The retailer asked for a human step (MFA, e-mail code, password reset, CAPTCHA or a login page) during a background or order fetch session, where the SDK does not prompt. The account needs the user to sign in again in the foreground before it is retried |

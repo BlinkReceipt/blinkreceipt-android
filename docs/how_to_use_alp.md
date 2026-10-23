@@ -161,6 +161,7 @@ returned.
 The failure callback returns an `AccountLinkingException` as well as the retailer ID for which the failure occurred.
 If user was logged out since the last `verify` or `orders` call or some additional action is required from the user, the
 failure callback can return an exception with the code `VERIFICATION_NEEDED`, which means you'll have to handle it like described in the [Verifying Accounts](#verifying-accounts-optional) section.
+If the retailer asks for a human step at a moment when the SDK does not prompt (an `orders` session, for example in the background), the code is `REAUTHENTICATION_REQUIRED` instead: no WebView is returned, the session is over, and the account needs a foreground `verify` before the next `orders` call.
 
 #### Grabbing Orders Example
 
