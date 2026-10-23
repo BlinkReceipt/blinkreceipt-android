@@ -43,6 +43,11 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
                     // if verification is needed, you should attempt to retrieve orders while the app is in the foreground,
                     // and show the exception.view to the end user so he can complete the required verification
                 }
+                if(exception.code == REAUTHENTICATION_REQUIRED) {
+                    // the retailer asked for a human step (MFA, e-mail code, CAPTCHA, login page) and the SDK did not
+                    // prompt: stop scheduling background work for this account until the user has verified it
+                    // again in the foreground
+                }
 
                 continuation.resume(Result.failure())
             }, success = { retailerId, results, remaining, uuid ->
@@ -93,6 +98,11 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
             if (exception.code() == AccountLinkingCodes.VERIFICATION_NEEDED) {
                 // if verification is needed, you should attempt to retrieve orders while the app is in the foreground,
                 // and show the exception.view to the end user so he can complete the required verification
+            }
+            if (exception.code() == AccountLinkingCodes.REAUTHENTICATION_REQUIRED) {
+                // the retailer asked for a human step (MFA, e-mail code, CAPTCHA, login page) and the SDK did not
+                // prompt: stop scheduling background work for this account until the user has verified it
+                // again in the foreground
             }
 
             future.setException(exception);
