@@ -266,3 +266,7 @@
 
 ## 2.4.1
 - Stability fixes and improvements
+
+## 2.5.0
+- In the activation flow, a scan that still has no merchant runs Trip Resolution before it is handed to the Activation SDK, adding about 3 seconds (at most 8).
+- Stability fixes and improvements

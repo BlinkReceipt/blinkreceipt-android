@@ -41,6 +41,8 @@ The `:blinkreceipt-barcode` module has been completely removed. The following cl
 -   `com.microblink.barcode.RecognizerClient`
 -   And all other public APIs within the `com.microblink.barcode.*` package.
 
+UPC product lookup, previously `com.microblink.barcode.RecognizerClient`, is available again in `blinkreceipt-recognizer` as `com.microblink.RecognizerClient`: `new RecognizerClient().lookup(upc)` returns a `Task<ProductLookup>`. Pass a `CancellationToken` as `lookup(upc, token)` to cancel the request. Kotlin callers can use `lookup(upc, cts.token).await(cts)`, which needs `org.jetbrains.kotlinx:kotlinx-coroutines-play-services`.
+
 ---
 
 ## Migration Steps
