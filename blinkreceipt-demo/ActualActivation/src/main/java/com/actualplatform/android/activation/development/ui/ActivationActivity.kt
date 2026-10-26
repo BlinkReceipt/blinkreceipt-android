@@ -11,6 +11,7 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.togetherWith
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -44,6 +45,7 @@ import com.actualplatform.activation.models.PlacementLayout
 import com.actualplatform.activation.networking.HttpEnvironment
 import com.actualplatform.activation.networking.TestOptions
 import com.actualplatform.android.activation.development.R
+import com.actualplatform.android.activation.development.ui.feed.OfferFeedHostScreen
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
 import com.microblink.FrameCharacteristics
@@ -184,6 +186,35 @@ internal class ActivationActivity : ComponentActivity() {
                 }
                 var lastScanError by remember { mutableStateOf<String?>(null) }
 
+                val clearScanState = {
+                    lastScanResults = null
+                    lastScanError = null
+                }
+
+                // Shared by every OffersWall this activity hosts, so a scan started from the
+                // Promotions wall or from the Custom Offer Feed lands on the Home screen the same way.
+                val onScanResult: (CameraRecognizerResults) -> Unit = { result ->
+                    when (result) {
+                        is CameraRecognizerResults.Success -> {
+                            LogcatManager.event()
+                                .debug(TAG) { "onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
+                            lastScanResults = result.results
+                            lastScanError = null
+                        }
+
+                        is CameraRecognizerResults.Exception -> {
+                            LogcatManager.event()
+                                .debug(TAG) { "onScanResult -> Exception: ${result.exception}" }
+                            lastScanError = result.exception.message ?: "Unknown error"
+                            lastScanResults = null
+                        }
+
+                        CameraRecognizerResults.Cancelled -> {
+                            LogcatManager.event().debug(TAG) { "onScanResult -> Cancelled" }
+                        }
+                    }
+                }
+
                 LaunchedEffect(Unit) {
                     ActivationClient.instance.rewards.collect { reward ->
                         LogcatManager.event()
@@ -205,70 +236,36 @@ internal class ActivationActivity : ComponentActivity() {
                     popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
                     entryProvider = entryProvider {
                         entry<ActivationRoute.OffersWall> { _ ->
-                            // OffersWall opens the scan session before onScanReceipt and
-                            // closes it when the callback returns, so the callback must suspend
-                            // for the whole scan experience. The launcher fires and returns
-                            // instantly; this deferred bridges the gap — created per launch,
-                            // completed by the launcher callback below.
-                            var scanCompletion by remember {
-                                mutableStateOf<CompletableDeferred<Unit>?>(null)
-                            }
-                            val launcher = rememberLauncherForActivityResult(
-                                contract = CameraRecognizerContract(),
-                            ) { result ->
-                                LogcatManager.event()
-                                    .debug(TAG) { "OffersWall::launcher callback -> $result" }
-                                when (result) {
-                                    is CameraRecognizerResults.Success -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Success, blinkReceiptId=${result.results?.blinkReceiptId()}" }
-                                        lastScanResults = result.results
-                                        lastScanError = null
-                                    }
-
-                                    is CameraRecognizerResults.Exception -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Exception: ${result.exception}" }
-                                        lastScanError = result.exception.message ?: "Unknown error"
-                                        lastScanResults = null
-                                    }
-
-                                    CameraRecognizerResults.Cancelled -> {
-                                        LogcatManager.event()
-                                            .debug(TAG) { "OffersWall::onScanResult -> Cancelled" }
-                                    }
-                                }
-                                scanCompletion?.complete(Unit)
-                                scanCompletion = null
-                            }
+                            val onScanReceipt = rememberScanReceipt(
+                                logTag = "OffersWall",
+                                onLaunch = clearScanState,
+                                onScanResult = onScanResult,
+                            )
 
                             val showHeader = prefs.getBoolean(PREF_SHOW_HEADER, true)
 
                             OffersWall(
-                                onScanReceipt = {
-                                    LogcatManager.event()
-                                        .debug(TAG) { "OffersWall::onScanReceipt -> launching camera" }
-                                    lastScanResults = null
-                                    lastScanError = null
-                                    val completion = CompletableDeferred<Unit>()
-                                    scanCompletion = completion
-                                    launcher.launch(
-                                        CameraRecognizerOptions.Builder()
-                                            .options(scanOptions)
-                                            .characteristics(cameraCharacteristics)
-                                            .build()
-                                    )
-                                    // Suspend until the camera round-trip delivers: returning
-                                    // early would end the scan session while the scan is still
-                                    // running and orphan the receipt it produces.
-                                    completion.await()
-                                },
+                                onScanReceipt = onScanReceipt,
                                 onDismiss = if (showHeader) {
                                     {
                                         LogcatManager.event().debug(TAG) { "OffersWall::onDismiss" }
                                         backStack.removeLastOrNull()
                                     }
                                 } else null,
+                            )
+                        }
+
+                        entry<ActivationRoute.OfferFeedHost> { _ ->
+                            // The launcher lives in this entry, which stays composed while the
+                            // feed screen shows its own OffersWall, so a scan started from that
+                            // wall survives the camera round-trip.
+                            OfferFeedHostScreen(
+                                onBack = { backStack.removeLastOrNull() },
+                                onScanReceipt = rememberScanReceipt(
+                                    logTag = "OfferFeedHost",
+                                    onLaunch = clearScanState,
+                                    onScanResult = onScanResult,
+                                ),
                             )
                         }
 
@@ -342,13 +339,23 @@ internal class ActivationActivity : ComponentActivity() {
                                 totalRewardsEarned = totalRewardsEarned,
                                 rewardEvents = rewardEvents,
                                 onOffersWallClick = {
-                                    lastScanResults = null
-                                    lastScanError = null
+                                    clearScanState()
 
                                     if (settings.email.isEmpty() && settings.phone.isEmpty()) {
                                         backStack.add(ActivationRoute.SettingsEditor)
                                     } else {
                                         backStack.add(ActivationRoute.OffersWall)
+                                    }
+                                },
+                                onOfferFeedClick = {
+                                    clearScanState()
+
+                                    // An unregistered client answers refreshOfferFeed() with
+                                    // NOT_REGISTERED, so ask for an identity first, as Promotions does.
+                                    if (settings.email.isEmpty() && settings.phone.isEmpty()) {
+                                        backStack.add(ActivationRoute.SettingsEditor)
+                                    } else {
+                                        backStack.add(ActivationRoute.OfferFeedHost)
                                     }
                                 },
                                 onSettingsClick = { backStack.add(ActivationRoute.SettingsEditor) },
@@ -364,6 +371,50 @@ internal class ActivationActivity : ComponentActivity() {
                     },
                 )
             }
+        }
+    }
+
+    /**
+     * The camera bridge for an [OffersWall]'s `onScanReceipt`.
+     *
+     * OffersWall opens the scan session before onScanReceipt and closes it when the callback
+     * returns, so the callback must suspend for the whole scan experience. The launcher fires and
+     * returns instantly; a deferred bridges the gap — created per launch, completed by the launcher
+     * callback once the camera round-trip delivers.
+     *
+     * Call it from the nav entry that hosts the wall: the launcher and the pending deferred are
+     * remembered there, and must outlive the camera activity sitting on top.
+     */
+    @Composable
+    private fun rememberScanReceipt(
+        logTag: String,
+        onLaunch: () -> Unit,
+        onScanResult: (CameraRecognizerResults) -> Unit,
+    ): suspend () -> Unit {
+        var scanCompletion by remember { mutableStateOf<CompletableDeferred<Unit>?>(null) }
+        val launcher = rememberLauncherForActivityResult(
+            contract = CameraRecognizerContract(),
+        ) { result ->
+            LogcatManager.event().debug(TAG) { "$logTag::launcher callback -> $result" }
+            onScanResult(result)
+            scanCompletion?.complete(Unit)
+            scanCompletion = null
+        }
+
+        return {
+            LogcatManager.event().debug(TAG) { "$logTag::onScanReceipt -> launching camera" }
+            onLaunch()
+            val completion = CompletableDeferred<Unit>()
+            scanCompletion = completion
+            launcher.launch(
+                CameraRecognizerOptions.Builder()
+                    .options(scanOptions)
+                    .characteristics(cameraCharacteristics)
+                    .build()
+            )
+            // Suspend until the camera round-trip delivers: returning early would end the scan
+            // session while the scan is still running and orphan the receipt it produces.
+            completion.await()
         }
     }
 
