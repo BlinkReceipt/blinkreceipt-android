@@ -1,6 +1,6 @@
 package com.actualplatform.android.activation.development
 
-import com.actualplatform.activation.BlinkPrivacy
+import com.actualplatform.activation.Privacy
 import com.actualplatform.activation.ConsentState
 import com.actualplatform.activation.RdpOwner
 import com.actualplatform.android.activation.development.ui.ActivationActivity
@@ -27,17 +27,17 @@ internal class ActivationClientInitializationTest {
 
     private val converted = mutableListOf<PrivacySettings>()
 
-    private fun rejecting(vararg rejected: PrivacySettings): (PrivacySettings) -> BlinkPrivacy = { settings ->
+    private fun rejecting(vararg rejected: PrivacySettings): (PrivacySettings) -> Privacy = { settings ->
         converted += settings
         require(settings !in rejected) { "rejected" }
-        settings.toBlinkPrivacy()
+        settings.toPrivacy()
     }
 
     @Test
     fun the_stored_values_are_used_when_the_sdk_accepts_them() {
         val privacy = ActivationActivity.privacyOrDefault(stored, rejecting())
 
-        assertEquals(stored.toBlinkPrivacy(), privacy)
+        assertEquals(stored.toPrivacy(), privacy)
         assertEquals(listOf(stored), converted)
     }
 
@@ -45,7 +45,7 @@ internal class ActivationClientInitializationTest {
     fun stored_values_the_sdk_rejects_are_replaced_by_the_unresolved_defaults() {
         val privacy = ActivationActivity.privacyOrDefault(stored, rejecting(stored))
 
-        assertEquals(PrivacySettings.DEFAULT.toBlinkPrivacy(), privacy)
+        assertEquals(PrivacySettings.DEFAULT.toPrivacy(), privacy)
         assertEquals(listOf(stored, PrivacySettings.DEFAULT), converted)
     }
 

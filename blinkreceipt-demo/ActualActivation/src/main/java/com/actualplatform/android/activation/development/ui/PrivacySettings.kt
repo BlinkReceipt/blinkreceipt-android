@@ -1,7 +1,7 @@
 package com.actualplatform.android.activation.development.ui
 
 import android.content.SharedPreferences
-import com.actualplatform.activation.BlinkPrivacy
+import com.actualplatform.activation.Privacy
 import com.actualplatform.activation.ConsentState
 import com.actualplatform.activation.RdpOwner
 
@@ -19,8 +19,8 @@ internal data class PrivacySettings(
     val disclosureVersion: String?,
     val rdpOwner: RdpOwner,
 ) {
-    fun toBlinkPrivacy(): BlinkPrivacy =
-        BlinkPrivacy(
+    fun toPrivacy(): Privacy =
+        Privacy(
             sellOrShareStatus = sellOrShareStatus,
             personalizationStatus = personalizationStatus,
             disclosureVersion = disclosureVersion?.takeIf { it.isNotBlank() },
@@ -34,7 +34,7 @@ internal data class PrivacySettings(
      * throws other than an objection to the value is not the value's problem and propagates.
      */
     fun rejection(
-        toPrivacy: (PrivacySettings) -> BlinkPrivacy = PrivacySettings::toBlinkPrivacy,
+        toPrivacy: (PrivacySettings) -> Privacy = PrivacySettings::toPrivacy,
     ): IllegalArgumentException? =
         try {
             toPrivacy(this)

@@ -30,7 +30,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.actualplatform.activation.Activation
 import com.actualplatform.activation.ActivationClient
-import com.actualplatform.activation.BlinkPrivacy
+import com.actualplatform.activation.Privacy
 import com.actualplatform.activation.OffersWall
 import com.actualplatform.activation.RewardCurrency
 import com.actualplatform.activation.RewardCurrencyCodePosition
@@ -474,7 +474,7 @@ internal class ActivationActivity : ComponentActivity() {
             rewardRounding: RewardCurrencyRounding,
             rewardCurrencyImageLocations: Set<RewardCurrencyImageLocation>,
             scanRewardPoints: RewardPoint,
-            privacy: BlinkPrivacy,
+            privacy: Privacy,
         ) {
             with(ActivationClient.instance) {
                 // First: the next ad request reads these, whatever else is being changed.
@@ -539,7 +539,7 @@ internal class ActivationActivity : ComponentActivity() {
         @JvmStatic
         fun initializeActivationClient(context: Context) {
             val stored = PrivacySettings.from(context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE))
-            ActivationClient.initialize(privacyOrDefault(stored, PrivacySettings::toBlinkPrivacy))
+            ActivationClient.initialize(privacyOrDefault(stored, PrivacySettings::toPrivacy))
         }
 
         /**
@@ -554,8 +554,8 @@ internal class ActivationActivity : ComponentActivity() {
          */
         internal fun privacyOrDefault(
             stored: PrivacySettings,
-            toPrivacy: (PrivacySettings) -> BlinkPrivacy,
-        ): BlinkPrivacy =
+            toPrivacy: (PrivacySettings) -> Privacy,
+        ): Privacy =
             try {
                 toPrivacy(stored)
             } catch (e: IllegalArgumentException) {
@@ -608,7 +608,7 @@ internal class ActivationActivity : ComponentActivity() {
                     DEFAULT_CURRENCY_IMAGE_LOCATIONS
                 ),
                 scanRewardPoints = RewardPoint(prefs.getNumberAsFloat(PREF_SCAN_REWARD, SettingsData.DEFAULT_SCAN_REWARD).toDouble()),
-                privacy = privacyOrDefault(PrivacySettings.from(prefs), PrivacySettings::toBlinkPrivacy),
+                privacy = privacyOrDefault(PrivacySettings.from(prefs), PrivacySettings::toPrivacy),
             )
         }
 

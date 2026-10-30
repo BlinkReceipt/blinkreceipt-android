@@ -47,7 +47,7 @@ internal class PrivacySettingsTest {
     @Test
     fun a_blank_disclosure_version_means_no_notice_was_seen() {
         assertNull(PrivacySettings.fromStored(null, null, "   ", null).disclosureVersion)
-        assertNull(PrivacySettings.fromStored(null, null, "", null).toBlinkPrivacy().disclosureVersion)
+        assertNull(PrivacySettings.fromStored(null, null, "", null).toPrivacy().disclosureVersion)
     }
 
     @Test
@@ -114,7 +114,7 @@ internal class PrivacySettingsTest {
                 personalizationStatus = ConsentState.NOT_OPTED_OUT,
                 disclosureVersion = "2026-07-30",
                 rdpOwner = RdpOwner.PUBLISHER,
-            ).toBlinkPrivacy()
+            ).toPrivacy()
 
         assertEquals(ConsentState.OPTED_OUT, privacy.sellOrShareStatus)
         assertEquals(ConsentState.NOT_OPTED_OUT, privacy.personalizationStatus)
