@@ -11,6 +11,9 @@ internal sealed interface ActivationRoute : NavKey {
     data object OffersWall : ActivationRoute
 
     @Serializable
+    data object OfferFeedHost : ActivationRoute
+
+    @Serializable
     data object SettingsEditor : ActivationRoute
 
     @Serializable

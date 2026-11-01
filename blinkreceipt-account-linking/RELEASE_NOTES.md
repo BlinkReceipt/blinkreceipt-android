@@ -443,3 +443,6 @@ accountLinkingClient.orders(
 - Stability fixes and improvements
 - new `REAUTHENTICATION_REQUIRED` (1010) error code: the retailer asked for a human step during a background or order fetch session, the account needs the user to sign in again in the foreground
 - script codes 400 and 1005 are reported as `PARSING_FAILURE` again instead of `INTERNAL_ERROR` (bitwise `or` in the code mapping since 2022)
+
+## 2.5.1
+- Stability fixes and improvements
