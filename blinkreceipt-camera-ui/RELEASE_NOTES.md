@@ -276,5 +276,5 @@
 - Activation scans now start their scan session once activation becomes ready, even after the camera has opened, and a scan left without a session ends with an error. Adds the overridable `activation_scan_session_missing` string and rewords `activation_sdk_not_initialized`.
 - Stability fixes and improvements
 
-## 2.5.2
+## 3.0.0
 - Stability fixes and improvements

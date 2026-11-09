@@ -865,5 +865,5 @@ Blink Receipt Recognizer
 - With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
 - Stability fixes and improvements
 
-## 2.5.2
+## 3.0.0
 - Stability fixes and improvements
