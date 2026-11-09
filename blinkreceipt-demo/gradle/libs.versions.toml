@@ -6,9 +6,9 @@ targetSdk = "36"
 buildTools = "37.0.0"
 
 # Demo app version (versionCode / versionName are derived from these)
-versionMajor = "2"
-versionMinor = "5"
-versionPatch = "1"
+versionMajor = "3"
+versionMinor = "0"
+versionPatch = "0"
 
 # Build tooling
 agp = "9.3.1"
@@ -34,7 +34,7 @@ androidxTestRunner = "1.6.2"
 junit = "4.13.2"
 
 # BlinkReceipt / Actual Platform
-blinkreceiptBom = "2.5.1"
+blinkreceiptBom = "3.0.0-20261105.141212-1"
 activationBom = "1.3.1"
 
 # Third party

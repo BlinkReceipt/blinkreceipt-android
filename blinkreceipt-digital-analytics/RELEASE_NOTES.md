@@ -115,3 +115,6 @@
 
 ## 2.5.1
 - Stability fixes and improvements
+
+## 3.0.0
+- Stability fixes and improvements

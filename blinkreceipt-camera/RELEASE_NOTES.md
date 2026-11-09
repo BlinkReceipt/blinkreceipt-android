@@ -349,3 +349,6 @@
 - Added `CameraView.suspendFrameAnalysis()`, `CameraView.resumeFrameAnalysis()`, and the protected `CameraView.isFrameAnalysisSuspended()` and `CameraView.onCaptureFailed()`.
 - `CameraView.captureImage()` no longer throws when called before the camera has bound; it reports the failure through `onError()` instead.
 - Stability fixes and improvements
+
+## 3.0.0
+- Stability fixes and improvements
