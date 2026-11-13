@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import com.actualplatform.android.activation.development.R
 import com.google.gson.GsonBuilder
-import com.microblink.core.ScanResults
+import com.actualplatform.receipt.core.ScanResults
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -15,9 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.blinkreceipt.surveys.databinding.ActivityMainBinding;
-import com.microblink.surveys.SurveyFragment;
-import com.microblink.surveys.SurveyLoader;
-import com.microblink.surveys.SurveyViewModel;
+import com.actualplatform.receipt.surveys.SurveyFragment;
+import com.actualplatform.receipt.surveys.SurveyLoader;
+import com.actualplatform.receipt.surveys.SurveyViewModel;
 
 public class MainActivity extends AppCompatActivity {
 

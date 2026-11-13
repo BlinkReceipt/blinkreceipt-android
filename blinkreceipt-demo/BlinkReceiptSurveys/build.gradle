@@ -78,8 +78,8 @@ dependencies {
 
     implementation libs.androidx.core.ktx
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.surveys
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.surveys
 
     testImplementation libs.junit
 

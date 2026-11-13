@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.blinkreceipt.ocr.R;
 import com.blinkreceipt.ocr.TypeValueUtils;
-import com.microblink.core.Product;
+import com.actualplatform.receipt.core.Product;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

@@ -76,8 +76,8 @@ dependencies {
 
     implementation libs.androidx.core.ktx
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.account.linking
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.account.linking
 
     testImplementation libs.junit
 

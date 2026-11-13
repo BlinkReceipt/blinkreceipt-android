@@ -15,10 +15,10 @@ import com.blinkreceipt.digital.imap.databinding.ActivityMainBinding
 import com.blinkreceipt.digital.imap.databinding.CredentialsViewBinding
 import com.google.android.gms.tasks.Tasks
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.microblink.core.InitializeCallback
-import com.microblink.core.ScanResults
-import com.microblink.digital.*
-import com.microblink.digital.internal.account
+import com.actualplatform.receipt.core.InitializeCallback
+import com.actualplatform.receipt.core.ScanResults
+import com.actualplatform.receipt.digital.*
+import com.actualplatform.receipt.digital.internal.account
 
 class MainActivity : AppCompatActivity() {
 

@@ -15,9 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.actualplatform.android.activation.development.ui.ActivationActivity
-import com.microblink.FrameCharacteristics
-import com.microblink.ScanOptions
-import com.microblink.camera.ui.CameraCharacteristics
+import com.actualplatform.receipt.FrameCharacteristics
+import com.actualplatform.receipt.ScanOptions
+import com.actualplatform.receipt.camera.ui.CameraCharacteristics
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

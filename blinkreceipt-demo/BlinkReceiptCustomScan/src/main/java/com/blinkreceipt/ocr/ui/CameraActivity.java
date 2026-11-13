@@ -22,14 +22,14 @@ import androidx.lifecycle.Lifecycle;
 
 import com.blinkreceipt.ocr.R;
 import com.blinkreceipt.ocr.databinding.ActivityCameraScanBinding;
-import com.microblink.BitmapResult;
-import com.microblink.CameraCaptureListener;
-import com.microblink.CameraRecognizerCallback;
-import com.microblink.Media;
-import com.microblink.RecognizerException;
-import com.microblink.RecognizerResult;
-import com.microblink.RecognizerView;
-import com.microblink.core.ScanResults;
+import com.actualplatform.receipt.BitmapResult;
+import com.actualplatform.receipt.CameraCaptureListener;
+import com.actualplatform.receipt.CameraRecognizerCallback;
+import com.actualplatform.receipt.Media;
+import com.actualplatform.receipt.RecognizerException;
+import com.actualplatform.receipt.RecognizerResult;
+import com.actualplatform.receipt.RecognizerView;
+import com.actualplatform.receipt.core.ScanResults;
 
 import org.jetbrains.annotations.NotNull;
 

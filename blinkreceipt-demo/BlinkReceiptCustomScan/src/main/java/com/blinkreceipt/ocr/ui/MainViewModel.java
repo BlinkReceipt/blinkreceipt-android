@@ -1,10 +1,10 @@
 package com.blinkreceipt.ocr.ui;
 
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.EdgeDetectionConfiguration;
-import com.microblink.FrameCharacteristics;
-import com.microblink.ScanOptions;
-import com.microblink.core.Retailer;
+import com.actualplatform.receipt.EdgeDetectionConfiguration;
+import com.actualplatform.receipt.FrameCharacteristics;
+import com.actualplatform.receipt.ScanOptions;
+import com.actualplatform.receipt.core.Retailer;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;

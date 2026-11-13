@@ -11,8 +11,8 @@ import androidx.core.view.ViewGroupCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.blinkreceipt.digital.outlook.databinding.ActivityMainBinding
-import com.microblink.core.InitializeCallback
-import com.microblink.digital.OutlookClient
+import com.actualplatform.receipt.core.InitializeCallback
+import com.actualplatform.receipt.digital.OutlookClient
 
 class MainActivity : AppCompatActivity() {
 

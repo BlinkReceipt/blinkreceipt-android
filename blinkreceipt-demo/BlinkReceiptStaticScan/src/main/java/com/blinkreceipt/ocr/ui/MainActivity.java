@@ -14,14 +14,14 @@ import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.databinding.ActivityMainBinding;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.BlinkReceiptSdk;
-import com.microblink.camera.ui.CameraCharacteristics;
-import com.microblink.camera.ui.CameraRecognizerContract;
-import com.microblink.camera.ui.CameraRecognizerOptions;
-import com.microblink.camera.ui.CameraRecognizerResults;
-import com.microblink.camera.ui.ScanCharacteristics;
-import com.microblink.camera.ui.TooltipCharacteristics;
-import com.microblink.core.Product;
+import com.actualplatform.receipt.ReceiptSdk;
+import com.actualplatform.receipt.camera.ui.CameraCharacteristics;
+import com.actualplatform.receipt.camera.ui.CameraRecognizerContract;
+import com.actualplatform.receipt.camera.ui.CameraRecognizerOptions;
+import com.actualplatform.receipt.camera.ui.CameraRecognizerResults;
+import com.actualplatform.receipt.camera.ui.ScanCharacteristics;
+import com.actualplatform.receipt.camera.ui.TooltipCharacteristics;
+import com.actualplatform.receipt.core.Product;
 
 import java.util.List;
 
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.sdk_version) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.sdk_version_dialog_title)
-                    .setMessage(BlinkReceiptSdk.versionName(this))
+                    .setMessage(ReceiptSdk.versionName(this))
                     .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
                     .create()
                     .show();

@@ -20,4 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--dontwarn com.microblink.camera.hardware.VersionInterval
+-dontwarn com.actualplatform.receipt.camera.hardware.VersionInterval

@@ -86,13 +86,23 @@ dependencies {
     implementation libs.androidx.compose.ui.tooling.preview
     implementation libs.androidx.compose.material.icons.core
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.recognizer
-    implementation libs.blinkreceipt.camera.ui
-    implementation libs.blinkreceipt.logcat
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.recognizer
+    implementation libs.receipt.camera.ui
+    implementation libs.receipt.logcat
 
     implementation platform(libs.activation.bom)
     implementation libs.activation
+    // Activation pulls material3 1.5.0-alpha17, built against foundation 1.11's Style API. The
+    // Compose BOM resolves foundation 1.12.1, where that API changed, so the first
+    // OutlinedTextField (Activation > Settings) crashes: AbstractMethodError in debug,
+    // ClassCastException in full-mode release. material3 1.5.0-rc01 is built against foundation
+    // 1.12.0. Same constraint as windfall-android-sdk's receipt-app.
+    constraints {
+        implementation(libs.androidx.compose.material3.forActivation) {
+            because 'material3 1.5.0-alpha17 is binary-incompatible with foundation 1.12 (Style API)'
+        }
+    }
 
     // Activation theming editor (DataStore persistence, color picker dialog, icon thumbnails)
     implementation libs.androidx.datastore.preferences

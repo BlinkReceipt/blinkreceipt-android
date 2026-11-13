@@ -76,8 +76,8 @@ dependencies {
 
     implementation libs.androidx.core.ktx
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.earnings
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.earnings
 
     testImplementation libs.junit
 

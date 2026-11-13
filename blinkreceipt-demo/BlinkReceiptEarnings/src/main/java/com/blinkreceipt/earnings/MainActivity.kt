@@ -10,7 +10,7 @@ import androidx.core.view.ViewGroupCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.blinkreceipt.earnings.databinding.ActivityMainBinding
-import com.microblink.earnings.MissedEarningsClient
+import com.actualplatform.receipt.earnings.MissedEarningsClient
 
 class MainActivity : AppCompatActivity() {
 

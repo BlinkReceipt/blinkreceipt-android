@@ -15,10 +15,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.blinkreceipt.linking.databinding.ActivityMainBinding;
-import com.microblink.linking.Account;
-import com.microblink.linking.AccountLinkingClient;
-import com.microblink.linking.Credentials;
-import com.microblink.linking.RetailerIds;
+import com.actualplatform.receipt.linking.Account;
+import com.actualplatform.receipt.linking.AccountLinkingClient;
+import com.actualplatform.receipt.linking.Credentials;
+import com.actualplatform.receipt.linking.RetailerIds;
 
 import kotlin.Unit;
 

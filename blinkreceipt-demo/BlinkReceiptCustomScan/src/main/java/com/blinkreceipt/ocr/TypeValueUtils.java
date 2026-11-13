@@ -3,9 +3,9 @@ package com.blinkreceipt.ocr;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.microblink.core.FloatType;
-import com.microblink.core.StringType;
-import com.microblink.core.internal.StringUtils;
+import com.actualplatform.receipt.core.FloatType;
+import com.actualplatform.receipt.core.StringType;
+import com.actualplatform.receipt.core.internal.StringUtils;
 
 public final class TypeValueUtils {
 

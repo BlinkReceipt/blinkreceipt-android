@@ -61,8 +61,8 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.play.services.tasks
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.recognizer
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.recognizer
 
     testImplementation libs.junit
 
