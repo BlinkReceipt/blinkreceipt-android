@@ -1,7 +1,7 @@
-# BlinkReceipt
+# Receipt SDK
 
 
-BlinkReceipt provides a solution for capturing, extracting and enriching first party data from paper, digital receipts and online purchases.
+The Receipt SDK provides a solution for capturing, extracting and enriching first party data from paper, digital receipts and online purchases.
 Our features include:
 
 - Physical receipt scanning

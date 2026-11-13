@@ -8,7 +8,7 @@ Nothing is scheduled until you opt in by calling `begin()`, and nothing is sched
 
 | | |
 |---|---|
-| Entry point | `AutoScrapeClient` (`com.microblink.digital`) |
+| Entry point | `AutoScrapeClient` (`com.actualplatform.receipt.digital`) |
 | Provider scope | Gmail IMAP accounts with a non-empty username — see `AutoScrapeClient.isAutoScrapeAccount(credentials)` |
 | Default cadence | 24 hours (`AutoScrapeClient.DEFAULT_INTERVAL_HOURS`) |
 | Minimum cadence | 12 hours (`AutoScrapeClient.MIN_INTERVAL_HOURS`); there is no upper limit |
@@ -25,7 +25,7 @@ Create the client and arm it in your `Application` class, once the digital SDK h
 
 === "Kotlin"
     ```kotlin
-    class BlinkApplication : Application() {
+    class ReceiptApplication : Application() {
 
         // Hold the client for the life of the process; see "Arming and re-arming" below.
         private lateinit var autoScrapeClient: AutoScrapeClient
@@ -33,10 +33,10 @@ Create the client and arm it in your `Application` class, once the digital SDK h
         override fun onCreate() {
             super.onCreate()
 
-            BlinkReceiptDigitalSdk.initialize(this, object : InitializeCallback {
+            ReceiptDigitalSdk.initialize(this, object : InitializeCallback {
 
                 override fun onComplete() {
-                    autoScrapeClient = AutoScrapeClient(this@BlinkApplication).apply {
+                    autoScrapeClient = AutoScrapeClient(this@ReceiptApplication).apply {
                         intervalHours = 24
                     }
 
@@ -67,7 +67,7 @@ Create the client and arm it in your `Application` class, once the digital SDK h
     ```java
     import kotlin.Unit;
 
-    public final class BlinkApplication extends Application {
+    public final class ReceiptApplication extends Application {
 
         private AutoScrapeClient autoScrapeClient;
 
@@ -75,11 +75,11 @@ Create the client and arm it in your `Application` class, once the digital SDK h
         public void onCreate() {
             super.onCreate();
 
-            BlinkReceiptDigitalSdk.initialize(this, new InitializeCallback() {
+            ReceiptDigitalSdk.initialize(this, new InitializeCallback() {
 
                 @Override
                 public void onComplete() {
-                    autoScrapeClient = new AutoScrapeClient(BlinkApplication.this);
+                    autoScrapeClient = new AutoScrapeClient(ReceiptApplication.this);
 
                     autoScrapeClient.intervalHours(24);
 
@@ -286,7 +286,7 @@ Remember to persist the toggle so your launch-time `begin()` reflects it — see
 **Do**
 
 1. **Create exactly one `AutoScrapeClient` per process** and hold it in your `Application` (or an app-scoped DI component). Every armed client receives every result, so two armed instances mean duplicate callbacks.
-2. **Arm inside `InitializeCallback.onComplete()`**, after `BlinkReceiptDigitalSdk.initialize(...)` succeeds.
+2. **Arm inside `InitializeCallback.onComplete()`**, after `ReceiptDigitalSdk.initialize(...)` succeeds.
 3. **Re-arm on every launch**, gated on your own persisted user preference.
 4. **Ask for consent before arming.** Background inbox scraping is a user-visible privacy decision; give the user a toggle and honor it with `cancel()`.
 5. **Leave `intervalHours` at the 24h default** unless you have a specific reason. Shorter cadences cost battery and rarely surface more receipts; the SDK will floor anything under 12h anyway.

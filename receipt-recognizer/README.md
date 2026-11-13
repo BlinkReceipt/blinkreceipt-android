@@ -2,17 +2,17 @@
 
 # Package com.actualplatform.receipt.recognizer
 
-# Blink Receipt SDK
+# Receipt SDK
 
-Blink Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
+Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
 
-Using Blink Receipt in your app requires a valid license key.  After registering, you will be able to generate a license key for your app. License key is bound to package name of your app, so please make sure you enter the correct package name when asked.
+Using Receipt SDK in your app requires a valid license key.  After registering, you will be able to generate a license key for your app. License key is bound to package name of your app, so please make sure you enter the correct package name when asked.
 
-See below for more information about how to integrate Blink Receipt SDK into your app.
+See below for more information about how to integrate the Receipt SDK into your app.
 
 # Table of Contents
 
-* [Android _BlinkReceipt_ integration instructions](#intro)
+* [Android _Receipt SDK_ integration instructions](#intro)
 * [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/receipt-camera-ui)
 * [Recognizer View](#recognizerView)
 * [Adding Product Intelligence](#intelligence)
@@ -31,7 +31,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+      mavenCentral()
     }
     ```
 
@@ -350,7 +350,7 @@ If you wish to include your client user id within your project add your client u
 
 ## <a name=androidos></a> Android OS Support
 
-BlinkReceipt is distributed with support for Android minSdk version 24
+The Receipt SDK is distributed with support for Android minSdk version 24
 
 ## <a name=autoConfiguration></a> Auto Configuration
 
@@ -402,7 +402,7 @@ public void onTerminate() {
 
 ## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
-BlinkReceipt is distributed with **ARM64** native library binaries.
+The Receipt SDK is distributed with **ARM64** native library binaries.
 
 **ARM64** is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with a single instruction.
 
@@ -469,7 +469,7 @@ android {
 
 This will remove other architecture builds for **all** native libraries used by the application.
 
-To remove support for a certain CPU architecture only for BlinkReceipt, add the following statement to your `android` block inside `build.gradle`:
+To remove support for a certain CPU architecture only for the Receipt SDK, add the following statement to your `android` block inside `build.gradle`:
 
 ```
 android {
