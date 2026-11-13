@@ -9,7 +9,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 # Table of Contents
 
 * [Android _BlinkReceipt_ integration instructions](#intro)
-* [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/blinkreceipt-camera-ui)
+* [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/receipt-camera-ui)
 * [Recognizer View](#recognizerView)
 * [Adding Product Intelligence](#intelligence)
 * [Adding Google Places](#google)
@@ -26,11 +26,11 @@ The package contains Android Archive (AAR) that contains everything you need to 
 ## <a name=intro></a> Project Integration and Initialization
 To add sdk to your android project please follow these steps:
 
-1. Add the following maven repository to your build.gradle or settings.gradle, depending on your implementation:
+1. The SDK is published to Maven Central. Make sure it is in your repositories, in build.gradle or settings.gradle depending on your implementation:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+      mavenCentral()
     }
     ```
 
@@ -38,12 +38,25 @@ To add sdk to your android project please follow these steps:
 
 ```groovy
 dependencies {
-     implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:1.8.7"))
+     implementation(platform("com.actualplatform:receipt-bom:3.0.0"))
 
-     implementation("com.microblink.blinkreceipt:blinkreceipt-core")
-     implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+     implementation("com.actualplatform:receipt-core")
+     implementation("com.actualplatform:receipt-recognizer")
 }
 ```
+
+## Migrating from 2.x
+
+Version 3.0.0 renames the SDK. To upgrade:
+
+- Maven coordinates changed: groupId `com.microblink.blinkreceipt` is now `com.actualplatform`, and artifacts `blinkreceipt-<module>` are now `receipt-<module>` (for example `com.actualplatform:receipt-core`).
+- Packages moved from `com.microblink` to `com.actualplatform.receipt` (for example `com.microblink.core.X` is now `com.actualplatform.receipt.core.X`).
+- `Blink*` entry classes were renamed, for example `BlinkReceiptSdk` is now `ReceiptSdk` and `BlinkReceiptDigitalSdk` is now `ReceiptDigitalSdk`.
+- Manifest meta-data keys moved from `com.microblink.<Key>` to `com.actualplatform.receipt.<Key>`. If only the old key is set, the SDK logs an error naming the new key.
+- Resource names changed from `blink*` to `receipt*` (for example `BlinkRecognizerStyle` is now `ReceiptRecognizerStyle`).
+- Do not depend on 2.x and 3.x together. Gradle fails with a capability conflict on `com.microblink.blinkreceipt:blinkreceipt-<module>`; remove the 2.x dependency.
+
+See the **Breaking** entries under `[Unreleased]` in [CHANGELOG.md](CHANGELOG.md) (3.0.0) for the full rename tables.
 
 ## R8 / PROGUARD
 
@@ -274,7 +287,7 @@ If you wish to include product intelligence functionality within your project ad
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+ <meta-data android:name="com.actualplatform.receipt.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```
 
 ## <a name=google></a>Google Places
@@ -282,7 +295,7 @@ If you wish to include Google Places functionality within your project add your 
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
+ <meta-data android:name="com.actualplatform.receipt.GooglePlacesKey" android:value="GOOGLE PLACES KEY"/>
 ```
 
 ## <a name=yelp></a>Yelp
@@ -290,7 +303,7 @@ If you wish to include Yelp functionality within your project add your license k
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.YelpKey" android:value="YELP KEY"/>
+ <meta-data android:name="com.actualplatform.receipt.YelpKey" android:value="YELP KEY"/>
 ```
 
 ## <a name=clientId></a>Client User Id
@@ -298,7 +311,7 @@ If you wish to include your client user id within your project add your client u
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.ClientUserId" android:value="CLIENT USER ID"/>
+ <meta-data android:name="com.actualplatform.receipt.ClientUserId" android:value="CLIENT USER ID"/>
 ```
 
 ## <a name=androidos></a> Android OS Support
@@ -317,7 +330,7 @@ Even though there are different ways to initialize the sdk, the recommended way 
         android:exported="false"
         tools:node="merge">
         <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer"
+            android:name="com.actualplatform.receipt.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
 </provider>
@@ -329,7 +342,7 @@ If you manually initialize the SDK you should disable auto configuration in your
 public void onCreate() {
         super.onCreate();
 
-        BlinkReceiptSdk.initialize( context );
+        ReceiptSdk.initialize( context );
 }
 ```
 
@@ -340,7 +353,7 @@ public void onCreate() {
         android:exported="false"
         tools:node="merge">
         <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer"
+            android:name="com.actualplatform.receipt.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
 </provider>
@@ -354,7 +367,7 @@ If your app provides custom WorkManager configuration and initialization, you mu
         android:exported="false"
         tools:node="merge">
         <meta-data
-            android:name="com.microblink.internal.ReceiptSdkInitializer"
+            android:name="com.actualplatform.receipt.internal.ReceiptSdkInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
         <!-- Remove WorkManager Initializer -->
@@ -364,7 +377,7 @@ If your app provides custom WorkManager configuration and initialization, you mu
             tools:node="remove" />
         <!-- Remove BlinkReceipt's Barcode Detector initializer -->
         <meta-data
-            android:name="com.microblink.internal.BarcodeDetectorInitializer"
+            android:name="com.actualplatform.receipt.internal.BarcodeDetectorInitializer"
             android:value="androidx.startup"
             tools:node="remove"/>
         <!-- Introduce your custom Initializer -->
@@ -395,7 +408,7 @@ public class AppInitializer: Initializer<Unit> {
 ```java
 @Override
 public void onTerminate() {
-        BlinkReceiptSdk.terminate();
+        ReceiptSdk.terminate();
 
         super.onTerminate();
         }
