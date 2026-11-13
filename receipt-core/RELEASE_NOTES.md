@@ -404,5 +404,14 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: core no longer keeps every library's `R` classes, every protobuf-lite and DataStore message, Gson `TypeAdapter`s or `kotlin.Metadata` in your app; it keeps its public API and its own protobuf message fields.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-core` to `com.actualplatform:receipt-core`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.core` to `com.actualplatform.receipt.core`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.core.R`. For example, `com.microblink.core.ScanResults` becomes `com.actualplatform.receipt.core.ScanResults`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.core` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptCoreSdk` is renamed `ReceiptCoreSdk`, and `BlinkReceiptEnvironment` is renamed `ReceiptEnvironment`.
+- **BREAKING CHANGE** Manifest meta-data keys move from `com.microblink.<Key>` to `com.actualplatform.receipt.<Key>`: `LicenseKey`, `LicenseeName`, `GooglePlacesKey`, `YelpKey`, `ProductIntelligence`, `FrameResults`, `WebApiKey`, `OnDeviceOcr` and `ClientUserId`. The old keys are no longer read, so an app that keeps them initializes as if no license or API key were set. When an old key is present without its new key, the SDK logs an error under the `ReceiptSdk` tag that names the new key. `ReceiptCoreSdk.LICENSE_KEY_PROPERTY`, `PRODUCT_INTEL_KEY_PROPERTY` and `CLIENT_USER_ID_KEY_PROPERTY` hold the new keys.
+- Data the SDK stored on devices keeps its 2.x names, so it survives the upgrade.

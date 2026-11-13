@@ -115,5 +115,10 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-logcat` to `com.actualplatform:receipt-logcat`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.logcat` to `com.actualplatform.receipt.logcat`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.logcat.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.logcat` stop matching silently.
