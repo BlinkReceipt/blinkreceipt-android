@@ -350,5 +350,11 @@
 - `CameraView.captureImage()` no longer throws when called before the camera has bound; it reports the failure through `onError()` instead.
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: camera no longer keeps every public class under `com.microblink.camera.**` or turns off source-file and line-number stripping for your whole app.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-camera` to `com.actualplatform:receipt-camera`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.camera` to `com.actualplatform.receipt.camera`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.camera.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.camera` stop matching silently.
