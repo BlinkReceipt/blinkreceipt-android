@@ -25,11 +25,11 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
     ```kotlin
     override suspend fun doWork(): Result {
         //set license keys if you haven't done so in your AndroidManifest.xml
-        BlinkReceiptLinkingSdk.licenseKey = "<your_account_linking_key>"
-        BlinkReceiptLinkingSdk.productIntelligenceKey = "<your_product_intelligence_key>"
+        ReceiptLinkingSdk.licenseKey = "<your_account_linking_key>"
+        ReceiptLinkingSdk.productIntelligenceKey = "<your_product_intelligence_key>"
 
         //initialize the sdk
-        BlinkReceiptLinkingSdk.initialize(applicationContext)
+        ReceiptLinkingSdk.initialize(applicationContext)
 
         val client = AccountLinkingClient(applicationContext)
         //configure the client
@@ -72,11 +72,11 @@ Then you have to override the `doWork`/`startWork` function, in which we need to
     public ListenableFuture<Result> startWork() {
 
         //set license keys if you haven't done so in your AndroidManifest.xml
-        BlinkReceiptLinkingSdk.licenseKey("<your_account_linking_licence_key>");
-        BlinkReceiptLinkingSdk.productIntelligenceKey("<your_product_intelligence_key>");
+        ReceiptLinkingSdk.licenseKey("<your_account_linking_licence_key>");
+        ReceiptLinkingSdk.productIntelligenceKey("<your_product_intelligence_key>");
 
         //initialize the sdk
-        BlinkReceiptLinkingSdk.initialize(getApplicationContext());
+        ReceiptLinkingSdk.initialize(getApplicationContext());
 
         SettableFuture<Result> future = SettableFuture.create();
         AccountLinkingClient client = new AccountLinkingClient(this.getApplicationContext());

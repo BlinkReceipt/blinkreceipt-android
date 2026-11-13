@@ -1,4 +1,4 @@
-Blink Receipt Digital sdk allows for full Gmail Integration.
+Receipt Digital SDK allows for full Gmail Integration.
 
 ## <a name=gmail></a> **Gmail Client**
 

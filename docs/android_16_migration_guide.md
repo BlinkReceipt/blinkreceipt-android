@@ -1,6 +1,8 @@
-# Android 16 (API 36) Migration Guide for BlinkReceipt Android SDK
+# Android 16 (API 36) Migration Guide for Receipt SDK
 
-This guide provides essential steps for updating your app to target Android 16 (API 36) while ensuring continued compatibility with the BlinkReceipt Android SDK.
+> **Receipt SDK 3.0.0:** the SDK is now published as `com.actualplatform:receipt-*` with packages under `com.actualplatform.receipt`. Names below that refer to 2.x keep their old `com.microblink` form. See [Migrating from 2.x](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/README.md#migrating-from-2x) for the 3.0.0 changes.
+
+This guide provides essential steps for updating your app to target Android 16 (API 36) while ensuring continued compatibility with the Receipt SDK.
 
 With the release of Android 16, Google has introduced several changes to enhance privacy, security, and user experience. To comply with Google Play's requirements and leverage the latest platform features, you must update your app's `targetSdkVersion` to 36.
 
@@ -31,10 +33,10 @@ Before you begin, please ensure you have the following:
 ```groovy
 // build.gradle
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
+    implementation(platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}"))
 
-    implementation("com.microblink.blinkreceipt:blinkreceipt-digital")
-    implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+    implementation("com.actualplatform:receipt-digital")
+    implementation("com.actualplatform:receipt-recognizer")
     // ...
 }
 ```
@@ -65,7 +67,7 @@ To create more immersive user experiences, Android 16 enables edge-to-edge rende
 
 **Impact on your app:**
 
-If you display any of our SDK's full-screen or large UI components (like [com.microblink.RecognizerCameraView]), they may have interactive elements (like buttons or input fields) that are partially obscured by the system bars, making them difficult for users to tap.
+If you display any of our SDK's full-screen or large UI components (like [com.actualplatform.receipt.RecognizerCameraView]), they may have interactive elements (like buttons or input fields) that are partially obscured by the system bars, making them difficult for users to tap.
 
 **Action required:**
 
@@ -73,15 +75,15 @@ You must handle window insets to prevent UI elements from overlapping with the s
 
    * See official documentation on [Behavior changes: Apps targeting Android 16 or higher](https://developer.android.com/about/versions/16/behavior-changes-16#edge-to-edge)
 
-This ensures that BlinkReceipt SDK's UI respects the device's safe areas while still providing an immersive, edge-to-edge experience.
+This ensures that Receipt SDK's UI respects the device's safe areas while still providing an immersive, edge-to-edge experience.
 
 ## Testing Checklist
 
 After implementing the changes above, we strongly recommend you test the following scenarios on a device or emulator running Android 16:
 
-- ✅ Test all flows that involve selecting BlinkReceipt SDK Camera or Scan feature. Ensure that it appears and functions correctly.
+- ✅ Test all flows that involve selecting Receipt SDK Camera or Scan feature. Ensure that it appears and functions correctly.
 
-- ✅ Perform regression testing on all core features of your app that integrate with BlinkReceipt Android SDK `{{ blinkreceipt.release }}`.
+- ✅ Perform regression testing on all core features of your app that integrate with the Receipt SDK `{{ blinkreceipt.release }}`.
 
 ## Get Help
 If you encounter any issues during migration or have questions about these changes, please do not hesitate to reach out to our support team.

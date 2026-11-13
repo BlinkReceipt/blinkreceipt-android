@@ -2,12 +2,12 @@
 
 # Package com.actualplatform.receipt.surveys
 
-# Blink Survey SDK
+# Receipt Survey SDK
 
-The Blink Survey SDK enables you to fetch and display surveys to your users, using either the stock sdk UI or your own custom UI.
+The Receipt Survey SDK enables you to fetch and display surveys to your users, using either the stock sdk UI or your own custom UI.
 
 ## Setup
-If this is your first time integrating Blink into your project please refer to the following documentation, otherwise skip to the `Dependencies` section.
+If this is your first time integrating the Receipt SDK into your project please refer to the following documentation, otherwise skip to the `Dependencies` section.
 
 Please follow the [Project Integration and Initialization](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/receipt-recognizer/README.md#-project-integration-and-initialization), [R8/Proguard](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/receipt-recognizer/README.md#r8--proguard), and the application class/manifest step in the [Scanning Your First Receipt](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/receipt-recognizer/README.md#-scanning-your-first-receipt) sections to properly add and initialize recognizer sdk.
 
@@ -20,7 +20,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+      mavenCentral()
     }
     ```
 
@@ -229,14 +229,14 @@ If you wish to use your own UI Controller for Survey handling then there are a f
 The Survey client is the brains of the Survey experience. This class serves 3 purposes
     a. Navigation
     b. User Response Store
-    c. Submission of Survey to BlinkReceipt
+    c. Submission of Survey to the Receipt SDK
 
 It is instantiated by taking a `Survey` object into its constructor.
 
 ### Displaying Survey Questions
 When initialized with the Survey the client is now ready to serve. To receive the next question to display to the user call `client.nextQuestion()`. This will return a `SurveyQuestion` to the caller. This `SurveyQuestion` contains the data needed to display the content to the user. Calling `surveyQuestion.text()` will return a String of the question that should be displayed to the user.
 
-Now there are 2 types of questions in the Blink Survey feature. "Free Text" and "Multiple Choice" style questions which are identified by the enums `SurveyQuestionType.OPEN_ENDED` and `SurveyQuestionType.MULTIPLE_CHOICE` respectively. Use the `type()` method on the `SurveyQuestion` to correctly identify the question type. If a question is of type `SurveyQuestionType.OPEN_ENDED` then there is nothing more to figure out. Simply display some sort of editable field where users can type their response.
+Now there are 2 types of questions in the Receipt Survey feature. "Free Text" and "Multiple Choice" style questions which are identified by the enums `SurveyQuestionType.OPEN_ENDED` and `SurveyQuestionType.MULTIPLE_CHOICE` respectively. Use the `type()` method on the `SurveyQuestion` to correctly identify the question type. If a question is of type `SurveyQuestionType.OPEN_ENDED` then there is nothing more to figure out. Simply display some sort of editable field where users can type their response.
 
 However, if a question is of type `SurveyQuestionType.MULTIPLE_CHOICE`, then you need to dig further and grab the multiple choice answers provided with the question. Call the `surveyQuestion.answers()` function to retrieve a list of `SurveyAnswer`. This simple data class contains a field that contains the String of the answer to display. Calling `survey.text()` will give you the answer text to display to the user in your answer group.
 

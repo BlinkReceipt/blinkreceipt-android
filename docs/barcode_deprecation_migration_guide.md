@@ -1,5 +1,7 @@
 # Deprecating Barcode Scanning Feature
 
+> **Receipt SDK 3.0.0:** the SDK is now published as `com.actualplatform:receipt-*` with packages under `com.actualplatform.receipt`. Names below that refer to 2.x keep their old `com.microblink` form. See [Migrating from 2.x](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/README.md#migrating-from-2x) for the 3.0.0 changes.
+
 This guide explains the deprecation of the **barcode scanning feature** in the BlinkReceipt Android SDK **2.0.0 and newer** and how to migrate if your application currently relies on it.
 
 ## Who this applies to
@@ -48,13 +50,13 @@ UPC product lookup, previously `com.microblink.barcode.RecognizerClient`, is ava
 ## Migration Steps
 
 ### 1. Add Dependencies (i.e. using Google ML Kit)
-Add the BlinkReceipt SDK and Google ML Kit Barcode Scanning library to your `build.gradle` or `build.gradle.kts` file:
+Add the Receipt SDK and Google ML Kit Barcode Scanning library to your `build.gradle` or `build.gradle.kts` file:
 
 ```groovy
 // build.gradle
 dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.0.0"))
-    implementation("com.microblink.blinkreceipt:blinkreceipt-core")
+    implementation(platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}"))
+    implementation("com.actualplatform:receipt-core")
     // ...
 
     implementation 'com.google.mlkit:barcode-scanning:17.2.0'
