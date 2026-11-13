@@ -1,5 +1,7 @@
 # Updating Your Barcode Scanning Integration (v1.9.5+)
 
+> **Receipt SDK 3.0.0:** the SDK is now published as `com.actualplatform:receipt-*` with packages under `com.actualplatform.receipt`. Names below that refer to 2.x keep their old `com.microblink` form. See [Migrating from 2.x](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/README.md#migrating-from-2x) for the 3.0.0 changes.
+
 ---
 > [!WARNING]
 > This guide only applies to [BlinkReceipt SDK 1.9.5](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.5) until [BlinkReceipt SDK 1.9.12](https://github.com/BlinkReceipt/blinkreceipt-android/releases/tag/1.9.12).

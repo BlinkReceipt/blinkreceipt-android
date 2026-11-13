@@ -2,11 +2,11 @@
 
 # Package com.actualplatform.receipt.digital
 
-# Blink Receipt Digital SDK
+# Receipt Digital SDK
 
-Blink Receipt Digital SDK for Android is an SDK that enables you to easily add e-receipt functionality to your app with the purpose of scanning receipts. Blink Receipt Digital SDK  supports parsing e-receipts from a growing list of retailers and a specific set of mail providers: Gmail, Outlook, Yahoo, and AOL. The procedure for integrating each of these providers is slightly different. This guide will outline the steps necessary to integrate and authenticate a user account for each mail provider, and then the common methods that you will use to invoke the e-receipt parsing functionality.
+Receipt Digital SDK for Android is an SDK that enables you to easily add e-receipt functionality to your app with the purpose of scanning receipts. Receipt Digital SDK  supports parsing e-receipts from a growing list of retailers and a specific set of mail providers: Gmail, Outlook, Yahoo, and AOL. The procedure for integrating each of these providers is slightly different. This guide will outline the steps necessary to integrate and authenticate a user account for each mail provider, and then the common methods that you will use to invoke the e-receipt parsing functionality.
 
-See below for more information about how to integrate Blink Receipt Digital SDK into your app.
+See below for more information about how to integrate Receipt Digital SDK into your app.
 
 # Table of Contents
 
@@ -34,7 +34,7 @@ See below for more information about how to integrate Blink Receipt Digital SDK 
 
 # Tasks <a name=tasks></a>
 
-The Blink Receipt Digital Sdk heavily leverages Google's [Task](https://developers.google.com/android/guides/tasks) for result and exception handling when interfacing with the sdk. Here is a high level comprehensive guide on how to use the Task framework.
+The Receipt Digital SDK heavily leverages Google's [Task](https://developers.google.com/android/guides/tasks) for result and exception handling when interfacing with the sdk. Here is a high level comprehensive guide on how to use the Task framework.
 
 The `Task<T>` object, returned by most functions in the sdk, can be thought of as a reference to a job being done either on the main thread or a background thread. The `T` represents the type of result that task is expected to return when done executing it's logic.
 
@@ -128,7 +128,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+      mavenCentral()
     }
     ```
 
@@ -146,7 +146,7 @@ dependencies {
 Initialize the `ReceiptDigitalSdk` in your application class.
 
 ```kotlin
-class BlinkApplication : Application() {
+class ReceiptApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -179,7 +179,7 @@ class BlinkApplication : Application() {
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".BlinkApplication"
+        android:name=".ReceiptApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
@@ -421,7 +421,7 @@ Create the client and arm it in your `Application` class, once the digital SDK h
 
 Kotlin
 ```kotlin
-class BlinkApplication : Application() {
+class ReceiptApplication : Application() {
 
     // Hold the client for the life of the process; see "Arming and Re-Arming" below.
     private lateinit var autoScrapeClient: AutoScrapeClient
@@ -432,7 +432,7 @@ class BlinkApplication : Application() {
         ReceiptDigitalSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {
-                autoScrapeClient = AutoScrapeClient(this@BlinkApplication).apply {
+                autoScrapeClient = AutoScrapeClient(this@ReceiptApplication).apply {
                     intervalHours = 24
                 }
 
@@ -463,7 +463,7 @@ Java
 ```java
 import kotlin.Unit;
 
-public final class BlinkApplication extends Application {
+public final class ReceiptApplication extends Application {
 
     private AutoScrapeClient autoScrapeClient;
 
@@ -475,7 +475,7 @@ public final class BlinkApplication extends Application {
 
             @Override
             public void onComplete() {
-                autoScrapeClient = new AutoScrapeClient(BlinkApplication.this);
+                autoScrapeClient = new AutoScrapeClient(ReceiptApplication.this);
 
                 autoScrapeClient.intervalHours(24);
 
@@ -856,7 +856,7 @@ override fun onDestroy() {
 
 ## **Gmail**
 
-Blink Receipt Digital sdk allows for full Gmail Integration.
+Receipt Digital SDK allows for full Gmail Integration.
 
 ## <a name=gmail></a> **Gmail Client**
 

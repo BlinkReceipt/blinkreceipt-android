@@ -8,5 +8,5 @@ If you wish to include product intelligence functionality within your project ad
 
 `AndroidManifest.xml`
 ```xml
- <meta-data android:name="com.microblink.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
+ <meta-data android:name="com.actualplatform.receipt.ProductIntelligence" android:value="PRODUCT INTELLIGENCE KEY" />
 ```

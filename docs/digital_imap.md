@@ -8,14 +8,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".BlinkApplication"
+        android:name=".ReceiptApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <meta-data
-            android:name="com.microblink.ProductIntelligence"
+            android:name="com.actualplatform.receipt.ProductIntelligence"
             android:value="KEY" />
 
     </application>
@@ -76,7 +76,7 @@ A `Credentials` object defines the credentials being used to login to a specific
         }
     ```
 
-`Credentials.Password` accepts username and password inputs from the application UI. `Credentials.None` allows for IMAP web authentication (where the user inputs credentials via the provider's WebView login page), which is functionally analogous to the BlinkReceipt Account Linking SDK where Retailer Web Auth is enabled using `Credentials.NONE`. The `AppPassword` enum parameter in `None` is used to specify whether the user has to manually input a Gmail app password name during the authentication process (`AppPassword.MANUAL`) or the Gmail app password name should be automatically injected using your application's name (`AppPassword.AUTOMATIC`). If this enum flag is not specified, `AppPassword.AUTOMATIC` will be used by default.
+`Credentials.Password` accepts username and password inputs from the application UI. `Credentials.None` allows for IMAP web authentication (where the user inputs credentials via the provider's WebView login page), which is functionally analogous to the Receipt Account Linking SDK where Retailer Web Auth is enabled using `Credentials.NONE`. The `AppPassword` enum parameter in `None` is used to specify whether the user has to manually input a Gmail app password name during the authentication process (`AppPassword.MANUAL`) or the Gmail app password name should be automatically injected using your application's name (`AppPassword.AUTOMATIC`). If this enum flag is not specified, `AppPassword.AUTOMATIC` will be used by default.
 
 **Note: `Credentials` replaces `PasswordCredentials` in the IMAP public API surface starting from version 1.8.6.**
 

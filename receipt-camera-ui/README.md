@@ -2,9 +2,9 @@
 
 # Package com.actualplatform.receipt.camera.ui
 
-# Blink Camera UI SDK
+# Receipt Camera UI SDK
 
-The Blink Camera UI SDK provides a Customizable Out-of-the-Box Camera Experience for capturing receipt images.
+The Receipt Camera UI SDK provides a Customizable Out-of-the-Box Camera Experience for capturing receipt images.
 
 ## Table Of Contents
 
@@ -17,7 +17,7 @@ The Blink Camera UI SDK provides a Customizable Out-of-the-Box Camera Experience
 
 ## <a name=intro></a> Intro
 
-The Blink Camera UI SDK is a wrapper implementation of the existing `RecognizerView`. This sdk provides a plug and play solution for those who wish to leverage a prebaked implementation of the Recgonizer Experience. Though the UI is predefined, there are many options available that enable you to make this experience uniquely yours!
+The Receipt Camera UI SDK is a wrapper implementation of the existing `RecognizerView`. This sdk provides a plug and play solution for those who wish to leverage a prebaked implementation of the Recgonizer Experience. Though the UI is predefined, there are many options available that enable you to make this experience uniquely yours!
 
 ## <a name=setup></a> The Setup
 To add the sdk to your android project please follow these steps:
@@ -26,7 +26,7 @@ To add the sdk to your android project please follow these steps:
 
     ```groovy
     repositories {
-      maven { url  "https://maven.microblink.com" }
+      mavenCentral()
     }
     ```
 
@@ -280,7 +280,7 @@ To help users as much as possible, we implemented a series of tooltips. These ar
 
 ### ScanOptions
 
-The scan options has been a staple of the Blink Receipt SDK since it's inception. It defines the configuration for the ocr component.To learn more about Scan Options please refer to our existing documentation located [here](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/receipt-recognizer#-scanning-your-first-receipt).
+The scan options has been a staple of the Receipt SDK since it's inception. It defines the configuration for the ocr component.To learn more about Scan Options please refer to our existing documentation located [here](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/receipt-recognizer#-scanning-your-first-receipt).
 
 
 ## <a name=results></a> Understanding Your Results
@@ -345,7 +345,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Torch Button -->
     <style name="Widget.AppCompat.ImageButton.TorchButtonStyle.CustomAppStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent' and 'android:colorPressedHighlight' instead for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/default_secondary_button_background</item>
         <item name="android:colorAccent">?attr/colorSecondary</item>
@@ -356,7 +356,7 @@ In the previous section we mentioned how users could define their own theme and 
 
         <!-- Torch Button Padding -->
         <item name="android:padding">0dp</item>
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'torchOnSrc' and 'torchOffSrc' instead for a more fine-grained drawable source. -->
         <item name="android:src">@drawable/ic_torch_selector</item>
         <!-- Torch Button Icon (ON) -->
@@ -369,7 +369,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Cancel Button -->
     <style name="Widget.AppCompat.ImageButton.CancelButtonStyle.CustomAppStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent' and 'android:colorPressedHighlight' instead for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/default_secondary_button_background</item>
         <item name="android:colorAccent">?attr/colorSecondary</item>
@@ -386,7 +386,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Finish Button -->
     <style name="Widget.AppCompat.ImageButton.FinishButtonStyle.CustomAppStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
             for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/tooltip_secondary_action_button_selector</item>
@@ -404,7 +404,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Retake Button -->
     <style name="Widget.AppCompat.ImageButton.RetakeButtonStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
             for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/tooltip_secondary_action_button_selector</item>
@@ -423,7 +423,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Capture Button -->
     <style name="Widget.AppCompat.ImageButton.CaptureButtonStyle.CustomAppStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
             for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/primary_secondary_color_selector</item>
@@ -442,7 +442,7 @@ In the previous section we mentioned how users could define their own theme and 
 
     <!-- Define the style of the Confirm Button -->
     <style name="Widget.AppCompat.ImageButton.ConfirmButtonStyle.CustomAppStyle">
-        <!-- This attribute is deprecated as of BlinkReceipt SDK version 1.9.10 and will be ignored in future versions.
+        <!-- This attribute is deprecated as of Receipt SDK version 1.9.10 and will be ignored in future versions.
             Please use 'android:colorAccent', 'android:colorPressedHighlight', and 'android:colorActivatedHighlight' instead
             for a more fine-grained color attribute. -->
         <item name="android:background">@drawable/primary_secondary_color_selector</item>

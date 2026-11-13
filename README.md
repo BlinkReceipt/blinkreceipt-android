@@ -1,14 +1,14 @@
-# Blink Receipt SDK
+# Receipt SDK
 
-Blink Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
+Receipt SDK for Android is an SDK that enables you to easily add near real time OCR functionality to your app with the purpose of scanning receipts. With provided camera management you can easily create an app that scans receipts. You can also scan images stored as Android Bitmaps that are loaded either from gallery, network or SD card.
 
-Using Blink Receipt in your app requires a valid license key.  After registering, you will be able to generate a license key for your app. License key is bound to package name of your app, so please make sure you enter the correct package name when asked.
+Using Receipt SDK in your app requires a valid license key.  After registering, you will be able to generate a license key for your app. License key is bound to package name of your app, so please make sure you enter the correct package name when asked.
 
-See below for more information about how to integrate Blink Receipt SDK into your app.
+See below for more information about how to integrate the Receipt SDK into your app.
 
 # Table of Contents
 
-* [Android _BlinkReceipt_ integration instructions](#intro)
+* [Android _Receipt SDK_ integration instructions](#intro)
 * [Quick Start: Scan your first receipt](https://github.com/BlinkReceipt/blinkreceipt-android/tree/master/receipt-camera-ui)
 * [Recognizer View](#recognizerView)
 * [Adding Product Intelligence](#intelligence)
@@ -21,7 +21,7 @@ See below for more information about how to integrate Blink Receipt SDK into you
 * [Requirements](#requirements)
 
 ## AAR
-The package contains Android Archive (AAR) that contains everything you need to use BlinkReceipt library.
+The package contains Android Archive (AAR) that contains everything you need to use the Receipt SDK.
 
 ## <a name=intro></a> Project Integration and Initialization
 To add sdk to your android project please follow these steps:
@@ -316,7 +316,7 @@ If you wish to include your client user id within your project add your client u
 
 ## <a name=androidos></a> Android OS Support
 
-BlinkReceipt is distributed with support for Android minSdk version 24
+The Receipt SDK is distributed with support for Android minSdk version 24
 
 ## <a name=autoConfiguration></a> Auto Configuration
 
@@ -375,7 +375,7 @@ If your app provides custom WorkManager configuration and initialization, you mu
             android:name="androidx.work.WorkManagerInitializer"
             android:value="androidx.startup"
             tools:node="remove" />
-        <!-- Remove BlinkReceipt's Barcode Detector initializer -->
+        <!-- Remove the Receipt SDK's Barcode Detector initializer -->
         <meta-data
             android:name="com.actualplatform.receipt.internal.BarcodeDetectorInitializer"
             android:value="androidx.startup"
@@ -416,7 +416,7 @@ public void onTerminate() {
 
 ## <a name="processorConfigurations"></a> Processor Architecture Considerations
 
-BlinkReceipt is distributed with **ARMv7** and **ARM64** native library binaries.
+The Receipt SDK is distributed with **ARMv7** and **ARM64** native library binaries.
 
 **ARM64** is the new processor architecture that most new devices use. ARM64 processors are very powerful and also have the possibility to take advantage of new NEON64 SIMD instruction set to quickly process multiple pixels with a single instruction.
 
@@ -428,7 +428,7 @@ There are some issues to be considered:
    - <a name="64-bit-notice"></a> **NOTE:** as of the year 2018, some android devices that ship with ARM64 processors do not have full compatibility with ARMv7. This is mostly due to incorrect configuration of Android's 32-bit subsystem by the vendor, however Google decided that as of August 2019 all apps on PlayStore that contain native code need to have native support for 64-bit processors (this includes ARM64 and x86_64) - this is in anticipation of future Android devices that will support 64-bit code **only**, i.e. that will have ARM64 processors that do not understand ARMv7 instruction set.
 - if ARM64 processor executes ARMv7 code, it does not take advantage of modern NEON64 SIMD operations and does not take advantage of 64-bit registers it has - it runs in emulation mode
 
-`LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate BlinkReceipt into your app, your app will contain native builds for all these processor architectures. Thus, BlinkReceipt will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
+`LibBlinkReceiptRecognizer.aar` archive contains ARMv7 and ARM64 builds of the native library. By default, when you integrate the Receipt SDK into your app, your app will contain native builds for all these processor architectures. Thus, Receipt SDK will work on ARMv7 and ARM64 devices and will use ARMv7 features on ARMv7 devices and ARM64 features on ARM64 devices. However, the size of your application will be rather large.
 
 ## <a name="reduce-size"></a> Reducing the final size of your app
 
@@ -493,7 +493,7 @@ android {
 
 This will remove other architecture builds for **all** native libraries used by the application.
 
-To remove support for a certain CPU architecture only for BlinkReceipt, add the following statement to your `android` block inside `build.gradle`:
+To remove support for a certain CPU architecture only for the Receipt SDK, add the following statement to your `android` block inside `build.gradle`:
 
 ```
 android {
