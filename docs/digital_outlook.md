@@ -10,7 +10,7 @@ You must register an application in the [MS Application Registration Portal](htt
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
 
-         <data android:host="com.blinkreceipt.development"
+         <data android:host="[Your Application ID]"
           android:path="/[Signature Hash]"
           android:scheme="msauth" />
      </intent-filter>

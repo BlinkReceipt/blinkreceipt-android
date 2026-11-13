@@ -1,0 +1,417 @@
+# Release Notes
+
+## 1.0.0
+
+- Initial release
+
+## 1.0.1
+
+- Update Play Service Task framework to 17.0.2
+- Removed internal location look up services.
+
+## 1.0.2
+
+- Don't pass empty or null message to internal logger.
+
+## 1.0.3
+
+- bug fixes
+- Update Play Service Task framework to 17.1.0
+
+## 1.0.4
+
+- generate x86_64 slice
+- Bug fixes
+
+## 1.0.5
+
+- sensitive product bug fix
+
+## 1.0.6
+
+- okio 2.7.0
+- okhttp 4.8.1
+- build tools 30.0.1
+- Androidx crypto library to encrypt local storage( required )
+    -implementation "androidx.security:security-crypto:1.1.0-alpha02"
+
+## 1.0.7
+
+- Bug Fix for panera bread
+
+## 1.0.8
+
+- okhttp 4.9.0
+- okio 2.8.0
+- override internal logger instance
+- Update Play Service Task framework to 17.2.0
+
+## 1.0.9
+
+- core stability fixes
+- okio 2.9.0
+
+## 1.1.0
+
+-***Breaking Change*** Product totalPrice type changed from float to FloatType
+- downgrade target to api 29, but compiled against api 30
+
+## 1.1.1
+
+- PasswordCredentials moved to core package to share across different sdk surfaces
+
+## 1.1.2
+
+- security: updated Tink to stable release 1.5.0
+- internal serialization performance
+
+## 1.1.3
+
+- stability fixes and improvements
+- okio version 2.10.0
+- gms tasks updated to 17.2.1
+- Work around a crash in Android 10 and 11 that may be triggered when two threads concurrently close an SSL socket. This would have appeared in crash logs as NullPointerException: bio == null
+- Add PVP Activation caching ability
+- kotlin 1.4.31
+
+## 1.1.4
+
+- stability fixes and improvements
+
+## 1.1.5
+
+- stability fixes and improvements
+- New Product Intelligence fields added
+    - sector
+    - department
+    - majorCategory
+    - subCategory
+    - itemType
+    - attributes: Zero or more attributes related to the product. Each attribute is a dictionary with a single key-value pair, representing the name of the attribute and its value
+
+## 1.1.6
+
+- stability fixes and improvements
+- added kotlin, coroutines, androidx core, worker manager and preference dependencies for more efficent internal processing
+
+## 1.1.7
+
+- stability fixes and improvements
+- kotlin 1.5.10
+- provide merchant email, shipping cost and email subject via scan results
+- provide currency code via scan results
+
+## 1.1.8
+
+- stability fixes and improvements
+- support for additional date formats
+
+## 1.1.9
+
+- stability fixes and improvements
+
+## 1.2.0
+
+- stability fixes and improvements
+- kotlin 1.5.21
+- update banner id for specific retailers
+- fix extended field mapping
+- timber 5.0.0
+
+## 1.2.1
+
+- stability fixes and improvements
+- timber 5.0.1
+- kotlin 1.5.30
+- update coroutines to 1.5.2
+
+## 1.2.2
+
+- stability fixes and improvements
+- kotlin 1.5.31
+- remove ability to set retailer in scan options
+- okhttp 4.9.2
+
+## 1.2.3
+
+- androidx worker manager 2.6.0. performance improvements on older android devices.
+- okio version 2.10.0
+- stability fixes and improvements
+
+## 1.2.4
+
+- stability fixes and improvements
+- coroutines to 1.6.0
+
+## 1.2.5
+
+- stability fixes and improvements
+- gms tasks updated to 18.0.1
+
+## 1.2.6
+
+- stability fixes and improvements
+- okio version 3.0.0
+- kotlin 1.6.10
+- androidx appcompat updated to 1.3.1
+
+## 1.2.7
+
+- stability fixes and improvements
+- upgraded to okhttp 4.9.3
+- Scan Results extended field changed from a Bundle to a map to fix parcel crashes on some Samsung devices.
+
+## 1.2.8
+
+- stability fixes and improvements
+
+## 1.2.9
+
+- stability fixes and improvements
+- kotlin 1.6.21
+
+## 1.3.0
+
+- stability fixes and improvements
+
+## 1.3.1
+
+- stability fixes and improvements
+- kotlin 1.7.10
+
+## 1.3.2
+
+- stability fixes and improvements
+
+## 1.3.3
+
+- stability fixes and improvements
+
+## 1.3.4
+
+- stability fixes and improvements
+- Remove support for x86 as 32-bit x86 has dropped to a very small number of active devices.
+
+## 1.3.5
+
+- Stability fixes and improvements
+
+## 1.3.6
+
+- Stability fixes and improvements
+
+## 1.3.7
+
+- Stability fixes and improvements
+- Fixed bug with deserialization where null values would incorrectly get deserialized to 0 when expecting a float type
+- Updated to Kotlin 1.8.21 and Kotlin Coroutines 1.7.1
+
+## 1.3.8
+
+- Updated to target and compile API Level 33
+- Updated the following dependencies:
+  - androidx.appcompat:appcompat: 1.3.1 -> 1.6.1
+  - androidx.core:core-ktx:1.6.0 -> 1.10.0
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0 -> 1.6.4
+  - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0 -> 1.6.4
+  - com.squareup.okhttp3:okhttp:4.9.3 -> 4.11.0
+  - com.squareup.okhttp3:logging-interceptor:4.9.0 -> 4.11.0
+  - com.google.android.gms:play-services-tasks:18.0.1 -> 18.0.2
+  - com.squareup.okio:okio:3.0.0 -> 3.3.0
+  - androidx.preference:preference-ktx:1.1.1 -> 1.2.0
+- Stability fixes and improvements
+
+## 1.3.9
+- Added distribution via Maven. You no longer have to declare our transitive dependencies, but can only declare dependencies on our specific maven libraries. Check out the Readme for more details.
+- Stability fixes and improvements
+
+## 1.4.0
+- Stability fixes and improvements
+
+## 1.4.1
+- Stability fixes and improvements
+
+## 1.4.2
+- Stability fixes and improvements
+
+## 1.4.3
+- Stability fixes and improvements
+
+## 1.4.4
+- Stability fixes and improvements
+
+## 1.4.5
+- Stability fixes and improvements
+
+## 1.4.6
+- Stability fixes and improvements
+
+## 1.4.7
+- Stability fixes and improvements
+
+## 1.4.8
+- Stability fixes and improvements
+
+## 1.4.9
+- Stability fixes and improvements
+
+## 1.5.0
+- Stability fixes and improvements
+
+## 1.5.1
+- Stability fixes and improvements
+
+## 1.5.2
+- Stability fixes and improvements
+
+## 1.5.3
+- Stability fixes and improvements
+
+## 1.5.4
+- Stability fixes and improvements
+
+## 1.5.5
+- Add price post fix to the scan results product
+- Updated to target API Level 34
+- Stability fixes and improvements
+
+## 1.5.6
+- Stability fixes and improvements
+
+## 1.5.7
+- Stability fixes and improvements
+
+## 1.5.8
+- Stability fixes and improvements
+
+## 1.5.9
+- Stability fixes and improvements
+
+## 1.6.0
+- Stability fixes and improvements
+
+## 1.6.1
+- Stability fixes and improvements
+
+## 1.6.2
+- Stability fixes and improvements
+
+## 1.6.3
+- Stability fixes and improvements
+
+## 1.6.4
+- Stability fixes and improvements
+
+## 1.6.5
+- Stability fixes and improvements
+
+## 1.6.6
+- Support for 16KB memory page size on Android 15+ required for all app updates starting Nov 1, 2025—ensure native code and SDKs are rebuilt with updated NDK and tools.
+- Stability fixes and improvements
+
+## 1.6.7
+- Stability fixes and improvements
+
+## 1.6.8
+- Stability fixes and improvements
+
+## 1.6.9
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- `ScanResults.eReceiptRawHtml()` will no longer contain the HTML tags string value as it now returns a NULL or an empty string.
+  - Instead, we've introduced new fields to store raw values:
+    - `ScanResults.rawData()`
+      - This field can be either HTML tags OR a stringified JSON string value.
+    - `ScanResults.rawDataType()`
+      - This field can be either "html" or "json" string value.
+- Stability fixes and improvements
+
+## 1.7.0
+- **BREAKING CHANGE** `Barcode` and `BarcodeType` models are now used by both `:blinkreceipt-barcode` and `:blinkreceipt-barcode-recognizer` modules.
+- **BREAKING CHANGE** minSDK set to 23 | targetSDK set to 36
+- Upgrade Java compilation target from version 8 to 17 across all modules
+  - Remove manual toString() implementations to leverage Java 17's string concatenation optimizations
+- Stability fixes and improvements
+
+## 1.7.1
+- Override User-Agent header value for `[POST] /api/licensees` API calls
+- Stability fixes and improvements
+
+## 1.7.2
+- Stability fixes and improvements
+
+## 1.7.3
+- Stability fixes and improvements
+
+## 1.7.4
+- Update Prod Intel Lookup API POST request format
+- Stability fixes and improvements
+
+## 1.7.5
+- **BREAKING CHANGE** `ScanResults` loyaltyProgram property changed from boolean to Boolean
+- Added support for new properties: `aid` and `authCode`
+- Stability fixes and improvements
+
+## 2.0.0
+- Stability fixes and improvements
+
+## 2.0.1
+- Stability fixes and improvements
+
+## 2.0.2
+- Stability fixes and improvements
+
+## 2.0.3
+- Stability fixes and improvements
+
+## 2.1.0
+- We’ve increased the minimum supported Android SDK version from API 23 (Android 6.0 Marshmallow) to API 24 (Android 7.0 Nougat). This allows us to take advantage of newer platform capabilities and improve overall app quality.
+- Stability fixes and improvements
+
+## 2.1.1
+- Stability fixes and improvements
+
+## 2.2.0
+- Stability fixes and improvements
+
+## 2.2.1
+- Stability fixes and improvements
+
+## 2.2.2
+- Stability fixes and improvements
+
+## 2.3.0
+- Stability fixes and improvements
+
+## 2.3.1
+- Updated Gson to 2.14.0. It is now declared explicitly by this module rather than inherited transitively, so the version no longer depends on another library's dependency graph.
+- Updated `androidx.work` to 2.11.2, which brings Room 2.7.0 and its corrected R8 keep rule, and published that rule alongside it. Under R8 full mode — the default for an app — the older rule let R8 drop the constructor WorkManager's generated database is created with, so an integrating app minifying in full mode could crash on launch with `NoSuchMethodException: androidx.work.impl.WorkDatabase_Impl.<init> []`. No integration changes are required.
+- Stability fixes and improvements
+
+## 2.3.2
+- Stability fixes and improvements
+
+## 2.4.0
+- Stability fixes and improvements
+
+## 2.4.1
+- Stability fixes and improvements
+
+## 2.5.0
+- Added `ScanResults.merchantDetection`, carrying the merchant-detection signals (phone, logo, text, tax ID, CSV, product-search, long-tail and Trip Resolution matches) behind the scan's merchant; `null` when no detector produced one.
+- Stability fixes and improvements
+
+## 2.5.1
+- Stability fixes and improvements
+
+## 2.5.2
+- Stability fixes and improvements
+
+## 3.0.0
+- Stability fixes and improvements
+- Narrower R8 keep rules: core no longer keeps every library's `R` classes, every protobuf-lite and DataStore message, Gson `TypeAdapter`s or `kotlin.Metadata` in your app; it keeps its public API and its own protobuf message fields.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-core` to `com.actualplatform:receipt-core`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.core` to `com.actualplatform.receipt.core`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.core.R`. For example, `com.microblink.core.ScanResults` becomes `com.actualplatform.receipt.core.ScanResults`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.core` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptCoreSdk` is renamed `ReceiptCoreSdk`, and `BlinkReceiptEnvironment` is renamed `ReceiptEnvironment`.
+- **BREAKING CHANGE** Manifest meta-data keys move from `com.microblink.<Key>` to `com.actualplatform.receipt.<Key>`: `LicenseKey`, `LicenseeName`, `GooglePlacesKey`, `YelpKey`, `ProductIntelligence`, `FrameResults`, `WebApiKey`, `OnDeviceOcr` and `ClientUserId`. The old keys are no longer read, so an app that keeps them initializes as if no license or API key were set. When an old key is present without its new key, the SDK logs an error under the `ReceiptSdk` tag that names the new key. `ReceiptCoreSdk.LICENSE_KEY_PROPERTY`, `PRODUCT_INTEL_KEY_PROPERTY` and `CLIENT_USER_ID_KEY_PROPERTY` hold the new keys.
+- Data the SDK stored on devices keeps its 2.x names, so it survives the upgrade.

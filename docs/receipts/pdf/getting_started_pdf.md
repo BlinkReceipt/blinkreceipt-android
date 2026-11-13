@@ -7,13 +7,13 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
      repositories {
-       maven { url = uri("https://maven.microblink.com") }
+       mavenCentral()
      }
     ```
 === "Groovy"
     ```groovy
      repositories {
-       maven { url "https://maven.microblink.com" }
+       mavenCentral()
      }
     ```
 
@@ -22,17 +22,17 @@ The Recognizer SDK enables you to easily scan digital and physical receipts.
 === "Kotlin"
     ```kotlin
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
+        implementation(platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}"))
 
-        implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
+        implementation("com.actualplatform:receipt-recognizer")
     }
     ```
 === "Groovy"
     ```groovy
     dependencies {
-        implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}")
+        implementation platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}")
 
-        implementation "com.microblink.blinkreceipt:blinkreceipt-recognizer"
+        implementation "com.actualplatform:receipt-recognizer"
     }
     ```
 
@@ -46,25 +46,25 @@ In your `AndroidManifest.xml` file, create the following `meta-data` tags, and i
 
 ```xml
 <meta-data
-    android:name="com.microblink.LicenseKey"
+    android:name="com.actualplatform.receipt.LicenseKey"
     android:value=""
 />
 
 <meta-data
-    android:name="com.microblink.ProductIntelligence"
+    android:name="com.actualplatform.receipt.ProductIntelligence"
     android:value=""
 />
 ```
 
-Both the values for `com.microblink.LicenseKey` and `com.microblink.ProductIntelligence` can be obtained by emailing [blinkreceipt@microblink.com](mailto:blinkreceipt@microblink.com).
+Both the values for `com.actualplatform.receipt.LicenseKey` and `com.actualplatform.receipt.ProductIntelligence` can be obtained by emailing [blinkreceipt@microblink.com](mailto:blinkreceipt@microblink.com).
 
 ### Programmatically
 
-If you want to set your keys programmatically, you can do so by setting them on the appropriate `BlinkReceiptSdk` fields in your application class in the `onCreate` method:
+If you want to set your keys programmatically, you can do so by setting them on the appropriate `ReceiptSdk` fields in your application class in the `onCreate` method:
 
 === "Kotlin"
     ```kotlin
-    BlinkReceiptSdk.productIntelligenceKey("product_intelligence_license_key")
+    ReceiptSdk.productIntelligenceKey("product_intelligence_license_key")
     ```
 
 ## Initializing the SDK
@@ -74,7 +74,7 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
 
 === "Kotlin"
     ``` kotlin
-    BlinkReceiptSdk.initialize(this, object : InitializeCallback {
+    ReceiptSdk.initialize(this, object : InitializeCallback {
         override fun onComplete() {}
 
             override fun onException(exception: Throwable) {}

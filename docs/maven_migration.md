@@ -1,3 +1,5 @@
+> **Receipt SDK 3.0.0:** the SDK is now published as `com.actualplatform:receipt-*` with packages under `com.actualplatform.receipt`. Names below that refer to 2.x keep their old `com.microblink` form. See [Migrating from 2.x](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/README.md#migrating-from-2x) for the 3.0.0 changes.
+
 ### Effective From: Sep 1, 2025
 
 Microblink is moving its Android SDK distribution from a custom Maven repository ([Microblink Maven](https://maven.microblink.com/)) to **Maven Central** ([Maven Central: Search](https://central.sonatype.com/search?q=com.microblink.blinkreceipt)).

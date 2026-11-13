@@ -22,9 +22,9 @@ depdendencies {
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
             tools:node="merge">
-            <!-- Remove BlinkReceipt SDK's default initializer -->
+            <!-- Remove Receipt SDK's default initializer -->
             <meta-data
-                android:name="com.microblink.internal.ReceiptSdkInitializer"
+                android:name="com.actualplatform.receipt.internal.ReceiptSdkInitializer"
                 android:value="androidx.startup"
                 tools:node="remove" />
             <!-- Remove WorkManager Initializer -->
@@ -32,9 +32,9 @@ depdendencies {
                 android:name="androidx.work.WorkManagerInitializer"
                 android:value="androidx.startup"
                 tools:node="remove" />
-            <!-- Remove BlinkReceipt's Barcode Detector initializer -->
+            <!-- Remove the Receipt SDK's Barcode Detector initializer -->
             <meta-data
-                android:name="com.microblink.internal.BarcodeDetectorInitializer"
+                android:name="com.actualplatform.receipt.internal.BarcodeDetectorInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
             <!-- Introduce your custom Initializer -->
@@ -70,7 +70,7 @@ public class AppInitializer: Initializer<Unit> {
 public void onCreate() {
     super.onCreate();
 
-    BlinkReceiptSdk.initialize( context );
+    ReceiptSdk.initialize( context );
 }
 ```
 - This will ensure that the your app's WorkManager configuration and initialization will supersede and will be used across both client app and SDK's internal logic.
