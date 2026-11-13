@@ -1,7 +1,7 @@
 package com.blinkreceipt.ocr.transfer;
 
-import com.microblink.Media;
-import com.microblink.core.ScanResults;
+import com.actualplatform.receipt.Media;
+import com.actualplatform.receipt.core.ScanResults;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

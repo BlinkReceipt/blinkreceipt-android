@@ -64,6 +64,8 @@ android {
                     'META-INF/LGPL2.1',
                     'META-INF/licenses/ASM',
                     'META-INF/DEPENDENCIES',
+                    // google-auth-library (via receipt-digital's Google API client) ships this JAR index in two jars.
+                    'META-INF/INDEX.LIST',
             ]
         }
     }
@@ -85,8 +87,8 @@ dependencies {
 
     implementation libs.androidx.core.ktx
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.digital
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.digital
 
     testImplementation libs.junit
 

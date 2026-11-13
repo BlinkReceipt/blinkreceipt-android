@@ -19,9 +19,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.blinkreceipt.scan.pdf.databinding.ActivityMainBinding
 import com.blinkreceipt.scan.pdf.internal.PdfViewer
 import com.blinkreceipt.scan.pdf.internal.PdfViewerAdapter
-import com.microblink.PdfClient
-import com.microblink.ScanOptions
-import com.microblink.internal.READ_MODE
+import com.actualplatform.receipt.PdfClient
+import com.actualplatform.receipt.ScanOptions
+import com.actualplatform.receipt.internal.READ_MODE
 
 class MainActivity : AppCompatActivity() {
 

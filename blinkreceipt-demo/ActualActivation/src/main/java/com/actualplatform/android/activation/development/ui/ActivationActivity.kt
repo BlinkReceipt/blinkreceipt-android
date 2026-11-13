@@ -48,14 +48,14 @@ import com.actualplatform.android.activation.development.R
 import com.actualplatform.android.activation.development.ui.feed.OfferFeedHostScreen
 import com.actualplatform.android.activation.development.ui.themes.ThemesAndIconEditorScreen
 import com.actualplatform.android.activation.development.ui.themes.local.ThemesAndAppearanceStorage
-import com.microblink.FrameCharacteristics
-import com.microblink.ScanOptions
-import com.microblink.camera.ui.CameraCharacteristics
-import com.microblink.camera.ui.CameraRecognizerContract
-import com.microblink.camera.ui.CameraRecognizerOptions
-import com.microblink.camera.ui.CameraRecognizerResults
-import com.microblink.camera.ui.internal.parcelable
-import com.microblink.logcat.LogcatManager
+import com.actualplatform.receipt.FrameCharacteristics
+import com.actualplatform.receipt.ScanOptions
+import com.actualplatform.receipt.camera.ui.CameraCharacteristics
+import com.actualplatform.receipt.camera.ui.CameraRecognizerContract
+import com.actualplatform.receipt.camera.ui.CameraRecognizerOptions
+import com.actualplatform.receipt.camera.ui.CameraRecognizerResults
+import com.actualplatform.receipt.camera.ui.internal.parcelable
+import com.actualplatform.receipt.logcat.LogcatManager
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
@@ -180,7 +180,7 @@ internal class ActivationActivity : ComponentActivity() {
                 var refreshKey by remember { mutableIntStateOf(0) }
 
                 var lastScanResults by remember {
-                    mutableStateOf<com.microblink.core.ScanResults?>(
+                    mutableStateOf<com.actualplatform.receipt.core.ScanResults?>(
                         null
                     )
                 }

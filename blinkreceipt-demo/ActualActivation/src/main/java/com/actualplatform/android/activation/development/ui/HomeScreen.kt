@@ -27,7 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.actualplatform.activation.Rewards
 import com.actualplatform.android.activation.development.R
-import com.microblink.core.ScanResults
+import com.actualplatform.receipt.core.ScanResults
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -4,8 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import com.microblink.core.InitializeCallback;
-import com.microblink.surveys.BlinkReceiptSurveysSdk;
+import com.actualplatform.receipt.core.InitializeCallback;
+import com.actualplatform.receipt.surveys.ReceiptSurveysSdk;
 
 public class BlinkSurveysApplication extends Application  {
 
@@ -15,7 +15,7 @@ public class BlinkSurveysApplication extends Application  {
     public void onCreate() {
         super.onCreate();
 
-        BlinkReceiptSurveysSdk.initialize(this, new InitializeCallback() {
+        ReceiptSurveysSdk.initialize(this, new InitializeCallback() {
             @Override
             public void onComplete() {
                 Log.d(TAG, "BlinkReceiptSurveySdk initialized!!!");

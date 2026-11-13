@@ -2,15 +2,15 @@ package com.blinkreceipt.earnings
 
 import android.app.Application
 import android.util.Log
-import com.microblink.core.InitializeCallback
-import com.microblink.earnings.BlinkReceiptEarningSdk
+import com.actualplatform.receipt.core.InitializeCallback
+import com.actualplatform.receipt.earnings.ReceiptEarningSdk
 
 class BlinkApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        BlinkReceiptEarningSdk.initialize(this, object : InitializeCallback {
+        ReceiptEarningSdk.initialize(this, object : InitializeCallback {
 
             override fun onComplete() {
                 Log.d(TAG, "initialize complete" )

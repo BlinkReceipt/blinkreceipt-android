@@ -5,8 +5,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.microblink.BlinkReceiptSdk;
-import com.microblink.core.InitializeCallback;
+import com.actualplatform.receipt.ReceiptSdk;
+import com.actualplatform.receipt.core.InitializeCallback;
 
 public class BlinkApplication extends Application {
 
@@ -16,10 +16,10 @@ public class BlinkApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        BlinkReceiptSdk.initialize(this, new InitializeCallback() {
+        ReceiptSdk.initialize(this, new InitializeCallback() {
             @Override
             public void onComplete() {
-                Log.d(TAG, "BlinkReceiptSdk initialized!!!");
+                Log.d(TAG, "ReceiptSdk initialized!!!");
             }
 
             @Override
@@ -31,7 +31,7 @@ public class BlinkApplication extends Application {
 
     @Override
     public void onTerminate() {
-        BlinkReceiptSdk.terminate();
+        ReceiptSdk.terminate();
 
         super.onTerminate();
     }

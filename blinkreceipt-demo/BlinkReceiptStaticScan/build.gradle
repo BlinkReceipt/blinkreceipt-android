@@ -82,9 +82,9 @@ dependencies {
 
     implementation libs.androidx.core.ktx
 
-    implementation platform(libs.blinkreceipt.bom)
-    implementation libs.blinkreceipt.recognizer
-    implementation libs.blinkreceipt.camera.ui
+    implementation platform(libs.receipt.bom)
+    implementation libs.receipt.recognizer
+    implementation libs.receipt.camera.ui
 
     testImplementation libs.junit
 

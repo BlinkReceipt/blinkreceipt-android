@@ -43,6 +43,6 @@
     public <init>(android.content.Context,androidx.work.WorkerParameters);
 }
 
--keepclassmembers class com.microblink.digital.databinding.**  {
+-keepclassmembers class com.actualplatform.receipt.digital.databinding.**  {
     public <methods>;
 }

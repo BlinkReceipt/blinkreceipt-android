@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--dontwarn com.microblink.**
+-dontwarn com.actualplatform.receipt.**
 -dontwarn com.google.auto.value.AutoValue
 -dontwarn com.google.crypto.tink.subtle.Ed25519Sign$KeyPair
 -dontwarn com.google.crypto.tink.subtle.Ed25519Sign
@@ -45,6 +45,6 @@
     public <init>(android.content.Context,androidx.work.WorkerParameters);
 }
 
--keepclassmembers class com.microblink.digital.databinding.**  {
+-keepclassmembers class com.actualplatform.receipt.digital.databinding.**  {
     public <methods>;
 }

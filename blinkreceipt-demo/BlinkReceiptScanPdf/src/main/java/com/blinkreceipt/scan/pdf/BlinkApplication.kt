@@ -2,17 +2,17 @@ package com.blinkreceipt.scan.pdf
 
 import android.app.Application
 import android.util.Log
-import com.microblink.BlinkReceiptSdk
-import com.microblink.core.InitializeCallback
+import com.actualplatform.receipt.ReceiptSdk
+import com.actualplatform.receipt.core.InitializeCallback
 
 class BlinkApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        BlinkReceiptSdk.initialize(this, object: InitializeCallback {
+        ReceiptSdk.initialize(this, object: InitializeCallback {
             override fun onComplete() {
-                Log.d(TAG, "BlinkReceiptSdk initialized!!!")
+                Log.d(TAG, "ReceiptSdk initialized!!!")
             }
 
             override fun onException(p0: Throwable) {
@@ -23,7 +23,7 @@ class BlinkApplication: Application() {
 
     override fun onTerminate() {
         super.onTerminate()
-        BlinkReceiptSdk.terminate()
+        ReceiptSdk.terminate()
     }
 
     internal companion object {

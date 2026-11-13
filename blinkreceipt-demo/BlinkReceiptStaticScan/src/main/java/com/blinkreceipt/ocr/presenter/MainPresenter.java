@@ -1,8 +1,8 @@
 package com.blinkreceipt.ocr.presenter;
 
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.core.Product;
-import com.microblink.core.ScanResults;
+import com.actualplatform.receipt.core.Product;
+import com.actualplatform.receipt.core.ScanResults;
 
 import java.util.List;
 

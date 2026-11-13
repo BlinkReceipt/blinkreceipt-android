@@ -1,12 +1,12 @@
 package com.blinkreceipt.scan.pdf.internal
 
 import android.app.Application
-import com.microblink.BlinkReceiptSdk
+import com.actualplatform.receipt.ReceiptSdk
 
 class PdfApplication: Application() {
 
     override fun onTerminate() {
-        BlinkReceiptSdk.terminate()
+        ReceiptSdk.terminate()
 
         super.onTerminate()
     }

@@ -38,7 +38,7 @@ import com.actualplatform.activation.RewardCurrencyLabelStyle
 import com.actualplatform.activation.RewardCurrencyMessagingTextStyle
 import com.actualplatform.activation.RewardCurrencyRounding
 import com.actualplatform.android.activation.development.R
-import com.microblink.logcat.LogcatManager
+import com.actualplatform.receipt.logcat.LogcatManager
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.Locale

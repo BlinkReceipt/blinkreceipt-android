@@ -14,7 +14,7 @@
     <!-- Customize your theme here. -->
   </style>
 
-  <style name="DemoSurvey" parent="BlinkSurvey">
+  <style name="DemoSurvey" parent="ReceiptSurvey">
     <item name="next_question_button_text_color">@color/purple_700</item>
   </style>
 </resources>

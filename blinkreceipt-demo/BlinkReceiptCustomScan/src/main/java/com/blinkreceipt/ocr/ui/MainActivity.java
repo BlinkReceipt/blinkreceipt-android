@@ -17,10 +17,10 @@ import com.blinkreceipt.ocr.adapter.ProductsAdapter;
 import com.blinkreceipt.ocr.databinding.ActivityMainBinding;
 import com.blinkreceipt.ocr.presenter.MainPresenter;
 import com.blinkreceipt.ocr.transfer.RecognizerResults;
-import com.microblink.BlinkReceiptSdk;
-import com.microblink.Media;
-import com.microblink.core.Product;
-import com.microblink.core.ScanResults;
+import com.actualplatform.receipt.ReceiptSdk;
+import com.actualplatform.receipt.Media;
+import com.actualplatform.receipt.core.Product;
+import com.actualplatform.receipt.core.ScanResults;
 
 import java.util.List;
 
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         if (item.getItemId() == R.id.sdk_version) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.sdk_version_dialog_title)
-                    .setMessage(BlinkReceiptSdk.versionName(this))
+                    .setMessage(ReceiptSdk.versionName(this))
                     .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
                     .create()
                     .show();

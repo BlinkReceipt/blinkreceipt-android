@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--dontwarn com.microblink.**
+-dontwarn com.actualplatform.receipt.**
 
 -keep class * extends com.google.gson.TypeAdapter
         -keep class * implements com.google.gson.TypeAdapterFactory
