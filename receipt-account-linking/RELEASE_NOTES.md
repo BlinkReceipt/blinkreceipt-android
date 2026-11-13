@@ -447,5 +447,12 @@ accountLinkingClient.orders(
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: account linking no longer copies core's app-wide rules (`R` classes, enums, native methods, Gson, WorkManager and Room) into your app.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-account-linking` to `com.actualplatform:receipt-account-linking`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.linking` to `com.actualplatform.receipt.linking`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.linking.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.linking` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptLinkingSdk` is renamed `ReceiptLinkingSdk`.

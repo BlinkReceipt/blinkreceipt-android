@@ -276,5 +276,12 @@
 - Activation scans now start their scan session once activation becomes ready, even after the camera has opened, and a scan left without a session ends with an error. Adds the overridable `activation_scan_session_missing` string and rewords `activation_sdk_not_initialized`.
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: camera-ui no longer keeps its `R` classes or `DynamicViewPort` in your app.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-camera-ui` to `com.actualplatform:receipt-camera-ui`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.camera.ui` to `com.actualplatform.receipt.camera.ui`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.camera.ui.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.camera.ui` stop matching silently.
+- **BREAKING CHANGE** `Blink`-named resources use the `Receipt`/`receipt` prefix: style `BlinkRecognizerStyle` is `ReceiptRecognizerStyle`, attr `blinkTooltipStyle` is `receiptTooltipStyle`, and colors `blink_cobalt`, `blink_blue` and `blink_raven` are `receipt_cobalt`, `receipt_blue` and `receipt_raven`. References in code and XML fail to build until updated, including themes passed to `CameraCharacteristics.style()`. An app color that overrides a `blink_*` color by name still builds but no longer applies; rename it to `receipt_*`.

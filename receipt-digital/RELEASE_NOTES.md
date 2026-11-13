@@ -447,5 +447,13 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: digital no longer keeps every `R` class, all of `javax.**` and `com.sun.**`, or the members of every `Parcelable` in your app; JavaMail keeps only the providers and content handlers it loads by name.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-digital` to `com.actualplatform:receipt-digital`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.digital` to `com.actualplatform.receipt.digital`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.digital.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.digital` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptDigitalSdk` is renamed `ReceiptDigitalSdk`.
+- **BREAKING CHANGE** The `ClientUserId` manifest meta-data key moves from `com.microblink.ClientUserId` to `com.actualplatform.receipt.ClientUserId`; the old key is no longer read.

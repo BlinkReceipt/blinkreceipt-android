@@ -327,5 +327,13 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: surveys no longer copies core's app-wide rules (`R` classes, enums, native methods, Gson, WorkManager and Room) into your app.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-surveys` to `com.actualplatform:receipt-surveys`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.surveys` to `com.actualplatform.receipt.surveys`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.surveys.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.surveys` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptSurveysSdk` is renamed `ReceiptSurveysSdk`.
+- **BREAKING CHANGE** `Blink`-named resources use the `Receipt`/`receipt` prefix: style `BlinkSurvey` is `ReceiptSurvey`, and the `blink_*` colors, dimens and drawables are `receipt_*`. References in code and XML, such as `parent="BlinkSurvey"` or themes passed to `SurveyFragment.newInstance()`, fail to build until updated. An app color or dimen that overrides a `blink_*` one by name still builds but no longer applies; rename it to `receipt_*`.

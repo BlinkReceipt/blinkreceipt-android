@@ -115,5 +115,11 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- The security AAR now keeps its `@Keep` annotations, so `CryptoState`, `LicenseType` and the storage manager companions stay kept in your app under R8 full mode.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-security` to `com.actualplatform:receipt-security`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.security` to `com.actualplatform.receipt.security`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.security.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.security` stop matching silently.

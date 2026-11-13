@@ -363,5 +363,13 @@
 ## 2.5.1
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- R8 keep rules for the earnings public API now ship in its consumer rules, so they no longer depend on the recognizer's removed `com.microblink.**` wildcard.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-earnings` to `com.actualplatform:receipt-earnings`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink.earnings` to `com.actualplatform.receipt.earnings`, and the AGP namespace with them, so the generated `R` class is `com.actualplatform.receipt.earnings.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink.earnings` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptEarningSdk` is renamed `ReceiptEarningSdk`.
+- **BREAKING CHANGE** The `WebApiKey` and `ClientUserId` manifest meta-data keys move from `com.microblink.<Key>` to `com.actualplatform.receipt.<Key>`; the old keys are no longer read.

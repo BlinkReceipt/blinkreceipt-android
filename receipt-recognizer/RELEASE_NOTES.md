@@ -865,5 +865,14 @@ Blink Receipt Recognizer
 - With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
 - Stability fixes and improvements
 
+## 2.5.2
+- Stability fixes and improvements
+
 ## 3.0.0
 - Stability fixes and improvements
+- Narrower R8 keep rules: the recognizer no longer ships its internal rules, including `-keep class com.google.** {*;}`, and keeps only its public API and the classes its native code and `ActivationBridge` reach by name, so R8 can shrink and obfuscate much more of your app.
+- **BREAKING CHANGE** The Maven coordinates move from `com.microblink.blinkreceipt:blinkreceipt-recognizer` to `com.actualplatform:receipt-recognizer`. Gradle treats them as different libraries, so a version bump alone doesn't upgrade: change the BOM to `com.actualplatform:receipt-bom` and every SDK dependency. The library declares its old coordinates as a Gradle capability, so a 2.x copy left on the classpath fails dependency resolution with a capability conflict; remove it.
+- **BREAKING CHANGE** Packages move from `com.microblink` to `com.actualplatform.receipt`, and the AGP namespace from `com.microblink.recognizer` to `com.actualplatform.receipt.recognizer`, so the generated `R` class is `com.actualplatform.receipt.recognizer.R`. Update imports, code and app keep rules that name SDK classes; keep rules that still name `com.microblink` stop matching silently.
+- **BREAKING CHANGE** `BlinkReceiptSdk` is renamed `ReceiptSdk` (`com.microblink.BlinkReceiptSdk` becomes `com.actualplatform.receipt.ReceiptSdk`), and `BlinkCountdownTimer` is renamed `CountdownTimer`. Method names such as `ScanResults.blinkReceiptId()` are unchanged.
+- **BREAKING CHANGE** The initializers move to `com.actualplatform.receipt.internal.ReceiptSdkInitializer` and `com.actualplatform.receipt.internal.BarcodeDetectorInitializer`. A `tools:node="remove"` entry for the old `com.microblink.internal` names no longer matches, so the SDK's initializer runs at startup again with no build error; an app with its own WorkManager configuration then crashes with "WorkManager is already initialized". Layouts that use `<com.microblink.RecognizerView>` compile but fail to inflate; use `<com.actualplatform.receipt.RecognizerView>`.
+- **BREAKING CHANGE** The manifest meta-data keys an app sets for the recognizer move from `com.microblink.<Key>` to `com.actualplatform.receipt.<Key>`: `LicenseKey`, `LicenseeName`, `GooglePlacesKey`, `YelpKey`, `FrameResults`, `WebApiKey` and `OnDeviceOcr`. The old keys are no longer read.
