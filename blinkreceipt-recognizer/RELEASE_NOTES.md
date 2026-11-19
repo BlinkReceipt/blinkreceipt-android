@@ -864,3 +864,6 @@ Blink Receipt Recognizer
 - Merchant-detection signals are now passed to the Activation SDK through `ScanResults.merchantDetection`.
 - With remote OCR, the inverted-text retry now uploads the full-resolution frame instead of a downscaled one.
 - Stability fixes and improvements
+
+## 2.5.2
+- Stability fixes and improvements

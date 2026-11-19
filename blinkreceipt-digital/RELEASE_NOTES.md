@@ -446,3 +446,6 @@
 
 ## 2.5.1
 - Stability fixes and improvements
+
+## 2.5.2
+- Stability fixes and improvements
