@@ -1,5 +1,7 @@
 # CameraX Migration Guide
 
+> **Receipt SDK 3.0.0:** the SDK is now published as `com.actualplatform:receipt-*` with packages under `com.actualplatform.receipt`. Names below that refer to 2.x keep their old `com.microblink` form. See [Migrating from 2.x](https://github.com/BlinkReceipt/blinkreceipt-android/blob/master/README.md#migrating-from-2x) for the 3.0.0 changes.
+
 This guide helps you migrate your application to **BlinkReceipt SDK 2.x.x and newer**.
 
 The updated SDK improves performance, reliability, and device compatibility by leveraging Google’s CameraX framework, while maintaining existing SDK functionality.
@@ -19,11 +21,11 @@ Before you begin, please ensure you have the following:
     ```groovy
     // build.gradle
     dependencies {
-        implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:2.0.0"))
+        implementation(platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}"))
 
-        implementation("com.microblink.blinkreceipt:blinkreceipt-recognizer")
-        implementation("com.microblink.blinkreceipt:blinkreceipt-camera")
-        implementation("com.microblink.blinkreceipt:blinkreceipt-camera-ui")
+        implementation("com.actualplatform:receipt-recognizer")
+        implementation("com.actualplatform:receipt-camera")
+        implementation("com.actualplatform:receipt-camera-ui")
         // ...
     }
     ```
@@ -42,7 +44,7 @@ With the transition to CameraX, there are **minimal but important API changes**.
 ---
 
 ### Out-of-the-Box Camera Experience
-- If you are using the default Camera Experience (`blinkreceipt-camera-ui`), **no changes are required**.
+- If you are using the default Camera Experience (`receipt-camera-ui`), **no changes are required**.
 
 ---
 
@@ -142,7 +144,7 @@ However, you may notice the following differences:
 
 After upgrading to the new SDK version, we strongly recommend testing the following scenarios:
 
-- ✅ Test all flows that use BlinkReceipt camera or Scan features. Confirm the camera preview starts correctly and scanning works as expected.
+- ✅ Test all flows that use the Receipt SDK camera or Scan features. Confirm the camera preview starts correctly and scanning works as expected.
 - ✅ Verify correct camera lifecycle behavior when the app moves between background and foreground.
 - ✅ Test across a variety of devices and Android versions to confirm CameraX compatibility and behavior.
 

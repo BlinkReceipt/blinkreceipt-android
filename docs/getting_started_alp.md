@@ -10,13 +10,13 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
      repositories {
-       maven { url = uri("https://maven.microblink.com") }
+       mavenCentral()
      }
     ```
 === "Groovy"
     ```groovy
      repositories {
-       maven { url "https://maven.microblink.com" }
+       mavenCentral()
      }
     ```
 
@@ -25,17 +25,17 @@ It supports parsing digital and in-store orders from a growing list of online re
 === "Kotlin"
     ```kotlin
     dependencies {
-    implementation(platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}"))
+    implementation(platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}"))
 
-    implementation("com.microblink.blinkreceipt:blinkreceipt-account-linking")
+    implementation("com.actualplatform:receipt-account-linking")
     }
     ```
 === "Groovy"
     ```groovy
     dependencies {
-    implementation platform("com.microblink.blinkreceipt:blinkreceipt-bom:{{ blinkreceipt.release }}")
+    implementation platform("com.actualplatform:receipt-bom:{{ blinkreceipt.release }}")
 
-    implementation "com.microblink.blinkreceipt:blinkreceipt-account-linking"
+    implementation "com.actualplatform:receipt-account-linking"
     }
     ```
 
@@ -49,12 +49,12 @@ In your `AndroidManifest.xml` file, create the following `meta-data` tags, and i
 
 ```xml
 <meta-data
-    android:name="com.microblink.LicenseKey"
+    android:name="com.actualplatform.receipt.LicenseKey"
     android:value=""
 />
 
 <meta-data
-    android:name="com.microblink.ProductIntelligence"
+    android:name="com.actualplatform.receipt.ProductIntelligence"
     android:value=""
 />
 ```
@@ -63,17 +63,17 @@ In your `AndroidManifest.xml` file, create the following `meta-data` tags, and i
 
 ### Programmatically
 
-If you want to set your keys programmatically, you can do so by setting them on the appropriate `BlinkReceiptLinkingSdk` fields in your application class in the `onCreate` method:
+If you want to set your keys programmatically, you can do so by setting them on the appropriate `ReceiptLinkingSdk` fields in your application class in the `onCreate` method:
 
 === "Kotlin"
     ```kotlin
-    BlinkReceiptLinkingSdk.licenseKey = "account_linking_license_key"
-    BlinkReceiptLinkingSdk.productIntelligenceKey = "product_intelligence_license_key"
+    ReceiptLinkingSdk.licenseKey = "account_linking_license_key"
+    ReceiptLinkingSdk.productIntelligenceKey = "product_intelligence_license_key"
     ```
 === "Java"
     ```java
-    BlinkReceiptLinkingSdk.licenseKey("account_linking_license_key");
-    BlinkReceiptLinkingSdk.productIntelligenceKey("product_intelligence_license_key");
+    ReceiptLinkingSdk.licenseKey("account_linking_license_key");
+    ReceiptLinkingSdk.productIntelligenceKey("product_intelligence_license_key");
     ```
 
 ## Initializing the SDK
@@ -83,7 +83,7 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
 
 === "Kotlin"
     ``` kotlin
-    BlinkReceiptLinkingSdk.initialize(this, object: InitializeCallback {
+    ReceiptLinkingSdk.initialize(this, object: InitializeCallback {
         override fun onComplete() {
         }
 
@@ -94,7 +94,7 @@ Before you can use the SDK it needs to be initialized. The best way to do this i
     ```
 === "Java"
     ```java
-    BlinkReceiptLinkingSdk.initialize(this, new InitializeCallback() {
+    ReceiptLinkingSdk.initialize(this, new InitializeCallback() {
         @Override
         public void onComplete() {
 

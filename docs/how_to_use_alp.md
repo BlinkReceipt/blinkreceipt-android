@@ -248,7 +248,7 @@ similar. This is recognized by the error code in the returned exception `VERIFIC
 In this case, you have to display the returned WebView. For more information, see the example below.
 
 The third callback is a preview callback, which will return the `WebView` which will run the verification session, but only if
-the `BlinkReceiptLinkingSdk.debug` property is set to `true`.
+the `ReceiptLinkingSdk.debug` property is set to `true`.
 This is meant to be used only for debugging purposes.
 
 #### Verification Example

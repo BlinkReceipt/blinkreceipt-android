@@ -1,6 +1,6 @@
 # Camera UI + Jetpack Compose Integration Guide
 
-This guide provides comprehensive instructions for integrating the BlinkReceipt Camera UI into a Jetpack Compose-based Android application. It covers two primary integration strategies: utilizing the `RecognizerView` for a custom scanning UI and implementing the out-of-the-box `Blink Camera Ui` for a complete, pre-built camera experience.
+This guide provides comprehensive instructions for integrating the Receipt SDK Camera UI into a Jetpack Compose-based Android application. It covers two primary integration strategies: utilizing the `RecognizerView` for a custom scanning UI and implementing the out-of-the-box `Blink Camera Ui` for a complete, pre-built camera experience.
 
 ## Custom Scan using `RecognizerView`
 To integrate the `RecognizerView` with Jetpack Compose, use the `AndroidView` composable. This allows you to embed a traditional Android View within your Compose UI. It's important to manage the lifecycle of the `RecognizerView` by creating it in the `factory` lambda of `AndroidView` and handling its lifecycle events.
@@ -46,7 +46,7 @@ fun RecognizerViewComposable(
 }
 ```
 
-## Out-of-the-box Camera Experience using Blink Camera UI
+## Out-of-the-box Camera Experience using Receipt Camera UI
 There are two primary approaches to integrate the pre-built camera experience: embedding the `CameraRecognizerFragment` directly into your composable for a tightly integrated UI, or launching it as a separate activity using a `CameraRecognizerContract` for a more decoupled flow.
 
 ### 1. Embed `CameraRecognizerFragment` using `AndroidFragment`
